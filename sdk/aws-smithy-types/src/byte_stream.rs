@@ -12,7 +12,7 @@
 //!
 //! ### Writing a ByteStream into a file:
 //! ```no_run
-//! use aws_smithy_http::byte_stream::ByteStream;
+//! use aws_smithy_types::byte_stream::ByteStream;
 //! use std::error::Error;
 //! use tokio::fs::File;
 //! use tokio::io::AsyncWriteExt;
@@ -34,7 +34,7 @@
 //! ### Converting a ByteStream into Bytes
 //! ```no_run
 //! use bytes::Bytes;
-//! use aws_smithy_http::byte_stream::ByteStream;
+//! use aws_smithy_types::byte_stream::ByteStream;
 //! use std::error::Error;
 //! struct SynthesizeSpeechOutput {
 //!     audio_stream: ByteStream,
@@ -53,7 +53,7 @@
 //!
 //! ```no_run
 //! use bytes::{Buf, Bytes};
-//! use aws_smithy_http::byte_stream::ByteStream;
+//! use aws_smithy_types::byte_stream::ByteStream;
 //! use std::error::Error;
 //! use tokio::fs::File;
 //! use tokio::io::AsyncWriteExt;
@@ -83,7 +83,7 @@
 //! ```no_run
 //! # #[cfg(feature = "rt-tokio")]
 //! # {
-//! use aws_smithy_http::byte_stream::ByteStream;
+//! use aws_smithy_types::byte_stream::ByteStream;
 //! use std::path::Path;
 //! struct GetObjectInput {
 //!   body: ByteStream
@@ -104,7 +104,7 @@
 //! ```no_run
 //! # #[cfg(feature = "rt-tokio")]
 //! # {
-//! use aws_smithy_http::byte_stream::{ByteStream, Length};
+//! use aws_smithy_types::byte_stream::{ByteStream, Length};
 //! use std::path::Path;
 //! struct GetObjectInput {
 //!     body: ByteStream
@@ -157,8 +157,8 @@ pin_project! {
     ///     [`.collect()`](crate::byte_stream::ByteStream::collect) reads the complete ByteStream into memory and stores it in `AggregatedBytes`,
     ///     a non-contiguous ByteBuffer.
     ///     ```no_run
-    ///     use aws_smithy_http::byte_stream::{ByteStream, AggregatedBytes};
-    ///     use aws_smithy_http::body::SdkBody;
+    ///     use aws_smithy_types::byte_stream::{ByteStream, AggregatedBytes};
+    ///     use aws_smithy_types::body::SdkBody;
     ///     use bytes::Buf;
     ///     async fn example() {
     ///        let stream = ByteStream::new(SdkBody::from("hello! This is some data"));
@@ -181,8 +181,8 @@ pin_project! {
     ///     #       pub fn finish(&self) -> u64 { 6 }
     ///     #   }
     ///     # }
-    ///     use aws_smithy_http::byte_stream::{ByteStream, AggregatedBytes, error::Error};
-    ///     use aws_smithy_http::body::SdkBody;
+    ///     use aws_smithy_types::byte_stream::{ByteStream, AggregatedBytes, error::Error};
+    ///     use aws_smithy_types::body::SdkBody;
     ///
     ///     async fn example() -> Result<(), Error> {
     ///        let mut stream = ByteStream::from(vec![1, 2, 3, 4, 5, 99]);
@@ -202,8 +202,8 @@ pin_project! {
     ///     It's possible to convert a `ByteStream` into a struct that implements [`tokio::io::AsyncRead`](tokio::io::AsyncRead).
     ///     Then, you can use pre-existing tools like [`tokio::io::BufReader`](tokio::io::BufReader):
     ///     ```no_run
-    ///     use aws_smithy_http::byte_stream::ByteStream;
-    ///     use aws_smithy_http::body::SdkBody;
+    ///     use aws_smithy_types::byte_stream::ByteStream;
+    ///     use aws_smithy_types::body::SdkBody;
     ///     use tokio::io::{AsyncBufReadExt, BufReader};
     ///     #[cfg(feature = "rt-tokio")]
     ///     async fn example() -> std::io::Result<()> {
@@ -224,7 +224,7 @@ pin_project! {
     /// will be converted into `Bytes` enabling a cheap clone during retries.
     ///     ```no_run
     ///     use bytes::Bytes;
-    ///     use aws_smithy_http::byte_stream::ByteStream;
+    ///     use aws_smithy_types::byte_stream::ByteStream;
     ///     let stream = ByteStream::from(vec![1,2,3]);
     ///     let stream = ByteStream::from(Bytes::from_static(b"hello!"));
     ///     ```
@@ -233,7 +233,7 @@ pin_project! {
     ///     ```no_run
     ///     #[cfg(feature = "tokio-rt")]
     ///     # {
-    ///     use aws_smithy_http::byte_stream::ByteStream;
+    ///     use aws_smithy_types::byte_stream::ByteStream;
     ///     let stream = ByteStream::from_path("big_file.csv");
     ///     # }
     ///     ```
@@ -242,8 +242,8 @@ pin_project! {
     /// from an SdkBody. **When created from an SdkBody, care must be taken to ensure retriability.** An SdkBody is retryable
     /// when constructed from in-memory data or when using [`SdkBody::retryable`](crate::body::SdkBody::retryable).
     ///     ```no_run
-    ///     use aws_smithy_http::byte_stream::ByteStream;
-    ///     use aws_smithy_http::body::SdkBody;
+    ///     use aws_smithy_types::byte_stream::ByteStream;
+    ///     use aws_smithy_types::body::SdkBody;
     ///     use bytes::Bytes;
     ///     let (mut tx, channel_body) = hyper::Body::channel();
     ///     // this will not be retryable because the SDK has no way to replay this stream
@@ -322,9 +322,9 @@ impl ByteStream {
     /// over the network. If a contiguous slice is required, use `into_bytes()`.
     /// ```no_run
     /// use bytes::Bytes;
-    /// use aws_smithy_http::body;
-    /// use aws_smithy_http::body::SdkBody;
-    /// use aws_smithy_http::byte_stream::{ByteStream, error::Error};
+    /// use aws_smithy_types::body;
+    /// use aws_smithy_types::body::SdkBody;
+    /// use aws_smithy_types::byte_stream::{ByteStream, error::Error};
     /// async fn get_data() {
     ///     let stream = ByteStream::new(SdkBody::from("hello!"));
     ///     let data: Result<Bytes, Error> = stream.collect().await.map(|data| data.into_bytes());
@@ -339,7 +339,7 @@ impl ByteStream {
     /// ```no_run
     /// # #[cfg(feature = "rt-tokio")]
     /// # {
-    /// use aws_smithy_http::byte_stream::{ByteStream, Length};
+    /// use aws_smithy_types::byte_stream::{ByteStream, Length};
     ///
     /// async fn bytestream_from_file() -> ByteStream {
     ///     let bytestream = ByteStream::read_from()
@@ -379,7 +379,7 @@ impl ByteStream {
     ///
     /// # Examples
     /// ```no_run
-    /// use aws_smithy_http::byte_stream::ByteStream;
+    /// use aws_smithy_types::byte_stream::ByteStream;
     /// use std::path::Path;
     ///  async fn make_bytestream() -> ByteStream {
     ///     ByteStream::from_path("docs/rows.csv").await.expect("file should be readable")
@@ -412,7 +412,7 @@ impl ByteStream {
     ///
     /// ```rust
     /// use tokio::io::{BufReader, AsyncBufReadExt};
-    /// use aws_smithy_http::byte_stream::ByteStream;
+    /// use aws_smithy_types::byte_stream::ByteStream;
     ///
     /// # async fn dox(my_bytestream: ByteStream) -> std::io::Result<()> {
     /// let mut lines =  BufReader::new(my_bytestream.into_async_read()).lines();
@@ -423,9 +423,20 @@ impl ByteStream {
     /// # }
     /// ```
     pub fn into_async_read(self) -> impl tokio::io::AsyncRead {
-        tokio_util::io::StreamReader::new(
-            crate::futures_stream_adapter::FuturesStreamCompatByteStream::new(self),
-        )
+        // The `Stream` trait is currently unstable so we can only use it in private.
+        // Here, we create a local struct just to enable the trait for `ByteStream` and pass it
+        // to `StreamReader`.
+        struct FuturesStreamCompatByteStream(ByteStream);
+        impl futures_core::stream::Stream for FuturesStreamCompatByteStream {
+            type Item = Result<Bytes, Error>;
+            fn poll_next(
+                mut self: Pin<&mut Self>,
+                cx: &mut Context<'_>,
+            ) -> Poll<Option<Self::Item>> {
+                Pin::new(&mut self.0).poll_next(cx)
+            }
+        }
+        tokio_util::io::StreamReader::new(FuturesStreamCompatByteStream(self))
     }
 
     /// Given a function to modify an [`SdkBody`], run it on the `SdkBody` inside this `Bytestream`.

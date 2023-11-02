@@ -3,8 +3,8 @@ pub fn ser_get_failback_replication_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("recoveryInstanceID").string(input.recovery_instance_id.as_str());
+    if let Some(var_1) = &input.recovery_instance_id {
+        object.key("recoveryInstanceID").string(var_1.as_str());
     }
     Ok(())
 }

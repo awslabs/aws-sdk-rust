@@ -175,6 +175,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopExperime
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.project;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("project", "cannot be empty or unset"))?;
                 let project = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if project.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -183,6 +186,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopExperime
                     ));
                 }
                 let input_2 = &_input.experiment;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("experiment", "cannot be empty or unset"))?;
                 let experiment = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if experiment.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

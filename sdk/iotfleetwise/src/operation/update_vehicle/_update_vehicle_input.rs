@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateVehicleInput {
     /// <p>The unique ID of the vehicle to update.</p>
-    pub vehicle_name: ::std::string::String,
+    pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
     pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the decoder manifest associated with this vehicle.</p>
@@ -18,9 +18,8 @@ pub struct UpdateVehicleInput {
 }
 impl UpdateVehicleInput {
     /// <p>The unique ID of the vehicle to update.</p>
-    pub fn vehicle_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vehicle_name.deref()
+    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+        self.vehicle_name.as_deref()
     }
     /// <p>The ARN of a vehicle model (model manifest) associated with the vehicle.</p>
     pub fn model_manifest_arn(&self) -> ::std::option::Option<&str> {
@@ -143,18 +142,11 @@ impl UpdateVehicleInputBuilder {
         &self.attribute_update_mode
     }
     /// Consumes the builder and constructs a [`UpdateVehicleInput`](crate::operation::update_vehicle::UpdateVehicleInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`vehicle_name`](crate::operation::update_vehicle::builders::UpdateVehicleInputBuilder::vehicle_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_vehicle::UpdateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_vehicle::UpdateVehicleInput {
-            vehicle_name: self.vehicle_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "vehicle_name",
-                    "vehicle_name was not specified but it is required when building UpdateVehicleInput",
-                )
-            })?,
+            vehicle_name: self.vehicle_name,
             model_manifest_arn: self.model_manifest_arn,
             decoder_manifest_arn: self.decoder_manifest_arn,
             attributes: self.attributes,

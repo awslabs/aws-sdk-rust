@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListApplicationsInput {
     /// <p>The ID of the environment. </p>
-    pub environment_identifier: ::std::string::String,
+    pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p>
@@ -12,9 +12,8 @@ pub struct ListApplicationsInput {
 }
 impl ListApplicationsInput {
     /// <p>The ID of the environment. </p>
-    pub fn environment_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_identifier.deref()
+    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_identifier.as_deref()
     }
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,18 +84,11 @@ impl ListApplicationsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListApplicationsInput`](crate::operation::list_applications::ListApplicationsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`environment_identifier`](crate::operation::list_applications::builders::ListApplicationsInputBuilder::environment_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_applications::ListApplicationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_applications::ListApplicationsInput {
-            environment_identifier: self.environment_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_identifier",
-                    "environment_identifier was not specified but it is required when building ListApplicationsInput",
-                )
-            })?,
+            environment_identifier: self.environment_identifier,
             next_token: self.next_token,
             max_results: self.max_results,
         })

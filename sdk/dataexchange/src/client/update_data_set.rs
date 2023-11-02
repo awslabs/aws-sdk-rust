@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDataSet`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_set_id(impl Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::data_set_id) / [`set_data_set_id(impl Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The unique identifier for a data set.</p><br>
+    ///   - [`data_set_id(impl Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The unique identifier for a data set.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::set_description):<br>required: **false**<br><p>The description for the data set.</p><br>
     ///   - [`name(impl Into<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_data_set::builders::UpdateDataSetFluentBuilder::set_name):<br>required: **false**<br><p>The name of the data set.</p><br>
     /// - On success, responds with [`UpdateDataSetOutput`](crate::operation::update_data_set::UpdateDataSetOutput) with field(s):

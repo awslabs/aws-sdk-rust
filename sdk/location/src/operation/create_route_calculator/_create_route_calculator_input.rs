@@ -10,7 +10,7 @@ pub struct CreateRouteCalculatorInput {
     /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
-    pub calculator_name: ::std::string::String,
+    pub calculator_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the data provider of traffic and road network data.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
     /// </note>
@@ -21,7 +21,7 @@ pub struct CreateRouteCalculatorInput {
     /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub data_source: ::std::string::String,
+    pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -51,9 +51,8 @@ impl CreateRouteCalculatorInput {
     /// <li> <p>Must be a unique Route calculator resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleRouteCalculator</code>.</p> </li>
     /// </ul>
-    pub fn calculator_name(&self) -> &str {
-        use std::ops::Deref;
-        self.calculator_name.deref()
+    pub fn calculator_name(&self) -> ::std::option::Option<&str> {
+        self.calculator_name.as_deref()
     }
     /// <p>Specifies the data provider of traffic and road network data.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
@@ -65,9 +64,8 @@ impl CreateRouteCalculatorInput {
     /// <li> <p> <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn data_source(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source.deref()
+    pub fn data_source(&self) -> ::std::option::Option<&str> {
+        self.data_source.as_deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -280,26 +278,13 @@ impl CreateRouteCalculatorInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRouteCalculatorInput`](crate::operation::create_route_calculator::CreateRouteCalculatorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`calculator_name`](crate::operation::create_route_calculator::builders::CreateRouteCalculatorInputBuilder::calculator_name)
-    /// - [`data_source`](crate::operation::create_route_calculator::builders::CreateRouteCalculatorInputBuilder::data_source)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_route_calculator::CreateRouteCalculatorInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_route_calculator::CreateRouteCalculatorInput {
-            calculator_name: self.calculator_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "calculator_name",
-                    "calculator_name was not specified but it is required when building CreateRouteCalculatorInput",
-                )
-            })?,
-            data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "data_source",
-                    "data_source was not specified but it is required when building CreateRouteCalculatorInput",
-                )
-            })?,
+            calculator_name: self.calculator_name,
+            data_source: self.data_source,
             pricing_plan: self.pricing_plan,
             description: self.description,
             tags: self.tags,

@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetListenerInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub service_identifier: ::std::string::String,
+    pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub listener_identifier: ::std::string::String,
+    pub listener_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetListenerInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.service_identifier.deref()
+    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+        self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.listener_identifier.deref()
+    pub fn listener_identifier(&self) -> ::std::option::Option<&str> {
+        self.listener_identifier.as_deref()
     }
 }
 impl GetListenerInput {
@@ -66,23 +64,10 @@ impl GetListenerInputBuilder {
         &self.listener_identifier
     }
     /// Consumes the builder and constructs a [`GetListenerInput`](crate::operation::get_listener::GetListenerInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`service_identifier`](crate::operation::get_listener::builders::GetListenerInputBuilder::service_identifier)
-    /// - [`listener_identifier`](crate::operation::get_listener::builders::GetListenerInputBuilder::listener_identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_listener::GetListenerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_listener::GetListenerInput {
-            service_identifier: self.service_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_identifier",
-                    "service_identifier was not specified but it is required when building GetListenerInput",
-                )
-            })?,
-            listener_identifier: self.listener_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "listener_identifier",
-                    "listener_identifier was not specified but it is required when building GetListenerInput",
-                )
-            })?,
+            service_identifier: self.service_identifier,
+            listener_identifier: self.listener_identifier,
         })
     }
 }

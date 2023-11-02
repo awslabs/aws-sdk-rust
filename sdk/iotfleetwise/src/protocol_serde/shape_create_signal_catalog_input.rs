@@ -3,35 +3,35 @@ pub fn ser_create_signal_catalog_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_signal_catalog::CreateSignalCatalogInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.nodes {
-        let mut array_3 = object.key("nodes").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.nodes {
+        let mut array_4 = object.key("nodes").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_node::ser_node(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_node::ser_node(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_6) = &input.tags {
-        let mut array_7 = object.key("tags").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.tags {
+        let mut array_8 = object.key("tags").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
     Ok(())
 }

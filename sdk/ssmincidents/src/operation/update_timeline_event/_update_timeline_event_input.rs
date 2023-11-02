@@ -6,9 +6,9 @@ pub struct UpdateTimelineEventInput {
     /// <p>A token that ensures that a client calls the operation only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub incident_record_arn: ::std::string::String,
+    pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
-    pub event_id: ::std::string::String,
+    pub event_id: ::std::option::Option<::std::string::String>,
     /// <p>The time that the event occurred.</p>
     pub event_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The type of event. You can update events of type <code>Custom Event</code>.</p>
@@ -26,14 +26,12 @@ impl UpdateTimelineEventInput {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.incident_record_arn.deref()
+    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
     }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
-    pub fn event_id(&self) -> &str {
-        use std::ops::Deref;
-        self.event_id.deref()
+    pub fn event_id(&self) -> ::std::option::Option<&str> {
+        self.event_id.as_deref()
     }
     /// <p>The time that the event occurred.</p>
     pub fn event_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -189,27 +187,14 @@ impl UpdateTimelineEventInputBuilder {
         &self.event_references
     }
     /// Consumes the builder and constructs a [`UpdateTimelineEventInput`](crate::operation::update_timeline_event::UpdateTimelineEventInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`incident_record_arn`](crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder::incident_record_arn)
-    /// - [`event_id`](crate::operation::update_timeline_event::builders::UpdateTimelineEventInputBuilder::event_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_timeline_event::UpdateTimelineEventInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_timeline_event::UpdateTimelineEventInput {
             client_token: self.client_token,
-            incident_record_arn: self.incident_record_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "incident_record_arn",
-                    "incident_record_arn was not specified but it is required when building UpdateTimelineEventInput",
-                )
-            })?,
-            event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "event_id",
-                    "event_id was not specified but it is required when building UpdateTimelineEventInput",
-                )
-            })?,
+            incident_record_arn: self.incident_record_arn,
+            event_id: self.event_id,
             event_time: self.event_time,
             event_type: self.event_type,
             event_data: self.event_data,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDataSet`](crate::operation::get_data_set::builders::GetDataSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`data_set_id(impl Into<String>)`](crate::operation::get_data_set::builders::GetDataSetFluentBuilder::data_set_id) / [`set_data_set_id(impl Into<String>)`](crate::operation::get_data_set::builders::GetDataSetFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The unique identifier for a data set.</p><br>
+    ///   - [`data_set_id(impl Into<String>)`](crate::operation::get_data_set::builders::GetDataSetFluentBuilder::data_set_id) / [`set_data_set_id(Option<String>)`](crate::operation::get_data_set::builders::GetDataSetFluentBuilder::set_data_set_id):<br>required: **true**<br><p>The unique identifier for a data set.</p><br>
     /// - On success, responds with [`GetDataSetOutput`](crate::operation::get_data_set::GetDataSetOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_data_set::GetDataSetOutput::arn): <p>The ARN for the data set.</p>
     ///   - [`asset_type(Option<AssetType>)`](crate::operation::get_data_set::GetDataSetOutput::asset_type): <p>The type of asset that is added to a data set.</p>

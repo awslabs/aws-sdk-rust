@@ -464,7 +464,7 @@ mod tests {
                 .unwrap();
             let token = identity.data::<Token>().unwrap().clone();
             assert_eq!(value, token.token());
-            assert_eq!(time(expires_at), *identity.expiration().unwrap());
+            assert_eq!(time(expires_at), identity.expiration().unwrap());
         }
 
         async fn expect_expired_token_err(&self) {

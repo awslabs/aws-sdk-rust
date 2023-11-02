@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceNetworkInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub service_network_identifier: ::std::string::String,
+    pub service_network_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceNetworkInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network.</p>
-    pub fn service_network_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.service_network_identifier.deref()
+    pub fn service_network_identifier(&self) -> ::std::option::Option<&str> {
+        self.service_network_identifier.as_deref()
     }
 }
 impl GetServiceNetworkInput {
@@ -43,18 +42,11 @@ impl GetServiceNetworkInputBuilder {
         &self.service_network_identifier
     }
     /// Consumes the builder and constructs a [`GetServiceNetworkInput`](crate::operation::get_service_network::GetServiceNetworkInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`service_network_identifier`](crate::operation::get_service_network::builders::GetServiceNetworkInputBuilder::service_network_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_service_network::GetServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_service_network::GetServiceNetworkInput {
-            service_network_identifier: self.service_network_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_network_identifier",
-                    "service_network_identifier was not specified but it is required when building GetServiceNetworkInput",
-                )
-            })?,
+            service_network_identifier: self.service_network_identifier,
         })
     }
 }

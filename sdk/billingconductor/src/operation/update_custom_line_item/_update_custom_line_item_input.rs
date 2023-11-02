@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateCustomLineItemInput {
     /// <p> The ARN of the custom line item to be updated. </p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The new name for the custom line item. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The new line item description of the custom line item. </p>
@@ -16,9 +16,8 @@ pub struct UpdateCustomLineItemInput {
 }
 impl UpdateCustomLineItemInput {
     /// <p> The ARN of the custom line item to be updated. </p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p> The new name for the custom line item. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -138,19 +137,12 @@ impl UpdateCustomLineItemInputBuilder {
         &self.billing_period_range
     }
     /// Consumes the builder and constructs a [`UpdateCustomLineItemInput`](crate::operation::update_custom_line_item::UpdateCustomLineItemInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::update_custom_line_item::builders::UpdateCustomLineItemInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_custom_line_item::UpdateCustomLineItemInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_custom_line_item::UpdateCustomLineItemInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building UpdateCustomLineItemInput",
-                )
-            })?,
+            arn: self.arn,
             name: self.name,
             description: self.description,
             charge_details: self.charge_details,

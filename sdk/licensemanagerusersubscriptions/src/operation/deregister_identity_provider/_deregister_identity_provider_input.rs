@@ -6,7 +6,7 @@ pub struct DeregisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
-    pub product: ::std::string::String,
+    pub product: ::std::option::Option<::std::string::String>,
 }
 impl DeregisterIdentityProviderInput {
     /// <p>An object that specifies details for the identity provider.</p>
@@ -14,9 +14,8 @@ impl DeregisterIdentityProviderInput {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> &str {
-        use std::ops::Deref;
-        self.product.deref()
+    pub fn product(&self) -> ::std::option::Option<&str> {
+        self.product.as_deref()
     }
 }
 impl DeregisterIdentityProviderInput {
@@ -65,8 +64,6 @@ impl DeregisterIdentityProviderInputBuilder {
         &self.product
     }
     /// Consumes the builder and constructs a [`DeregisterIdentityProviderInput`](crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`product`](crate::operation::deregister_identity_provider::builders::DeregisterIdentityProviderInputBuilder::product)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -75,12 +72,7 @@ impl DeregisterIdentityProviderInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::deregister_identity_provider::DeregisterIdentityProviderInput {
             identity_provider: self.identity_provider,
-            product: self.product.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "product",
-                    "product was not specified but it is required when building DeregisterIdentityProviderInput",
-                )
-            })?,
+            product: self.product,
         })
     }
 }

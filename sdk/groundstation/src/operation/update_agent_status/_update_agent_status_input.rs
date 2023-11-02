@@ -4,33 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAgentStatusInput {
     /// <p>UUID of agent to update.</p>
-    pub agent_id: ::std::string::String,
+    pub agent_id: ::std::option::Option<::std::string::String>,
     /// <p>GUID of agent task.</p>
-    pub task_id: ::std::string::String,
+    pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>Aggregate status for agent.</p>
     pub aggregate_status: ::std::option::Option<crate::types::AggregateStatus>,
     /// <p>List of component statuses for agent.</p>
-    pub component_statuses: ::std::vec::Vec<crate::types::ComponentStatusData>,
+    pub component_statuses: ::std::option::Option<::std::vec::Vec<crate::types::ComponentStatusData>>,
 }
 impl UpdateAgentStatusInput {
     /// <p>UUID of agent to update.</p>
-    pub fn agent_id(&self) -> &str {
-        use std::ops::Deref;
-        self.agent_id.deref()
+    pub fn agent_id(&self) -> ::std::option::Option<&str> {
+        self.agent_id.as_deref()
     }
     /// <p>GUID of agent task.</p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> ::std::option::Option<&str> {
+        self.task_id.as_deref()
     }
     /// <p>Aggregate status for agent.</p>
     pub fn aggregate_status(&self) -> ::std::option::Option<&crate::types::AggregateStatus> {
         self.aggregate_status.as_ref()
     }
     /// <p>List of component statuses for agent.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.component_statuses.is_none()`.
     pub fn component_statuses(&self) -> &[crate::types::ComponentStatusData] {
-        use std::ops::Deref;
-        self.component_statuses.deref()
+        self.component_statuses.as_deref().unwrap_or_default()
     }
 }
 impl UpdateAgentStatusInput {
@@ -116,33 +115,14 @@ impl UpdateAgentStatusInputBuilder {
         &self.component_statuses
     }
     /// Consumes the builder and constructs a [`UpdateAgentStatusInput`](crate::operation::update_agent_status::UpdateAgentStatusInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`agent_id`](crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder::agent_id)
-    /// - [`task_id`](crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder::task_id)
-    /// - [`component_statuses`](crate::operation::update_agent_status::builders::UpdateAgentStatusInputBuilder::component_statuses)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_agent_status::UpdateAgentStatusInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_agent_status::UpdateAgentStatusInput {
-            agent_id: self.agent_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "agent_id",
-                    "agent_id was not specified but it is required when building UpdateAgentStatusInput",
-                )
-            })?,
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building UpdateAgentStatusInput",
-                )
-            })?,
+            agent_id: self.agent_id,
+            task_id: self.task_id,
             aggregate_status: self.aggregate_status,
-            component_statuses: self.component_statuses.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "component_statuses",
-                    "component_statuses was not specified but it is required when building UpdateAgentStatusInput",
-                )
-            })?,
+            component_statuses: self.component_statuses,
         })
     }
 }

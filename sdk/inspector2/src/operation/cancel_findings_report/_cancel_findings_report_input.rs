@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelFindingsReportInput {
     /// <p>The ID of the report to be canceled.</p>
-    pub report_id: ::std::string::String,
+    pub report_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelFindingsReportInput {
     /// <p>The ID of the report to be canceled.</p>
-    pub fn report_id(&self) -> &str {
-        use std::ops::Deref;
-        self.report_id.deref()
+    pub fn report_id(&self) -> ::std::option::Option<&str> {
+        self.report_id.as_deref()
     }
 }
 impl CancelFindingsReportInput {
@@ -43,19 +42,10 @@ impl CancelFindingsReportInputBuilder {
         &self.report_id
     }
     /// Consumes the builder and constructs a [`CancelFindingsReportInput`](crate::operation::cancel_findings_report::CancelFindingsReportInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`report_id`](crate::operation::cancel_findings_report::builders::CancelFindingsReportInputBuilder::report_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::cancel_findings_report::CancelFindingsReportInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::cancel_findings_report::CancelFindingsReportInput {
-            report_id: self.report_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "report_id",
-                    "report_id was not specified but it is required when building CancelFindingsReportInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::cancel_findings_report::CancelFindingsReportInput { report_id: self.report_id })
     }
 }

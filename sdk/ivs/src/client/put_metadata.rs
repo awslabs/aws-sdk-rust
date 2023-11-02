@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutMetadata`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_arn(impl Into<String>)`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder::channel_arn) / [`set_channel_arn(impl Into<String>)`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder::set_channel_arn):<br>required: **true**<br><p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p><br>
-    ///   - [`metadata(impl Into<String>)`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder::metadata) / [`set_metadata(impl Into<String>)`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder::set_metadata):<br>required: **true**<br><p>Metadata to insert into the stream. Maximum: 1 KB per request.</p><br>
+    ///   - [`channel_arn(impl Into<String>)`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder::channel_arn) / [`set_channel_arn(Option<String>)`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder::set_channel_arn):<br>required: **true**<br><p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p><br>
+    ///   - [`metadata(impl Into<String>)`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder::metadata) / [`set_metadata(Option<String>)`](crate::operation::put_metadata::builders::PutMetadataFluentBuilder::set_metadata):<br>required: **true**<br><p>Metadata to insert into the stream. Maximum: 1 KB per request.</p><br>
     /// - On success, responds with [`PutMetadataOutput`](crate::operation::put_metadata::PutMetadataOutput)
     /// - On failure, responds with [`SdkError<PutMetadataError>`](crate::operation::put_metadata::PutMetadataError)
     pub fn put_metadata(&self) -> crate::operation::put_metadata::builders::PutMetadataFluentBuilder {

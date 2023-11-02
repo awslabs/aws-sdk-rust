@@ -4,30 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateFeatureInput {
     /// <p>The name or ARN of the project that contains this feature.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature being evaluated.</p>
-    pub feature: ::std::string::String,
+    pub feature: ::std::option::Option<::std::string::String>,
     /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
-    pub entity_id: ::std::string::String,
+    pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
     /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
     pub evaluation_context: ::std::option::Option<::std::string::String>,
 }
 impl EvaluateFeatureInput {
     /// <p>The name or ARN of the project that contains this feature.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name of the feature being evaluated.</p>
-    pub fn feature(&self) -> &str {
-        use std::ops::Deref;
-        self.feature.deref()
+    pub fn feature(&self) -> ::std::option::Option<&str> {
+        self.feature.as_deref()
     }
     /// <p>An internal ID that represents a unique user of the application. This <code>entityID</code> is checked against any override rules assigned for this feature.</p>
-    pub fn entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id.deref()
+    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+        self.entity_id.as_deref()
     }
     /// <p>A JSON object of attributes that you can optionally pass in as part of the evaluation event sent to Evidently from the user session. Evidently can use this value to match user sessions with defined audience segments. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p>
     /// <p>If you include this parameter, the value must be a JSON object. A JSON array is not supported.</p>
@@ -115,32 +112,13 @@ impl EvaluateFeatureInputBuilder {
         &self.evaluation_context
     }
     /// Consumes the builder and constructs a [`EvaluateFeatureInput`](crate::operation::evaluate_feature::EvaluateFeatureInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::evaluate_feature::builders::EvaluateFeatureInputBuilder::project)
-    /// - [`feature`](crate::operation::evaluate_feature::builders::EvaluateFeatureInputBuilder::feature)
-    /// - [`entity_id`](crate::operation::evaluate_feature::builders::EvaluateFeatureInputBuilder::entity_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::evaluate_feature::EvaluateFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_feature::EvaluateFeatureInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building EvaluateFeatureInput",
-                )
-            })?,
-            feature: self.feature.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "feature",
-                    "feature was not specified but it is required when building EvaluateFeatureInput",
-                )
-            })?,
-            entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "entity_id",
-                    "entity_id was not specified but it is required when building EvaluateFeatureInput",
-                )
-            })?,
+            project: self.project,
+            feature: self.feature,
+            entity_id: self.entity_id,
             evaluation_context: self.evaluation_context,
         })
     }

@@ -6,14 +6,14 @@ pub fn ser_update_application_input(
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    {
-        object.key("applicationID").string(input.application_id.as_str());
+    if let Some(var_2) = &input.application_id {
+        object.key("applicationID").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
     Ok(())
 }

@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVodSourcesInput {
     /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source location associated with this VOD Source list.</p>
-    pub source_location_name: ::std::string::String,
+    pub source_location_name: ::std::option::Option<::std::string::String>,
 }
 impl ListVodSourcesInput {
     /// <p> The maximum number of VOD sources that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> VOD sources, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
@@ -20,9 +20,8 @@ impl ListVodSourcesInput {
         self.next_token.as_deref()
     }
     /// <p>The name of the source location associated with this VOD Source list.</p>
-    pub fn source_location_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_location_name.deref()
+    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+        self.source_location_name.as_deref()
     }
 }
 impl ListVodSourcesInput {
@@ -85,20 +84,13 @@ impl ListVodSourcesInputBuilder {
         &self.source_location_name
     }
     /// Consumes the builder and constructs a [`ListVodSourcesInput`](crate::operation::list_vod_sources::ListVodSourcesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_location_name`](crate::operation::list_vod_sources::builders::ListVodSourcesInputBuilder::source_location_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_vod_sources::ListVodSourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_vod_sources::ListVodSourcesInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
-            source_location_name: self.source_location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_location_name",
-                    "source_location_name was not specified but it is required when building ListVodSourcesInput",
-                )
-            })?,
+            source_location_name: self.source_location_name,
         })
     }
 }

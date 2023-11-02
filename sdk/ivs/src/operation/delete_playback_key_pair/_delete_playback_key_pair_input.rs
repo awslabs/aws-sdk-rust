@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePlaybackKeyPairInput {
     /// <p>ARN of the key pair to be deleted.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeletePlaybackKeyPairInput {
     /// <p>ARN of the key pair to be deleted.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl DeletePlaybackKeyPairInput {
@@ -43,19 +42,10 @@ impl DeletePlaybackKeyPairInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeletePlaybackKeyPairInput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DeletePlaybackKeyPairInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairInput { arn: self.arn })
     }
 }

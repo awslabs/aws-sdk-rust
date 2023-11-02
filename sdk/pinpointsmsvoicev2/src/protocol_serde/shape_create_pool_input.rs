@@ -3,32 +3,32 @@ pub fn ser_create_pool_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_pool::CreatePoolInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("OriginationIdentity").string(input.origination_identity.as_str());
+    if let Some(var_1) = &input.origination_identity {
+        object.key("OriginationIdentity").string(var_1.as_str());
     }
-    {
-        object.key("IsoCountryCode").string(input.iso_country_code.as_str());
+    if let Some(var_2) = &input.iso_country_code {
+        object.key("IsoCountryCode").string(var_2.as_str());
     }
-    {
-        object.key("MessageType").string(input.message_type.as_str());
+    if let Some(var_3) = &input.message_type {
+        object.key("MessageType").string(var_3.as_str());
     }
-    if let Some(var_1) = &input.deletion_protection_enabled {
-        object.key("DeletionProtectionEnabled").boolean(*var_1);
+    if let Some(var_4) = &input.deletion_protection_enabled {
+        object.key("DeletionProtectionEnabled").boolean(*var_4);
     }
-    if let Some(var_2) = &input.tags {
-        let mut array_3 = object.key("Tags").start_array();
-        for item_4 in var_2 {
+    if let Some(var_5) = &input.tags {
+        let mut array_6 = object.key("Tags").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_3.finish();
+        array_6.finish();
     }
-    if let Some(var_6) = &input.client_token {
-        object.key("ClientToken").string(var_6.as_str());
+    if let Some(var_9) = &input.client_token {
+        object.key("ClientToken").string(var_9.as_str());
     }
     Ok(())
 }

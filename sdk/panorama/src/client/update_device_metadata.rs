@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateDeviceMetadata`](crate::operation::update_device_metadata::builders::UpdateDeviceMetadataFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_id(impl Into<String>)`](crate::operation::update_device_metadata::builders::UpdateDeviceMetadataFluentBuilder::device_id) / [`set_device_id(impl Into<String>)`](crate::operation::update_device_metadata::builders::UpdateDeviceMetadataFluentBuilder::set_device_id):<br>required: **true**<br><p>The device's ID.</p><br>
+    ///   - [`device_id(impl Into<String>)`](crate::operation::update_device_metadata::builders::UpdateDeviceMetadataFluentBuilder::device_id) / [`set_device_id(Option<String>)`](crate::operation::update_device_metadata::builders::UpdateDeviceMetadataFluentBuilder::set_device_id):<br>required: **true**<br><p>The device's ID.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::update_device_metadata::builders::UpdateDeviceMetadataFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_device_metadata::builders::UpdateDeviceMetadataFluentBuilder::set_description):<br>required: **false**<br><p>A description for the device.</p><br>
     /// - On success, responds with [`UpdateDeviceMetadataOutput`](crate::operation::update_device_metadata::UpdateDeviceMetadataOutput) with field(s):
     ///   - [`device_id(Option<String>)`](crate::operation::update_device_metadata::UpdateDeviceMetadataOutput::device_id): <p>The device's ID.</p>

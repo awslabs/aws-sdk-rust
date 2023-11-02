@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityPoliciesInput {
     /// <p>The type of policy.</p>
-    pub r#type: crate::types::SecurityPolicyType,
+    pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     /// <p>Resource filters (can be collection or indexes) that policies can apply to. </p>
     pub resource: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If your initial <code>ListSecurityPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityPolicies</code> operations, which returns results in the next page. </p>
@@ -14,8 +14,8 @@ pub struct ListSecurityPoliciesInput {
 }
 impl ListSecurityPoliciesInput {
     /// <p>The type of policy.</p>
-    pub fn r#type(&self) -> &crate::types::SecurityPolicyType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityPolicyType> {
+        self.r#type.as_ref()
     }
     /// <p>Resource filters (can be collection or indexes) that policies can apply to. </p>
     ///
@@ -113,19 +113,12 @@ impl ListSecurityPoliciesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSecurityPoliciesInput`](crate::operation::list_security_policies::ListSecurityPoliciesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::operation::list_security_policies::builders::ListSecurityPoliciesInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_security_policies::ListSecurityPoliciesInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_security_policies::ListSecurityPoliciesInput {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ListSecurityPoliciesInput",
-                )
-            })?,
+            r#type: self.r#type,
             resource: self.resource,
             next_token: self.next_token,
             max_results: self.max_results,

@@ -3,23 +3,23 @@ pub fn ser_batch_create_rum_metric_definitions_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("Destination").string(input.destination.as_str());
+    if let Some(var_1) = &input.destination {
+        object.key("Destination").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.destination_arn {
-        object.key("DestinationArn").string(var_1.as_str());
+    if let Some(var_2) = &input.destination_arn {
+        object.key("DestinationArn").string(var_2.as_str());
     }
-    {
-        let mut array_2 = object.key("MetricDefinitions").start_array();
-        for item_3 in &input.metric_definitions {
+    if let Some(var_3) = &input.metric_definitions {
+        let mut array_4 = object.key("MetricDefinitions").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_metric_definition_request::ser_metric_definition_request(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_metric_definition_request::ser_metric_definition_request(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
     Ok(())
 }

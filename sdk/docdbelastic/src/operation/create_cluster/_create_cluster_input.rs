@@ -11,9 +11,9 @@ pub struct CreateClusterInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p> <i>Example</i>: <code>my-cluster</code> </p>
-    pub cluster_name: ::std::string::String,
+    pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
-    pub auth_type: crate::types::Auth,
+    pub auth_type: ::std::option::Option<crate::types::Auth>,
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
     /// <p> <i>Constraints</i>:</p>
     /// <ul>
@@ -21,18 +21,18 @@ pub struct CreateClusterInput {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
-    pub admin_user_name: ::std::string::String,
+    pub admin_user_name: ::std::option::Option<::std::string::String>,
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
     /// <p> <i>Constraints</i>:</p>
     /// <ul>
     /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
     /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
-    pub admin_user_password: ::std::string::String,
+    pub admin_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The capacity of each shard in the new Elastic DocumentDB cluster.</p>
-    pub shard_capacity: i32,
+    pub shard_capacity: ::std::option::Option<i32>,
     /// <p>The number of shards to create in the new Elastic DocumentDB cluster.</p>
-    pub shard_count: i32,
+    pub shard_count: ::std::option::Option<i32>,
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon EC2 subnet IDs for the new Elastic DocumentDB cluster.</p>
@@ -61,13 +61,12 @@ impl CreateClusterInput {
     /// <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p> </li>
     /// </ul>
     /// <p> <i>Example</i>: <code>my-cluster</code> </p>
-    pub fn cluster_name(&self) -> &str {
-        use std::ops::Deref;
-        self.cluster_name.deref()
+    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+        self.cluster_name.as_deref()
     }
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
-    pub fn auth_type(&self) -> &crate::types::Auth {
-        &self.auth_type
+    pub fn auth_type(&self) -> ::std::option::Option<&crate::types::Auth> {
+        self.auth_type.as_ref()
     }
     /// <p>The name of the Elastic DocumentDB cluster administrator.</p>
     /// <p> <i>Constraints</i>:</p>
@@ -76,9 +75,8 @@ impl CreateClusterInput {
     /// <li> <p>The first character must be a letter.</p> </li>
     /// <li> <p>Cannot be a reserved word.</p> </li>
     /// </ul>
-    pub fn admin_user_name(&self) -> &str {
-        use std::ops::Deref;
-        self.admin_user_name.deref()
+    pub fn admin_user_name(&self) -> ::std::option::Option<&str> {
+        self.admin_user_name.as_deref()
     }
     /// <p>The password for the Elastic DocumentDB cluster administrator and can contain any printable ASCII characters.</p>
     /// <p> <i>Constraints</i>:</p>
@@ -86,16 +84,15 @@ impl CreateClusterInput {
     /// <li> <p>Must contain from 8 to 100 characters.</p> </li>
     /// <li> <p>Cannot contain a forward slash (/), double quote ("), or the "at" symbol (@).</p> </li>
     /// </ul>
-    pub fn admin_user_password(&self) -> &str {
-        use std::ops::Deref;
-        self.admin_user_password.deref()
+    pub fn admin_user_password(&self) -> ::std::option::Option<&str> {
+        self.admin_user_password.as_deref()
     }
     /// <p>The capacity of each shard in the new Elastic DocumentDB cluster.</p>
-    pub fn shard_capacity(&self) -> i32 {
+    pub fn shard_capacity(&self) -> ::std::option::Option<i32> {
         self.shard_capacity
     }
     /// <p>The number of shards to create in the new Elastic DocumentDB cluster.</p>
-    pub fn shard_count(&self) -> i32 {
+    pub fn shard_count(&self) -> ::std::option::Option<i32> {
         self.shard_count
     }
     /// <p>A list of EC2 VPC security groups to associate with the new Elastic DocumentDB cluster.</p>
@@ -441,53 +438,16 @@ impl CreateClusterInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateClusterInput`](crate::operation::create_cluster::CreateClusterInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`cluster_name`](crate::operation::create_cluster::builders::CreateClusterInputBuilder::cluster_name)
-    /// - [`auth_type`](crate::operation::create_cluster::builders::CreateClusterInputBuilder::auth_type)
-    /// - [`admin_user_name`](crate::operation::create_cluster::builders::CreateClusterInputBuilder::admin_user_name)
-    /// - [`admin_user_password`](crate::operation::create_cluster::builders::CreateClusterInputBuilder::admin_user_password)
-    /// - [`shard_capacity`](crate::operation::create_cluster::builders::CreateClusterInputBuilder::shard_capacity)
-    /// - [`shard_count`](crate::operation::create_cluster::builders::CreateClusterInputBuilder::shard_count)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_cluster::CreateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_cluster::CreateClusterInput {
-            cluster_name: self.cluster_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "cluster_name",
-                    "cluster_name was not specified but it is required when building CreateClusterInput",
-                )
-            })?,
-            auth_type: self.auth_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "auth_type",
-                    "auth_type was not specified but it is required when building CreateClusterInput",
-                )
-            })?,
-            admin_user_name: self.admin_user_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "admin_user_name",
-                    "admin_user_name was not specified but it is required when building CreateClusterInput",
-                )
-            })?,
-            admin_user_password: self.admin_user_password.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "admin_user_password",
-                    "admin_user_password was not specified but it is required when building CreateClusterInput",
-                )
-            })?,
-            shard_capacity: self.shard_capacity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "shard_capacity",
-                    "shard_capacity was not specified but it is required when building CreateClusterInput",
-                )
-            })?,
-            shard_count: self.shard_count.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "shard_count",
-                    "shard_count was not specified but it is required when building CreateClusterInput",
-                )
-            })?,
+            cluster_name: self.cluster_name,
+            auth_type: self.auth_type,
+            admin_user_name: self.admin_user_name,
+            admin_user_password: self.admin_user_password,
+            shard_capacity: self.shard_capacity,
+            shard_count: self.shard_count,
             vpc_security_group_ids: self.vpc_security_group_ids,
             subnet_ids: self.subnet_ids,
             kms_key_id: self.kms_key_id,

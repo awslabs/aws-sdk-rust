@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEnvironmentInput {
     /// <p>The ID of the environment.</p>
-    pub environment_identifier: ::std::string::String,
+    pub environment_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetEnvironmentInput {
     /// <p>The ID of the environment.</p>
-    pub fn environment_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_identifier.deref()
+    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_identifier.as_deref()
     }
 }
 impl GetEnvironmentInput {
@@ -43,18 +42,11 @@ impl GetEnvironmentInputBuilder {
         &self.environment_identifier
     }
     /// Consumes the builder and constructs a [`GetEnvironmentInput`](crate::operation::get_environment::GetEnvironmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`environment_identifier`](crate::operation::get_environment::builders::GetEnvironmentInputBuilder::environment_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_environment::GetEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_environment::GetEnvironmentInput {
-            environment_identifier: self.environment_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_identifier",
-                    "environment_identifier was not specified but it is required when building GetEnvironmentInput",
-                )
-            })?,
+            environment_identifier: self.environment_identifier,
         })
     }
 }

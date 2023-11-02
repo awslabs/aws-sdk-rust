@@ -12,36 +12,36 @@ pub fn ser_create_room_input(
         }
         array_2.finish();
     }
-    if input.maximum_message_length != 0 {
+    if let Some(var_4) = &input.maximum_message_length {
         object.key("maximumMessageLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.maximum_message_length).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if input.maximum_message_rate_per_second != 0 {
+    if let Some(var_5) = &input.maximum_message_rate_per_second {
         object.key("maximumMessageRatePerSecond").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.maximum_message_rate_per_second).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_4) = &input.message_review_handler {
+    if let Some(var_6) = &input.message_review_handler {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("messageReviewHandler").start_object();
-        crate::protocol_serde::shape_message_review_handler::ser_message_review_handler(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_7 = object.key("messageReviewHandler").start_object();
+        crate::protocol_serde::shape_message_review_handler::ser_message_review_handler(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("name").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_8.finish();
+        object_10.finish();
     }
     Ok(())
 }

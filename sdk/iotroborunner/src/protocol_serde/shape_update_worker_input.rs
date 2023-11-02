@@ -9,29 +9,29 @@ pub fn ser_update_worker_input(
     if let Some(var_2) = &input.additional_transient_properties {
         object.key("additionalTransientProperties").string(var_2.as_str());
     }
-    {
-        object.key("id").string(input.id.as_str());
+    if let Some(var_3) = &input.id {
+        object.key("id").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.name {
-        object.key("name").string(var_3.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.orientation {
+    if let Some(var_5) = &input.orientation {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("orientation").start_object();
-        crate::protocol_serde::shape_orientation::ser_orientation(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("orientation").start_object();
+        crate::protocol_serde::shape_orientation::ser_orientation(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.position {
+    if let Some(var_7) = &input.position {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("position").start_object();
-        crate::protocol_serde::shape_position_coordinates::ser_position_coordinates(&mut object_7, var_6)?;
-        object_7.finish();
+        let mut object_8 = object.key("position").start_object();
+        crate::protocol_serde::shape_position_coordinates::ser_position_coordinates(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_8) = &input.vendor_properties {
+    if let Some(var_9) = &input.vendor_properties {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("vendorProperties").start_object();
-        crate::protocol_serde::shape_vendor_properties::ser_vendor_properties(&mut object_9, var_8)?;
-        object_9.finish();
+        let mut object_10 = object.key("vendorProperties").start_object();
+        crate::protocol_serde::shape_vendor_properties::ser_vendor_properties(&mut object_10, var_9)?;
+        object_10.finish();
     }
     Ok(())
 }

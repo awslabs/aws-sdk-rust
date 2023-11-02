@@ -3,34 +3,34 @@ pub fn ser_reserve_contact_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reserve_contact::ReserveContactInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.end_time {
         object
             .key("endTime")
-            .date_time(&input.end_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    {
-        object.key("groundStation").string(input.ground_station.as_str());
+    if let Some(var_2) = &input.ground_station {
+        object.key("groundStation").string(var_2.as_str());
     }
-    {
-        object.key("missionProfileArn").string(input.mission_profile_arn.as_str());
+    if let Some(var_3) = &input.mission_profile_arn {
+        object.key("missionProfileArn").string(var_3.as_str());
     }
-    {
-        object.key("satelliteArn").string(input.satellite_arn.as_str());
+    if let Some(var_4) = &input.satellite_arn {
+        object.key("satelliteArn").string(var_4.as_str());
     }
-    {
+    if let Some(var_5) = &input.start_time {
         object
             .key("startTime")
-            .date_time(&input.start_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_1) = &input.tags {
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("tags").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_2.key(key_3.as_str()).string(value_4.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_2.finish();
+        object_7.finish();
     }
     Ok(())
 }

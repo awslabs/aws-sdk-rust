@@ -5,28 +5,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateArchiveRuleInput {
     /// <p>The name of the created analyzer.</p>
-    pub analyzer_name: ::std::string::String,
+    pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule to create.</p>
-    pub rule_name: ::std::string::String,
+    pub rule_name: ::std::option::Option<::std::string::String>,
     /// <p>The criteria for the rule.</p>
-    pub filter: ::std::collections::HashMap<::std::string::String, crate::types::Criterion>,
+    pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateArchiveRuleInput {
     /// <p>The name of the created analyzer.</p>
-    pub fn analyzer_name(&self) -> &str {
-        use std::ops::Deref;
-        self.analyzer_name.deref()
+    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
+        self.analyzer_name.as_deref()
     }
     /// <p>The name of the rule to create.</p>
-    pub fn rule_name(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_name.deref()
+    pub fn rule_name(&self) -> ::std::option::Option<&str> {
+        self.rule_name.as_deref()
     }
     /// <p>The criteria for the rule.</p>
-    pub fn filter(&self) -> &::std::collections::HashMap<::std::string::String, crate::types::Criterion> {
-        &self.filter
+    pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
+        self.filter.as_ref()
     }
     /// <p>A client token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -115,32 +113,13 @@ impl CreateArchiveRuleInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateArchiveRuleInput`](crate::operation::create_archive_rule::CreateArchiveRuleInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`analyzer_name`](crate::operation::create_archive_rule::builders::CreateArchiveRuleInputBuilder::analyzer_name)
-    /// - [`rule_name`](crate::operation::create_archive_rule::builders::CreateArchiveRuleInputBuilder::rule_name)
-    /// - [`filter`](crate::operation::create_archive_rule::builders::CreateArchiveRuleInputBuilder::filter)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_archive_rule::CreateArchiveRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_archive_rule::CreateArchiveRuleInput {
-            analyzer_name: self.analyzer_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "analyzer_name",
-                    "analyzer_name was not specified but it is required when building CreateArchiveRuleInput",
-                )
-            })?,
-            rule_name: self.rule_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "rule_name",
-                    "rule_name was not specified but it is required when building CreateArchiveRuleInput",
-                )
-            })?,
-            filter: self.filter.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "filter",
-                    "filter was not specified but it is required when building CreateArchiveRuleInput",
-                )
-            })?,
+            analyzer_name: self.analyzer_name,
+            rule_name: self.rule_name,
+            filter: self.filter,
             client_token: self.client_token,
         })
     }

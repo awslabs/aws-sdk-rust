@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceTemplateInput {
     /// <p>The name of the service template that you want to get detailed data for.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceTemplateInput {
     /// <p>The name of the service template that you want to get detailed data for.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl GetServiceTemplateInput {
@@ -43,18 +42,9 @@ impl GetServiceTemplateInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetServiceTemplateInput`](crate::operation::get_service_template::GetServiceTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::get_service_template::builders::GetServiceTemplateInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_service_template::GetServiceTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_service_template::GetServiceTemplateInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetServiceTemplateInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_service_template::GetServiceTemplateInput { name: self.name })
     }
 }

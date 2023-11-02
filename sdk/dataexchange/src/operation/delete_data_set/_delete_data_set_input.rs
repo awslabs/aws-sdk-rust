@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDataSetInput {
     /// <p>The unique identifier for a data set.</p>
-    pub data_set_id: ::std::string::String,
+    pub data_set_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDataSetInput {
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+        self.data_set_id.as_deref()
     }
 }
 impl DeleteDataSetInput {
@@ -43,18 +42,11 @@ impl DeleteDataSetInputBuilder {
         &self.data_set_id
     }
     /// Consumes the builder and constructs a [`DeleteDataSetInput`](crate::operation::delete_data_set::DeleteDataSetInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`data_set_id`](crate::operation::delete_data_set::builders::DeleteDataSetInputBuilder::data_set_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_data_set::DeleteDataSetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_data_set::DeleteDataSetInput {
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building DeleteDataSetInput",
-                )
-            })?,
+            data_set_id: self.data_set_id,
         })
     }
 }

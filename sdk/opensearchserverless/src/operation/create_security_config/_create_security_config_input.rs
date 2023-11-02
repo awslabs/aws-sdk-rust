@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSecurityConfigInput {
     /// <p>The type of security configuration.</p>
-    pub r#type: crate::types::SecurityConfigType,
+    pub r#type: ::std::option::Option<crate::types::SecurityConfigType>,
     /// <p>The name of the security configuration.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the security configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Describes SAML options in in the form of a key-value map. This field is required if you specify <code>saml</code> for the <code>type</code> parameter.</p>
@@ -16,13 +16,12 @@ pub struct CreateSecurityConfigInput {
 }
 impl CreateSecurityConfigInput {
     /// <p>The type of security configuration.</p>
-    pub fn r#type(&self) -> &crate::types::SecurityConfigType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityConfigType> {
+        self.r#type.as_ref()
     }
     /// <p>The name of the security configuration.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A description of the security configuration.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -128,26 +127,13 @@ impl CreateSecurityConfigInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateSecurityConfigInput`](crate::operation::create_security_config::CreateSecurityConfigInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::operation::create_security_config::builders::CreateSecurityConfigInputBuilder::r#type)
-    /// - [`name`](crate::operation::create_security_config::builders::CreateSecurityConfigInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_security_config::CreateSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_security_config::CreateSecurityConfigInput {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CreateSecurityConfigInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateSecurityConfigInput",
-                )
-            })?,
+            r#type: self.r#type,
+            name: self.name,
             description: self.description,
             saml_options: self.saml_options,
             client_token: self.client_token,

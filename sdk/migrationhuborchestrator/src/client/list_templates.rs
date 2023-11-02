@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`max_results(i32)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that can be returned.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_max_results):<br>required: **false**<br><p>The maximum number of results that can be returned.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_next_token):<br>required: **false**<br><p>The pagination token.</p><br>
     ///   - [`name(impl Into<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::list_templates::builders::ListTemplatesFluentBuilder::set_name):<br>required: **false**<br><p>The name of the template.</p><br>
     /// - On success, responds with [`ListTemplatesOutput`](crate::operation::list_templates::ListTemplatesOutput) with field(s):

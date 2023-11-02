@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMemberInput {
     /// <p>The unique identifier for the associated collaboration.</p>
-    pub collaboration_identifier: ::std::string::String,
+    pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the member to remove.</p>
-    pub account_id: ::std::string::String,
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMemberInput {
     /// <p>The unique identifier for the associated collaboration.</p>
-    pub fn collaboration_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_identifier.deref()
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+        self.collaboration_identifier.as_deref()
     }
     /// <p>The account ID of the member to remove.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl DeleteMemberInput {
@@ -66,23 +64,10 @@ impl DeleteMemberInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DeleteMemberInput`](crate::operation::delete_member::DeleteMemberInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`collaboration_identifier`](crate::operation::delete_member::builders::DeleteMemberInputBuilder::collaboration_identifier)
-    /// - [`account_id`](crate::operation::delete_member::builders::DeleteMemberInputBuilder::account_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_member::DeleteMemberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_member::DeleteMemberInput {
-            collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "collaboration_identifier",
-                    "collaboration_identifier was not specified but it is required when building DeleteMemberInput",
-                )
-            })?,
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building DeleteMemberInput",
-                )
-            })?,
+            collaboration_identifier: self.collaboration_identifier,
+            account_id: self.account_id,
         })
     }
 }

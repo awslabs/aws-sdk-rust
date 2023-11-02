@@ -3,39 +3,39 @@ pub fn ser_create_vehicle_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_vehicle::CreateVehicleInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("vehicleName").string(input.vehicle_name.as_str());
+    if let Some(var_1) = &input.vehicle_name {
+        object.key("vehicleName").string(var_1.as_str());
     }
-    {
-        object.key("modelManifestArn").string(input.model_manifest_arn.as_str());
+    if let Some(var_2) = &input.model_manifest_arn {
+        object.key("modelManifestArn").string(var_2.as_str());
     }
-    {
-        object.key("decoderManifestArn").string(input.decoder_manifest_arn.as_str());
+    if let Some(var_3) = &input.decoder_manifest_arn {
+        object.key("decoderManifestArn").string(var_3.as_str());
     }
-    if let Some(var_1) = &input.attributes {
+    if let Some(var_4) = &input.attributes {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("attributes").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_5 = object.key("attributes").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_2.key(key_3.as_str()).string(value_4.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_2.finish();
+        object_5.finish();
     }
-    if let Some(var_5) = &input.association_behavior {
-        object.key("associationBehavior").string(var_5.as_str());
+    if let Some(var_8) = &input.association_behavior {
+        object.key("associationBehavior").string(var_8.as_str());
     }
-    if let Some(var_6) = &input.tags {
-        let mut array_7 = object.key("tags").start_array();
-        for item_8 in var_6 {
+    if let Some(var_9) = &input.tags {
+        let mut array_10 = object.key("tags").start_array();
+        for item_11 in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_12 = array_10.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_12, item_11)?;
+                object_12.finish();
             }
         }
-        array_7.finish();
+        array_10.finish();
     }
     Ok(())
 }

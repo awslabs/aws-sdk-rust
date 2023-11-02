@@ -3,17 +3,17 @@ pub fn ser_test_hypervisor_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("GatewayArn").string(input.gateway_arn.as_str());
+    if let Some(var_1) = &input.gateway_arn {
+        object.key("GatewayArn").string(var_1.as_str());
     }
-    {
-        object.key("Host").string(input.host.as_str());
+    if let Some(var_2) = &input.host {
+        object.key("Host").string(var_2.as_str());
     }
-    if let Some(var_1) = &input.username {
-        object.key("Username").string(var_1.as_str());
+    if let Some(var_3) = &input.username {
+        object.key("Username").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.password {
-        object.key("Password").string(var_2.as_str());
+    if let Some(var_4) = &input.password {
+        object.key("Password").string(var_4.as_str());
     }
     Ok(())
 }

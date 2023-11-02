@@ -6,11 +6,11 @@ pub struct CreateCustomLineItemInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p> The name of the custom line item. </p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
-    pub description: ::std::string::String,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
-    pub billing_group_arn: ::std::string::String,
+    pub billing_group_arn: ::std::option::Option<::std::string::String>,
     /// <p> A time range for which the custom line item is effective. </p>
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
     /// <p> A map that contains tag keys and tag values that are attached to a custom line item. </p>
@@ -24,19 +24,16 @@ impl CreateCustomLineItemInput {
         self.client_token.as_deref()
     }
     /// <p> The name of the custom line item. </p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p> The description of the custom line item. This is shown on the Bills page in association with the charge value. </p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to. </p>
-    pub fn billing_group_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.billing_group_arn.deref()
+    pub fn billing_group_arn(&self) -> ::std::option::Option<&str> {
+        self.billing_group_arn.as_deref()
     }
     /// <p> A time range for which the custom line item is effective. </p>
     pub fn billing_period_range(&self) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
@@ -193,34 +190,15 @@ impl CreateCustomLineItemInputBuilder {
         &self.charge_details
     }
     /// Consumes the builder and constructs a [`CreateCustomLineItemInput`](crate::operation::create_custom_line_item::CreateCustomLineItemInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder::name)
-    /// - [`description`](crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder::description)
-    /// - [`billing_group_arn`](crate::operation::create_custom_line_item::builders::CreateCustomLineItemInputBuilder::billing_group_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_custom_line_item::CreateCustomLineItemInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_custom_line_item::CreateCustomLineItemInput {
             client_token: self.client_token,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateCustomLineItemInput",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building CreateCustomLineItemInput",
-                )
-            })?,
-            billing_group_arn: self.billing_group_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "billing_group_arn",
-                    "billing_group_arn was not specified but it is required when building CreateCustomLineItemInput",
-                )
-            })?,
+            name: self.name,
+            description: self.description,
+            billing_group_arn: self.billing_group_arn,
             billing_period_range: self.billing_period_range,
             tags: self.tags,
             charge_details: self.charge_details,

@@ -3,18 +3,18 @@ pub fn ser_create_sync_job_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_sync_job::CreateSyncJobInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("syncRole").string(input.sync_role.as_str());
+    if let Some(var_1) = &input.sync_role {
+        object.key("syncRole").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.tags {
+    if let Some(var_2) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("tags").start_object();
-        for (key_3, value_4) in var_1 {
+        let mut object_3 = object.key("tags").start_object();
+        for (key_4, value_5) in var_2 {
             {
-                object_2.key(key_3.as_str()).string(value_4.as_str());
+                object_3.key(key_4.as_str()).string(value_5.as_str());
             }
         }
-        object_2.finish();
+        object_3.finish();
     }
     Ok(())
 }

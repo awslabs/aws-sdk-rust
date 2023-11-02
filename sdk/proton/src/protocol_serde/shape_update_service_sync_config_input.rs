@@ -3,20 +3,20 @@ pub fn ser_update_service_sync_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_service_sync_config::UpdateServiceSyncConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("serviceName").string(input.service_name.as_str());
+    if let Some(var_1) = &input.service_name {
+        object.key("serviceName").string(var_1.as_str());
     }
-    {
-        object.key("repositoryProvider").string(input.repository_provider.as_str());
+    if let Some(var_2) = &input.repository_provider {
+        object.key("repositoryProvider").string(var_2.as_str());
     }
-    {
-        object.key("repositoryName").string(input.repository_name.as_str());
+    if let Some(var_3) = &input.repository_name {
+        object.key("repositoryName").string(var_3.as_str());
     }
-    {
-        object.key("branch").string(input.branch.as_str());
+    if let Some(var_4) = &input.branch {
+        object.key("branch").string(var_4.as_str());
     }
-    {
-        object.key("filePath").string(input.file_path.as_str());
+    if let Some(var_5) = &input.file_path {
+        object.key("filePath").string(var_5.as_str());
     }
     Ok(())
 }

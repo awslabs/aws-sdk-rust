@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
-    pub table_name: ::std::string::String,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN for a Kinesis data stream.</p>
-    pub stream_arn: ::std::string::String,
+    pub stream_arn: ::std::option::Option<::std::string::String>,
 }
 impl DisableKinesisStreamingDestinationInput {
     /// <p>The name of the DynamoDB table.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
+        self.table_name.as_deref()
     }
     /// <p>The ARN for a Kinesis data stream.</p>
-    pub fn stream_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.stream_arn.deref()
+    pub fn stream_arn(&self) -> ::std::option::Option<&str> {
+        self.stream_arn.as_deref()
     }
 }
 impl DisableKinesisStreamingDestinationInput {
@@ -66,9 +64,6 @@ impl DisableKinesisStreamingDestinationInputBuilder {
         &self.stream_arn
     }
     /// Consumes the builder and constructs a [`DisableKinesisStreamingDestinationInput`](crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`table_name`](crate::operation::disable_kinesis_streaming_destination::builders::DisableKinesisStreamingDestinationInputBuilder::table_name)
-    /// - [`stream_arn`](crate::operation::disable_kinesis_streaming_destination::builders::DisableKinesisStreamingDestinationInputBuilder::stream_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -77,18 +72,8 @@ impl DisableKinesisStreamingDestinationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationInput {
-                table_name: self.table_name.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "table_name",
-                        "table_name was not specified but it is required when building DisableKinesisStreamingDestinationInput",
-                    )
-                })?,
-                stream_arn: self.stream_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "stream_arn",
-                        "stream_arn was not specified but it is required when building DisableKinesisStreamingDestinationInput",
-                    )
-                })?,
+                table_name: self.table_name,
+                stream_arn: self.stream_arn,
             },
         )
     }

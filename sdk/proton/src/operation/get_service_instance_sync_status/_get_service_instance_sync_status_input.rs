@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceInstanceSyncStatusInput {
     /// <p>The name of the service that the service instance belongs to.</p>
-    pub service_name: ::std::string::String,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service instance that you want the sync status input for.</p>
-    pub service_instance_name: ::std::string::String,
+    pub service_instance_name: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceInstanceSyncStatusInput {
     /// <p>The name of the service that the service instance belongs to.</p>
-    pub fn service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.service_name.deref()
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
+        self.service_name.as_deref()
     }
     /// <p>The name of the service instance that you want the sync status input for.</p>
-    pub fn service_instance_name(&self) -> &str {
-        use std::ops::Deref;
-        self.service_instance_name.deref()
+    pub fn service_instance_name(&self) -> ::std::option::Option<&str> {
+        self.service_instance_name.as_deref()
     }
 }
 impl GetServiceInstanceSyncStatusInput {
@@ -66,9 +64,6 @@ impl GetServiceInstanceSyncStatusInputBuilder {
         &self.service_instance_name
     }
     /// Consumes the builder and constructs a [`GetServiceInstanceSyncStatusInput`](crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`service_name`](crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusInputBuilder::service_name)
-    /// - [`service_instance_name`](crate::operation::get_service_instance_sync_status::builders::GetServiceInstanceSyncStatusInputBuilder::service_instance_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -76,18 +71,8 @@ impl GetServiceInstanceSyncStatusInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusInput {
-            service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_name",
-                    "service_name was not specified but it is required when building GetServiceInstanceSyncStatusInput",
-                )
-            })?,
-            service_instance_name: self.service_instance_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_instance_name",
-                    "service_instance_name was not specified but it is required when building GetServiceInstanceSyncStatusInput",
-                )
-            })?,
+            service_name: self.service_name,
+            service_instance_name: self.service_instance_name,
         })
     }
 }

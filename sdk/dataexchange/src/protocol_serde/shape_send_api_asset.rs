@@ -115,10 +115,10 @@ pub fn ser_send_api_asset_headers(
     input: &crate::operation::send_api_asset::SendApiAssetInput,
     mut builder: ::http::request::Builder,
 ) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
-    {
-        let formatted_1 = &input.asset_id.as_str();
-        if !formatted_1.is_empty() {
-            let header_value = formatted_1;
+    if let ::std::option::Option::Some(inner_1) = &input.asset_id {
+        let formatted_2 = inner_1.as_str();
+        if !formatted_2.is_empty() {
+            let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "asset_id",
@@ -128,10 +128,10 @@ pub fn ser_send_api_asset_headers(
             builder = builder.header("x-amzn-dataexchange-asset-id", header_value);
         }
     }
-    {
-        let formatted_2 = &input.data_set_id.as_str();
-        if !formatted_2.is_empty() {
-            let header_value = formatted_2;
+    if let ::std::option::Option::Some(inner_3) = &input.data_set_id {
+        let formatted_4 = inner_3.as_str();
+        if !formatted_4.is_empty() {
+            let header_value = formatted_4;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "data_set_id",
@@ -141,10 +141,10 @@ pub fn ser_send_api_asset_headers(
             builder = builder.header("x-amzn-dataexchange-data-set-id", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_3) = &input.method {
-        let formatted_4 = inner_3.as_str();
-        if !formatted_4.is_empty() {
-            let header_value = formatted_4;
+    if let ::std::option::Option::Some(inner_5) = &input.method {
+        let formatted_6 = inner_5.as_str();
+        if !formatted_6.is_empty() {
+            let header_value = formatted_6;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "method",
@@ -154,10 +154,10 @@ pub fn ser_send_api_asset_headers(
             builder = builder.header("x-amzn-dataexchange-http-method", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_5) = &input.path {
-        let formatted_6 = inner_5.as_str();
-        if !formatted_6.is_empty() {
-            let header_value = formatted_6;
+    if let ::std::option::Option::Some(inner_7) = &input.path {
+        let formatted_8 = inner_7.as_str();
+        if !formatted_8.is_empty() {
+            let header_value = formatted_8;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "path",
@@ -167,10 +167,10 @@ pub fn ser_send_api_asset_headers(
             builder = builder.header("x-amzn-dataexchange-path", header_value);
         }
     }
-    {
-        let formatted_7 = &input.revision_id.as_str();
-        if !formatted_7.is_empty() {
-            let header_value = formatted_7;
+    if let ::std::option::Option::Some(inner_9) = &input.revision_id {
+        let formatted_10 = inner_9.as_str();
+        if !formatted_10.is_empty() {
+            let header_value = formatted_10;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "revision_id",
@@ -180,9 +180,9 @@ pub fn ser_send_api_asset_headers(
             builder = builder.header("x-amzn-dataexchange-revision-id", header_value);
         }
     }
-    if let ::std::option::Option::Some(inner_8) = &input.request_headers {
+    if let ::std::option::Option::Some(inner_11) = &input.request_headers {
         {
-            for (k, v) in inner_8 {
+            for (k, v) in inner_11 {
                 use std::str::FromStr;
                 let header_name = http::header::HeaderName::from_str(&format!("{}{}", "x-amzn-dataexchange-header-", &k)).map_err(|err| {
                     ::aws_smithy_http::operation::error::BuildError::invalid_field(

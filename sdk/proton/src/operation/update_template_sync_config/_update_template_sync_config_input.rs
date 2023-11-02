@@ -4,41 +4,38 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTemplateSyncConfigInput {
     /// <p>The synced template name.</p>
-    pub template_name: ::std::string::String,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The synced template type.</p>
-    pub template_type: crate::types::TemplateType,
+    pub template_type: ::std::option::Option<crate::types::TemplateType>,
     /// <p>The repository provider.</p>
-    pub repository_provider: crate::types::RepositoryProvider,
+    pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub repository_name: ::std::string::String,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository branch for your template.</p>
-    pub branch: ::std::string::String,
+    pub branch: ::std::option::Option<::std::string::String>,
     /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
     pub subdirectory: ::std::option::Option<::std::string::String>,
 }
 impl UpdateTemplateSyncConfigInput {
     /// <p>The synced template name.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
+        self.template_name.as_deref()
     }
     /// <p>The synced template type.</p>
-    pub fn template_type(&self) -> &crate::types::TemplateType {
-        &self.template_type
+    pub fn template_type(&self) -> ::std::option::Option<&crate::types::TemplateType> {
+        self.template_type.as_ref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> &crate::types::RepositoryProvider {
-        &self.repository_provider
+    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
+        self.repository_provider.as_ref()
     }
     /// <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
-    pub fn repository_name(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_name.deref()
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+        self.repository_name.as_deref()
     }
     /// <p>The repository branch for your template.</p>
-    pub fn branch(&self) -> &str {
-        use std::ops::Deref;
-        self.branch.deref()
+    pub fn branch(&self) -> ::std::option::Option<&str> {
+        self.branch.as_deref()
     }
     /// <p>A subdirectory path to your template bundle version. When included, limits the template bundle search to this repository directory.</p>
     pub fn subdirectory(&self) -> ::std::option::Option<&str> {
@@ -154,12 +151,6 @@ impl UpdateTemplateSyncConfigInputBuilder {
         &self.subdirectory
     }
     /// Consumes the builder and constructs a [`UpdateTemplateSyncConfigInput`](crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`template_name`](crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder::template_name)
-    /// - [`template_type`](crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder::template_type)
-    /// - [`repository_provider`](crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder::repository_provider)
-    /// - [`repository_name`](crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder::repository_name)
-    /// - [`branch`](crate::operation::update_template_sync_config::builders::UpdateTemplateSyncConfigInputBuilder::branch)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -167,36 +158,11 @@ impl UpdateTemplateSyncConfigInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_template_sync_config::UpdateTemplateSyncConfigInput {
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building UpdateTemplateSyncConfigInput",
-                )
-            })?,
-            template_type: self.template_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "template_type",
-                    "template_type was not specified but it is required when building UpdateTemplateSyncConfigInput",
-                )
-            })?,
-            repository_provider: self.repository_provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "repository_provider",
-                    "repository_provider was not specified but it is required when building UpdateTemplateSyncConfigInput",
-                )
-            })?,
-            repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "repository_name",
-                    "repository_name was not specified but it is required when building UpdateTemplateSyncConfigInput",
-                )
-            })?,
-            branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "branch",
-                    "branch was not specified but it is required when building UpdateTemplateSyncConfigInput",
-                )
-            })?,
+            template_name: self.template_name,
+            template_type: self.template_type,
+            repository_provider: self.repository_provider,
+            repository_name: self.repository_name,
+            branch: self.branch,
             subdirectory: self.subdirectory,
         })
     }

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRasterDataCollectionInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetRasterDataCollectionInput {
     /// <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl GetRasterDataCollectionInput {
@@ -43,21 +42,12 @@ impl GetRasterDataCollectionInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetRasterDataCollectionInput`](crate::operation::get_raster_data_collection::GetRasterDataCollectionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::get_raster_data_collection::builders::GetRasterDataCollectionInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::get_raster_data_collection::GetRasterDataCollectionInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::get_raster_data_collection::GetRasterDataCollectionInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetRasterDataCollectionInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_raster_data_collection::GetRasterDataCollectionInput { arn: self.arn })
     }
 }

@@ -3,20 +3,20 @@ pub fn ser_create_custom_plugin_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_custom_plugin::CreateCustomPluginInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("contentType").string(input.content_type.as_str());
+    if let Some(var_1) = &input.content_type {
+        object.key("contentType").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.location {
+    if let Some(var_3) = &input.location {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("location").start_object();
-        crate::protocol_serde::shape_custom_plugin_location::ser_custom_plugin_location(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("location").start_object();
+        crate::protocol_serde::shape_custom_plugin_location::ser_custom_plugin_location(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
     }
     Ok(())
 }

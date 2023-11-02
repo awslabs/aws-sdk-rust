@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to delete.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to delete.</p>
-    pub experiment: ::std::string::String,
+    pub experiment: ::std::option::Option<::std::string::String>,
 }
 impl DeleteExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment to delete.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name of the experiment to delete.</p>
-    pub fn experiment(&self) -> &str {
-        use std::ops::Deref;
-        self.experiment.deref()
+    pub fn experiment(&self) -> ::std::option::Option<&str> {
+        self.experiment.as_deref()
     }
 }
 impl DeleteExperimentInput {
@@ -66,25 +64,12 @@ impl DeleteExperimentInputBuilder {
         &self.experiment
     }
     /// Consumes the builder and constructs a [`DeleteExperimentInput`](crate::operation::delete_experiment::DeleteExperimentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder::project)
-    /// - [`experiment`](crate::operation::delete_experiment::builders::DeleteExperimentInputBuilder::experiment)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_experiment::DeleteExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_experiment::DeleteExperimentInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building DeleteExperimentInput",
-                )
-            })?,
-            experiment: self.experiment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "experiment",
-                    "experiment was not specified but it is required when building DeleteExperimentInput",
-                )
-            })?,
+            project: self.project,
+            experiment: self.experiment,
         })
     }
 }

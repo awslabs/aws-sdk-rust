@@ -4,22 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExportFormsInput {
     /// <p>The unique ID of the Amplify app to export forms to.</p>
-    pub app_id: ::std::string::String,
+    pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub environment_name: ::std::string::String,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The token to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ExportFormsInput {
     /// <p>The unique ID of the Amplify app to export forms to.</p>
-    pub fn app_id(&self) -> &str {
-        use std::ops::Deref;
-        self.app_id.deref()
+    pub fn app_id(&self) -> ::std::option::Option<&str> {
+        self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+        self.environment_name.as_deref()
     }
     /// <p>The token to request the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -87,23 +85,10 @@ impl ExportFormsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ExportFormsInput`](crate::operation::export_forms::ExportFormsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_id`](crate::operation::export_forms::builders::ExportFormsInputBuilder::app_id)
-    /// - [`environment_name`](crate::operation::export_forms::builders::ExportFormsInputBuilder::environment_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::export_forms::ExportFormsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::export_forms::ExportFormsInput {
-            app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_id",
-                    "app_id was not specified but it is required when building ExportFormsInput",
-                )
-            })?,
-            environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_name",
-                    "environment_name was not specified but it is required when building ExportFormsInput",
-                )
-            })?,
+            app_id: self.app_id,
+            environment_name: self.environment_name,
             next_token: self.next_token,
         })
     }

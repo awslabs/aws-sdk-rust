@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDefaultMessageTypeInput {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub configuration_set_name: ::std::string::String,
+    pub configuration_set_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDefaultMessageTypeInput {
     /// <p>The name of the configuration set or the configuration set Amazon Resource Name (ARN) to delete the default message type from. The ConfigurationSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> &str {
-        use std::ops::Deref;
-        self.configuration_set_name.deref()
+    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
     }
 }
 impl DeleteDefaultMessageTypeInput {
@@ -43,8 +42,6 @@ impl DeleteDefaultMessageTypeInputBuilder {
         &self.configuration_set_name
     }
     /// Consumes the builder and constructs a [`DeleteDefaultMessageTypeInput`](crate::operation::delete_default_message_type::DeleteDefaultMessageTypeInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`configuration_set_name`](crate::operation::delete_default_message_type::builders::DeleteDefaultMessageTypeInputBuilder::configuration_set_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -52,12 +49,7 @@ impl DeleteDefaultMessageTypeInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_default_message_type::DeleteDefaultMessageTypeInput {
-            configuration_set_name: self.configuration_set_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "configuration_set_name",
-                    "configuration_set_name was not specified but it is required when building DeleteDefaultMessageTypeInput",
-                )
-            })?,
+            configuration_set_name: self.configuration_set_name,
         })
     }
 }

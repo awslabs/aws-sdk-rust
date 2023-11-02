@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the migration workflow.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the migration workflow.</p>
@@ -16,9 +16,8 @@ pub struct UpdateWorkflowInput {
 }
 impl UpdateWorkflowInput {
     /// <p>The ID of the migration workflow.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>The name of the migration workflow.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -155,18 +154,11 @@ impl UpdateWorkflowInputBuilder {
         &self.step_targets
     }
     /// Consumes the builder and constructs a [`UpdateWorkflowInput`](crate::operation::update_workflow::UpdateWorkflowInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::update_workflow::builders::UpdateWorkflowInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_workflow::UpdateWorkflowInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workflow::UpdateWorkflowInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building UpdateWorkflowInput",
-                )
-            })?,
+            id: self.id,
             name: self.name,
             description: self.description,
             input_parameters: self.input_parameters,

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRumMetricsDestinationsInput {
     /// <p>The name of the app monitor associated with the destinations that you want to retrieve.</p>
-    pub app_monitor_name: ::std::string::String,
+    pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,9 +13,8 @@ pub struct ListRumMetricsDestinationsInput {
 }
 impl ListRumMetricsDestinationsInput {
     /// <p>The name of the app monitor associated with the destinations that you want to retrieve.</p>
-    pub fn app_monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.app_monitor_name.deref()
+    pub fn app_monitor_name(&self) -> ::std::option::Option<&str> {
+        self.app_monitor_name.as_deref()
     }
     /// <p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p>
     /// <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
@@ -90,8 +89,6 @@ impl ListRumMetricsDestinationsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListRumMetricsDestinationsInput`](crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_monitor_name`](crate::operation::list_rum_metrics_destinations::builders::ListRumMetricsDestinationsInputBuilder::app_monitor_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -99,12 +96,7 @@ impl ListRumMetricsDestinationsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsInput {
-            app_monitor_name: self.app_monitor_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_monitor_name",
-                    "app_monitor_name was not specified but it is required when building ListRumMetricsDestinationsInput",
-                )
-            })?,
+            app_monitor_name: self.app_monitor_name,
             max_results: self.max_results,
             next_token: self.next_token,
         })

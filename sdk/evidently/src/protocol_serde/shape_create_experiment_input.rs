@@ -6,60 +6,60 @@ pub fn ser_create_experiment_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    {
-        let mut array_2 = object.key("metricGoals").start_array();
-        for item_3 in &input.metric_goals {
+    if let Some(var_2) = &input.metric_goals {
+        let mut array_3 = object.key("metricGoals").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_metric_goal_config::ser_metric_goal_config(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_metric_goal_config::ser_metric_goal_config(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.online_ab_config {
+    if let Some(var_7) = &input.online_ab_config {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("onlineAbConfig").start_object();
-        crate::protocol_serde::shape_online_ab_config::ser_online_ab_config(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_8 = object.key("onlineAbConfig").start_object();
+        crate::protocol_serde::shape_online_ab_config::ser_online_ab_config(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_7) = &input.randomization_salt {
-        object.key("randomizationSalt").string(var_7.as_str());
+    if let Some(var_9) = &input.randomization_salt {
+        object.key("randomizationSalt").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.sampling_rate {
+    if let Some(var_10) = &input.sampling_rate {
         object.key("samplingRate").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_8).into()),
+            ::aws_smithy_types::Number::NegInt((*var_10).into()),
         );
     }
-    if let Some(var_9) = &input.segment {
-        object.key("segment").string(var_9.as_str());
+    if let Some(var_11) = &input.segment {
+        object.key("segment").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.tags {
+    if let Some(var_12) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("tags").start_object();
-        for (key_12, value_13) in var_10 {
+        let mut object_13 = object.key("tags").start_object();
+        for (key_14, value_15) in var_12 {
             {
-                object_11.key(key_12.as_str()).string(value_13.as_str());
+                object_13.key(key_14.as_str()).string(value_15.as_str());
             }
         }
-        object_11.finish();
+        object_13.finish();
     }
-    {
-        let mut array_14 = object.key("treatments").start_array();
-        for item_15 in &input.treatments {
+    if let Some(var_16) = &input.treatments {
+        let mut array_17 = object.key("treatments").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
-                crate::protocol_serde::shape_treatment_config::ser_treatment_config(&mut object_16, item_15)?;
-                object_16.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_treatment_config::ser_treatment_config(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_14.finish();
+        array_17.finish();
     }
     Ok(())
 }

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
-    pub identifier: ::std::string::String,
+    pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resource associated with the policy. </p>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
+        self.identifier.as_deref()
     }
 }
 impl DeleteResourcePolicyInput {
@@ -43,19 +42,10 @@ impl DeleteResourcePolicyInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`identifier`](crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder::identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building DeleteResourcePolicyInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput { identifier: self.identifier })
     }
 }

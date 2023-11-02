@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListRecommendationTemplatesInput {
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub assessment_arn: ::std::string::String,
+    pub assessment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     pub reverse_order: ::std::option::Option<bool>,
     /// <p>Status of the action.</p>
@@ -20,9 +20,8 @@ pub struct ListRecommendationTemplatesInput {
 }
 impl ListRecommendationTemplatesInput {
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn assessment_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.assessment_arn.deref()
+    pub fn assessment_arn(&self) -> ::std::option::Option<&str> {
+        self.assessment_arn.as_deref()
     }
     /// <p>The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</p>
     pub fn reverse_order(&self) -> ::std::option::Option<bool> {
@@ -177,8 +176,6 @@ impl ListRecommendationTemplatesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListRecommendationTemplatesInput`](crate::operation::list_recommendation_templates::ListRecommendationTemplatesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`assessment_arn`](crate::operation::list_recommendation_templates::builders::ListRecommendationTemplatesInputBuilder::assessment_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -186,12 +183,7 @@ impl ListRecommendationTemplatesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_recommendation_templates::ListRecommendationTemplatesInput {
-            assessment_arn: self.assessment_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "assessment_arn",
-                    "assessment_arn was not specified but it is required when building ListRecommendationTemplatesInput",
-                )
-            })?,
+            assessment_arn: self.assessment_arn,
             reverse_order: self.reverse_order,
             status: self.status,
             recommendation_template_arn: self.recommendation_template_arn,

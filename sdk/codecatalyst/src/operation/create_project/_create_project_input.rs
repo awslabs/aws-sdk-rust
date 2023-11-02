@@ -4,22 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateProjectInput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::string::String,
+    pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The friendly name of the project that will be displayed to users.</p>
-    pub display_name: ::std::string::String,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl CreateProjectInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> &str {
-        use std::ops::Deref;
-        self.space_name.deref()
+    pub fn space_name(&self) -> ::std::option::Option<&str> {
+        self.space_name.as_deref()
     }
     /// <p>The friendly name of the project that will be displayed to users.</p>
-    pub fn display_name(&self) -> &str {
-        use std::ops::Deref;
-        self.display_name.deref()
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
+        self.display_name.as_deref()
     }
     /// <p>The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -87,25 +85,12 @@ impl CreateProjectInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateProjectInput`](crate::operation::create_project::CreateProjectInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`space_name`](crate::operation::create_project::builders::CreateProjectInputBuilder::space_name)
-    /// - [`display_name`](crate::operation::create_project::builders::CreateProjectInputBuilder::display_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_project::CreateProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_project::CreateProjectInput {
-            space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "space_name",
-                    "space_name was not specified but it is required when building CreateProjectInput",
-                )
-            })?,
-            display_name: self.display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "display_name",
-                    "display_name was not specified but it is required when building CreateProjectInput",
-                )
-            })?,
+            space_name: self.space_name,
+            display_name: self.display_name,
             description: self.description,
         })
     }

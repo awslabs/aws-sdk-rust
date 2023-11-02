@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisconnectFromServiceInput {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
-    pub source_server_id: ::std::string::String,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Request to disconnect Source Server from service by Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectFromServiceInput {
     /// <p>Request to disconnect Source Server from service by Server ID.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+        self.source_server_id.as_deref()
     }
     /// <p>Request to disconnect Source Server from service by Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -64,19 +63,12 @@ impl DisconnectFromServiceInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DisconnectFromServiceInput`](crate::operation::disconnect_from_service::DisconnectFromServiceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_id`](crate::operation::disconnect_from_service::builders::DisconnectFromServiceInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::disconnect_from_service::DisconnectFromServiceInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disconnect_from_service::DisconnectFromServiceInput {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building DisconnectFromServiceInput",
-                )
-            })?,
+            source_server_id: self.source_server_id,
             account_id: self.account_id,
         })
     }

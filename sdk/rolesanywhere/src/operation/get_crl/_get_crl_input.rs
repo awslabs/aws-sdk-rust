@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub crl_id: ::std::string::String,
+    pub crl_id: ::std::option::Option<::std::string::String>,
 }
 impl GetCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub fn crl_id(&self) -> &str {
-        use std::ops::Deref;
-        self.crl_id.deref()
+    pub fn crl_id(&self) -> ::std::option::Option<&str> {
+        self.crl_id.as_deref()
     }
 }
 impl GetCrlInput {
@@ -43,16 +42,7 @@ impl GetCrlInputBuilder {
         &self.crl_id
     }
     /// Consumes the builder and constructs a [`GetCrlInput`](crate::operation::get_crl::GetCrlInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`crl_id`](crate::operation::get_crl::builders::GetCrlInputBuilder::crl_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_crl::GetCrlInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_crl::GetCrlInput {
-            crl_id: self.crl_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "crl_id",
-                    "crl_id was not specified but it is required when building GetCrlInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_crl::GetCrlInput { crl_id: self.crl_id })
     }
 }

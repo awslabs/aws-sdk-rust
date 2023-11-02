@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub trust_anchor_id: ::std::string::String,
+    pub trust_anchor_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the trust anchor.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The trust anchor type and its related certificate data.</p>
@@ -12,9 +12,8 @@ pub struct UpdateTrustAnchorInput {
 }
 impl UpdateTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(&self) -> &str {
-        use std::ops::Deref;
-        self.trust_anchor_id.deref()
+    pub fn trust_anchor_id(&self) -> ::std::option::Option<&str> {
+        self.trust_anchor_id.as_deref()
     }
     /// <p>The name of the trust anchor.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -85,18 +84,11 @@ impl UpdateTrustAnchorInputBuilder {
         &self.source
     }
     /// Consumes the builder and constructs a [`UpdateTrustAnchorInput`](crate::operation::update_trust_anchor::UpdateTrustAnchorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`trust_anchor_id`](crate::operation::update_trust_anchor::builders::UpdateTrustAnchorInputBuilder::trust_anchor_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_trust_anchor::UpdateTrustAnchorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_trust_anchor::UpdateTrustAnchorInput {
-            trust_anchor_id: self.trust_anchor_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "trust_anchor_id",
-                    "trust_anchor_id was not specified but it is required when building UpdateTrustAnchorInput",
-                )
-            })?,
+            trust_anchor_id: self.trust_anchor_id,
             name: self.name,
             source: self.source,
         })

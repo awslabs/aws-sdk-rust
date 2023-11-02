@@ -3,8 +3,8 @@ pub fn ser_put_account_alias_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_account_alias::PutAccountAliasInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("accountAlias").string(input.account_alias.as_str());
+    if let Some(var_1) = &input.account_alias {
+        object.key("accountAlias").string(var_1.as_str());
     }
     Ok(())
 }

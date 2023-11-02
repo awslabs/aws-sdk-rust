@@ -12,8 +12,8 @@ pub fn ser_list_tables_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    {
-        object.key("keyspaceName").string(input.keyspace_name.as_str());
+    if let Some(var_3) = &input.keyspace_name {
+        object.key("keyspaceName").string(var_3.as_str());
     }
     Ok(())
 }

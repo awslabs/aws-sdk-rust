@@ -5,13 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RetryDataReplicationInput {
     /// <p>The ID of the Source Server whose data replication should be retried.</p>
-    pub source_server_id: ::std::string::String,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl RetryDataReplicationInput {
     /// <p>The ID of the Source Server whose data replication should be retried.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+        self.source_server_id.as_deref()
     }
 }
 impl RetryDataReplicationInput {
@@ -44,19 +43,12 @@ impl RetryDataReplicationInputBuilder {
         &self.source_server_id
     }
     /// Consumes the builder and constructs a [`RetryDataReplicationInput`](crate::operation::retry_data_replication::RetryDataReplicationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_id`](crate::operation::retry_data_replication::builders::RetryDataReplicationInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::retry_data_replication::RetryDataReplicationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::retry_data_replication::RetryDataReplicationInput {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building RetryDataReplicationInput",
-                )
-            })?,
+            source_server_id: self.source_server_id,
         })
     }
 }

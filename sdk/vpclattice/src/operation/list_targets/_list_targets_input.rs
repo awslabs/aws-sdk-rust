@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTargetsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub target_group_identifier: ::std::string::String,
+    pub target_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>A pagination token for the next page of results.</p>
@@ -14,9 +14,8 @@ pub struct ListTargetsInput {
 }
 impl ListTargetsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.target_group_identifier.deref()
+    pub fn target_group_identifier(&self) -> ::std::option::Option<&str> {
+        self.target_group_identifier.as_deref()
     }
     /// <p>The maximum number of results to return.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -114,16 +113,9 @@ impl ListTargetsInputBuilder {
         &self.targets
     }
     /// Consumes the builder and constructs a [`ListTargetsInput`](crate::operation::list_targets::ListTargetsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`target_group_identifier`](crate::operation::list_targets::builders::ListTargetsInputBuilder::target_group_identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_targets::ListTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_targets::ListTargetsInput {
-            target_group_identifier: self.target_group_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "target_group_identifier",
-                    "target_group_identifier was not specified but it is required when building ListTargetsInput",
-                )
-            })?,
+            target_group_identifier: self.target_group_identifier,
             max_results: self.max_results,
             next_token: self.next_token,
             targets: self.targets,

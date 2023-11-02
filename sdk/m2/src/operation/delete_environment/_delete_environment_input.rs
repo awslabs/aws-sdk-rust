@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentInput {
     /// <p>The unique identifier of the runtime environment you want to delete.</p>
-    pub environment_id: ::std::string::String,
+    pub environment_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEnvironmentInput {
     /// <p>The unique identifier of the runtime environment you want to delete.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+        self.environment_id.as_deref()
     }
 }
 impl DeleteEnvironmentInput {
@@ -43,18 +42,11 @@ impl DeleteEnvironmentInputBuilder {
         &self.environment_id
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentInput`](crate::operation::delete_environment::DeleteEnvironmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`environment_id`](crate::operation::delete_environment::builders::DeleteEnvironmentInputBuilder::environment_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_environment::DeleteEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_environment::DeleteEnvironmentInput {
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building DeleteEnvironmentInput",
-                )
-            })?,
+            environment_id: self.environment_id,
         })
     }
 }

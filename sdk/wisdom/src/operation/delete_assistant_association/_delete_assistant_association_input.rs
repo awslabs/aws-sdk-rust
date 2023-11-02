@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_association_id: ::std::string::String,
+    pub assistant_association_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_id: ::std::string::String,
+    pub assistant_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAssistantAssociationInput {
     /// <p>The identifier of the assistant association. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_association_id(&self) -> &str {
-        use std::ops::Deref;
-        self.assistant_association_id.deref()
+    pub fn assistant_association_id(&self) -> ::std::option::Option<&str> {
+        self.assistant_association_id.as_deref()
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.assistant_id.deref()
+    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+        self.assistant_id.as_deref()
     }
 }
 impl DeleteAssistantAssociationInput {
@@ -66,9 +64,6 @@ impl DeleteAssistantAssociationInputBuilder {
         &self.assistant_id
     }
     /// Consumes the builder and constructs a [`DeleteAssistantAssociationInput`](crate::operation::delete_assistant_association::DeleteAssistantAssociationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`assistant_association_id`](crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationInputBuilder::assistant_association_id)
-    /// - [`assistant_id`](crate::operation::delete_assistant_association::builders::DeleteAssistantAssociationInputBuilder::assistant_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -76,18 +71,8 @@ impl DeleteAssistantAssociationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_assistant_association::DeleteAssistantAssociationInput {
-            assistant_association_id: self.assistant_association_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "assistant_association_id",
-                    "assistant_association_id was not specified but it is required when building DeleteAssistantAssociationInput",
-                )
-            })?,
-            assistant_id: self.assistant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "assistant_id",
-                    "assistant_id was not specified but it is required when building DeleteAssistantAssociationInput",
-                )
-            })?,
+            assistant_association_id: self.assistant_association_id,
+            assistant_id: self.assistant_id,
         })
     }
 }

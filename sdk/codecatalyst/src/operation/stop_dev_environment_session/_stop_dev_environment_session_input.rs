@@ -4,34 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopDevEnvironmentSessionInput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::string::String,
+    pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::string::String,
+    pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
-    pub session_id: ::std::string::String,
+    pub session_id: ::std::option::Option<::std::string::String>,
 }
 impl StopDevEnvironmentSessionInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> &str {
-        use std::ops::Deref;
-        self.space_name.deref()
+    pub fn space_name(&self) -> ::std::option::Option<&str> {
+        self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> &str {
-        use std::ops::Deref;
-        self.project_name.deref()
+    pub fn project_name(&self) -> ::std::option::Option<&str> {
+        self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. To obtain this ID, use <code>ListDevEnvironments</code>.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment session. This ID is returned by <code>StartDevEnvironmentSession</code>.</p>
-    pub fn session_id(&self) -> &str {
-        use std::ops::Deref;
-        self.session_id.deref()
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
+        self.session_id.as_deref()
     }
 }
 impl StopDevEnvironmentSessionInput {
@@ -112,11 +108,6 @@ impl StopDevEnvironmentSessionInputBuilder {
         &self.session_id
     }
     /// Consumes the builder and constructs a [`StopDevEnvironmentSessionInput`](crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`space_name`](crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder::space_name)
-    /// - [`project_name`](crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder::project_name)
-    /// - [`id`](crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder::id)
-    /// - [`session_id`](crate::operation::stop_dev_environment_session::builders::StopDevEnvironmentSessionInputBuilder::session_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -124,30 +115,10 @@ impl StopDevEnvironmentSessionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionInput {
-            space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "space_name",
-                    "space_name was not specified but it is required when building StopDevEnvironmentSessionInput",
-                )
-            })?,
-            project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project_name",
-                    "project_name was not specified but it is required when building StopDevEnvironmentSessionInput",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building StopDevEnvironmentSessionInput",
-                )
-            })?,
-            session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "session_id",
-                    "session_id was not specified but it is required when building StopDevEnvironmentSessionInput",
-                )
-            })?,
+            space_name: self.space_name,
+            project_name: self.project_name,
+            id: self.id,
+            session_id: self.session_id,
         })
     }
 }

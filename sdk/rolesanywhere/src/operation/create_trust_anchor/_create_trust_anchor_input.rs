@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTrustAnchorInput {
     /// <p>The name of the trust anchor.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The trust anchor type and its related certificate data.</p>
     pub source: ::std::option::Option<crate::types::Source>,
     /// <p>Specifies whether the trust anchor is enabled.</p>
@@ -16,9 +16,8 @@ pub struct CreateTrustAnchorInput {
 }
 impl CreateTrustAnchorInput {
     /// <p>The name of the trust anchor.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The trust anchor type and its related certificate data.</p>
     pub fn source(&self) -> ::std::option::Option<&crate::types::Source> {
@@ -144,18 +143,11 @@ impl CreateTrustAnchorInputBuilder {
         &self.notification_settings
     }
     /// Consumes the builder and constructs a [`CreateTrustAnchorInput`](crate::operation::create_trust_anchor::CreateTrustAnchorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_trust_anchor::builders::CreateTrustAnchorInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_trust_anchor::CreateTrustAnchorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_trust_anchor::CreateTrustAnchorInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateTrustAnchorInput",
-                )
-            })?,
+            name: self.name,
             source: self.source,
             enabled: self.enabled,
             tags: self.tags,

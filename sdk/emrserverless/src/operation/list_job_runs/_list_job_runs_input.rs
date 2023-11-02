@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListJobRunsInput {
     /// <p>The ID of the application for which to list the job run.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next set of job run results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of job runs that can be listed.</p>
@@ -18,9 +18,8 @@ pub struct ListJobRunsInput {
 }
 impl ListJobRunsInput {
     /// <p>The ID of the application for which to list the job run.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>The token for the next set of job run results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -156,16 +155,9 @@ impl ListJobRunsInputBuilder {
         &self.states
     }
     /// Consumes the builder and constructs a [`ListJobRunsInput`](crate::operation::list_job_runs::ListJobRunsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::list_job_runs::builders::ListJobRunsInputBuilder::application_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_job_runs::ListJobRunsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_job_runs::ListJobRunsInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building ListJobRunsInput",
-                )
-            })?,
+            application_id: self.application_id,
             next_token: self.next_token,
             max_results: self.max_results,
             created_at_after: self.created_at_after,

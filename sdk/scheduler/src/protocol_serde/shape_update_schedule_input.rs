@@ -29,25 +29,25 @@ pub fn ser_update_schedule_input(
     if let Some(var_8) = &input.kms_key_arn {
         object.key("KmsKeyArn").string(var_8.as_str());
     }
-    {
-        object.key("ScheduleExpression").string(input.schedule_expression.as_str());
+    if let Some(var_9) = &input.schedule_expression {
+        object.key("ScheduleExpression").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.schedule_expression_timezone {
-        object.key("ScheduleExpressionTimezone").string(var_9.as_str());
+    if let Some(var_10) = &input.schedule_expression_timezone {
+        object.key("ScheduleExpressionTimezone").string(var_10.as_str());
     }
-    if let Some(var_10) = &input.start_date {
+    if let Some(var_11) = &input.start_date {
         object
             .key("StartDate")
-            .date_time(var_10, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_11, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_11) = &input.state {
-        object.key("State").string(var_11.as_str());
+    if let Some(var_12) = &input.state {
+        object.key("State").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.target {
+    if let Some(var_13) = &input.target {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("Target").start_object();
-        crate::protocol_serde::shape_target::ser_target(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("Target").start_object();
+        crate::protocol_serde::shape_target::ser_target(&mut object_14, var_13)?;
+        object_14.finish();
     }
     Ok(())
 }

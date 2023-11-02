@@ -3,8 +3,8 @@ pub fn ser_get_operation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_operation::GetOperationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("OperationId").string(input.operation_id.as_str());
+    if let Some(var_1) = &input.operation_id {
+        object.key("OperationId").string(var_1.as_str());
     }
     Ok(())
 }

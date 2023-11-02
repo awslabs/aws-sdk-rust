@@ -3,8 +3,8 @@ pub fn ser_delete_fleet_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_fleet::DeleteFleetInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("fleetId").string(input.fleet_id.as_str());
+    if let Some(var_1) = &input.fleet_id {
+        object.key("fleetId").string(var_1.as_str());
     }
     Ok(())
 }

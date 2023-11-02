@@ -6,32 +6,32 @@ pub fn ser_create_environment_account_connection_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    {
-        object.key("managementAccountId").string(input.management_account_id.as_str());
+    if let Some(var_2) = &input.management_account_id {
+        object.key("managementAccountId").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("roleArn").string(var_2.as_str());
+    if let Some(var_3) = &input.role_arn {
+        object.key("roleArn").string(var_3.as_str());
     }
-    {
-        object.key("environmentName").string(input.environment_name.as_str());
+    if let Some(var_4) = &input.environment_name {
+        object.key("environmentName").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.tags {
-        let mut array_4 = object.key("tags").start_array();
-        for item_5 in var_3 {
+    if let Some(var_5) = &input.tags {
+        let mut array_6 = object.key("tags").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_4.finish();
+        array_6.finish();
     }
-    if let Some(var_7) = &input.component_role_arn {
-        object.key("componentRoleArn").string(var_7.as_str());
+    if let Some(var_9) = &input.component_role_arn {
+        object.key("componentRoleArn").string(var_9.as_str());
     }
-    if let Some(var_8) = &input.codebuild_role_arn {
-        object.key("codebuildRoleArn").string(var_8.as_str());
+    if let Some(var_10) = &input.codebuild_role_arn {
+        object.key("codebuildRoleArn").string(var_10.as_str());
     }
     Ok(())
 }

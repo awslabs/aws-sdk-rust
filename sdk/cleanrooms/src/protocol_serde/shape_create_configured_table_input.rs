@@ -3,39 +3,39 @@ pub fn ser_create_configured_table_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_configured_table::CreateConfiguredTableInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        let mut array_1 = object.key("allowedColumns").start_array();
-        for item_2 in &input.allowed_columns {
+    if let Some(var_1) = &input.allowed_columns {
+        let mut array_2 = object.key("allowedColumns").start_array();
+        for item_3 in var_1 {
             {
-                array_1.value().string(item_2.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_1.finish();
+        array_2.finish();
     }
-    {
-        object.key("analysisMethod").string(input.analysis_method.as_str());
+    if let Some(var_4) = &input.analysis_method {
+        object.key("analysisMethod").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.description {
-        object.key("description").string(var_3.as_str());
+    if let Some(var_5) = &input.description {
+        object.key("description").string(var_5.as_str());
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
     }
-    if let Some(var_4) = &input.table_reference {
+    if let Some(var_7) = &input.table_reference {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("tableReference").start_object();
-        crate::protocol_serde::shape_table_reference::ser_table_reference(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_8 = object.key("tableReference").start_object();
+        crate::protocol_serde::shape_table_reference::ser_table_reference(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_7.finish();
+        object_10.finish();
     }
     Ok(())
 }

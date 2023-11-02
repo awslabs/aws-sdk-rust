@@ -3,8 +3,8 @@ pub fn ser_get_member_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_member::GetMemberInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("accountId").string(input.account_id.as_str());
+    if let Some(var_1) = &input.account_id {
+        object.key("accountId").string(var_1.as_str());
     }
     Ok(())
 }

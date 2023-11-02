@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListCasesForContactInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub contact_arn: ::std::string::String,
+    pub contact_arn: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -14,14 +14,12 @@ pub struct ListCasesForContactInput {
 }
 impl ListCasesForContactInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>A unique identifier of a contact in Amazon Connect.</p>
-    pub fn contact_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_arn.deref()
+    pub fn contact_arn(&self) -> ::std::option::Option<&str> {
+        self.contact_arn.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -108,26 +106,13 @@ impl ListCasesForContactInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListCasesForContactInput`](crate::operation::list_cases_for_contact::ListCasesForContactInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::list_cases_for_contact::builders::ListCasesForContactInputBuilder::domain_id)
-    /// - [`contact_arn`](crate::operation::list_cases_for_contact::builders::ListCasesForContactInputBuilder::contact_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_cases_for_contact::ListCasesForContactInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_cases_for_contact::ListCasesForContactInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building ListCasesForContactInput",
-                )
-            })?,
-            contact_arn: self.contact_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "contact_arn",
-                    "contact_arn was not specified but it is required when building ListCasesForContactInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            contact_arn: self.contact_arn,
             max_results: self.max_results,
             next_token: self.next_token,
         })

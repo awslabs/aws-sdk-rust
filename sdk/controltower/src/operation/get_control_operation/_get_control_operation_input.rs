@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetControlOperationInput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub operation_identifier: ::std::string::String,
+    pub operation_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetControlOperationInput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
-    pub fn operation_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.operation_identifier.deref()
+    pub fn operation_identifier(&self) -> ::std::option::Option<&str> {
+        self.operation_identifier.as_deref()
     }
 }
 impl GetControlOperationInput {
@@ -43,19 +42,12 @@ impl GetControlOperationInputBuilder {
         &self.operation_identifier
     }
     /// Consumes the builder and constructs a [`GetControlOperationInput`](crate::operation::get_control_operation::GetControlOperationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`operation_identifier`](crate::operation::get_control_operation::builders::GetControlOperationInputBuilder::operation_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_control_operation::GetControlOperationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_control_operation::GetControlOperationInput {
-            operation_identifier: self.operation_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "operation_identifier",
-                    "operation_identifier was not specified but it is required when building GetControlOperationInput",
-                )
-            })?,
+            operation_identifier: self.operation_identifier,
         })
     }
 }

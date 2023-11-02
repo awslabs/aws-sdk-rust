@@ -4,15 +4,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::idempotency_token::IdempotencyTokenProvider;
+use std::borrow::Cow;
+use std::fmt;
+
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::{BeforeSerializationInterceptorContextMut, Input};
 use aws_smithy_runtime_api::client::interceptors::{Intercept, SharedInterceptor};
 use aws_smithy_runtime_api::client::runtime_components::{RuntimeComponents, RuntimeComponentsBuilder};
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_types::config_bag::ConfigBag;
-use std::borrow::Cow;
-use std::fmt;
+
+use crate::idempotency_token::IdempotencyTokenProvider;
 
 #[derive(Debug)]
 pub(crate) struct IdempotencyTokenRuntimePlugin {

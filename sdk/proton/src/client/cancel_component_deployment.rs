@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelComponentDeployment`](crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`component_name(impl Into<String>)`](crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentFluentBuilder::component_name) / [`set_component_name(impl Into<String>)`](crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentFluentBuilder::set_component_name):<br>required: **true**<br><p>The name of the component with the deployment to cancel.</p><br>
+    ///   - [`component_name(impl Into<String>)`](crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentFluentBuilder::component_name) / [`set_component_name(Option<String>)`](crate::operation::cancel_component_deployment::builders::CancelComponentDeploymentFluentBuilder::set_component_name):<br>required: **true**<br><p>The name of the component with the deployment to cancel.</p><br>
     /// - On success, responds with [`CancelComponentDeploymentOutput`](crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput) with field(s):
     ///   - [`component(Option<Component>)`](crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput::component): <p>The detailed data of the component with the deployment that is being canceled.</p>
     /// - On failure, responds with [`SdkError<CancelComponentDeploymentError>`](crate::operation::cancel_component_deployment::CancelComponentDeploymentError)

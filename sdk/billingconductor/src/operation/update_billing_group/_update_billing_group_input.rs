@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the billing group. The names must be unique to each billing group. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the billing group. Only one of the valid values can be used. </p>
@@ -18,9 +18,8 @@ pub struct UpdateBillingGroupInput {
 }
 impl UpdateBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group being updated. </p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>The name of the billing group. The names must be unique to each billing group. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -160,18 +159,11 @@ impl UpdateBillingGroupInputBuilder {
         &self.account_grouping
     }
     /// Consumes the builder and constructs a [`UpdateBillingGroupInput`](crate::operation::update_billing_group::UpdateBillingGroupInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::update_billing_group::builders::UpdateBillingGroupInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_billing_group::UpdateBillingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_billing_group::UpdateBillingGroupInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building UpdateBillingGroupInput",
-                )
-            })?,
+            arn: self.arn,
             name: self.name,
             status: self.status,
             computation_preference: self.computation_preference,

@@ -3,11 +3,11 @@ pub fn ser_describe_user_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_user::DescribeUserInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("IdentityStoreId").string(input.identity_store_id.as_str());
+    if let Some(var_1) = &input.identity_store_id {
+        object.key("IdentityStoreId").string(var_1.as_str());
     }
-    {
-        object.key("UserId").string(input.user_id.as_str());
+    if let Some(var_2) = &input.user_id {
+        object.key("UserId").string(var_2.as_str());
     }
     Ok(())
 }

@@ -12,8 +12,8 @@ pub fn ser_get_vehicle_status_input(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    {
-        object.key("vehicleName").string(input.vehicle_name.as_str());
+    if let Some(var_3) = &input.vehicle_name {
+        object.key("vehicleName").string(var_3.as_str());
     }
     Ok(())
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCaseEventConfiguration`](crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationFluentBuilder::domain_id) / [`set_domain_id(impl Into<String>)`](crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::get_case_event_configuration::builders::GetCaseEventConfigurationFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
     /// - On success, responds with [`GetCaseEventConfigurationOutput`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput) with field(s):
     ///   - [`event_bridge(Option<EventBridgeConfiguration>)`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput::event_bridge): <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     /// - On failure, responds with [`SdkError<GetCaseEventConfigurationError>`](crate::operation::get_case_event_configuration::GetCaseEventConfigurationError)

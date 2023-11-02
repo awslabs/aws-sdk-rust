@@ -3,11 +3,11 @@ pub fn ser_describe_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_group::DescribeGroupInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("IdentityStoreId").string(input.identity_store_id.as_str());
+    if let Some(var_1) = &input.identity_store_id {
+        object.key("IdentityStoreId").string(var_1.as_str());
     }
-    {
-        object.key("GroupId").string(input.group_id.as_str());
+    if let Some(var_2) = &input.group_id {
+        object.key("GroupId").string(var_2.as_str());
     }
     Ok(())
 }

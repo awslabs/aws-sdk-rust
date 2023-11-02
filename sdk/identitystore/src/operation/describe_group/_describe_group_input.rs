@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGroupInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
-    pub identity_store_id: ::std::string::String,
+    pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a group in the identity store.</p>
-    pub group_id: ::std::string::String,
+    pub group_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGroupInput {
     /// <p>The globally unique identifier for the identity store, such as <code>d-1234567890</code>. In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is a randomly generated string that contains numbers and lower case letters. This value is generated at the time that a new identity store is created.</p>
-    pub fn identity_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_id.deref()
+    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+        self.identity_store_id.as_deref()
     }
     /// <p>The identifier for a group in the identity store.</p>
-    pub fn group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.group_id.deref()
+    pub fn group_id(&self) -> ::std::option::Option<&str> {
+        self.group_id.as_deref()
     }
 }
 impl DescribeGroupInput {
@@ -66,25 +64,12 @@ impl DescribeGroupInputBuilder {
         &self.group_id
     }
     /// Consumes the builder and constructs a [`DescribeGroupInput`](crate::operation::describe_group::DescribeGroupInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`identity_store_id`](crate::operation::describe_group::builders::DescribeGroupInputBuilder::identity_store_id)
-    /// - [`group_id`](crate::operation::describe_group::builders::DescribeGroupInputBuilder::group_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_group::DescribeGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_group::DescribeGroupInput {
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building DescribeGroupInput",
-                )
-            })?,
-            group_id: self.group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "group_id",
-                    "group_id was not specified but it is required when building DescribeGroupInput",
-                )
-            })?,
+            identity_store_id: self.identity_store_id,
+            group_id: self.group_id,
         })
     }
 }

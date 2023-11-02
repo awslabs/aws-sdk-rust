@@ -6,7 +6,7 @@ pub struct ListRecordingConfigurationsInput {
     /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListRecordingConfigurationsInput {
     /// <p>The first recording configuration to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
@@ -14,7 +14,7 @@ impl ListRecordingConfigurationsInput {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -70,7 +70,7 @@ impl ListRecordingConfigurationsInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::list_recording_configurations::ListRecordingConfigurationsInput {
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

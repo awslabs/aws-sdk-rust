@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMeshInput {
     /// <p>The name of the service mesh to update.</p>
-    pub mesh_name: ::std::string::String,
+    pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The service mesh specification to apply.</p>
     pub spec: ::std::option::Option<crate::types::MeshSpec>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p>
@@ -12,9 +12,8 @@ pub struct UpdateMeshInput {
 }
 impl UpdateMeshInput {
     /// <p>The name of the service mesh to update.</p>
-    pub fn mesh_name(&self) -> &str {
-        use std::ops::Deref;
-        self.mesh_name.deref()
+    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
+        self.mesh_name.as_deref()
     }
     /// <p>The service mesh specification to apply.</p>
     pub fn spec(&self) -> ::std::option::Option<&crate::types::MeshSpec> {
@@ -85,16 +84,9 @@ impl UpdateMeshInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateMeshInput`](crate::operation::update_mesh::UpdateMeshInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`mesh_name`](crate::operation::update_mesh::builders::UpdateMeshInputBuilder::mesh_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_mesh::UpdateMeshInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_mesh::UpdateMeshInput {
-            mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "mesh_name",
-                    "mesh_name was not specified but it is required when building UpdateMeshInput",
-                )
-            })?,
+            mesh_name: self.mesh_name,
             spec: self.spec,
             client_token: self.client_token,
         })

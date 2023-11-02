@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCliTokenInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl CreateCliTokenInput {
     /// <p>The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl CreateCliTokenInput {
@@ -43,18 +42,9 @@ impl CreateCliTokenInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`CreateCliTokenInput`](crate::operation::create_cli_token::CreateCliTokenInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_cli_token::builders::CreateCliTokenInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_cli_token::CreateCliTokenInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_cli_token::CreateCliTokenInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateCliTokenInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::create_cli_token::CreateCliTokenInput { name: self.name })
     }
 }

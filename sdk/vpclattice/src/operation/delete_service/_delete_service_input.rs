@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub service_identifier: ::std::string::String,
+    pub service_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.service_identifier.deref()
+    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+        self.service_identifier.as_deref()
     }
 }
 impl DeleteServiceInput {
@@ -43,18 +42,11 @@ impl DeleteServiceInputBuilder {
         &self.service_identifier
     }
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`service_identifier`](crate::operation::delete_service::builders::DeleteServiceInputBuilder::service_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceInput {
-            service_identifier: self.service_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_identifier",
-                    "service_identifier was not specified but it is required when building DeleteServiceInput",
-                )
-            })?,
+            service_identifier: self.service_identifier,
         })
     }
 }

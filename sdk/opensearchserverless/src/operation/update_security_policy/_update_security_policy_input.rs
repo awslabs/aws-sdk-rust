@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSecurityPolicyInput {
     /// <p>The type of access policy.</p>
-    pub r#type: crate::types::SecurityPolicyType,
+    pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     /// <p>The name of the policy.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the policy being updated.</p>
-    pub policy_version: ::std::string::String,
+    pub policy_version: ::std::option::Option<::std::string::String>,
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy document to use as the content for the new policy.</p>
@@ -18,18 +18,16 @@ pub struct UpdateSecurityPolicyInput {
 }
 impl UpdateSecurityPolicyInput {
     /// <p>The type of access policy.</p>
-    pub fn r#type(&self) -> &crate::types::SecurityPolicyType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityPolicyType> {
+        self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The version of the policy being updated.</p>
-    pub fn policy_version(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_version.deref()
+    pub fn policy_version(&self) -> ::std::option::Option<&str> {
+        self.policy_version.as_deref()
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -151,33 +149,14 @@ impl UpdateSecurityPolicyInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateSecurityPolicyInput`](crate::operation::update_security_policy::UpdateSecurityPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::operation::update_security_policy::builders::UpdateSecurityPolicyInputBuilder::r#type)
-    /// - [`name`](crate::operation::update_security_policy::builders::UpdateSecurityPolicyInputBuilder::name)
-    /// - [`policy_version`](crate::operation::update_security_policy::builders::UpdateSecurityPolicyInputBuilder::policy_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_security_policy::UpdateSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_security_policy::UpdateSecurityPolicyInput {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building UpdateSecurityPolicyInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateSecurityPolicyInput",
-                )
-            })?,
-            policy_version: self.policy_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "policy_version",
-                    "policy_version was not specified but it is required when building UpdateSecurityPolicyInput",
-                )
-            })?,
+            r#type: self.r#type,
+            name: self.name,
+            policy_version: self.policy_version,
             description: self.description,
             policy: self.policy,
             client_token: self.client_token,

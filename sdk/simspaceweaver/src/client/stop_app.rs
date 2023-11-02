@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopApp`](crate::operation::stop_app::builders::StopAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`simulation(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::simulation) / [`set_simulation(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation of the app.</p><br>
-    ///   - [`domain(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::domain) / [`set_domain(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_domain):<br>required: **true**<br><p>The name of the domain of the app.</p><br>
-    ///   - [`app(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::app) / [`set_app(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_app):<br>required: **true**<br><p>The name of the app.</p><br>
+    ///   - [`simulation(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation of the app.</p><br>
+    ///   - [`domain(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_domain):<br>required: **true**<br><p>The name of the domain of the app.</p><br>
+    ///   - [`app(impl Into<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::app) / [`set_app(Option<String>)`](crate::operation::stop_app::builders::StopAppFluentBuilder::set_app):<br>required: **true**<br><p>The name of the app.</p><br>
     /// - On success, responds with [`StopAppOutput`](crate::operation::stop_app::StopAppOutput)
     /// - On failure, responds with [`SdkError<StopAppError>`](crate::operation::stop_app::StopAppError)
     pub fn stop_app(&self) -> crate::operation::stop_app::builders::StopAppFluentBuilder {

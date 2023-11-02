@@ -4,27 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopAppInput {
     /// <p>The name of the simulation of the app.</p>
-    pub simulation: ::std::string::String,
+    pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain of the app.</p>
-    pub domain: ::std::string::String,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The name of the app.</p>
-    pub app: ::std::string::String,
+    pub app: ::std::option::Option<::std::string::String>,
 }
 impl StopAppInput {
     /// <p>The name of the simulation of the app.</p>
-    pub fn simulation(&self) -> &str {
-        use std::ops::Deref;
-        self.simulation.deref()
+    pub fn simulation(&self) -> ::std::option::Option<&str> {
+        self.simulation.as_deref()
     }
     /// <p>The name of the domain of the app.</p>
-    pub fn domain(&self) -> &str {
-        use std::ops::Deref;
-        self.domain.deref()
+    pub fn domain(&self) -> ::std::option::Option<&str> {
+        self.domain.as_deref()
     }
     /// <p>The name of the app.</p>
-    pub fn app(&self) -> &str {
-        use std::ops::Deref;
-        self.app.deref()
+    pub fn app(&self) -> ::std::option::Option<&str> {
+        self.app.as_deref()
     }
 }
 impl StopAppInput {
@@ -89,30 +86,11 @@ impl StopAppInputBuilder {
         &self.app
     }
     /// Consumes the builder and constructs a [`StopAppInput`](crate::operation::stop_app::StopAppInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`simulation`](crate::operation::stop_app::builders::StopAppInputBuilder::simulation)
-    /// - [`domain`](crate::operation::stop_app::builders::StopAppInputBuilder::domain)
-    /// - [`app`](crate::operation::stop_app::builders::StopAppInputBuilder::app)
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_app::StopAppInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_app::StopAppInput {
-            simulation: self.simulation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "simulation",
-                    "simulation was not specified but it is required when building StopAppInput",
-                )
-            })?,
-            domain: self.domain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain",
-                    "domain was not specified but it is required when building StopAppInput",
-                )
-            })?,
-            app: self.app.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app",
-                    "app was not specified but it is required when building StopAppInput",
-                )
-            })?,
+            simulation: self.simulation,
+            domain: self.domain,
+            app: self.app,
         })
     }
 }

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDomainInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDomainInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
 }
 impl GetDomainInput {
@@ -43,16 +42,7 @@ impl GetDomainInputBuilder {
         &self.domain_id
     }
     /// Consumes the builder and constructs a [`GetDomainInput`](crate::operation::get_domain::GetDomainInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::get_domain::builders::GetDomainInputBuilder::domain_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_domain::GetDomainInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_domain::GetDomainInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building GetDomainInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_domain::GetDomainInput { domain_id: self.domain_id })
     }
 }

@@ -393,6 +393,12 @@ impl RetryConfig {
         self
     }
 
+    /// Set the maximum backoff time.
+    pub fn with_max_backoff(mut self, max_backoff: Duration) -> Self {
+        self.max_backoff = max_backoff;
+        self
+    }
+
     /// Hint to the retry strategy whether to use a static exponential base.
     ///
     /// When a retry strategy uses exponential backoff, it calculates a random base. This causes the

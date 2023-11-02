@@ -189,6 +189,12 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteServic
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.service_network_vpc_association_identifier;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field(
+                        "service_network_vpc_association_identifier",
+                        "cannot be empty or unset",
+                    )
+                })?;
                 let service_network_vpc_association_identifier =
                     ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if service_network_vpc_association_identifier.is_empty() {

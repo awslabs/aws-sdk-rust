@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDecoderManifestInput {
     /// <p> The name of the decoder manifest to retrieve information about. </p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetDecoderManifestInput {
     /// <p> The name of the decoder manifest to retrieve information about. </p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl GetDecoderManifestInput {
@@ -43,18 +42,9 @@ impl GetDecoderManifestInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetDecoderManifestInput`](crate::operation::get_decoder_manifest::GetDecoderManifestInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::get_decoder_manifest::builders::GetDecoderManifestInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_decoder_manifest::GetDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_decoder_manifest::GetDecoderManifestInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetDecoderManifestInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_decoder_manifest::GetDecoderManifestInput { name: self.name })
     }
 }

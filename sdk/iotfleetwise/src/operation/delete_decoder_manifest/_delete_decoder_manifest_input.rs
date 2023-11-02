@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDecoderManifestInput {
     /// <p> The name of the decoder manifest to delete. </p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDecoderManifestInput {
     /// <p> The name of the decoder manifest to delete. </p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl DeleteDecoderManifestInput {
@@ -43,19 +42,10 @@ impl DeleteDecoderManifestInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteDecoderManifestInput`](crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::delete_decoder_manifest::builders::DeleteDecoderManifestInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DeleteDecoderManifestInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_decoder_manifest::DeleteDecoderManifestInput { name: self.name })
     }
 }

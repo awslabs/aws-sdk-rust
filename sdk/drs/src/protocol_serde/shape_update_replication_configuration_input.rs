@@ -9,87 +9,87 @@ pub fn ser_update_replication_configuration_input(
     if let Some(var_2) = &input.auto_replicate_new_disks {
         object.key("autoReplicateNewDisks").boolean(*var_2);
     }
-    if input.bandwidth_throttling != 0 {
+    if let Some(var_3) = &input.bandwidth_throttling {
         object.key("bandwidthThrottling").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.bandwidth_throttling).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.create_public_ip {
-        object.key("createPublicIP").boolean(*var_3);
+    if let Some(var_4) = &input.create_public_ip {
+        object.key("createPublicIP").boolean(*var_4);
     }
-    if let Some(var_4) = &input.data_plane_routing {
-        object.key("dataPlaneRouting").string(var_4.as_str());
+    if let Some(var_5) = &input.data_plane_routing {
+        object.key("dataPlaneRouting").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.default_large_staging_disk_type {
-        object.key("defaultLargeStagingDiskType").string(var_5.as_str());
+    if let Some(var_6) = &input.default_large_staging_disk_type {
+        object.key("defaultLargeStagingDiskType").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.ebs_encryption {
-        object.key("ebsEncryption").string(var_6.as_str());
+    if let Some(var_7) = &input.ebs_encryption {
+        object.key("ebsEncryption").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.ebs_encryption_key_arn {
-        object.key("ebsEncryptionKeyArn").string(var_7.as_str());
+    if let Some(var_8) = &input.ebs_encryption_key_arn {
+        object.key("ebsEncryptionKeyArn").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.name {
-        object.key("name").string(var_8.as_str());
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.pit_policy {
-        let mut array_10 = object.key("pitPolicy").start_array();
-        for item_11 in var_9 {
+    if let Some(var_10) = &input.pit_policy {
+        let mut array_11 = object.key("pitPolicy").start_array();
+        for item_12 in var_10 {
             {
                 #[allow(unused_mut)]
-                let mut object_12 = array_10.value().start_object();
-                crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(&mut object_12, item_11)?;
-                object_12.finish();
+                let mut object_13 = array_11.value().start_object();
+                crate::protocol_serde::shape_pit_policy_rule::ser_pit_policy_rule(&mut object_13, item_12)?;
+                object_13.finish();
             }
         }
-        array_10.finish();
+        array_11.finish();
     }
-    if let Some(var_13) = &input.replicated_disks {
-        let mut array_14 = object.key("replicatedDisks").start_array();
-        for item_15 in var_13 {
+    if let Some(var_14) = &input.replicated_disks {
+        let mut array_15 = object.key("replicatedDisks").start_array();
+        for item_16 in var_14 {
             {
                 #[allow(unused_mut)]
-                let mut object_16 = array_14.value().start_object();
+                let mut object_17 = array_15.value().start_object();
                 crate::protocol_serde::shape_replication_configuration_replicated_disk::ser_replication_configuration_replicated_disk(
-                    &mut object_16,
-                    item_15,
+                    &mut object_17,
+                    item_16,
                 )?;
-                object_16.finish();
+                object_17.finish();
             }
         }
-        array_14.finish();
+        array_15.finish();
     }
-    if let Some(var_17) = &input.replication_server_instance_type {
-        object.key("replicationServerInstanceType").string(var_17.as_str());
+    if let Some(var_18) = &input.replication_server_instance_type {
+        object.key("replicationServerInstanceType").string(var_18.as_str());
     }
-    if let Some(var_18) = &input.replication_servers_security_groups_ids {
-        let mut array_19 = object.key("replicationServersSecurityGroupsIDs").start_array();
-        for item_20 in var_18 {
+    if let Some(var_19) = &input.replication_servers_security_groups_ids {
+        let mut array_20 = object.key("replicationServersSecurityGroupsIDs").start_array();
+        for item_21 in var_19 {
             {
-                array_19.value().string(item_20.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        array_19.finish();
+        array_20.finish();
     }
-    {
-        object.key("sourceServerID").string(input.source_server_id.as_str());
+    if let Some(var_22) = &input.source_server_id {
+        object.key("sourceServerID").string(var_22.as_str());
     }
-    if let Some(var_21) = &input.staging_area_subnet_id {
-        object.key("stagingAreaSubnetId").string(var_21.as_str());
+    if let Some(var_23) = &input.staging_area_subnet_id {
+        object.key("stagingAreaSubnetId").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.staging_area_tags {
+    if let Some(var_24) = &input.staging_area_tags {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("stagingAreaTags").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_25 = object.key("stagingAreaTags").start_object();
+        for (key_26, value_27) in var_24 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
-        object_23.finish();
+        object_25.finish();
     }
-    if let Some(var_26) = &input.use_dedicated_replication_server {
-        object.key("useDedicatedReplicationServer").boolean(*var_26);
+    if let Some(var_28) = &input.use_dedicated_replication_server {
+        object.key("useDedicatedReplicationServer").boolean(*var_28);
     }
     Ok(())
 }

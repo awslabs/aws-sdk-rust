@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisconnectSourceServerInput {
     /// <p>The ID of the Source Server to disconnect.</p>
-    pub source_server_id: ::std::string::String,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl DisconnectSourceServerInput {
     /// <p>The ID of the Source Server to disconnect.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+        self.source_server_id.as_deref()
     }
 }
 impl DisconnectSourceServerInput {
@@ -43,19 +42,12 @@ impl DisconnectSourceServerInputBuilder {
         &self.source_server_id
     }
     /// Consumes the builder and constructs a [`DisconnectSourceServerInput`](crate::operation::disconnect_source_server::DisconnectSourceServerInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_id`](crate::operation::disconnect_source_server::builders::DisconnectSourceServerInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::disconnect_source_server::DisconnectSourceServerInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disconnect_source_server::DisconnectSourceServerInput {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building DisconnectSourceServerInput",
-                )
-            })?,
+            source_server_id: self.source_server_id,
         })
     }
 }

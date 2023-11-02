@@ -4,29 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeGatewayRouteInput {
     /// <p>The name of the gateway route to describe.</p>
-    pub gateway_route_name: ::std::string::String,
+    pub gateway_route_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service mesh that the gateway route resides in.</p>
-    pub mesh_name: ::std::string::String,
+    pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
-    pub virtual_gateway_name: ::std::string::String,
+    pub virtual_gateway_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: ::std::option::Option<::std::string::String>,
 }
 impl DescribeGatewayRouteInput {
     /// <p>The name of the gateway route to describe.</p>
-    pub fn gateway_route_name(&self) -> &str {
-        use std::ops::Deref;
-        self.gateway_route_name.deref()
+    pub fn gateway_route_name(&self) -> ::std::option::Option<&str> {
+        self.gateway_route_name.as_deref()
     }
     /// <p>The name of the service mesh that the gateway route resides in.</p>
-    pub fn mesh_name(&self) -> &str {
-        use std::ops::Deref;
-        self.mesh_name.deref()
+    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
+        self.mesh_name.as_deref()
     }
     /// <p>The name of the virtual gateway that the gateway route is associated with.</p>
-    pub fn virtual_gateway_name(&self) -> &str {
-        use std::ops::Deref;
-        self.virtual_gateway_name.deref()
+    pub fn virtual_gateway_name(&self) -> ::std::option::Option<&str> {
+        self.virtual_gateway_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
@@ -110,33 +107,14 @@ impl DescribeGatewayRouteInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`DescribeGatewayRouteInput`](crate::operation::describe_gateway_route::DescribeGatewayRouteInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`gateway_route_name`](crate::operation::describe_gateway_route::builders::DescribeGatewayRouteInputBuilder::gateway_route_name)
-    /// - [`mesh_name`](crate::operation::describe_gateway_route::builders::DescribeGatewayRouteInputBuilder::mesh_name)
-    /// - [`virtual_gateway_name`](crate::operation::describe_gateway_route::builders::DescribeGatewayRouteInputBuilder::virtual_gateway_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_gateway_route::DescribeGatewayRouteInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_gateway_route::DescribeGatewayRouteInput {
-            gateway_route_name: self.gateway_route_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "gateway_route_name",
-                    "gateway_route_name was not specified but it is required when building DescribeGatewayRouteInput",
-                )
-            })?,
-            mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "mesh_name",
-                    "mesh_name was not specified but it is required when building DescribeGatewayRouteInput",
-                )
-            })?,
-            virtual_gateway_name: self.virtual_gateway_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "virtual_gateway_name",
-                    "virtual_gateway_name was not specified but it is required when building DescribeGatewayRouteInput",
-                )
-            })?,
+            gateway_route_name: self.gateway_route_name,
+            mesh_name: self.mesh_name,
+            virtual_gateway_name: self.virtual_gateway_name,
             mesh_owner: self.mesh_owner,
         })
     }

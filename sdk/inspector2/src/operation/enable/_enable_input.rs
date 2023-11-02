@@ -6,7 +6,7 @@ pub struct EnableInput {
     /// <p>A list of account IDs you want to enable Amazon Inspector scans for.</p>
     pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The resource scan types you want to enable.</p>
-    pub resource_types: ::std::vec::Vec<crate::types::ResourceScanType>,
+    pub resource_types: ::std::option::Option<::std::vec::Vec<crate::types::ResourceScanType>>,
     /// <p>The idempotency token for the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
@@ -18,9 +18,10 @@ impl EnableInput {
         self.account_ids.as_deref().unwrap_or_default()
     }
     /// <p>The resource scan types you want to enable.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_types.is_none()`.
     pub fn resource_types(&self) -> &[crate::types::ResourceScanType] {
-        use std::ops::Deref;
-        self.resource_types.deref()
+        self.resource_types.as_deref().unwrap_or_default()
     }
     /// <p>The idempotency token for the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -98,17 +99,10 @@ impl EnableInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`EnableInput`](crate::operation::enable::EnableInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`resource_types`](crate::operation::enable::builders::EnableInputBuilder::resource_types)
     pub fn build(self) -> ::std::result::Result<crate::operation::enable::EnableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::enable::EnableInput {
             account_ids: self.account_ids,
-            resource_types: self.resource_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_types",
-                    "resource_types was not specified but it is required when building EnableInput",
-                )
-            })?,
+            resource_types: self.resource_types,
             client_token: self.client_token,
         })
     }

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeKeywordsInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub origination_identity: ::std::string::String,
+    pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>An array of keywords to search for.</p>
     pub keywords: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of keyword filters to filter the results.</p>
@@ -16,9 +16,8 @@ pub struct DescribeKeywordsInput {
 }
 impl DescribeKeywordsInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> &str {
-        use std::ops::Deref;
-        self.origination_identity.deref()
+    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+        self.origination_identity.as_deref()
     }
     /// <p>An array of keywords to search for.</p>
     ///
@@ -143,18 +142,11 @@ impl DescribeKeywordsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeKeywordsInput`](crate::operation::describe_keywords::DescribeKeywordsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`origination_identity`](crate::operation::describe_keywords::builders::DescribeKeywordsInputBuilder::origination_identity)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_keywords::DescribeKeywordsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_keywords::DescribeKeywordsInput {
-            origination_identity: self.origination_identity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "origination_identity",
-                    "origination_identity was not specified but it is required when building DescribeKeywordsInput",
-                )
-            })?,
+            origination_identity: self.origination_identity,
             keywords: self.keywords,
             filters: self.filters,
             next_token: self.next_token,

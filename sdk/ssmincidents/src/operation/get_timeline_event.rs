@@ -184,6 +184,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTimelineE
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.incident_record_arn;
+                let inner_1 = inner_1.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field("incident_record_arn", "cannot be empty or unset")
+                })?;
                 if inner_1.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "incident_record_arn",
@@ -192,6 +195,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTimelineE
                 }
                 query.push_kv("incidentRecordArn", &::aws_smithy_http::query::fmt_string(&inner_1));
                 let inner_2 = &_input.event_id;
+                let inner_2 = inner_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("event_id", "cannot be empty or unset"))?;
                 if inner_2.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "event_id",

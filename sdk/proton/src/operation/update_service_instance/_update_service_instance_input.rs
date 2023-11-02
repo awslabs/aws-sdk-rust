@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateServiceInstanceInput {
     /// <p>The name of the service instance to update.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that the service instance belongs to.</p>
-    pub service_name: ::std::string::String,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
     /// <dl>
     /// <dt></dt>
@@ -30,7 +30,7 @@ pub struct UpdateServiceInstanceInput {
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub deployment_type: crate::types::DeploymentUpdateType,
+    pub deployment_type: ::std::option::Option<crate::types::DeploymentUpdateType>,
     /// <p>The formatted specification that defines the service instance update.</p>
     pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The major version of the service template to update.</p>
@@ -42,14 +42,12 @@ pub struct UpdateServiceInstanceInput {
 }
 impl UpdateServiceInstanceInput {
     /// <p>The name of the service instance to update.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The name of the service that the service instance belongs to.</p>
-    pub fn service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.service_name.deref()
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
+        self.service_name.as_deref()
     }
     /// <p>The deployment type. It defines the mode for updating a service instance, as follows:</p>
     /// <dl>
@@ -74,8 +72,8 @@ impl UpdateServiceInstanceInput {
     /// <p>In this mode, the service instance is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub fn deployment_type(&self) -> &crate::types::DeploymentUpdateType {
-        &self.deployment_type
+    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentUpdateType> {
+        self.deployment_type.as_ref()
     }
     /// <p>The formatted specification that defines the service instance update.</p>
     pub fn spec(&self) -> ::std::option::Option<&str> {
@@ -295,33 +293,14 @@ impl UpdateServiceInstanceInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateServiceInstanceInput`](crate::operation::update_service_instance::UpdateServiceInstanceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::update_service_instance::builders::UpdateServiceInstanceInputBuilder::name)
-    /// - [`service_name`](crate::operation::update_service_instance::builders::UpdateServiceInstanceInputBuilder::service_name)
-    /// - [`deployment_type`](crate::operation::update_service_instance::builders::UpdateServiceInstanceInputBuilder::deployment_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_service_instance::UpdateServiceInstanceInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_service_instance::UpdateServiceInstanceInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateServiceInstanceInput",
-                )
-            })?,
-            service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_name",
-                    "service_name was not specified but it is required when building UpdateServiceInstanceInput",
-                )
-            })?,
-            deployment_type: self.deployment_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "deployment_type",
-                    "deployment_type was not specified but it is required when building UpdateServiceInstanceInput",
-                )
-            })?,
+            name: self.name,
+            service_name: self.service_name,
+            deployment_type: self.deployment_type,
             spec: self.spec,
             template_major_version: self.template_major_version,
             template_minor_version: self.template_minor_version,

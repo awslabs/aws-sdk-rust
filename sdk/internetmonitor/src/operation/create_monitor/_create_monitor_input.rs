@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMonitorInput {
     /// <p>The name of the monitor. </p>
-    pub monitor_name: ::std::string::String,
+    pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
     /// <p>If you add only Amazon VPC resources, at least one VPC must have an Internet Gateway attached to it, to make sure that it has internet connectivity.</p>
@@ -16,12 +16,12 @@ pub struct CreateMonitorInput {
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub max_city_networks_to_monitor: i32,
+    pub max_city_networks_to_monitor: ::std::option::Option<i32>,
     /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
     pub internet_measurements_log_delivery: ::std::option::Option<crate::types::InternetMeasurementsLogDelivery>,
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub traffic_percentage_to_monitor: i32,
+    pub traffic_percentage_to_monitor: ::std::option::Option<i32>,
     /// <p>Defines the threshold percentages and other configuration information for when Amazon CloudWatch Internet Monitor creates a health event. Internet Monitor creates a health event when an internet issue that affects your application end users has a health score percentage that is at or below a specific threshold, and, sometimes, when other criteria are met.</p>
     /// <p>If you don't set a health event threshold, the default value is 95%.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-overview.html#IMUpdateThresholdFromOverview"> Change health event thresholds</a> in the Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
@@ -29,9 +29,8 @@ pub struct CreateMonitorInput {
 }
 impl CreateMonitorInput {
     /// <p>The name of the monitor. </p>
-    pub fn monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_name.deref()
+    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+        self.monitor_name.as_deref()
     }
     /// <p>The resources to include in a monitor, which you provide as a set of Amazon Resource Names (ARNs). Resources can be VPCs, NLBs, Amazon CloudFront distributions, or Amazon WorkSpaces directories.</p>
     /// <p>You can add a combination of VPCs and CloudFront distributions, or you can add WorkSpaces directories, or you can add NLBs. You can't add NLBs or WorkSpaces directories together with any other resources.</p> <note>
@@ -52,7 +51,7 @@ impl CreateMonitorInput {
     }
     /// <p>The maximum number of city-networks to monitor for your resources. A city-network is the location (city) where clients access your application resources from and the ASN or network provider, such as an internet service provider (ISP), that clients access the resources through. Setting this limit can help control billing costs.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub fn max_city_networks_to_monitor(&self) -> i32 {
+    pub fn max_city_networks_to_monitor(&self) -> ::std::option::Option<i32> {
         self.max_city_networks_to_monitor
     }
     /// <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition to CloudWatch Logs.</p>
@@ -61,7 +60,7 @@ impl CreateMonitorInput {
     }
     /// <p>The percentage of the internet-facing traffic for your application that you want to monitor with this monitor. If you set a city-networks maximum, that limit overrides the traffic percentage that you set.</p>
     /// <p>To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMTrafficPercentage.html">Choosing an application traffic percentage to monitor </a> in the Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
-    pub fn traffic_percentage_to_monitor(&self) -> i32 {
+    pub fn traffic_percentage_to_monitor(&self) -> ::std::option::Option<i32> {
         self.traffic_percentage_to_monitor
     }
     /// <p>Defines the threshold percentages and other configuration information for when Amazon CloudWatch Internet Monitor creates a health event. Internet Monitor creates a health event when an internet issue that affects your application end users has a health score percentage that is at or below a specific threshold, and, sometimes, when other criteria are met.</p>
@@ -239,24 +238,17 @@ impl CreateMonitorInputBuilder {
         &self.health_events_config
     }
     /// Consumes the builder and constructs a [`CreateMonitorInput`](crate::operation::create_monitor::CreateMonitorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`monitor_name`](crate::operation::create_monitor::builders::CreateMonitorInputBuilder::monitor_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_monitor::CreateMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_monitor::CreateMonitorInput {
-            monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "monitor_name",
-                    "monitor_name was not specified but it is required when building CreateMonitorInput",
-                )
-            })?,
+            monitor_name: self.monitor_name,
             resources: self.resources,
             client_token: self.client_token,
             tags: self.tags,
-            max_city_networks_to_monitor: self.max_city_networks_to_monitor.unwrap_or_default(),
+            max_city_networks_to_monitor: self.max_city_networks_to_monitor,
             internet_measurements_log_delivery: self.internet_measurements_log_delivery,
-            traffic_percentage_to_monitor: self.traffic_percentage_to_monitor.unwrap_or_default(),
+            traffic_percentage_to_monitor: self.traffic_percentage_to_monitor,
             health_events_config: self.health_events_config,
         })
     }

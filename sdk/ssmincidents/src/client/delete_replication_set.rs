@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteReplicationSet`](crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder::arn) / [`set_arn(impl Into<String>)`](crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the replication set you're deleting.</p><br>
     /// - On success, responds with [`DeleteReplicationSetOutput`](crate::operation::delete_replication_set::DeleteReplicationSetOutput)
     /// - On failure, responds with [`SdkError<DeleteReplicationSetError>`](crate::operation::delete_replication_set::DeleteReplicationSetError)
     pub fn delete_replication_set(&self) -> crate::operation::delete_replication_set::builders::DeleteReplicationSetFluentBuilder {

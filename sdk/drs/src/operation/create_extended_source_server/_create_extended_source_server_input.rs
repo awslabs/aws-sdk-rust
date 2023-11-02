@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateExtendedSourceServerInput {
     /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
-    pub source_server_arn: ::std::string::String,
+    pub source_server_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of tags associated with the extended source server.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateExtendedSourceServerInput {
     /// <p>This defines the ARN of the source server in staging Account based on which you want to create an extended source server.</p>
-    pub fn source_server_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_arn.deref()
+    pub fn source_server_arn(&self) -> ::std::option::Option<&str> {
+        self.source_server_arn.as_deref()
     }
     /// <p>A list of tags associated with the extended source server.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -78,8 +77,6 @@ impl CreateExtendedSourceServerInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateExtendedSourceServerInput`](crate::operation::create_extended_source_server::CreateExtendedSourceServerInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_arn`](crate::operation::create_extended_source_server::builders::CreateExtendedSourceServerInputBuilder::source_server_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -87,12 +84,7 @@ impl CreateExtendedSourceServerInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_extended_source_server::CreateExtendedSourceServerInput {
-            source_server_arn: self.source_server_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_arn",
-                    "source_server_arn was not specified but it is required when building CreateExtendedSourceServerInput",
-                )
-            })?,
+            source_server_arn: self.source_server_arn,
             tags: self.tags,
         })
     }

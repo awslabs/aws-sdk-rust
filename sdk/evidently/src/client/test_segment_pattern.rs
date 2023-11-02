@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`TestSegmentPattern`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`pattern(impl Into<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::pattern) / [`set_pattern(impl Into<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::set_pattern):<br>required: **true**<br><p>The pattern to test.</p><br>
-    ///   - [`payload(impl Into<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::payload) / [`set_payload(impl Into<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::set_payload):<br>required: **true**<br><p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p><br>
+    ///   - [`pattern(impl Into<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::pattern) / [`set_pattern(Option<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::set_pattern):<br>required: **true**<br><p>The pattern to test.</p><br>
+    ///   - [`payload(impl Into<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::payload) / [`set_payload(Option<String>)`](crate::operation::test_segment_pattern::builders::TestSegmentPatternFluentBuilder::set_payload):<br>required: **true**<br><p>A sample <code>evaluationContext</code> JSON block to test against the specified pattern.</p><br>
     /// - On success, responds with [`TestSegmentPatternOutput`](crate::operation::test_segment_pattern::TestSegmentPatternOutput) with field(s):
     ///   - [`r#match(bool)`](crate::operation::test_segment_pattern::TestSegmentPatternOutput::match): <p>Returns <code>true</code> if the pattern matches the payload.</p>
     /// - On failure, responds with [`SdkError<TestSegmentPatternError>`](crate::operation::test_segment_pattern::TestSegmentPatternError)

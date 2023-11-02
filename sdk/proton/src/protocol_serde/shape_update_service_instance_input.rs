@@ -3,26 +3,26 @@ pub fn ser_update_service_instance_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_service_instance::UpdateServiceInstanceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
-    {
-        object.key("serviceName").string(input.service_name.as_str());
+    if let Some(var_2) = &input.service_name {
+        object.key("serviceName").string(var_2.as_str());
     }
-    {
-        object.key("deploymentType").string(input.deployment_type.as_str());
+    if let Some(var_3) = &input.deployment_type {
+        object.key("deploymentType").string(var_3.as_str());
     }
-    if let Some(var_1) = &input.spec {
-        object.key("spec").string(var_1.as_str());
+    if let Some(var_4) = &input.spec {
+        object.key("spec").string(var_4.as_str());
     }
-    if let Some(var_2) = &input.template_major_version {
-        object.key("templateMajorVersion").string(var_2.as_str());
+    if let Some(var_5) = &input.template_major_version {
+        object.key("templateMajorVersion").string(var_5.as_str());
     }
-    if let Some(var_3) = &input.template_minor_version {
-        object.key("templateMinorVersion").string(var_3.as_str());
+    if let Some(var_6) = &input.template_minor_version {
+        object.key("templateMinorVersion").string(var_6.as_str());
     }
-    if let Some(var_4) = &input.client_token {
-        object.key("clientToken").string(var_4.as_str());
+    if let Some(var_7) = &input.client_token {
+        object.key("clientToken").string(var_7.as_str());
     }
     Ok(())
 }

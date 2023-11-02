@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelBatchJobExecutionInput {
     /// <p>The unique identifier of the application.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the batch job execution.</p>
-    pub execution_id: ::std::string::String,
+    pub execution_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelBatchJobExecutionInput {
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>The unique identifier of the batch job execution.</p>
-    pub fn execution_id(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_id.deref()
+    pub fn execution_id(&self) -> ::std::option::Option<&str> {
+        self.execution_id.as_deref()
     }
 }
 impl CancelBatchJobExecutionInput {
@@ -66,9 +64,6 @@ impl CancelBatchJobExecutionInputBuilder {
         &self.execution_id
     }
     /// Consumes the builder and constructs a [`CancelBatchJobExecutionInput`](crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionInputBuilder::application_id)
-    /// - [`execution_id`](crate::operation::cancel_batch_job_execution::builders::CancelBatchJobExecutionInputBuilder::execution_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -76,18 +71,8 @@ impl CancelBatchJobExecutionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_batch_job_execution::CancelBatchJobExecutionInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building CancelBatchJobExecutionInput",
-                )
-            })?,
-            execution_id: self.execution_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "execution_id",
-                    "execution_id was not specified but it is required when building CancelBatchJobExecutionInput",
-                )
-            })?,
+            application_id: self.application_id,
+            execution_id: self.execution_id,
         })
     }
 }

@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutChannelPolicyInput {
     /// <p>The channel name associated with this Channel Policy.</p>
-    pub channel_name: ::std::string::String,
+    pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
-    pub policy: ::std::string::String,
+    pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutChannelPolicyInput {
     /// <p>The channel name associated with this Channel Policy.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
     /// <p>Adds an IAM role that determines the permissions of your channel.</p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> ::std::option::Option<&str> {
+        self.policy.as_deref()
     }
 }
 impl PutChannelPolicyInput {
@@ -66,25 +64,12 @@ impl PutChannelPolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutChannelPolicyInput`](crate::operation::put_channel_policy::PutChannelPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_name`](crate::operation::put_channel_policy::builders::PutChannelPolicyInputBuilder::channel_name)
-    /// - [`policy`](crate::operation::put_channel_policy::builders::PutChannelPolicyInputBuilder::policy)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_channel_policy::PutChannelPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_channel_policy::PutChannelPolicyInput {
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building PutChannelPolicyInput",
-                )
-            })?,
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building PutChannelPolicyInput",
-                )
-            })?,
+            channel_name: self.channel_name,
+            policy: self.policy,
         })
     }
 }

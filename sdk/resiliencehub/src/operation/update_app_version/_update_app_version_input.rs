@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAppVersionInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub app_arn: ::std::string::String,
+    pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
     /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
     /// <p>Key: <code>"failover-regions"</code> </p>
@@ -14,9 +14,8 @@ pub struct UpdateAppVersionInput {
 }
 impl UpdateAppVersionInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+        self.app_arn.as_deref()
     }
     /// <p>Additional configuration parameters for an Resilience Hub application. If you want to implement <code>additionalInfo</code> through the Resilience Hub console rather than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure the application configuration parameters</a>.</p> <note>
     /// <p>Currently, this parameter accepts a key-value mapping (in a string format) of only one failover region and one associated account.</p>
@@ -97,18 +96,11 @@ impl UpdateAppVersionInputBuilder {
         &self.additional_info
     }
     /// Consumes the builder and constructs a [`UpdateAppVersionInput`](crate::operation::update_app_version::UpdateAppVersionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_arn`](crate::operation::update_app_version::builders::UpdateAppVersionInputBuilder::app_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_app_version::UpdateAppVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_app_version::UpdateAppVersionInput {
-            app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_arn",
-                    "app_arn was not specified but it is required when building UpdateAppVersionInput",
-                )
-            })?,
+            app_arn: self.app_arn,
             additional_info: self.additional_info,
         })
     }

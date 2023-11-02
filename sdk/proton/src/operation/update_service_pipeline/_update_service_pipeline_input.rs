@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateServicePipelineInput {
     /// <p>The name of the service to that the pipeline is associated with.</p>
-    pub service_name: ::std::string::String,
+    pub service_name: ::std::option::Option<::std::string::String>,
     /// <p>The spec for the service pipeline to update.</p>
-    pub spec: ::std::string::String,
+    pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The deployment type.</p>
     /// <p>There are four modes for updating a service pipeline. The <code>deploymentType</code> field defines the mode.</p>
     /// <dl>
@@ -31,7 +31,7 @@ pub struct UpdateServicePipelineInput {
     /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub deployment_type: crate::types::DeploymentUpdateType,
+    pub deployment_type: ::std::option::Option<crate::types::DeploymentUpdateType>,
     /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
     pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>The minor version of the service template that was used to create the service that the pipeline is associated with.</p>
@@ -39,14 +39,12 @@ pub struct UpdateServicePipelineInput {
 }
 impl UpdateServicePipelineInput {
     /// <p>The name of the service to that the pipeline is associated with.</p>
-    pub fn service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.service_name.deref()
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
+        self.service_name.as_deref()
     }
     /// <p>The spec for the service pipeline to update.</p>
-    pub fn spec(&self) -> &str {
-        use std::ops::Deref;
-        self.spec.deref()
+    pub fn spec(&self) -> ::std::option::Option<&str> {
+        self.spec.as_deref()
     }
     /// <p>The deployment type.</p>
     /// <p>There are four modes for updating a service pipeline. The <code>deploymentType</code> field defines the mode.</p>
@@ -72,8 +70,8 @@ impl UpdateServicePipelineInput {
     /// <p>In this mode, the service pipeline is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can specify a different major version that's higher than the major version in use and a minor version.</p>
     /// </dd>
     /// </dl>
-    pub fn deployment_type(&self) -> &crate::types::DeploymentUpdateType {
-        &self.deployment_type
+    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentUpdateType> {
+        self.deployment_type.as_ref()
     }
     /// <p>The major version of the service template that was used to create the service that the pipeline is associated with.</p>
     pub fn template_major_version(&self) -> ::std::option::Option<&str> {
@@ -256,33 +254,14 @@ impl UpdateServicePipelineInputBuilder {
         &self.template_minor_version
     }
     /// Consumes the builder and constructs a [`UpdateServicePipelineInput`](crate::operation::update_service_pipeline::UpdateServicePipelineInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`service_name`](crate::operation::update_service_pipeline::builders::UpdateServicePipelineInputBuilder::service_name)
-    /// - [`spec`](crate::operation::update_service_pipeline::builders::UpdateServicePipelineInputBuilder::spec)
-    /// - [`deployment_type`](crate::operation::update_service_pipeline::builders::UpdateServicePipelineInputBuilder::deployment_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_service_pipeline::UpdateServicePipelineInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_service_pipeline::UpdateServicePipelineInput {
-            service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_name",
-                    "service_name was not specified but it is required when building UpdateServicePipelineInput",
-                )
-            })?,
-            spec: self.spec.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "spec",
-                    "spec was not specified but it is required when building UpdateServicePipelineInput",
-                )
-            })?,
-            deployment_type: self.deployment_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "deployment_type",
-                    "deployment_type was not specified but it is required when building UpdateServicePipelineInput",
-                )
-            })?,
+            service_name: self.service_name,
+            spec: self.spec,
+            deployment_type: self.deployment_type,
             template_major_version: self.template_major_version,
             template_minor_version: self.template_minor_version,
         })

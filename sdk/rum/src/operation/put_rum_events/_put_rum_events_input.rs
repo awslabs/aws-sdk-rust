@@ -4,26 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutRumEventsInput {
     /// <p>The ID of the app monitor that is sending this data.</p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for this batch of RUM event data.</p>
-    pub batch_id: ::std::string::String,
+    pub batch_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
     pub app_monitor_details: ::std::option::Option<crate::types::AppMonitorDetails>,
     /// <p>A structure that contains information about the user session that this batch of events was collected from.</p>
     pub user_details: ::std::option::Option<crate::types::UserDetails>,
     /// <p>An array of structures that contain the telemetry event data.</p>
-    pub rum_events: ::std::vec::Vec<crate::types::RumEvent>,
+    pub rum_events: ::std::option::Option<::std::vec::Vec<crate::types::RumEvent>>,
 }
 impl PutRumEventsInput {
     /// <p>The ID of the app monitor that is sending this data.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>A unique identifier for this batch of RUM event data.</p>
-    pub fn batch_id(&self) -> &str {
-        use std::ops::Deref;
-        self.batch_id.deref()
+    pub fn batch_id(&self) -> ::std::option::Option<&str> {
+        self.batch_id.as_deref()
     }
     /// <p>A structure that contains information about the app monitor that collected this telemetry information.</p>
     pub fn app_monitor_details(&self) -> ::std::option::Option<&crate::types::AppMonitorDetails> {
@@ -34,9 +32,10 @@ impl PutRumEventsInput {
         self.user_details.as_ref()
     }
     /// <p>An array of structures that contain the telemetry event data.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.rum_events.is_none()`.
     pub fn rum_events(&self) -> &[crate::types::RumEvent] {
-        use std::ops::Deref;
-        self.rum_events.deref()
+        self.rum_events.as_deref().unwrap_or_default()
     }
 }
 impl PutRumEventsInput {
@@ -138,34 +137,15 @@ impl PutRumEventsInputBuilder {
         &self.rum_events
     }
     /// Consumes the builder and constructs a [`PutRumEventsInput`](crate::operation::put_rum_events::PutRumEventsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::put_rum_events::builders::PutRumEventsInputBuilder::id)
-    /// - [`batch_id`](crate::operation::put_rum_events::builders::PutRumEventsInputBuilder::batch_id)
-    /// - [`rum_events`](crate::operation::put_rum_events::builders::PutRumEventsInputBuilder::rum_events)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_rum_events::PutRumEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_rum_events::PutRumEventsInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building PutRumEventsInput",
-                )
-            })?,
-            batch_id: self.batch_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "batch_id",
-                    "batch_id was not specified but it is required when building PutRumEventsInput",
-                )
-            })?,
+            id: self.id,
+            batch_id: self.batch_id,
             app_monitor_details: self.app_monitor_details,
             user_details: self.user_details,
-            rum_events: self.rum_events.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "rum_events",
-                    "rum_events was not specified but it is required when building PutRumEventsInput",
-                )
-            })?,
+            rum_events: self.rum_events,
         })
     }
 }

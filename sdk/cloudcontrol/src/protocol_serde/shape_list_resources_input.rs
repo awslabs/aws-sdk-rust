@@ -3,26 +3,26 @@ pub fn ser_list_resources_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_resources::ListResourcesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("TypeName").string(input.type_name.as_str());
+    if let Some(var_1) = &input.type_name {
+        object.key("TypeName").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.type_version_id {
-        object.key("TypeVersionId").string(var_1.as_str());
+    if let Some(var_2) = &input.type_version_id {
+        object.key("TypeVersionId").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.role_arn {
-        object.key("RoleArn").string(var_2.as_str());
+    if let Some(var_3) = &input.role_arn {
+        object.key("RoleArn").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("NextToken").string(var_3.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("NextToken").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.max_results {
+    if let Some(var_5) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if let Some(var_5) = &input.resource_model {
-        object.key("ResourceModel").string(var_5.as_str());
+    if let Some(var_6) = &input.resource_model {
+        object.key("ResourceModel").string(var_6.as_str());
     }
     Ok(())
 }

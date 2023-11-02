@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeEphemerisInput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub ephemeris_id: ::std::string::String,
+    pub ephemeris_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeEphemerisInput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ephemeris_id.deref()
+    pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
     }
 }
 impl DescribeEphemerisInput {
@@ -43,18 +42,11 @@ impl DescribeEphemerisInputBuilder {
         &self.ephemeris_id
     }
     /// Consumes the builder and constructs a [`DescribeEphemerisInput`](crate::operation::describe_ephemeris::DescribeEphemerisInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`ephemeris_id`](crate::operation::describe_ephemeris::builders::DescribeEphemerisInputBuilder::ephemeris_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_ephemeris::DescribeEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_ephemeris::DescribeEphemerisInput {
-            ephemeris_id: self.ephemeris_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "ephemeris_id",
-                    "ephemeris_id was not specified but it is required when building DescribeEphemerisInput",
-                )
-            })?,
+            ephemeris_id: self.ephemeris_id,
         })
     }
 }

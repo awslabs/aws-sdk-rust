@@ -6,14 +6,14 @@ pub fn ser_begin_transaction_input(
     if let Some(var_1) = &input.database {
         object.key("database").string(var_1.as_str());
     }
-    {
-        object.key("resourceArn").string(input.resource_arn.as_str());
+    if let Some(var_2) = &input.resource_arn {
+        object.key("resourceArn").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.schema {
-        object.key("schema").string(var_2.as_str());
+    if let Some(var_3) = &input.schema {
+        object.key("schema").string(var_3.as_str());
     }
-    {
-        object.key("secretArn").string(input.secret_arn.as_str());
+    if let Some(var_4) = &input.secret_arn {
+        object.key("secretArn").string(var_4.as_str());
     }
     Ok(())
 }

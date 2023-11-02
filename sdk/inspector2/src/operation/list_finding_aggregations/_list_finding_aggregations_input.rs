@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingAggregationsInput {
     /// <p>The type of the aggregation request.</p>
-    pub aggregation_type: crate::types::AggregationType,
+    pub aggregation_type: ::std::option::Option<crate::types::AggregationType>,
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results the response can return. If your request would return more than the maximum the response will return a <code>nextToken</code> value, use this value when you call the action again to get the remaining results.</p>
@@ -16,8 +16,8 @@ pub struct ListFindingAggregationsInput {
 }
 impl ListFindingAggregationsInput {
     /// <p>The type of the aggregation request.</p>
-    pub fn aggregation_type(&self) -> &crate::types::AggregationType {
-        &self.aggregation_type
+    pub fn aggregation_type(&self) -> ::std::option::Option<&crate::types::AggregationType> {
+        self.aggregation_type.as_ref()
     }
     /// <p>A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the <code>maxResults</code> maximum value it will also return a <code>nextToken</code> value. For subsequent calls, use the <code>nextToken</code> value returned from the previous request to continue listing results after the first page.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -134,8 +134,6 @@ impl ListFindingAggregationsInputBuilder {
         &self.aggregation_request
     }
     /// Consumes the builder and constructs a [`ListFindingAggregationsInput`](crate::operation::list_finding_aggregations::ListFindingAggregationsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`aggregation_type`](crate::operation::list_finding_aggregations::builders::ListFindingAggregationsInputBuilder::aggregation_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -143,12 +141,7 @@ impl ListFindingAggregationsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_finding_aggregations::ListFindingAggregationsInput {
-            aggregation_type: self.aggregation_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "aggregation_type",
-                    "aggregation_type was not specified but it is required when building ListFindingAggregationsInput",
-                )
-            })?,
+            aggregation_type: self.aggregation_type,
             next_token: self.next_token,
             max_results: self.max_results,
             account_ids: self.account_ids,

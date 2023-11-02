@@ -4,35 +4,34 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateModelManifestInput {
     /// <p> The name of the vehicle model to create.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> A brief description of the vehicle model. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of nodes, which are a general abstraction of signals. </p>
-    pub nodes: ::std::vec::Vec<::std::string::String>,
+    pub nodes: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    pub signal_catalog_arn: ::std::string::String,
+    pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that can be used to manage the vehicle model.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateModelManifestInput {
     /// <p> The name of the vehicle model to create.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p> A brief description of the vehicle model. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> A list of nodes, which are a general abstraction of signals. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.nodes.is_none()`.
     pub fn nodes(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.nodes.deref()
+        self.nodes.as_deref().unwrap_or_default()
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    pub fn signal_catalog_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.signal_catalog_arn.deref()
+    pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
+        self.signal_catalog_arn.as_deref()
     }
     /// <p>Metadata that can be used to manage the vehicle model.</p>
     ///
@@ -144,34 +143,15 @@ impl CreateModelManifestInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateModelManifestInput`](crate::operation::create_model_manifest::CreateModelManifestInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_model_manifest::builders::CreateModelManifestInputBuilder::name)
-    /// - [`nodes`](crate::operation::create_model_manifest::builders::CreateModelManifestInputBuilder::nodes)
-    /// - [`signal_catalog_arn`](crate::operation::create_model_manifest::builders::CreateModelManifestInputBuilder::signal_catalog_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_model_manifest::CreateModelManifestInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_model_manifest::CreateModelManifestInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateModelManifestInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
-            nodes: self.nodes.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "nodes",
-                    "nodes was not specified but it is required when building CreateModelManifestInput",
-                )
-            })?,
-            signal_catalog_arn: self.signal_catalog_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "signal_catalog_arn",
-                    "signal_catalog_arn was not specified but it is required when building CreateModelManifestInput",
-                )
-            })?,
+            nodes: self.nodes,
+            signal_catalog_arn: self.signal_catalog_arn,
             tags: self.tags,
         })
     }

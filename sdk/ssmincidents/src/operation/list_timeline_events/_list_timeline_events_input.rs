@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTimelineEventsInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub incident_record_arn: ::std::string::String,
+    pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
     /// <li> <p> <code>eventTime</code> </p> </li>
@@ -28,9 +28,8 @@ pub struct ListTimelineEventsInput {
 }
 impl ListTimelineEventsInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.incident_record_arn.deref()
+    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
     }
     /// <p>Filters the timeline events based on the provided conditional values. You can filter timeline events with the following keys:</p>
     /// <ul>
@@ -206,18 +205,11 @@ impl ListTimelineEventsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTimelineEventsInput`](crate::operation::list_timeline_events::ListTimelineEventsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`incident_record_arn`](crate::operation::list_timeline_events::builders::ListTimelineEventsInputBuilder::incident_record_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_timeline_events::ListTimelineEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_timeline_events::ListTimelineEventsInput {
-            incident_record_arn: self.incident_record_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "incident_record_arn",
-                    "incident_record_arn was not specified but it is required when building ListTimelineEventsInput",
-                )
-            })?,
+            incident_record_arn: self.incident_record_arn,
             filters: self.filters,
             sort_by: self.sort_by,
             sort_order: self.sort_order,

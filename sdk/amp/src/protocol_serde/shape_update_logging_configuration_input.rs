@@ -6,8 +6,8 @@ pub fn ser_update_logging_configuration_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    {
-        object.key("logGroupArn").string(input.log_group_arn.as_str());
+    if let Some(var_2) = &input.log_group_arn {
+        object.key("logGroupArn").string(var_2.as_str());
     }
     Ok(())
 }

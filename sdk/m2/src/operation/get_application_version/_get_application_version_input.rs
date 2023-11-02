@@ -4,18 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationVersionInput {
     /// <p>The unique identifier of the application.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The specific version of the application.</p>
-    pub application_version: i32,
+    pub application_version: ::std::option::Option<i32>,
 }
 impl GetApplicationVersionInput {
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>The specific version of the application.</p>
-    pub fn application_version(&self) -> i32 {
+    pub fn application_version(&self) -> ::std::option::Option<i32> {
         self.application_version
     }
 }
@@ -65,26 +64,13 @@ impl GetApplicationVersionInputBuilder {
         &self.application_version
     }
     /// Consumes the builder and constructs a [`GetApplicationVersionInput`](crate::operation::get_application_version::GetApplicationVersionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder::application_id)
-    /// - [`application_version`](crate::operation::get_application_version::builders::GetApplicationVersionInputBuilder::application_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_application_version::GetApplicationVersionInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_application_version::GetApplicationVersionInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building GetApplicationVersionInput",
-                )
-            })?,
-            application_version: self.application_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_version",
-                    "application_version was not specified but it is required when building GetApplicationVersionInput",
-                )
-            })?,
+            application_id: self.application_id,
+            application_version: self.application_version,
         })
     }
 }

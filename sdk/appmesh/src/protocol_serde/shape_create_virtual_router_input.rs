@@ -24,8 +24,8 @@ pub fn ser_create_virtual_router_input(
         }
         array_5.finish();
     }
-    {
-        object.key("virtualRouterName").string(input.virtual_router_name.as_str());
+    if let Some(var_8) = &input.virtual_router_name {
+        object.key("virtualRouterName").string(var_8.as_str());
     }
     Ok(())
 }

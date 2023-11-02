@@ -3,8 +3,8 @@ pub fn ser_delete_index_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_index::DeleteIndexInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("Arn").string(input.arn.as_str());
+    if let Some(var_1) = &input.arn {
+        object.key("Arn").string(var_1.as_str());
     }
     Ok(())
 }

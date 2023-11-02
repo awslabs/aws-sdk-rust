@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RefreshTokenInput {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    pub provider: crate::types::TokenProviders,
+    pub provider: ::std::option::Option<crate::types::TokenProviders>,
     /// <p>Information about the refresh token request.</p>
     pub refresh_token_body: ::std::option::Option<crate::types::RefreshTokenRequestBody>,
 }
 impl RefreshTokenInput {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    pub fn provider(&self) -> &crate::types::TokenProviders {
-        &self.provider
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::TokenProviders> {
+        self.provider.as_ref()
     }
     /// <p>Information about the refresh token request.</p>
     pub fn refresh_token_body(&self) -> ::std::option::Option<&crate::types::RefreshTokenRequestBody> {
@@ -64,16 +64,9 @@ impl RefreshTokenInputBuilder {
         &self.refresh_token_body
     }
     /// Consumes the builder and constructs a [`RefreshTokenInput`](crate::operation::refresh_token::RefreshTokenInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`provider`](crate::operation::refresh_token::builders::RefreshTokenInputBuilder::provider)
     pub fn build(self) -> ::std::result::Result<crate::operation::refresh_token::RefreshTokenInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::refresh_token::RefreshTokenInput {
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building RefreshTokenInput",
-                )
-            })?,
+            provider: self.provider,
             refresh_token_body: self.refresh_token_body,
         })
     }

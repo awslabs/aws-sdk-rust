@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchEvaluateFeatureInput {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
-    pub requests: ::std::vec::Vec<crate::types::EvaluationRequest>,
+    pub requests: ::std::option::Option<::std::vec::Vec<crate::types::EvaluationRequest>>,
 }
 impl BatchEvaluateFeatureInput {
     /// <p>The name or ARN of the project that contains the feature being evaluated.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>An array of structures, where each structure assigns a feature variation to one user session.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.requests.is_none()`.
     pub fn requests(&self) -> &[crate::types::EvaluationRequest] {
-        use std::ops::Deref;
-        self.requests.deref()
+        self.requests.as_deref().unwrap_or_default()
     }
 }
 impl BatchEvaluateFeatureInput {
@@ -71,26 +71,13 @@ impl BatchEvaluateFeatureInputBuilder {
         &self.requests
     }
     /// Consumes the builder and constructs a [`BatchEvaluateFeatureInput`](crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureInputBuilder::project)
-    /// - [`requests`](crate::operation::batch_evaluate_feature::builders::BatchEvaluateFeatureInputBuilder::requests)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_evaluate_feature::BatchEvaluateFeatureInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building BatchEvaluateFeatureInput",
-                )
-            })?,
-            requests: self.requests.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "requests",
-                    "requests was not specified but it is required when building BatchEvaluateFeatureInput",
-                )
-            })?,
+            project: self.project,
+            requests: self.requests,
         })
     }
 }

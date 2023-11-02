@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProtectedQueriesInput {
     /// <p>The identifier for the membership in the collaboration.</p>
-    pub membership_identifier: ::std::string::String,
+    pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A filter on the status of the protected query.</p>
     pub status: ::std::option::Option<crate::types::ProtectedQueryStatus>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -14,9 +14,8 @@ pub struct ListProtectedQueriesInput {
 }
 impl ListProtectedQueriesInput {
     /// <p>The identifier for the membership in the collaboration.</p>
-    pub fn membership_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_identifier.deref()
+    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+        self.membership_identifier.as_deref()
     }
     /// <p>A filter on the status of the protected query.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ProtectedQueryStatus> {
@@ -106,19 +105,12 @@ impl ListProtectedQueriesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListProtectedQueriesInput`](crate::operation::list_protected_queries::ListProtectedQueriesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`membership_identifier`](crate::operation::list_protected_queries::builders::ListProtectedQueriesInputBuilder::membership_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_protected_queries::ListProtectedQueriesInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_protected_queries::ListProtectedQueriesInput {
-            membership_identifier: self.membership_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "membership_identifier",
-                    "membership_identifier was not specified but it is required when building ListProtectedQueriesInput",
-                )
-            })?,
+            membership_identifier: self.membership_identifier,
             status: self.status,
             next_token: self.next_token,
             max_results: self.max_results,

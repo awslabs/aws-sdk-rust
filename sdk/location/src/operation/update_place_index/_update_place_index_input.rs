@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePlaceIndexInput {
     /// <p>The name of the place index resource to update.</p>
-    pub index_name: ::std::string::String,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -15,9 +15,8 @@ pub struct UpdatePlaceIndexInput {
 }
 impl UpdatePlaceIndexInput {
     /// <p>The name of the place index resource to update.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
+        self.index_name.as_deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -111,18 +110,11 @@ impl UpdatePlaceIndexInputBuilder {
         &self.data_source_configuration
     }
     /// Consumes the builder and constructs a [`UpdatePlaceIndexInput`](crate::operation::update_place_index::UpdatePlaceIndexInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`index_name`](crate::operation::update_place_index::builders::UpdatePlaceIndexInputBuilder::index_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_place_index::UpdatePlaceIndexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_place_index::UpdatePlaceIndexInput {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building UpdatePlaceIndexInput",
-                )
-            })?,
+            index_name: self.index_name,
             pricing_plan: self.pricing_plan,
             description: self.description,
             data_source_configuration: self.data_source_configuration,

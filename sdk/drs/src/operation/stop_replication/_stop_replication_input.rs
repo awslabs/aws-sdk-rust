@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopReplicationInput {
     /// <p>The ID of the Source Server to stop replication for.</p>
-    pub source_server_id: ::std::string::String,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl StopReplicationInput {
     /// <p>The ID of the Source Server to stop replication for.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+        self.source_server_id.as_deref()
     }
 }
 impl StopReplicationInput {
@@ -43,18 +42,11 @@ impl StopReplicationInputBuilder {
         &self.source_server_id
     }
     /// Consumes the builder and constructs a [`StopReplicationInput`](crate::operation::stop_replication::StopReplicationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_id`](crate::operation::stop_replication::builders::StopReplicationInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::stop_replication::StopReplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_replication::StopReplicationInput {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building StopReplicationInput",
-                )
-            })?,
+            source_server_id: self.source_server_id,
         })
     }
 }

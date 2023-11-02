@@ -6,9 +6,9 @@ pub struct CreatePrefetchScheduleInput {
     /// <p>The configuration settings for MediaTailor's <i>consumption</i> of the prefetched ads from the ad decision server. Each consumption configuration contains an end time and an optional start time that define the <i>consumption window</i>. Prefetch schedules automatically expire no earlier than seven days after the end time.</p>
     pub consumption: ::std::option::Option<crate::types::PrefetchConsumption>,
     /// <p>The name to assign to the schedule request.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name to assign to the playback configuration.</p>
-    pub playback_configuration_name: ::std::string::String,
+    pub playback_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
     pub retrieval: ::std::option::Option<crate::types::PrefetchRetrieval>,
     /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
@@ -20,14 +20,12 @@ impl CreatePrefetchScheduleInput {
         self.consumption.as_ref()
     }
     /// <p>The name to assign to the schedule request.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The name to assign to the playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> &str {
-        use std::ops::Deref;
-        self.playback_configuration_name.deref()
+    pub fn playback_configuration_name(&self) -> ::std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
     }
     /// <p>The configuration settings for retrieval of prefetched ads from the ad decision server. Only one set of prefetched ads will be retrieved and subsequently consumed for each ad break.</p>
     pub fn retrieval(&self) -> ::std::option::Option<&crate::types::PrefetchRetrieval> {
@@ -131,27 +129,14 @@ impl CreatePrefetchScheduleInputBuilder {
         &self.stream_id
     }
     /// Consumes the builder and constructs a [`CreatePrefetchScheduleInput`](crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleInputBuilder::name)
-    /// - [`playback_configuration_name`](crate::operation::create_prefetch_schedule::builders::CreatePrefetchScheduleInputBuilder::playback_configuration_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_prefetch_schedule::CreatePrefetchScheduleInput {
             consumption: self.consumption,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreatePrefetchScheduleInput",
-                )
-            })?,
-            playback_configuration_name: self.playback_configuration_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "playback_configuration_name",
-                    "playback_configuration_name was not specified but it is required when building CreatePrefetchScheduleInput",
-                )
-            })?,
+            name: self.name,
+            playback_configuration_name: self.playback_configuration_name,
             retrieval: self.retrieval,
             stream_id: self.stream_id,
         })

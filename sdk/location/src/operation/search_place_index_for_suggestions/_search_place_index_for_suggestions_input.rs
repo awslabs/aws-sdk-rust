@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForSuggestionsInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub index_name: ::std::string::String,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The free-form partial text to use to generate place suggestions. For example, <code>eiffel tow</code>.</p>
-    pub text: ::std::string::String,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
     /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
@@ -41,14 +41,12 @@ pub struct SearchPlaceIndexForSuggestionsInput {
 }
 impl SearchPlaceIndexForSuggestionsInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
+        self.index_name.as_deref()
     }
     /// <p>The free-form partial text to use to generate place suggestions. For example, <code>eiffel tow</code>.</p>
-    pub fn text(&self) -> &str {
-        use std::ops::Deref;
-        self.text.deref()
+    pub fn text(&self) -> ::std::option::Option<&str> {
+        self.text.as_deref()
     }
     /// <p>An optional parameter that indicates a preference for place suggestions that are closer to a specified position.</p>
     /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
@@ -345,9 +343,6 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForSuggestionsInput`](crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`index_name`](crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder::index_name)
-    /// - [`text`](crate::operation::search_place_index_for_suggestions::builders::SearchPlaceIndexForSuggestionsInputBuilder::text)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -356,18 +351,8 @@ impl SearchPlaceIndexForSuggestionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::search_place_index_for_suggestions::SearchPlaceIndexForSuggestionsInput {
-                index_name: self.index_name.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "index_name",
-                        "index_name was not specified but it is required when building SearchPlaceIndexForSuggestionsInput",
-                    )
-                })?,
-                text: self.text.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "text",
-                        "text was not specified but it is required when building SearchPlaceIndexForSuggestionsInput",
-                    )
-                })?,
+                index_name: self.index_name,
+                text: self.text,
                 bias_position: self.bias_position,
                 filter_b_box: self.filter_b_box,
                 filter_countries: self.filter_countries,

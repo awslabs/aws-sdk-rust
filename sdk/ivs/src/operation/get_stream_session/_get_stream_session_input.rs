@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStreamSessionInput {
     /// <p>ARN of the channel resource</p>
-    pub channel_arn: ::std::string::String,
+    pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl GetStreamSessionInput {
     /// <p>ARN of the channel resource</p>
-    pub fn channel_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_arn.deref()
+    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+        self.channel_arn.as_deref()
     }
     /// <p>Unique identifier for a live or previously live stream in the specified channel. If no <code>streamId</code> is provided, this returns the most recent stream session for the channel, if it exists.</p>
     pub fn stream_id(&self) -> ::std::option::Option<&str> {
@@ -64,18 +63,11 @@ impl GetStreamSessionInputBuilder {
         &self.stream_id
     }
     /// Consumes the builder and constructs a [`GetStreamSessionInput`](crate::operation::get_stream_session::GetStreamSessionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_arn`](crate::operation::get_stream_session::builders::GetStreamSessionInputBuilder::channel_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_stream_session::GetStreamSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stream_session::GetStreamSessionInput {
-            channel_arn: self.channel_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_arn",
-                    "channel_arn was not specified but it is required when building GetStreamSessionInput",
-                )
-            })?,
+            channel_arn: self.channel_arn,
             stream_id: self.stream_id,
         })
     }

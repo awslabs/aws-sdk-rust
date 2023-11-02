@@ -3,8 +3,8 @@ pub fn ser_delete_stage_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_stage::DeleteStageInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("arn").string(input.arn.as_str());
+    if let Some(var_1) = &input.arn {
+        object.key("arn").string(var_1.as_str());
     }
     Ok(())
 }

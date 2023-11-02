@@ -176,6 +176,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSchemaAna
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.collaboration_identifier;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset")
+                })?;
                 let collaboration_identifier = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -184,6 +187,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSchemaAna
                     ));
                 }
                 let input_2 = &_input.name;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("name", "cannot be empty or unset"))?;
                 let name = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if name.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -192,6 +198,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSchemaAna
                     ));
                 }
                 let input_3 = &_input.r#type;
+                let input_3 = input_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("r#type", "cannot be empty or unset"))?;
                 let r#type = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if r#type.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

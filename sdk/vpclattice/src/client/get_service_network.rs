@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetServiceNetwork`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`service_network_identifier(impl Into<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::service_network_identifier) / [`set_service_network_identifier(impl Into<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::set_service_network_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service network.</p><br>
+    ///   - [`service_network_identifier(impl Into<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::service_network_identifier) / [`set_service_network_identifier(Option<String>)`](crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder::set_service_network_identifier):<br>required: **true**<br><p>The ID or Amazon Resource Name (ARN) of the service network.</p><br>
     /// - On success, responds with [`GetServiceNetworkOutput`](crate::operation::get_service_network::GetServiceNetworkOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_service_network::GetServiceNetworkOutput::id): <p>The ID of the service network.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_service_network::GetServiceNetworkOutput::name): <p>The name of the service network.</p>

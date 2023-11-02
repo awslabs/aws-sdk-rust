@@ -4,26 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplateActionsInput {
     /// <p>Launch configuration template ID.</p>
-    pub launch_configuration_template_id: ::std::string::String,
+    pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Filters to apply when listing template post migration custom actions.</p>
     pub filters: ::std::option::Option<crate::types::TemplateActionsRequestFilters>,
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Next token to use when listing template post migration custom actions.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListTemplateActionsInput {
     /// <p>Launch configuration template ID.</p>
-    pub fn launch_configuration_template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.launch_configuration_template_id.deref()
+    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
+        self.launch_configuration_template_id.as_deref()
     }
     /// <p>Filters to apply when listing template post migration custom actions.</p>
     pub fn filters(&self) -> ::std::option::Option<&crate::types::TemplateActionsRequestFilters> {
         self.filters.as_ref()
     }
     /// <p>Maximum amount of items to return when listing template post migration custom actions.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Next token to use when listing template post migration custom actions.</p>
@@ -106,21 +105,14 @@ impl ListTemplateActionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTemplateActionsInput`](crate::operation::list_template_actions::ListTemplateActionsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`launch_configuration_template_id`](crate::operation::list_template_actions::builders::ListTemplateActionsInputBuilder::launch_configuration_template_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_template_actions::ListTemplateActionsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_template_actions::ListTemplateActionsInput {
-            launch_configuration_template_id: self.launch_configuration_template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "launch_configuration_template_id",
-                    "launch_configuration_template_id was not specified but it is required when building ListTemplateActionsInput",
-                )
-            })?,
+            launch_configuration_template_id: self.launch_configuration_template_id,
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

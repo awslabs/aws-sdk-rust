@@ -4,31 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceInput {
     /// <p>The ID of the environment that the service is in.</p>
-    pub environment_identifier: ::std::string::String,
+    pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Deletes a Refactor Spaces service.</p> <note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
-    pub application_identifier: ::std::string::String,
+    pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service to delete.</p>
-    pub service_identifier: ::std::string::String,
+    pub service_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceInput {
     /// <p>The ID of the environment that the service is in.</p>
-    pub fn environment_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_identifier.deref()
+    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_identifier.as_deref()
     }
     /// <p>Deletes a Refactor Spaces service.</p> <note>
     /// <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p>
     /// </note>
-    pub fn application_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.application_identifier.deref()
+    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+        self.application_identifier.as_deref()
     }
     /// <p>The ID of the service to delete.</p>
-    pub fn service_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.service_identifier.deref()
+    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+        self.service_identifier.as_deref()
     }
 }
 impl DeleteServiceInput {
@@ -99,32 +96,13 @@ impl DeleteServiceInputBuilder {
         &self.service_identifier
     }
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`environment_identifier`](crate::operation::delete_service::builders::DeleteServiceInputBuilder::environment_identifier)
-    /// - [`application_identifier`](crate::operation::delete_service::builders::DeleteServiceInputBuilder::application_identifier)
-    /// - [`service_identifier`](crate::operation::delete_service::builders::DeleteServiceInputBuilder::service_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceInput {
-            environment_identifier: self.environment_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_identifier",
-                    "environment_identifier was not specified but it is required when building DeleteServiceInput",
-                )
-            })?,
-            application_identifier: self.application_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_identifier",
-                    "application_identifier was not specified but it is required when building DeleteServiceInput",
-                )
-            })?,
-            service_identifier: self.service_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_identifier",
-                    "service_identifier was not specified but it is required when building DeleteServiceInput",
-                )
-            })?,
+            environment_identifier: self.environment_identifier,
+            application_identifier: self.application_identifier,
+            service_identifier: self.service_identifier,
         })
     }
 }

@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConfigureLogsForChannelInput {
     /// <p>The name of the channel.</p>
-    pub channel_name: ::std::string::String,
+    pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The types of logs to collect.</p>
-    pub log_types: ::std::vec::Vec<crate::types::LogType>,
+    pub log_types: ::std::option::Option<::std::vec::Vec<crate::types::LogType>>,
 }
 impl ConfigureLogsForChannelInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
     /// <p>The types of logs to collect.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.log_types.is_none()`.
     pub fn log_types(&self) -> &[crate::types::LogType] {
-        use std::ops::Deref;
-        self.log_types.deref()
+        self.log_types.as_deref().unwrap_or_default()
     }
 }
 impl ConfigureLogsForChannelInput {
@@ -71,9 +71,6 @@ impl ConfigureLogsForChannelInputBuilder {
         &self.log_types
     }
     /// Consumes the builder and constructs a [`ConfigureLogsForChannelInput`](crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_name`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder::channel_name)
-    /// - [`log_types`](crate::operation::configure_logs_for_channel::builders::ConfigureLogsForChannelInputBuilder::log_types)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -81,18 +78,8 @@ impl ConfigureLogsForChannelInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput {
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building ConfigureLogsForChannelInput",
-                )
-            })?,
-            log_types: self.log_types.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "log_types",
-                    "log_types was not specified but it is required when building ConfigureLogsForChannelInput",
-                )
-            })?,
+            channel_name: self.channel_name,
+            log_types: self.log_types,
         })
     }
 }

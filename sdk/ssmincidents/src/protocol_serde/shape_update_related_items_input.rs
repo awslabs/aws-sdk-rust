@@ -6,14 +6,14 @@ pub fn ser_update_related_items_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    {
-        object.key("incidentRecordArn").string(input.incident_record_arn.as_str());
+    if let Some(var_2) = &input.incident_record_arn {
+        object.key("incidentRecordArn").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.related_items_update {
+    if let Some(var_3) = &input.related_items_update {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("relatedItemsUpdate").start_object();
-        crate::protocol_serde::shape_related_items_update::ser_related_items_update(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("relatedItemsUpdate").start_object();
+        crate::protocol_serde::shape_related_items_update::ser_related_items_update(&mut object_4, var_3)?;
+        object_4.finish();
     }
     Ok(())
 }

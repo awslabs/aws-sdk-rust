@@ -3,14 +3,14 @@ pub fn ser_get_template_sync_status_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_template_sync_status::GetTemplateSyncStatusInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("templateName").string(input.template_name.as_str());
+    if let Some(var_1) = &input.template_name {
+        object.key("templateName").string(var_1.as_str());
     }
-    {
-        object.key("templateType").string(input.template_type.as_str());
+    if let Some(var_2) = &input.template_type {
+        object.key("templateType").string(var_2.as_str());
     }
-    {
-        object.key("templateVersion").string(input.template_version.as_str());
+    if let Some(var_3) = &input.template_version {
+        object.key("templateVersion").string(var_3.as_str());
     }
     Ok(())
 }

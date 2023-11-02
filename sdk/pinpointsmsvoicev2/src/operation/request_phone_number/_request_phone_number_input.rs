@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RequestPhoneNumberInput {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub iso_country_code: ::std::string::String,
+    pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub message_type: crate::types::MessageType,
+    pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
-    pub number_capabilities: ::std::vec::Vec<crate::types::NumberCapability>,
+    pub number_capabilities: ::std::option::Option<::std::vec::Vec<crate::types::NumberCapability>>,
     /// <p>The type of phone number to request.</p>
-    pub number_type: crate::types::RequestableNumberType,
+    pub number_type: ::std::option::Option<crate::types::RequestableNumberType>,
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
     pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The pool to associated with the phone number. You can use the PoolId or PoolArn. </p>
@@ -26,22 +26,22 @@ pub struct RequestPhoneNumberInput {
 }
 impl RequestPhoneNumberInput {
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> &str {
-        use std::ops::Deref;
-        self.iso_country_code.deref()
+    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+        self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> &crate::types::MessageType {
-        &self.message_type
+    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
+        self.message_type.as_ref()
     }
     /// <p>Indicates if the phone number will be used for text messages, voice messages, or both. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.number_capabilities.is_none()`.
     pub fn number_capabilities(&self) -> &[crate::types::NumberCapability] {
-        use std::ops::Deref;
-        self.number_capabilities.deref()
+        self.number_capabilities.as_deref().unwrap_or_default()
     }
     /// <p>The type of phone number to request.</p>
-    pub fn number_type(&self) -> &crate::types::RequestableNumberType {
-        &self.number_type
+    pub fn number_type(&self) -> ::std::option::Option<&crate::types::RequestableNumberType> {
+        self.number_type.as_ref()
     }
     /// <p>The name of the OptOutList to associate with the phone number. You can use the OutOutListName or OptPutListArn.</p>
     pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
@@ -249,39 +249,14 @@ impl RequestPhoneNumberInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`RequestPhoneNumberInput`](crate::operation::request_phone_number::RequestPhoneNumberInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`iso_country_code`](crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder::iso_country_code)
-    /// - [`message_type`](crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder::message_type)
-    /// - [`number_capabilities`](crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder::number_capabilities)
-    /// - [`number_type`](crate::operation::request_phone_number::builders::RequestPhoneNumberInputBuilder::number_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::request_phone_number::RequestPhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::request_phone_number::RequestPhoneNumberInput {
-            iso_country_code: self.iso_country_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "iso_country_code",
-                    "iso_country_code was not specified but it is required when building RequestPhoneNumberInput",
-                )
-            })?,
-            message_type: self.message_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "message_type",
-                    "message_type was not specified but it is required when building RequestPhoneNumberInput",
-                )
-            })?,
-            number_capabilities: self.number_capabilities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "number_capabilities",
-                    "number_capabilities was not specified but it is required when building RequestPhoneNumberInput",
-                )
-            })?,
-            number_type: self.number_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "number_type",
-                    "number_type was not specified but it is required when building RequestPhoneNumberInput",
-                )
-            })?,
+            iso_country_code: self.iso_country_code,
+            message_type: self.message_type,
+            number_capabilities: self.number_capabilities,
+            number_type: self.number_type,
             opt_out_list_name: self.opt_out_list_name,
             pool_id: self.pool_id,
             registration_id: self.registration_id,

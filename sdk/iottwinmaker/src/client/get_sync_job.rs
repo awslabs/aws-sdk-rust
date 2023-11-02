@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSyncJob`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`sync_source(impl Into<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::sync_source) / [`set_sync_source(impl Into<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::set_sync_source):<br>required: **true**<br><p>The sync source.</p> <note>   <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>  </note><br>
+    ///   - [`sync_source(impl Into<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::sync_source) / [`set_sync_source(Option<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::set_sync_source):<br>required: **true**<br><p>The sync source.</p> <note>   <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>  </note><br>
     ///   - [`workspace_id(impl Into<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::get_sync_job::builders::GetSyncJobFluentBuilder::set_workspace_id):<br>required: **false**<br><p>The workspace ID.</p><br>
     /// - On success, responds with [`GetSyncJobOutput`](crate::operation::get_sync_job::GetSyncJobOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::get_sync_job::GetSyncJobOutput::arn): <p>The sync job ARN.</p>

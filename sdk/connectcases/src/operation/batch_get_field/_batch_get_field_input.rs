@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of unique field identifiers. </p>
-    pub fields: ::std::vec::Vec<crate::types::FieldIdentifier>,
+    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
 }
 impl BatchGetFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>A list of unique field identifiers. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
     pub fn fields(&self) -> &[crate::types::FieldIdentifier] {
-        use std::ops::Deref;
-        self.fields.deref()
+        self.fields.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetFieldInput {
@@ -71,25 +71,12 @@ impl BatchGetFieldInputBuilder {
         &self.fields
     }
     /// Consumes the builder and constructs a [`BatchGetFieldInput`](crate::operation::batch_get_field::BatchGetFieldInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::batch_get_field::builders::BatchGetFieldInputBuilder::domain_id)
-    /// - [`fields`](crate::operation::batch_get_field::builders::BatchGetFieldInputBuilder::fields)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_get_field::BatchGetFieldInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_field::BatchGetFieldInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building BatchGetFieldInput",
-                )
-            })?,
-            fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "fields",
-                    "fields was not specified but it is required when building BatchGetFieldInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            fields: self.fields,
         })
     }
 }

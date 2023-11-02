@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkflowStepInput {
     /// <p>The name of the step.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
-    pub step_group_id: ::std::string::String,
+    pub step_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the migration workflow.</p>
-    pub workflow_id: ::std::string::String,
+    pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub step_action_type: crate::types::StepActionType,
+    pub step_action_type: ::std::option::Option<crate::types::StepActionType>,
     /// <p>The description of the step.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The custom script to run tests on source or target environments.</p>
@@ -26,23 +26,20 @@ pub struct CreateWorkflowStepInput {
 }
 impl CreateWorkflowStepInput {
     /// <p>The name of the step.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.step_group_id.deref()
+    pub fn step_group_id(&self) -> ::std::option::Option<&str> {
+        self.step_group_id.as_deref()
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+        self.workflow_id.as_deref()
     }
     /// <p>The action type of the step. You must run and update the status of a manual step for the workflow to continue after the completion of the step.</p>
-    pub fn step_action_type(&self) -> &crate::types::StepActionType {
-        &self.step_action_type
+    pub fn step_action_type(&self) -> ::std::option::Option<&crate::types::StepActionType> {
+        self.step_action_type.as_ref()
     }
     /// <p>The description of the step.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -272,39 +269,14 @@ impl CreateWorkflowStepInputBuilder {
         &self.next
     }
     /// Consumes the builder and constructs a [`CreateWorkflowStepInput`](crate::operation::create_workflow_step::CreateWorkflowStepInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder::name)
-    /// - [`step_group_id`](crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder::step_group_id)
-    /// - [`workflow_id`](crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder::workflow_id)
-    /// - [`step_action_type`](crate::operation::create_workflow_step::builders::CreateWorkflowStepInputBuilder::step_action_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_workflow_step::CreateWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workflow_step::CreateWorkflowStepInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateWorkflowStepInput",
-                )
-            })?,
-            step_group_id: self.step_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "step_group_id",
-                    "step_group_id was not specified but it is required when building CreateWorkflowStepInput",
-                )
-            })?,
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building CreateWorkflowStepInput",
-                )
-            })?,
-            step_action_type: self.step_action_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "step_action_type",
-                    "step_action_type was not specified but it is required when building CreateWorkflowStepInput",
-                )
-            })?,
+            name: self.name,
+            step_group_id: self.step_group_id,
+            workflow_id: self.workflow_id,
+            step_action_type: self.step_action_type,
             description: self.description,
             workflow_step_automation_configuration: self.workflow_step_automation_configuration,
             step_target: self.step_target,

@@ -3,8 +3,8 @@ pub fn ser_update_access_log_subscription_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("destinationArn").string(input.destination_arn.as_str());
+    if let Some(var_1) = &input.destination_arn {
+        object.key("destinationArn").string(var_1.as_str());
     }
     Ok(())
 }

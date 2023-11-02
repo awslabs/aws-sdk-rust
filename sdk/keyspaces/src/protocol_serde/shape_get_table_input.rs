@@ -3,11 +3,11 @@ pub fn ser_get_table_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_table::GetTableInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("keyspaceName").string(input.keyspace_name.as_str());
+    if let Some(var_1) = &input.keyspace_name {
+        object.key("keyspaceName").string(var_1.as_str());
     }
-    {
-        object.key("tableName").string(input.table_name.as_str());
+    if let Some(var_2) = &input.table_name {
+        object.key("tableName").string(var_2.as_str());
     }
     Ok(())
 }

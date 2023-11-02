@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateEnvironmentInput {
     /// <p>The name of the environment to update.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment update.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The formatted specification that defines the update.</p>
@@ -38,7 +38,7 @@ pub struct UpdateEnvironmentInput {
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
-    pub deployment_type: crate::types::DeploymentUpdateType,
+    pub deployment_type: ::std::option::Option<crate::types::DeploymentUpdateType>,
     /// <p>The ID of the environment account connection.</p>
     /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
     pub environment_account_connection_id: ::std::option::Option<::std::string::String>,
@@ -53,9 +53,8 @@ pub struct UpdateEnvironmentInput {
 }
 impl UpdateEnvironmentInput {
     /// <p>The name of the environment to update.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A description of the environment update.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -100,8 +99,8 @@ impl UpdateEnvironmentInput {
     /// <p>In this mode, the environment is deployed and updated with the published, recommended (latest) major and minor version of the current template, by default. You can also specify a different major version that is higher than the major version in use and a minor version (optional).</p>
     /// </dd>
     /// </dl>
-    pub fn deployment_type(&self) -> &crate::types::DeploymentUpdateType {
-        &self.deployment_type
+    pub fn deployment_type(&self) -> ::std::option::Option<&crate::types::DeploymentUpdateType> {
+        self.deployment_type.as_ref()
     }
     /// <p>The ID of the environment account connection.</p>
     /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current environment account connection was created in and is associated with the current environment.</p>
@@ -396,30 +395,17 @@ impl UpdateEnvironmentInputBuilder {
         &self.codebuild_role_arn
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder::name)
-    /// - [`deployment_type`](crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder::deployment_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateEnvironmentInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
             spec: self.spec,
             template_major_version: self.template_major_version,
             template_minor_version: self.template_minor_version,
             proton_service_role_arn: self.proton_service_role_arn,
-            deployment_type: self.deployment_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "deployment_type",
-                    "deployment_type was not specified but it is required when building UpdateEnvironmentInput",
-                )
-            })?,
+            deployment_type: self.deployment_type,
             environment_account_connection_id: self.environment_account_connection_id,
             provisioning_repository: self.provisioning_repository,
             component_role_arn: self.component_role_arn,

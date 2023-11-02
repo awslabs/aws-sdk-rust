@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ExchangeCodeForToken`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`provider(TokenProviders)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::provider) / [`set_provider(TokenProviders)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::set_provider):<br>required: **true**<br><p>The third-party provider for the token. The only valid value is <code>figma</code>.</p><br>
+    ///   - [`provider(TokenProviders)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::provider) / [`set_provider(Option<TokenProviders>)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::set_provider):<br>required: **true**<br><p>The third-party provider for the token. The only valid value is <code>figma</code>.</p><br>
     ///   - [`request(ExchangeCodeForTokenRequestBody)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::request) / [`set_request(Option<ExchangeCodeForTokenRequestBody>)`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenFluentBuilder::set_request):<br>required: **true**<br><p>Describes the configuration of the request.</p><br>
     /// - On success, responds with [`ExchangeCodeForTokenOutput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput) with field(s):
     ///   - [`access_token(String)`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput::access_token): <p>The access token.</p>

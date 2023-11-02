@@ -4,24 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateRumMetricDefinitionsInput {
     /// <p>The name of the CloudWatch RUM app monitor that is to send the metrics.</p>
-    pub app_monitor_name: ::std::string::String,
+    pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
-    pub destination: crate::types::MetricDestination,
+    pub destination: ::std::option::Option<crate::types::MetricDestination>,
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures which define the metrics that you want to send.</p>
-    pub metric_definitions: ::std::vec::Vec<crate::types::MetricDefinitionRequest>,
+    pub metric_definitions: ::std::option::Option<::std::vec::Vec<crate::types::MetricDefinitionRequest>>,
 }
 impl BatchCreateRumMetricDefinitionsInput {
     /// <p>The name of the CloudWatch RUM app monitor that is to send the metrics.</p>
-    pub fn app_monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.app_monitor_name.deref()
+    pub fn app_monitor_name(&self) -> ::std::option::Option<&str> {
+        self.app_monitor_name.as_deref()
     }
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
-    pub fn destination(&self) -> &crate::types::MetricDestination {
-        &self.destination
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::MetricDestination> {
+        self.destination.as_ref()
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
@@ -29,9 +28,10 @@ impl BatchCreateRumMetricDefinitionsInput {
         self.destination_arn.as_deref()
     }
     /// <p>An array of structures which define the metrics that you want to send.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_definitions.is_none()`.
     pub fn metric_definitions(&self) -> &[crate::types::MetricDefinitionRequest] {
-        use std::ops::Deref;
-        self.metric_definitions.deref()
+        self.metric_definitions.as_deref().unwrap_or_default()
     }
 }
 impl BatchCreateRumMetricDefinitionsInput {
@@ -119,10 +119,6 @@ impl BatchCreateRumMetricDefinitionsInputBuilder {
         &self.metric_definitions
     }
     /// Consumes the builder and constructs a [`BatchCreateRumMetricDefinitionsInput`](crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_monitor_name`](crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsInputBuilder::app_monitor_name)
-    /// - [`destination`](crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsInputBuilder::destination)
-    /// - [`metric_definitions`](crate::operation::batch_create_rum_metric_definitions::builders::BatchCreateRumMetricDefinitionsInputBuilder::metric_definitions)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -131,25 +127,10 @@ impl BatchCreateRumMetricDefinitionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsInput {
-                app_monitor_name: self.app_monitor_name.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_monitor_name",
-                        "app_monitor_name was not specified but it is required when building BatchCreateRumMetricDefinitionsInput",
-                    )
-                })?,
-                destination: self.destination.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "destination",
-                        "destination was not specified but it is required when building BatchCreateRumMetricDefinitionsInput",
-                    )
-                })?,
+                app_monitor_name: self.app_monitor_name,
+                destination: self.destination,
                 destination_arn: self.destination_arn,
-                metric_definitions: self.metric_definitions.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "metric_definitions",
-                        "metric_definitions was not specified but it is required when building BatchCreateRumMetricDefinitionsInput",
-                    )
-                })?,
+                metric_definitions: self.metric_definitions,
             },
         )
     }

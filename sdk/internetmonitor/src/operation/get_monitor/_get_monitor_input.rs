@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMonitorInput {
     /// <p>The name of the monitor.</p>
-    pub monitor_name: ::std::string::String,
+    pub monitor_name: ::std::option::Option<::std::string::String>,
 }
 impl GetMonitorInput {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_name.deref()
+    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+        self.monitor_name.as_deref()
     }
 }
 impl GetMonitorInput {
@@ -43,16 +42,9 @@ impl GetMonitorInputBuilder {
         &self.monitor_name
     }
     /// Consumes the builder and constructs a [`GetMonitorInput`](crate::operation::get_monitor::GetMonitorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`monitor_name`](crate::operation::get_monitor::builders::GetMonitorInputBuilder::monitor_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_monitor::GetMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_monitor::GetMonitorInput {
-            monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "monitor_name",
-                    "monitor_name was not specified but it is required when building GetMonitorInput",
-                )
-            })?,
+            monitor_name: self.monitor_name,
         })
     }
 }

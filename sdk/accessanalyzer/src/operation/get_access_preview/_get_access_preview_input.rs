@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPreviewInput {
     /// <p>The unique ID for the access preview.</p>
-    pub access_preview_id: ::std::string::String,
+    pub access_preview_id: ::std::option::Option<::std::string::String>,
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
-    pub analyzer_arn: ::std::string::String,
+    pub analyzer_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessPreviewInput {
     /// <p>The unique ID for the access preview.</p>
-    pub fn access_preview_id(&self) -> &str {
-        use std::ops::Deref;
-        self.access_preview_id.deref()
+    pub fn access_preview_id(&self) -> ::std::option::Option<&str> {
+        self.access_preview_id.as_deref()
     }
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> used to generate the access preview.</p>
-    pub fn analyzer_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.analyzer_arn.deref()
+    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
     }
 }
 impl GetAccessPreviewInput {
@@ -66,25 +64,12 @@ impl GetAccessPreviewInputBuilder {
         &self.analyzer_arn
     }
     /// Consumes the builder and constructs a [`GetAccessPreviewInput`](crate::operation::get_access_preview::GetAccessPreviewInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`access_preview_id`](crate::operation::get_access_preview::builders::GetAccessPreviewInputBuilder::access_preview_id)
-    /// - [`analyzer_arn`](crate::operation::get_access_preview::builders::GetAccessPreviewInputBuilder::analyzer_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_access_preview::GetAccessPreviewInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_access_preview::GetAccessPreviewInput {
-            access_preview_id: self.access_preview_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "access_preview_id",
-                    "access_preview_id was not specified but it is required when building GetAccessPreviewInput",
-                )
-            })?,
-            analyzer_arn: self.analyzer_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "analyzer_arn",
-                    "analyzer_arn was not specified but it is required when building GetAccessPreviewInput",
-                )
-            })?,
+            access_preview_id: self.access_preview_id,
+            analyzer_arn: self.analyzer_arn,
         })
     }
 }

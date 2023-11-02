@@ -175,6 +175,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDataSetIm
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.application_id;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("application_id", "cannot be empty or unset"))?;
                 let application_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if application_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -183,6 +186,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDataSetIm
                     ));
                 }
                 let input_2 = &_input.task_id;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("task_id", "cannot be empty or unset"))?;
                 let task_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if task_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

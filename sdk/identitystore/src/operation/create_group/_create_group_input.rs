@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::string::String,
+    pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A string containing the description of the group.</p>
@@ -12,9 +12,8 @@ pub struct CreateGroupInput {
 }
 impl CreateGroupInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_id.deref()
+    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+        self.identity_store_id.as_deref()
     }
     /// <p>A string containing the name of the group. This value is commonly displayed when the group is referenced. <code>Administrator</code> and <code>AWSAdministrators</code> are reserved names and can't be used for users or groups.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -94,16 +93,9 @@ impl CreateGroupInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateGroupInput`](crate::operation::create_group::CreateGroupInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`identity_store_id`](crate::operation::create_group::builders::CreateGroupInputBuilder::identity_store_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_group::CreateGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_group::CreateGroupInput {
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building CreateGroupInput",
-                )
-            })?,
+            identity_store_id: self.identity_store_id,
             display_name: self.display_name,
             description: self.description,
         })

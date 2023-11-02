@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeExecution`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::task_id) / [`set_task_id(impl Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::set_task_id):<br>required: **true**<br><p>The ID of the task that the action is describing.</p><br>
-    ///   - [`managed_device_id(impl Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::managed_device_id) / [`set_managed_device_id(impl Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::set_managed_device_id):<br>required: **true**<br><p>The ID of the managed device.</p><br>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::set_task_id):<br>required: **true**<br><p>The ID of the task that the action is describing.</p><br>
+    ///   - [`managed_device_id(impl Into<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::managed_device_id) / [`set_managed_device_id(Option<String>)`](crate::operation::describe_execution::builders::DescribeExecutionFluentBuilder::set_managed_device_id):<br>required: **true**<br><p>The ID of the managed device.</p><br>
     /// - On success, responds with [`DescribeExecutionOutput`](crate::operation::describe_execution::DescribeExecutionOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::describe_execution::DescribeExecutionOutput::task_id): <p>The ID of the task being executed on the device.</p>
     ///   - [`execution_id(Option<String>)`](crate::operation::describe_execution::DescribeExecutionOutput::execution_id): <p>The ID of the execution.</p>

@@ -7,7 +7,7 @@ pub struct TagResourceInput {
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
-    pub resource_arn: ::std::string::String,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
     /// <p>Restrictions:</p>
@@ -19,16 +19,15 @@ pub struct TagResourceInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub tags: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li>
     /// </ul>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
     /// <p>Applies one or more tags to specific resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.</p>
     /// <p>Format: <code>"key" : "value"</code> </p>
@@ -41,8 +40,8 @@ impl TagResourceInput {
     /// <li> <p>Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @</p> </li>
     /// <li> <p>Cannot use "aws:" as a prefix for a key.</p> </li>
     /// </ul>
-    pub fn tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
-        &self.tags
+    pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.tags.as_ref()
     }
 }
 impl TagResourceInput {
@@ -135,23 +134,10 @@ impl TagResourceInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`resource_arn`](crate::operation::tag_resource::builders::TagResourceInputBuilder::resource_arn)
-    /// - [`tags`](crate::operation::tag_resource::builders::TagResourceInputBuilder::tags)
     pub fn build(self) -> ::std::result::Result<crate::operation::tag_resource::TagResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::tag_resource::TagResourceInput {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building TagResourceInput",
-                )
-            })?,
-            tags: self.tags.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "tags",
-                    "tags was not specified but it is required when building TagResourceInput",
-                )
-            })?,
+            resource_arn: self.resource_arn,
+            tags: self.tags,
         })
     }
 }

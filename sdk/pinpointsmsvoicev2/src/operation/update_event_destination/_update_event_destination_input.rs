@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEventDestinationInput {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub configuration_set_name: ::std::string::String,
+    pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name to use for the event destination.</p>
-    pub event_destination_name: ::std::string::String,
+    pub event_destination_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to true logging is enabled.</p>
     pub enabled: ::std::option::Option<bool>,
     /// <p>An array of event types that determine which events to log.</p>
@@ -20,14 +20,12 @@ pub struct UpdateEventDestinationInput {
 }
 impl UpdateEventDestinationInput {
     /// <p>The configuration set to update with the new event destination. Valid values for this can be the ConfigurationSetName or ConfigurationSetArn.</p>
-    pub fn configuration_set_name(&self) -> &str {
-        use std::ops::Deref;
-        self.configuration_set_name.deref()
+    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
     }
     /// <p>The name to use for the event destination.</p>
-    pub fn event_destination_name(&self) -> &str {
-        use std::ops::Deref;
-        self.event_destination_name.deref()
+    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
+        self.event_destination_name.as_deref()
     }
     /// <p>When set to true logging is enabled.</p>
     pub fn enabled(&self) -> ::std::option::Option<bool> {
@@ -179,26 +177,13 @@ impl UpdateEventDestinationInputBuilder {
         &self.sns_destination
     }
     /// Consumes the builder and constructs a [`UpdateEventDestinationInput`](crate::operation::update_event_destination::UpdateEventDestinationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`configuration_set_name`](crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder::configuration_set_name)
-    /// - [`event_destination_name`](crate::operation::update_event_destination::builders::UpdateEventDestinationInputBuilder::event_destination_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_event_destination::UpdateEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_event_destination::UpdateEventDestinationInput {
-            configuration_set_name: self.configuration_set_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "configuration_set_name",
-                    "configuration_set_name was not specified but it is required when building UpdateEventDestinationInput",
-                )
-            })?,
-            event_destination_name: self.event_destination_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "event_destination_name",
-                    "event_destination_name was not specified but it is required when building UpdateEventDestinationInput",
-                )
-            })?,
+            configuration_set_name: self.configuration_set_name,
+            event_destination_name: self.event_destination_name,
             enabled: self.enabled,
             matching_event_types: self.matching_event_types,
             cloud_watch_logs_destination: self.cloud_watch_logs_destination,

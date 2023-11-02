@@ -3,8 +3,8 @@ pub fn ser_update_campaign_name_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_campaign_name::UpdateCampaignNameInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
     Ok(())
 }

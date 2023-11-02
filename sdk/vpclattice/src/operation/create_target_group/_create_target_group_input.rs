@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTargetGroupInput {
     /// <p>The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of target group.</p>
-    pub r#type: crate::types::TargetGroupType,
+    pub r#type: ::std::option::Option<crate::types::TargetGroupType>,
     /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
     pub config: ::std::option::Option<crate::types::TargetGroupConfig>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -16,13 +16,12 @@ pub struct CreateTargetGroupInput {
 }
 impl CreateTargetGroupInput {
     /// <p>The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The type of target group.</p>
-    pub fn r#type(&self) -> &crate::types::TargetGroupType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::TargetGroupType> {
+        self.r#type.as_ref()
     }
     /// <p>The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>, this parameter doesn't apply.</p>
     pub fn config(&self) -> ::std::option::Option<&crate::types::TargetGroupConfig> {
@@ -134,25 +133,12 @@ impl CreateTargetGroupInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateTargetGroupInput`](crate::operation::create_target_group::CreateTargetGroupInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder::name)
-    /// - [`r#type`](crate::operation::create_target_group::builders::CreateTargetGroupInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_target_group::CreateTargetGroupInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_target_group::CreateTargetGroupInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateTargetGroupInput",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CreateTargetGroupInput",
-                )
-            })?,
+            name: self.name,
+            r#type: self.r#type,
             config: self.config,
             client_token: self.client_token,
             tags: self.tags,

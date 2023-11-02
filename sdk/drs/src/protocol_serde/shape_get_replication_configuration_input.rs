@@ -3,8 +3,8 @@ pub fn ser_get_replication_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_replication_configuration::GetReplicationConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("sourceServerID").string(input.source_server_id.as_str());
+    if let Some(var_1) = &input.source_server_id {
+        object.key("sourceServerID").string(var_1.as_str());
     }
     Ok(())
 }

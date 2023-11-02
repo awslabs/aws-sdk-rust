@@ -3,16 +3,16 @@ pub fn ser_start_viewer_session_revocation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("channelArn").string(input.channel_arn.as_str());
+    if let Some(var_1) = &input.channel_arn {
+        object.key("channelArn").string(var_1.as_str());
     }
-    {
-        object.key("viewerId").string(input.viewer_id.as_str());
+    if let Some(var_2) = &input.viewer_id {
+        object.key("viewerId").string(var_2.as_str());
     }
-    if input.viewer_session_versions_less_than_or_equal_to != 0 {
+    if let Some(var_3) = &input.viewer_session_versions_less_than_or_equal_to {
         object.key("viewerSessionVersionsLessThanOrEqualTo").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.viewer_session_versions_less_than_or_equal_to).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
     Ok(())

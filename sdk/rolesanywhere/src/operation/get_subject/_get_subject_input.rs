@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSubjectInput {
     /// <p>The unique identifier of the subject. </p>
-    pub subject_id: ::std::string::String,
+    pub subject_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSubjectInput {
     /// <p>The unique identifier of the subject. </p>
-    pub fn subject_id(&self) -> &str {
-        use std::ops::Deref;
-        self.subject_id.deref()
+    pub fn subject_id(&self) -> ::std::option::Option<&str> {
+        self.subject_id.as_deref()
     }
 }
 impl GetSubjectInput {
@@ -43,16 +42,7 @@ impl GetSubjectInputBuilder {
         &self.subject_id
     }
     /// Consumes the builder and constructs a [`GetSubjectInput`](crate::operation::get_subject::GetSubjectInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`subject_id`](crate::operation::get_subject::builders::GetSubjectInputBuilder::subject_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_subject::GetSubjectInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_subject::GetSubjectInput {
-            subject_id: self.subject_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "subject_id",
-                    "subject_id was not specified but it is required when building GetSubjectInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_subject::GetSubjectInput { subject_id: self.subject_id })
     }
 }

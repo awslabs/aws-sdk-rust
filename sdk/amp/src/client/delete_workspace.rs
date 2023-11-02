@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorkspace`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(impl Into<String>)`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::set_workspace_id):<br>required: **true**<br>The ID of the workspace to delete.<br>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::set_workspace_id):<br>required: **true**<br>The ID of the workspace to delete.<br>
     ///   - [`client_token(impl Into<String>)`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_workspace::builders::DeleteWorkspaceFluentBuilder::set_client_token):<br>required: **false**<br>Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.<br>
     /// - On success, responds with [`DeleteWorkspaceOutput`](crate::operation::delete_workspace::DeleteWorkspaceOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkspaceError>`](crate::operation::delete_workspace::DeleteWorkspaceError)

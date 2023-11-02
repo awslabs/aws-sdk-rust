@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSiteInput {
     /// Site ARN.
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
     pub name: ::std::option::Option<::std::string::String>,
     /// A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.
@@ -14,9 +14,8 @@ pub struct UpdateSiteInput {
 }
 impl UpdateSiteInput {
     /// Site ARN.
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// Human friendly name of the resource.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -106,16 +105,9 @@ impl UpdateSiteInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateSiteInput`](crate::operation::update_site::UpdateSiteInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::update_site::builders::UpdateSiteInputBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_site::UpdateSiteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_site::UpdateSiteInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building UpdateSiteInput",
-                )
-            })?,
+            id: self.id,
             name: self.name,
             country_code: self.country_code,
             description: self.description,

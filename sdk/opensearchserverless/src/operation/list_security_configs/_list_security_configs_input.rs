@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSecurityConfigsInput {
     /// <p>The type of security configuration.</p>
-    pub r#type: crate::types::SecurityConfigType,
+    pub r#type: ::std::option::Option<crate::types::SecurityConfigType>,
     /// <p>If your initial <code>ListSecurityConfigs</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityConfigs</code> operations, which returns results in the next page. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results. The default is 20.</p>
@@ -12,8 +12,8 @@ pub struct ListSecurityConfigsInput {
 }
 impl ListSecurityConfigsInput {
     /// <p>The type of security configuration.</p>
-    pub fn r#type(&self) -> &crate::types::SecurityConfigType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityConfigType> {
+        self.r#type.as_ref()
     }
     /// <p>If your initial <code>ListSecurityConfigs</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListSecurityConfigs</code> operations, which returns results in the next page. </p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -84,19 +84,12 @@ impl ListSecurityConfigsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSecurityConfigsInput`](crate::operation::list_security_configs::ListSecurityConfigsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::operation::list_security_configs::builders::ListSecurityConfigsInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_security_configs::ListSecurityConfigsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_security_configs::ListSecurityConfigsInput {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ListSecurityConfigsInput",
-                )
-            })?,
+            r#type: self.r#type,
             next_token: self.next_token,
             max_results: self.max_results,
         })

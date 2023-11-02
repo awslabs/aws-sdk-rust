@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetStreamKeyInput {
     /// <p>Array of ARNs, one per stream key.</p>
-    pub arns: ::std::vec::Vec<::std::string::String>,
+    pub arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetStreamKeyInput {
     /// <p>Array of ARNs, one per stream key.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.arns.is_none()`.
     pub fn arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.arns.deref()
+        self.arns.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetStreamKeyInput {
@@ -48,18 +49,9 @@ impl BatchGetStreamKeyInputBuilder {
         &self.arns
     }
     /// Consumes the builder and constructs a [`BatchGetStreamKeyInput`](crate::operation::batch_get_stream_key::BatchGetStreamKeyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arns`](crate::operation::batch_get_stream_key::builders::BatchGetStreamKeyInputBuilder::arns)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_get_stream_key::BatchGetStreamKeyInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_get_stream_key::BatchGetStreamKeyInput {
-            arns: self.arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arns",
-                    "arns was not specified but it is required when building BatchGetStreamKeyInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::batch_get_stream_key::BatchGetStreamKeyInput { arns: self.arns })
     }
 }

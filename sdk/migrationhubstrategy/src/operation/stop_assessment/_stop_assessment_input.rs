@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopAssessmentInput {
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
-    pub assessment_id: ::std::string::String,
+    pub assessment_id: ::std::option::Option<::std::string::String>,
 }
 impl StopAssessmentInput {
     /// <p> The <code>assessmentId</code> returned by <code>StartAssessment</code>. </p>
-    pub fn assessment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.assessment_id.deref()
+    pub fn assessment_id(&self) -> ::std::option::Option<&str> {
+        self.assessment_id.as_deref()
     }
 }
 impl StopAssessmentInput {
@@ -43,18 +42,11 @@ impl StopAssessmentInputBuilder {
         &self.assessment_id
     }
     /// Consumes the builder and constructs a [`StopAssessmentInput`](crate::operation::stop_assessment::StopAssessmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`assessment_id`](crate::operation::stop_assessment::builders::StopAssessmentInputBuilder::assessment_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::stop_assessment::StopAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_assessment::StopAssessmentInput {
-            assessment_id: self.assessment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "assessment_id",
-                    "assessment_id was not specified but it is required when building StopAssessmentInput",
-                )
-            })?,
+            assessment_id: self.assessment_id,
         })
     }
 }

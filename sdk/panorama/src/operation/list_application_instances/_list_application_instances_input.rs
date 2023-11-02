@@ -8,7 +8,7 @@ pub struct ListApplicationInstancesInput {
     /// <p>Only include instances with a specific status.</p>
     pub status_filter: ::std::option::Option<crate::types::StatusFilter>,
     /// <p>The maximum number of application instances to return in one page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -22,7 +22,7 @@ impl ListApplicationInstancesInput {
         self.status_filter.as_ref()
     }
     /// <p>The maximum number of application instances to return in one page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Specify the pagination token from a previous request to retrieve the next page of results.</p>
@@ -113,7 +113,7 @@ impl ListApplicationInstancesInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_application_instances::ListApplicationInstancesInput {
             device_id: self.device_id,
             status_filter: self.status_filter,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

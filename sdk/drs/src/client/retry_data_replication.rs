@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RetryDataReplication`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::source_server_id) / [`set_source_server_id(impl Into<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::set_source_server_id):<br>required: **true**<br><p>The ID of the Source Server whose data replication should be retried.</p><br>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::retry_data_replication::builders::RetryDataReplicationFluentBuilder::set_source_server_id):<br>required: **true**<br><p>The ID of the Source Server whose data replication should be retried.</p><br>
     /// - On success, responds with [`RetryDataReplicationOutput`](crate::operation::retry_data_replication::RetryDataReplicationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::source_server_id): <p>The ID of the Source Server.</p>
     ///   - [`arn(Option<String>)`](crate::operation::retry_data_replication::RetryDataReplicationOutput::arn): <p>The ARN of the Source Server.</p>

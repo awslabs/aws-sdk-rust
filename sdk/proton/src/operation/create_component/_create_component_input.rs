@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateComponentInput {
     /// <p>The customer-provided name of the component.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional customer-provided description of the component.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that <code>serviceInstanceName</code> is associated with. If you don't specify this, the component isn't attached to any service instance. Specify both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.</p>
@@ -16,9 +16,9 @@ pub struct CreateComponentInput {
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    pub template_file: ::std::string::String,
+    pub template_file: ::std::option::Option<::std::string::String>,
     /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
-    pub manifest: ::std::string::String,
+    pub manifest: ::std::option::Option<::std::string::String>,
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
     pub service_spec: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton component. A tag is a key-value pair.</p>
@@ -29,9 +29,8 @@ pub struct CreateComponentInput {
 }
 impl CreateComponentInput {
     /// <p>The customer-provided name of the component.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>An optional customer-provided description of the component.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -52,14 +51,12 @@ impl CreateComponentInput {
     /// <p>A path to the Infrastructure as Code (IaC) file describing infrastructure that a custom component provisions.</p> <note>
     /// <p>Components support a single IaC file, even if you use Terraform as your template language.</p>
     /// </note>
-    pub fn template_file(&self) -> &str {
-        use std::ops::Deref;
-        self.template_file.deref()
+    pub fn template_file(&self) -> ::std::option::Option<&str> {
+        self.template_file.as_deref()
     }
     /// <p>A path to a manifest file that lists the Infrastructure as Code (IaC) file, template language, and rendering engine for infrastructure that a custom component provisions.</p>
-    pub fn manifest(&self) -> &str {
-        use std::ops::Deref;
-        self.manifest.deref()
+    pub fn manifest(&self) -> ::std::option::Option<&str> {
+        self.manifest.as_deref()
     }
     /// <p>The service spec that you want the component to use to access service inputs. Set this only when you attach the component to a service instance.</p>
     pub fn service_spec(&self) -> ::std::option::Option<&str> {
@@ -275,36 +272,17 @@ impl CreateComponentInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateComponentInput`](crate::operation::create_component::CreateComponentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_component::builders::CreateComponentInputBuilder::name)
-    /// - [`template_file`](crate::operation::create_component::builders::CreateComponentInputBuilder::template_file)
-    /// - [`manifest`](crate::operation::create_component::builders::CreateComponentInputBuilder::manifest)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_component::CreateComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_component::CreateComponentInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateComponentInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
             service_name: self.service_name,
             service_instance_name: self.service_instance_name,
             environment_name: self.environment_name,
-            template_file: self.template_file.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "template_file",
-                    "template_file was not specified but it is required when building CreateComponentInput",
-                )
-            })?,
-            manifest: self.manifest.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "manifest",
-                    "manifest was not specified but it is required when building CreateComponentInput",
-                )
-            })?,
+            template_file: self.template_file,
+            manifest: self.manifest,
             service_spec: self.service_spec,
             tags: self.tags,
             client_token: self.client_token,

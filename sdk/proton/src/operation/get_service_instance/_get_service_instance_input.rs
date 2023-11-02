@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceInstanceInput {
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service that you want the service instance input for.</p>
-    pub service_name: ::std::string::String,
+    pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceInstanceInput {
     /// <p>The name of a service instance that you want to get the detailed data for.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The name of the service that you want the service instance input for.</p>
-    pub fn service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.service_name.deref()
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
+        self.service_name.as_deref()
     }
 }
 impl GetServiceInstanceInput {
@@ -66,25 +64,12 @@ impl GetServiceInstanceInputBuilder {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`GetServiceInstanceInput`](crate::operation::get_service_instance::GetServiceInstanceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::get_service_instance::builders::GetServiceInstanceInputBuilder::name)
-    /// - [`service_name`](crate::operation::get_service_instance::builders::GetServiceInstanceInputBuilder::service_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_service_instance::GetServiceInstanceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_service_instance::GetServiceInstanceInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetServiceInstanceInput",
-                )
-            })?,
-            service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_name",
-                    "service_name was not specified but it is required when building GetServiceInstanceInput",
-                )
-            })?,
+            name: self.name,
+            service_name: self.service_name,
         })
     }
 }

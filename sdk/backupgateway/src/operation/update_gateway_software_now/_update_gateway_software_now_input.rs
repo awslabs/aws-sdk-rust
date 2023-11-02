@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewaySoftwareNowInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
-    pub gateway_arn: ::std::string::String,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGatewaySoftwareNowInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to be updated.</p>
-    pub fn gateway_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.gateway_arn.deref()
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+        self.gateway_arn.as_deref()
     }
 }
 impl UpdateGatewaySoftwareNowInput {
@@ -43,8 +42,6 @@ impl UpdateGatewaySoftwareNowInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`UpdateGatewaySoftwareNowInput`](crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`gateway_arn`](crate::operation::update_gateway_software_now::builders::UpdateGatewaySoftwareNowInputBuilder::gateway_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -52,12 +49,7 @@ impl UpdateGatewaySoftwareNowInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput {
-            gateway_arn: self.gateway_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "gateway_arn",
-                    "gateway_arn was not specified but it is required when building UpdateGatewaySoftwareNowInput",
-                )
-            })?,
+            gateway_arn: self.gateway_arn,
         })
     }
 }

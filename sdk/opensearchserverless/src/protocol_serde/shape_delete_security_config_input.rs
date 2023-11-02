@@ -3,11 +3,11 @@ pub fn ser_delete_security_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_security_config::DeleteSecurityConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("id").string(input.id.as_str());
+    if let Some(var_1) = &input.id {
+        object.key("id").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
+    if let Some(var_2) = &input.client_token {
+        object.key("clientToken").string(var_2.as_str());
     }
     Ok(())
 }

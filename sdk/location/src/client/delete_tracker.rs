@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTracker`](crate::operation::delete_tracker::builders::DeleteTrackerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`tracker_name(impl Into<String>)`](crate::operation::delete_tracker::builders::DeleteTrackerFluentBuilder::tracker_name) / [`set_tracker_name(impl Into<String>)`](crate::operation::delete_tracker::builders::DeleteTrackerFluentBuilder::set_tracker_name):<br>required: **true**<br><p>The name of the tracker resource to be deleted.</p><br>
+    ///   - [`tracker_name(impl Into<String>)`](crate::operation::delete_tracker::builders::DeleteTrackerFluentBuilder::tracker_name) / [`set_tracker_name(Option<String>)`](crate::operation::delete_tracker::builders::DeleteTrackerFluentBuilder::set_tracker_name):<br>required: **true**<br><p>The name of the tracker resource to be deleted.</p><br>
     /// - On success, responds with [`DeleteTrackerOutput`](crate::operation::delete_tracker::DeleteTrackerOutput)
     /// - On failure, responds with [`SdkError<DeleteTrackerError>`](crate::operation::delete_tracker::DeleteTrackerError)
     pub fn delete_tracker(&self) -> crate::operation::delete_tracker::builders::DeleteTrackerFluentBuilder {

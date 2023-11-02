@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to update.</p>
-    pub experiment: ::std::string::String,
+    pub experiment: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the experiment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that define the variations being tested in the experiment.</p>
@@ -21,20 +21,18 @@ pub struct UpdateExperimentInput {
     /// <p>Adds an audience <i>segment</i> to an experiment. When a segment is used in an experiment, only user sessions that match the segment pattern are used in the experiment. You can't use this parameter if the experiment is currently running.</p>
     pub segment: ::std::option::Option<::std::string::String>,
     /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
-    pub remove_segment: bool,
+    pub remove_segment: ::std::option::Option<bool>,
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
     pub online_ab_config: ::std::option::Option<crate::types::OnlineAbConfig>,
 }
 impl UpdateExperimentInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to update.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name of the experiment to update.</p>
-    pub fn experiment(&self) -> &str {
-        use std::ops::Deref;
-        self.experiment.deref()
+    pub fn experiment(&self) -> ::std::option::Option<&str> {
+        self.experiment.as_deref()
     }
     /// <p>An optional description of the experiment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -66,7 +64,7 @@ impl UpdateExperimentInput {
         self.segment.as_deref()
     }
     /// <p>Removes a segment from being used in an experiment. You can't use this parameter if the experiment is currently running.</p>
-    pub fn remove_segment(&self) -> bool {
+    pub fn remove_segment(&self) -> ::std::option::Option<bool> {
         self.remove_segment
     }
     /// <p>A structure that contains the configuration of which variation o use as the "control" version. The "control" version is used for comparison with other variations. This structure also specifies how much experiment traffic is allocated to each variation.</p>
@@ -255,32 +253,19 @@ impl UpdateExperimentInputBuilder {
         &self.online_ab_config
     }
     /// Consumes the builder and constructs a [`UpdateExperimentInput`](crate::operation::update_experiment::UpdateExperimentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::update_experiment::builders::UpdateExperimentInputBuilder::project)
-    /// - [`experiment`](crate::operation::update_experiment::builders::UpdateExperimentInputBuilder::experiment)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_experiment::UpdateExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_experiment::UpdateExperimentInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building UpdateExperimentInput",
-                )
-            })?,
-            experiment: self.experiment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "experiment",
-                    "experiment was not specified but it is required when building UpdateExperimentInput",
-                )
-            })?,
+            project: self.project,
+            experiment: self.experiment,
             description: self.description,
             treatments: self.treatments,
             metric_goals: self.metric_goals,
             randomization_salt: self.randomization_salt,
             sampling_rate: self.sampling_rate,
             segment: self.segment,
-            remove_segment: self.remove_segment.unwrap_or_default(),
+            remove_segment: self.remove_segment,
             online_ab_config: self.online_ab_config,
         })
     }

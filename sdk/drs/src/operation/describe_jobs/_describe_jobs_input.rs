@@ -6,7 +6,7 @@ pub struct DescribeJobsInput {
     /// <p>A set of filters by which to return Jobs.</p>
     pub filters: ::std::option::Option<crate::types::DescribeJobsRequestFilters>,
     /// <p>Maximum number of Jobs to retrieve.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token of the next Job to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl DescribeJobsInput {
         self.filters.as_ref()
     }
     /// <p>Maximum number of Jobs to retrieve.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token of the next Job to retrieve.</p>
@@ -86,7 +86,7 @@ impl DescribeJobsInputBuilder {
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_jobs::DescribeJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_jobs::DescribeJobsInput {
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

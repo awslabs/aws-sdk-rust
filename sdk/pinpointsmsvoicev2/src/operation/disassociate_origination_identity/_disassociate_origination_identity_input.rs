@@ -4,29 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateOriginationIdentityInput {
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
-    pub pool_id: ::std::string::String,
+    pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
-    pub origination_identity: ::std::string::String,
+    pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub iso_country_code: ::std::string::String,
+    pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateOriginationIdentityInput {
     /// <p>The unique identifier for the pool to disassociate with the origination identity. This value can be either the PoolId or PoolArn.</p>
-    pub fn pool_id(&self) -> &str {
-        use std::ops::Deref;
-        self.pool_id.deref()
+    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+        self.pool_id.as_deref()
     }
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> find the values for PhoneNumberId and PhoneNumberArn, or use <code>DescribeSenderIds</code> to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> &str {
-        use std::ops::Deref;
-        self.origination_identity.deref()
+    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+        self.origination_identity.as_deref()
     }
     /// <p>The two-character code, in ISO 3166-1 alpha-2 format, for the country or region. </p>
-    pub fn iso_country_code(&self) -> &str {
-        use std::ops::Deref;
-        self.iso_country_code.deref()
+    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+        self.iso_country_code.as_deref()
     }
     /// <p>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -110,10 +107,6 @@ impl DisassociateOriginationIdentityInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DisassociateOriginationIdentityInput`](crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`pool_id`](crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder::pool_id)
-    /// - [`origination_identity`](crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder::origination_identity)
-    /// - [`iso_country_code`](crate::operation::disassociate_origination_identity::builders::DisassociateOriginationIdentityInputBuilder::iso_country_code)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -122,24 +115,9 @@ impl DisassociateOriginationIdentityInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput {
-                pool_id: self.pool_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "pool_id",
-                        "pool_id was not specified but it is required when building DisassociateOriginationIdentityInput",
-                    )
-                })?,
-                origination_identity: self.origination_identity.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "origination_identity",
-                        "origination_identity was not specified but it is required when building DisassociateOriginationIdentityInput",
-                    )
-                })?,
-                iso_country_code: self.iso_country_code.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "iso_country_code",
-                        "iso_country_code was not specified but it is required when building DisassociateOriginationIdentityInput",
-                    )
-                })?,
+                pool_id: self.pool_id,
+                origination_identity: self.origination_identity,
+                iso_country_code: self.iso_country_code,
                 client_token: self.client_token,
             },
         )

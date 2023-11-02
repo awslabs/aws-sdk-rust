@@ -18,38 +18,38 @@ pub fn ser_create_monitor_input(
         crate::protocol_serde::shape_internet_measurements_log_delivery::ser_internet_measurements_log_delivery(&mut object_5, var_4)?;
         object_5.finish();
     }
-    if input.max_city_networks_to_monitor != 0 {
+    if let Some(var_6) = &input.max_city_networks_to_monitor {
         object.key("MaxCityNetworksToMonitor").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_city_networks_to_monitor).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    {
-        object.key("MonitorName").string(input.monitor_name.as_str());
+    if let Some(var_7) = &input.monitor_name {
+        object.key("MonitorName").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.resources {
-        let mut array_7 = object.key("Resources").start_array();
-        for item_8 in var_6 {
+    if let Some(var_8) = &input.resources {
+        let mut array_9 = object.key("Resources").start_array();
+        for item_10 in var_8 {
             {
-                array_7.value().string(item_8.as_str());
+                array_9.value().string(item_10.as_str());
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_11) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_12 = object.key("Tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_10.finish();
+        object_12.finish();
     }
-    if input.traffic_percentage_to_monitor != 0 {
+    if let Some(var_15) = &input.traffic_percentage_to_monitor {
         object.key("TrafficPercentageToMonitor").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.traffic_percentage_to_monitor).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
     Ok(())

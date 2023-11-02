@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be deleted.</p>
-    pub identifier: ::std::string::String,
+    pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLoggingConfigurationInput {
     /// <p>Identifier of the logging configuration to be deleted.</p>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
+        self.identifier.as_deref()
     }
 }
 impl DeleteLoggingConfigurationInput {
@@ -43,21 +42,12 @@ impl DeleteLoggingConfigurationInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`DeleteLoggingConfigurationInput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`identifier`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationInputBuilder::identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building DeleteLoggingConfigurationInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput { identifier: self.identifier })
     }
 }

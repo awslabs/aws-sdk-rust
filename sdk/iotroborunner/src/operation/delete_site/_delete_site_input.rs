@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSiteInput {
     /// Site ARN.
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSiteInput {
     /// Site ARN.
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
 }
 impl DeleteSiteInput {
@@ -43,16 +42,7 @@ impl DeleteSiteInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`DeleteSiteInput`](crate::operation::delete_site::DeleteSiteInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::delete_site::builders::DeleteSiteInputBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_site::DeleteSiteInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_site::DeleteSiteInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building DeleteSiteInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_site::DeleteSiteInput { id: self.id })
     }
 }

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProjectsInput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::string::String,
+    pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a <code>NextToken</code> element, which you can use to obtain additional results.</p>
@@ -14,9 +14,8 @@ pub struct ListProjectsInput {
 }
 impl ListProjectsInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> &str {
-        use std::ops::Deref;
-        self.space_name.deref()
+    pub fn space_name(&self) -> ::std::option::Option<&str> {
+        self.space_name.as_deref()
     }
     /// <p>A token returned from a call to this API to indicate the next batch of results to return, if any.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -114,16 +113,9 @@ impl ListProjectsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListProjectsInput`](crate::operation::list_projects::ListProjectsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`space_name`](crate::operation::list_projects::builders::ListProjectsInputBuilder::space_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_projects::ListProjectsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_projects::ListProjectsInput {
-            space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "space_name",
-                    "space_name was not specified but it is required when building ListProjectsInput",
-                )
-            })?,
+            space_name: self.space_name,
             next_token: self.next_token,
             max_results: self.max_results,
             filters: self.filters,

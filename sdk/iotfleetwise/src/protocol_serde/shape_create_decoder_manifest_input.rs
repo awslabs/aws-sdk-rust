@@ -3,50 +3,50 @@ pub fn ser_create_decoder_manifest_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_decoder_manifest::CreateDecoderManifestInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    {
-        object.key("modelManifestArn").string(input.model_manifest_arn.as_str());
+    if let Some(var_3) = &input.model_manifest_arn {
+        object.key("modelManifestArn").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.signal_decoders {
-        let mut array_3 = object.key("signalDecoders").start_array();
-        for item_4 in var_2 {
+    if let Some(var_4) = &input.signal_decoders {
+        let mut array_5 = object.key("signalDecoders").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_signal_decoder::ser_signal_decoder(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_3.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.network_interfaces {
-        let mut array_7 = object.key("networkInterfaces").start_array();
-        for item_8 in var_6 {
+    if let Some(var_8) = &input.network_interfaces {
+        let mut array_9 = object.key("networkInterfaces").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_network_interface::ser_network_interface(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_network_interface::ser_network_interface(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.tags {
-        let mut array_11 = object.key("tags").start_array();
-        for item_12 in var_10 {
+    if let Some(var_12) = &input.tags {
+        let mut array_13 = object.key("tags").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_13 = array_11.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_13, item_12)?;
-                object_13.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_11.finish();
+        array_13.finish();
     }
     Ok(())
 }

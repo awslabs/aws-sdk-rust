@@ -6,11 +6,11 @@ pub struct CreateEnvironmentAccountConnectionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment account connection that the first request created.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
-    pub management_account_id: ::std::string::String,
+    pub management_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
     pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
-    pub environment_name: ::std::string::String,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -27,18 +27,16 @@ impl CreateEnvironmentAccountConnectionInput {
         self.client_token.as_deref()
     }
     /// <p>The ID of the management account that accepts or rejects the environment account connection. You create and manage the Proton environment in this account. If the management account accepts the environment account connection, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>
-    pub fn management_account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.management_account_id.deref()
+    pub fn management_account_id(&self) -> ::std::option::Option<&str> {
+        self.management_account_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM service role that's created in the environment account. Proton uses this role to provision infrastructure resources in the associated environment account.</p>
     pub fn role_arn(&self) -> ::std::option::Option<&str> {
         self.role_arn.as_deref()
     }
     /// <p>The name of the Proton environment that's created in the associated management account.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+        self.environment_name.as_deref()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton environment account connection. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
@@ -194,9 +192,6 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
         &self.codebuild_role_arn
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentAccountConnectionInput`](crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`management_account_id`](crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionInputBuilder::management_account_id)
-    /// - [`environment_name`](crate::operation::create_environment_account_connection::builders::CreateEnvironmentAccountConnectionInputBuilder::environment_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -206,19 +201,9 @@ impl CreateEnvironmentAccountConnectionInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionInput {
                 client_token: self.client_token,
-                management_account_id: self.management_account_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "management_account_id",
-                        "management_account_id was not specified but it is required when building CreateEnvironmentAccountConnectionInput",
-                    )
-                })?,
+                management_account_id: self.management_account_id,
                 role_arn: self.role_arn,
-                environment_name: self.environment_name.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "environment_name",
-                        "environment_name was not specified but it is required when building CreateEnvironmentAccountConnectionInput",
-                    )
-                })?,
+                environment_name: self.environment_name,
                 tags: self.tags,
                 component_role_arn: self.component_role_arn,
                 codebuild_role_arn: self.codebuild_role_arn,

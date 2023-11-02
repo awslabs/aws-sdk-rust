@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGroupIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::string::String,
+    pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
     pub alternate_identifier: ::std::option::Option<crate::types::AlternateIdentifier>,
 }
 impl GetGroupIdInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_id.deref()
+    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+        self.identity_store_id.as_deref()
     }
     /// <p>A unique identifier for a user or group that is not the primary identifier. This value can be an identifier from an external identity provider (IdP) that is associated with the user, the group, or a unique attribute. For the unique attribute, the only valid path is <code>displayName</code>.</p>
     pub fn alternate_identifier(&self) -> ::std::option::Option<&crate::types::AlternateIdentifier> {
@@ -65,16 +64,9 @@ impl GetGroupIdInputBuilder {
         &self.alternate_identifier
     }
     /// Consumes the builder and constructs a [`GetGroupIdInput`](crate::operation::get_group_id::GetGroupIdInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`identity_store_id`](crate::operation::get_group_id::builders::GetGroupIdInputBuilder::identity_store_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_group_id::GetGroupIdInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_group_id::GetGroupIdInput {
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building GetGroupIdInput",
-                )
-            })?,
+            identity_store_id: self.identity_store_id,
             alternate_identifier: self.alternate_identifier,
         })
     }

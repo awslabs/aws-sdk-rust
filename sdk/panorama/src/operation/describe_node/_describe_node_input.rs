@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNodeInput {
     /// <p>The node's ID.</p>
-    pub node_id: ::std::string::String,
+    pub node_id: ::std::option::Option<::std::string::String>,
     /// <p>The account ID of the node's owner.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
 }
 impl DescribeNodeInput {
     /// <p>The node's ID.</p>
-    pub fn node_id(&self) -> &str {
-        use std::ops::Deref;
-        self.node_id.deref()
+    pub fn node_id(&self) -> ::std::option::Option<&str> {
+        self.node_id.as_deref()
     }
     /// <p>The account ID of the node's owner.</p>
     pub fn owner_account(&self) -> ::std::option::Option<&str> {
@@ -64,16 +63,9 @@ impl DescribeNodeInputBuilder {
         &self.owner_account
     }
     /// Consumes the builder and constructs a [`DescribeNodeInput`](crate::operation::describe_node::DescribeNodeInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`node_id`](crate::operation::describe_node::builders::DescribeNodeInputBuilder::node_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_node::DescribeNodeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_node::DescribeNodeInput {
-            node_id: self.node_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "node_id",
-                    "node_id was not specified but it is required when building DescribeNodeInput",
-                )
-            })?,
+            node_id: self.node_id,
             owner_account: self.owner_account,
         })
     }

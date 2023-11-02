@@ -4,33 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRouteInput {
     /// <p> The ID of the environment in which the route is being updated. </p>
-    pub environment_identifier: ::std::string::String,
+    pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p> The ID of the application within which the route is being updated. </p>
-    pub application_identifier: ::std::string::String,
+    pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p> The unique identifier of the route to update. </p>
-    pub route_identifier: ::std::string::String,
+    pub route_identifier: ::std::option::Option<::std::string::String>,
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
-    pub activation_state: crate::types::RouteActivationState,
+    pub activation_state: ::std::option::Option<crate::types::RouteActivationState>,
 }
 impl UpdateRouteInput {
     /// <p> The ID of the environment in which the route is being updated. </p>
-    pub fn environment_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_identifier.deref()
+    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_identifier.as_deref()
     }
     /// <p> The ID of the application within which the route is being updated. </p>
-    pub fn application_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.application_identifier.deref()
+    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+        self.application_identifier.as_deref()
     }
     /// <p> The unique identifier of the route to update. </p>
-    pub fn route_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.route_identifier.deref()
+    pub fn route_identifier(&self) -> ::std::option::Option<&str> {
+        self.route_identifier.as_deref()
     }
     /// <p> If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after the route is updated. </p>
-    pub fn activation_state(&self) -> &crate::types::RouteActivationState {
-        &self.activation_state
+    pub fn activation_state(&self) -> ::std::option::Option<&crate::types::RouteActivationState> {
+        self.activation_state.as_ref()
     }
 }
 impl UpdateRouteInput {
@@ -111,37 +108,12 @@ impl UpdateRouteInputBuilder {
         &self.activation_state
     }
     /// Consumes the builder and constructs a [`UpdateRouteInput`](crate::operation::update_route::UpdateRouteInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`environment_identifier`](crate::operation::update_route::builders::UpdateRouteInputBuilder::environment_identifier)
-    /// - [`application_identifier`](crate::operation::update_route::builders::UpdateRouteInputBuilder::application_identifier)
-    /// - [`route_identifier`](crate::operation::update_route::builders::UpdateRouteInputBuilder::route_identifier)
-    /// - [`activation_state`](crate::operation::update_route::builders::UpdateRouteInputBuilder::activation_state)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_route::UpdateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_route::UpdateRouteInput {
-            environment_identifier: self.environment_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_identifier",
-                    "environment_identifier was not specified but it is required when building UpdateRouteInput",
-                )
-            })?,
-            application_identifier: self.application_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_identifier",
-                    "application_identifier was not specified but it is required when building UpdateRouteInput",
-                )
-            })?,
-            route_identifier: self.route_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "route_identifier",
-                    "route_identifier was not specified but it is required when building UpdateRouteInput",
-                )
-            })?,
-            activation_state: self.activation_state.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "activation_state",
-                    "activation_state was not specified but it is required when building UpdateRouteInput",
-                )
-            })?,
+            environment_identifier: self.environment_identifier,
+            application_identifier: self.application_identifier,
+            route_identifier: self.route_identifier,
+            activation_state: self.activation_state,
         })
     }
 }

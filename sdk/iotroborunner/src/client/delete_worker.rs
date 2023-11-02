@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteWorker`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::set_id):<br>required: **true**<br>Full ARN of the worker.<br>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder::set_id):<br>required: **true**<br>Full ARN of the worker.<br>
     /// - On success, responds with [`DeleteWorkerOutput`](crate::operation::delete_worker::DeleteWorkerOutput)
     /// - On failure, responds with [`SdkError<DeleteWorkerError>`](crate::operation::delete_worker::DeleteWorkerError)
     pub fn delete_worker(&self) -> crate::operation::delete_worker::builders::DeleteWorkerFluentBuilder {

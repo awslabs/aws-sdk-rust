@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutAccountAlias`](crate::operation::put_account_alias::builders::PutAccountAliasFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_alias(impl Into<String>)`](crate::operation::put_account_alias::builders::PutAccountAliasFluentBuilder::account_alias) / [`set_account_alias(impl Into<String>)`](crate::operation::put_account_alias::builders::PutAccountAliasFluentBuilder::set_account_alias):<br>required: **true**<br><p>An alias or short name for an Amazon Web Services account.</p><br>
+    ///   - [`account_alias(impl Into<String>)`](crate::operation::put_account_alias::builders::PutAccountAliasFluentBuilder::account_alias) / [`set_account_alias(Option<String>)`](crate::operation::put_account_alias::builders::PutAccountAliasFluentBuilder::set_account_alias):<br>required: **true**<br><p>An alias or short name for an Amazon Web Services account.</p><br>
     /// - On success, responds with [`PutAccountAliasOutput`](crate::operation::put_account_alias::PutAccountAliasOutput)
     /// - On failure, responds with [`SdkError<PutAccountAliasError>`](crate::operation::put_account_alias::PutAccountAliasError)
     pub fn put_account_alias(&self) -> crate::operation::put_account_alias::builders::PutAccountAliasFluentBuilder {

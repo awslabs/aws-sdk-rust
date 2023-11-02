@@ -3,11 +3,11 @@ pub fn ser_delete_keyword_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_keyword::DeleteKeywordInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("OriginationIdentity").string(input.origination_identity.as_str());
+    if let Some(var_1) = &input.origination_identity {
+        object.key("OriginationIdentity").string(var_1.as_str());
     }
-    {
-        object.key("Keyword").string(input.keyword.as_str());
+    if let Some(var_2) = &input.keyword {
+        object.key("Keyword").string(var_2.as_str());
     }
     Ok(())
 }

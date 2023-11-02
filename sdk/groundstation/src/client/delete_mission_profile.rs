@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteMissionProfile`](crate::operation::delete_mission_profile::builders::DeleteMissionProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`mission_profile_id(impl Into<String>)`](crate::operation::delete_mission_profile::builders::DeleteMissionProfileFluentBuilder::mission_profile_id) / [`set_mission_profile_id(impl Into<String>)`](crate::operation::delete_mission_profile::builders::DeleteMissionProfileFluentBuilder::set_mission_profile_id):<br>required: **true**<br><p>UUID of a mission profile.</p><br>
+    ///   - [`mission_profile_id(impl Into<String>)`](crate::operation::delete_mission_profile::builders::DeleteMissionProfileFluentBuilder::mission_profile_id) / [`set_mission_profile_id(Option<String>)`](crate::operation::delete_mission_profile::builders::DeleteMissionProfileFluentBuilder::set_mission_profile_id):<br>required: **true**<br><p>UUID of a mission profile.</p><br>
     /// - On success, responds with [`DeleteMissionProfileOutput`](crate::operation::delete_mission_profile::DeleteMissionProfileOutput) with field(s):
     ///   - [`mission_profile_id(Option<String>)`](crate::operation::delete_mission_profile::DeleteMissionProfileOutput::mission_profile_id): <p>UUID of a mission profile.</p>
     /// - On failure, responds with [`SdkError<DeleteMissionProfileError>`](crate::operation::delete_mission_profile::DeleteMissionProfileError)

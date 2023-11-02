@@ -183,6 +183,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeAppR
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.simulation;
+                let inner_1 = inner_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("simulation", "cannot be empty or unset"))?;
                 if inner_1.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "simulation",
@@ -191,6 +194,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeAppR
                 }
                 query.push_kv("simulation", &::aws_smithy_http::query::fmt_string(&inner_1));
                 let inner_2 = &_input.domain;
+                let inner_2 = inner_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("domain", "cannot be empty or unset"))?;
                 if inner_2.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "domain",
@@ -199,6 +205,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeAppR
                 }
                 query.push_kv("domain", &::aws_smithy_http::query::fmt_string(&inner_2));
                 let inner_3 = &_input.app;
+                let inner_3 = inner_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("app", "cannot be empty or unset"))?;
                 if inner_3.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "app",

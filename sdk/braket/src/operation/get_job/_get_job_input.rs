@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobInput {
     /// <p>The ARN of the job to retrieve.</p>
-    pub job_arn: ::std::string::String,
+    pub job_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes to return information for.</p>
     pub additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::HybridJobAdditionalAttributeName>>,
 }
 impl GetJobInput {
     /// <p>The ARN of the job to retrieve.</p>
-    pub fn job_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.job_arn.deref()
+    pub fn job_arn(&self) -> ::std::option::Option<&str> {
+        self.job_arn.as_deref()
     }
     /// <p>A list of attributes to return information for.</p>
     ///
@@ -75,16 +74,9 @@ impl GetJobInputBuilder {
         &self.additional_attribute_names
     }
     /// Consumes the builder and constructs a [`GetJobInput`](crate::operation::get_job::GetJobInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`job_arn`](crate::operation::get_job::builders::GetJobInputBuilder::job_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_job::GetJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job::GetJobInput {
-            job_arn: self.job_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "job_arn",
-                    "job_arn was not specified but it is required when building GetJobInput",
-                )
-            })?,
+            job_arn: self.job_arn,
             additional_attribute_names: self.additional_attribute_names,
         })
     }

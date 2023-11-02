@@ -12,11 +12,11 @@ pub fn ser_stop_product_subscription_input(
         crate::protocol_serde::shape_identity_provider::ser_identity_provider(&mut object_3, var_2)?;
         object_3.finish();
     }
-    {
-        object.key("Product").string(input.product.as_str());
+    if let Some(var_4) = &input.product {
+        object.key("Product").string(var_4.as_str());
     }
-    {
-        object.key("Username").string(input.username.as_str());
+    if let Some(var_5) = &input.username {
+        object.key("Username").string(var_5.as_str());
     }
     Ok(())
 }

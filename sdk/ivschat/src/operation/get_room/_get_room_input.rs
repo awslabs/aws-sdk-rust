@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRoomInput {
     /// <p>Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.</p>
-    pub identifier: ::std::string::String,
+    pub identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetRoomInput {
     /// <p>Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.</p>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
+        self.identifier.as_deref()
     }
 }
 impl GetRoomInput {
@@ -43,16 +42,7 @@ impl GetRoomInputBuilder {
         &self.identifier
     }
     /// Consumes the builder and constructs a [`GetRoomInput`](crate::operation::get_room::GetRoomInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`identifier`](crate::operation::get_room::builders::GetRoomInputBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_room::GetRoomInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_room::GetRoomInput {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building GetRoomInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_room::GetRoomInput { identifier: self.identifier })
     }
 }

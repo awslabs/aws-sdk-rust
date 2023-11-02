@@ -6,7 +6,7 @@ pub struct DescribeReplicationConfigurationTemplatesInput {
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
     pub replication_configuration_template_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Request to describe Replication Configuration template by max results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Request to describe Replication Configuration template by next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -18,7 +18,7 @@ impl DescribeReplicationConfigurationTemplatesInput {
         self.replication_configuration_template_ids.as_deref().unwrap_or_default()
     }
     /// <p>Request to describe Replication Configuration template by max results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Request to describe Replication Configuration template by next token.</p>
@@ -101,7 +101,7 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput {
                 replication_configuration_template_ids: self.replication_configuration_template_ids,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

@@ -6,7 +6,7 @@ pub struct CreateServiceNetworkInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of IAM policy.</p>
     /// <ul>
     /// <li> <p> <code>NONE</code>: The resource does not use an IAM policy. This is the default.</p> </li>
@@ -22,9 +22,8 @@ impl CreateServiceNetworkInput {
         self.client_token.as_deref()
     }
     /// <p>The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The type of IAM policy.</p>
     /// <ul>
@@ -132,20 +131,13 @@ impl CreateServiceNetworkInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServiceNetworkInput`](crate::operation::create_service_network::CreateServiceNetworkInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_service_network::builders::CreateServiceNetworkInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_service_network::CreateServiceNetworkInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_service_network::CreateServiceNetworkInput {
             client_token: self.client_token,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateServiceNetworkInput",
-                )
-            })?,
+            name: self.name,
             auth_type: self.auth_type,
             tags: self.tags,
         })

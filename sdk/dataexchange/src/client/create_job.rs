@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`details(RequestDetails)`](crate::operation::create_job::builders::CreateJobFluentBuilder::details) / [`set_details(Option<RequestDetails>)`](crate::operation::create_job::builders::CreateJobFluentBuilder::set_details):<br>required: **true**<br><p>The details for the CreateJob request.</p><br>
-    ///   - [`r#type(Type)`](crate::operation::create_job::builders::CreateJobFluentBuilder::type) / [`set_type(Type)`](crate::operation::create_job::builders::CreateJobFluentBuilder::set_type):<br>required: **true**<br><p>The type of job to be created.</p><br>
+    ///   - [`r#type(Type)`](crate::operation::create_job::builders::CreateJobFluentBuilder::type) / [`set_type(Option<Type>)`](crate::operation::create_job::builders::CreateJobFluentBuilder::set_type):<br>required: **true**<br><p>The type of job to be created.</p><br>
     /// - On success, responds with [`CreateJobOutput`](crate::operation::create_job::CreateJobOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::create_job::CreateJobOutput::arn): <p>The ARN for the job.</p>
     ///   - [`created_at(Option<DateTime>)`](crate::operation::create_job::CreateJobOutput::created_at): <p>The date and time that the job was created, in ISO 8601 format.</p>

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateNetworkSitePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub network_site_arn: ::std::string::String,
+    pub network_site_arn: ::std::option::Option<::std::string::String>,
     /// <p>The pending plan.</p>
     pub pending_plan: ::std::option::Option<crate::types::SitePlan>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -12,9 +12,8 @@ pub struct UpdateNetworkSitePlanInput {
 }
 impl UpdateNetworkSitePlanInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.network_site_arn.deref()
+    pub fn network_site_arn(&self) -> ::std::option::Option<&str> {
+        self.network_site_arn.as_deref()
     }
     /// <p>The pending plan.</p>
     pub fn pending_plan(&self) -> ::std::option::Option<&crate::types::SitePlan> {
@@ -86,19 +85,12 @@ impl UpdateNetworkSitePlanInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateNetworkSitePlanInput`](crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`network_site_arn`](crate::operation::update_network_site_plan::builders::UpdateNetworkSitePlanInputBuilder::network_site_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_network_site_plan::UpdateNetworkSitePlanInput {
-            network_site_arn: self.network_site_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "network_site_arn",
-                    "network_site_arn was not specified but it is required when building UpdateNetworkSitePlanInput",
-                )
-            })?,
+            network_site_arn: self.network_site_arn,
             pending_plan: self.pending_plan,
             client_token: self.client_token,
         })

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeChannelInput {
     /// <p>The name of the channel.</p>
-    pub channel_name: ::std::string::String,
+    pub channel_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeChannelInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
 }
 impl DescribeChannelInput {
@@ -43,18 +42,11 @@ impl DescribeChannelInputBuilder {
         &self.channel_name
     }
     /// Consumes the builder and constructs a [`DescribeChannelInput`](crate::operation::describe_channel::DescribeChannelInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_name`](crate::operation::describe_channel::builders::DescribeChannelInputBuilder::channel_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_channel::DescribeChannelInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_channel::DescribeChannelInput {
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building DescribeChannelInput",
-                )
-            })?,
+            channel_name: self.channel_name,
         })
     }
 }

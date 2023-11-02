@@ -4,29 +4,27 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub origination_identity: ::std::string::String,
+    pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The new keyword to add.</p>
-    pub keyword: ::std::string::String,
+    pub keyword: ::std::option::Option<::std::string::String>,
     /// <p>The message associated with the keyword.</p>
     /// <ul>
     /// <li> <p>AUTOMATIC_RESPONSE: A message is sent to the recipient.</p> </li>
     /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
     /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
     /// </ul>
-    pub keyword_message: ::std::string::String,
+    pub keyword_message: ::std::option::Option<::std::string::String>,
     /// <p>The action to perform for the new keyword when it is received.</p>
     pub keyword_action: ::std::option::Option<crate::types::KeywordAction>,
 }
 impl PutKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> get the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> &str {
-        use std::ops::Deref;
-        self.origination_identity.deref()
+    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+        self.origination_identity.as_deref()
     }
     /// <p>The new keyword to add.</p>
-    pub fn keyword(&self) -> &str {
-        use std::ops::Deref;
-        self.keyword.deref()
+    pub fn keyword(&self) -> ::std::option::Option<&str> {
+        self.keyword.as_deref()
     }
     /// <p>The message associated with the keyword.</p>
     /// <ul>
@@ -34,9 +32,8 @@ impl PutKeywordInput {
     /// <li> <p>OPT_OUT: Keeps the recipient from receiving future messages.</p> </li>
     /// <li> <p>OPT_IN: The recipient wants to receive future messages.</p> </li>
     /// </ul>
-    pub fn keyword_message(&self) -> &str {
-        use std::ops::Deref;
-        self.keyword_message.deref()
+    pub fn keyword_message(&self) -> ::std::option::Option<&str> {
+        self.keyword_message.as_deref()
     }
     /// <p>The action to perform for the new keyword when it is received.</p>
     pub fn keyword_action(&self) -> ::std::option::Option<&crate::types::KeywordAction> {
@@ -135,30 +132,11 @@ impl PutKeywordInputBuilder {
         &self.keyword_action
     }
     /// Consumes the builder and constructs a [`PutKeywordInput`](crate::operation::put_keyword::PutKeywordInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`origination_identity`](crate::operation::put_keyword::builders::PutKeywordInputBuilder::origination_identity)
-    /// - [`keyword`](crate::operation::put_keyword::builders::PutKeywordInputBuilder::keyword)
-    /// - [`keyword_message`](crate::operation::put_keyword::builders::PutKeywordInputBuilder::keyword_message)
     pub fn build(self) -> ::std::result::Result<crate::operation::put_keyword::PutKeywordInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_keyword::PutKeywordInput {
-            origination_identity: self.origination_identity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "origination_identity",
-                    "origination_identity was not specified but it is required when building PutKeywordInput",
-                )
-            })?,
-            keyword: self.keyword.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "keyword",
-                    "keyword was not specified but it is required when building PutKeywordInput",
-                )
-            })?,
-            keyword_message: self.keyword_message.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "keyword_message",
-                    "keyword_message was not specified but it is required when building PutKeywordInput",
-                )
-            })?,
+            origination_identity: self.origination_identity,
+            keyword: self.keyword,
+            keyword_message: self.keyword_message,
             keyword_action: self.keyword_action,
         })
     }

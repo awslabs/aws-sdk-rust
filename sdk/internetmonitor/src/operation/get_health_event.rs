@@ -176,6 +176,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetHealthEve
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.monitor_name;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("monitor_name", "cannot be empty or unset"))?;
                 let monitor_name = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if monitor_name.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -184,6 +187,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetHealthEve
                     ));
                 }
                 let input_2 = &_input.event_id;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("event_id", "cannot be empty or unset"))?;
                 let event_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if event_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

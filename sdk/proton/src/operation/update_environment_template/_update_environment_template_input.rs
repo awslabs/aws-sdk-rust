@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateEnvironmentTemplateInput {
     /// <p>The name of the environment template to update.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment template to update as displayed in the developer interface.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment template update.</p>
@@ -12,9 +12,8 @@ pub struct UpdateEnvironmentTemplateInput {
 }
 impl UpdateEnvironmentTemplateInput {
     /// <p>The name of the environment template to update.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The name of the environment template to update as displayed in the developer interface.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -94,8 +93,6 @@ impl UpdateEnvironmentTemplateInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentTemplateInput`](crate::operation::update_environment_template::UpdateEnvironmentTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::update_environment_template::builders::UpdateEnvironmentTemplateInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -103,12 +100,7 @@ impl UpdateEnvironmentTemplateInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_environment_template::UpdateEnvironmentTemplateInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateEnvironmentTemplateInput",
-                )
-            })?,
+            name: self.name,
             display_name: self.display_name,
             description: self.description,
         })

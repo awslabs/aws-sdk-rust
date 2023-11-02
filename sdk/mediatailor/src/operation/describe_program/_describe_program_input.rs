@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeProgramInput {
     /// <p>The name of the channel associated with this Program.</p>
-    pub channel_name: ::std::string::String,
+    pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the program.</p>
-    pub program_name: ::std::string::String,
+    pub program_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeProgramInput {
     /// <p>The name of the channel associated with this Program.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
     /// <p>The name of the program.</p>
-    pub fn program_name(&self) -> &str {
-        use std::ops::Deref;
-        self.program_name.deref()
+    pub fn program_name(&self) -> ::std::option::Option<&str> {
+        self.program_name.as_deref()
     }
 }
 impl DescribeProgramInput {
@@ -66,25 +64,12 @@ impl DescribeProgramInputBuilder {
         &self.program_name
     }
     /// Consumes the builder and constructs a [`DescribeProgramInput`](crate::operation::describe_program::DescribeProgramInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_name`](crate::operation::describe_program::builders::DescribeProgramInputBuilder::channel_name)
-    /// - [`program_name`](crate::operation::describe_program::builders::DescribeProgramInputBuilder::program_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_program::DescribeProgramInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_program::DescribeProgramInput {
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building DescribeProgramInput",
-                )
-            })?,
-            program_name: self.program_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "program_name",
-                    "program_name was not specified but it is required when building DescribeProgramInput",
-                )
-            })?,
+            channel_name: self.channel_name,
+            program_name: self.program_name,
         })
     }
 }

@@ -6,8 +6,8 @@ pub fn ser_submit_feedback_input(
     if let Some(var_1) = &input.comment {
         object.key("comment").string(var_1.as_str());
     }
-    {
-        object.key("type").string(input.r#type.as_str());
+    if let Some(var_2) = &input.r#type {
+        object.key("type").string(var_2.as_str());
     }
     Ok(())
 }

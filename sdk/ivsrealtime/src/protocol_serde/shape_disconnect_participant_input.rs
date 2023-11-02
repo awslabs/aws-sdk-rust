@@ -3,14 +3,14 @@ pub fn ser_disconnect_participant_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disconnect_participant::DisconnectParticipantInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("participantId").string(input.participant_id.as_str());
+    if let Some(var_1) = &input.participant_id {
+        object.key("participantId").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.reason {
-        object.key("reason").string(var_1.as_str());
+    if let Some(var_2) = &input.reason {
+        object.key("reason").string(var_2.as_str());
     }
-    {
-        object.key("stageArn").string(input.stage_arn.as_str());
+    if let Some(var_3) = &input.stage_arn {
+        object.key("stageArn").string(var_3.as_str());
     }
     Ok(())
 }

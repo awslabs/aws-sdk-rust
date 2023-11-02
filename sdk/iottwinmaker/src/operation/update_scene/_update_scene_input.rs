@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the scene.</p>
-    pub scene_id: ::std::string::String,
+    pub scene_id: ::std::option::Option<::std::string::String>,
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub content_location: ::std::option::Option<::std::string::String>,
     /// <p>The description of this scene.</p>
@@ -18,14 +18,12 @@ pub struct UpdateSceneInput {
 }
 impl UpdateSceneInput {
     /// <p>The ID of the workspace that contains the scene.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>The ID of the scene.</p>
-    pub fn scene_id(&self) -> &str {
-        use std::ops::Deref;
-        self.scene_id.deref()
+    pub fn scene_id(&self) -> ::std::option::Option<&str> {
+        self.scene_id.as_deref()
     }
     /// <p>The relative path that specifies the location of the content definition file.</p>
     pub fn content_location(&self) -> ::std::option::Option<&str> {
@@ -171,23 +169,10 @@ impl UpdateSceneInputBuilder {
         &self.scene_metadata
     }
     /// Consumes the builder and constructs a [`UpdateSceneInput`](crate::operation::update_scene::UpdateSceneInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::update_scene::builders::UpdateSceneInputBuilder::workspace_id)
-    /// - [`scene_id`](crate::operation::update_scene::builders::UpdateSceneInputBuilder::scene_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_scene::UpdateSceneInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_scene::UpdateSceneInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building UpdateSceneInput",
-                )
-            })?,
-            scene_id: self.scene_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "scene_id",
-                    "scene_id was not specified but it is required when building UpdateSceneInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
+            scene_id: self.scene_id,
             content_location: self.content_location,
             description: self.description,
             capabilities: self.capabilities,

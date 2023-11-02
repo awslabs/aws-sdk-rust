@@ -4,19 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIndexTypeInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to update.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The type of the index. To understand the difference between <code>LOCAL</code> and <code>AGGREGATOR</code>, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p>
-    pub r#type: crate::types::IndexType,
+    pub r#type: ::std::option::Option<crate::types::IndexType>,
 }
 impl UpdateIndexTypeInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to update.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>The type of the index. To understand the difference between <code>LOCAL</code> and <code>AGGREGATOR</code>, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p>
-    pub fn r#type(&self) -> &crate::types::IndexType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::IndexType> {
+        self.r#type.as_ref()
     }
 }
 impl UpdateIndexTypeInput {
@@ -65,25 +64,12 @@ impl UpdateIndexTypeInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`UpdateIndexTypeInput`](crate::operation::update_index_type::UpdateIndexTypeInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::update_index_type::builders::UpdateIndexTypeInputBuilder::arn)
-    /// - [`r#type`](crate::operation::update_index_type::builders::UpdateIndexTypeInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_index_type::UpdateIndexTypeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_index_type::UpdateIndexTypeInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building UpdateIndexTypeInput",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building UpdateIndexTypeInput",
-                )
-            })?,
+            arn: self.arn,
+            r#type: self.r#type,
         })
     }
 }

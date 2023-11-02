@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub service_identifier: ::std::string::String,
+    pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub listener_identifier: ::std::string::String,
+    pub listener_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The rule match.</p>
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The priority assigned to the rule. Each rule for a specific listener must have a unique priority. The lower the priority number the higher the priority.</p>
-    pub priority: i32,
+    pub priority: ::std::option::Option<i32>,
     /// <p>The action for the default rule.</p>
     pub action: ::std::option::Option<crate::types::RuleAction>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.</p>
@@ -22,26 +22,23 @@ pub struct CreateRuleInput {
 }
 impl CreateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.service_identifier.deref()
+    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+        self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.listener_identifier.deref()
+    pub fn listener_identifier(&self) -> ::std::option::Option<&str> {
+        self.listener_identifier.as_deref()
     }
     /// <p>The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The rule match.</p>
     pub fn r#match(&self) -> ::std::option::Option<&crate::types::RuleMatch> {
         self.r#match.as_ref()
     }
     /// <p>The priority assigned to the rule. Each rule for a specific listener must have a unique priority. The lower the priority number the higher the priority.</p>
-    pub fn priority(&self) -> i32 {
+    pub fn priority(&self) -> ::std::option::Option<i32> {
         self.priority
     }
     /// <p>The action for the default rule.</p>
@@ -203,38 +200,13 @@ impl CreateRuleInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateRuleInput`](crate::operation::create_rule::CreateRuleInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`service_identifier`](crate::operation::create_rule::builders::CreateRuleInputBuilder::service_identifier)
-    /// - [`listener_identifier`](crate::operation::create_rule::builders::CreateRuleInputBuilder::listener_identifier)
-    /// - [`name`](crate::operation::create_rule::builders::CreateRuleInputBuilder::name)
-    /// - [`priority`](crate::operation::create_rule::builders::CreateRuleInputBuilder::priority)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_rule::CreateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_rule::CreateRuleInput {
-            service_identifier: self.service_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_identifier",
-                    "service_identifier was not specified but it is required when building CreateRuleInput",
-                )
-            })?,
-            listener_identifier: self.listener_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "listener_identifier",
-                    "listener_identifier was not specified but it is required when building CreateRuleInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateRuleInput",
-                )
-            })?,
+            service_identifier: self.service_identifier,
+            listener_identifier: self.listener_identifier,
+            name: self.name,
             r#match: self.r#match,
-            priority: self.priority.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "priority",
-                    "priority was not specified but it is required when building CreateRuleInput",
-                )
-            })?,
+            priority: self.priority,
             action: self.action,
             client_token: self.client_token,
             tags: self.tags,

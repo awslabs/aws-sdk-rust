@@ -3,20 +3,20 @@ pub fn ser_get_case_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_case::GetCaseInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        let mut array_1 = object.key("fields").start_array();
-        for item_2 in &input.fields {
+    if let Some(var_1) = &input.fields {
+        let mut array_2 = object.key("fields").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_3 = array_1.value().start_object();
-                crate::protocol_serde::shape_field_identifier::ser_field_identifier(&mut object_3, item_2)?;
-                object_3.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_field_identifier::ser_field_identifier(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_1.finish();
+        array_2.finish();
     }
-    if let Some(var_4) = &input.next_token {
-        object.key("nextToken").string(var_4.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("nextToken").string(var_5.as_str());
     }
     Ok(())
 }

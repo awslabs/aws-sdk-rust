@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMembershipInput {
     /// <p>The unique identifier of the membership.</p>
-    pub membership_identifier: ::std::string::String,
+    pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     pub query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
@@ -12,9 +12,8 @@ pub struct UpdateMembershipInput {
 }
 impl UpdateMembershipInput {
     /// <p>The unique identifier of the membership.</p>
-    pub fn membership_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_identifier.deref()
+    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+        self.membership_identifier.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
     pub fn query_log_status(&self) -> ::std::option::Option<&crate::types::MembershipQueryLogStatus> {
@@ -88,18 +87,11 @@ impl UpdateMembershipInputBuilder {
         &self.default_result_configuration
     }
     /// Consumes the builder and constructs a [`UpdateMembershipInput`](crate::operation::update_membership::UpdateMembershipInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`membership_identifier`](crate::operation::update_membership::builders::UpdateMembershipInputBuilder::membership_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_membership::UpdateMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_membership::UpdateMembershipInput {
-            membership_identifier: self.membership_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "membership_identifier",
-                    "membership_identifier was not specified but it is required when building UpdateMembershipInput",
-                )
-            })?,
+            membership_identifier: self.membership_identifier,
             query_log_status: self.query_log_status,
             default_result_configuration: self.default_result_configuration,
         })

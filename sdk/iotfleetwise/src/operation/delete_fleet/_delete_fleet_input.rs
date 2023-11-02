@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFleetInput {
     /// <p> The ID of the fleet to delete. </p>
-    pub fleet_id: ::std::string::String,
+    pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFleetInput {
     /// <p> The ID of the fleet to delete. </p>
-    pub fn fleet_id(&self) -> &str {
-        use std::ops::Deref;
-        self.fleet_id.deref()
+    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+        self.fleet_id.as_deref()
     }
 }
 impl DeleteFleetInput {
@@ -43,16 +42,7 @@ impl DeleteFleetInputBuilder {
         &self.fleet_id
     }
     /// Consumes the builder and constructs a [`DeleteFleetInput`](crate::operation::delete_fleet::DeleteFleetInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`fleet_id`](crate::operation::delete_fleet::builders::DeleteFleetInputBuilder::fleet_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_fleet::DeleteFleetInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_fleet::DeleteFleetInput {
-            fleet_id: self.fleet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "fleet_id",
-                    "fleet_id was not specified but it is required when building DeleteFleetInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_fleet::DeleteFleetInput { fleet_id: self.fleet_id })
     }
 }

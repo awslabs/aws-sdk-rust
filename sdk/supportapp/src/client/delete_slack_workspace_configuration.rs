@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteSlackWorkspaceConfiguration`](crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`team_id(impl Into<String>)`](crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationFluentBuilder::team_id) / [`set_team_id(impl Into<String>)`](crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationFluentBuilder::set_team_id):<br>required: **true**<br><p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p><br>
+    ///   - [`team_id(impl Into<String>)`](crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationFluentBuilder::team_id) / [`set_team_id(Option<String>)`](crate::operation::delete_slack_workspace_configuration::builders::DeleteSlackWorkspaceConfigurationFluentBuilder::set_team_id):<br>required: **true**<br><p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p><br>
     /// - On success, responds with [`DeleteSlackWorkspaceConfigurationOutput`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteSlackWorkspaceConfigurationError>`](crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError)
     pub fn delete_slack_workspace_configuration(

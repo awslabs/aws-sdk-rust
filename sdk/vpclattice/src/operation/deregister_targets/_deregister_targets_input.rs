@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterTargetsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub target_group_identifier: ::std::string::String,
+    pub target_group_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The targets to deregister.</p>
-    pub targets: ::std::vec::Vec<crate::types::Target>,
+    pub targets: ::std::option::Option<::std::vec::Vec<crate::types::Target>>,
 }
 impl DeregisterTargetsInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-    pub fn target_group_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.target_group_identifier.deref()
+    pub fn target_group_identifier(&self) -> ::std::option::Option<&str> {
+        self.target_group_identifier.as_deref()
     }
     /// <p>The targets to deregister.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.targets.is_none()`.
     pub fn targets(&self) -> &[crate::types::Target] {
-        use std::ops::Deref;
-        self.targets.deref()
+        self.targets.as_deref().unwrap_or_default()
     }
 }
 impl DeregisterTargetsInput {
@@ -71,25 +71,12 @@ impl DeregisterTargetsInputBuilder {
         &self.targets
     }
     /// Consumes the builder and constructs a [`DeregisterTargetsInput`](crate::operation::deregister_targets::DeregisterTargetsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`target_group_identifier`](crate::operation::deregister_targets::builders::DeregisterTargetsInputBuilder::target_group_identifier)
-    /// - [`targets`](crate::operation::deregister_targets::builders::DeregisterTargetsInputBuilder::targets)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::deregister_targets::DeregisterTargetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::deregister_targets::DeregisterTargetsInput {
-            target_group_identifier: self.target_group_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "target_group_identifier",
-                    "target_group_identifier was not specified but it is required when building DeregisterTargetsInput",
-                )
-            })?,
-            targets: self.targets.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "targets",
-                    "targets was not specified but it is required when building DeregisterTargetsInput",
-                )
-            })?,
+            target_group_identifier: self.target_group_identifier,
+            targets: self.targets,
         })
     }
 }

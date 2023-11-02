@@ -3,8 +3,8 @@ pub fn ser_describe_app_assessment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_app_assessment::DescribeAppAssessmentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("assessmentArn").string(input.assessment_arn.as_str());
+    if let Some(var_1) = &input.assessment_arn {
+        object.key("assessmentArn").string(var_1.as_str());
     }
     Ok(())
 }

@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeviceMetadataInput {
     /// <p>The device's ID.</p>
-    pub device_id: ::std::string::String,
+    pub device_id: ::std::option::Option<::std::string::String>,
     /// <p>A description for the device.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDeviceMetadataInput {
     /// <p>The device's ID.</p>
-    pub fn device_id(&self) -> &str {
-        use std::ops::Deref;
-        self.device_id.deref()
+    pub fn device_id(&self) -> ::std::option::Option<&str> {
+        self.device_id.as_deref()
     }
     /// <p>A description for the device.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -64,19 +63,12 @@ impl UpdateDeviceMetadataInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateDeviceMetadataInput`](crate::operation::update_device_metadata::UpdateDeviceMetadataInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`device_id`](crate::operation::update_device_metadata::builders::UpdateDeviceMetadataInputBuilder::device_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_device_metadata::UpdateDeviceMetadataInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_device_metadata::UpdateDeviceMetadataInput {
-            device_id: self.device_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "device_id",
-                    "device_id was not specified but it is required when building UpdateDeviceMetadataInput",
-                )
-            })?,
+            device_id: self.device_id,
             description: self.description,
         })
     }

@@ -5,13 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopCampaignInput {
     /// Identifier representing a Campaign
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl StopCampaignInput {
     /// Identifier representing a Campaign
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
 }
 impl StopCampaignInput {
@@ -44,16 +43,7 @@ impl StopCampaignInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`StopCampaignInput`](crate::operation::stop_campaign::StopCampaignInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::stop_campaign::builders::StopCampaignInputBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_campaign::StopCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_campaign::StopCampaignInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building StopCampaignInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::stop_campaign::StopCampaignInput { id: self.id })
     }
 }

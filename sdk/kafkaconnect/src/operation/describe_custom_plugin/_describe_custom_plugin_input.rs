@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeCustomPluginInput {
     /// <p>Returns information about a custom plugin.</p>
-    pub custom_plugin_arn: ::std::string::String,
+    pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeCustomPluginInput {
     /// <p>Returns information about a custom plugin.</p>
-    pub fn custom_plugin_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.custom_plugin_arn.deref()
+    pub fn custom_plugin_arn(&self) -> ::std::option::Option<&str> {
+        self.custom_plugin_arn.as_deref()
     }
 }
 impl DescribeCustomPluginInput {
@@ -43,19 +42,12 @@ impl DescribeCustomPluginInputBuilder {
         &self.custom_plugin_arn
     }
     /// Consumes the builder and constructs a [`DescribeCustomPluginInput`](crate::operation::describe_custom_plugin::DescribeCustomPluginInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`custom_plugin_arn`](crate::operation::describe_custom_plugin::builders::DescribeCustomPluginInputBuilder::custom_plugin_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_custom_plugin::DescribeCustomPluginInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_custom_plugin::DescribeCustomPluginInput {
-            custom_plugin_arn: self.custom_plugin_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "custom_plugin_arn",
-                    "custom_plugin_arn was not specified but it is required when building DescribeCustomPluginInput",
-                )
-            })?,
+            custom_plugin_arn: self.custom_plugin_arn,
         })
     }
 }

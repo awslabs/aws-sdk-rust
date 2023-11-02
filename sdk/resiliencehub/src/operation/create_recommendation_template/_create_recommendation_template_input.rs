@@ -44,9 +44,9 @@ pub struct CreateRecommendationTemplateInput {
     /// </dl>
     pub recommendation_types: ::std::option::Option<::std::vec::Vec<crate::types::RenderRecommendationType>>,
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub assessment_arn: ::std::string::String,
+    pub assessment_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name for the recommendation template.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to the resource. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key/value pair.</p>
@@ -106,14 +106,12 @@ impl CreateRecommendationTemplateInput {
         self.recommendation_types.as_deref().unwrap_or_default()
     }
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn assessment_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.assessment_arn.deref()
+    pub fn assessment_arn(&self) -> ::std::option::Option<&str> {
+        self.assessment_arn.as_deref()
     }
     /// <p>The name for the recommendation template.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -398,9 +396,6 @@ impl CreateRecommendationTemplateInputBuilder {
         &self.bucket_name
     }
     /// Consumes the builder and constructs a [`CreateRecommendationTemplateInput`](crate::operation::create_recommendation_template::CreateRecommendationTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`assessment_arn`](crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateInputBuilder::assessment_arn)
-    /// - [`name`](crate::operation::create_recommendation_template::builders::CreateRecommendationTemplateInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -411,18 +406,8 @@ impl CreateRecommendationTemplateInputBuilder {
             recommendation_ids: self.recommendation_ids,
             format: self.format,
             recommendation_types: self.recommendation_types,
-            assessment_arn: self.assessment_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "assessment_arn",
-                    "assessment_arn was not specified but it is required when building CreateRecommendationTemplateInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateRecommendationTemplateInput",
-                )
-            })?,
+            assessment_arn: self.assessment_arn,
+            name: self.name,
             client_token: self.client_token,
             tags: self.tags,
             bucket_name: self.bucket_name,

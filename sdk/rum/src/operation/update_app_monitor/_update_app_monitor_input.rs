@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateAppMonitorInput {
     /// <p>The name of the app monitor to update.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains much of the configuration data for the app monitor. If you are using Amazon Cognito for authorization, you must include this structure in your request, and it must include the ID of the Amazon Cognito identity pool to use for authorization. If you don't include <code>AppMonitorConfiguration</code>, you must set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize your application to send data to Amazon Web Services</a>.</p>
@@ -17,9 +17,8 @@ pub struct UpdateAppMonitorInput {
 }
 impl UpdateAppMonitorInput {
     /// <p>The name of the app monitor to update.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The top-level internet domain name for which your application has administrative authority.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
@@ -132,18 +131,11 @@ impl UpdateAppMonitorInputBuilder {
         &self.custom_events
     }
     /// Consumes the builder and constructs a [`UpdateAppMonitorInput`](crate::operation::update_app_monitor::UpdateAppMonitorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::update_app_monitor::builders::UpdateAppMonitorInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_app_monitor::UpdateAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_app_monitor::UpdateAppMonitorInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateAppMonitorInput",
-                )
-            })?,
+            name: self.name,
             domain: self.domain,
             app_monitor_configuration: self.app_monitor_configuration,
             cw_log_enabled: self.cw_log_enabled,

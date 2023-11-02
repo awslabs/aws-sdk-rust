@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetSchemaInput {
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    pub collaboration_identifier: ::std::string::String,
+    pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The names for the schema objects to retrieve.&gt;</p>
-    pub names: ::std::vec::Vec<::std::string::String>,
+    pub names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetSchemaInput {
     /// <p>A unique identifier for the collaboration that the schemas belong to. Currently accepts collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_identifier.deref()
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+        self.collaboration_identifier.as_deref()
     }
     /// <p>The names for the schema objects to retrieve.&gt;</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.names.is_none()`.
     pub fn names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.names.deref()
+        self.names.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetSchemaInput {
@@ -71,25 +71,12 @@ impl BatchGetSchemaInputBuilder {
         &self.names
     }
     /// Consumes the builder and constructs a [`BatchGetSchemaInput`](crate::operation::batch_get_schema::BatchGetSchemaInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`collaboration_identifier`](crate::operation::batch_get_schema::builders::BatchGetSchemaInputBuilder::collaboration_identifier)
-    /// - [`names`](crate::operation::batch_get_schema::builders::BatchGetSchemaInputBuilder::names)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_get_schema::BatchGetSchemaInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::batch_get_schema::BatchGetSchemaInput {
-            collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "collaboration_identifier",
-                    "collaboration_identifier was not specified but it is required when building BatchGetSchemaInput",
-                )
-            })?,
-            names: self.names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "names",
-                    "names was not specified but it is required when building BatchGetSchemaInput",
-                )
-            })?,
+            collaboration_identifier: self.collaboration_identifier,
+            names: self.names,
         })
     }
 }

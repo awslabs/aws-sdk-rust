@@ -9,31 +9,31 @@ pub fn ser_update_timeline_event_input(
     if let Some(var_2) = &input.event_data {
         object.key("eventData").string(var_2.as_str());
     }
-    {
-        object.key("eventId").string(input.event_id.as_str());
+    if let Some(var_3) = &input.event_id {
+        object.key("eventId").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.event_references {
-        let mut array_4 = object.key("eventReferences").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.event_references {
+        let mut array_5 = object.key("eventReferences").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_event_reference::ser_event_reference(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_event_reference::ser_event_reference(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_7) = &input.event_time {
+    if let Some(var_8) = &input.event_time {
         object
             .key("eventTime")
-            .date_time(var_7, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_8, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_8) = &input.event_type {
-        object.key("eventType").string(var_8.as_str());
+    if let Some(var_9) = &input.event_type {
+        object.key("eventType").string(var_9.as_str());
     }
-    {
-        object.key("incidentRecordArn").string(input.incident_record_arn.as_str());
+    if let Some(var_10) = &input.incident_record_arn {
+        object.key("incidentRecordArn").string(var_10.as_str());
     }
     Ok(())
 }

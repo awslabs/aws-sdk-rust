@@ -8,7 +8,7 @@ pub struct SearchQuantumTasksInput {
     /// <p>Maximum number of results to return in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
-    pub filters: ::std::vec::Vec<crate::types::SearchQuantumTasksFilter>,
+    pub filters: ::std::option::Option<::std::vec::Vec<crate::types::SearchQuantumTasksFilter>>,
 }
 impl SearchQuantumTasksInput {
     /// <p>A token used for pagination of results returned in the response. Use the token returned from the previous request continue results where the previous request ended.</p>
@@ -20,9 +20,10 @@ impl SearchQuantumTasksInput {
         self.max_results
     }
     /// <p>Array of <code>SearchQuantumTasksFilter</code> objects.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.filters.is_none()`.
     pub fn filters(&self) -> &[crate::types::SearchQuantumTasksFilter] {
-        use std::ops::Deref;
-        self.filters.deref()
+        self.filters.as_deref().unwrap_or_default()
     }
 }
 impl SearchQuantumTasksInput {
@@ -90,20 +91,13 @@ impl SearchQuantumTasksInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`SearchQuantumTasksInput`](crate::operation::search_quantum_tasks::SearchQuantumTasksInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`filters`](crate::operation::search_quantum_tasks::builders::SearchQuantumTasksInputBuilder::filters)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::search_quantum_tasks::SearchQuantumTasksInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::search_quantum_tasks::SearchQuantumTasksInput {
             next_token: self.next_token,
             max_results: self.max_results,
-            filters: self.filters.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "filters",
-                    "filters was not specified but it is required when building SearchQuantumTasksInput",
-                )
-            })?,
+            filters: self.filters,
         })
     }
 }

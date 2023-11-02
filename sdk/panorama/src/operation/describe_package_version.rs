@@ -176,6 +176,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribePack
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.package_id;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("package_id", "cannot be empty or unset"))?;
                 let package_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if package_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -184,6 +187,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribePack
                     ));
                 }
                 let input_2 = &_input.package_version;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("package_version", "cannot be empty or unset"))?;
                 let package_version = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if package_version.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

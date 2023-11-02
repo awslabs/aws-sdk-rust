@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetApplicationComponentStrategiesInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
-    pub application_component_id: ::std::string::String,
+    pub application_component_id: ::std::option::Option<::std::string::String>,
 }
 impl GetApplicationComponentStrategiesInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account.</p>
-    pub fn application_component_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_component_id.deref()
+    pub fn application_component_id(&self) -> ::std::option::Option<&str> {
+        self.application_component_id.as_deref()
     }
 }
 impl GetApplicationComponentStrategiesInput {
@@ -43,8 +42,6 @@ impl GetApplicationComponentStrategiesInputBuilder {
         &self.application_component_id
     }
     /// Consumes the builder and constructs a [`GetApplicationComponentStrategiesInput`](crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_component_id`](crate::operation::get_application_component_strategies::builders::GetApplicationComponentStrategiesInputBuilder::application_component_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -53,12 +50,7 @@ impl GetApplicationComponentStrategiesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_application_component_strategies::GetApplicationComponentStrategiesInput {
-                application_component_id: self.application_component_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "application_component_id",
-                        "application_component_id was not specified but it is required when building GetApplicationComponentStrategiesInput",
-                    )
-                })?,
+                application_component_id: self.application_component_id,
             },
         )
     }

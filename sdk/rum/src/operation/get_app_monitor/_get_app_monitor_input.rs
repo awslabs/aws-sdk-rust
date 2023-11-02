@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppMonitorInput {
     /// <p>The app monitor to retrieve information for.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetAppMonitorInput {
     /// <p>The app monitor to retrieve information for.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl GetAppMonitorInput {
@@ -43,18 +42,9 @@ impl GetAppMonitorInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetAppMonitorInput`](crate::operation::get_app_monitor::GetAppMonitorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::get_app_monitor::builders::GetAppMonitorInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_app_monitor::GetAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_app_monitor::GetAppMonitorInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetAppMonitorInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_app_monitor::GetAppMonitorInput { name: self.name })
     }
 }

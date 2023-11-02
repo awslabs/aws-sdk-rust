@@ -3,27 +3,25 @@ pub fn ser_list_event_logs_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_event_logs::ListEventLogsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object
-            .key("endTime")
-            .date_time(&input.end_time, ::aws_smithy_types::date_time::Format::DateTime)?;
+    if let Some(var_1) = &input.end_time {
+        object.key("endTime").date_time(var_1, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
-    if let Some(var_1) = &input.event_name {
-        object.key("eventName").string(var_1.as_str());
+    if let Some(var_2) = &input.event_name {
+        object.key("eventName").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.max_results {
+    if let Some(var_3) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_2).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("nextToken").string(var_3.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("nextToken").string(var_4.as_str());
     }
-    {
+    if let Some(var_5) = &input.start_time {
         object
             .key("startTime")
-            .date_time(&input.start_time, ::aws_smithy_types::date_time::Format::DateTime)?;
+            .date_time(var_5, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
     Ok(())
 }

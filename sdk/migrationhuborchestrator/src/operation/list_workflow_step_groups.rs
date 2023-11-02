@@ -197,17 +197,22 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListWorkflow
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
+                    if *inner_2 != 0 {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                    }
                 }
-                let inner_2 = &_input.workflow_id;
-                if inner_2.is_empty() {
+                let inner_3 = &_input.workflow_id;
+                let inner_3 = inner_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("workflow_id", "cannot be empty or unset"))?;
+                if inner_3.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "workflow_id",
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("workflowId", &::aws_smithy_http::query::fmt_string(&inner_2));
+                query.push_kv("workflowId", &::aws_smithy_http::query::fmt_string(&inner_3));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

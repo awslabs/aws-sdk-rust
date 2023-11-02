@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRecordingConfiguration`](crate::operation::get_recording_configuration::builders::GetRecordingConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_recording_configuration::builders::GetRecordingConfigurationFluentBuilder::arn) / [`set_arn(impl Into<String>)`](crate::operation::get_recording_configuration::builders::GetRecordingConfigurationFluentBuilder::set_arn):<br>required: **true**<br><p>ARN of the recording configuration to be retrieved.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_recording_configuration::builders::GetRecordingConfigurationFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_recording_configuration::builders::GetRecordingConfigurationFluentBuilder::set_arn):<br>required: **true**<br><p>ARN of the recording configuration to be retrieved.</p><br>
     /// - On success, responds with [`GetRecordingConfigurationOutput`](crate::operation::get_recording_configuration::GetRecordingConfigurationOutput) with field(s):
     ///   - [`recording_configuration(Option<RecordingConfiguration>)`](crate::operation::get_recording_configuration::GetRecordingConfigurationOutput::recording_configuration): (undocumented)
     /// - On failure, responds with [`SdkError<GetRecordingConfigurationError>`](crate::operation::get_recording_configuration::GetRecordingConfigurationError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ArchiveWave`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`wave_id(impl Into<String>)`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::wave_id) / [`set_wave_id(impl Into<String>)`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::set_wave_id):<br>required: **true**<br><p>Wave ID.</p><br>
+    ///   - [`wave_id(impl Into<String>)`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::wave_id) / [`set_wave_id(Option<String>)`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::set_wave_id):<br>required: **true**<br><p>Wave ID.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::archive_wave::builders::ArchiveWaveFluentBuilder::set_account_id):<br>required: **false**<br><p>Account ID.</p><br>
     /// - On success, responds with [`ArchiveWaveOutput`](crate::operation::archive_wave::ArchiveWaveOutput) with field(s):
     ///   - [`wave_id(Option<String>)`](crate::operation::archive_wave::ArchiveWaveOutput::wave_id): <p>Wave ID.</p>

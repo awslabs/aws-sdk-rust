@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetFrameMetricDataInput {
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
-    pub profiling_group_name: ::std::string::String,
+    pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
@@ -24,9 +24,8 @@ pub struct BatchGetFrameMetricDataInput {
 }
 impl BatchGetFrameMetricDataInput {
     /// <p> The name of the profiling group associated with the the frame metrics used to return the time series values. </p>
-    pub fn profiling_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.profiling_group_name.deref()
+    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
+        self.profiling_group_name.as_deref()
     }
     /// <p> The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -182,8 +181,6 @@ impl BatchGetFrameMetricDataInputBuilder {
         &self.frame_metrics
     }
     /// Consumes the builder and constructs a [`BatchGetFrameMetricDataInput`](crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`profiling_group_name`](crate::operation::batch_get_frame_metric_data::builders::BatchGetFrameMetricDataInputBuilder::profiling_group_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -191,12 +188,7 @@ impl BatchGetFrameMetricDataInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_frame_metric_data::BatchGetFrameMetricDataInput {
-            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "profiling_group_name",
-                    "profiling_group_name was not specified but it is required when building BatchGetFrameMetricDataInput",
-                )
-            })?,
+            profiling_group_name: self.profiling_group_name,
             start_time: self.start_time,
             end_time: self.end_time,
             period: self.period,

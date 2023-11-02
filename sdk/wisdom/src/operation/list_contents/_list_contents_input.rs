@@ -8,7 +8,7 @@ pub struct ListContentsInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub knowledge_base_id: ::std::string::String,
+    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
 }
 impl ListContentsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -20,9 +20,8 @@ impl ListContentsInput {
         self.max_results
     }
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
     }
 }
 impl ListContentsInput {
@@ -85,18 +84,11 @@ impl ListContentsInputBuilder {
         &self.knowledge_base_id
     }
     /// Consumes the builder and constructs a [`ListContentsInput`](crate::operation::list_contents::ListContentsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`knowledge_base_id`](crate::operation::list_contents::builders::ListContentsInputBuilder::knowledge_base_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_contents::ListContentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_contents::ListContentsInput {
             next_token: self.next_token,
             max_results: self.max_results,
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building ListContentsInput",
-                )
-            })?,
+            knowledge_base_id: self.knowledge_base_id,
         })
     }
 }

@@ -3,32 +3,32 @@ pub fn ser_update_model_manifest_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_model_manifest::UpdateModelManifestInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.nodes_to_add {
-        let mut array_3 = object.key("nodesToAdd").start_array();
-        for item_4 in var_2 {
+    if let Some(var_3) = &input.nodes_to_add {
+        let mut array_4 = object.key("nodesToAdd").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if let Some(var_5) = &input.nodes_to_remove {
-        let mut array_6 = object.key("nodesToRemove").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.nodes_to_remove {
+        let mut array_7 = object.key("nodesToRemove").start_array();
+        for item_8 in var_6 {
             {
-                array_6.value().string(item_7.as_str());
+                array_7.value().string(item_8.as_str());
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    if let Some(var_8) = &input.status {
-        object.key("status").string(var_8.as_str());
+    if let Some(var_9) = &input.status {
+        object.key("status").string(var_9.as_str());
     }
     Ok(())
 }

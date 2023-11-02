@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-    pub account_access_type: crate::types::AccountAccessType,
+    pub account_access_type: ::std::option::Option<crate::types::AccountAccessType>,
     /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.</p>
@@ -15,7 +15,7 @@ pub struct CreateWorkspaceInput {
     /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation. </p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
-    pub permission_type: crate::types::PermissionType,
+    pub permission_type: ::std::option::Option<crate::types::PermissionType>,
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
     pub stack_set_name: ::std::option::Option<::std::string::String>,
     /// <p>This parameter is for internal use only, and should not be used.</p>
@@ -32,7 +32,7 @@ pub struct CreateWorkspaceInput {
     /// <p>Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added. </p>
     pub workspace_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub authentication_providers: ::std::vec::Vec<crate::types::AuthenticationProviderTypes>,
+    pub authentication_providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     /// <p>The list of tags associated with the workspace.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The configuration settings for an Amazon VPC that contains data sources for your Grafana workspace to connect to.</p> <note>
@@ -51,8 +51,8 @@ pub struct CreateWorkspaceInput {
 }
 impl CreateWorkspaceInput {
     /// <p>Specifies whether the workspace can access Amazon Web Services resources in this Amazon Web Services account only, or whether it can also access Amazon Web Services resources in other accounts in the same organization. If you specify <code>ORGANIZATION</code>, you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code> parameter.</p>
-    pub fn account_access_type(&self) -> &crate::types::AccountAccessType {
-        &self.account_access_type
+    pub fn account_access_type(&self) -> ::std::option::Option<&crate::types::AccountAccessType> {
+        self.account_access_type.as_ref()
     }
     /// <p>A unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -68,8 +68,8 @@ impl CreateWorkspaceInput {
     /// <p>Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace with the API, CLI or Amazon Web Services CloudFormation. </p>
     /// </note>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-manage-permissions.html">Amazon Managed Grafana permissions and policies for Amazon Web Services data sources and notification channels</a>.</p>
-    pub fn permission_type(&self) -> &crate::types::PermissionType {
-        &self.permission_type
+    pub fn permission_type(&self) -> ::std::option::Option<&crate::types::PermissionType> {
+        self.permission_type.as_ref()
     }
     /// <p>The name of the CloudFormation stack set to use to generate IAM roles to be used for this workspace.</p>
     pub fn stack_set_name(&self) -> ::std::option::Option<&str> {
@@ -107,9 +107,10 @@ impl CreateWorkspaceInput {
         self.workspace_role_arn.as_deref()
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authentication_providers.is_none()`.
     pub fn authentication_providers(&self) -> &[crate::types::AuthenticationProviderTypes] {
-        use std::ops::Deref;
-        self.authentication_providers.deref()
+        self.authentication_providers.as_deref().unwrap_or_default()
     }
     /// <p>The list of tags associated with the workspace.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -497,28 +498,14 @@ impl CreateWorkspaceInputBuilder {
         &self.grafana_version
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::operation::create_workspace::CreateWorkspaceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`account_access_type`](crate::operation::create_workspace::builders::CreateWorkspaceInputBuilder::account_access_type)
-    /// - [`permission_type`](crate::operation::create_workspace::builders::CreateWorkspaceInputBuilder::permission_type)
-    /// - [`authentication_providers`](crate::operation::create_workspace::builders::CreateWorkspaceInputBuilder::authentication_providers)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_workspace::CreateWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workspace::CreateWorkspaceInput {
-            account_access_type: self.account_access_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "account_access_type",
-                    "account_access_type was not specified but it is required when building CreateWorkspaceInput",
-                )
-            })?,
+            account_access_type: self.account_access_type,
             client_token: self.client_token,
             organization_role_name: self.organization_role_name,
-            permission_type: self.permission_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "permission_type",
-                    "permission_type was not specified but it is required when building CreateWorkspaceInput",
-                )
-            })?,
+            permission_type: self.permission_type,
             stack_set_name: self.stack_set_name,
             workspace_data_sources: self.workspace_data_sources,
             workspace_description: self.workspace_description,
@@ -526,12 +513,7 @@ impl CreateWorkspaceInputBuilder {
             workspace_notification_destinations: self.workspace_notification_destinations,
             workspace_organizational_units: self.workspace_organizational_units,
             workspace_role_arn: self.workspace_role_arn,
-            authentication_providers: self.authentication_providers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "authentication_providers",
-                    "authentication_providers was not specified but it is required when building CreateWorkspaceInput",
-                )
-            })?,
+            authentication_providers: self.authentication_providers,
             tags: self.tags,
             vpc_configuration: self.vpc_configuration,
             configuration: self.configuration,

@@ -5,20 +5,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExportErrorsInput {
     /// <p>List export errors request export id.</p>
-    pub export_id: ::std::string::String,
+    pub export_id: ::std::option::Option<::std::string::String>,
     /// <p>List export errors request max results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>List export errors request next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListExportErrorsInput {
     /// <p>List export errors request export id.</p>
-    pub fn export_id(&self) -> &str {
-        use std::ops::Deref;
-        self.export_id.deref()
+    pub fn export_id(&self) -> ::std::option::Option<&str> {
+        self.export_id.as_deref()
     }
     /// <p>List export errors request max results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>List export errors request next token.</p>
@@ -86,19 +85,12 @@ impl ListExportErrorsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListExportErrorsInput`](crate::operation::list_export_errors::ListExportErrorsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`export_id`](crate::operation::list_export_errors::builders::ListExportErrorsInputBuilder::export_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_export_errors::ListExportErrorsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_export_errors::ListExportErrorsInput {
-            export_id: self.export_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "export_id",
-                    "export_id was not specified but it is required when building ListExportErrorsInput",
-                )
-            })?,
-            max_results: self.max_results.unwrap_or_default(),
+            export_id: self.export_id,
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

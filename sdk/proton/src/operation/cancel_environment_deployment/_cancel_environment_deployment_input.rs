@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelEnvironmentDeploymentInput {
     /// <p>The name of the environment with the deployment to cancel.</p>
-    pub environment_name: ::std::string::String,
+    pub environment_name: ::std::option::Option<::std::string::String>,
 }
 impl CancelEnvironmentDeploymentInput {
     /// <p>The name of the environment with the deployment to cancel.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+        self.environment_name.as_deref()
     }
 }
 impl CancelEnvironmentDeploymentInput {
@@ -43,8 +42,6 @@ impl CancelEnvironmentDeploymentInputBuilder {
         &self.environment_name
     }
     /// Consumes the builder and constructs a [`CancelEnvironmentDeploymentInput`](crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`environment_name`](crate::operation::cancel_environment_deployment::builders::CancelEnvironmentDeploymentInputBuilder::environment_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -52,12 +49,7 @@ impl CancelEnvironmentDeploymentInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentInput {
-            environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_name",
-                    "environment_name was not specified but it is required when building CancelEnvironmentDeploymentInput",
-                )
-            })?,
+            environment_name: self.environment_name,
         })
     }
 }

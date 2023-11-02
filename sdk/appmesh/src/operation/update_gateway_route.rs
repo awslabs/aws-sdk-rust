@@ -182,6 +182,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateGatewa
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.mesh_name;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("mesh_name", "cannot be empty or unset"))?;
                 let mesh_name = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if mesh_name.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -190,6 +193,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateGatewa
                     ));
                 }
                 let input_2 = &_input.virtual_gateway_name;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field("virtual_gateway_name", "cannot be empty or unset")
+                })?;
                 let virtual_gateway_name = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if virtual_gateway_name.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -198,6 +204,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateGatewa
                     ));
                 }
                 let input_3 = &_input.gateway_route_name;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field("gateway_route_name", "cannot be empty or unset")
+                })?;
                 let gateway_route_name = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if gateway_route_name.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

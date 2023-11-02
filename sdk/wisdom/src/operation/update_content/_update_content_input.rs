@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
-    pub knowledge_base_id: ::std::string::String,
+    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub content_id: ::std::string::String,
+    pub content_id: ::std::option::Option<::std::string::String>,
     /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
     pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>The title of the content.</p>
@@ -22,14 +22,12 @@ pub struct UpdateContentInput {
 }
 impl UpdateContentInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN</p>
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
     }
     /// <p>The identifier of the content. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn content_id(&self) -> &str {
-        use std::ops::Deref;
-        self.content_id.deref()
+    pub fn content_id(&self) -> ::std::option::Option<&str> {
+        self.content_id.as_deref()
     }
     /// <p>The <code>revisionId</code> of the content resource to update, taken from an earlier call to <code>GetContent</code>, <code>GetContentSummary</code>, <code>SearchContent</code>, or <code>ListContents</code>. If included, this argument acts as an optimistic lock to ensure content was not modified since it was last read. If it has been modified, this API throws a <code>PreconditionFailedException</code>.</p>
     pub fn revision_id(&self) -> ::std::option::Option<&str> {
@@ -198,25 +196,12 @@ impl UpdateContentInputBuilder {
         &self.upload_id
     }
     /// Consumes the builder and constructs a [`UpdateContentInput`](crate::operation::update_content::UpdateContentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`knowledge_base_id`](crate::operation::update_content::builders::UpdateContentInputBuilder::knowledge_base_id)
-    /// - [`content_id`](crate::operation::update_content::builders::UpdateContentInputBuilder::content_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_content::UpdateContentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_content::UpdateContentInput {
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building UpdateContentInput",
-                )
-            })?,
-            content_id: self.content_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "content_id",
-                    "content_id was not specified but it is required when building UpdateContentInput",
-                )
-            })?,
+            knowledge_base_id: self.knowledge_base_id,
+            content_id: self.content_id,
             revision_id: self.revision_id,
             title: self.title,
             override_link_out_uri: self.override_link_out_uri,

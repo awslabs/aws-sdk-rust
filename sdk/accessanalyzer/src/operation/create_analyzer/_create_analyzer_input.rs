@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAnalyzerInput {
     /// <p>The name of the analyzer to create.</p>
-    pub analyzer_name: ::std::string::String,
+    pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
-    pub r#type: crate::types::Type,
+    pub r#type: ::std::option::Option<crate::types::Type>,
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
     pub archive_rules: ::std::option::Option<::std::vec::Vec<crate::types::InlineArchiveRule>>,
     /// <p>The tags to apply to the analyzer.</p>
@@ -17,13 +17,12 @@ pub struct CreateAnalyzerInput {
 }
 impl CreateAnalyzerInput {
     /// <p>The name of the analyzer to create.</p>
-    pub fn analyzer_name(&self) -> &str {
-        use std::ops::Deref;
-        self.analyzer_name.deref()
+    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
+        self.analyzer_name.as_deref()
     }
     /// <p>The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.</p>
-    pub fn r#type(&self) -> &crate::types::Type {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::Type> {
+        self.r#type.as_ref()
     }
     /// <p>Specifies the archive rules to add for the analyzer. Archive rules automatically archive findings that meet the criteria you define for the rule.</p>
     ///
@@ -143,25 +142,12 @@ impl CreateAnalyzerInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAnalyzerInput`](crate::operation::create_analyzer::CreateAnalyzerInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`analyzer_name`](crate::operation::create_analyzer::builders::CreateAnalyzerInputBuilder::analyzer_name)
-    /// - [`r#type`](crate::operation::create_analyzer::builders::CreateAnalyzerInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_analyzer::CreateAnalyzerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_analyzer::CreateAnalyzerInput {
-            analyzer_name: self.analyzer_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "analyzer_name",
-                    "analyzer_name was not specified but it is required when building CreateAnalyzerInput",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CreateAnalyzerInput",
-                )
-            })?,
+            analyzer_name: self.analyzer_name,
+            r#type: self.r#type,
             archive_rules: self.archive_rules,
             tags: self.tags,
             client_token: self.client_token,

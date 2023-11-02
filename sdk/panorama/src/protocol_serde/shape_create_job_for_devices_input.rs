@@ -3,23 +3,23 @@ pub fn ser_create_job_for_devices_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_job_for_devices::CreateJobForDevicesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        let mut array_1 = object.key("DeviceIds").start_array();
-        for item_2 in &input.device_ids {
+    if let Some(var_1) = &input.device_ids {
+        let mut array_2 = object.key("DeviceIds").start_array();
+        for item_3 in var_1 {
             {
-                array_1.value().string(item_2.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_1.finish();
+        array_2.finish();
     }
-    if let Some(var_3) = &input.device_job_config {
+    if let Some(var_4) = &input.device_job_config {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("DeviceJobConfig").start_object();
-        crate::protocol_serde::shape_device_job_config::ser_device_job_config(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("DeviceJobConfig").start_object();
+        crate::protocol_serde::shape_device_job_config::ser_device_job_config(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    {
-        object.key("JobType").string(input.job_type.as_str());
+    if let Some(var_6) = &input.job_type {
+        object.key("JobType").string(var_6.as_str());
     }
     Ok(())
 }

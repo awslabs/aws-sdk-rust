@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteJobInput {
     /// <p>The ID of the Job to be deleted.</p>
-    pub job_id: ::std::string::String,
+    pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteJobInput {
     /// <p>The ID of the Job to be deleted.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
+        self.job_id.as_deref()
     }
 }
 impl DeleteJobInput {
@@ -43,16 +42,7 @@ impl DeleteJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DeleteJobInput`](crate::operation::delete_job::DeleteJobInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`job_id`](crate::operation::delete_job::builders::DeleteJobInputBuilder::job_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_job::DeleteJobInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_job::DeleteJobInput {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building DeleteJobInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_job::DeleteJobInput { job_id: self.job_id })
     }
 }

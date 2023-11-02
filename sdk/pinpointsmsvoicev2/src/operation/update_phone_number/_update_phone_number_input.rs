@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePhoneNumberInput {
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub phone_number_id: ::std::string::String,
+    pub phone_number_id: ::std::option::Option<::std::string::String>,
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub two_way_enabled: ::std::option::Option<bool>,
     /// <p>The Amazon Resource Name (ARN) of the two way channel.</p>
@@ -18,9 +18,8 @@ pub struct UpdatePhoneNumberInput {
 }
 impl UpdatePhoneNumberInput {
     /// <p>The unique identifier of the phone number. Valid values for this field can be either the PhoneNumberId or PhoneNumberArn.</p>
-    pub fn phone_number_id(&self) -> &str {
-        use std::ops::Deref;
-        self.phone_number_id.deref()
+    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+        self.phone_number_id.as_deref()
     }
     /// <p>By default this is set to false. When set to true you can receive incoming text messages from your end recipients.</p>
     pub fn two_way_enabled(&self) -> ::std::option::Option<bool> {
@@ -148,18 +147,11 @@ impl UpdatePhoneNumberInputBuilder {
         &self.deletion_protection_enabled
     }
     /// Consumes the builder and constructs a [`UpdatePhoneNumberInput`](crate::operation::update_phone_number::UpdatePhoneNumberInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`phone_number_id`](crate::operation::update_phone_number::builders::UpdatePhoneNumberInputBuilder::phone_number_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_phone_number::UpdatePhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_phone_number::UpdatePhoneNumberInput {
-            phone_number_id: self.phone_number_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "phone_number_id",
-                    "phone_number_id was not specified but it is required when building UpdatePhoneNumberInput",
-                )
-            })?,
+            phone_number_id: self.phone_number_id,
             two_way_enabled: self.two_way_enabled,
             two_way_channel_arn: self.two_way_channel_arn,
             self_managed_opt_outs_enabled: self.self_managed_opt_outs_enabled,

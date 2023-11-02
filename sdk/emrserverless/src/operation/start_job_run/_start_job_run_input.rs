@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartJobRunInput {
     /// <p>The ID of the application on which to run the job.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
-    pub client_token: ::std::string::String,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The execution role ARN for the job run.</p>
-    pub execution_role_arn: ::std::string::String,
+    pub execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The job driver for the job run.</p>
     pub job_driver: ::std::option::Option<crate::types::JobDriver>,
     /// <p>The configuration overrides for the job run.</p>
@@ -22,19 +22,16 @@ pub struct StartJobRunInput {
 }
 impl StartJobRunInput {
     /// <p>The ID of the application on which to run the job.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>The client idempotency token of the job run to start. Its value must be unique for each request.</p>
-    pub fn client_token(&self) -> &str {
-        use std::ops::Deref;
-        self.client_token.deref()
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
     /// <p>The execution role ARN for the job run.</p>
-    pub fn execution_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.execution_role_arn.deref()
+    pub fn execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.execution_role_arn.as_deref()
     }
     /// <p>The job driver for the job run.</p>
     pub fn job_driver(&self) -> ::std::option::Option<&crate::types::JobDriver> {
@@ -200,30 +197,11 @@ impl StartJobRunInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`StartJobRunInput`](crate::operation::start_job_run::StartJobRunInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::start_job_run::builders::StartJobRunInputBuilder::application_id)
-    /// - [`client_token`](crate::operation::start_job_run::builders::StartJobRunInputBuilder::client_token)
-    /// - [`execution_role_arn`](crate::operation::start_job_run::builders::StartJobRunInputBuilder::execution_role_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::start_job_run::StartJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_job_run::StartJobRunInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building StartJobRunInput",
-                )
-            })?,
-            client_token: self.client_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "client_token",
-                    "client_token was not specified but it is required when building StartJobRunInput",
-                )
-            })?,
-            execution_role_arn: self.execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "execution_role_arn",
-                    "execution_role_arn was not specified but it is required when building StartJobRunInput",
-                )
-            })?,
+            application_id: self.application_id,
+            client_token: self.client_token,
+            execution_role_arn: self.execution_role_arn,
             job_driver: self.job_driver,
             configuration_overrides: self.configuration_overrides,
             tags: self.tags,

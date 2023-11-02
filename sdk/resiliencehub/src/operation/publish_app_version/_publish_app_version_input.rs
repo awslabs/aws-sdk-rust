@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PublishAppVersionInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub app_arn: ::std::string::String,
+    pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the application version.</p>
     pub version_name: ::std::option::Option<::std::string::String>,
 }
 impl PublishAppVersionInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+        self.app_arn.as_deref()
     }
     /// <p>Name of the application version.</p>
     pub fn version_name(&self) -> ::std::option::Option<&str> {
@@ -64,18 +63,11 @@ impl PublishAppVersionInputBuilder {
         &self.version_name
     }
     /// Consumes the builder and constructs a [`PublishAppVersionInput`](crate::operation::publish_app_version::PublishAppVersionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_arn`](crate::operation::publish_app_version::builders::PublishAppVersionInputBuilder::app_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::publish_app_version::PublishAppVersionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::publish_app_version::PublishAppVersionInput {
-            app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_arn",
-                    "app_arn was not specified but it is required when building PublishAppVersionInput",
-                )
-            })?,
+            app_arn: self.app_arn,
             version_name: self.version_name,
         })
     }

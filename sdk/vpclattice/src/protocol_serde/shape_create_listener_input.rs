@@ -12,27 +12,27 @@ pub fn ser_create_listener_input(
         crate::protocol_serde::shape_rule_action::ser_rule_action(&mut object_3, var_2)?;
         object_3.finish();
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.port {
+    if let Some(var_5) = &input.port {
         object.key("port").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_4).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    {
-        object.key("protocol").string(input.protocol.as_str());
+    if let Some(var_6) = &input.protocol {
+        object.key("protocol").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_7) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_8 = object.key("tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_6.finish();
+        object_8.finish();
     }
     Ok(())
 }

@@ -3,8 +3,8 @@ pub fn ser_get_stream_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_stream::GetStreamInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("channelArn").string(input.channel_arn.as_str());
+    if let Some(var_1) = &input.channel_arn {
+        object.key("channelArn").string(var_1.as_str());
     }
     Ok(())
 }

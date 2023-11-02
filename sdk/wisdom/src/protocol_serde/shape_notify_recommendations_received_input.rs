@@ -3,14 +3,14 @@ pub fn ser_notify_recommendations_received_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        let mut array_1 = object.key("recommendationIds").start_array();
-        for item_2 in &input.recommendation_ids {
+    if let Some(var_1) = &input.recommendation_ids {
+        let mut array_2 = object.key("recommendationIds").start_array();
+        for item_3 in var_1 {
             {
-                array_1.value().string(item_2.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_1.finish();
+        array_2.finish();
     }
     Ok(())
 }

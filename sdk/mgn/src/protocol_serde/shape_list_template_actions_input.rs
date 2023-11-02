@@ -9,19 +9,17 @@ pub fn ser_list_template_actions_input(
         crate::protocol_serde::shape_template_actions_request_filters::ser_template_actions_request_filters(&mut object_2, var_1)?;
         object_2.finish();
     }
-    {
-        object
-            .key("launchConfigurationTemplateID")
-            .string(input.launch_configuration_template_id.as_str());
+    if let Some(var_3) = &input.launch_configuration_template_id {
+        object.key("launchConfigurationTemplateID").string(var_3.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_4) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_4).into()),
         );
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("nextToken").string(var_3.as_str());
+    if let Some(var_5) = &input.next_token {
+        object.key("nextToken").string(var_5.as_str());
     }
     Ok(())
 }

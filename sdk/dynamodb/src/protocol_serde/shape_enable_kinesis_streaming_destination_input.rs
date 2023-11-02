@@ -3,11 +3,11 @@ pub fn ser_enable_kinesis_streaming_destination_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("TableName").string(input.table_name.as_str());
+    if let Some(var_1) = &input.table_name {
+        object.key("TableName").string(var_1.as_str());
     }
-    {
-        object.key("StreamArn").string(input.stream_arn.as_str());
+    if let Some(var_2) = &input.stream_arn {
+        object.key("StreamArn").string(var_2.as_str());
     }
     Ok(())
 }

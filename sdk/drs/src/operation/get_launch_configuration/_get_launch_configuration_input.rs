@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLaunchConfigurationInput {
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-    pub source_server_id: ::std::string::String,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
 }
 impl GetLaunchConfigurationInput {
     /// <p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+        self.source_server_id.as_deref()
     }
 }
 impl GetLaunchConfigurationInput {
@@ -43,19 +42,12 @@ impl GetLaunchConfigurationInputBuilder {
         &self.source_server_id
     }
     /// Consumes the builder and constructs a [`GetLaunchConfigurationInput`](crate::operation::get_launch_configuration::GetLaunchConfigurationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_id`](crate::operation::get_launch_configuration::builders::GetLaunchConfigurationInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_launch_configuration::GetLaunchConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_launch_configuration::GetLaunchConfigurationInput {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building GetLaunchConfigurationInput",
-                )
-            })?,
+            source_server_id: self.source_server_id,
         })
     }
 }

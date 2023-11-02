@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateWave`](crate::operation::create_wave::builders::CreateWaveFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_wave::builders::CreateWaveFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::create_wave::builders::CreateWaveFluentBuilder::set_name):<br>required: **true**<br><p>Wave name.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_wave::builders::CreateWaveFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_wave::builders::CreateWaveFluentBuilder::set_name):<br>required: **true**<br><p>Wave name.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::create_wave::builders::CreateWaveFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::create_wave::builders::CreateWaveFluentBuilder::set_description):<br>required: **false**<br><p>Wave description.</p><br>
     ///   - [`tags(impl Into<String>, impl Into<String>)`](crate::operation::create_wave::builders::CreateWaveFluentBuilder::tags) / [`set_tags(Option<HashMap<String, String>>)`](crate::operation::create_wave::builders::CreateWaveFluentBuilder::set_tags):<br>required: **false**<br><p>Wave tags.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::create_wave::builders::CreateWaveFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::create_wave::builders::CreateWaveFluentBuilder::set_account_id):<br>required: **false**<br><p>Account ID.</p><br>

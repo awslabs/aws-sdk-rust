@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReleasePhoneNumberInput {
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
-    pub phone_number_id: ::std::string::String,
+    pub phone_number_id: ::std::option::Option<::std::string::String>,
 }
 impl ReleasePhoneNumberInput {
     /// <p>The PhoneNumberId or PhoneNumberArn of the phone number to release. You can use <code>DescribePhoneNumbers</code> to get the values for PhoneNumberId and PhoneNumberArn.</p>
-    pub fn phone_number_id(&self) -> &str {
-        use std::ops::Deref;
-        self.phone_number_id.deref()
+    pub fn phone_number_id(&self) -> ::std::option::Option<&str> {
+        self.phone_number_id.as_deref()
     }
 }
 impl ReleasePhoneNumberInput {
@@ -43,18 +42,11 @@ impl ReleasePhoneNumberInputBuilder {
         &self.phone_number_id
     }
     /// Consumes the builder and constructs a [`ReleasePhoneNumberInput`](crate::operation::release_phone_number::ReleasePhoneNumberInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`phone_number_id`](crate::operation::release_phone_number::builders::ReleasePhoneNumberInputBuilder::phone_number_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::release_phone_number::ReleasePhoneNumberInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::release_phone_number::ReleasePhoneNumberInput {
-            phone_number_id: self.phone_number_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "phone_number_id",
-                    "phone_number_id was not specified but it is required when building ReleasePhoneNumberInput",
-                )
-            })?,
+            phone_number_id: self.phone_number_id,
         })
     }
 }

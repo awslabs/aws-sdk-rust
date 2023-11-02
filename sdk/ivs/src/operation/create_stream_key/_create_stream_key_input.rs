@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateStreamKeyInput {
     /// <p>ARN of the channel for which to create the stream key.</p>
-    pub channel_arn: ::std::string::String,
+    pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateStreamKeyInput {
     /// <p>ARN of the channel for which to create the stream key.</p>
-    pub fn channel_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_arn.deref()
+    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+        self.channel_arn.as_deref()
     }
     /// <p>Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services Resources</a> for more information, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -70,18 +69,11 @@ impl CreateStreamKeyInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateStreamKeyInput`](crate::operation::create_stream_key::CreateStreamKeyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_arn`](crate::operation::create_stream_key::builders::CreateStreamKeyInputBuilder::channel_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_stream_key::CreateStreamKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_stream_key::CreateStreamKeyInput {
-            channel_arn: self.channel_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_arn",
-                    "channel_arn was not specified but it is required when building CreateStreamKeyInput",
-                )
-            })?,
+            channel_arn: self.channel_arn,
             tags: self.tags,
         })
     }

@@ -6,17 +6,17 @@ pub fn ser_associate_source_servers_input(
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    {
-        object.key("applicationID").string(input.application_id.as_str());
+    if let Some(var_2) = &input.application_id {
+        object.key("applicationID").string(var_2.as_str());
     }
-    {
-        let mut array_2 = object.key("sourceServerIDs").start_array();
-        for item_3 in &input.source_server_ids {
+    if let Some(var_3) = &input.source_server_ids {
+        let mut array_4 = object.key("sourceServerIDs").start_array();
+        for item_5 in var_3 {
             {
-                array_2.value().string(item_3.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
     Ok(())
 }

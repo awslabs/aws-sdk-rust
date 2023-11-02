@@ -21,17 +21,17 @@ pub fn ser_list_user_associations_input(
         crate::protocol_serde::shape_identity_provider::ser_identity_provider(&mut object_6, var_5)?;
         object_6.finish();
     }
-    {
-        object.key("InstanceId").string(input.instance_id.as_str());
+    if let Some(var_7) = &input.instance_id {
+        object.key("InstanceId").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.max_results {
+    if let Some(var_8) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.next_token {
-        object.key("NextToken").string(var_8.as_str());
+    if let Some(var_9) = &input.next_token {
+        object.key("NextToken").string(var_9.as_str());
     }
     Ok(())
 }

@@ -6,75 +6,75 @@ pub fn ser_put_source_server_action_input(
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    {
-        object.key("actionID").string(input.action_id.as_str());
+    if let Some(var_2) = &input.action_id {
+        object.key("actionID").string(var_2.as_str());
     }
-    {
-        object.key("actionName").string(input.action_name.as_str());
+    if let Some(var_3) = &input.action_name {
+        object.key("actionName").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.active {
-        object.key("active").boolean(*var_2);
+    if let Some(var_4) = &input.active {
+        object.key("active").boolean(*var_4);
     }
-    if let Some(var_3) = &input.category {
-        object.key("category").string(var_3.as_str());
+    if let Some(var_5) = &input.category {
+        object.key("category").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.description {
-        object.key("description").string(var_4.as_str());
+    if let Some(var_6) = &input.description {
+        object.key("description").string(var_6.as_str());
     }
-    {
-        object.key("documentIdentifier").string(input.document_identifier.as_str());
+    if let Some(var_7) = &input.document_identifier {
+        object.key("documentIdentifier").string(var_7.as_str());
     }
-    if let Some(var_5) = &input.document_version {
-        object.key("documentVersion").string(var_5.as_str());
+    if let Some(var_8) = &input.document_version {
+        object.key("documentVersion").string(var_8.as_str());
     }
-    if let Some(var_6) = &input.external_parameters {
+    if let Some(var_9) = &input.external_parameters {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("externalParameters").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_10 = object.key("externalParameters").start_object();
+        for (key_11, value_12) in var_9 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = object_7.key(key_8.as_str()).start_object();
-                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(&mut object_10, value_9)?;
-                object_10.finish();
+                let mut object_13 = object_10.key(key_11.as_str()).start_object();
+                crate::protocol_serde::shape_ssm_external_parameter::ser_ssm_external_parameter(&mut object_13, value_12)?;
+                object_13.finish();
             }
         }
-        object_7.finish();
+        object_10.finish();
     }
-    if let Some(var_11) = &input.must_succeed_for_cutover {
-        object.key("mustSucceedForCutover").boolean(*var_11);
+    if let Some(var_14) = &input.must_succeed_for_cutover {
+        object.key("mustSucceedForCutover").boolean(*var_14);
     }
-    {
+    if let Some(var_15) = &input.order {
         object.key("order").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.order).into()),
+            ::aws_smithy_types::Number::NegInt((*var_15).into()),
         );
     }
-    if let Some(var_12) = &input.parameters {
+    if let Some(var_16) = &input.parameters {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("parameters").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_17 = object.key("parameters").start_object();
+        for (key_18, value_19) in var_16 {
             {
-                let mut array_16 = object_13.key(key_14.as_str()).start_array();
-                for item_17 in value_15 {
+                let mut array_20 = object_17.key(key_18.as_str()).start_array();
+                for item_21 in value_19 {
                     {
                         #[allow(unused_mut)]
-                        let mut object_18 = array_16.value().start_object();
-                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_18, item_17)?;
-                        object_18.finish();
+                        let mut object_22 = array_20.value().start_object();
+                        crate::protocol_serde::shape_ssm_parameter_store_parameter::ser_ssm_parameter_store_parameter(&mut object_22, item_21)?;
+                        object_22.finish();
                     }
                 }
-                array_16.finish();
+                array_20.finish();
             }
         }
-        object_13.finish();
+        object_17.finish();
     }
-    {
-        object.key("sourceServerID").string(input.source_server_id.as_str());
+    if let Some(var_23) = &input.source_server_id {
+        object.key("sourceServerID").string(var_23.as_str());
     }
-    if input.timeout_seconds != 0 {
+    if let Some(var_24) = &input.timeout_seconds {
         object.key("timeoutSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.timeout_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_24).into()),
         );
     }
     Ok(())

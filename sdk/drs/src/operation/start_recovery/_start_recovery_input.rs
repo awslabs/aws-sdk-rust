@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartRecoveryInput {
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
-    pub source_servers: ::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>,
+    pub source_servers: ::std::option::Option<::std::vec::Vec<crate::types::StartRecoveryRequestSourceServer>>,
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
     pub is_drill: ::std::option::Option<bool>,
     /// <p>The tags to be associated with the Recovery Job.</p>
@@ -12,9 +12,10 @@ pub struct StartRecoveryInput {
 }
 impl StartRecoveryInput {
     /// <p>The Source Servers that we want to start a Recovery Job for.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_servers.is_none()`.
     pub fn source_servers(&self) -> &[crate::types::StartRecoveryRequestSourceServer] {
-        use std::ops::Deref;
-        self.source_servers.deref()
+        self.source_servers.as_deref().unwrap_or_default()
     }
     /// <p>Whether this Source Server Recovery operation is a drill or not.</p>
     pub fn is_drill(&self) -> ::std::option::Option<bool> {
@@ -105,18 +106,11 @@ impl StartRecoveryInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartRecoveryInput`](crate::operation::start_recovery::StartRecoveryInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_servers`](crate::operation::start_recovery::builders::StartRecoveryInputBuilder::source_servers)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_recovery::StartRecoveryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_recovery::StartRecoveryInput {
-            source_servers: self.source_servers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_servers",
-                    "source_servers was not specified but it is required when building StartRecoveryInput",
-                )
-            })?,
+            source_servers: self.source_servers,
             is_drill: self.is_drill,
             tags: self.tags,
         })

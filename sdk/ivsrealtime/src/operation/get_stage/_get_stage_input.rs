@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStageInput {
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetStageInput {
     /// <p>ARN of the stage for which the information is to be retrieved.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl GetStageInput {
@@ -43,16 +42,7 @@ impl GetStageInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetStageInput`](crate::operation::get_stage::GetStageInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::get_stage::builders::GetStageInputBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_stage::GetStageInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_stage::GetStageInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetStageInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_stage::GetStageInput { arn: self.arn })
     }
 }

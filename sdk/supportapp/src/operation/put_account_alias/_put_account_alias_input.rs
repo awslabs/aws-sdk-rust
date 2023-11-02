@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAccountAliasInput {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
-    pub account_alias: ::std::string::String,
+    pub account_alias: ::std::option::Option<::std::string::String>,
 }
 impl PutAccountAliasInput {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
-    pub fn account_alias(&self) -> &str {
-        use std::ops::Deref;
-        self.account_alias.deref()
+    pub fn account_alias(&self) -> ::std::option::Option<&str> {
+        self.account_alias.as_deref()
     }
 }
 impl PutAccountAliasInput {
@@ -43,18 +42,11 @@ impl PutAccountAliasInputBuilder {
         &self.account_alias
     }
     /// Consumes the builder and constructs a [`PutAccountAliasInput`](crate::operation::put_account_alias::PutAccountAliasInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`account_alias`](crate::operation::put_account_alias::builders::PutAccountAliasInputBuilder::account_alias)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_account_alias::PutAccountAliasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_account_alias::PutAccountAliasInput {
-            account_alias: self.account_alias.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "account_alias",
-                    "account_alias was not specified but it is required when building PutAccountAliasInput",
-                )
-            })?,
+            account_alias: self.account_alias,
         })
     }
 }

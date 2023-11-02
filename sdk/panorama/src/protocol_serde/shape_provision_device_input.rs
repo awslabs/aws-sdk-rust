@@ -6,24 +6,24 @@ pub fn ser_provision_device_input(
     if let Some(var_1) = &input.description {
         object.key("Description").string(var_1.as_str());
     }
-    {
-        object.key("Name").string(input.name.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("Name").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.networking_configuration {
+    if let Some(var_3) = &input.networking_configuration {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("NetworkingConfiguration").start_object();
-        crate::protocol_serde::shape_network_payload::ser_network_payload(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("NetworkingConfiguration").start_object();
+        crate::protocol_serde::shape_network_payload::ser_network_payload(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.tags {
+    if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Tags").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_6 = object.key("Tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_5.finish();
+        object_6.finish();
     }
     Ok(())
 }

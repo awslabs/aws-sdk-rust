@@ -4,28 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateGatewayInput {
     /// <p>The activation key of the created gateway.</p>
-    pub activation_key: ::std::string::String,
+    pub activation_key: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the created gateway.</p>
-    pub gateway_display_name: ::std::string::String,
+    pub gateway_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of created gateway.</p>
-    pub gateway_type: crate::types::GatewayType,
+    pub gateway_type: ::std::option::Option<crate::types::GatewayType>,
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateGatewayInput {
     /// <p>The activation key of the created gateway.</p>
-    pub fn activation_key(&self) -> &str {
-        use std::ops::Deref;
-        self.activation_key.deref()
+    pub fn activation_key(&self) -> ::std::option::Option<&str> {
+        self.activation_key.as_deref()
     }
     /// <p>The display name of the created gateway.</p>
-    pub fn gateway_display_name(&self) -> &str {
-        use std::ops::Deref;
-        self.gateway_display_name.deref()
+    pub fn gateway_display_name(&self) -> ::std::option::Option<&str> {
+        self.gateway_display_name.as_deref()
     }
     /// <p>The type of created gateway.</p>
-    pub fn gateway_type(&self) -> &crate::types::GatewayType {
-        &self.gateway_type
+    pub fn gateway_type(&self) -> ::std::option::Option<&crate::types::GatewayType> {
+        self.gateway_type.as_ref()
     }
     /// <p>A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.</p>
     ///
@@ -117,32 +115,13 @@ impl CreateGatewayInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateGatewayInput`](crate::operation::create_gateway::CreateGatewayInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`activation_key`](crate::operation::create_gateway::builders::CreateGatewayInputBuilder::activation_key)
-    /// - [`gateway_display_name`](crate::operation::create_gateway::builders::CreateGatewayInputBuilder::gateway_display_name)
-    /// - [`gateway_type`](crate::operation::create_gateway::builders::CreateGatewayInputBuilder::gateway_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_gateway::CreateGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_gateway::CreateGatewayInput {
-            activation_key: self.activation_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "activation_key",
-                    "activation_key was not specified but it is required when building CreateGatewayInput",
-                )
-            })?,
-            gateway_display_name: self.gateway_display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "gateway_display_name",
-                    "gateway_display_name was not specified but it is required when building CreateGatewayInput",
-                )
-            })?,
-            gateway_type: self.gateway_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "gateway_type",
-                    "gateway_type was not specified but it is required when building CreateGatewayInput",
-                )
-            })?,
+            activation_key: self.activation_key,
+            gateway_display_name: self.gateway_display_name,
+            gateway_type: self.gateway_type,
             tags: self.tags,
         })
     }

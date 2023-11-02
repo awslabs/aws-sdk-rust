@@ -11,27 +11,27 @@ pub fn ser_create_key_input(
             .key("ExpireTime")
             .date_time(var_2, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
-    {
-        object.key("KeyName").string(input.key_name.as_str());
+    if let Some(var_3) = &input.key_name {
+        object.key("KeyName").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.no_expiry {
-        object.key("NoExpiry").boolean(*var_3);
+    if let Some(var_4) = &input.no_expiry {
+        object.key("NoExpiry").boolean(*var_4);
     }
-    if let Some(var_4) = &input.restrictions {
+    if let Some(var_5) = &input.restrictions {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("Restrictions").start_object();
-        crate::protocol_serde::shape_api_key_restrictions::ser_api_key_restrictions(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("Restrictions").start_object();
+        crate::protocol_serde::shape_api_key_restrictions::ser_api_key_restrictions(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_7) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_8 = object.key("Tags").start_object();
+        for (key_9, value_10) in var_7 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_8.key(key_9.as_str()).string(value_10.as_str());
             }
         }
-        object_7.finish();
+        object_8.finish();
     }
     Ok(())
 }

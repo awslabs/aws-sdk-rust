@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelPolicyGenerationInput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub job_id: ::std::string::String,
+    pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelPolicyGenerationInput {
     /// <p>The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code> operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code> to retrieve the generated policies or used with <code>CancelPolicyGeneration</code> to cancel the policy generation request.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
+        self.job_id.as_deref()
     }
 }
 impl CancelPolicyGenerationInput {
@@ -43,19 +42,10 @@ impl CancelPolicyGenerationInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`CancelPolicyGenerationInput`](crate::operation::cancel_policy_generation::CancelPolicyGenerationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`job_id`](crate::operation::cancel_policy_generation::builders::CancelPolicyGenerationInputBuilder::job_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::cancel_policy_generation::CancelPolicyGenerationInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::cancel_policy_generation::CancelPolicyGenerationInput {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building CancelPolicyGenerationInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::cancel_policy_generation::CancelPolicyGenerationInput { job_id: self.job_id })
     }
 }

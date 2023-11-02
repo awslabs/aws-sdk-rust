@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListProductSubscriptionsInput {
     /// <p>The name of the user-based subscription product.</p>
-    pub product: ::std::string::String,
+    pub product: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>Maximum number of results to return in a single call.</p>
@@ -16,9 +16,8 @@ pub struct ListProductSubscriptionsInput {
 }
 impl ListProductSubscriptionsInput {
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> &str {
-        use std::ops::Deref;
-        self.product.deref()
+    pub fn product(&self) -> ::std::option::Option<&str> {
+        self.product.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
@@ -136,8 +135,6 @@ impl ListProductSubscriptionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListProductSubscriptionsInput`](crate::operation::list_product_subscriptions::ListProductSubscriptionsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`product`](crate::operation::list_product_subscriptions::builders::ListProductSubscriptionsInputBuilder::product)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -145,12 +142,7 @@ impl ListProductSubscriptionsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_product_subscriptions::ListProductSubscriptionsInput {
-            product: self.product.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "product",
-                    "product was not specified but it is required when building ListProductSubscriptionsInput",
-                )
-            })?,
+            product: self.product,
             identity_provider: self.identity_provider,
             max_results: self.max_results,
             filters: self.filters,

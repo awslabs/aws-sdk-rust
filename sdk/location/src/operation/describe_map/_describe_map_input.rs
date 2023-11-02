@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeMapInput {
     /// <p>The name of the map resource.</p>
-    pub map_name: ::std::string::String,
+    pub map_name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeMapInput {
     /// <p>The name of the map resource.</p>
-    pub fn map_name(&self) -> &str {
-        use std::ops::Deref;
-        self.map_name.deref()
+    pub fn map_name(&self) -> ::std::option::Option<&str> {
+        self.map_name.as_deref()
     }
 }
 impl DescribeMapInput {
@@ -43,16 +42,7 @@ impl DescribeMapInputBuilder {
         &self.map_name
     }
     /// Consumes the builder and constructs a [`DescribeMapInput`](crate::operation::describe_map::DescribeMapInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`map_name`](crate::operation::describe_map::builders::DescribeMapInputBuilder::map_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_map::DescribeMapInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_map::DescribeMapInput {
-            map_name: self.map_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "map_name",
-                    "map_name was not specified but it is required when building DescribeMapInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::describe_map::DescribeMapInput { map_name: self.map_name })
     }
 }

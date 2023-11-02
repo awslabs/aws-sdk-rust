@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchPutPropertyValuesInput {
     /// <p>The ID of the workspace that contains the properties to set.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
-    pub entries: ::std::vec::Vec<crate::types::PropertyValueEntry>,
+    pub entries: ::std::option::Option<::std::vec::Vec<crate::types::PropertyValueEntry>>,
 }
 impl BatchPutPropertyValuesInput {
     /// <p>The ID of the workspace that contains the properties to set.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>An object that maps strings to the property value entries to set. Each string in the mapping must be unique to this object.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.entries.is_none()`.
     pub fn entries(&self) -> &[crate::types::PropertyValueEntry] {
-        use std::ops::Deref;
-        self.entries.deref()
+        self.entries.as_deref().unwrap_or_default()
     }
 }
 impl BatchPutPropertyValuesInput {
@@ -71,9 +71,6 @@ impl BatchPutPropertyValuesInputBuilder {
         &self.entries
     }
     /// Consumes the builder and constructs a [`BatchPutPropertyValuesInput`](crate::operation::batch_put_property_values::BatchPutPropertyValuesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesInputBuilder::workspace_id)
-    /// - [`entries`](crate::operation::batch_put_property_values::builders::BatchPutPropertyValuesInputBuilder::entries)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -81,18 +78,8 @@ impl BatchPutPropertyValuesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_put_property_values::BatchPutPropertyValuesInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building BatchPutPropertyValuesInput",
-                )
-            })?,
-            entries: self.entries.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "entries",
-                    "entries was not specified but it is required when building BatchPutPropertyValuesInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
+            entries: self.entries,
         })
     }
 }

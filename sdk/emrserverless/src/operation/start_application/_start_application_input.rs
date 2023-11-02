@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartApplicationInput {
     /// <p>The ID of the application to start.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl StartApplicationInput {
     /// <p>The ID of the application to start.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
 }
 impl StartApplicationInput {
@@ -43,18 +42,11 @@ impl StartApplicationInputBuilder {
         &self.application_id
     }
     /// Consumes the builder and constructs a [`StartApplicationInput`](crate::operation::start_application::StartApplicationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::start_application::builders::StartApplicationInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_application::StartApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_application::StartApplicationInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building StartApplicationInput",
-                )
-            })?,
+            application_id: self.application_id,
         })
     }
 }

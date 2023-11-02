@@ -175,6 +175,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateAssetR
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.data_set_id;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("data_set_id", "cannot be empty or unset"))?;
                 let data_set_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if data_set_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -183,6 +186,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateAssetR
                     ));
                 }
                 let input_2 = &_input.revision_id;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("revision_id", "cannot be empty or unset"))?;
                 let revision_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if revision_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -191,6 +197,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateAssetR
                     ));
                 }
                 let input_3 = &_input.asset_id;
+                let input_3 = input_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("asset_id", "cannot be empty or unset"))?;
                 let asset_id = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if asset_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

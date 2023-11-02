@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UnarchiveApplication`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::application_id) / [`set_application_id(impl Into<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::set_application_id):<br>required: **true**<br><p>Application ID.</p><br>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::set_application_id):<br>required: **true**<br><p>Application ID.</p><br>
     ///   - [`account_id(impl Into<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::unarchive_application::builders::UnarchiveApplicationFluentBuilder::set_account_id):<br>required: **false**<br><p>Account ID.</p><br>
     /// - On success, responds with [`UnarchiveApplicationOutput`](crate::operation::unarchive_application::UnarchiveApplicationOutput) with field(s):
     ///   - [`application_id(Option<String>)`](crate::operation::unarchive_application::UnarchiveApplicationOutput::application_id): <p>Application ID.</p>

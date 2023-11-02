@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFeatureInput {
     /// <p>The name or ARN of the project that is to contain the new feature.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name for the new feature.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub evaluation_strategy: ::std::option::Option<crate::types::FeatureEvaluationStrategy>,
     /// <p>An optional description of the feature.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
-    pub variations: ::std::vec::Vec<crate::types::VariationConfig>,
+    pub variations: ::std::option::Option<::std::vec::Vec<crate::types::VariationConfig>>,
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
     /// <p>If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code> structure is used as the default variation.</p>
@@ -29,14 +29,12 @@ pub struct CreateFeatureInput {
 }
 impl CreateFeatureInput {
     /// <p>The name or ARN of the project that is to contain the new feature.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name for the new feature.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub fn evaluation_strategy(&self) -> ::std::option::Option<&crate::types::FeatureEvaluationStrategy> {
@@ -47,9 +45,10 @@ impl CreateFeatureInput {
         self.description.as_deref()
     }
     /// <p>An array of structures that contain the configuration of the feature's different variations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.variations.is_none()`.
     pub fn variations(&self) -> &[crate::types::VariationConfig] {
-        use std::ops::Deref;
-        self.variations.deref()
+        self.variations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the variation to use as the default variation. The default variation is served to users who are not allocated to any ongoing launches or experiments of this feature.</p>
     /// <p>This variation must also be listed in the <code>variations</code> structure.</p>
@@ -253,34 +252,15 @@ impl CreateFeatureInputBuilder {
         &self.entity_overrides
     }
     /// Consumes the builder and constructs a [`CreateFeatureInput`](crate::operation::create_feature::CreateFeatureInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::create_feature::builders::CreateFeatureInputBuilder::project)
-    /// - [`name`](crate::operation::create_feature::builders::CreateFeatureInputBuilder::name)
-    /// - [`variations`](crate::operation::create_feature::builders::CreateFeatureInputBuilder::variations)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_feature::CreateFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_feature::CreateFeatureInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building CreateFeatureInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateFeatureInput",
-                )
-            })?,
+            project: self.project,
+            name: self.name,
             evaluation_strategy: self.evaluation_strategy,
             description: self.description,
-            variations: self.variations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "variations",
-                    "variations was not specified but it is required when building CreateFeatureInput",
-                )
-            })?,
+            variations: self.variations,
             default_variation: self.default_variation,
             tags: self.tags,
             entity_overrides: self.entity_overrides,

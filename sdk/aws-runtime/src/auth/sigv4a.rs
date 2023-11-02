@@ -81,7 +81,7 @@ impl SigV4aSigner {
         request_timestamp: SystemTime,
     ) -> Result<v4a::SigningParams<'a, SigningSettings>, SigV4SigningError> {
         if let Some(expires_in) = settings.expires_in {
-            if let Some(&identity_expiration) = identity.expiration() {
+            if let Some(identity_expiration) = identity.expiration() {
                 let presigned_expires_time = request_timestamp + expires_in;
                 if presigned_expires_time > identity_expiration {
                     tracing::warn!(EXPIRATION_WARNING);

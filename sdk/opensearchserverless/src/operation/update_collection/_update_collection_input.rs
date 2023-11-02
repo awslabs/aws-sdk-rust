@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCollectionInput {
     /// <p>The unique identifier of the collection.</p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>A description of the collection.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
@@ -12,9 +12,8 @@ pub struct UpdateCollectionInput {
 }
 impl UpdateCollectionInput {
     /// <p>The unique identifier of the collection.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>A description of the collection.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -85,18 +84,11 @@ impl UpdateCollectionInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateCollectionInput`](crate::operation::update_collection::UpdateCollectionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::update_collection::builders::UpdateCollectionInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_collection::UpdateCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_collection::UpdateCollectionInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building UpdateCollectionInput",
-                )
-            })?,
+            id: self.id,
             description: self.description,
             client_token: self.client_token,
         })

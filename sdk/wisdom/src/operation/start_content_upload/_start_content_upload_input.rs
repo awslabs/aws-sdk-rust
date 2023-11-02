@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartContentUploadInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub knowledge_base_id: ::std::string::String,
+    pub knowledge_base_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of content to upload.</p>
-    pub content_type: ::std::string::String,
+    pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl StartContentUploadInput {
     /// <p>The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn knowledge_base_id(&self) -> &str {
-        use std::ops::Deref;
-        self.knowledge_base_id.deref()
+    pub fn knowledge_base_id(&self) -> ::std::option::Option<&str> {
+        self.knowledge_base_id.as_deref()
     }
     /// <p>The type of content to upload.</p>
-    pub fn content_type(&self) -> &str {
-        use std::ops::Deref;
-        self.content_type.deref()
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
+        self.content_type.as_deref()
     }
 }
 impl StartContentUploadInput {
@@ -66,25 +64,12 @@ impl StartContentUploadInputBuilder {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`StartContentUploadInput`](crate::operation::start_content_upload::StartContentUploadInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`knowledge_base_id`](crate::operation::start_content_upload::builders::StartContentUploadInputBuilder::knowledge_base_id)
-    /// - [`content_type`](crate::operation::start_content_upload::builders::StartContentUploadInputBuilder::content_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_content_upload::StartContentUploadInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_content_upload::StartContentUploadInput {
-            knowledge_base_id: self.knowledge_base_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "knowledge_base_id",
-                    "knowledge_base_id was not specified but it is required when building StartContentUploadInput",
-                )
-            })?,
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building StartContentUploadInput",
-                )
-            })?,
+            knowledge_base_id: self.knowledge_base_id,
+            content_type: self.content_type,
         })
     }
 }

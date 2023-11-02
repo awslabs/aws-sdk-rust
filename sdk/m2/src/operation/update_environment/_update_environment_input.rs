@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEnvironmentInput {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
-    pub environment_id: ::std::string::String,
+    pub environment_id: ::std::option::Option<::std::string::String>,
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub desired_capacity: ::std::option::Option<i32>,
     /// <p>The instance type for the runtime environment to update.</p>
@@ -14,13 +14,12 @@ pub struct UpdateEnvironmentInput {
     /// <p>Configures the maintenance window you want for the runtime environment. If you do not provide a value, a random system-generated value will be assigned.</p>
     pub preferred_maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
-    pub apply_during_maintenance_window: bool,
+    pub apply_during_maintenance_window: ::std::option::Option<bool>,
 }
 impl UpdateEnvironmentInput {
     /// <p>The unique identifier of the runtime environment that you want to update.</p>
-    pub fn environment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_id.deref()
+    pub fn environment_id(&self) -> ::std::option::Option<&str> {
+        self.environment_id.as_deref()
     }
     /// <p>The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.</p>
     pub fn desired_capacity(&self) -> ::std::option::Option<i32> {
@@ -39,7 +38,7 @@ impl UpdateEnvironmentInput {
         self.preferred_maintenance_window.as_deref()
     }
     /// <p>Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.</p>
-    pub fn apply_during_maintenance_window(&self) -> bool {
+    pub fn apply_during_maintenance_window(&self) -> ::std::option::Option<bool> {
         self.apply_during_maintenance_window
     }
 }
@@ -148,23 +147,16 @@ impl UpdateEnvironmentInputBuilder {
         &self.apply_during_maintenance_window
     }
     /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::operation::update_environment::UpdateEnvironmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`environment_id`](crate::operation::update_environment::builders::UpdateEnvironmentInputBuilder::environment_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_environment::UpdateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_environment::UpdateEnvironmentInput {
-            environment_id: self.environment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_id",
-                    "environment_id was not specified but it is required when building UpdateEnvironmentInput",
-                )
-            })?,
+            environment_id: self.environment_id,
             desired_capacity: self.desired_capacity,
             instance_type: self.instance_type,
             engine_version: self.engine_version,
             preferred_maintenance_window: self.preferred_maintenance_window,
-            apply_during_maintenance_window: self.apply_during_maintenance_window.unwrap_or_default(),
+            apply_during_maintenance_window: self.apply_during_maintenance_window,
         })
     }
 }

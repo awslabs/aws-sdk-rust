@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentInput {
     /// <p>The ID of the application.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the component.</p>
-    pub component_id: ::std::string::String,
+    pub component_id: ::std::option::Option<::std::string::String>,
 }
 impl GetComponentInput {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>The ID of the component.</p>
-    pub fn component_id(&self) -> &str {
-        use std::ops::Deref;
-        self.component_id.deref()
+    pub fn component_id(&self) -> ::std::option::Option<&str> {
+        self.component_id.as_deref()
     }
 }
 impl GetComponentInput {
@@ -66,23 +64,10 @@ impl GetComponentInputBuilder {
         &self.component_id
     }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::get_component::builders::GetComponentInputBuilder::application_id)
-    /// - [`component_id`](crate::operation::get_component::builders::GetComponentInputBuilder::component_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_component::GetComponentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_component::GetComponentInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building GetComponentInput",
-                )
-            })?,
-            component_id: self.component_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "component_id",
-                    "component_id was not specified but it is required when building GetComponentInput",
-                )
-            })?,
+            application_id: self.application_id,
+            component_id: self.component_id,
         })
     }
 }

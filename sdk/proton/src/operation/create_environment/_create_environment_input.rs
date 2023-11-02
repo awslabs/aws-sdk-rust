@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the environment.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
-    pub template_name: ::std::string::String,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The major version of the environment template.</p>
-    pub template_major_version: ::std::string::String,
+    pub template_major_version: ::std::option::Option<::std::string::String>,
     /// <p>The minor version of the environment template.</p>
     pub template_minor_version: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment that's being created and deployed.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
-    pub spec: ::std::string::String,
+    pub spec: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
     pub proton_service_role_arn: ::std::option::Option<::std::string::String>,
@@ -37,19 +37,16 @@ pub struct CreateEnvironmentInput {
 }
 impl CreateEnvironmentInput {
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The name of the environment template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
+        self.template_name.as_deref()
     }
     /// <p>The major version of the environment template.</p>
-    pub fn template_major_version(&self) -> &str {
-        use std::ops::Deref;
-        self.template_major_version.deref()
+    pub fn template_major_version(&self) -> ::std::option::Option<&str> {
+        self.template_major_version.as_deref()
     }
     /// <p>The minor version of the environment template.</p>
     pub fn template_minor_version(&self) -> ::std::option::Option<&str> {
@@ -60,9 +57,8 @@ impl CreateEnvironmentInput {
         self.description.as_deref()
     }
     /// <p>A YAML formatted string that provides inputs as defined in the environment template bundle schema file. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-environments.html">Environments</a> in the <i>Proton User Guide</i>.</p>
-    pub fn spec(&self) -> &str {
-        use std::ops::Deref;
-        self.spec.deref()
+    pub fn spec(&self) -> ::std::option::Option<&str> {
+        self.spec.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the Proton service role that allows Proton to make calls to other services on your behalf.</p>
     /// <p>To use Amazon Web Services-managed provisioning for the environment, specify either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and omit the <code>provisioningRepository</code> parameter.</p>
@@ -341,41 +337,16 @@ impl CreateEnvironmentInputBuilder {
         &self.codebuild_role_arn
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::name)
-    /// - [`template_name`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::template_name)
-    /// - [`template_major_version`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::template_major_version)
-    /// - [`spec`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::spec)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateEnvironmentInput",
-                )
-            })?,
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building CreateEnvironmentInput",
-                )
-            })?,
-            template_major_version: self.template_major_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "template_major_version",
-                    "template_major_version was not specified but it is required when building CreateEnvironmentInput",
-                )
-            })?,
+            name: self.name,
+            template_name: self.template_name,
+            template_major_version: self.template_major_version,
             template_minor_version: self.template_minor_version,
             description: self.description,
-            spec: self.spec.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "spec",
-                    "spec was not specified but it is required when building CreateEnvironmentInput",
-                )
-            })?,
+            spec: self.spec,
             proton_service_role_arn: self.proton_service_role_arn,
             environment_account_connection_id: self.environment_account_connection_id,
             tags: self.tags,

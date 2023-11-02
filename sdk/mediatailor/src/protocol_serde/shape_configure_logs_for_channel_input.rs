@@ -3,17 +3,17 @@ pub fn ser_configure_logs_for_channel_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::configure_logs_for_channel::ConfigureLogsForChannelInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("ChannelName").string(input.channel_name.as_str());
+    if let Some(var_1) = &input.channel_name {
+        object.key("ChannelName").string(var_1.as_str());
     }
-    {
-        let mut array_1 = object.key("LogTypes").start_array();
-        for item_2 in &input.log_types {
+    if let Some(var_2) = &input.log_types {
+        let mut array_3 = object.key("LogTypes").start_array();
+        for item_4 in var_2 {
             {
-                array_1.value().string(item_2.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_1.finish();
+        array_3.finish();
     }
     Ok(())
 }

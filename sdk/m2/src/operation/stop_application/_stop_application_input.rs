@@ -4,18 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopApplicationInput {
     /// <p>The unique identifier of the application you want to stop.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
-    pub force_stop: bool,
+    pub force_stop: ::std::option::Option<bool>,
 }
 impl StopApplicationInput {
     /// <p>The unique identifier of the application you want to stop.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>Stopping an application process can take a long time. Setting this parameter to true lets you force stop the application so you don't need to wait until the process finishes to apply another action on the application. The default value is false.</p>
-    pub fn force_stop(&self) -> bool {
+    pub fn force_stop(&self) -> ::std::option::Option<bool> {
         self.force_stop
     }
 }
@@ -64,19 +63,12 @@ impl StopApplicationInputBuilder {
         &self.force_stop
     }
     /// Consumes the builder and constructs a [`StopApplicationInput`](crate::operation::stop_application::StopApplicationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::stop_application::builders::StopApplicationInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::stop_application::StopApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_application::StopApplicationInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building StopApplicationInput",
-                )
-            })?,
-            force_stop: self.force_stop.unwrap_or_default(),
+            application_id: self.application_id,
+            force_stop: self.force_stop,
         })
     }
 }

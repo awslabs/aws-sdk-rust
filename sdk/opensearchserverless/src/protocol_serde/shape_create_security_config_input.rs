@@ -3,23 +3,23 @@ pub fn ser_create_security_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_security_config::CreateSecurityConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("type").string(input.r#type.as_str());
+    if let Some(var_1) = &input.r#type {
+        object.key("type").string(var_1.as_str());
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("name").string(var_2.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.saml_options {
+    if let Some(var_4) = &input.saml_options {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("samlOptions").start_object();
-        crate::protocol_serde::shape_saml_config_options::ser_saml_config_options(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_5 = object.key("samlOptions").start_object();
+        crate::protocol_serde::shape_saml_config_options::ser_saml_config_options(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_4) = &input.client_token {
-        object.key("clientToken").string(var_4.as_str());
+    if let Some(var_6) = &input.client_token {
+        object.key("clientToken").string(var_6.as_str());
     }
     Ok(())
 }

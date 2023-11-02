@@ -16,7 +16,7 @@ pub struct CreateApplicationInstanceInput {
     /// <p>The ARN of a runtime role for the application instance.</p>
     pub runtime_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>A device's ID.</p>
-    pub default_runtime_context_device: ::std::string::String,
+    pub default_runtime_context_device: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the application instance.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -46,9 +46,8 @@ impl CreateApplicationInstanceInput {
         self.runtime_role_arn.as_deref()
     }
     /// <p>A device's ID.</p>
-    pub fn default_runtime_context_device(&self) -> &str {
-        use std::ops::Deref;
-        self.default_runtime_context_device.deref()
+    pub fn default_runtime_context_device(&self) -> ::std::option::Option<&str> {
+        self.default_runtime_context_device.as_deref()
     }
     /// <p>Tags for the application instance.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -197,8 +196,6 @@ impl CreateApplicationInstanceInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateApplicationInstanceInput`](crate::operation::create_application_instance::CreateApplicationInstanceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`default_runtime_context_device`](crate::operation::create_application_instance::builders::CreateApplicationInstanceInputBuilder::default_runtime_context_device)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -212,12 +209,7 @@ impl CreateApplicationInstanceInputBuilder {
             manifest_overrides_payload: self.manifest_overrides_payload,
             application_instance_id_to_replace: self.application_instance_id_to_replace,
             runtime_role_arn: self.runtime_role_arn,
-            default_runtime_context_device: self.default_runtime_context_device.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "default_runtime_context_device",
-                    "default_runtime_context_device was not specified but it is required when building CreateApplicationInstanceInput",
-                )
-            })?,
+            default_runtime_context_device: self.default_runtime_context_device,
             tags: self.tags,
         })
     }

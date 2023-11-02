@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAppMonitorInput {
     /// <p>The name of the app monitor to delete.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAppMonitorInput {
     /// <p>The name of the app monitor to delete.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl DeleteAppMonitorInput {
@@ -43,18 +42,9 @@ impl DeleteAppMonitorInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteAppMonitorInput`](crate::operation::delete_app_monitor::DeleteAppMonitorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::delete_app_monitor::builders::DeleteAppMonitorInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_app_monitor::DeleteAppMonitorInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_app_monitor::DeleteAppMonitorInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DeleteAppMonitorInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_app_monitor::DeleteAppMonitorInput { name: self.name })
     }
 }

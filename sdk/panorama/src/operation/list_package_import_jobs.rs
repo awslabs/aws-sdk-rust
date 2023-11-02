@@ -188,8 +188,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListPackageI
                         query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
+                    if *inner_2 != 0 {
+                        query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
+                    }
                 }
                 ::std::result::Result::Ok(())
             }

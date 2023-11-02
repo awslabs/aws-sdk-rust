@@ -4,34 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAccessPolicyInput {
     /// <p>The type of policy.</p>
-    pub r#type: crate::types::AccessPolicyType,
+    pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>The name of the policy.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy document to use as the content for the policy.</p>
-    pub policy: ::std::string::String,
+    pub policy: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateAccessPolicyInput {
     /// <p>The type of policy.</p>
-    pub fn r#type(&self) -> &crate::types::AccessPolicyType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessPolicyType> {
+        self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The JSON policy document to use as the content for the policy.</p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> ::std::option::Option<&str> {
+        self.policy.as_deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -130,33 +128,14 @@ impl CreateAccessPolicyInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAccessPolicyInput`](crate::operation::create_access_policy::CreateAccessPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder::r#type)
-    /// - [`name`](crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder::name)
-    /// - [`policy`](crate::operation::create_access_policy::builders::CreateAccessPolicyInputBuilder::policy)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_access_policy::CreateAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_access_policy::CreateAccessPolicyInput {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CreateAccessPolicyInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateAccessPolicyInput",
-                )
-            })?,
+            r#type: self.r#type,
+            name: self.name,
             description: self.description,
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building CreateAccessPolicyInput",
-                )
-            })?,
+            policy: self.policy,
             client_token: self.client_token,
         })
     }

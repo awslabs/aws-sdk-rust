@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePoolInput {
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
-    pub pool_id: ::std::string::String,
+    pub pool_id: ::std::option::Option<::std::string::String>,
 }
 impl DeletePoolInput {
     /// <p>The PoolId or PoolArn of the pool to delete. You can use <code>DescribePools</code> to find the values for PoolId and PoolArn .</p>
-    pub fn pool_id(&self) -> &str {
-        use std::ops::Deref;
-        self.pool_id.deref()
+    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+        self.pool_id.as_deref()
     }
 }
 impl DeletePoolInput {
@@ -43,16 +42,7 @@ impl DeletePoolInputBuilder {
         &self.pool_id
     }
     /// Consumes the builder and constructs a [`DeletePoolInput`](crate::operation::delete_pool::DeletePoolInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`pool_id`](crate::operation::delete_pool::builders::DeletePoolInputBuilder::pool_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_pool::DeletePoolInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_pool::DeletePoolInput {
-            pool_id: self.pool_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "pool_id",
-                    "pool_id was not specified but it is required when building DeletePoolInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_pool::DeletePoolInput { pool_id: self.pool_id })
     }
 }

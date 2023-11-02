@@ -4,22 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to update the authentication for.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
-    pub authentication_providers: ::std::vec::Vec<crate::types::AuthenticationProviderTypes>,
+    pub authentication_providers: ::std::option::Option<::std::vec::Vec<crate::types::AuthenticationProviderTypes>>,
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
     pub saml_configuration: ::std::option::Option<crate::types::SamlConfiguration>,
 }
 impl UpdateWorkspaceAuthenticationInput {
     /// <p>The ID of the workspace to update the authentication for.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>Specifies whether this workspace uses SAML 2.0, IAM Identity Center (successor to Single Sign-On), or both to authenticate users for using the Grafana console within a workspace. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/authentication-in-AMG.html">User authentication in Amazon Managed Grafana</a>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.authentication_providers.is_none()`.
     pub fn authentication_providers(&self) -> &[crate::types::AuthenticationProviderTypes] {
-        use std::ops::Deref;
-        self.authentication_providers.deref()
+        self.authentication_providers.as_deref().unwrap_or_default()
     }
     /// <p>If the workspace uses SAML, use this structure to map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p>
     pub fn saml_configuration(&self) -> ::std::option::Option<&crate::types::SamlConfiguration> {
@@ -92,9 +92,6 @@ impl UpdateWorkspaceAuthenticationInputBuilder {
         &self.saml_configuration
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceAuthenticationInput`](crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationInputBuilder::workspace_id)
-    /// - [`authentication_providers`](crate::operation::update_workspace_authentication::builders::UpdateWorkspaceAuthenticationInputBuilder::authentication_providers)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -102,18 +99,8 @@ impl UpdateWorkspaceAuthenticationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building UpdateWorkspaceAuthenticationInput",
-                )
-            })?,
-            authentication_providers: self.authentication_providers.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "authentication_providers",
-                    "authentication_providers was not specified but it is required when building UpdateWorkspaceAuthenticationInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
+            authentication_providers: self.authentication_providers,
             saml_configuration: self.saml_configuration,
         })
     }

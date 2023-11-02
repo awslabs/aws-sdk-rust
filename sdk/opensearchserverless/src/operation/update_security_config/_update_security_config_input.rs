@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateSecurityConfigInput {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
-    pub config_version: ::std::string::String,
+    pub config_version: ::std::option::Option<::std::string::String>,
     /// <p>A description of the security configuration.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>SAML options in in the form of a key-value map.</p>
@@ -16,14 +16,12 @@ pub struct UpdateSecurityConfigInput {
 }
 impl UpdateSecurityConfigInput {
     /// <p>The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>. For example, <code>saml/123456789123/OKTADev</code>.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>The version of the security configuration to be updated. You can find the most recent version of a security configuration using the <code>GetSecurityPolicy</code> command.</p>
-    pub fn config_version(&self) -> &str {
-        use std::ops::Deref;
-        self.config_version.deref()
+    pub fn config_version(&self) -> ::std::option::Option<&str> {
+        self.config_version.as_deref()
     }
     /// <p>A description of the security configuration.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -129,26 +127,13 @@ impl UpdateSecurityConfigInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateSecurityConfigInput`](crate::operation::update_security_config::UpdateSecurityConfigInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder::id)
-    /// - [`config_version`](crate::operation::update_security_config::builders::UpdateSecurityConfigInputBuilder::config_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_security_config::UpdateSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_security_config::UpdateSecurityConfigInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building UpdateSecurityConfigInput",
-                )
-            })?,
-            config_version: self.config_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "config_version",
-                    "config_version was not specified but it is required when building UpdateSecurityConfigInput",
-                )
-            })?,
+            id: self.id,
+            config_version: self.config_version,
             description: self.description,
             saml_options: self.saml_options,
             client_token: self.client_token,

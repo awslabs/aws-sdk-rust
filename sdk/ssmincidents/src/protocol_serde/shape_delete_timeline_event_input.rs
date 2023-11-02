@@ -3,11 +3,11 @@ pub fn ser_delete_timeline_event_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_timeline_event::DeleteTimelineEventInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("eventId").string(input.event_id.as_str());
+    if let Some(var_1) = &input.event_id {
+        object.key("eventId").string(var_1.as_str());
     }
-    {
-        object.key("incidentRecordArn").string(input.incident_record_arn.as_str());
+    if let Some(var_2) = &input.incident_record_arn {
+        object.key("incidentRecordArn").string(var_2.as_str());
     }
     Ok(())
 }

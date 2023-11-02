@@ -3,14 +3,14 @@ pub fn ser_terminate_recovery_instances_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        let mut array_1 = object.key("recoveryInstanceIDs").start_array();
-        for item_2 in &input.recovery_instance_ids {
+    if let Some(var_1) = &input.recovery_instance_ids {
+        let mut array_2 = object.key("recoveryInstanceIDs").start_array();
+        for item_3 in var_1 {
             {
-                array_1.value().string(item_2.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_1.finish();
+        array_2.finish();
     }
     Ok(())
 }

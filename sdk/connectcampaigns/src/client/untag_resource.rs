@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UntagResource`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::arn) / [`set_arn(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_arn):<br>required: **true**<br>Arn<br>
-    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Vec<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys):<br>required: **true**<br>List of tag keys.<br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_arn):<br>required: **true**<br>Arn<br>
+    ///   - [`tag_keys(impl Into<String>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::tag_keys) / [`set_tag_keys(Option<Vec<String>>)`](crate::operation::untag_resource::builders::UntagResourceFluentBuilder::set_tag_keys):<br>required: **true**<br>List of tag keys.<br>
     /// - On success, responds with [`UntagResourceOutput`](crate::operation::untag_resource::UntagResourceOutput)
     /// - On failure, responds with [`SdkError<UntagResourceError>`](crate::operation::untag_resource::UntagResourceError)
     pub fn untag_resource(&self) -> crate::operation::untag_resource::builders::UntagResourceFluentBuilder {

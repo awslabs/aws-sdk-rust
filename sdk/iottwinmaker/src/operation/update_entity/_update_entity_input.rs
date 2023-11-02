@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the entity.</p>
-    pub entity_id: ::std::string::String,
+    pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the entity.</p>
     pub entity_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the entity.</p>
@@ -18,14 +18,12 @@ pub struct UpdateEntityInput {
 }
 impl UpdateEntityInput {
     /// <p>The ID of the workspace that contains the entity.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>The ID of the entity.</p>
-    pub fn entity_id(&self) -> &str {
-        use std::ops::Deref;
-        self.entity_id.deref()
+    pub fn entity_id(&self) -> ::std::option::Option<&str> {
+        self.entity_id.as_deref()
     }
     /// <p>The name of the entity.</p>
     pub fn entity_name(&self) -> ::std::option::Option<&str> {
@@ -163,23 +161,10 @@ impl UpdateEntityInputBuilder {
         &self.parent_entity_update
     }
     /// Consumes the builder and constructs a [`UpdateEntityInput`](crate::operation::update_entity::UpdateEntityInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::update_entity::builders::UpdateEntityInputBuilder::workspace_id)
-    /// - [`entity_id`](crate::operation::update_entity::builders::UpdateEntityInputBuilder::entity_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_entity::UpdateEntityInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_entity::UpdateEntityInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building UpdateEntityInput",
-                )
-            })?,
-            entity_id: self.entity_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "entity_id",
-                    "entity_id was not specified but it is required when building UpdateEntityInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
+            entity_id: self.entity_id,
             entity_name: self.entity_name,
             description: self.description,
             component_updates: self.component_updates,

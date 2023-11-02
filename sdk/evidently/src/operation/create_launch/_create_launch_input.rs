@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLaunchInput {
     /// <p>The name or ARN of the project that you want to create the launch in.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name for the new launch.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the launch.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that define the traffic allocation percentages among the feature variations during each step of the launch.</p>
@@ -14,7 +14,7 @@ pub struct CreateLaunchInput {
     /// <p>An array of structures that define the metrics that will be used to monitor the launch performance.</p>
     pub metric_monitors: ::std::option::Option<::std::vec::Vec<crate::types::MetricMonitorConfig>>,
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
-    pub groups: ::std::vec::Vec<crate::types::LaunchGroupConfig>,
+    pub groups: ::std::option::Option<::std::vec::Vec<crate::types::LaunchGroupConfig>>,
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>Assigns one or more tags (key-value pairs) to the launch.</p>
@@ -26,14 +26,12 @@ pub struct CreateLaunchInput {
 }
 impl CreateLaunchInput {
     /// <p>The name or ARN of the project that you want to create the launch in.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name for the new launch.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>An optional description for the launch.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -50,9 +48,10 @@ impl CreateLaunchInput {
         self.metric_monitors.as_deref().unwrap_or_default()
     }
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.groups.is_none()`.
     pub fn groups(&self) -> &[crate::types::LaunchGroupConfig] {
-        use std::ops::Deref;
-        self.groups.deref()
+        self.groups.as_deref().unwrap_or_default()
     }
     /// <p>When Evidently assigns a particular user session to a launch, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the launch name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
@@ -233,33 +232,14 @@ impl CreateLaunchInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateLaunchInput`](crate::operation::create_launch::CreateLaunchInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::create_launch::builders::CreateLaunchInputBuilder::project)
-    /// - [`name`](crate::operation::create_launch::builders::CreateLaunchInputBuilder::name)
-    /// - [`groups`](crate::operation::create_launch::builders::CreateLaunchInputBuilder::groups)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_launch::CreateLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_launch::CreateLaunchInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building CreateLaunchInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateLaunchInput",
-                )
-            })?,
+            project: self.project,
+            name: self.name,
             description: self.description,
             scheduled_splits_config: self.scheduled_splits_config,
             metric_monitors: self.metric_monitors,
-            groups: self.groups.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "groups",
-                    "groups was not specified but it is required when building CreateLaunchInput",
-                )
-            })?,
+            groups: self.groups,
             randomization_salt: self.randomization_salt,
             tags: self.tags,
         })

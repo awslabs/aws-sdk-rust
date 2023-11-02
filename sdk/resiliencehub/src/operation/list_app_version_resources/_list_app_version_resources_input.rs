@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppVersionResourcesInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub app_arn: ::std::string::String,
+    pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The version of the application.</p>
-    pub app_version: ::std::string::String,
+    pub app_version: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a specific resolution.</p>
     pub resolution_id: ::std::option::Option<::std::string::String>,
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -16,14 +16,12 @@ pub struct ListAppVersionResourcesInput {
 }
 impl ListAppVersionResourcesInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+        self.app_arn.as_deref()
     }
     /// <p>The version of the application.</p>
-    pub fn app_version(&self) -> &str {
-        use std::ops::Deref;
-        self.app_version.deref()
+    pub fn app_version(&self) -> ::std::option::Option<&str> {
+        self.app_version.as_deref()
     }
     /// <p>The identifier for a specific resolution.</p>
     pub fn resolution_id(&self) -> ::std::option::Option<&str> {
@@ -129,9 +127,6 @@ impl ListAppVersionResourcesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAppVersionResourcesInput`](crate::operation::list_app_version_resources::ListAppVersionResourcesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_arn`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesInputBuilder::app_arn)
-    /// - [`app_version`](crate::operation::list_app_version_resources::builders::ListAppVersionResourcesInputBuilder::app_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -139,18 +134,8 @@ impl ListAppVersionResourcesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_app_version_resources::ListAppVersionResourcesInput {
-            app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_arn",
-                    "app_arn was not specified but it is required when building ListAppVersionResourcesInput",
-                )
-            })?,
-            app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_version",
-                    "app_version was not specified but it is required when building ListAppVersionResourcesInput",
-                )
-            })?,
+            app_arn: self.app_arn,
+            app_version: self.app_version,
             resolution_id: self.resolution_id,
             next_token: self.next_token,
             max_results: self.max_results,

@@ -8,7 +8,7 @@ pub struct ListAppComponentCompliancesInput {
     /// <p>Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub assessment_arn: ::std::string::String,
+    pub assessment_arn: ::std::option::Option<::std::string::String>,
 }
 impl ListAppComponentCompliancesInput {
     /// <p>Null, or the token from a previous call to get the next set of results.</p>
@@ -20,9 +20,8 @@ impl ListAppComponentCompliancesInput {
         self.max_results
     }
     /// <p>Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn assessment_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.assessment_arn.deref()
+    pub fn assessment_arn(&self) -> ::std::option::Option<&str> {
+        self.assessment_arn.as_deref()
     }
 }
 impl ListAppComponentCompliancesInput {
@@ -85,8 +84,6 @@ impl ListAppComponentCompliancesInputBuilder {
         &self.assessment_arn
     }
     /// Consumes the builder and constructs a [`ListAppComponentCompliancesInput`](crate::operation::list_app_component_compliances::ListAppComponentCompliancesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`assessment_arn`](crate::operation::list_app_component_compliances::builders::ListAppComponentCompliancesInputBuilder::assessment_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -96,12 +93,7 @@ impl ListAppComponentCompliancesInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_app_component_compliances::ListAppComponentCompliancesInput {
             next_token: self.next_token,
             max_results: self.max_results,
-            assessment_arn: self.assessment_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "assessment_arn",
-                    "assessment_arn was not specified but it is required when building ListAppComponentCompliancesInput",
-                )
-            })?,
+            assessment_arn: self.assessment_arn,
         })
     }
 }

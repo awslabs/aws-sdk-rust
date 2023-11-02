@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEnvironment`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_identifier(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::environment_identifier) / [`set_environment_identifier(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_environment_identifier):<br>required: **true**<br><p>The ID of the environment.</p><br>
+    ///   - [`environment_identifier(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::environment_identifier) / [`set_environment_identifier(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_environment_identifier):<br>required: **true**<br><p>The ID of the environment.</p><br>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::name): <p>The name of the environment.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::arn): <p>The Amazon Resource Name (ARN) of the environment.</p>

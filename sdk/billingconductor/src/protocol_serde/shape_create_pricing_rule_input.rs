@@ -15,39 +15,39 @@ pub fn ser_create_pricing_rule_input(
             ::aws_smithy_types::Number::Float((*var_3).into()),
         );
     }
-    {
-        object.key("Name").string(input.name.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("Name").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.operation {
-        object.key("Operation").string(var_4.as_str());
+    if let Some(var_5) = &input.operation {
+        object.key("Operation").string(var_5.as_str());
     }
-    {
-        object.key("Scope").string(input.scope.as_str());
+    if let Some(var_6) = &input.scope {
+        object.key("Scope").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.service {
-        object.key("Service").string(var_5.as_str());
+    if let Some(var_7) = &input.service {
+        object.key("Service").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.tags {
+    if let Some(var_8) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_7 = object.key("Tags").start_object();
-        for (key_8, value_9) in var_6 {
+        let mut object_9 = object.key("Tags").start_object();
+        for (key_10, value_11) in var_8 {
             {
-                object_7.key(key_8.as_str()).string(value_9.as_str());
+                object_9.key(key_10.as_str()).string(value_11.as_str());
             }
         }
-        object_7.finish();
+        object_9.finish();
     }
-    if let Some(var_10) = &input.tiering {
+    if let Some(var_12) = &input.tiering {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("Tiering").start_object();
-        crate::protocol_serde::shape_create_tiering_input::ser_create_tiering_input(&mut object_11, var_10)?;
-        object_11.finish();
+        let mut object_13 = object.key("Tiering").start_object();
+        crate::protocol_serde::shape_create_tiering_input::ser_create_tiering_input(&mut object_13, var_12)?;
+        object_13.finish();
     }
-    {
-        object.key("Type").string(input.r#type.as_str());
+    if let Some(var_14) = &input.r#type {
+        object.key("Type").string(var_14.as_str());
     }
-    if let Some(var_12) = &input.usage_type {
-        object.key("UsageType").string(var_12.as_str());
+    if let Some(var_15) = &input.usage_type {
+        object.key("UsageType").string(var_15.as_str());
     }
     Ok(())
 }

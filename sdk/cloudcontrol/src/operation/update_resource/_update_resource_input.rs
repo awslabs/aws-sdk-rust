@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateResourceInput {
     /// <p>The name of the resource type.</p>
-    pub type_name: ::std::string::String,
+    pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
     pub type_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
@@ -20,15 +20,14 @@ pub struct UpdateResourceInput {
     /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
     /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub identifier: ::std::string::String,
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub patch_document: ::std::string::String,
+    pub patch_document: ::std::option::Option<::std::string::String>,
 }
 impl UpdateResourceInput {
     /// <p>The name of the resource type.</p>
-    pub fn type_name(&self) -> &str {
-        use std::ops::Deref;
-        self.type_name.deref()
+    pub fn type_name(&self) -> ::std::option::Option<&str> {
+        self.type_name.as_deref()
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
     pub fn type_version_id(&self) -> ::std::option::Option<&str> {
@@ -51,14 +50,12 @@ impl UpdateResourceInput {
     /// <p>You can specify the primary identifier, or any secondary identifier defined for the resource type in its resource schema. You can only specify one identifier. Primary identifiers can be specified as a string or JSON; secondary identifiers must be specified as JSON.</p>
     /// <p>For compound primary identifiers (that is, one that consists of multiple resource properties strung together), to specify the primary identifier as a string, list the property values <i>in the order they are specified</i> in the primary identifier definition, separated by <code>|</code>.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-identifier.html">Identifying resources</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
+        self.identifier.as_deref()
     }
     /// <p>A JavaScript Object Notation (JSON) document listing the patch operations that represent the updates to apply to the current resource properties. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-update.html#resource-operations-update-patch">Composing the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>
-    pub fn patch_document(&self) -> &str {
-        use std::ops::Deref;
-        self.patch_document.deref()
+    pub fn patch_document(&self) -> ::std::option::Option<&str> {
+        self.patch_document.as_deref()
     }
 }
 impl ::std::fmt::Debug for UpdateResourceInput {
@@ -204,35 +201,16 @@ impl UpdateResourceInputBuilder {
         &self.patch_document
     }
     /// Consumes the builder and constructs a [`UpdateResourceInput`](crate::operation::update_resource::UpdateResourceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`type_name`](crate::operation::update_resource::builders::UpdateResourceInputBuilder::type_name)
-    /// - [`identifier`](crate::operation::update_resource::builders::UpdateResourceInputBuilder::identifier)
-    /// - [`patch_document`](crate::operation::update_resource::builders::UpdateResourceInputBuilder::patch_document)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_resource::UpdateResourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_resource::UpdateResourceInput {
-            type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "type_name",
-                    "type_name was not specified but it is required when building UpdateResourceInput",
-                )
-            })?,
+            type_name: self.type_name,
             type_version_id: self.type_version_id,
             role_arn: self.role_arn,
             client_token: self.client_token,
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building UpdateResourceInput",
-                )
-            })?,
-            patch_document: self.patch_document.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "patch_document",
-                    "patch_document was not specified but it is required when building UpdateResourceInput",
-                )
-            })?,
+            identifier: self.identifier,
+            patch_document: self.patch_document,
         })
     }
 }

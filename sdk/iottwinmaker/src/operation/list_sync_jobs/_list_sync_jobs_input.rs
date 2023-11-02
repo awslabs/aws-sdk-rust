@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSyncJobsInput {
     /// <p>The ID of the workspace that contains the sync job.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 50.</p>
     /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -13,9 +13,8 @@ pub struct ListSyncJobsInput {
 }
 impl ListSyncJobsInput {
     /// <p>The ID of the workspace that contains the sync job.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>The maximum number of results to return at one time. The default is 50.</p>
     /// <p>Valid Range: Minimum value of 0. Maximum value of 200.</p>
@@ -90,18 +89,11 @@ impl ListSyncJobsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListSyncJobsInput`](crate::operation::list_sync_jobs::ListSyncJobsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::list_sync_jobs::builders::ListSyncJobsInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_sync_jobs::ListSyncJobsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_sync_jobs::ListSyncJobsInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building ListSyncJobsInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
             max_results: self.max_results,
             next_token: self.next_token,
         })

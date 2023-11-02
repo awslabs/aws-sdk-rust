@@ -4,27 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template.</p>
-    pub template_name: ::std::string::String,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The environment template major version to delete.</p>
-    pub major_version: ::std::string::String,
+    pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>The environment template minor version to delete.</p>
-    pub minor_version: ::std::string::String,
+    pub minor_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEnvironmentTemplateVersionInput {
     /// <p>The name of the environment template.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
+        self.template_name.as_deref()
     }
     /// <p>The environment template major version to delete.</p>
-    pub fn major_version(&self) -> &str {
-        use std::ops::Deref;
-        self.major_version.deref()
+    pub fn major_version(&self) -> ::std::option::Option<&str> {
+        self.major_version.as_deref()
     }
     /// <p>The environment template minor version to delete.</p>
-    pub fn minor_version(&self) -> &str {
-        use std::ops::Deref;
-        self.minor_version.deref()
+    pub fn minor_version(&self) -> ::std::option::Option<&str> {
+        self.minor_version.as_deref()
     }
 }
 impl DeleteEnvironmentTemplateVersionInput {
@@ -89,10 +86,6 @@ impl DeleteEnvironmentTemplateVersionInputBuilder {
         &self.minor_version
     }
     /// Consumes the builder and constructs a [`DeleteEnvironmentTemplateVersionInput`](crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`template_name`](crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder::template_name)
-    /// - [`major_version`](crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder::major_version)
-    /// - [`minor_version`](crate::operation::delete_environment_template_version::builders::DeleteEnvironmentTemplateVersionInputBuilder::minor_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -101,24 +94,9 @@ impl DeleteEnvironmentTemplateVersionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionInput {
-                template_name: self.template_name.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "template_name",
-                        "template_name was not specified but it is required when building DeleteEnvironmentTemplateVersionInput",
-                    )
-                })?,
-                major_version: self.major_version.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "major_version",
-                        "major_version was not specified but it is required when building DeleteEnvironmentTemplateVersionInput",
-                    )
-                })?,
-                minor_version: self.minor_version.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "minor_version",
-                        "minor_version was not specified but it is required when building DeleteEnvironmentTemplateVersionInput",
-                    )
-                })?,
+                template_name: self.template_name,
+                major_version: self.major_version,
+                minor_version: self.minor_version,
             },
         )
     }

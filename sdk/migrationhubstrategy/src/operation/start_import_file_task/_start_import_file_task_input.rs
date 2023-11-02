@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartImportFileTaskInput {
     /// <p> A descriptive name for the request. </p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
-    pub s3_bucket: ::std::string::String,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub s3_key: ::std::string::String,
+    pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub data_source_type: ::std::option::Option<crate::types::DataSourceType>,
     /// <p>Groups the resources in the import file together with a unique name. This ID can be as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>. </p>
@@ -18,19 +18,16 @@ pub struct StartImportFileTaskInput {
 }
 impl StartImportFileTaskInput {
     /// <p> A descriptive name for the request. </p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p> The S3 bucket where the import file is located. The bucket name is required to begin with <code>migrationhub-strategy-</code>.</p>
-    pub fn s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket.deref()
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+        self.s3_bucket.as_deref()
     }
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub fn s3_key(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_key.deref()
+    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+        self.s3_key.as_deref()
     }
     /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub fn data_source_type(&self) -> ::std::option::Option<&crate::types::DataSourceType> {
@@ -160,33 +157,14 @@ impl StartImportFileTaskInputBuilder {
         &self.s3bucket_for_report_data
     }
     /// Consumes the builder and constructs a [`StartImportFileTaskInput`](crate::operation::start_import_file_task::StartImportFileTaskInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder::name)
-    /// - [`s3_bucket`](crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder::s3_bucket)
-    /// - [`s3_key`](crate::operation::start_import_file_task::builders::StartImportFileTaskInputBuilder::s3_key)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_import_file_task::StartImportFileTaskInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_import_file_task::StartImportFileTaskInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building StartImportFileTaskInput",
-                )
-            })?,
-            s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "s3_bucket",
-                    "s3_bucket was not specified but it is required when building StartImportFileTaskInput",
-                )
-            })?,
-            s3_key: self.s3_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "s3_key",
-                    "s3_key was not specified but it is required when building StartImportFileTaskInput",
-                )
-            })?,
+            name: self.name,
+            s3_bucket: self.s3_bucket,
+            s3_key: self.s3_key,
             data_source_type: self.data_source_type,
             group_id: self.group_id,
             s3bucket_for_report_data: self.s3bucket_for_report_data,

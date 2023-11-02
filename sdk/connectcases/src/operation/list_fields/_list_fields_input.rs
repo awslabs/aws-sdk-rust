@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFieldsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -12,9 +12,8 @@ pub struct ListFieldsInput {
 }
 impl ListFieldsInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -85,16 +84,9 @@ impl ListFieldsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFieldsInput`](crate::operation::list_fields::ListFieldsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::list_fields::builders::ListFieldsInputBuilder::domain_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_fields::ListFieldsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_fields::ListFieldsInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building ListFieldsInput",
-                )
-            })?,
+            domain_id: self.domain_id,
             max_results: self.max_results,
             next_token: self.next_token,
         })

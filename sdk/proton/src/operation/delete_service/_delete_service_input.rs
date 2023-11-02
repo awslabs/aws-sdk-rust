@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceInput {
     /// <p>The name of the service to delete.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceInput {
     /// <p>The name of the service to delete.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl DeleteServiceInput {
@@ -43,18 +42,9 @@ impl DeleteServiceInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DeleteServiceInput`](crate::operation::delete_service::DeleteServiceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::delete_service::builders::DeleteServiceInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_service::DeleteServiceInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DeleteServiceInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_service::DeleteServiceInput { name: self.name })
     }
 }

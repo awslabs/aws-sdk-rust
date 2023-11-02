@@ -3,55 +3,55 @@ pub fn ser_send_text_message_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::send_text_message::SendTextMessageInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("DestinationPhoneNumber").string(input.destination_phone_number.as_str());
+    if let Some(var_1) = &input.destination_phone_number {
+        object.key("DestinationPhoneNumber").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.origination_identity {
-        object.key("OriginationIdentity").string(var_1.as_str());
+    if let Some(var_2) = &input.origination_identity {
+        object.key("OriginationIdentity").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.message_body {
-        object.key("MessageBody").string(var_2.as_str());
+    if let Some(var_3) = &input.message_body {
+        object.key("MessageBody").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.message_type {
-        object.key("MessageType").string(var_3.as_str());
+    if let Some(var_4) = &input.message_type {
+        object.key("MessageType").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.keyword {
-        object.key("Keyword").string(var_4.as_str());
+    if let Some(var_5) = &input.keyword {
+        object.key("Keyword").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.configuration_set_name {
-        object.key("ConfigurationSetName").string(var_5.as_str());
+    if let Some(var_6) = &input.configuration_set_name {
+        object.key("ConfigurationSetName").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.max_price {
-        object.key("MaxPrice").string(var_6.as_str());
+    if let Some(var_7) = &input.max_price {
+        object.key("MaxPrice").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.time_to_live {
+    if let Some(var_8) = &input.time_to_live {
         object.key("TimeToLive").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_7).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_8) = &input.context {
+    if let Some(var_9) = &input.context {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("Context").start_object();
-        for (key_10, value_11) in var_8 {
+        let mut object_10 = object.key("Context").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_9.key(key_10.as_str()).string(value_11.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_9.finish();
+        object_10.finish();
     }
-    if let Some(var_12) = &input.destination_country_parameters {
+    if let Some(var_13) = &input.destination_country_parameters {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("DestinationCountryParameters").start_object();
-        for (key_14, value_15) in var_12 {
+        let mut object_14 = object.key("DestinationCountryParameters").start_object();
+        for (key_15, value_16) in var_13 {
             {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
+                object_14.key(key_15.as_str()).string(value_16.as_str());
             }
         }
-        object_13.finish();
+        object_14.finish();
     }
-    if input.dry_run {
-        object.key("DryRun").boolean(input.dry_run);
+    if let Some(var_17) = &input.dry_run {
+        object.key("DryRun").boolean(*var_17);
     }
     Ok(())
 }

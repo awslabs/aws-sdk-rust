@@ -15,27 +15,27 @@ pub fn ser_create_network_site_input(
     if let Some(var_4) = &input.description {
         object.key("description").string(var_4.as_str());
     }
-    {
-        object.key("networkArn").string(input.network_arn.as_str());
+    if let Some(var_5) = &input.network_arn {
+        object.key("networkArn").string(var_5.as_str());
     }
-    {
-        object.key("networkSiteName").string(input.network_site_name.as_str());
+    if let Some(var_6) = &input.network_site_name {
+        object.key("networkSiteName").string(var_6.as_str());
     }
-    if let Some(var_5) = &input.pending_plan {
+    if let Some(var_7) = &input.pending_plan {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("pendingPlan").start_object();
-        crate::protocol_serde::shape_site_plan::ser_site_plan(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_8 = object.key("pendingPlan").start_object();
+        crate::protocol_serde::shape_site_plan::ser_site_plan(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_8.finish();
+        object_10.finish();
     }
     Ok(())
 }

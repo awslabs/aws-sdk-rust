@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A name for the template. It must be unique per domain.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Configuration of layouts associated to the template.</p>
@@ -18,14 +18,12 @@ pub struct CreateTemplateInput {
 }
 impl CreateTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>A name for the template. It must be unique per domain.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A brief description of the template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -158,25 +156,12 @@ impl CreateTemplateInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`CreateTemplateInput`](crate::operation::create_template::CreateTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::create_template::builders::CreateTemplateInputBuilder::domain_id)
-    /// - [`name`](crate::operation::create_template::builders::CreateTemplateInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_template::CreateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_template::CreateTemplateInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building CreateTemplateInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateTemplateInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            name: self.name,
             description: self.description,
             layout_configuration: self.layout_configuration,
             required_fields: self.required_fields,

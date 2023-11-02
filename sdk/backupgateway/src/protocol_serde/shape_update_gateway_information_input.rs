@@ -3,11 +3,11 @@ pub fn ser_update_gateway_information_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_gateway_information::UpdateGatewayInformationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("GatewayArn").string(input.gateway_arn.as_str());
+    if let Some(var_1) = &input.gateway_arn {
+        object.key("GatewayArn").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.gateway_display_name {
-        object.key("GatewayDisplayName").string(var_1.as_str());
+    if let Some(var_2) = &input.gateway_display_name {
+        object.key("GatewayDisplayName").string(var_2.as_str());
     }
     Ok(())
 }

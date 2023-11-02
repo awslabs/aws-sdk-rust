@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub collaboration_identifier: ::std::string::String,
+    pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the collaboration.</p>
@@ -12,9 +12,8 @@ pub struct UpdateCollaborationInput {
 }
 impl UpdateCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_identifier.deref()
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+        self.collaboration_identifier.as_deref()
     }
     /// <p>A human-readable identifier provided by the collaboration owner. Display names are not unique.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -85,19 +84,12 @@ impl UpdateCollaborationInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateCollaborationInput`](crate::operation::update_collaboration::UpdateCollaborationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`collaboration_identifier`](crate::operation::update_collaboration::builders::UpdateCollaborationInputBuilder::collaboration_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_collaboration::UpdateCollaborationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_collaboration::UpdateCollaborationInput {
-            collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "collaboration_identifier",
-                    "collaboration_identifier was not specified but it is required when building UpdateCollaborationInput",
-                )
-            })?,
+            collaboration_identifier: self.collaboration_identifier,
             name: self.name,
             description: self.description,
         })

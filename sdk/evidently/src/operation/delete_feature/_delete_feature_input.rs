@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteFeatureInput {
     /// <p>The name or ARN of the project that contains the feature to delete.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature to delete.</p>
-    pub feature: ::std::string::String,
+    pub feature: ::std::option::Option<::std::string::String>,
 }
 impl DeleteFeatureInput {
     /// <p>The name or ARN of the project that contains the feature to delete.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name of the feature to delete.</p>
-    pub fn feature(&self) -> &str {
-        use std::ops::Deref;
-        self.feature.deref()
+    pub fn feature(&self) -> ::std::option::Option<&str> {
+        self.feature.as_deref()
     }
 }
 impl DeleteFeatureInput {
@@ -66,25 +64,12 @@ impl DeleteFeatureInputBuilder {
         &self.feature
     }
     /// Consumes the builder and constructs a [`DeleteFeatureInput`](crate::operation::delete_feature::DeleteFeatureInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::delete_feature::builders::DeleteFeatureInputBuilder::project)
-    /// - [`feature`](crate::operation::delete_feature::builders::DeleteFeatureInputBuilder::feature)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_feature::DeleteFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_feature::DeleteFeatureInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building DeleteFeatureInput",
-                )
-            })?,
-            feature: self.feature.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "feature",
-                    "feature was not specified but it is required when building DeleteFeatureInput",
-                )
-            })?,
+            project: self.project,
+            feature: self.feature,
         })
     }
 }

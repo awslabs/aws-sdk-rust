@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExchangeCodeForTokenInput {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    pub provider: crate::types::TokenProviders,
+    pub provider: ::std::option::Option<crate::types::TokenProviders>,
     /// <p>Describes the configuration of the request.</p>
     pub request: ::std::option::Option<crate::types::ExchangeCodeForTokenRequestBody>,
 }
 impl ExchangeCodeForTokenInput {
     /// <p>The third-party provider for the token. The only valid value is <code>figma</code>.</p>
-    pub fn provider(&self) -> &crate::types::TokenProviders {
-        &self.provider
+    pub fn provider(&self) -> ::std::option::Option<&crate::types::TokenProviders> {
+        self.provider.as_ref()
     }
     /// <p>Describes the configuration of the request.</p>
     pub fn request(&self) -> ::std::option::Option<&crate::types::ExchangeCodeForTokenRequestBody> {
@@ -64,19 +64,12 @@ impl ExchangeCodeForTokenInputBuilder {
         &self.request
     }
     /// Consumes the builder and constructs a [`ExchangeCodeForTokenInput`](crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`provider`](crate::operation::exchange_code_for_token::builders::ExchangeCodeForTokenInputBuilder::provider)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::exchange_code_for_token::ExchangeCodeForTokenInput {
-            provider: self.provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "provider",
-                    "provider was not specified but it is required when building ExchangeCodeForTokenInput",
-                )
-            })?,
+            provider: self.provider,
             request: self.request,
         })
     }

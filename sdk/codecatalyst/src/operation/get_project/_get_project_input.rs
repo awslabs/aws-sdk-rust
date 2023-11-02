@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetProjectInput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::string::String,
+    pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetProjectInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> &str {
-        use std::ops::Deref;
-        self.space_name.deref()
+    pub fn space_name(&self) -> ::std::option::Option<&str> {
+        self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl GetProjectInput {
@@ -66,23 +64,10 @@ impl GetProjectInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetProjectInput`](crate::operation::get_project::GetProjectInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`space_name`](crate::operation::get_project::builders::GetProjectInputBuilder::space_name)
-    /// - [`name`](crate::operation::get_project::builders::GetProjectInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_project::GetProjectInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_project::GetProjectInput {
-            space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "space_name",
-                    "space_name was not specified but it is required when building GetProjectInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetProjectInput",
-                )
-            })?,
+            space_name: self.space_name,
+            name: self.name,
         })
     }
 }

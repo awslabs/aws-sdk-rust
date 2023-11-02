@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetJobRunInput {
     /// <p>The ID of the application on which the job run is submitted.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the job run.</p>
-    pub job_run_id: ::std::string::String,
+    pub job_run_id: ::std::option::Option<::std::string::String>,
 }
 impl GetJobRunInput {
     /// <p>The ID of the application on which the job run is submitted.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>The ID of the job run.</p>
-    pub fn job_run_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_run_id.deref()
+    pub fn job_run_id(&self) -> ::std::option::Option<&str> {
+        self.job_run_id.as_deref()
     }
 }
 impl GetJobRunInput {
@@ -66,23 +64,10 @@ impl GetJobRunInputBuilder {
         &self.job_run_id
     }
     /// Consumes the builder and constructs a [`GetJobRunInput`](crate::operation::get_job_run::GetJobRunInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::get_job_run::builders::GetJobRunInputBuilder::application_id)
-    /// - [`job_run_id`](crate::operation::get_job_run::builders::GetJobRunInputBuilder::job_run_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_job_run::GetJobRunInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_job_run::GetJobRunInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building GetJobRunInput",
-                )
-            })?,
-            job_run_id: self.job_run_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "job_run_id",
-                    "job_run_id was not specified but it is required when building GetJobRunInput",
-                )
-            })?,
+            application_id: self.application_id,
+            job_run_id: self.job_run_id,
         })
     }
 }

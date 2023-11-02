@@ -181,6 +181,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetServiceRe
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.environment_identifier;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field("environment_identifier", "cannot be empty or unset")
+                })?;
                 let environment_identifier = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_identifier.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -189,6 +192,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetServiceRe
                     ));
                 }
                 let input_2 = &_input.application_identifier;
+                let input_2 = input_2.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field("application_identifier", "cannot be empty or unset")
+                })?;
                 let application_identifier = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if application_identifier.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -197,6 +203,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetServiceRe
                     ));
                 }
                 let input_3 = &_input.service_identifier;
+                let input_3 = input_3.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field("service_identifier", "cannot be empty or unset")
+                })?;
                 let service_identifier = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if service_identifier.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

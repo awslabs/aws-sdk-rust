@@ -6,15 +6,15 @@ pub struct CreateProgramInput {
     /// <p>The ad break configuration settings.</p>
     pub ad_breaks: ::std::option::Option<::std::vec::Vec<crate::types::AdBreak>>,
     /// <p>The name of the channel for this Program.</p>
-    pub channel_name: ::std::string::String,
+    pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the LiveSource for this Program.</p>
     pub live_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Program.</p>
-    pub program_name: ::std::string::String,
+    pub program_name: ::std::option::Option<::std::string::String>,
     /// <p>The schedule configuration settings.</p>
     pub schedule_configuration: ::std::option::Option<crate::types::ScheduleConfiguration>,
     /// <p>The name of the source location.</p>
-    pub source_location_name: ::std::string::String,
+    pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The name that's used to refer to a VOD source.</p>
     pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
@@ -26,27 +26,24 @@ impl CreateProgramInput {
         self.ad_breaks.as_deref().unwrap_or_default()
     }
     /// <p>The name of the channel for this Program.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
     /// <p>The name of the LiveSource for this Program.</p>
     pub fn live_source_name(&self) -> ::std::option::Option<&str> {
         self.live_source_name.as_deref()
     }
     /// <p>The name of the Program.</p>
-    pub fn program_name(&self) -> &str {
-        use std::ops::Deref;
-        self.program_name.deref()
+    pub fn program_name(&self) -> ::std::option::Option<&str> {
+        self.program_name.as_deref()
     }
     /// <p>The schedule configuration settings.</p>
     pub fn schedule_configuration(&self) -> ::std::option::Option<&crate::types::ScheduleConfiguration> {
         self.schedule_configuration.as_ref()
     }
     /// <p>The name of the source location.</p>
-    pub fn source_location_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_location_name.deref()
+    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+        self.source_location_name.as_deref()
     }
     /// <p>The name that's used to refer to a VOD source.</p>
     pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
@@ -182,35 +179,16 @@ impl CreateProgramInputBuilder {
         &self.vod_source_name
     }
     /// Consumes the builder and constructs a [`CreateProgramInput`](crate::operation::create_program::CreateProgramInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_name`](crate::operation::create_program::builders::CreateProgramInputBuilder::channel_name)
-    /// - [`program_name`](crate::operation::create_program::builders::CreateProgramInputBuilder::program_name)
-    /// - [`source_location_name`](crate::operation::create_program::builders::CreateProgramInputBuilder::source_location_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_program::CreateProgramInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_program::CreateProgramInput {
             ad_breaks: self.ad_breaks,
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building CreateProgramInput",
-                )
-            })?,
+            channel_name: self.channel_name,
             live_source_name: self.live_source_name,
-            program_name: self.program_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "program_name",
-                    "program_name was not specified but it is required when building CreateProgramInput",
-                )
-            })?,
+            program_name: self.program_name,
             schedule_configuration: self.schedule_configuration,
-            source_location_name: self.source_location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_location_name",
-                    "source_location_name was not specified but it is required when building CreateProgramInput",
-                )
-            })?,
+            source_location_name: self.source_location_name,
             vod_source_name: self.vod_source_name,
         })
     }

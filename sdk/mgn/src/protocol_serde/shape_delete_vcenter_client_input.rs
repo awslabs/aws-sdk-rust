@@ -3,8 +3,8 @@ pub fn ser_delete_vcenter_client_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_vcenter_client::DeleteVcenterClientInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("vcenterClientID").string(input.vcenter_client_id.as_str());
+    if let Some(var_1) = &input.vcenter_client_id {
+        object.key("vcenterClientID").string(var_1.as_str());
     }
     Ok(())
 }

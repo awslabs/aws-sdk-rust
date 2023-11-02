@@ -3,42 +3,42 @@ pub fn ser_create_quantum_task_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_quantum_task::CreateQuantumTaskInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("action").string(input.action.as_str());
+    if let Some(var_1) = &input.action {
+        object.key("action").string(var_1.as_str());
     }
-    {
-        object.key("clientToken").string(input.client_token.as_str());
+    if let Some(var_2) = &input.client_token {
+        object.key("clientToken").string(var_2.as_str());
     }
-    {
-        object.key("deviceArn").string(input.device_arn.as_str());
+    if let Some(var_3) = &input.device_arn {
+        object.key("deviceArn").string(var_3.as_str());
     }
-    if let Some(var_1) = &input.device_parameters {
-        object.key("deviceParameters").string(var_1.as_str());
+    if let Some(var_4) = &input.device_parameters {
+        object.key("deviceParameters").string(var_4.as_str());
     }
-    if let Some(var_2) = &input.job_token {
-        object.key("jobToken").string(var_2.as_str());
+    if let Some(var_5) = &input.job_token {
+        object.key("jobToken").string(var_5.as_str());
     }
-    {
-        object.key("outputS3Bucket").string(input.output_s3_bucket.as_str());
+    if let Some(var_6) = &input.output_s3_bucket {
+        object.key("outputS3Bucket").string(var_6.as_str());
     }
-    {
-        object.key("outputS3KeyPrefix").string(input.output_s3_key_prefix.as_str());
+    if let Some(var_7) = &input.output_s3_key_prefix {
+        object.key("outputS3KeyPrefix").string(var_7.as_str());
     }
-    {
+    if let Some(var_8) = &input.shots {
         object.key("shots").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.shots).into()),
+            ::aws_smithy_types::Number::NegInt((*var_8).into()),
         );
     }
-    if let Some(var_3) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("tags").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_4.finish();
+        object_10.finish();
     }
     Ok(())
 }

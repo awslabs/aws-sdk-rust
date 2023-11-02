@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of instance for the runtime environment.</p>
-    pub instance_type: ::std::string::String,
+    pub instance_type: ::std::option::Option<::std::string::String>,
     /// <p>The description of the runtime environment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The engine type for the runtime environment.</p>
-    pub engine_type: crate::types::EngineType,
+    pub engine_type: ::std::option::Option<crate::types::EngineType>,
     /// <p>The version of the engine type for the runtime environment.</p>
     pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The list of subnets associated with the VPC for this runtime environment.</p>
@@ -20,7 +20,7 @@ pub struct CreateEnvironmentInput {
     /// <p>Optional. The storage configurations for this runtime environment.</p>
     pub storage_configurations: ::std::option::Option<::std::vec::Vec<crate::types::StorageConfiguration>>,
     /// <p>Specifies whether the runtime environment is publicly accessible.</p>
-    pub publicly_accessible: bool,
+    pub publicly_accessible: ::std::option::Option<bool>,
     /// <p>The details of a high availability configuration for this runtime environment.</p>
     pub high_availability_config: ::std::option::Option<crate::types::HighAvailabilityConfig>,
     /// <p>The tags for the runtime environment.</p>
@@ -34,22 +34,20 @@ pub struct CreateEnvironmentInput {
 }
 impl CreateEnvironmentInput {
     /// <p>The name of the runtime environment. Must be unique within the account.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The type of instance for the runtime environment.</p>
-    pub fn instance_type(&self) -> &str {
-        use std::ops::Deref;
-        self.instance_type.deref()
+    pub fn instance_type(&self) -> ::std::option::Option<&str> {
+        self.instance_type.as_deref()
     }
     /// <p>The description of the runtime environment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The engine type for the runtime environment.</p>
-    pub fn engine_type(&self) -> &crate::types::EngineType {
-        &self.engine_type
+    pub fn engine_type(&self) -> ::std::option::Option<&crate::types::EngineType> {
+        self.engine_type.as_ref()
     }
     /// <p>The version of the engine type for the runtime environment.</p>
     pub fn engine_version(&self) -> ::std::option::Option<&str> {
@@ -74,7 +72,7 @@ impl CreateEnvironmentInput {
         self.storage_configurations.as_deref().unwrap_or_default()
     }
     /// <p>Specifies whether the runtime environment is publicly accessible.</p>
-    pub fn publicly_accessible(&self) -> bool {
+    pub fn publicly_accessible(&self) -> ::std::option::Option<bool> {
         self.publicly_accessible
     }
     /// <p>The details of a high availability configuration for this runtime environment.</p>
@@ -349,38 +347,19 @@ impl CreateEnvironmentInputBuilder {
         &self.kms_key_id
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::name)
-    /// - [`instance_type`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::instance_type)
-    /// - [`engine_type`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::engine_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateEnvironmentInput",
-                )
-            })?,
-            instance_type: self.instance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "instance_type",
-                    "instance_type was not specified but it is required when building CreateEnvironmentInput",
-                )
-            })?,
+            name: self.name,
+            instance_type: self.instance_type,
             description: self.description,
-            engine_type: self.engine_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "engine_type",
-                    "engine_type was not specified but it is required when building CreateEnvironmentInput",
-                )
-            })?,
+            engine_type: self.engine_type,
             engine_version: self.engine_version,
             subnet_ids: self.subnet_ids,
             security_group_ids: self.security_group_ids,
             storage_configurations: self.storage_configurations,
-            publicly_accessible: self.publicly_accessible.unwrap_or_default(),
+            publicly_accessible: self.publicly_accessible,
             high_availability_config: self.high_availability_config,
             tags: self.tags,
             preferred_maintenance_window: self.preferred_maintenance_window,

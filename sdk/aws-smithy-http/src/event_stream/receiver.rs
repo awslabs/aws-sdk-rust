@@ -11,7 +11,7 @@ use aws_smithy_eventstream::frame::{
 use bytes::Buf;
 use bytes::Bytes;
 use bytes_utils::SegmentedBuf;
-use hyper::body::HttpBody;
+use http_body::Body;
 use std::error::Error as StdError;
 use std::fmt;
 use std::marker::PhantomData;

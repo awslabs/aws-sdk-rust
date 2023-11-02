@@ -5,13 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeContactInput {
     /// <p>UUID of a contact.</p>
-    pub contact_id: ::std::string::String,
+    pub contact_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeContactInput {
     /// <p>UUID of a contact.</p>
-    pub fn contact_id(&self) -> &str {
-        use std::ops::Deref;
-        self.contact_id.deref()
+    pub fn contact_id(&self) -> ::std::option::Option<&str> {
+        self.contact_id.as_deref()
     }
 }
 impl DescribeContactInput {
@@ -44,18 +43,9 @@ impl DescribeContactInputBuilder {
         &self.contact_id
     }
     /// Consumes the builder and constructs a [`DescribeContactInput`](crate::operation::describe_contact::DescribeContactInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`contact_id`](crate::operation::describe_contact::builders::DescribeContactInputBuilder::contact_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_contact::DescribeContactInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_contact::DescribeContactInput {
-            contact_id: self.contact_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "contact_id",
-                    "contact_id was not specified but it is required when building DescribeContactInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::describe_contact::DescribeContactInput { contact_id: self.contact_id })
     }
 }

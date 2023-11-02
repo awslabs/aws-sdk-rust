@@ -22,17 +22,17 @@ pub fn ser_create_chat_token_input(
         }
         array_6.finish();
     }
-    {
-        object.key("roomIdentifier").string(input.room_identifier.as_str());
+    if let Some(var_8) = &input.room_identifier {
+        object.key("roomIdentifier").string(var_8.as_str());
     }
-    if input.session_duration_in_minutes != 0 {
+    if let Some(var_9) = &input.session_duration_in_minutes {
         object.key("sessionDurationInMinutes").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.session_duration_in_minutes).into()),
+            ::aws_smithy_types::Number::NegInt((*var_9).into()),
         );
     }
-    {
-        object.key("userId").string(input.user_id.as_str());
+    if let Some(var_10) = &input.user_id {
+        object.key("userId").string(var_10.as_str());
     }
     Ok(())
 }

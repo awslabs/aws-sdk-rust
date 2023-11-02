@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the watchlist to be updated.</p>
-    pub watchlist_id: ::std::string::String,
+    pub watchlist_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the watchlist.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description about this watchlist.</p>
@@ -14,14 +14,12 @@ pub struct UpdateWatchlistInput {
 }
 impl UpdateWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The identifier of the watchlist to be updated.</p>
-    pub fn watchlist_id(&self) -> &str {
-        use std::ops::Deref;
-        self.watchlist_id.deref()
+    pub fn watchlist_id(&self) -> ::std::option::Option<&str> {
+        self.watchlist_id.as_deref()
     }
     /// <p>The name of the watchlist.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -118,25 +116,12 @@ impl UpdateWatchlistInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateWatchlistInput`](crate::operation::update_watchlist::UpdateWatchlistInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::update_watchlist::builders::UpdateWatchlistInputBuilder::domain_id)
-    /// - [`watchlist_id`](crate::operation::update_watchlist::builders::UpdateWatchlistInputBuilder::watchlist_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_watchlist::UpdateWatchlistInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_watchlist::UpdateWatchlistInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building UpdateWatchlistInput",
-                )
-            })?,
-            watchlist_id: self.watchlist_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "watchlist_id",
-                    "watchlist_id was not specified but it is required when building UpdateWatchlistInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            watchlist_id: self.watchlist_id,
             name: self.name,
             description: self.description,
         })

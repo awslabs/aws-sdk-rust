@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportDecoderManifestInput {
     /// <p> The name of the decoder manifest to import. </p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> The file to load into an Amazon Web Services account. </p>
-    pub network_file_definitions: ::std::vec::Vec<crate::types::NetworkFileDefinition>,
+    pub network_file_definitions: ::std::option::Option<::std::vec::Vec<crate::types::NetworkFileDefinition>>,
 }
 impl ImportDecoderManifestInput {
     /// <p> The name of the decoder manifest to import. </p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p> The file to load into an Amazon Web Services account. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_file_definitions.is_none()`.
     pub fn network_file_definitions(&self) -> &[crate::types::NetworkFileDefinition] {
-        use std::ops::Deref;
-        self.network_file_definitions.deref()
+        self.network_file_definitions.as_deref().unwrap_or_default()
     }
 }
 impl ImportDecoderManifestInput {
@@ -71,26 +71,13 @@ impl ImportDecoderManifestInputBuilder {
         &self.network_file_definitions
     }
     /// Consumes the builder and constructs a [`ImportDecoderManifestInput`](crate::operation::import_decoder_manifest::ImportDecoderManifestInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestInputBuilder::name)
-    /// - [`network_file_definitions`](crate::operation::import_decoder_manifest::builders::ImportDecoderManifestInputBuilder::network_file_definitions)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::import_decoder_manifest::ImportDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::import_decoder_manifest::ImportDecoderManifestInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ImportDecoderManifestInput",
-                )
-            })?,
-            network_file_definitions: self.network_file_definitions.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "network_file_definitions",
-                    "network_file_definitions was not specified but it is required when building ImportDecoderManifestInput",
-                )
-            })?,
+            name: self.name,
+            network_file_definitions: self.network_file_definitions,
         })
     }
 }

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetServiceSyncConfigInput {
     /// <p>The name of the service that you want to get the service sync configuration for.</p>
-    pub service_name: ::std::string::String,
+    pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl GetServiceSyncConfigInput {
     /// <p>The name of the service that you want to get the service sync configuration for.</p>
-    pub fn service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.service_name.deref()
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
+        self.service_name.as_deref()
     }
 }
 impl GetServiceSyncConfigInput {
@@ -43,19 +42,12 @@ impl GetServiceSyncConfigInputBuilder {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`GetServiceSyncConfigInput`](crate::operation::get_service_sync_config::GetServiceSyncConfigInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`service_name`](crate::operation::get_service_sync_config::builders::GetServiceSyncConfigInputBuilder::service_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_service_sync_config::GetServiceSyncConfigInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_service_sync_config::GetServiceSyncConfigInput {
-            service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_name",
-                    "service_name was not specified but it is required when building GetServiceSyncConfigInput",
-                )
-            })?,
+            service_name: self.service_name,
         })
     }
 }

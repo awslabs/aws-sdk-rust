@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateCollection`](crate::operation::update_collection::builders::UpdateCollectionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_collection::builders::UpdateCollectionFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::update_collection::builders::UpdateCollectionFluentBuilder::set_id):<br>required: **true**<br><p>The unique identifier of the collection.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::update_collection::builders::UpdateCollectionFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_collection::builders::UpdateCollectionFluentBuilder::set_id):<br>required: **true**<br><p>The unique identifier of the collection.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::update_collection::builders::UpdateCollectionFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_collection::builders::UpdateCollectionFluentBuilder::set_description):<br>required: **false**<br><p>A description of the collection.</p><br>
     ///   - [`client_token(impl Into<String>)`](crate::operation::update_collection::builders::UpdateCollectionFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_collection::builders::UpdateCollectionFluentBuilder::set_client_token):<br>required: **false**<br><p>Unique, case-sensitive identifier to ensure idempotency of the request.</p><br>
     /// - On success, responds with [`UpdateCollectionOutput`](crate::operation::update_collection::UpdateCollectionOutput) with field(s):

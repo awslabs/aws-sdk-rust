@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartTestInput {
     /// <p>Start Test for Source Server IDs.</p>
-    pub source_server_ids: ::std::vec::Vec<::std::string::String>,
+    pub source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Start Test by Tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Start Test for Account ID.</p>
@@ -12,9 +12,10 @@ pub struct StartTestInput {
 }
 impl StartTestInput {
     /// <p>Start Test for Source Server IDs.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_ids.is_none()`.
     pub fn source_server_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.source_server_ids.deref()
+        self.source_server_ids.as_deref().unwrap_or_default()
     }
     /// <p>Start Test by Tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -105,16 +106,9 @@ impl StartTestInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`StartTestInput`](crate::operation::start_test::StartTestInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_ids`](crate::operation::start_test::builders::StartTestInputBuilder::source_server_ids)
     pub fn build(self) -> ::std::result::Result<crate::operation::start_test::StartTestInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_test::StartTestInput {
-            source_server_ids: self.source_server_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_ids",
-                    "source_server_ids was not specified but it is required when building StartTestInput",
-                )
-            })?,
+            source_server_ids: self.source_server_ids,
             tags: self.tags,
             account_id: self.account_id,
         })

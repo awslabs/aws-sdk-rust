@@ -48,14 +48,14 @@ pub fn ser_search_place_index_for_text_input(
     if let Some(var_13) = &input.language {
         object.key("Language").string(var_13.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_14) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    {
-        object.key("Text").string(input.text.as_str());
+    if let Some(var_15) = &input.text {
+        object.key("Text").string(var_15.as_str());
     }
     Ok(())
 }

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct GetMapGlyphsInput {
     /// <p>The map resource associated with the glyph ﬁle.</p>
-    pub map_name: ::std::string::String,
+    pub map_name: ::std::option::Option<::std::string::String>,
     /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
     /// <ul>
@@ -29,17 +29,16 @@ pub struct GetMapGlyphsInput {
     /// </ul> <note>
     /// <p>The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p>
     /// </note>
-    pub font_stack: ::std::string::String,
+    pub font_stack: ::std::option::Option<::std::string::String>,
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
-    pub font_unicode_range: ::std::string::String,
+    pub font_unicode_range: ::std::option::Option<::std::string::String>,
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub key: ::std::option::Option<::std::string::String>,
 }
 impl GetMapGlyphsInput {
     /// <p>The map resource associated with the glyph ﬁle.</p>
-    pub fn map_name(&self) -> &str {
-        use std::ops::Deref;
-        self.map_name.deref()
+    pub fn map_name(&self) -> ::std::option::Option<&str> {
+        self.map_name.as_deref()
     }
     /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
     /// <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
@@ -65,14 +64,12 @@ impl GetMapGlyphsInput {
     /// </ul> <note>
     /// <p>The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p>
     /// </note>
-    pub fn font_stack(&self) -> &str {
-        use std::ops::Deref;
-        self.font_stack.deref()
+    pub fn font_stack(&self) -> ::std::option::Option<&str> {
+        self.font_stack.as_deref()
     }
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</p>
-    pub fn font_unicode_range(&self) -> &str {
-        use std::ops::Deref;
-        self.font_unicode_range.deref()
+    pub fn font_unicode_range(&self) -> ::std::option::Option<&str> {
+        self.font_unicode_range.as_deref()
     }
     /// <p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p>
     pub fn key(&self) -> ::std::option::Option<&str> {
@@ -235,32 +232,13 @@ impl GetMapGlyphsInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`GetMapGlyphsInput`](crate::operation::get_map_glyphs::GetMapGlyphsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`map_name`](crate::operation::get_map_glyphs::builders::GetMapGlyphsInputBuilder::map_name)
-    /// - [`font_stack`](crate::operation::get_map_glyphs::builders::GetMapGlyphsInputBuilder::font_stack)
-    /// - [`font_unicode_range`](crate::operation::get_map_glyphs::builders::GetMapGlyphsInputBuilder::font_unicode_range)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_map_glyphs::GetMapGlyphsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_map_glyphs::GetMapGlyphsInput {
-            map_name: self.map_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "map_name",
-                    "map_name was not specified but it is required when building GetMapGlyphsInput",
-                )
-            })?,
-            font_stack: self.font_stack.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "font_stack",
-                    "font_stack was not specified but it is required when building GetMapGlyphsInput",
-                )
-            })?,
-            font_unicode_range: self.font_unicode_range.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "font_unicode_range",
-                    "font_unicode_range was not specified but it is required when building GetMapGlyphsInput",
-                )
-            })?,
+            map_name: self.map_name,
+            font_stack: self.font_stack,
+            font_unicode_range: self.font_unicode_range,
             key: self.key,
         })
     }

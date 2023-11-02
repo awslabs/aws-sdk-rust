@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssessmentInput {
     /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssessmentInput {
     /// <p> The <code>assessmentid</code> returned by <code>StartAssessment</code>.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
 }
 impl GetAssessmentInput {
@@ -43,18 +42,9 @@ impl GetAssessmentInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetAssessmentInput`](crate::operation::get_assessment::GetAssessmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::get_assessment::builders::GetAssessmentInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_assessment::GetAssessmentInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_assessment::GetAssessmentInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetAssessmentInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_assessment::GetAssessmentInput { id: self.id })
     }
 }

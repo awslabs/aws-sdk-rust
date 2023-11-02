@@ -6,26 +6,26 @@ pub fn ser_create_mesh_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    {
-        object.key("meshName").string(input.mesh_name.as_str());
+    if let Some(var_2) = &input.mesh_name {
+        object.key("meshName").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.spec {
+    if let Some(var_3) = &input.spec {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("spec").start_object();
-        crate::protocol_serde::shape_mesh_spec::ser_mesh_spec(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("spec").start_object();
+        crate::protocol_serde::shape_mesh_spec::ser_mesh_spec(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.tags {
-        let mut array_5 = object.key("tags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.tags {
+        let mut array_6 = object.key("tags").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_tag_ref::ser_tag_ref(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_tag_ref::ser_tag_ref(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
     Ok(())
 }

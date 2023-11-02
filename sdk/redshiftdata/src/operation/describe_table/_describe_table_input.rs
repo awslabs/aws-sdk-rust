@@ -10,7 +10,7 @@ pub struct DescribeTableInput {
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub database: ::std::string::String,
+    pub database: ::std::option::Option<::std::string::String>,
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
     pub connected_database: ::std::option::Option<::std::string::String>,
     /// <p>The schema that contains the table. If no schema is specified, then matching tables for all schemas are returned. </p>
@@ -20,7 +20,7 @@ pub struct DescribeTableInput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
@@ -38,9 +38,8 @@ impl DescribeTableInput {
         self.db_user.as_deref()
     }
     /// <p>The name of the database that contains the tables to be described. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> ::std::option::Option<&str> {
+        self.database.as_deref()
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
     pub fn connected_database(&self) -> ::std::option::Option<&str> {
@@ -59,7 +58,7 @@ impl DescribeTableInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of tables to return in the response. If more tables exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
@@ -232,8 +231,6 @@ impl DescribeTableInputBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`DescribeTableInput`](crate::operation::describe_table::DescribeTableInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`database`](crate::operation::describe_table::builders::DescribeTableInputBuilder::database)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_table::DescribeTableInput, ::aws_smithy_http::operation::error::BuildError> {
@@ -241,17 +238,12 @@ impl DescribeTableInputBuilder {
             cluster_identifier: self.cluster_identifier,
             secret_arn: self.secret_arn,
             db_user: self.db_user,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building DescribeTableInput",
-                )
-            })?,
+            database: self.database,
             connected_database: self.connected_database,
             schema: self.schema,
             table: self.table,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             workgroup_name: self.workgroup_name,
         })
     }

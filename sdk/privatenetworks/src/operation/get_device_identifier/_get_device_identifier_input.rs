@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeviceIdentifierInput {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub device_identifier_arn: ::std::string::String,
+    pub device_identifier_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetDeviceIdentifierInput {
     /// <p>The Amazon Resource Name (ARN) of the device identifier.</p>
-    pub fn device_identifier_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.device_identifier_arn.deref()
+    pub fn device_identifier_arn(&self) -> ::std::option::Option<&str> {
+        self.device_identifier_arn.as_deref()
     }
 }
 impl GetDeviceIdentifierInput {
@@ -43,19 +42,12 @@ impl GetDeviceIdentifierInputBuilder {
         &self.device_identifier_arn
     }
     /// Consumes the builder and constructs a [`GetDeviceIdentifierInput`](crate::operation::get_device_identifier::GetDeviceIdentifierInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`device_identifier_arn`](crate::operation::get_device_identifier::builders::GetDeviceIdentifierInputBuilder::device_identifier_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_device_identifier::GetDeviceIdentifierInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_device_identifier::GetDeviceIdentifierInput {
-            device_identifier_arn: self.device_identifier_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "device_identifier_arn",
-                    "device_identifier_arn was not specified but it is required when building GetDeviceIdentifierInput",
-                )
-            })?,
+            device_identifier_arn: self.device_identifier_arn,
         })
     }
 }

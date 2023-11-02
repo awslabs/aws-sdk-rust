@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutMetadataInput {
     /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
-    pub channel_arn: ::std::string::String,
+    pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-    pub metadata: ::std::string::String,
+    pub metadata: ::std::option::Option<::std::string::String>,
 }
 impl PutMetadataInput {
     /// <p>ARN of the channel into which metadata is inserted. This channel must have an active stream.</p>
-    pub fn channel_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_arn.deref()
+    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+        self.channel_arn.as_deref()
     }
     /// <p>Metadata to insert into the stream. Maximum: 1 KB per request.</p>
-    pub fn metadata(&self) -> &str {
-        use std::ops::Deref;
-        self.metadata.deref()
+    pub fn metadata(&self) -> ::std::option::Option<&str> {
+        self.metadata.as_deref()
     }
 }
 impl ::std::fmt::Debug for PutMetadataInput {
@@ -74,23 +72,10 @@ impl PutMetadataInputBuilder {
         &self.metadata
     }
     /// Consumes the builder and constructs a [`PutMetadataInput`](crate::operation::put_metadata::PutMetadataInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_arn`](crate::operation::put_metadata::builders::PutMetadataInputBuilder::channel_arn)
-    /// - [`metadata`](crate::operation::put_metadata::builders::PutMetadataInputBuilder::metadata)
     pub fn build(self) -> ::std::result::Result<crate::operation::put_metadata::PutMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_metadata::PutMetadataInput {
-            channel_arn: self.channel_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_arn",
-                    "channel_arn was not specified but it is required when building PutMetadataInput",
-                )
-            })?,
-            metadata: self.metadata.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "metadata",
-                    "metadata was not specified but it is required when building PutMetadataInput",
-                )
-            })?,
+            channel_arn: self.channel_arn,
+            metadata: self.metadata,
         })
     }
 }

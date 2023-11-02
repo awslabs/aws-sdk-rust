@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub access_log_subscription_identifier: ::std::string::String,
+    pub access_log_subscription_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAccessLogSubscriptionInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the access log subscription.</p>
-    pub fn access_log_subscription_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.access_log_subscription_identifier.deref()
+    pub fn access_log_subscription_identifier(&self) -> ::std::option::Option<&str> {
+        self.access_log_subscription_identifier.as_deref()
     }
 }
 impl DeleteAccessLogSubscriptionInput {
@@ -43,8 +42,6 @@ impl DeleteAccessLogSubscriptionInputBuilder {
         &self.access_log_subscription_identifier
     }
     /// Consumes the builder and constructs a [`DeleteAccessLogSubscriptionInput`](crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`access_log_subscription_identifier`](crate::operation::delete_access_log_subscription::builders::DeleteAccessLogSubscriptionInputBuilder::access_log_subscription_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -52,12 +49,7 @@ impl DeleteAccessLogSubscriptionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_access_log_subscription::DeleteAccessLogSubscriptionInput {
-            access_log_subscription_identifier: self.access_log_subscription_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "access_log_subscription_identifier",
-                    "access_log_subscription_identifier was not specified but it is required when building DeleteAccessLogSubscriptionInput",
-                )
-            })?,
+            access_log_subscription_identifier: self.access_log_subscription_identifier,
         })
     }
 }

@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub incident_record_arn: ::std::string::String,
+    pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
-    pub event_id: ::std::string::String,
+    pub event_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.incident_record_arn.deref()
+    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
     }
     /// <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to find an event's ID.</p>
-    pub fn event_id(&self) -> &str {
-        use std::ops::Deref;
-        self.event_id.deref()
+    pub fn event_id(&self) -> ::std::option::Option<&str> {
+        self.event_id.as_deref()
     }
 }
 impl DeleteTimelineEventInput {
@@ -66,26 +64,13 @@ impl DeleteTimelineEventInputBuilder {
         &self.event_id
     }
     /// Consumes the builder and constructs a [`DeleteTimelineEventInput`](crate::operation::delete_timeline_event::DeleteTimelineEventInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`incident_record_arn`](crate::operation::delete_timeline_event::builders::DeleteTimelineEventInputBuilder::incident_record_arn)
-    /// - [`event_id`](crate::operation::delete_timeline_event::builders::DeleteTimelineEventInputBuilder::event_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_timeline_event::DeleteTimelineEventInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_timeline_event::DeleteTimelineEventInput {
-            incident_record_arn: self.incident_record_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "incident_record_arn",
-                    "incident_record_arn was not specified but it is required when building DeleteTimelineEventInput",
-                )
-            })?,
-            event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "event_id",
-                    "event_id was not specified but it is required when building DeleteTimelineEventInput",
-                )
-            })?,
+            incident_record_arn: self.incident_record_arn,
+            event_id: self.event_id,
         })
     }
 }

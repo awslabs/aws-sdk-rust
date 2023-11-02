@@ -6,41 +6,39 @@ pub fn ser_create_application_instance_input(
     if let Some(var_1) = &input.application_instance_id_to_replace {
         object.key("ApplicationInstanceIdToReplace").string(var_1.as_str());
     }
-    {
-        object
-            .key("DefaultRuntimeContextDevice")
-            .string(input.default_runtime_context_device.as_str());
+    if let Some(var_2) = &input.default_runtime_context_device {
+        object.key("DefaultRuntimeContextDevice").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("Description").string(var_2.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("Description").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.manifest_overrides_payload {
+    if let Some(var_4) = &input.manifest_overrides_payload {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("ManifestOverridesPayload").start_object();
-        crate::protocol_serde::shape_manifest_overrides_payload::ser_manifest_overrides_payload(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("ManifestOverridesPayload").start_object();
+        crate::protocol_serde::shape_manifest_overrides_payload::ser_manifest_overrides_payload(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.manifest_payload {
+    if let Some(var_6) = &input.manifest_payload {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("ManifestPayload").start_object();
-        crate::protocol_serde::shape_manifest_payload::ser_manifest_payload(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("ManifestPayload").start_object();
+        crate::protocol_serde::shape_manifest_payload::ser_manifest_payload(&mut object_7, var_6)?;
+        object_7.finish();
     }
-    if let Some(var_7) = &input.name {
-        object.key("Name").string(var_7.as_str());
+    if let Some(var_8) = &input.name {
+        object.key("Name").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.runtime_role_arn {
-        object.key("RuntimeRoleArn").string(var_8.as_str());
+    if let Some(var_9) = &input.runtime_role_arn {
+        object.key("RuntimeRoleArn").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_10) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("Tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("Tags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_10.finish();
+        object_11.finish();
     }
     Ok(())
 }

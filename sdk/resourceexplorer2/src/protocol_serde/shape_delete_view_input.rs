@@ -3,8 +3,8 @@ pub fn ser_delete_view_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_view::DeleteViewInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("ViewArn").string(input.view_arn.as_str());
+    if let Some(var_1) = &input.view_arn {
+        object.key("ViewArn").string(var_1.as_str());
     }
     Ok(())
 }

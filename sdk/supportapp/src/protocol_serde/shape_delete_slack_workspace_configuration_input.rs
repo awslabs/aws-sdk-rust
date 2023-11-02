@@ -3,8 +3,8 @@ pub fn ser_delete_slack_workspace_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("teamId").string(input.team_id.as_str());
+    if let Some(var_1) = &input.team_id {
+        object.key("teamId").string(var_1.as_str());
     }
     Ok(())
 }

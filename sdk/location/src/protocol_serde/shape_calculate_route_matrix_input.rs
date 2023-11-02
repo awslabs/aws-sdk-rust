@@ -12,58 +12,58 @@ pub fn ser_calculate_route_matrix_input(
     if let Some(var_3) = &input.depart_now {
         object.key("DepartNow").boolean(*var_3);
     }
-    {
-        let mut array_4 = object.key("DeparturePositions").start_array();
-        for item_5 in &input.departure_positions {
+    if let Some(var_4) = &input.departure_positions {
+        let mut array_5 = object.key("DeparturePositions").start_array();
+        for item_6 in var_4 {
             {
-                let mut array_6 = array_4.value().start_array();
-                for item_7 in item_5 {
+                let mut array_7 = array_5.value().start_array();
+                for item_8 in item_6 {
                     {
-                        array_6.value().number(
+                        array_7.value().number(
                             #[allow(clippy::useless_conversion)]
-                            ::aws_smithy_types::Number::Float((*item_7).into()),
+                            ::aws_smithy_types::Number::Float((*item_8).into()),
                         );
                     }
                 }
-                array_6.finish();
+                array_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_8) = &input.departure_time {
+    if let Some(var_9) = &input.departure_time {
         object
             .key("DepartureTime")
-            .date_time(var_8, ::aws_smithy_types::date_time::Format::DateTime)?;
+            .date_time(var_9, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
-    {
-        let mut array_9 = object.key("DestinationPositions").start_array();
-        for item_10 in &input.destination_positions {
+    if let Some(var_10) = &input.destination_positions {
+        let mut array_11 = object.key("DestinationPositions").start_array();
+        for item_12 in var_10 {
             {
-                let mut array_11 = array_9.value().start_array();
-                for item_12 in item_10 {
+                let mut array_13 = array_11.value().start_array();
+                for item_14 in item_12 {
                     {
-                        array_11.value().number(
+                        array_13.value().number(
                             #[allow(clippy::useless_conversion)]
-                            ::aws_smithy_types::Number::Float((*item_12).into()),
+                            ::aws_smithy_types::Number::Float((*item_14).into()),
                         );
                     }
                 }
-                array_11.finish();
+                array_13.finish();
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
-    if let Some(var_13) = &input.distance_unit {
-        object.key("DistanceUnit").string(var_13.as_str());
+    if let Some(var_15) = &input.distance_unit {
+        object.key("DistanceUnit").string(var_15.as_str());
     }
-    if let Some(var_14) = &input.travel_mode {
-        object.key("TravelMode").string(var_14.as_str());
+    if let Some(var_16) = &input.travel_mode {
+        object.key("TravelMode").string(var_16.as_str());
     }
-    if let Some(var_15) = &input.truck_mode_options {
+    if let Some(var_17) = &input.truck_mode_options {
         #[allow(unused_mut)]
-        let mut object_16 = object.key("TruckModeOptions").start_object();
-        crate::protocol_serde::shape_calculate_route_truck_mode_options::ser_calculate_route_truck_mode_options(&mut object_16, var_15)?;
-        object_16.finish();
+        let mut object_18 = object.key("TruckModeOptions").start_object();
+        crate::protocol_serde::shape_calculate_route_truck_mode_options::ser_calculate_route_truck_mode_options(&mut object_18, var_17)?;
+        object_18.finish();
     }
     Ok(())
 }

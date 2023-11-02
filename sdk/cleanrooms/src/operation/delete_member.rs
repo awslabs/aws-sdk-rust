@@ -175,6 +175,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteMember
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.collaboration_identifier;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field("collaboration_identifier", "cannot be empty or unset")
+                })?;
                 let collaboration_identifier = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if collaboration_identifier.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -183,6 +186,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteMember
                     ));
                 }
                 let input_2 = &_input.account_id;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("account_id", "cannot be empty or unset"))?;
                 let account_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if account_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

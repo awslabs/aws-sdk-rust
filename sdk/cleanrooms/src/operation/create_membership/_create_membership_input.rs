@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
-    pub collaboration_identifier: ::std::string::String,
+    pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub query_log_status: crate::types::MembershipQueryLogStatus,
+    pub query_log_status: ::std::option::Option<crate::types::MembershipQueryLogStatus>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The default protected query result configuration as specified by the member who can receive results.</p>
@@ -14,13 +14,12 @@ pub struct CreateMembershipInput {
 }
 impl CreateMembershipInput {
     /// <p>The unique ID for the associated collaboration.</p>
-    pub fn collaboration_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_identifier.deref()
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+        self.collaboration_identifier.as_deref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(&self) -> &crate::types::MembershipQueryLogStatus {
-        &self.query_log_status
+    pub fn query_log_status(&self) -> ::std::option::Option<&crate::types::MembershipQueryLogStatus> {
+        self.query_log_status.as_ref()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -116,25 +115,12 @@ impl CreateMembershipInputBuilder {
         &self.default_result_configuration
     }
     /// Consumes the builder and constructs a [`CreateMembershipInput`](crate::operation::create_membership::CreateMembershipInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`collaboration_identifier`](crate::operation::create_membership::builders::CreateMembershipInputBuilder::collaboration_identifier)
-    /// - [`query_log_status`](crate::operation::create_membership::builders::CreateMembershipInputBuilder::query_log_status)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_membership::CreateMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_membership::CreateMembershipInput {
-            collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "collaboration_identifier",
-                    "collaboration_identifier was not specified but it is required when building CreateMembershipInput",
-                )
-            })?,
-            query_log_status: self.query_log_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "query_log_status",
-                    "query_log_status was not specified but it is required when building CreateMembershipInput",
-                )
-            })?,
+            collaboration_identifier: self.collaboration_identifier,
+            query_log_status: self.query_log_status,
             tags: self.tags,
             default_result_configuration: self.default_result_configuration,
         })

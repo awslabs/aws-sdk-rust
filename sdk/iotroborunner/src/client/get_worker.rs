@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetWorker`](crate::operation::get_worker::builders::GetWorkerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_id):<br>required: **true**<br>Full ARN of the worker.<br>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_worker::builders::GetWorkerFluentBuilder::set_id):<br>required: **true**<br>Full ARN of the worker.<br>
     /// - On success, responds with [`GetWorkerOutput`](crate::operation::get_worker::GetWorkerOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::get_worker::GetWorkerOutput::arn): Full ARN of the worker.
     ///   - [`id(String)`](crate::operation::get_worker::GetWorkerOutput::id): Filters access by the workers identifier

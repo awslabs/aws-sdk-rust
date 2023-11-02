@@ -5,17 +5,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateMissionProfileInput {
     /// <p>Name of a mission profile.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
     pub contact_pre_pass_duration_seconds: ::std::option::Option<i32>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
     pub contact_post_pass_duration_seconds: ::std::option::Option<i32>,
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-    pub minimum_viable_contact_duration_seconds: i32,
+    pub minimum_viable_contact_duration_seconds: ::std::option::Option<i32>,
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
-    pub dataflow_edges: ::std::vec::Vec<::std::vec::Vec<::std::string::String>>,
+    pub dataflow_edges: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<::std::string::String>>>,
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    pub tracking_config_arn: ::std::string::String,
+    pub tracking_config_arn: ::std::option::Option<::std::string::String>,
     /// <p>Tags assigned to a mission profile.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>KMS key to use for encrypting streams.</p>
@@ -25,9 +25,8 @@ pub struct CreateMissionProfileInput {
 }
 impl CreateMissionProfileInput {
     /// <p>Name of a mission profile.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>Amount of time prior to contact start you’d like to receive a CloudWatch event indicating an upcoming pass.</p>
     pub fn contact_pre_pass_duration_seconds(&self) -> ::std::option::Option<i32> {
@@ -38,18 +37,18 @@ impl CreateMissionProfileInput {
         self.contact_post_pass_duration_seconds
     }
     /// <p>Smallest amount of time in seconds that you’d like to see for an available contact. AWS Ground Station will not present you with contacts shorter than this duration.</p>
-    pub fn minimum_viable_contact_duration_seconds(&self) -> i32 {
+    pub fn minimum_viable_contact_duration_seconds(&self) -> ::std::option::Option<i32> {
         self.minimum_viable_contact_duration_seconds
     }
     /// <p>A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code> and a <i>to</i> <code>Config</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.dataflow_edges.is_none()`.
     pub fn dataflow_edges(&self) -> &[::std::vec::Vec<::std::string::String>] {
-        use std::ops::Deref;
-        self.dataflow_edges.deref()
+        self.dataflow_edges.as_deref().unwrap_or_default()
     }
     /// <p>ARN of a tracking <code>Config</code>.</p>
-    pub fn tracking_config_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.tracking_config_arn.deref()
+    pub fn tracking_config_arn(&self) -> ::std::option::Option<&str> {
+        self.tracking_config_arn.as_deref()
     }
     /// <p>Tags assigned to a mission profile.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -228,42 +227,17 @@ impl CreateMissionProfileInputBuilder {
         &self.streams_kms_role
     }
     /// Consumes the builder and constructs a [`CreateMissionProfileInput`](crate::operation::create_mission_profile::CreateMissionProfileInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_mission_profile::builders::CreateMissionProfileInputBuilder::name)
-    /// - [`minimum_viable_contact_duration_seconds`](crate::operation::create_mission_profile::builders::CreateMissionProfileInputBuilder::minimum_viable_contact_duration_seconds)
-    /// - [`dataflow_edges`](crate::operation::create_mission_profile::builders::CreateMissionProfileInputBuilder::dataflow_edges)
-    /// - [`tracking_config_arn`](crate::operation::create_mission_profile::builders::CreateMissionProfileInputBuilder::tracking_config_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_mission_profile::CreateMissionProfileInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_mission_profile::CreateMissionProfileInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateMissionProfileInput",
-                )
-            })?,
+            name: self.name,
             contact_pre_pass_duration_seconds: self.contact_pre_pass_duration_seconds,
             contact_post_pass_duration_seconds: self.contact_post_pass_duration_seconds,
-            minimum_viable_contact_duration_seconds: self.minimum_viable_contact_duration_seconds.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "minimum_viable_contact_duration_seconds",
-                    "minimum_viable_contact_duration_seconds was not specified but it is required when building CreateMissionProfileInput",
-                )
-            })?,
-            dataflow_edges: self.dataflow_edges.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "dataflow_edges",
-                    "dataflow_edges was not specified but it is required when building CreateMissionProfileInput",
-                )
-            })?,
-            tracking_config_arn: self.tracking_config_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "tracking_config_arn",
-                    "tracking_config_arn was not specified but it is required when building CreateMissionProfileInput",
-                )
-            })?,
+            minimum_viable_contact_duration_seconds: self.minimum_viable_contact_duration_seconds,
+            dataflow_edges: self.dataflow_edges,
+            tracking_config_arn: self.tracking_config_arn,
             tags: self.tags,
             streams_kms_key: self.streams_kms_key,
             streams_kms_role: self.streams_kms_role,

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSignalCatalogInput {
     /// <p> The name of the signal catalog to create. </p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the signal catalog.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of information about nodes, which are a general abstraction of signals. For more information, see the API data type.</p>
@@ -14,9 +14,8 @@ pub struct CreateSignalCatalogInput {
 }
 impl CreateSignalCatalogInput {
     /// <p> The name of the signal catalog to create. </p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A brief description of the signal catalog.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -122,19 +121,12 @@ impl CreateSignalCatalogInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSignalCatalogInput`](crate::operation::create_signal_catalog::CreateSignalCatalogInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_signal_catalog::builders::CreateSignalCatalogInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_signal_catalog::CreateSignalCatalogInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_signal_catalog::CreateSignalCatalogInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateSignalCatalogInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
             nodes: self.nodes,
             tags: self.tags,

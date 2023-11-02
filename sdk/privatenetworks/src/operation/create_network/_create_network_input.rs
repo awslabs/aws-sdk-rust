@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateNetworkInput {
     /// <p>The name of the network. You can't change the name after you create the network.</p>
-    pub network_name: ::std::string::String,
+    pub network_name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the network.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -14,9 +14,8 @@ pub struct CreateNetworkInput {
 }
 impl CreateNetworkInput {
     /// <p>The name of the network. You can't change the name after you create the network.</p>
-    pub fn network_name(&self) -> &str {
-        use std::ops::Deref;
-        self.network_name.deref()
+    pub fn network_name(&self) -> ::std::option::Option<&str> {
+        self.network_name.as_deref()
     }
     /// <p>The description of the network.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -122,18 +121,11 @@ impl CreateNetworkInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateNetworkInput`](crate::operation::create_network::CreateNetworkInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`network_name`](crate::operation::create_network::builders::CreateNetworkInputBuilder::network_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_network::CreateNetworkInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_network::CreateNetworkInput {
-            network_name: self.network_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "network_name",
-                    "network_name was not specified but it is required when building CreateNetworkInput",
-                )
-            })?,
+            network_name: self.network_name,
             description: self.description,
             client_token: self.client_token,
             tags: self.tags,

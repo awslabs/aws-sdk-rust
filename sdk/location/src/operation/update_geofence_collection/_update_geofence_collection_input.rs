@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGeofenceCollectionInput {
     /// <p>The name of the geofence collection to update.</p>
-    pub collection_name: ::std::string::String,
+    pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -16,9 +16,8 @@ pub struct UpdateGeofenceCollectionInput {
 }
 impl UpdateGeofenceCollectionInput {
     /// <p>The name of the geofence collection to update.</p>
-    pub fn collection_name(&self) -> &str {
-        use std::ops::Deref;
-        self.collection_name.deref()
+    pub fn collection_name(&self) -> ::std::option::Option<&str> {
+        self.collection_name.as_deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -116,8 +115,6 @@ impl UpdateGeofenceCollectionInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateGeofenceCollectionInput`](crate::operation::update_geofence_collection::UpdateGeofenceCollectionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`collection_name`](crate::operation::update_geofence_collection::builders::UpdateGeofenceCollectionInputBuilder::collection_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -125,12 +122,7 @@ impl UpdateGeofenceCollectionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_geofence_collection::UpdateGeofenceCollectionInput {
-            collection_name: self.collection_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "collection_name",
-                    "collection_name was not specified but it is required when building UpdateGeofenceCollectionInput",
-                )
-            })?,
+            collection_name: self.collection_name,
             pricing_plan: self.pricing_plan,
             pricing_plan_data_source: self.pricing_plan_data_source,
             description: self.description,

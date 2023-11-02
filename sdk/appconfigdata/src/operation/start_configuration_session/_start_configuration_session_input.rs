@@ -4,29 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartConfigurationSessionInput {
     /// <p>The application ID or the application name.</p>
-    pub application_identifier: ::std::string::String,
+    pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The environment ID or the environment name.</p>
-    pub environment_identifier: ::std::string::String,
+    pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The configuration profile ID or the configuration profile name.</p>
-    pub configuration_profile_identifier: ::std::string::String,
+    pub configuration_profile_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub required_minimum_poll_interval_in_seconds: ::std::option::Option<i32>,
 }
 impl StartConfigurationSessionInput {
     /// <p>The application ID or the application name.</p>
-    pub fn application_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.application_identifier.deref()
+    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+        self.application_identifier.as_deref()
     }
     /// <p>The environment ID or the environment name.</p>
-    pub fn environment_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_identifier.deref()
+    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_identifier.as_deref()
     }
     /// <p>The configuration profile ID or the configuration profile name.</p>
-    pub fn configuration_profile_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.configuration_profile_identifier.deref()
+    pub fn configuration_profile_identifier(&self) -> ::std::option::Option<&str> {
+        self.configuration_profile_identifier.as_deref()
     }
     /// <p>Sets a constraint on a session. If you specify a value of, for example, 60 seconds, then the client that established the session can't call <code>GetLatestConfiguration</code> more frequently than every 60 seconds.</p>
     pub fn required_minimum_poll_interval_in_seconds(&self) -> ::std::option::Option<i32> {
@@ -110,10 +107,6 @@ impl StartConfigurationSessionInputBuilder {
         &self.required_minimum_poll_interval_in_seconds
     }
     /// Consumes the builder and constructs a [`StartConfigurationSessionInput`](crate::operation::start_configuration_session::StartConfigurationSessionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_identifier`](crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder::application_identifier)
-    /// - [`environment_identifier`](crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder::environment_identifier)
-    /// - [`configuration_profile_identifier`](crate::operation::start_configuration_session::builders::StartConfigurationSessionInputBuilder::configuration_profile_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -121,24 +114,9 @@ impl StartConfigurationSessionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::start_configuration_session::StartConfigurationSessionInput {
-            application_identifier: self.application_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_identifier",
-                    "application_identifier was not specified but it is required when building StartConfigurationSessionInput",
-                )
-            })?,
-            environment_identifier: self.environment_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_identifier",
-                    "environment_identifier was not specified but it is required when building StartConfigurationSessionInput",
-                )
-            })?,
-            configuration_profile_identifier: self.configuration_profile_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "configuration_profile_identifier",
-                    "configuration_profile_identifier was not specified but it is required when building StartConfigurationSessionInput",
-                )
-            })?,
+            application_identifier: self.application_identifier,
+            environment_identifier: self.environment_identifier,
+            configuration_profile_identifier: self.configuration_profile_identifier,
             required_minimum_poll_interval_in_seconds: self.required_minimum_poll_interval_in_seconds,
         })
     }

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct NotifyResourceDeploymentStatusChangeInput {
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
-    pub resource_arn: ::std::string::String,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The status of your provisioned resource.</p>
     pub status: ::std::option::Option<crate::types::ResourceDeploymentStatus>,
     /// <p>The provisioned resource state change detail data that's returned by Proton.</p>
@@ -16,9 +16,8 @@ pub struct NotifyResourceDeploymentStatusChangeInput {
 }
 impl NotifyResourceDeploymentStatusChangeInput {
     /// <p>The provisioned resource Amazon Resource Name (ARN).</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
     /// <p>The status of your provisioned resource.</p>
     pub fn status(&self) -> ::std::option::Option<&crate::types::ResourceDeploymentStatus> {
@@ -146,8 +145,6 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
         &self.status_message
     }
     /// Consumes the builder and constructs a [`NotifyResourceDeploymentStatusChangeInput`](crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`resource_arn`](crate::operation::notify_resource_deployment_status_change::builders::NotifyResourceDeploymentStatusChangeInputBuilder::resource_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -156,12 +153,7 @@ impl NotifyResourceDeploymentStatusChangeInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeInput {
-                resource_arn: self.resource_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "resource_arn",
-                        "resource_arn was not specified but it is required when building NotifyResourceDeploymentStatusChangeInput",
-                    )
-                })?,
+                resource_arn: self.resource_arn,
                 status: self.status,
                 outputs: self.outputs,
                 deployment_id: self.deployment_id,

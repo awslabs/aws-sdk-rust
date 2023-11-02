@@ -8,9 +8,9 @@ pub struct StartFraudsterRegistrationJobInput {
     /// <p>The name of the new fraudster registration job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the domain that contains the fraudster registration job and in which the fraudsters are registered.</p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
-    pub data_access_role_arn: ::std::string::String,
+    pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
     pub registration_config: ::std::option::Option<crate::types::RegistrationConfig>,
     /// <p>The input data config containing an S3 URI for the input manifest file that contains the list of fraudster registration requests.</p>
@@ -28,14 +28,12 @@ impl StartFraudsterRegistrationJobInput {
         self.job_name.as_deref()
     }
     /// <p>The identifier of the domain that contains the fraudster registration job and in which the fraudsters are registered.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the Job output file. Refer to the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-fraudster-watchlist.html">Create and edit a fraudster watchlist</a> documentation for the permissions needed in this role.</p>
-    pub fn data_access_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.data_access_role_arn.deref()
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
     }
     /// <p>The registration config containing details such as the action to take when a duplicate fraudster is detected, and the similarity threshold to use for detecting a duplicate fraudster. </p>
     pub fn registration_config(&self) -> ::std::option::Option<&crate::types::RegistrationConfig> {
@@ -186,9 +184,6 @@ impl StartFraudsterRegistrationJobInputBuilder {
         &self.output_data_config
     }
     /// Consumes the builder and constructs a [`StartFraudsterRegistrationJobInput`](crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobInputBuilder::domain_id)
-    /// - [`data_access_role_arn`](crate::operation::start_fraudster_registration_job::builders::StartFraudsterRegistrationJobInputBuilder::data_access_role_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -198,18 +193,8 @@ impl StartFraudsterRegistrationJobInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobInput {
             client_token: self.client_token,
             job_name: self.job_name,
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building StartFraudsterRegistrationJobInput",
-                )
-            })?,
-            data_access_role_arn: self.data_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "data_access_role_arn",
-                    "data_access_role_arn was not specified but it is required when building StartFraudsterRegistrationJobInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            data_access_role_arn: self.data_access_role_arn,
             registration_config: self.registration_config,
             input_data_config: self.input_data_config,
             output_data_config: self.output_data_config,

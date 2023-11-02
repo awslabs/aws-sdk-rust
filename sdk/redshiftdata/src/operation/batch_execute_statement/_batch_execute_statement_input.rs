@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
-    pub sqls: ::std::vec::Vec<::std::string::String>,
+    pub sqls: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
@@ -12,7 +12,7 @@ pub struct BatchExecuteStatementInput {
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub database: ::std::string::String,
+    pub database: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
     pub with_event: ::std::option::Option<bool>,
     /// <p>The name of the SQL statements. You can name the SQL statements when you create them to identify the query. </p>
@@ -24,9 +24,10 @@ pub struct BatchExecuteStatementInput {
 }
 impl BatchExecuteStatementInput {
     /// <p>One or more SQL statements to run. The SQL statements are run as a single transaction. They run serially in the order of the array. Subsequent SQL statements don't start until the previous statement in the array completes. If any SQL statement fails, then because they are run as one transaction, all work is rolled back.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.sqls.is_none()`.
     pub fn sqls(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.sqls.deref()
+        self.sqls.as_deref().unwrap_or_default()
     }
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
@@ -41,9 +42,8 @@ impl BatchExecuteStatementInput {
         self.db_user.as_deref()
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> ::std::option::Option<&str> {
+        self.database.as_deref()
     }
     /// <p>A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statements run. </p>
     pub fn with_event(&self) -> ::std::option::Option<bool> {
@@ -218,29 +218,16 @@ impl BatchExecuteStatementInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`BatchExecuteStatementInput`](crate::operation::batch_execute_statement::BatchExecuteStatementInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`sqls`](crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder::sqls)
-    /// - [`database`](crate::operation::batch_execute_statement::builders::BatchExecuteStatementInputBuilder::database)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_execute_statement::BatchExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::batch_execute_statement::BatchExecuteStatementInput {
-            sqls: self.sqls.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "sqls",
-                    "sqls was not specified but it is required when building BatchExecuteStatementInput",
-                )
-            })?,
+            sqls: self.sqls,
             cluster_identifier: self.cluster_identifier,
             secret_arn: self.secret_arn,
             db_user: self.db_user,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building BatchExecuteStatementInput",
-                )
-            })?,
+            database: self.database,
             with_event: self.with_event,
             statement_name: self.statement_name,
             workgroup_name: self.workgroup_name,

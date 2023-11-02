@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTableInput {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub keyspace_name: ::std::string::String,
+    pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
-    pub table_name: ::std::string::String,
+    pub table_name: ::std::option::Option<::std::string::String>,
 }
 impl GetTableInput {
     /// <p>The name of the keyspace that the table is stored in.</p>
-    pub fn keyspace_name(&self) -> &str {
-        use std::ops::Deref;
-        self.keyspace_name.deref()
+    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
+        self.keyspace_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
+        self.table_name.as_deref()
     }
 }
 impl GetTableInput {
@@ -66,23 +64,10 @@ impl GetTableInputBuilder {
         &self.table_name
     }
     /// Consumes the builder and constructs a [`GetTableInput`](crate::operation::get_table::GetTableInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`keyspace_name`](crate::operation::get_table::builders::GetTableInputBuilder::keyspace_name)
-    /// - [`table_name`](crate::operation::get_table::builders::GetTableInputBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_table::GetTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_table::GetTableInput {
-            keyspace_name: self.keyspace_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "keyspace_name",
-                    "keyspace_name was not specified but it is required when building GetTableInput",
-                )
-            })?,
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building GetTableInput",
-                )
-            })?,
+            keyspace_name: self.keyspace_name,
+            table_name: self.table_name,
         })
     }
 }

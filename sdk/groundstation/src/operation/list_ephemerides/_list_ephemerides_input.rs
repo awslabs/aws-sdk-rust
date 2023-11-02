@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEphemeridesInput {
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
-    pub satellite_id: ::std::string::String,
+    pub satellite_id: ::std::option::Option<::std::string::String>,
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub start_time: ::aws_smithy_types::DateTime,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub end_time: ::aws_smithy_types::DateTime,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The list of ephemeris status to return.</p>
     pub status_list: ::std::option::Option<::std::vec::Vec<crate::types::EphemerisStatus>>,
     /// <p>Maximum number of ephemerides to return.</p>
@@ -18,17 +18,16 @@ pub struct ListEphemeridesInput {
 }
 impl ListEphemeridesInput {
     /// <p>The AWS Ground Station satellite ID to list ephemeris for.</p>
-    pub fn satellite_id(&self) -> &str {
-        use std::ops::Deref;
-        self.satellite_id.deref()
+    pub fn satellite_id(&self) -> ::std::option::Option<&str> {
+        self.satellite_id.as_deref()
     }
     /// <p>The start time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
-        &self.start_time
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
     }
     /// <p>The end time to list in UTC. The operation will return an ephemeris if its expiration time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.</p>
-    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
-        &self.end_time
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
     }
     /// <p>The list of ephemeris status to return.</p>
     ///
@@ -158,32 +157,13 @@ impl ListEphemeridesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListEphemeridesInput`](crate::operation::list_ephemerides::ListEphemeridesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`satellite_id`](crate::operation::list_ephemerides::builders::ListEphemeridesInputBuilder::satellite_id)
-    /// - [`start_time`](crate::operation::list_ephemerides::builders::ListEphemeridesInputBuilder::start_time)
-    /// - [`end_time`](crate::operation::list_ephemerides::builders::ListEphemeridesInputBuilder::end_time)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_ephemerides::ListEphemeridesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_ephemerides::ListEphemeridesInput {
-            satellite_id: self.satellite_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "satellite_id",
-                    "satellite_id was not specified but it is required when building ListEphemeridesInput",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building ListEphemeridesInput",
-                )
-            })?,
-            end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "end_time",
-                    "end_time was not specified but it is required when building ListEphemeridesInput",
-                )
-            })?,
+            satellite_id: self.satellite_id,
+            start_time: self.start_time,
+            end_time: self.end_time,
             status_list: self.status_list,
             max_results: self.max_results,
             next_token: self.next_token,

@@ -4,22 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the layout. It must be unique for the Cases domain.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
     pub content: ::std::option::Option<crate::types::LayoutContent>,
 }
 impl CreateLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The name of the layout. It must be unique for the Cases domain.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>Information about which fields will be present in the layout, and information about the order of the fields.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::LayoutContent> {
@@ -88,23 +86,10 @@ impl CreateLayoutInputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`CreateLayoutInput`](crate::operation::create_layout::CreateLayoutInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::create_layout::builders::CreateLayoutInputBuilder::domain_id)
-    /// - [`name`](crate::operation::create_layout::builders::CreateLayoutInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_layout::CreateLayoutInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_layout::CreateLayoutInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building CreateLayoutInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateLayoutInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            name: self.name,
             content: self.content,
         })
     }

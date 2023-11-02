@@ -4,22 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendEventInput {
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
-    pub room_identifier: ::std::string::String,
+    pub room_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Application-defined name of the event to send to clients.</p>
-    pub event_name: ::std::string::String,
+    pub event_name: ::std::option::Option<::std::string::String>,
     /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl SendEventInput {
     /// <p>Identifier of the room to which the event will be sent. Currently this must be an ARN.</p>
-    pub fn room_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.room_identifier.deref()
+    pub fn room_identifier(&self) -> ::std::option::Option<&str> {
+        self.room_identifier.as_deref()
     }
     /// <p>Application-defined name of the event to send to clients.</p>
-    pub fn event_name(&self) -> &str {
-        use std::ops::Deref;
-        self.event_name.deref()
+    pub fn event_name(&self) -> ::std::option::Option<&str> {
+        self.event_name.as_deref()
     }
     /// <p>Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.</p>
     pub fn attributes(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -93,23 +91,10 @@ impl SendEventInputBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`SendEventInput`](crate::operation::send_event::SendEventInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`room_identifier`](crate::operation::send_event::builders::SendEventInputBuilder::room_identifier)
-    /// - [`event_name`](crate::operation::send_event::builders::SendEventInputBuilder::event_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::send_event::SendEventInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_event::SendEventInput {
-            room_identifier: self.room_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "room_identifier",
-                    "room_identifier was not specified but it is required when building SendEventInput",
-                )
-            })?,
-            event_name: self.event_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "event_name",
-                    "event_name was not specified but it is required when building SendEventInput",
-                )
-            })?,
+            room_identifier: self.room_identifier,
+            event_name: self.event_name,
             attributes: self.attributes,
         })
     }

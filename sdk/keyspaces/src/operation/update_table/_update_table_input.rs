@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTableInput {
     /// <p>The name of the keyspace the specified table is stored in.</p>
-    pub keyspace_name: ::std::string::String,
+    pub keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the table.</p>
-    pub table_name: ::std::string::String,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>For each column to be added to the specified table:</p>
     /// <ul>
     /// <li> <p> <code>name</code> - The name of the column.</p> </li>
@@ -57,14 +57,12 @@ pub struct UpdateTableInput {
 }
 impl UpdateTableInput {
     /// <p>The name of the keyspace the specified table is stored in.</p>
-    pub fn keyspace_name(&self) -> &str {
-        use std::ops::Deref;
-        self.keyspace_name.deref()
+    pub fn keyspace_name(&self) -> ::std::option::Option<&str> {
+        self.keyspace_name.as_deref()
     }
     /// <p>The name of the table.</p>
-    pub fn table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.table_name.deref()
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
+        self.table_name.as_deref()
     }
     /// <p>For each column to be added to the specified table:</p>
     /// <ul>
@@ -386,23 +384,10 @@ impl UpdateTableInputBuilder {
         &self.client_side_timestamps
     }
     /// Consumes the builder and constructs a [`UpdateTableInput`](crate::operation::update_table::UpdateTableInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`keyspace_name`](crate::operation::update_table::builders::UpdateTableInputBuilder::keyspace_name)
-    /// - [`table_name`](crate::operation::update_table::builders::UpdateTableInputBuilder::table_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_table::UpdateTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_table::UpdateTableInput {
-            keyspace_name: self.keyspace_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "keyspace_name",
-                    "keyspace_name was not specified but it is required when building UpdateTableInput",
-                )
-            })?,
-            table_name: self.table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "table_name",
-                    "table_name was not specified but it is required when building UpdateTableInput",
-                )
-            })?,
+            keyspace_name: self.keyspace_name,
+            table_name: self.table_name,
             add_columns: self.add_columns,
             capacity_specification: self.capacity_specification,
             encryption_specification: self.encryption_specification,

@@ -3,23 +3,23 @@ pub fn ser_is_member_in_groups_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::is_member_in_groups::IsMemberInGroupsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("IdentityStoreId").string(input.identity_store_id.as_str());
+    if let Some(var_1) = &input.identity_store_id {
+        object.key("IdentityStoreId").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.member_id {
+    if let Some(var_2) = &input.member_id {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("MemberId").start_object();
-        crate::protocol_serde::shape_member_id::ser_member_id(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("MemberId").start_object();
+        crate::protocol_serde::shape_member_id::ser_member_id(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    {
-        let mut array_3 = object.key("GroupIds").start_array();
-        for item_4 in &input.group_ids {
+    if let Some(var_4) = &input.group_ids {
+        let mut array_5 = object.key("GroupIds").start_array();
+        for item_6 in var_4 {
             {
-                array_3.value().string(item_4.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_3.finish();
+        array_5.finish();
     }
     Ok(())
 }

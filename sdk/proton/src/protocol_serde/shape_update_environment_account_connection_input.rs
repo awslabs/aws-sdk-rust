@@ -3,17 +3,17 @@ pub fn ser_update_environment_account_connection_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("id").string(input.id.as_str());
+    if let Some(var_1) = &input.id {
+        object.key("id").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.role_arn {
-        object.key("roleArn").string(var_1.as_str());
+    if let Some(var_2) = &input.role_arn {
+        object.key("roleArn").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.component_role_arn {
-        object.key("componentRoleArn").string(var_2.as_str());
+    if let Some(var_3) = &input.component_role_arn {
+        object.key("componentRoleArn").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.codebuild_role_arn {
-        object.key("codebuildRoleArn").string(var_3.as_str());
+    if let Some(var_4) = &input.codebuild_role_arn {
+        object.key("codebuildRoleArn").string(var_4.as_str());
     }
     Ok(())
 }

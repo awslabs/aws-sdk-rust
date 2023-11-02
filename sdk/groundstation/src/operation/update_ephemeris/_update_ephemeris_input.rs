@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateEphemerisInput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub ephemeris_id: ::std::string::String,
+    pub ephemeris_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
-    pub enabled: bool,
+    pub enabled: ::std::option::Option<bool>,
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Customer-provided priority score to establish the order in which overlapping ephemerides should be used.</p>
@@ -16,12 +16,11 @@ pub struct UpdateEphemerisInput {
 }
 impl UpdateEphemerisInput {
     /// <p>The AWS Ground Station ephemeris ID.</p>
-    pub fn ephemeris_id(&self) -> &str {
-        use std::ops::Deref;
-        self.ephemeris_id.deref()
+    pub fn ephemeris_id(&self) -> ::std::option::Option<&str> {
+        self.ephemeris_id.as_deref()
     }
     /// <p>Whether the ephemeris is enabled or not. Changing this value will not require the ephemeris to be re-validated.</p>
-    pub fn enabled(&self) -> bool {
+    pub fn enabled(&self) -> ::std::option::Option<bool> {
         self.enabled
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
@@ -117,25 +116,12 @@ impl UpdateEphemerisInputBuilder {
         &self.priority
     }
     /// Consumes the builder and constructs a [`UpdateEphemerisInput`](crate::operation::update_ephemeris::UpdateEphemerisInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`ephemeris_id`](crate::operation::update_ephemeris::builders::UpdateEphemerisInputBuilder::ephemeris_id)
-    /// - [`enabled`](crate::operation::update_ephemeris::builders::UpdateEphemerisInputBuilder::enabled)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_ephemeris::UpdateEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_ephemeris::UpdateEphemerisInput {
-            ephemeris_id: self.ephemeris_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "ephemeris_id",
-                    "ephemeris_id was not specified but it is required when building UpdateEphemerisInput",
-                )
-            })?,
-            enabled: self.enabled.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "enabled",
-                    "enabled was not specified but it is required when building UpdateEphemerisInput",
-                )
-            })?,
+            ephemeris_id: self.ephemeris_id,
+            enabled: self.enabled,
             name: self.name,
             priority: self.priority,
         })

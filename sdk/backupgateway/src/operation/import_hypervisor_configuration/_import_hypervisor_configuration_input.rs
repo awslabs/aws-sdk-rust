@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ImportHypervisorConfigurationInput {
     /// <p>The name of the hypervisor.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub host: ::std::string::String,
+    pub host: ::std::option::Option<::std::string::String>,
     /// <p>The username for the hypervisor.</p>
     pub username: ::std::option::Option<::std::string::String>,
     /// <p>The password for the hypervisor.</p>
@@ -18,14 +18,12 @@ pub struct ImportHypervisorConfigurationInput {
 }
 impl ImportHypervisorConfigurationInput {
     /// <p>The name of the hypervisor.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).</p>
-    pub fn host(&self) -> &str {
-        use std::ops::Deref;
-        self.host.deref()
+    pub fn host(&self) -> ::std::option::Option<&str> {
+        self.host.as_deref()
     }
     /// <p>The username for the hypervisor.</p>
     pub fn username(&self) -> ::std::option::Option<&str> {
@@ -170,9 +168,6 @@ impl ImportHypervisorConfigurationInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`ImportHypervisorConfigurationInput`](crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder::name)
-    /// - [`host`](crate::operation::import_hypervisor_configuration::builders::ImportHypervisorConfigurationInputBuilder::host)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -180,18 +175,8 @@ impl ImportHypervisorConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::import_hypervisor_configuration::ImportHypervisorConfigurationInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ImportHypervisorConfigurationInput",
-                )
-            })?,
-            host: self.host.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "host",
-                    "host was not specified but it is required when building ImportHypervisorConfigurationInput",
-                )
-            })?,
+            name: self.name,
+            host: self.host,
             username: self.username,
             password: self.password,
             kms_key_arn: self.kms_key_arn,

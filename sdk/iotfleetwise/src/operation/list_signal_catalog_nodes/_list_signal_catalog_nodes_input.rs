@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSignalCatalogNodesInput {
     /// <p> The name of the signal catalog to list information about. </p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,9 +13,8 @@ pub struct ListSignalCatalogNodesInput {
 }
 impl ListSignalCatalogNodesInput {
     /// <p> The name of the signal catalog to list information about. </p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
@@ -90,8 +89,6 @@ impl ListSignalCatalogNodesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListSignalCatalogNodesInput`](crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::list_signal_catalog_nodes::builders::ListSignalCatalogNodesInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -99,12 +96,7 @@ impl ListSignalCatalogNodesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ListSignalCatalogNodesInput",
-                )
-            })?,
+            name: self.name,
             next_token: self.next_token,
             max_results: self.max_results,
         })

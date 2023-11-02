@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobInput {
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    pub client_token: ::std::string::String,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
     pub algorithm_specification: ::std::option::Option<crate::types::AlgorithmSpecification>,
     /// <p>A list of parameters that specify the name and type of input data and where it is located.</p>
@@ -14,9 +14,9 @@ pub struct CreateJobInput {
     /// <p>Information about the output locations for job checkpoint data.</p>
     pub checkpoint_config: ::std::option::Option<crate::types::JobCheckpointConfig>,
     /// <p>The name of the Amazon Braket job.</p>
-    pub job_name: ::std::string::String,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
-    pub role_arn: ::std::string::String,
+    pub role_arn: ::std::option::Option<::std::string::String>,
     /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub stopping_condition: ::std::option::Option<crate::types::JobStoppingCondition>,
     /// <p>Configuration of the resource instances to use while running the hybrid job on Amazon Braket.</p>
@@ -30,9 +30,8 @@ pub struct CreateJobInput {
 }
 impl CreateJobInput {
     /// <p>A unique token that guarantees that the call to this API is idempotent.</p>
-    pub fn client_token(&self) -> &str {
-        use std::ops::Deref;
-        self.client_token.deref()
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
     /// <p>Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.</p>
     pub fn algorithm_specification(&self) -> ::std::option::Option<&crate::types::AlgorithmSpecification> {
@@ -53,14 +52,12 @@ impl CreateJobInput {
         self.checkpoint_config.as_ref()
     }
     /// <p>The name of the Amazon Braket job.</p>
-    pub fn job_name(&self) -> &str {
-        use std::ops::Deref;
-        self.job_name.deref()
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
+        self.job_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output resources to the users' s3 buckets.</p>
-    pub fn role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.role_arn.deref()
+    pub fn role_arn(&self) -> ::std::option::Option<&str> {
+        self.role_arn.as_deref()
     }
     /// <p> The user-defined criteria that specifies when a job stops running.</p>
     pub fn stopping_condition(&self) -> ::std::option::Option<&crate::types::JobStoppingCondition> {
@@ -309,34 +306,15 @@ impl CreateJobInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateJobInput`](crate::operation::create_job::CreateJobInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`client_token`](crate::operation::create_job::builders::CreateJobInputBuilder::client_token)
-    /// - [`job_name`](crate::operation::create_job::builders::CreateJobInputBuilder::job_name)
-    /// - [`role_arn`](crate::operation::create_job::builders::CreateJobInputBuilder::role_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_job::CreateJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_job::CreateJobInput {
-            client_token: self.client_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "client_token",
-                    "client_token was not specified but it is required when building CreateJobInput",
-                )
-            })?,
+            client_token: self.client_token,
             algorithm_specification: self.algorithm_specification,
             input_data_config: self.input_data_config,
             output_data_config: self.output_data_config,
             checkpoint_config: self.checkpoint_config,
-            job_name: self.job_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "job_name",
-                    "job_name was not specified but it is required when building CreateJobInput",
-                )
-            })?,
-            role_arn: self.role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "role_arn",
-                    "role_arn was not specified but it is required when building CreateJobInput",
-                )
-            })?,
+            job_name: self.job_name,
+            role_arn: self.role_arn,
             stopping_condition: self.stopping_condition,
             instance_config: self.instance_config,
             hyper_parameters: self.hyper_parameters,

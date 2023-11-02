@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteLoggingConfiguration`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::identifier) / [`set_identifier(impl Into<String>)`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::set_identifier):<br>required: **true**<br><p>Identifier of the logging configuration to be deleted.</p><br>
+    ///   - [`identifier(impl Into<String>)`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::identifier) / [`set_identifier(Option<String>)`](crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder::set_identifier):<br>required: **true**<br><p>Identifier of the logging configuration to be deleted.</p><br>
     /// - On success, responds with [`DeleteLoggingConfigurationOutput`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationOutput)
     /// - On failure, responds with [`SdkError<DeleteLoggingConfigurationError>`](crate::operation::delete_logging_configuration::DeleteLoggingConfigurationError)
     pub fn delete_logging_configuration(&self) -> crate::operation::delete_logging_configuration::builders::DeleteLoggingConfigurationFluentBuilder {

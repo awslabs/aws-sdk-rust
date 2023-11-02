@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConfiguredTableAssociationsInput {
     /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
-    pub membership_identifier: ::std::string::String,
+    pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum size of the results that is returned per call.</p>
@@ -12,9 +12,8 @@ pub struct ListConfiguredTableAssociationsInput {
 }
 impl ListConfiguredTableAssociationsInput {
     /// <p>A unique identifier for the membership to list configured table associations for. Currently accepts the membership ID.</p>
-    pub fn membership_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_identifier.deref()
+    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+        self.membership_identifier.as_deref()
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -85,8 +84,6 @@ impl ListConfiguredTableAssociationsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListConfiguredTableAssociationsInput`](crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`membership_identifier`](crate::operation::list_configured_table_associations::builders::ListConfiguredTableAssociationsInputBuilder::membership_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -95,12 +92,7 @@ impl ListConfiguredTableAssociationsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsInput {
-                membership_identifier: self.membership_identifier.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "membership_identifier",
-                        "membership_identifier was not specified but it is required when building ListConfiguredTableAssociationsInput",
-                    )
-                })?,
+                membership_identifier: self.membership_identifier,
                 next_token: self.next_token,
                 max_results: self.max_results,
             },

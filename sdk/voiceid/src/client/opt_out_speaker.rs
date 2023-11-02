@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`OptOutSpeaker`](crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder::domain_id) / [`set_domain_id(impl Into<String>)`](crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder::set_domain_id):<br>required: **true**<br><p>The identifier of the domain that contains the speaker.</p><br>
-    ///   - [`speaker_id(impl Into<String>)`](crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder::speaker_id) / [`set_speaker_id(impl Into<String>)`](crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder::set_speaker_id):<br>required: **true**<br><p>The identifier of the speaker you want opted-out.</p><br>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder::set_domain_id):<br>required: **true**<br><p>The identifier of the domain that contains the speaker.</p><br>
+    ///   - [`speaker_id(impl Into<String>)`](crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder::speaker_id) / [`set_speaker_id(Option<String>)`](crate::operation::opt_out_speaker::builders::OptOutSpeakerFluentBuilder::set_speaker_id):<br>required: **true**<br><p>The identifier of the speaker you want opted-out.</p><br>
     /// - On success, responds with [`OptOutSpeakerOutput`](crate::operation::opt_out_speaker::OptOutSpeakerOutput) with field(s):
     ///   - [`speaker(Option<Speaker>)`](crate::operation::opt_out_speaker::OptOutSpeakerOutput::speaker): <p>Details about the opted-out speaker.</p>
     /// - On failure, responds with [`SdkError<OptOutSpeakerError>`](crate::operation::opt_out_speaker::OptOutSpeakerError)

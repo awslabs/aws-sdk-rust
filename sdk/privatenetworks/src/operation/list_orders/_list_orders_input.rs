@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOrdersInput {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub network_arn: ::std::string::String,
+    pub network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub start_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
@@ -19,9 +19,8 @@ pub struct ListOrdersInput {
 }
 impl ListOrdersInput {
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub fn network_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.network_arn.deref()
+    pub fn network_arn(&self) -> ::std::option::Option<&str> {
+        self.network_arn.as_deref()
     }
     /// <p>The token for the next page of results.</p>
     pub fn start_token(&self) -> ::std::option::Option<&str> {
@@ -144,16 +143,9 @@ impl ListOrdersInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListOrdersInput`](crate::operation::list_orders::ListOrdersInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`network_arn`](crate::operation::list_orders::builders::ListOrdersInputBuilder::network_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_orders::ListOrdersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_orders::ListOrdersInput {
-            network_arn: self.network_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "network_arn",
-                    "network_arn was not specified but it is required when building ListOrdersInput",
-                )
-            })?,
+            network_arn: self.network_arn,
             start_token: self.start_token,
             max_results: self.max_results,
             filters: self.filters,

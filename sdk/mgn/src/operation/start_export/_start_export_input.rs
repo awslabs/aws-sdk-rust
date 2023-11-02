@@ -5,22 +5,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartExportInput {
     /// <p>Start export request s3 bucket.</p>
-    pub s3_bucket: ::std::string::String,
+    pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>Start export request s3key.</p>
-    pub s3_key: ::std::string::String,
+    pub s3_key: ::std::option::Option<::std::string::String>,
     /// <p>Start export request s3 bucket owner.</p>
     pub s3_bucket_owner: ::std::option::Option<::std::string::String>,
 }
 impl StartExportInput {
     /// <p>Start export request s3 bucket.</p>
-    pub fn s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_bucket.deref()
+    pub fn s3_bucket(&self) -> ::std::option::Option<&str> {
+        self.s3_bucket.as_deref()
     }
     /// <p>Start export request s3key.</p>
-    pub fn s3_key(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_key.deref()
+    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+        self.s3_key.as_deref()
     }
     /// <p>Start export request s3 bucket owner.</p>
     pub fn s3_bucket_owner(&self) -> ::std::option::Option<&str> {
@@ -88,23 +86,10 @@ impl StartExportInputBuilder {
         &self.s3_bucket_owner
     }
     /// Consumes the builder and constructs a [`StartExportInput`](crate::operation::start_export::StartExportInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`s3_bucket`](crate::operation::start_export::builders::StartExportInputBuilder::s3_bucket)
-    /// - [`s3_key`](crate::operation::start_export::builders::StartExportInputBuilder::s3_key)
     pub fn build(self) -> ::std::result::Result<crate::operation::start_export::StartExportInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_export::StartExportInput {
-            s3_bucket: self.s3_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "s3_bucket",
-                    "s3_bucket was not specified but it is required when building StartExportInput",
-                )
-            })?,
-            s3_key: self.s3_key.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "s3_key",
-                    "s3_key was not specified but it is required when building StartExportInput",
-                )
-            })?,
+            s3_bucket: self.s3_bucket,
+            s3_key: self.s3_key,
             s3_bucket_owner: self.s3_bucket_owner,
         })
     }

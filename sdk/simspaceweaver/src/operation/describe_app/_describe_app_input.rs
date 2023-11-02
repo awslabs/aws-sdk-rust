@@ -4,27 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppInput {
     /// <p>The name of the simulation of the app.</p>
-    pub simulation: ::std::string::String,
+    pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain of the app.</p>
-    pub domain: ::std::string::String,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The name of the app.</p>
-    pub app: ::std::string::String,
+    pub app: ::std::option::Option<::std::string::String>,
 }
 impl DescribeAppInput {
     /// <p>The name of the simulation of the app.</p>
-    pub fn simulation(&self) -> &str {
-        use std::ops::Deref;
-        self.simulation.deref()
+    pub fn simulation(&self) -> ::std::option::Option<&str> {
+        self.simulation.as_deref()
     }
     /// <p>The name of the domain of the app.</p>
-    pub fn domain(&self) -> &str {
-        use std::ops::Deref;
-        self.domain.deref()
+    pub fn domain(&self) -> ::std::option::Option<&str> {
+        self.domain.as_deref()
     }
     /// <p>The name of the app.</p>
-    pub fn app(&self) -> &str {
-        use std::ops::Deref;
-        self.app.deref()
+    pub fn app(&self) -> ::std::option::Option<&str> {
+        self.app.as_deref()
     }
 }
 impl DescribeAppInput {
@@ -89,30 +86,11 @@ impl DescribeAppInputBuilder {
         &self.app
     }
     /// Consumes the builder and constructs a [`DescribeAppInput`](crate::operation::describe_app::DescribeAppInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`simulation`](crate::operation::describe_app::builders::DescribeAppInputBuilder::simulation)
-    /// - [`domain`](crate::operation::describe_app::builders::DescribeAppInputBuilder::domain)
-    /// - [`app`](crate::operation::describe_app::builders::DescribeAppInputBuilder::app)
     pub fn build(self) -> ::std::result::Result<crate::operation::describe_app::DescribeAppInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_app::DescribeAppInput {
-            simulation: self.simulation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "simulation",
-                    "simulation was not specified but it is required when building DescribeAppInput",
-                )
-            })?,
-            domain: self.domain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain",
-                    "domain was not specified but it is required when building DescribeAppInput",
-                )
-            })?,
-            app: self.app.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app",
-                    "app was not specified but it is required when building DescribeAppInput",
-                )
-            })?,
+            simulation: self.simulation,
+            domain: self.domain,
+            app: self.app,
         })
     }
 }

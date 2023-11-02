@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisableControlInput {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub control_identifier: ::std::string::String,
+    pub control_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub target_identifier: ::std::string::String,
+    pub target_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DisableControlInput {
     /// <p>The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> control. For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub fn control_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.control_identifier.deref()
+    pub fn control_identifier(&self) -> ::std::option::Option<&str> {
+        self.control_identifier.as_deref()
     }
     /// <p>The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the overview page</a>.</p>
-    pub fn target_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.target_identifier.deref()
+    pub fn target_identifier(&self) -> ::std::option::Option<&str> {
+        self.target_identifier.as_deref()
     }
 }
 impl DisableControlInput {
@@ -66,25 +64,12 @@ impl DisableControlInputBuilder {
         &self.target_identifier
     }
     /// Consumes the builder and constructs a [`DisableControlInput`](crate::operation::disable_control::DisableControlInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`control_identifier`](crate::operation::disable_control::builders::DisableControlInputBuilder::control_identifier)
-    /// - [`target_identifier`](crate::operation::disable_control::builders::DisableControlInputBuilder::target_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::disable_control::DisableControlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::disable_control::DisableControlInput {
-            control_identifier: self.control_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "control_identifier",
-                    "control_identifier was not specified but it is required when building DisableControlInput",
-                )
-            })?,
-            target_identifier: self.target_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "target_identifier",
-                    "target_identifier was not specified but it is required when building DisableControlInput",
-                )
-            })?,
+            control_identifier: self.control_identifier,
+            target_identifier: self.target_identifier,
         })
     }
 }

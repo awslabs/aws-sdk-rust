@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEnvironmentTemplate`](crate::operation::get_environment_template::builders::GetEnvironmentTemplateFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_environment_template::builders::GetEnvironmentTemplateFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::get_environment_template::builders::GetEnvironmentTemplateFluentBuilder::set_name):<br>required: **true**<br><p>The name of the environment template that you want to get the detailed data for.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_environment_template::builders::GetEnvironmentTemplateFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_environment_template::builders::GetEnvironmentTemplateFluentBuilder::set_name):<br>required: **true**<br><p>The name of the environment template that you want to get the detailed data for.</p><br>
     /// - On success, responds with [`GetEnvironmentTemplateOutput`](crate::operation::get_environment_template::GetEnvironmentTemplateOutput) with field(s):
     ///   - [`environment_template(Option<EnvironmentTemplate>)`](crate::operation::get_environment_template::GetEnvironmentTemplateOutput::environment_template): <p>The detailed data of the requested environment template.</p>
     /// - On failure, responds with [`SdkError<GetEnvironmentTemplateError>`](crate::operation::get_environment_template::GetEnvironmentTemplateError)

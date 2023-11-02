@@ -3,11 +3,11 @@ pub fn ser_update_service_sync_blocker_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_service_sync_blocker::UpdateServiceSyncBlockerInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("id").string(input.id.as_str());
+    if let Some(var_1) = &input.id {
+        object.key("id").string(var_1.as_str());
     }
-    {
-        object.key("resolvedReason").string(input.resolved_reason.as_str());
+    if let Some(var_2) = &input.resolved_reason {
+        object.key("resolvedReason").string(var_2.as_str());
     }
     Ok(())
 }

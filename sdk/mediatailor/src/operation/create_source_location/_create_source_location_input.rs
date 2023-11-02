@@ -12,7 +12,7 @@ pub struct CreateSourceLocationInput {
     /// <p>A list of the segment delivery configurations associated with this resource.</p>
     pub segment_delivery_configurations: ::std::option::Option<::std::vec::Vec<crate::types::SegmentDeliveryConfiguration>>,
     /// <p>The name associated with the source location.</p>
-    pub source_location_name: ::std::string::String,
+    pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -36,9 +36,8 @@ impl CreateSourceLocationInput {
         self.segment_delivery_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name associated with the source location.</p>
-    pub fn source_location_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_location_name.deref()
+    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+        self.source_location_name.as_deref()
     }
     /// <p>The tags to assign to the source location. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -169,8 +168,6 @@ impl CreateSourceLocationInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateSourceLocationInput`](crate::operation::create_source_location::CreateSourceLocationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_location_name`](crate::operation::create_source_location::builders::CreateSourceLocationInputBuilder::source_location_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_source_location::CreateSourceLocationInput, ::aws_smithy_http::operation::error::BuildError>
@@ -180,12 +177,7 @@ impl CreateSourceLocationInputBuilder {
             default_segment_delivery_configuration: self.default_segment_delivery_configuration,
             http_configuration: self.http_configuration,
             segment_delivery_configurations: self.segment_delivery_configurations,
-            source_location_name: self.source_location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_location_name",
-                    "source_location_name was not specified but it is required when building CreateSourceLocationInput",
-                )
-            })?,
+            source_location_name: self.source_location_name,
             tags: self.tags,
         })
     }

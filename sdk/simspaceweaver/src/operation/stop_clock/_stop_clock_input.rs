@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopClockInput {
     /// <p>The name of the simulation.</p>
-    pub simulation: ::std::string::String,
+    pub simulation: ::std::option::Option<::std::string::String>,
 }
 impl StopClockInput {
     /// <p>The name of the simulation.</p>
-    pub fn simulation(&self) -> &str {
-        use std::ops::Deref;
-        self.simulation.deref()
+    pub fn simulation(&self) -> ::std::option::Option<&str> {
+        self.simulation.as_deref()
     }
 }
 impl StopClockInput {
@@ -43,16 +42,7 @@ impl StopClockInputBuilder {
         &self.simulation
     }
     /// Consumes the builder and constructs a [`StopClockInput`](crate::operation::stop_clock::StopClockInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`simulation`](crate::operation::stop_clock::builders::StopClockInputBuilder::simulation)
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_clock::StopClockInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::stop_clock::StopClockInput {
-            simulation: self.simulation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "simulation",
-                    "simulation was not specified but it is required when building StopClockInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::stop_clock::StopClockInput { simulation: self.simulation })
     }
 }

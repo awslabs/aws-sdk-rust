@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVehicleInput {
     /// <p> The unique ID of the vehicle to create. </p>
-    pub vehicle_name: ::std::string::String,
+    pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
-    pub model_manifest_arn: ::std::string::String,
+    pub model_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of a decoder manifest. </p>
-    pub decoder_manifest_arn: ::std::string::String,
+    pub decoder_manifest_arn: ::std::option::Option<::std::string::String>,
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
@@ -20,19 +20,16 @@ pub struct CreateVehicleInput {
 }
 impl CreateVehicleInput {
     /// <p> The unique ID of the vehicle to create. </p>
-    pub fn vehicle_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vehicle_name.deref()
+    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+        self.vehicle_name.as_deref()
     }
     /// <p> The Amazon Resource Name ARN of a vehicle model. </p>
-    pub fn model_manifest_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.model_manifest_arn.deref()
+    pub fn model_manifest_arn(&self) -> ::std::option::Option<&str> {
+        self.model_manifest_arn.as_deref()
     }
     /// <p> The ARN of a decoder manifest. </p>
-    pub fn decoder_manifest_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.decoder_manifest_arn.deref()
+    pub fn decoder_manifest_arn(&self) -> ::std::option::Option<&str> {
+        self.decoder_manifest_arn.as_deref()
     }
     /// <p>Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
     /// <p>A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code> for them to display in Amazon Timestream.</p>
@@ -176,32 +173,13 @@ impl CreateVehicleInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateVehicleInput`](crate::operation::create_vehicle::CreateVehicleInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`vehicle_name`](crate::operation::create_vehicle::builders::CreateVehicleInputBuilder::vehicle_name)
-    /// - [`model_manifest_arn`](crate::operation::create_vehicle::builders::CreateVehicleInputBuilder::model_manifest_arn)
-    /// - [`decoder_manifest_arn`](crate::operation::create_vehicle::builders::CreateVehicleInputBuilder::decoder_manifest_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_vehicle::CreateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vehicle::CreateVehicleInput {
-            vehicle_name: self.vehicle_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "vehicle_name",
-                    "vehicle_name was not specified but it is required when building CreateVehicleInput",
-                )
-            })?,
-            model_manifest_arn: self.model_manifest_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "model_manifest_arn",
-                    "model_manifest_arn was not specified but it is required when building CreateVehicleInput",
-                )
-            })?,
-            decoder_manifest_arn: self.decoder_manifest_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "decoder_manifest_arn",
-                    "decoder_manifest_arn was not specified but it is required when building CreateVehicleInput",
-                )
-            })?,
+            vehicle_name: self.vehicle_name,
+            model_manifest_arn: self.model_manifest_arn,
+            decoder_manifest_arn: self.decoder_manifest_arn,
             attributes: self.attributes,
             association_behavior: self.association_behavior,
             tags: self.tags,

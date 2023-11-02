@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteBillingGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that you're deleting.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl DeleteBillingGroupInput {
@@ -43,18 +42,9 @@ impl DeleteBillingGroupInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteBillingGroupInput`](crate::operation::delete_billing_group::DeleteBillingGroupInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::delete_billing_group::builders::DeleteBillingGroupInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_billing_group::DeleteBillingGroupInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_billing_group::DeleteBillingGroupInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DeleteBillingGroupInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_billing_group::DeleteBillingGroupInput { arn: self.arn })
     }
 }

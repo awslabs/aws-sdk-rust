@@ -6,51 +6,51 @@ pub fn ser_create_launch_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    {
-        let mut array_2 = object.key("groups").start_array();
-        for item_3 in &input.groups {
+    if let Some(var_2) = &input.groups {
+        let mut array_3 = object.key("groups").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_launch_group_config::ser_launch_group_config(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_launch_group_config::ser_launch_group_config(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_5) = &input.metric_monitors {
-        let mut array_6 = object.key("metricMonitors").start_array();
-        for item_7 in var_5 {
+    if let Some(var_6) = &input.metric_monitors {
+        let mut array_7 = object.key("metricMonitors").start_array();
+        for item_8 in var_6 {
             {
                 #[allow(unused_mut)]
-                let mut object_8 = array_6.value().start_object();
-                crate::protocol_serde::shape_metric_monitor_config::ser_metric_monitor_config(&mut object_8, item_7)?;
-                object_8.finish();
+                let mut object_9 = array_7.value().start_object();
+                crate::protocol_serde::shape_metric_monitor_config::ser_metric_monitor_config(&mut object_9, item_8)?;
+                object_9.finish();
             }
         }
-        array_6.finish();
+        array_7.finish();
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_10) = &input.name {
+        object.key("name").string(var_10.as_str());
     }
-    if let Some(var_9) = &input.randomization_salt {
-        object.key("randomizationSalt").string(var_9.as_str());
+    if let Some(var_11) = &input.randomization_salt {
+        object.key("randomizationSalt").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.scheduled_splits_config {
+    if let Some(var_12) = &input.scheduled_splits_config {
         #[allow(unused_mut)]
-        let mut object_11 = object.key("scheduledSplitsConfig").start_object();
-        crate::protocol_serde::shape_scheduled_splits_launch_config::ser_scheduled_splits_launch_config(&mut object_11, var_10)?;
-        object_11.finish();
-    }
-    if let Some(var_12) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_13 = object.key("tags").start_object();
-        for (key_14, value_15) in var_12 {
-            {
-                object_13.key(key_14.as_str()).string(value_15.as_str());
-            }
-        }
+        let mut object_13 = object.key("scheduledSplitsConfig").start_object();
+        crate::protocol_serde::shape_scheduled_splits_launch_config::ser_scheduled_splits_launch_config(&mut object_13, var_12)?;
         object_13.finish();
+    }
+    if let Some(var_14) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_15 = object.key("tags").start_object();
+        for (key_16, value_17) in var_14 {
+            {
+                object_15.key(key_16.as_str()).string(value_17.as_str());
+            }
+        }
+        object_15.finish();
     }
     Ok(())
 }

@@ -3,17 +3,17 @@ pub fn ser_disassociate_origination_identity_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("PoolId").string(input.pool_id.as_str());
+    if let Some(var_1) = &input.pool_id {
+        object.key("PoolId").string(var_1.as_str());
     }
-    {
-        object.key("OriginationIdentity").string(input.origination_identity.as_str());
+    if let Some(var_2) = &input.origination_identity {
+        object.key("OriginationIdentity").string(var_2.as_str());
     }
-    {
-        object.key("IsoCountryCode").string(input.iso_country_code.as_str());
+    if let Some(var_3) = &input.iso_country_code {
+        object.key("IsoCountryCode").string(var_3.as_str());
     }
-    if let Some(var_1) = &input.client_token {
-        object.key("ClientToken").string(var_1.as_str());
+    if let Some(var_4) = &input.client_token {
+        object.key("ClientToken").string(var_4.as_str());
     }
     Ok(())
 }

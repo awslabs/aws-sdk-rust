@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
-    pub gateway_arn: ::std::string::String,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The updated display name of the gateway.</p>
     pub gateway_display_name: ::std::option::Option<::std::string::String>,
 }
 impl UpdateGatewayInformationInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to update.</p>
-    pub fn gateway_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.gateway_arn.deref()
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+        self.gateway_arn.as_deref()
     }
     /// <p>The updated display name of the gateway.</p>
     pub fn gateway_display_name(&self) -> ::std::option::Option<&str> {
@@ -64,8 +63,6 @@ impl UpdateGatewayInformationInputBuilder {
         &self.gateway_display_name
     }
     /// Consumes the builder and constructs a [`UpdateGatewayInformationInput`](crate::operation::update_gateway_information::UpdateGatewayInformationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`gateway_arn`](crate::operation::update_gateway_information::builders::UpdateGatewayInformationInputBuilder::gateway_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -73,12 +70,7 @@ impl UpdateGatewayInformationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_gateway_information::UpdateGatewayInformationInput {
-            gateway_arn: self.gateway_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "gateway_arn",
-                    "gateway_arn was not specified but it is required when building UpdateGatewayInformationInput",
-                )
-            })?,
+            gateway_arn: self.gateway_arn,
             gateway_display_name: self.gateway_display_name,
         })
     }

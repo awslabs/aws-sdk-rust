@@ -4,20 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDeletionProtectionInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if deletion protection is turned on or off in your account. </p>
-    pub deletion_protected: bool,
+    pub deletion_protected: ::std::option::Option<bool>,
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl UpdateDeletionProtectionInput {
     /// <p>The Amazon Resource Name (ARN) of the replication set to update.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>Specifies if deletion protection is turned on or off in your account. </p>
-    pub fn deletion_protected(&self) -> bool {
+    pub fn deletion_protected(&self) -> ::std::option::Option<bool> {
         self.deletion_protected
     }
     /// <p>A token that ensures that the operation is called only once with the specified details.</p>
@@ -86,9 +85,6 @@ impl UpdateDeletionProtectionInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateDeletionProtectionInput`](crate::operation::update_deletion_protection::UpdateDeletionProtectionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder::arn)
-    /// - [`deletion_protected`](crate::operation::update_deletion_protection::builders::UpdateDeletionProtectionInputBuilder::deletion_protected)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -96,18 +92,8 @@ impl UpdateDeletionProtectionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_deletion_protection::UpdateDeletionProtectionInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building UpdateDeletionProtectionInput",
-                )
-            })?,
-            deletion_protected: self.deletion_protected.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "deletion_protected",
-                    "deletion_protected was not specified but it is required when building UpdateDeletionProtectionInput",
-                )
-            })?,
+            arn: self.arn,
+            deletion_protected: self.deletion_protected,
             client_token: self.client_token,
         })
     }

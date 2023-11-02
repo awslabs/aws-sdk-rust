@@ -4,28 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFleetInput {
     /// <p> The unique ID of the fleet to create. </p>
-    pub fleet_id: ::std::string::String,
+    pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p> A brief description of the fleet to create. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    pub signal_catalog_arn: ::std::string::String,
+    pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that can be used to manage the fleet.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl CreateFleetInput {
     /// <p> The unique ID of the fleet to create. </p>
-    pub fn fleet_id(&self) -> &str {
-        use std::ops::Deref;
-        self.fleet_id.deref()
+    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+        self.fleet_id.as_deref()
     }
     /// <p> A brief description of the fleet to create. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of a signal catalog. </p>
-    pub fn signal_catalog_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.signal_catalog_arn.deref()
+    pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
+        self.signal_catalog_arn.as_deref()
     }
     /// <p>Metadata that can be used to manage the fleet.</p>
     ///
@@ -116,24 +114,11 @@ impl CreateFleetInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateFleetInput`](crate::operation::create_fleet::CreateFleetInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`fleet_id`](crate::operation::create_fleet::builders::CreateFleetInputBuilder::fleet_id)
-    /// - [`signal_catalog_arn`](crate::operation::create_fleet::builders::CreateFleetInputBuilder::signal_catalog_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_fleet::CreateFleetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_fleet::CreateFleetInput {
-            fleet_id: self.fleet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "fleet_id",
-                    "fleet_id was not specified but it is required when building CreateFleetInput",
-                )
-            })?,
+            fleet_id: self.fleet_id,
             description: self.description,
-            signal_catalog_arn: self.signal_catalog_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "signal_catalog_arn",
-                    "signal_catalog_arn was not specified but it is required when building CreateFleetInput",
-                )
-            })?,
+            signal_catalog_arn: self.signal_catalog_arn,
             tags: self.tags,
         })
     }

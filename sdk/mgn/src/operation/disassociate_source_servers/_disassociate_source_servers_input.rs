@@ -4,22 +4,22 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateSourceServersInput {
     /// <p>Application ID.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server IDs list.</p>
-    pub source_server_ids: ::std::vec::Vec<::std::string::String>,
+    pub source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateSourceServersInput {
     /// <p>Application ID.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>Source server IDs list.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_ids.is_none()`.
     pub fn source_server_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.source_server_ids.deref()
+        self.source_server_ids.as_deref().unwrap_or_default()
     }
     /// <p>Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -92,9 +92,6 @@ impl DisassociateSourceServersInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DisassociateSourceServersInput`](crate::operation::disassociate_source_servers::DisassociateSourceServersInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder::application_id)
-    /// - [`source_server_ids`](crate::operation::disassociate_source_servers::builders::DisassociateSourceServersInputBuilder::source_server_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -102,18 +99,8 @@ impl DisassociateSourceServersInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_source_servers::DisassociateSourceServersInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building DisassociateSourceServersInput",
-                )
-            })?,
-            source_server_ids: self.source_server_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_ids",
-                    "source_server_ids was not specified but it is required when building DisassociateSourceServersInput",
-                )
-            })?,
+            application_id: self.application_id,
+            source_server_ids: self.source_server_ids,
             account_id: self.account_id,
         })
     }

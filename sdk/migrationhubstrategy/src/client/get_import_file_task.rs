@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetImportFileTask`](crate::operation::get_import_file_task::builders::GetImportFileTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_import_file_task::builders::GetImportFileTaskFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::get_import_file_task::builders::GetImportFileTaskFluentBuilder::set_id):<br>required: **true**<br><p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_import_file_task::builders::GetImportFileTaskFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_import_file_task::builders::GetImportFileTaskFluentBuilder::set_id):<br>required: **true**<br><p> The ID of the import file task. This ID is returned in the response of <code>StartImportFileTask</code>. </p><br>
     /// - On success, responds with [`GetImportFileTaskOutput`](crate::operation::get_import_file_task::GetImportFileTaskOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::get_import_file_task::GetImportFileTaskOutput::id): <p> The import file task <code>id</code> returned in the response of <code>StartImportFileTask</code>. </p>
     ///   - [`status(Option<ImportFileTaskStatus>)`](crate::operation::get_import_file_task::GetImportFileTaskOutput::status): <p> Status of import file task. </p>

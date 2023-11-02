@@ -19,17 +19,17 @@ pub fn ser_update_resiliency_policy_input(
         }
         object_3.finish();
     }
-    {
-        object.key("policyArn").string(input.policy_arn.as_str());
+    if let Some(var_7) = &input.policy_arn {
+        object.key("policyArn").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.policy_description {
-        object.key("policyDescription").string(var_7.as_str());
+    if let Some(var_8) = &input.policy_description {
+        object.key("policyDescription").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.policy_name {
-        object.key("policyName").string(var_8.as_str());
+    if let Some(var_9) = &input.policy_name {
+        object.key("policyName").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.tier {
-        object.key("tier").string(var_9.as_str());
+    if let Some(var_10) = &input.tier {
+        object.key("tier").string(var_10.as_str());
     }
     Ok(())
 }

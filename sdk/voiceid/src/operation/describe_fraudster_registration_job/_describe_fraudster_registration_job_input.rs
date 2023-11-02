@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeFraudsterRegistrationJobInput {
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the fraudster registration job you are describing.</p>
-    pub job_id: ::std::string::String,
+    pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeFraudsterRegistrationJobInput {
     /// <p>The identifier of the domain that contains the fraudster registration job.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The identifier of the fraudster registration job you are describing.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
+        self.job_id.as_deref()
     }
 }
 impl DescribeFraudsterRegistrationJobInput {
@@ -66,9 +64,6 @@ impl DescribeFraudsterRegistrationJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeFraudsterRegistrationJobInput`](crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobInputBuilder::domain_id)
-    /// - [`job_id`](crate::operation::describe_fraudster_registration_job::builders::DescribeFraudsterRegistrationJobInputBuilder::job_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -77,18 +72,8 @@ impl DescribeFraudsterRegistrationJobInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_fraudster_registration_job::DescribeFraudsterRegistrationJobInput {
-                domain_id: self.domain_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "domain_id",
-                        "domain_id was not specified but it is required when building DescribeFraudsterRegistrationJobInput",
-                    )
-                })?,
-                job_id: self.job_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "job_id",
-                        "job_id was not specified but it is required when building DescribeFraudsterRegistrationJobInput",
-                    )
-                })?,
+                domain_id: self.domain_id,
+                job_id: self.job_id,
             },
         )
     }

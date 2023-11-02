@@ -6,7 +6,7 @@ pub struct UpdateIdentityProviderSettingsInput {
     /// <p>Details about an identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
-    pub product: ::std::string::String,
+    pub product: ::std::option::Option<::std::string::String>,
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
     /// <li> <p>Subnets which you want to add to provision VPC endpoints.</p> </li>
@@ -21,9 +21,8 @@ impl UpdateIdentityProviderSettingsInput {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> &str {
-        use std::ops::Deref;
-        self.product.deref()
+    pub fn product(&self) -> ::std::option::Option<&str> {
+        self.product.as_deref()
     }
     /// <p>Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:</p>
     /// <ul>
@@ -112,8 +111,6 @@ impl UpdateIdentityProviderSettingsInputBuilder {
         &self.update_settings
     }
     /// Consumes the builder and constructs a [`UpdateIdentityProviderSettingsInput`](crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`product`](crate::operation::update_identity_provider_settings::builders::UpdateIdentityProviderSettingsInputBuilder::product)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -122,12 +119,7 @@ impl UpdateIdentityProviderSettingsInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsInput {
             identity_provider: self.identity_provider,
-            product: self.product.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "product",
-                    "product was not specified but it is required when building UpdateIdentityProviderSettingsInput",
-                )
-            })?,
+            product: self.product,
             update_settings: self.update_settings,
         })
     }

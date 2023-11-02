@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHealthEventInput {
     /// <p>The name of the monitor.</p>
-    pub monitor_name: ::std::string::String,
+    pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
-    pub event_id: ::std::string::String,
+    pub event_id: ::std::option::Option<::std::string::String>,
 }
 impl GetHealthEventInput {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_name.deref()
+    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+        self.monitor_name.as_deref()
     }
     /// <p>The internally generated identifier of a health event. Because <code>EventID</code> contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code> field in the request URL.</p>
-    pub fn event_id(&self) -> &str {
-        use std::ops::Deref;
-        self.event_id.deref()
+    pub fn event_id(&self) -> ::std::option::Option<&str> {
+        self.event_id.as_deref()
     }
 }
 impl GetHealthEventInput {
@@ -66,25 +64,12 @@ impl GetHealthEventInputBuilder {
         &self.event_id
     }
     /// Consumes the builder and constructs a [`GetHealthEventInput`](crate::operation::get_health_event::GetHealthEventInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`monitor_name`](crate::operation::get_health_event::builders::GetHealthEventInputBuilder::monitor_name)
-    /// - [`event_id`](crate::operation::get_health_event::builders::GetHealthEventInputBuilder::event_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_health_event::GetHealthEventInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_health_event::GetHealthEventInput {
-            monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "monitor_name",
-                    "monitor_name was not specified but it is required when building GetHealthEventInput",
-                )
-            })?,
-            event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "event_id",
-                    "event_id was not specified but it is required when building GetHealthEventInput",
-                )
-            })?,
+            monitor_name: self.monitor_name,
+            event_id: self.event_id,
         })
     }
 }

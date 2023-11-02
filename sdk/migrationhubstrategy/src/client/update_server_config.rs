@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateServerConfig`](crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`server_id(impl Into<String>)`](crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder::server_id) / [`set_server_id(impl Into<String>)`](crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder::set_server_id):<br>required: **true**<br><p> The ID of the server. </p><br>
+    ///   - [`server_id(impl Into<String>)`](crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder::server_id) / [`set_server_id(Option<String>)`](crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder::set_server_id):<br>required: **true**<br><p> The ID of the server. </p><br>
     ///   - [`strategy_option(StrategyOption)`](crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder::strategy_option) / [`set_strategy_option(Option<StrategyOption>)`](crate::operation::update_server_config::builders::UpdateServerConfigFluentBuilder::set_strategy_option):<br>required: **false**<br><p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p><br>
     /// - On success, responds with [`UpdateServerConfigOutput`](crate::operation::update_server_config::UpdateServerConfigOutput)
     /// - On failure, responds with [`SdkError<UpdateServerConfigError>`](crate::operation::update_server_config::UpdateServerConfigError)

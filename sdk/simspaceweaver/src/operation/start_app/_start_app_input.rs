@@ -6,11 +6,11 @@ pub struct StartAppInput {
     /// <p>A value that you provide to ensure that repeated calls to this API operation using the same parameters complete only once. A <code>ClientToken</code> is also known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the simulation of the app.</p>
-    pub simulation: ::std::string::String,
+    pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain of the app.</p>
-    pub domain: ::std::string::String,
+    pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The name of the app.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the app.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Options that apply when the app starts. These options override default behavior.</p>
@@ -22,19 +22,16 @@ impl StartAppInput {
         self.client_token.as_deref()
     }
     /// <p>The name of the simulation of the app.</p>
-    pub fn simulation(&self) -> &str {
-        use std::ops::Deref;
-        self.simulation.deref()
+    pub fn simulation(&self) -> ::std::option::Option<&str> {
+        self.simulation.as_deref()
     }
     /// <p>The name of the domain of the app.</p>
-    pub fn domain(&self) -> &str {
-        use std::ops::Deref;
-        self.domain.deref()
+    pub fn domain(&self) -> ::std::option::Option<&str> {
+        self.domain.as_deref()
     }
     /// <p>The name of the app.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The description of the app.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -164,31 +161,12 @@ impl StartAppInputBuilder {
         &self.launch_overrides
     }
     /// Consumes the builder and constructs a [`StartAppInput`](crate::operation::start_app::StartAppInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`simulation`](crate::operation::start_app::builders::StartAppInputBuilder::simulation)
-    /// - [`domain`](crate::operation::start_app::builders::StartAppInputBuilder::domain)
-    /// - [`name`](crate::operation::start_app::builders::StartAppInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::start_app::StartAppInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_app::StartAppInput {
             client_token: self.client_token,
-            simulation: self.simulation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "simulation",
-                    "simulation was not specified but it is required when building StartAppInput",
-                )
-            })?,
-            domain: self.domain.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain",
-                    "domain was not specified but it is required when building StartAppInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building StartAppInput",
-                )
-            })?,
+            simulation: self.simulation,
+            domain: self.domain,
+            name: self.name,
             description: self.description,
             launch_overrides: self.launch_overrides,
         })

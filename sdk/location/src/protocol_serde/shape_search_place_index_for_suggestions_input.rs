@@ -54,8 +54,8 @@ pub fn ser_search_place_index_for_suggestions_input(
             ::aws_smithy_types::Number::NegInt((*var_14).into()),
         );
     }
-    {
-        object.key("Text").string(input.text.as_str());
+    if let Some(var_15) = &input.text {
+        object.key("Text").string(var_15.as_str());
     }
     Ok(())
 }

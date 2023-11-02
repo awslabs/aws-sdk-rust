@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteMembershipInput {
     /// <p>The identifier for a membership resource.</p>
-    pub membership_identifier: ::std::string::String,
+    pub membership_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteMembershipInput {
     /// <p>The identifier for a membership resource.</p>
-    pub fn membership_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_identifier.deref()
+    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+        self.membership_identifier.as_deref()
     }
 }
 impl DeleteMembershipInput {
@@ -43,18 +42,11 @@ impl DeleteMembershipInputBuilder {
         &self.membership_identifier
     }
     /// Consumes the builder and constructs a [`DeleteMembershipInput`](crate::operation::delete_membership::DeleteMembershipInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`membership_identifier`](crate::operation::delete_membership::builders::DeleteMembershipInputBuilder::membership_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_membership::DeleteMembershipInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_membership::DeleteMembershipInput {
-            membership_identifier: self.membership_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "membership_identifier",
-                    "membership_identifier was not specified but it is required when building DeleteMembershipInput",
-                )
-            })?,
+            membership_identifier: self.membership_identifier,
         })
     }
 }

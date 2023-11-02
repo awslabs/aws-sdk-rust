@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDevice`](crate::operation::get_device::builders::GetDeviceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`device_arn(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::device_arn) / [`set_device_arn(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_device_arn):<br>required: **true**<br><p>The ARN of the device to retrieve.</p><br>
+    ///   - [`device_arn(impl Into<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::device_arn) / [`set_device_arn(Option<String>)`](crate::operation::get_device::builders::GetDeviceFluentBuilder::set_device_arn):<br>required: **true**<br><p>The ARN of the device to retrieve.</p><br>
     /// - On success, responds with [`GetDeviceOutput`](crate::operation::get_device::GetDeviceOutput) with field(s):
     ///   - [`device_arn(String)`](crate::operation::get_device::GetDeviceOutput::device_arn): <p>The ARN of the device.</p>
     ///   - [`device_name(String)`](crate::operation::get_device::GetDeviceOutput::device_name): <p>The name of the device.</p>

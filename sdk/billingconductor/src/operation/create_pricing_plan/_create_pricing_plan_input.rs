@@ -6,7 +6,7 @@ pub struct CreatePricingPlanInput {
     /// <p> The token that is needed to support idempotency. Idempotency isn't currently supported, but will be implemented in a future update. </p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the pricing plan. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of Amazon Resource Names (ARNs) that define the pricing plan parameters. </p>
@@ -20,9 +20,8 @@ impl CreatePricingPlanInput {
         self.client_token.as_deref()
     }
     /// <p>The name of the pricing plan. The names must be unique to each pricing plan. </p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The description of the pricing plan. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -152,19 +151,12 @@ impl CreatePricingPlanInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePricingPlanInput`](crate::operation::create_pricing_plan::CreatePricingPlanInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_pricing_plan::builders::CreatePricingPlanInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_pricing_plan::CreatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pricing_plan::CreatePricingPlanInput {
             client_token: self.client_token,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreatePricingPlanInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
             pricing_rule_arns: self.pricing_rule_arns,
             tags: self.tags,

@@ -4,22 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeVirtualServiceInput {
     /// <p>The name of the virtual service to describe.</p>
-    pub virtual_service_name: ::std::string::String,
+    pub virtual_service_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service mesh that the virtual service resides in.</p>
-    pub mesh_name: ::std::string::String,
+    pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub mesh_owner: ::std::option::Option<::std::string::String>,
 }
 impl DescribeVirtualServiceInput {
     /// <p>The name of the virtual service to describe.</p>
-    pub fn virtual_service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.virtual_service_name.deref()
+    pub fn virtual_service_name(&self) -> ::std::option::Option<&str> {
+        self.virtual_service_name.as_deref()
     }
     /// <p>The name of the service mesh that the virtual service resides in.</p>
-    pub fn mesh_name(&self) -> &str {
-        use std::ops::Deref;
-        self.mesh_name.deref()
+    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
+        self.mesh_name.as_deref()
     }
     /// <p>The Amazon Web Services IAM account ID of the service mesh owner. If the account ID is not your own, then it's the ID of the account that shared the mesh with your account. For more information about mesh sharing, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working with shared meshes</a>.</p>
     pub fn mesh_owner(&self) -> ::std::option::Option<&str> {
@@ -87,26 +85,13 @@ impl DescribeVirtualServiceInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`DescribeVirtualServiceInput`](crate::operation::describe_virtual_service::DescribeVirtualServiceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`virtual_service_name`](crate::operation::describe_virtual_service::builders::DescribeVirtualServiceInputBuilder::virtual_service_name)
-    /// - [`mesh_name`](crate::operation::describe_virtual_service::builders::DescribeVirtualServiceInputBuilder::mesh_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_virtual_service::DescribeVirtualServiceInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_virtual_service::DescribeVirtualServiceInput {
-            virtual_service_name: self.virtual_service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "virtual_service_name",
-                    "virtual_service_name was not specified but it is required when building DescribeVirtualServiceInput",
-                )
-            })?,
-            mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "mesh_name",
-                    "mesh_name was not specified but it is required when building DescribeVirtualServiceInput",
-                )
-            })?,
+            virtual_service_name: self.virtual_service_name,
+            mesh_name: self.mesh_name,
             mesh_owner: self.mesh_owner,
         })
     }

@@ -10,7 +10,7 @@ pub struct CreateKeyInput {
     /// <li> <p>Must be a unique API key name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li>
     /// </ul>
-    pub key_name: ::std::string::String,
+    pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The API key restrictions for the API key resource.</p>
     pub restrictions: ::std::option::Option<crate::types::ApiKeyRestrictions>,
     /// <p>An optional description for the API key resource.</p>
@@ -40,9 +40,8 @@ impl CreateKeyInput {
     /// <li> <p>Must be a unique API key name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExampleAPIKey</code>.</p> </li>
     /// </ul>
-    pub fn key_name(&self) -> &str {
-        use std::ops::Deref;
-        self.key_name.deref()
+    pub fn key_name(&self) -> ::std::option::Option<&str> {
+        self.key_name.as_deref()
     }
     /// <p>The API key restrictions for the API key resource.</p>
     pub fn restrictions(&self) -> ::std::option::Option<&crate::types::ApiKeyRestrictions> {
@@ -235,16 +234,9 @@ impl CreateKeyInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKeyInput`](crate::operation::create_key::CreateKeyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`key_name`](crate::operation::create_key::builders::CreateKeyInputBuilder::key_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_key::CreateKeyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_key::CreateKeyInput {
-            key_name: self.key_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "key_name",
-                    "key_name was not specified but it is required when building CreateKeyInput",
-                )
-            })?,
+            key_name: self.key_name,
             restrictions: self.restrictions,
             description: self.description,
             expire_time: self.expire_time,

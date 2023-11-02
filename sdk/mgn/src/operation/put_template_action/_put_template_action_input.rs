@@ -4,21 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutTemplateActionInput {
     /// <p>Launch configuration template ID.</p>
-    pub launch_configuration_template_id: ::std::string::String,
+    pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action name.</p>
-    pub action_name: ::std::string::String,
+    pub action_name: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action document identifier.</p>
-    pub document_identifier: ::std::string::String,
+    pub document_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action order.</p>
-    pub order: i32,
+    pub order: ::std::option::Option<i32>,
     /// <p>Template post migration custom action ID.</p>
-    pub action_id: ::std::string::String,
+    pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action document version.</p>
     pub document_version: ::std::option::Option<::std::string::String>,
     /// <p>Template post migration custom action active status.</p>
     pub active: ::std::option::Option<bool>,
     /// <p>Template post migration custom action timeout in seconds.</p>
-    pub timeout_seconds: i32,
+    pub timeout_seconds: ::std::option::Option<i32>,
     /// <p>Template post migration custom action must succeed for cutover.</p>
     pub must_succeed_for_cutover: ::std::option::Option<bool>,
     /// <p>Template post migration custom action parameters.</p>
@@ -35,28 +35,24 @@ pub struct PutTemplateActionInput {
 }
 impl PutTemplateActionInput {
     /// <p>Launch configuration template ID.</p>
-    pub fn launch_configuration_template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.launch_configuration_template_id.deref()
+    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
+        self.launch_configuration_template_id.as_deref()
     }
     /// <p>Template post migration custom action name.</p>
-    pub fn action_name(&self) -> &str {
-        use std::ops::Deref;
-        self.action_name.deref()
+    pub fn action_name(&self) -> ::std::option::Option<&str> {
+        self.action_name.as_deref()
     }
     /// <p>Template post migration custom action document identifier.</p>
-    pub fn document_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.document_identifier.deref()
+    pub fn document_identifier(&self) -> ::std::option::Option<&str> {
+        self.document_identifier.as_deref()
     }
     /// <p>Template post migration custom action order.</p>
-    pub fn order(&self) -> i32 {
+    pub fn order(&self) -> ::std::option::Option<i32> {
         self.order
     }
     /// <p>Template post migration custom action ID.</p>
-    pub fn action_id(&self) -> &str {
-        use std::ops::Deref;
-        self.action_id.deref()
+    pub fn action_id(&self) -> ::std::option::Option<&str> {
+        self.action_id.as_deref()
     }
     /// <p>Template post migration custom action document version.</p>
     pub fn document_version(&self) -> ::std::option::Option<&str> {
@@ -67,7 +63,7 @@ impl PutTemplateActionInput {
         self.active
     }
     /// <p>Template post migration custom action timeout in seconds.</p>
-    pub fn timeout_seconds(&self) -> i32 {
+    pub fn timeout_seconds(&self) -> ::std::option::Option<i32> {
         self.timeout_seconds
     }
     /// <p>Template post migration custom action must succeed for cutover.</p>
@@ -355,43 +351,18 @@ impl PutTemplateActionInputBuilder {
         &self.category
     }
     /// Consumes the builder and constructs a [`PutTemplateActionInput`](crate::operation::put_template_action::PutTemplateActionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`launch_configuration_template_id`](crate::operation::put_template_action::builders::PutTemplateActionInputBuilder::launch_configuration_template_id)
-    /// - [`action_name`](crate::operation::put_template_action::builders::PutTemplateActionInputBuilder::action_name)
-    /// - [`document_identifier`](crate::operation::put_template_action::builders::PutTemplateActionInputBuilder::document_identifier)
-    /// - [`action_id`](crate::operation::put_template_action::builders::PutTemplateActionInputBuilder::action_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_template_action::PutTemplateActionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_template_action::PutTemplateActionInput {
-            launch_configuration_template_id: self.launch_configuration_template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "launch_configuration_template_id",
-                    "launch_configuration_template_id was not specified but it is required when building PutTemplateActionInput",
-                )
-            })?,
-            action_name: self.action_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "action_name",
-                    "action_name was not specified but it is required when building PutTemplateActionInput",
-                )
-            })?,
-            document_identifier: self.document_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "document_identifier",
-                    "document_identifier was not specified but it is required when building PutTemplateActionInput",
-                )
-            })?,
-            order: self.order.unwrap_or_default(),
-            action_id: self.action_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "action_id",
-                    "action_id was not specified but it is required when building PutTemplateActionInput",
-                )
-            })?,
+            launch_configuration_template_id: self.launch_configuration_template_id,
+            action_name: self.action_name,
+            document_identifier: self.document_identifier,
+            order: self.order,
+            action_id: self.action_id,
             document_version: self.document_version,
             active: self.active,
-            timeout_seconds: self.timeout_seconds.unwrap_or_default(),
+            timeout_seconds: self.timeout_seconds,
             must_succeed_for_cutover: self.must_succeed_for_cutover,
             parameters: self.parameters,
             operating_system: self.operating_system,

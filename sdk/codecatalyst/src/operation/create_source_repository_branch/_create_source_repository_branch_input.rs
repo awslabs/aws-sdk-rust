@@ -4,36 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSourceRepositoryBranchInput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::string::String,
+    pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::string::String,
+    pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the repository where you want to create a branch.</p>
-    pub source_repository_name: ::std::string::String,
+    pub source_repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The name for the branch you're creating.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The commit ID in an existing branch from which you want to create the new branch.</p>
     pub head_commit_id: ::std::option::Option<::std::string::String>,
 }
 impl CreateSourceRepositoryBranchInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> &str {
-        use std::ops::Deref;
-        self.space_name.deref()
+    pub fn space_name(&self) -> ::std::option::Option<&str> {
+        self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> &str {
-        use std::ops::Deref;
-        self.project_name.deref()
+    pub fn project_name(&self) -> ::std::option::Option<&str> {
+        self.project_name.as_deref()
     }
     /// <p>The name of the repository where you want to create a branch.</p>
-    pub fn source_repository_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_repository_name.deref()
+    pub fn source_repository_name(&self) -> ::std::option::Option<&str> {
+        self.source_repository_name.as_deref()
     }
     /// <p>The name for the branch you're creating.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The commit ID in an existing branch from which you want to create the new branch.</p>
     pub fn head_commit_id(&self) -> ::std::option::Option<&str> {
@@ -133,11 +129,6 @@ impl CreateSourceRepositoryBranchInputBuilder {
         &self.head_commit_id
     }
     /// Consumes the builder and constructs a [`CreateSourceRepositoryBranchInput`](crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`space_name`](crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder::space_name)
-    /// - [`project_name`](crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder::project_name)
-    /// - [`source_repository_name`](crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder::source_repository_name)
-    /// - [`name`](crate::operation::create_source_repository_branch::builders::CreateSourceRepositoryBranchInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -145,30 +136,10 @@ impl CreateSourceRepositoryBranchInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_source_repository_branch::CreateSourceRepositoryBranchInput {
-            space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "space_name",
-                    "space_name was not specified but it is required when building CreateSourceRepositoryBranchInput",
-                )
-            })?,
-            project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project_name",
-                    "project_name was not specified but it is required when building CreateSourceRepositoryBranchInput",
-                )
-            })?,
-            source_repository_name: self.source_repository_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_repository_name",
-                    "source_repository_name was not specified but it is required when building CreateSourceRepositoryBranchInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateSourceRepositoryBranchInput",
-                )
-            })?,
+            space_name: self.space_name,
+            project_name: self.project_name,
+            source_repository_name: self.source_repository_name,
+            name: self.name,
             head_commit_id: self.head_commit_id,
         })
     }

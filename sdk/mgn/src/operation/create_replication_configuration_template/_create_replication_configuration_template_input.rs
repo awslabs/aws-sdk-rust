@@ -4,29 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateReplicationConfigurationTemplateInput {
     /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
-    pub staging_area_subnet_id: ::std::string::String,
+    pub staging_area_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
-    pub associate_default_security_group: bool,
+    pub associate_default_security_group: ::std::option::Option<bool>,
     /// <p>Request to configure the Replication Server Security group ID during Replication Settings template creation.</p>
-    pub replication_servers_security_groups_ids: ::std::vec::Vec<::std::string::String>,
+    pub replication_servers_security_groups_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
-    pub replication_server_instance_type: ::std::string::String,
+    pub replication_server_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
-    pub use_dedicated_replication_server: bool,
+    pub use_dedicated_replication_server: ::std::option::Option<bool>,
     /// <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
-    pub default_large_staging_disk_type: crate::types::ReplicationConfigurationDefaultLargeStagingDiskType,
+    pub default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>Request to configure EBS encryption during Replication Settings template creation.</p>
-    pub ebs_encryption: crate::types::ReplicationConfigurationEbsEncryption,
+    pub ebs_encryption: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     /// <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
     pub ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
-    pub bandwidth_throttling: i64,
+    pub bandwidth_throttling: ::std::option::Option<i64>,
     /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
-    pub data_plane_routing: crate::types::ReplicationConfigurationDataPlaneRouting,
+    pub data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Request to create Public IP during Replication Settings template creation.</p>
-    pub create_public_ip: bool,
+    pub create_public_ip: ::std::option::Option<bool>,
     /// <p>Request to configure Staging Area tags during Replication Settings template creation.</p>
-    pub staging_area_tags: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
     pub use_fips_endpoint: ::std::option::Option<bool>,
     /// <p>Request to configure tags during Replication Settings template creation.</p>
@@ -34,55 +34,54 @@ pub struct CreateReplicationConfigurationTemplateInput {
 }
 impl CreateReplicationConfigurationTemplateInput {
     /// <p>Request to configure the Staging Area subnet ID during Replication Settings template creation.</p>
-    pub fn staging_area_subnet_id(&self) -> &str {
-        use std::ops::Deref;
-        self.staging_area_subnet_id.deref()
+    pub fn staging_area_subnet_id(&self) -> ::std::option::Option<&str> {
+        self.staging_area_subnet_id.as_deref()
     }
     /// <p>Request to associate the default Application Migration Service Security group with the Replication Settings template.</p>
-    pub fn associate_default_security_group(&self) -> bool {
+    pub fn associate_default_security_group(&self) -> ::std::option::Option<bool> {
         self.associate_default_security_group
     }
     /// <p>Request to configure the Replication Server Security group ID during Replication Settings template creation.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_ids.is_none()`.
     pub fn replication_servers_security_groups_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.replication_servers_security_groups_ids.deref()
+        self.replication_servers_security_groups_ids.as_deref().unwrap_or_default()
     }
     /// <p>Request to configure the Replication Server instance type during Replication Settings template creation.</p>
-    pub fn replication_server_instance_type(&self) -> &str {
-        use std::ops::Deref;
-        self.replication_server_instance_type.deref()
+    pub fn replication_server_instance_type(&self) -> ::std::option::Option<&str> {
+        self.replication_server_instance_type.as_deref()
     }
     /// <p>Request to use Dedicated Replication Servers during Replication Settings template creation.</p>
-    pub fn use_dedicated_replication_server(&self) -> bool {
+    pub fn use_dedicated_replication_server(&self) -> ::std::option::Option<bool> {
         self.use_dedicated_replication_server
     }
     /// <p>Request to configure the default large staging disk EBS volume type during Replication Settings template creation.</p>
-    pub fn default_large_staging_disk_type(&self) -> &crate::types::ReplicationConfigurationDefaultLargeStagingDiskType {
-        &self.default_large_staging_disk_type
+    pub fn default_large_staging_disk_type(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationDefaultLargeStagingDiskType> {
+        self.default_large_staging_disk_type.as_ref()
     }
     /// <p>Request to configure EBS encryption during Replication Settings template creation.</p>
-    pub fn ebs_encryption(&self) -> &crate::types::ReplicationConfigurationEbsEncryption {
-        &self.ebs_encryption
+    pub fn ebs_encryption(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {
+        self.ebs_encryption.as_ref()
     }
     /// <p>Request to configure an EBS encryption key during Replication Settings template creation.</p>
     pub fn ebs_encryption_key_arn(&self) -> ::std::option::Option<&str> {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Request to configure bandwidth throttling during Replication Settings template creation.</p>
-    pub fn bandwidth_throttling(&self) -> i64 {
+    pub fn bandwidth_throttling(&self) -> ::std::option::Option<i64> {
         self.bandwidth_throttling
     }
     /// <p>Request to configure data plane routing during Replication Settings template creation.</p>
-    pub fn data_plane_routing(&self) -> &crate::types::ReplicationConfigurationDataPlaneRouting {
-        &self.data_plane_routing
+    pub fn data_plane_routing(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationDataPlaneRouting> {
+        self.data_plane_routing.as_ref()
     }
     /// <p>Request to create Public IP during Replication Settings template creation.</p>
-    pub fn create_public_ip(&self) -> bool {
+    pub fn create_public_ip(&self) -> ::std::option::Option<bool> {
         self.create_public_ip
     }
     /// <p>Request to configure Staging Area tags during Replication Settings template creation.</p>
-    pub fn staging_area_tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
-        &self.staging_area_tags
+    pub fn staging_area_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.staging_area_tags.as_ref()
     }
     /// <p>Request to use Fips Endpoint during Replication Settings template creation.</p>
     pub fn use_fips_endpoint(&self) -> ::std::option::Option<bool> {
@@ -374,17 +373,6 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateReplicationConfigurationTemplateInput`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`staging_area_subnet_id`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::staging_area_subnet_id)
-    /// - [`associate_default_security_group`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::associate_default_security_group)
-    /// - [`replication_servers_security_groups_ids`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::replication_servers_security_groups_ids)
-    /// - [`replication_server_instance_type`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::replication_server_instance_type)
-    /// - [`use_dedicated_replication_server`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::use_dedicated_replication_server)
-    /// - [`default_large_staging_disk_type`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::default_large_staging_disk_type)
-    /// - [`ebs_encryption`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::ebs_encryption)
-    /// - [`data_plane_routing`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::data_plane_routing)
-    /// - [`create_public_ip`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::create_public_ip)
-    /// - [`staging_area_tags`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::staging_area_tags)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -393,66 +381,21 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput {
-                staging_area_subnet_id: self.staging_area_subnet_id
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("staging_area_subnet_id", "staging_area_subnet_id was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                associate_default_security_group: self.associate_default_security_group
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("associate_default_security_group", "associate_default_security_group was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                replication_servers_security_groups_ids: self.replication_servers_security_groups_ids
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("replication_servers_security_groups_ids", "replication_servers_security_groups_ids was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                replication_server_instance_type: self.replication_server_instance_type
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("replication_server_instance_type", "replication_server_instance_type was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                use_dedicated_replication_server: self.use_dedicated_replication_server
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("use_dedicated_replication_server", "use_dedicated_replication_server was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                default_large_staging_disk_type: self.default_large_staging_disk_type
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("default_large_staging_disk_type", "default_large_staging_disk_type was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                ebs_encryption: self.ebs_encryption
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("ebs_encryption", "ebs_encryption was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                ebs_encryption_key_arn: self.ebs_encryption_key_arn
-                ,
-                bandwidth_throttling: self.bandwidth_throttling
-                    .unwrap_or_default()
-                ,
-                data_plane_routing: self.data_plane_routing
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("data_plane_routing", "data_plane_routing was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                create_public_ip: self.create_public_ip
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("create_public_ip", "create_public_ip was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                staging_area_tags: self.staging_area_tags
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("staging_area_tags", "staging_area_tags was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                use_fips_endpoint: self.use_fips_endpoint
-                ,
-                tags: self.tags
-                ,
-            }
+                staging_area_subnet_id: self.staging_area_subnet_id,
+                associate_default_security_group: self.associate_default_security_group,
+                replication_servers_security_groups_ids: self.replication_servers_security_groups_ids,
+                replication_server_instance_type: self.replication_server_instance_type,
+                use_dedicated_replication_server: self.use_dedicated_replication_server,
+                default_large_staging_disk_type: self.default_large_staging_disk_type,
+                ebs_encryption: self.ebs_encryption,
+                ebs_encryption_key_arn: self.ebs_encryption_key_arn,
+                bandwidth_throttling: self.bandwidth_throttling,
+                data_plane_routing: self.data_plane_routing,
+                create_public_ip: self.create_public_ip,
+                staging_area_tags: self.staging_area_tags,
+                use_fips_endpoint: self.use_fips_endpoint,
+                tags: self.tags,
+            },
         )
     }
 }

@@ -4,27 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRouteInput {
     /// <p>The ID of the environment.</p>
-    pub environment_identifier: ::std::string::String,
+    pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application. </p>
-    pub application_identifier: ::std::string::String,
+    pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the route.</p>
-    pub route_identifier: ::std::string::String,
+    pub route_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetRouteInput {
     /// <p>The ID of the environment.</p>
-    pub fn environment_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_identifier.deref()
+    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_identifier.as_deref()
     }
     /// <p>The ID of the application. </p>
-    pub fn application_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.application_identifier.deref()
+    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+        self.application_identifier.as_deref()
     }
     /// <p>The ID of the route.</p>
-    pub fn route_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.route_identifier.deref()
+    pub fn route_identifier(&self) -> ::std::option::Option<&str> {
+        self.route_identifier.as_deref()
     }
 }
 impl GetRouteInput {
@@ -89,30 +86,11 @@ impl GetRouteInputBuilder {
         &self.route_identifier
     }
     /// Consumes the builder and constructs a [`GetRouteInput`](crate::operation::get_route::GetRouteInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`environment_identifier`](crate::operation::get_route::builders::GetRouteInputBuilder::environment_identifier)
-    /// - [`application_identifier`](crate::operation::get_route::builders::GetRouteInputBuilder::application_identifier)
-    /// - [`route_identifier`](crate::operation::get_route::builders::GetRouteInputBuilder::route_identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_route::GetRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_route::GetRouteInput {
-            environment_identifier: self.environment_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_identifier",
-                    "environment_identifier was not specified but it is required when building GetRouteInput",
-                )
-            })?,
-            application_identifier: self.application_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_identifier",
-                    "application_identifier was not specified but it is required when building GetRouteInput",
-                )
-            })?,
-            route_identifier: self.route_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "route_identifier",
-                    "route_identifier was not specified but it is required when building GetRouteInput",
-                )
-            })?,
+            environment_identifier: self.environment_identifier,
+            application_identifier: self.application_identifier,
+            route_identifier: self.route_identifier,
         })
     }
 }

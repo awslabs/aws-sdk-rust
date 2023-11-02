@@ -12,67 +12,67 @@ pub fn ser_calculate_route_input(
     if let Some(var_3) = &input.depart_now {
         object.key("DepartNow").boolean(*var_3);
     }
-    {
-        let mut array_4 = object.key("DeparturePosition").start_array();
-        for item_5 in &input.departure_position {
+    if let Some(var_4) = &input.departure_position {
+        let mut array_5 = object.key("DeparturePosition").start_array();
+        for item_6 in var_4 {
             {
-                array_4.value().number(
+                array_5.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::Float((*item_5).into()),
+                    ::aws_smithy_types::Number::Float((*item_6).into()),
                 );
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_6) = &input.departure_time {
+    if let Some(var_7) = &input.departure_time {
         object
             .key("DepartureTime")
-            .date_time(var_6, ::aws_smithy_types::date_time::Format::DateTime)?;
+            .date_time(var_7, ::aws_smithy_types::date_time::Format::DateTime)?;
     }
-    {
-        let mut array_7 = object.key("DestinationPosition").start_array();
-        for item_8 in &input.destination_position {
+    if let Some(var_8) = &input.destination_position {
+        let mut array_9 = object.key("DestinationPosition").start_array();
+        for item_10 in var_8 {
             {
-                array_7.value().number(
+                array_9.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::Float((*item_8).into()),
+                    ::aws_smithy_types::Number::Float((*item_10).into()),
                 );
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_9) = &input.distance_unit {
-        object.key("DistanceUnit").string(var_9.as_str());
+    if let Some(var_11) = &input.distance_unit {
+        object.key("DistanceUnit").string(var_11.as_str());
     }
-    if let Some(var_10) = &input.include_leg_geometry {
-        object.key("IncludeLegGeometry").boolean(*var_10);
+    if let Some(var_12) = &input.include_leg_geometry {
+        object.key("IncludeLegGeometry").boolean(*var_12);
     }
-    if let Some(var_11) = &input.travel_mode {
-        object.key("TravelMode").string(var_11.as_str());
+    if let Some(var_13) = &input.travel_mode {
+        object.key("TravelMode").string(var_13.as_str());
     }
-    if let Some(var_12) = &input.truck_mode_options {
+    if let Some(var_14) = &input.truck_mode_options {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("TruckModeOptions").start_object();
-        crate::protocol_serde::shape_calculate_route_truck_mode_options::ser_calculate_route_truck_mode_options(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_15 = object.key("TruckModeOptions").start_object();
+        crate::protocol_serde::shape_calculate_route_truck_mode_options::ser_calculate_route_truck_mode_options(&mut object_15, var_14)?;
+        object_15.finish();
     }
-    if let Some(var_14) = &input.waypoint_positions {
-        let mut array_15 = object.key("WaypointPositions").start_array();
-        for item_16 in var_14 {
+    if let Some(var_16) = &input.waypoint_positions {
+        let mut array_17 = object.key("WaypointPositions").start_array();
+        for item_18 in var_16 {
             {
-                let mut array_17 = array_15.value().start_array();
-                for item_18 in item_16 {
+                let mut array_19 = array_17.value().start_array();
+                for item_20 in item_18 {
                     {
-                        array_17.value().number(
+                        array_19.value().number(
                             #[allow(clippy::useless_conversion)]
-                            ::aws_smithy_types::Number::Float((*item_18).into()),
+                            ::aws_smithy_types::Number::Float((*item_20).into()),
                         );
                     }
                 }
-                array_17.finish();
+                array_19.finish();
             }
         }
-        array_15.finish();
+        array_17.finish();
     }
     Ok(())
 }

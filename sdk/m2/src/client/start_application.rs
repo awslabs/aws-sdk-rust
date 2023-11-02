@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartApplication`](crate::operation::start_application::builders::StartApplicationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_id(impl Into<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::application_id) / [`set_application_id(impl Into<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application you want to start.</p><br>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::start_application::builders::StartApplicationFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application you want to start.</p><br>
     /// - On success, responds with [`StartApplicationOutput`](crate::operation::start_application::StartApplicationOutput)
     /// - On failure, responds with [`SdkError<StartApplicationError>`](crate::operation::start_application::StartApplicationError)
     pub fn start_application(&self) -> crate::operation::start_application::builders::StartApplicationFluentBuilder {

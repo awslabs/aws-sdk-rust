@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetProfile`](crate::operation::get_profile::builders::GetProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl Into<String>)`](crate::operation::get_profile::builders::GetProfileFluentBuilder::profile_id) / [`set_profile_id(impl Into<String>)`](crate::operation::get_profile::builders::GetProfileFluentBuilder::set_profile_id):<br>required: **true**<br><p>The unique identifier of the profile.</p><br>
+    ///   - [`profile_id(impl Into<String>)`](crate::operation::get_profile::builders::GetProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::get_profile::builders::GetProfileFluentBuilder::set_profile_id):<br>required: **true**<br><p>The unique identifier of the profile.</p><br>
     /// - On success, responds with [`GetProfileOutput`](crate::operation::get_profile::GetProfileOutput) with field(s):
     ///   - [`profile(Option<ProfileDetail>)`](crate::operation::get_profile::GetProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<GetProfileError>`](crate::operation::get_profile::GetProfileError)

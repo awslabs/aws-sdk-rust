@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelPolicyInput {
     /// <p>The name of the channel associated with this Channel Policy.</p>
-    pub channel_name: ::std::string::String,
+    pub channel_name: ::std::option::Option<::std::string::String>,
 }
 impl GetChannelPolicyInput {
     /// <p>The name of the channel associated with this Channel Policy.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
 }
 impl GetChannelPolicyInput {
@@ -43,18 +42,11 @@ impl GetChannelPolicyInputBuilder {
         &self.channel_name
     }
     /// Consumes the builder and constructs a [`GetChannelPolicyInput`](crate::operation::get_channel_policy::GetChannelPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_name`](crate::operation::get_channel_policy::builders::GetChannelPolicyInputBuilder::channel_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_channel_policy::GetChannelPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_channel_policy::GetChannelPolicyInput {
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building GetChannelPolicyInput",
-                )
-            })?,
+            channel_name: self.channel_name,
         })
     }
 }

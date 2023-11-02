@@ -65,10 +65,6 @@ impl<T> From<Arc<dyn ResolveEndpoint<T>>> for SharedEndpointResolver<T> {
     }
 }
 
-impl<T: 'static> Storable for SharedEndpointResolver<T> {
-    type Storer = StoreReplace<SharedEndpointResolver<T>>;
-}
-
 impl<T> ResolveEndpoint<T> for SharedEndpointResolver<T> {
     fn resolve_endpoint(&self, params: &T) -> Result {
         self.0.resolve_endpoint(params)

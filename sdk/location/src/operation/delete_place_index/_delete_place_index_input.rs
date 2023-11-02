@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePlaceIndexInput {
     /// <p>The name of the place index resource to be deleted.</p>
-    pub index_name: ::std::string::String,
+    pub index_name: ::std::option::Option<::std::string::String>,
 }
 impl DeletePlaceIndexInput {
     /// <p>The name of the place index resource to be deleted.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
+        self.index_name.as_deref()
     }
 }
 impl DeletePlaceIndexInput {
@@ -43,18 +42,9 @@ impl DeletePlaceIndexInputBuilder {
         &self.index_name
     }
     /// Consumes the builder and constructs a [`DeletePlaceIndexInput`](crate::operation::delete_place_index::DeletePlaceIndexInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`index_name`](crate::operation::delete_place_index::builders::DeletePlaceIndexInputBuilder::index_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_place_index::DeletePlaceIndexInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_place_index::DeletePlaceIndexInput {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building DeletePlaceIndexInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_place_index::DeletePlaceIndexInput { index_name: self.index_name })
     }
 }

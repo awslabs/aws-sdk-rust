@@ -3,8 +3,8 @@ pub fn ser_delete_keyspace_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_keyspace::DeleteKeyspaceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("keyspaceName").string(input.keyspace_name.as_str());
+    if let Some(var_1) = &input.keyspace_name {
+        object.key("keyspaceName").string(var_1.as_str());
     }
     Ok(())
 }

@@ -3,27 +3,27 @@ pub fn ser_list_ephemerides_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_ephemerides::ListEphemeridesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.end_time {
         object
             .key("endTime")
-            .date_time(&input.end_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    {
-        object.key("satelliteId").string(input.satellite_id.as_str());
+    if let Some(var_2) = &input.satellite_id {
+        object.key("satelliteId").string(var_2.as_str());
     }
-    {
+    if let Some(var_3) = &input.start_time {
         object
             .key("startTime")
-            .date_time(&input.start_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_3, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    if let Some(var_1) = &input.status_list {
-        let mut array_2 = object.key("statusList").start_array();
-        for item_3 in var_1 {
+    if let Some(var_4) = &input.status_list {
+        let mut array_5 = object.key("statusList").start_array();
+        for item_6 in var_4 {
             {
-                array_2.value().string(item_3.as_str());
+                array_5.value().string(item_6.as_str());
             }
         }
-        array_2.finish();
+        array_5.finish();
     }
     Ok(())
 }

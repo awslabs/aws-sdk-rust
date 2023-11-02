@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub trust_anchor_id: ::std::string::String,
+    pub trust_anchor_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteTrustAnchorInput {
     /// <p>The unique identifier of the trust anchor.</p>
-    pub fn trust_anchor_id(&self) -> &str {
-        use std::ops::Deref;
-        self.trust_anchor_id.deref()
+    pub fn trust_anchor_id(&self) -> ::std::option::Option<&str> {
+        self.trust_anchor_id.as_deref()
     }
 }
 impl DeleteTrustAnchorInput {
@@ -43,18 +42,11 @@ impl DeleteTrustAnchorInputBuilder {
         &self.trust_anchor_id
     }
     /// Consumes the builder and constructs a [`DeleteTrustAnchorInput`](crate::operation::delete_trust_anchor::DeleteTrustAnchorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`trust_anchor_id`](crate::operation::delete_trust_anchor::builders::DeleteTrustAnchorInputBuilder::trust_anchor_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_trust_anchor::DeleteTrustAnchorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_trust_anchor::DeleteTrustAnchorInput {
-            trust_anchor_id: self.trust_anchor_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "trust_anchor_id",
-                    "trust_anchor_id was not specified but it is required when building DeleteTrustAnchorInput",
-                )
-            })?,
+            trust_anchor_id: self.trust_anchor_id,
         })
     }
 }

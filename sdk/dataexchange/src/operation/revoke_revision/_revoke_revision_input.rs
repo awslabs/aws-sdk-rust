@@ -4,27 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RevokeRevisionInput {
     /// <p>The unique identifier for a data set.</p>
-    pub data_set_id: ::std::string::String,
+    pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for a revision.</p>
-    pub revision_id: ::std::string::String,
+    pub revision_id: ::std::option::Option<::std::string::String>,
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub revocation_comment: ::std::string::String,
+    pub revocation_comment: ::std::option::Option<::std::string::String>,
 }
 impl RevokeRevisionInput {
     /// <p>The unique identifier for a data set.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+        self.data_set_id.as_deref()
     }
     /// <p>The unique identifier for a revision.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+        self.revision_id.as_deref()
     }
     /// <p>A required comment to inform subscribers of the reason their access to the revision was revoked.</p>
-    pub fn revocation_comment(&self) -> &str {
-        use std::ops::Deref;
-        self.revocation_comment.deref()
+    pub fn revocation_comment(&self) -> ::std::option::Option<&str> {
+        self.revocation_comment.as_deref()
     }
 }
 impl RevokeRevisionInput {
@@ -89,32 +86,13 @@ impl RevokeRevisionInputBuilder {
         &self.revocation_comment
     }
     /// Consumes the builder and constructs a [`RevokeRevisionInput`](crate::operation::revoke_revision::RevokeRevisionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`data_set_id`](crate::operation::revoke_revision::builders::RevokeRevisionInputBuilder::data_set_id)
-    /// - [`revision_id`](crate::operation::revoke_revision::builders::RevokeRevisionInputBuilder::revision_id)
-    /// - [`revocation_comment`](crate::operation::revoke_revision::builders::RevokeRevisionInputBuilder::revocation_comment)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::revoke_revision::RevokeRevisionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::revoke_revision::RevokeRevisionInput {
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building RevokeRevisionInput",
-                )
-            })?,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building RevokeRevisionInput",
-                )
-            })?,
-            revocation_comment: self.revocation_comment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "revocation_comment",
-                    "revocation_comment was not specified but it is required when building RevokeRevisionInput",
-                )
-            })?,
+            data_set_id: self.data_set_id,
+            revision_id: self.revision_id,
+            revocation_comment: self.revocation_comment,
         })
     }
 }

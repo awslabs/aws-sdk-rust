@@ -24,11 +24,11 @@ pub fn ser_create_program_input(
         crate::protocol_serde::shape_schedule_configuration::ser_schedule_configuration(&mut object_7, var_6)?;
         object_7.finish();
     }
-    {
-        object.key("SourceLocationName").string(input.source_location_name.as_str());
+    if let Some(var_8) = &input.source_location_name {
+        object.key("SourceLocationName").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.vod_source_name {
-        object.key("VodSourceName").string(var_8.as_str());
+    if let Some(var_9) = &input.vod_source_name {
+        object.key("VodSourceName").string(var_9.as_str());
     }
     Ok(())
 }

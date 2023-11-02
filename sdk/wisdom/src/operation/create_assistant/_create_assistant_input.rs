@@ -6,9 +6,9 @@ pub struct CreateAssistantInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the assistant.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of assistant.</p>
-    pub r#type: crate::types::AssistantType,
+    pub r#type: ::std::option::Option<crate::types::AssistantType>,
     /// <p>The description of the assistant.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
@@ -24,13 +24,12 @@ impl CreateAssistantInput {
         self.client_token.as_deref()
     }
     /// <p>The name of the assistant.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The type of assistant.</p>
-    pub fn r#type(&self) -> &crate::types::AssistantType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AssistantType> {
+        self.r#type.as_ref()
     }
     /// <p>The description of the assistant.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -165,26 +164,13 @@ impl CreateAssistantInputBuilder {
         &self.server_side_encryption_configuration
     }
     /// Consumes the builder and constructs a [`CreateAssistantInput`](crate::operation::create_assistant::CreateAssistantInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_assistant::builders::CreateAssistantInputBuilder::name)
-    /// - [`r#type`](crate::operation::create_assistant::builders::CreateAssistantInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_assistant::CreateAssistantInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_assistant::CreateAssistantInput {
             client_token: self.client_token,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateAssistantInput",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CreateAssistantInput",
-                )
-            })?,
+            name: self.name,
+            r#type: self.r#type,
             description: self.description,
             tags: self.tags,
             server_side_encryption_configuration: self.server_side_encryption_configuration,

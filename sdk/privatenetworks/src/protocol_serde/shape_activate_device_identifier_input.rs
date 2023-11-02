@@ -6,8 +6,8 @@ pub fn ser_activate_device_identifier_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    {
-        object.key("deviceIdentifierArn").string(input.device_identifier_arn.as_str());
+    if let Some(var_2) = &input.device_identifier_arn {
+        object.key("deviceIdentifierArn").string(var_2.as_str());
     }
     Ok(())
 }

@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct PutGeofenceInput {
     /// <p>The geofence collection to store the geofence in.</p>
-    pub collection_name: ::std::string::String,
+    pub collection_name: ::std::option::Option<::std::string::String>,
     /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
-    pub geofence_id: ::std::string::String,
+    pub geofence_id: ::std::option::Option<::std::string::String>,
     /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
     /// </note>
@@ -17,14 +17,12 @@ pub struct PutGeofenceInput {
 }
 impl PutGeofenceInput {
     /// <p>The geofence collection to store the geofence in.</p>
-    pub fn collection_name(&self) -> &str {
-        use std::ops::Deref;
-        self.collection_name.deref()
+    pub fn collection_name(&self) -> ::std::option::Option<&str> {
+        self.collection_name.as_deref()
     }
     /// <p>An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</p>
-    pub fn geofence_id(&self) -> &str {
-        use std::ops::Deref;
-        self.geofence_id.deref()
+    pub fn geofence_id(&self) -> ::std::option::Option<&str> {
+        self.geofence_id.as_deref()
     }
     /// <p>Contains the details to specify the position of the geofence. Can be either a polygon or a circle. Including both will return a validation error.</p> <note>
     /// <p>Each <a href="https://docs.aws.amazon.com/location-geofences/latest/APIReference/API_GeofenceGeometry.html"> geofence polygon</a> can have a maximum of 1,000 vertices.</p>
@@ -147,23 +145,10 @@ impl PutGeofenceInputBuilder {
         &self.geofence_properties
     }
     /// Consumes the builder and constructs a [`PutGeofenceInput`](crate::operation::put_geofence::PutGeofenceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`collection_name`](crate::operation::put_geofence::builders::PutGeofenceInputBuilder::collection_name)
-    /// - [`geofence_id`](crate::operation::put_geofence::builders::PutGeofenceInputBuilder::geofence_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::put_geofence::PutGeofenceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_geofence::PutGeofenceInput {
-            collection_name: self.collection_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "collection_name",
-                    "collection_name was not specified but it is required when building PutGeofenceInput",
-                )
-            })?,
-            geofence_id: self.geofence_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "geofence_id",
-                    "geofence_id was not specified but it is required when building PutGeofenceInput",
-                )
-            })?,
+            collection_name: self.collection_name,
+            geofence_id: self.geofence_id,
             geometry: self.geometry,
             geofence_properties: self.geofence_properties,
         })

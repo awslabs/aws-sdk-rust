@@ -4,22 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveSourceServerActionInput {
     /// <p>Source server ID of the post migration custom action to remove.</p>
-    pub source_server_id: ::std::string::String,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration custom action ID to remove.</p>
-    pub action_id: ::std::string::String,
+    pub action_id: ::std::option::Option<::std::string::String>,
     /// <p>Source server post migration account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl RemoveSourceServerActionInput {
     /// <p>Source server ID of the post migration custom action to remove.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+        self.source_server_id.as_deref()
     }
     /// <p>Source server post migration custom action ID to remove.</p>
-    pub fn action_id(&self) -> &str {
-        use std::ops::Deref;
-        self.action_id.deref()
+    pub fn action_id(&self) -> ::std::option::Option<&str> {
+        self.action_id.as_deref()
     }
     /// <p>Source server post migration account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -87,9 +85,6 @@ impl RemoveSourceServerActionInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`RemoveSourceServerActionInput`](crate::operation::remove_source_server_action::RemoveSourceServerActionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_id`](crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder::source_server_id)
-    /// - [`action_id`](crate::operation::remove_source_server_action::builders::RemoveSourceServerActionInputBuilder::action_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -97,18 +92,8 @@ impl RemoveSourceServerActionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::remove_source_server_action::RemoveSourceServerActionInput {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building RemoveSourceServerActionInput",
-                )
-            })?,
-            action_id: self.action_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "action_id",
-                    "action_id was not specified but it is required when building RemoveSourceServerActionInput",
-                )
-            })?,
+            source_server_id: self.source_server_id,
+            action_id: self.action_id,
             account_id: self.account_id,
         })
     }

@@ -9,72 +9,72 @@ pub fn ser_create_environment_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    {
-        object.key("engineType").string(input.engine_type.as_str());
+    if let Some(var_3) = &input.engine_type {
+        object.key("engineType").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.engine_version {
-        object.key("engineVersion").string(var_3.as_str());
+    if let Some(var_4) = &input.engine_version {
+        object.key("engineVersion").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.high_availability_config {
+    if let Some(var_5) = &input.high_availability_config {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("highAvailabilityConfig").start_object();
-        crate::protocol_serde::shape_high_availability_config::ser_high_availability_config(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("highAvailabilityConfig").start_object();
+        crate::protocol_serde::shape_high_availability_config::ser_high_availability_config(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    {
-        object.key("instanceType").string(input.instance_type.as_str());
+    if let Some(var_7) = &input.instance_type {
+        object.key("instanceType").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.kms_key_id {
-        object.key("kmsKeyId").string(var_6.as_str());
+    if let Some(var_8) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_8.as_str());
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
     }
-    if let Some(var_7) = &input.preferred_maintenance_window {
-        object.key("preferredMaintenanceWindow").string(var_7.as_str());
+    if let Some(var_10) = &input.preferred_maintenance_window {
+        object.key("preferredMaintenanceWindow").string(var_10.as_str());
     }
-    if input.publicly_accessible {
-        object.key("publiclyAccessible").boolean(input.publicly_accessible);
+    if let Some(var_11) = &input.publicly_accessible {
+        object.key("publiclyAccessible").boolean(*var_11);
     }
-    if let Some(var_8) = &input.security_group_ids {
-        let mut array_9 = object.key("securityGroupIds").start_array();
-        for item_10 in var_8 {
+    if let Some(var_12) = &input.security_group_ids {
+        let mut array_13 = object.key("securityGroupIds").start_array();
+        for item_14 in var_12 {
             {
-                array_9.value().string(item_10.as_str());
+                array_13.value().string(item_14.as_str());
             }
         }
-        array_9.finish();
+        array_13.finish();
     }
-    if let Some(var_11) = &input.storage_configurations {
-        let mut array_12 = object.key("storageConfigurations").start_array();
-        for item_13 in var_11 {
-            {
-                #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_14, item_13)?;
-                object_14.finish();
-            }
-        }
-        array_12.finish();
-    }
-    if let Some(var_15) = &input.subnet_ids {
-        let mut array_16 = object.key("subnetIds").start_array();
+    if let Some(var_15) = &input.storage_configurations {
+        let mut array_16 = object.key("storageConfigurations").start_array();
         for item_17 in var_15 {
             {
-                array_16.value().string(item_17.as_str());
+                #[allow(unused_mut)]
+                let mut object_18 = array_16.value().start_object();
+                crate::protocol_serde::shape_storage_configuration::ser_storage_configuration(&mut object_18, item_17)?;
+                object_18.finish();
             }
         }
         array_16.finish();
     }
-    if let Some(var_18) = &input.tags {
-        #[allow(unused_mut)]
-        let mut object_19 = object.key("tags").start_object();
-        for (key_20, value_21) in var_18 {
+    if let Some(var_19) = &input.subnet_ids {
+        let mut array_20 = object.key("subnetIds").start_array();
+        for item_21 in var_19 {
             {
-                object_19.key(key_20.as_str()).string(value_21.as_str());
+                array_20.value().string(item_21.as_str());
             }
         }
-        object_19.finish();
+        array_20.finish();
+    }
+    if let Some(var_22) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_23 = object.key("tags").start_object();
+        for (key_24, value_25) in var_22 {
+            {
+                object_23.key(key_24.as_str()).string(value_25.as_str());
+            }
+        }
+        object_23.finish();
     }
     Ok(())
 }

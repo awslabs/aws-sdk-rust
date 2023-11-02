@@ -4,33 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::string::String,
+    pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::string::String,
+    pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
     pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    pub inactivity_timeout_minutes: i32,
+    pub inactivity_timeout_minutes: ::std::option::Option<i32>,
 }
 impl StartDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> &str {
-        use std::ops::Deref;
-        self.space_name.deref()
+    pub fn space_name(&self) -> ::std::option::Option<&str> {
+        self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> &str {
-        use std::ops::Deref;
-        self.project_name.deref()
+    pub fn project_name(&self) -> ::std::option::Option<&str> {
+        self.project_name.as_deref()
     }
     /// <p>The system-generated unique ID of the Dev Environment. </p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>Information about the integrated development environment (IDE) configured for a Dev Environment. </p>
     ///
@@ -43,7 +40,7 @@ impl StartDevEnvironmentInput {
         self.instance_type.as_ref()
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    pub fn inactivity_timeout_minutes(&self) -> i32 {
+    pub fn inactivity_timeout_minutes(&self) -> ::std::option::Option<i32> {
         self.inactivity_timeout_minutes
     }
 }
@@ -160,36 +157,17 @@ impl StartDevEnvironmentInputBuilder {
         &self.inactivity_timeout_minutes
     }
     /// Consumes the builder and constructs a [`StartDevEnvironmentInput`](crate::operation::start_dev_environment::StartDevEnvironmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`space_name`](crate::operation::start_dev_environment::builders::StartDevEnvironmentInputBuilder::space_name)
-    /// - [`project_name`](crate::operation::start_dev_environment::builders::StartDevEnvironmentInputBuilder::project_name)
-    /// - [`id`](crate::operation::start_dev_environment::builders::StartDevEnvironmentInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_dev_environment::StartDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_dev_environment::StartDevEnvironmentInput {
-            space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "space_name",
-                    "space_name was not specified but it is required when building StartDevEnvironmentInput",
-                )
-            })?,
-            project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project_name",
-                    "project_name was not specified but it is required when building StartDevEnvironmentInput",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building StartDevEnvironmentInput",
-                )
-            })?,
+            space_name: self.space_name,
+            project_name: self.project_name,
+            id: self.id,
             ides: self.ides,
             instance_type: self.instance_type,
-            inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
+            inactivity_timeout_minutes: self.inactivity_timeout_minutes,
         })
     }
 }

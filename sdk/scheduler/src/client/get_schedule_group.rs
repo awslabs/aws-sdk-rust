@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetScheduleGroup`](crate::operation::get_schedule_group::builders::GetScheduleGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_schedule_group::builders::GetScheduleGroupFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::get_schedule_group::builders::GetScheduleGroupFluentBuilder::set_name):<br>required: **true**<br><p>The name of the schedule group to retrieve.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_schedule_group::builders::GetScheduleGroupFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_schedule_group::builders::GetScheduleGroupFluentBuilder::set_name):<br>required: **true**<br><p>The name of the schedule group to retrieve.</p><br>
     /// - On success, responds with [`GetScheduleGroupOutput`](crate::operation::get_schedule_group::GetScheduleGroupOutput) with field(s):
     ///   - [`arn(Option<String>)`](crate::operation::get_schedule_group::GetScheduleGroupOutput::arn): <p>The Amazon Resource Name (ARN) of the schedule group.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_schedule_group::GetScheduleGroupOutput::name): <p>The name of the schedule group.</p>

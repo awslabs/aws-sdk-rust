@@ -45,26 +45,26 @@ pub fn ser_update_workflow_step_input(
     if let Some(var_14) = &input.step_action_type {
         object.key("stepActionType").string(var_14.as_str());
     }
-    {
-        object.key("stepGroupId").string(input.step_group_id.as_str());
+    if let Some(var_15) = &input.step_group_id {
+        object.key("stepGroupId").string(var_15.as_str());
     }
-    if let Some(var_15) = &input.step_target {
-        let mut array_16 = object.key("stepTarget").start_array();
-        for item_17 in var_15 {
+    if let Some(var_16) = &input.step_target {
+        let mut array_17 = object.key("stepTarget").start_array();
+        for item_18 in var_16 {
             {
-                array_16.value().string(item_17.as_str());
+                array_17.value().string(item_18.as_str());
             }
         }
-        array_16.finish();
+        array_17.finish();
     }
-    {
-        object.key("workflowId").string(input.workflow_id.as_str());
+    if let Some(var_19) = &input.workflow_id {
+        object.key("workflowId").string(var_19.as_str());
     }
-    if let Some(var_18) = &input.workflow_step_automation_configuration {
+    if let Some(var_20) = &input.workflow_step_automation_configuration {
         #[allow(unused_mut)]
-        let mut object_19 = object.key("workflowStepAutomationConfiguration").start_object();
-        crate::protocol_serde::shape_workflow_step_automation_configuration::ser_workflow_step_automation_configuration(&mut object_19, var_18)?;
-        object_19.finish();
+        let mut object_21 = object.key("workflowStepAutomationConfiguration").start_object();
+        crate::protocol_serde::shape_workflow_step_automation_configuration::ser_workflow_step_automation_configuration(&mut object_21, var_20)?;
+        object_21.finish();
     }
     Ok(())
 }

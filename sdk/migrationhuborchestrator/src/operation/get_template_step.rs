@@ -182,6 +182,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTemplateS
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.id;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
                 let id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -198,6 +201,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTemplateS
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_2 = &_input.template_id;
+                let inner_2 = inner_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("template_id", "cannot be empty or unset"))?;
                 if inner_2.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "template_id",
@@ -206,6 +212,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTemplateS
                 }
                 query.push_kv("templateId", &::aws_smithy_http::query::fmt_string(&inner_2));
                 let inner_3 = &_input.step_group_id;
+                let inner_3 = inner_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("step_group_id", "cannot be empty or unset"))?;
                 if inner_3.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "step_group_id",

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeNodeFromTemplateJob`](crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder::job_id) / [`set_job_id(impl Into<String>)`](crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job's ID.</p><br>
+    ///   - [`job_id(impl Into<String>)`](crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder::job_id) / [`set_job_id(Option<String>)`](crate::operation::describe_node_from_template_job::builders::DescribeNodeFromTemplateJobFluentBuilder::set_job_id):<br>required: **true**<br><p>The job's ID.</p><br>
     /// - On success, responds with [`DescribeNodeFromTemplateJobOutput`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput) with field(s):
     ///   - [`job_id(String)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::job_id): <p>The job's ID.</p>
     ///   - [`status(NodeFromTemplateJobStatus)`](crate::operation::describe_node_from_template_job::DescribeNodeFromTemplateJobOutput::status): <p>The job's status.</p>

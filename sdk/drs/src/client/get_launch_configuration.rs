@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLaunchConfiguration`](crate::operation::get_launch_configuration::builders::GetLaunchConfigurationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`source_server_id(impl Into<String>)`](crate::operation::get_launch_configuration::builders::GetLaunchConfigurationFluentBuilder::source_server_id) / [`set_source_server_id(impl Into<String>)`](crate::operation::get_launch_configuration::builders::GetLaunchConfigurationFluentBuilder::set_source_server_id):<br>required: **true**<br><p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p><br>
+    ///   - [`source_server_id(impl Into<String>)`](crate::operation::get_launch_configuration::builders::GetLaunchConfigurationFluentBuilder::source_server_id) / [`set_source_server_id(Option<String>)`](crate::operation::get_launch_configuration::builders::GetLaunchConfigurationFluentBuilder::set_source_server_id):<br>required: **true**<br><p>The ID of the Source Server that we want to retrieve a Launch Configuration for.</p><br>
     /// - On success, responds with [`GetLaunchConfigurationOutput`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput) with field(s):
     ///   - [`source_server_id(Option<String>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::source_server_id): <p>The ID of the Source Server for this launch configuration.</p>
     ///   - [`name(Option<String>)`](crate::operation::get_launch_configuration::GetLaunchConfigurationOutput::name): <p>The name of the launch configuration.</p>

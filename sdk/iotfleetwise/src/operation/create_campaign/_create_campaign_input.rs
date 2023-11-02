@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCampaignInput {
     /// <p> The name of the campaign to create. </p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the campaign to help identify its purpose.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign. </p>
-    pub signal_catalog_arn: ::std::string::String,
+    pub signal_catalog_arn: ::std::option::Option<::std::string::String>,
     /// <p> The ARN of the vehicle or fleet to deploy a campaign to. </p>
-    pub target_arn: ::std::string::String,
+    pub target_arn: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code> </p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
@@ -49,23 +49,20 @@ pub struct CreateCampaignInput {
 }
 impl CreateCampaignInput {
     /// <p> The name of the campaign to create. </p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>An optional description of the campaign to help identify its purpose.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>(Optional) The Amazon Resource Name (ARN) of the signal catalog to associate with the campaign. </p>
-    pub fn signal_catalog_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.signal_catalog_arn.deref()
+    pub fn signal_catalog_arn(&self) -> ::std::option::Option<&str> {
+        self.signal_catalog_arn.as_deref()
     }
     /// <p> The ARN of the vehicle or fleet to deploy a campaign to. </p>
-    pub fn target_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.target_arn.deref()
+    pub fn target_arn(&self) -> ::std::option::Option<&str> {
+        self.target_arn.as_deref()
     }
     /// <p>(Optional) The time, in milliseconds, to deliver a campaign after it was approved. If it's not specified, <code>0</code> is used.</p>
     /// <p>Default: <code>0</code> </p>
@@ -450,33 +447,14 @@ impl CreateCampaignInputBuilder {
         &self.data_destination_configs
     }
     /// Consumes the builder and constructs a [`CreateCampaignInput`](crate::operation::create_campaign::CreateCampaignInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_campaign::builders::CreateCampaignInputBuilder::name)
-    /// - [`signal_catalog_arn`](crate::operation::create_campaign::builders::CreateCampaignInputBuilder::signal_catalog_arn)
-    /// - [`target_arn`](crate::operation::create_campaign::builders::CreateCampaignInputBuilder::target_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_campaign::CreateCampaignInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_campaign::CreateCampaignInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateCampaignInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
-            signal_catalog_arn: self.signal_catalog_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "signal_catalog_arn",
-                    "signal_catalog_arn was not specified but it is required when building CreateCampaignInput",
-                )
-            })?,
-            target_arn: self.target_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "target_arn",
-                    "target_arn was not specified but it is required when building CreateCampaignInput",
-                )
-            })?,
+            signal_catalog_arn: self.signal_catalog_arn,
+            target_arn: self.target_arn,
             start_time: self.start_time,
             expiry_time: self.expiry_time,
             post_trigger_collection_duration: self.post_trigger_collection_duration,

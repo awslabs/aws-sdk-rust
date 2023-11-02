@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub cluster_arn: ::std::string::String,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
     pub auth_type: ::std::option::Option<crate::types::Auth>,
     /// <p>The capacity of each shard in the Elastic DocumentDB cluster.</p>
@@ -29,9 +29,8 @@ pub struct UpdateClusterInput {
 }
 impl UpdateClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.cluster_arn.deref()
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+        self.cluster_arn.as_deref()
     }
     /// <p>The authentication type for the Elastic DocumentDB cluster.</p>
     pub fn auth_type(&self) -> ::std::option::Option<&crate::types::Auth> {
@@ -267,18 +266,11 @@ impl UpdateClusterInputBuilder {
         &self.preferred_maintenance_window
     }
     /// Consumes the builder and constructs a [`UpdateClusterInput`](crate::operation::update_cluster::UpdateClusterInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`cluster_arn`](crate::operation::update_cluster::builders::UpdateClusterInputBuilder::cluster_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_cluster::UpdateClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_cluster::UpdateClusterInput {
-            cluster_arn: self.cluster_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "cluster_arn",
-                    "cluster_arn was not specified but it is required when building UpdateClusterInput",
-                )
-            })?,
+            cluster_arn: self.cluster_arn,
             auth_type: self.auth_type,
             shard_capacity: self.shard_capacity,
             shard_count: self.shard_count,

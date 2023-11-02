@@ -6,17 +6,17 @@ pub fn ser_associate_applications_input(
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    {
-        let mut array_2 = object.key("applicationIDs").start_array();
-        for item_3 in &input.application_ids {
+    if let Some(var_2) = &input.application_ids {
+        let mut array_3 = object.key("applicationIDs").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    {
-        object.key("waveID").string(input.wave_id.as_str());
+    if let Some(var_5) = &input.wave_id {
+        object.key("waveID").string(var_5.as_str());
     }
     Ok(())
 }

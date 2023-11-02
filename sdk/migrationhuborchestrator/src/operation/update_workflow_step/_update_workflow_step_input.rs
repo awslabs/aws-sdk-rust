@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkflowStepInput {
     /// <p>The ID of the step.</p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the step group.</p>
-    pub step_group_id: ::std::string::String,
+    pub step_group_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the migration workflow.</p>
-    pub workflow_id: ::std::string::String,
+    pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the step.</p>
@@ -30,19 +30,16 @@ pub struct UpdateWorkflowStepInput {
 }
 impl UpdateWorkflowStepInput {
     /// <p>The ID of the step.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>The ID of the step group.</p>
-    pub fn step_group_id(&self) -> &str {
-        use std::ops::Deref;
-        self.step_group_id.deref()
+    pub fn step_group_id(&self) -> ::std::option::Option<&str> {
+        self.step_group_id.as_deref()
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+        self.workflow_id.as_deref()
     }
     /// <p>The name of the step.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -313,32 +310,13 @@ impl UpdateWorkflowStepInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateWorkflowStepInput`](crate::operation::update_workflow_step::UpdateWorkflowStepInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::update_workflow_step::builders::UpdateWorkflowStepInputBuilder::id)
-    /// - [`step_group_id`](crate::operation::update_workflow_step::builders::UpdateWorkflowStepInputBuilder::step_group_id)
-    /// - [`workflow_id`](crate::operation::update_workflow_step::builders::UpdateWorkflowStepInputBuilder::workflow_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_workflow_step::UpdateWorkflowStepInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_workflow_step::UpdateWorkflowStepInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building UpdateWorkflowStepInput",
-                )
-            })?,
-            step_group_id: self.step_group_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "step_group_id",
-                    "step_group_id was not specified but it is required when building UpdateWorkflowStepInput",
-                )
-            })?,
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building UpdateWorkflowStepInput",
-                )
-            })?,
+            id: self.id,
+            step_group_id: self.step_group_id,
+            workflow_id: self.workflow_id,
             name: self.name,
             description: self.description,
             step_action_type: self.step_action_type,

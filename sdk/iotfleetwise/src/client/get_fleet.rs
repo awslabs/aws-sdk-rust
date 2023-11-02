@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetFleet`](crate::operation::get_fleet::builders::GetFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`fleet_id(impl Into<String>)`](crate::operation::get_fleet::builders::GetFleetFluentBuilder::fleet_id) / [`set_fleet_id(impl Into<String>)`](crate::operation::get_fleet::builders::GetFleetFluentBuilder::set_fleet_id):<br>required: **true**<br><p> The ID of the fleet to retrieve information about. </p><br>
+    ///   - [`fleet_id(impl Into<String>)`](crate::operation::get_fleet::builders::GetFleetFluentBuilder::fleet_id) / [`set_fleet_id(Option<String>)`](crate::operation::get_fleet::builders::GetFleetFluentBuilder::set_fleet_id):<br>required: **true**<br><p> The ID of the fleet to retrieve information about. </p><br>
     /// - On success, responds with [`GetFleetOutput`](crate::operation::get_fleet::GetFleetOutput) with field(s):
     ///   - [`id(String)`](crate::operation::get_fleet::GetFleetOutput::id): <p> The ID of the fleet.</p>
     ///   - [`arn(String)`](crate::operation::get_fleet::GetFleetOutput::arn): <p> The Amazon Resource Name (ARN) of the fleet. </p>

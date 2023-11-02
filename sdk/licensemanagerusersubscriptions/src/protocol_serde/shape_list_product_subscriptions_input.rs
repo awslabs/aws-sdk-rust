@@ -30,8 +30,8 @@ pub fn ser_list_product_subscriptions_input(
     if let Some(var_8) = &input.next_token {
         object.key("NextToken").string(var_8.as_str());
     }
-    {
-        object.key("Product").string(input.product.as_str());
+    if let Some(var_9) = &input.product {
+        object.key("Product").string(var_9.as_str());
     }
     Ok(())
 }

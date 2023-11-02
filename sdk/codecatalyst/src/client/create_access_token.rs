@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CreateAccessToken`](crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder::set_name):<br>required: **true**<br><p>The friendly name of the personal access token.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder::set_name):<br>required: **true**<br><p>The friendly name of the personal access token.</p><br>
     ///   - [`expires_time(DateTime)`](crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder::expires_time) / [`set_expires_time(Option<DateTime>)`](crate::operation::create_access_token::builders::CreateAccessTokenFluentBuilder::set_expires_time):<br>required: **false**<br><p>The date and time the personal access token expires, in coordinated universal time (UTC) timestamp format as specified in <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p><br>
     /// - On success, responds with [`CreateAccessTokenOutput`](crate::operation::create_access_token::CreateAccessTokenOutput) with field(s):
     ///   - [`secret(String)`](crate::operation::create_access_token::CreateAccessTokenOutput::secret): <p>The secret value of the personal access token.</p>

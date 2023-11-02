@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceEc2InstancesInput {
     /// <p>The ID of the managed device.</p>
-    pub managed_device_id: ::std::string::String,
+    pub managed_device_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of instance IDs associated with the managed device.</p>
-    pub instance_ids: ::std::vec::Vec<::std::string::String>,
+    pub instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeDeviceEc2InstancesInput {
     /// <p>The ID of the managed device.</p>
-    pub fn managed_device_id(&self) -> &str {
-        use std::ops::Deref;
-        self.managed_device_id.deref()
+    pub fn managed_device_id(&self) -> ::std::option::Option<&str> {
+        self.managed_device_id.as_deref()
     }
     /// <p>A list of instance IDs associated with the managed device.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.instance_ids.is_none()`.
     pub fn instance_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.instance_ids.deref()
+        self.instance_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeDeviceEc2InstancesInput {
@@ -71,9 +71,6 @@ impl DescribeDeviceEc2InstancesInputBuilder {
         &self.instance_ids
     }
     /// Consumes the builder and constructs a [`DescribeDeviceEc2InstancesInput`](crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`managed_device_id`](crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder::managed_device_id)
-    /// - [`instance_ids`](crate::operation::describe_device_ec2_instances::builders::DescribeDeviceEc2InstancesInputBuilder::instance_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -81,18 +78,8 @@ impl DescribeDeviceEc2InstancesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesInput {
-            managed_device_id: self.managed_device_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "managed_device_id",
-                    "managed_device_id was not specified but it is required when building DescribeDeviceEc2InstancesInput",
-                )
-            })?,
-            instance_ids: self.instance_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "instance_ids",
-                    "instance_ids was not specified but it is required when building DescribeDeviceEc2InstancesInput",
-                )
-            })?,
+            managed_device_id: self.managed_device_id,
+            instance_ids: self.instance_ids,
         })
     }
 }

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeDeviceInput {
     /// <p>The device's ID.</p>
-    pub device_id: ::std::string::String,
+    pub device_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeDeviceInput {
     /// <p>The device's ID.</p>
-    pub fn device_id(&self) -> &str {
-        use std::ops::Deref;
-        self.device_id.deref()
+    pub fn device_id(&self) -> ::std::option::Option<&str> {
+        self.device_id.as_deref()
     }
 }
 impl DescribeDeviceInput {
@@ -43,18 +42,9 @@ impl DescribeDeviceInputBuilder {
         &self.device_id
     }
     /// Consumes the builder and constructs a [`DescribeDeviceInput`](crate::operation::describe_device::DescribeDeviceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`device_id`](crate::operation::describe_device::builders::DescribeDeviceInputBuilder::device_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_device::DescribeDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::describe_device::DescribeDeviceInput {
-            device_id: self.device_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "device_id",
-                    "device_id was not specified but it is required when building DescribeDeviceInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::describe_device::DescribeDeviceInput { device_id: self.device_id })
     }
 }

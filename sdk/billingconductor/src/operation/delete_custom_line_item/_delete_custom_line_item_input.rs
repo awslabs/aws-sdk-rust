@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomLineItemInput {
     /// <p> The ARN of the custom line item to be deleted. </p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub billing_period_range: ::std::option::Option<crate::types::CustomLineItemBillingPeriodRange>,
 }
 impl DeleteCustomLineItemInput {
     /// <p> The ARN of the custom line item to be deleted. </p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>The billing period range in which the custom line item request will be applied.</p>
     pub fn billing_period_range(&self) -> ::std::option::Option<&crate::types::CustomLineItemBillingPeriodRange> {
@@ -64,19 +63,12 @@ impl DeleteCustomLineItemInputBuilder {
         &self.billing_period_range
     }
     /// Consumes the builder and constructs a [`DeleteCustomLineItemInput`](crate::operation::delete_custom_line_item::DeleteCustomLineItemInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::delete_custom_line_item::builders::DeleteCustomLineItemInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_custom_line_item::DeleteCustomLineItemInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_custom_line_item::DeleteCustomLineItemInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DeleteCustomLineItemInput",
-                )
-            })?,
+            arn: self.arn,
             billing_period_range: self.billing_period_range,
         })
     }

@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateVehicleFleetInput {
     /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
-    pub vehicle_name: ::std::string::String,
+    pub vehicle_name: ::std::option::Option<::std::string::String>,
     /// <p> The unique ID of a fleet. </p>
-    pub fleet_id: ::std::string::String,
+    pub fleet_id: ::std::option::Option<::std::string::String>,
 }
 impl DisassociateVehicleFleetInput {
     /// <p> The unique ID of the vehicle to disassociate from the fleet.</p>
-    pub fn vehicle_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vehicle_name.deref()
+    pub fn vehicle_name(&self) -> ::std::option::Option<&str> {
+        self.vehicle_name.as_deref()
     }
     /// <p> The unique ID of a fleet. </p>
-    pub fn fleet_id(&self) -> &str {
-        use std::ops::Deref;
-        self.fleet_id.deref()
+    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+        self.fleet_id.as_deref()
     }
 }
 impl DisassociateVehicleFleetInput {
@@ -66,9 +64,6 @@ impl DisassociateVehicleFleetInputBuilder {
         &self.fleet_id
     }
     /// Consumes the builder and constructs a [`DisassociateVehicleFleetInput`](crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`vehicle_name`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder::vehicle_name)
-    /// - [`fleet_id`](crate::operation::disassociate_vehicle_fleet::builders::DisassociateVehicleFleetInputBuilder::fleet_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -76,18 +71,8 @@ impl DisassociateVehicleFleetInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetInput {
-            vehicle_name: self.vehicle_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "vehicle_name",
-                    "vehicle_name was not specified but it is required when building DisassociateVehicleFleetInput",
-                )
-            })?,
-            fleet_id: self.fleet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "fleet_id",
-                    "fleet_id was not specified but it is required when building DisassociateVehicleFleetInput",
-                )
-            })?,
+            vehicle_name: self.vehicle_name,
+            fleet_id: self.fleet_id,
         })
     }
 }

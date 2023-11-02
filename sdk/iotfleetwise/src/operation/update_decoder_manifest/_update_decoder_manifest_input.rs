@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDecoderManifestInput {
     /// <p> The name of the decoder manifest to update.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p> A brief description of the decoder manifest to update. </p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p> A list of information about decoding additional signals to add to the decoder manifest. </p>
@@ -24,9 +24,8 @@ pub struct UpdateDecoderManifestInput {
 }
 impl UpdateDecoderManifestInput {
     /// <p> The name of the decoder manifest to update.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p> A brief description of the decoder manifest to update. </p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -259,19 +258,12 @@ impl UpdateDecoderManifestInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateDecoderManifestInput`](crate::operation::update_decoder_manifest::UpdateDecoderManifestInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::update_decoder_manifest::builders::UpdateDecoderManifestInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_decoder_manifest::UpdateDecoderManifestInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_decoder_manifest::UpdateDecoderManifestInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building UpdateDecoderManifestInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
             signal_decoders_to_add: self.signal_decoders_to_add,
             signal_decoders_to_update: self.signal_decoders_to_update,

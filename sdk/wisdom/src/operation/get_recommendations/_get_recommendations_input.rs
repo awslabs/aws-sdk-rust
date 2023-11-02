@@ -4,31 +4,29 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRecommendationsInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_id: ::std::string::String,
+    pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub session_id: ::std::string::String,
+    pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
-    pub wait_time_seconds: i32,
+    pub wait_time_seconds: ::std::option::Option<i32>,
 }
 impl GetRecommendationsInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.assistant_id.deref()
+    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+        self.assistant_id.as_deref()
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn session_id(&self) -> &str {
-        use std::ops::Deref;
-        self.session_id.deref()
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
+        self.session_id.as_deref()
     }
     /// <p>The maximum number of results to return per page.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</p>
-    pub fn wait_time_seconds(&self) -> i32 {
+    pub fn wait_time_seconds(&self) -> ::std::option::Option<i32> {
         self.wait_time_seconds
     }
 }
@@ -108,27 +106,14 @@ impl GetRecommendationsInputBuilder {
         &self.wait_time_seconds
     }
     /// Consumes the builder and constructs a [`GetRecommendationsInput`](crate::operation::get_recommendations::GetRecommendationsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`assistant_id`](crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder::assistant_id)
-    /// - [`session_id`](crate::operation::get_recommendations::builders::GetRecommendationsInputBuilder::session_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_recommendations::GetRecommendationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_recommendations::GetRecommendationsInput {
-            assistant_id: self.assistant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "assistant_id",
-                    "assistant_id was not specified but it is required when building GetRecommendationsInput",
-                )
-            })?,
-            session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "session_id",
-                    "session_id was not specified but it is required when building GetRecommendationsInput",
-                )
-            })?,
+            assistant_id: self.assistant_id,
+            session_id: self.session_id,
             max_results: self.max_results,
-            wait_time_seconds: self.wait_time_seconds.unwrap_or_default(),
+            wait_time_seconds: self.wait_time_seconds,
         })
     }
 }

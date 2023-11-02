@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteDomainInput {
     /// <p>The identifier of the domain you want to delete.</p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteDomainInput {
     /// <p>The identifier of the domain you want to delete.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
 }
 impl DeleteDomainInput {
@@ -43,16 +42,7 @@ impl DeleteDomainInputBuilder {
         &self.domain_id
     }
     /// Consumes the builder and constructs a [`DeleteDomainInput`](crate::operation::delete_domain::DeleteDomainInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::delete_domain::builders::DeleteDomainInputBuilder::domain_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_domain::DeleteDomainInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_domain::DeleteDomainInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building DeleteDomainInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_domain::DeleteDomainInput { domain_id: self.domain_id })
     }
 }

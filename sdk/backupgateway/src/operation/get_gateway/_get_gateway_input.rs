@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
-    pub gateway_arn: ::std::string::String,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway.</p>
-    pub fn gateway_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.gateway_arn.deref()
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+        self.gateway_arn.as_deref()
     }
 }
 impl GetGatewayInput {
@@ -43,16 +42,9 @@ impl GetGatewayInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`GetGatewayInput`](crate::operation::get_gateway::GetGatewayInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`gateway_arn`](crate::operation::get_gateway::builders::GetGatewayInputBuilder::gateway_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_gateway::GetGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_gateway::GetGatewayInput {
-            gateway_arn: self.gateway_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "gateway_arn",
-                    "gateway_arn was not specified but it is required when building GetGatewayInput",
-                )
-            })?,
+            gateway_arn: self.gateway_arn,
         })
     }
 }

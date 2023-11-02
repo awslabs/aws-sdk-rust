@@ -5,20 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFindingInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
-    pub analyzer_arn: ::std::string::String,
+    pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the finding to retrieve.</p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetFindingInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> that generated the finding.</p>
-    pub fn analyzer_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.analyzer_arn.deref()
+    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
     }
     /// <p>The ID of the finding to retrieve.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
 }
 impl GetFindingInput {
@@ -67,23 +65,10 @@ impl GetFindingInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetFindingInput`](crate::operation::get_finding::GetFindingInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`analyzer_arn`](crate::operation::get_finding::builders::GetFindingInputBuilder::analyzer_arn)
-    /// - [`id`](crate::operation::get_finding::builders::GetFindingInputBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_finding::GetFindingInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_finding::GetFindingInput {
-            analyzer_arn: self.analyzer_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "analyzer_arn",
-                    "analyzer_arn was not specified but it is required when building GetFindingInput",
-                )
-            })?,
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetFindingInput",
-                )
-            })?,
+            analyzer_arn: self.analyzer_arn,
+            id: self.id,
         })
     }
 }

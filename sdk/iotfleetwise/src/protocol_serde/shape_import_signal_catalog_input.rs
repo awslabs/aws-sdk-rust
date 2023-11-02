@@ -3,29 +3,29 @@ pub fn ser_import_signal_catalog_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_signal_catalog::ImportSignalCatalogInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.vss {
+    if let Some(var_3) = &input.vss {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("vss").start_object();
-        crate::protocol_serde::shape_formatted_vss::ser_formatted_vss(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("vss").start_object();
+        crate::protocol_serde::shape_formatted_vss::ser_formatted_vss(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.tags {
-        let mut array_5 = object.key("tags").start_array();
-        for item_6 in var_4 {
+    if let Some(var_5) = &input.tags {
+        let mut array_6 = object.key("tags").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_7 = array_5.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
-                object_7.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_5.finish();
+        array_6.finish();
     }
     Ok(())
 }

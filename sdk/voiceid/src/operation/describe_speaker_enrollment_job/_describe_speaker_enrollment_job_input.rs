@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSpeakerEnrollmentJobInput {
     /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the speaker enrollment job you are describing.</p>
-    pub job_id: ::std::string::String,
+    pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeSpeakerEnrollmentJobInput {
     /// <p>The identifier of the domain that contains the speaker enrollment job.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The identifier of the speaker enrollment job you are describing.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
+        self.job_id.as_deref()
     }
 }
 impl DescribeSpeakerEnrollmentJobInput {
@@ -66,9 +64,6 @@ impl DescribeSpeakerEnrollmentJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`DescribeSpeakerEnrollmentJobInput`](crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobInputBuilder::domain_id)
-    /// - [`job_id`](crate::operation::describe_speaker_enrollment_job::builders::DescribeSpeakerEnrollmentJobInputBuilder::job_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -76,18 +71,8 @@ impl DescribeSpeakerEnrollmentJobInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_speaker_enrollment_job::DescribeSpeakerEnrollmentJobInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building DescribeSpeakerEnrollmentJobInput",
-                )
-            })?,
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building DescribeSpeakerEnrollmentJobInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            job_id: self.job_id,
         })
     }
 }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteTable`](crate::operation::delete_table::builders::DeleteTableFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`keyspace_name(impl Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::keyspace_name) / [`set_keyspace_name(impl Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_keyspace_name):<br>required: **true**<br><p>The name of the keyspace of the to be deleted table.</p><br>
-    ///   - [`table_name(impl Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::table_name) / [`set_table_name(impl Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the table to be deleted.</p><br>
+    ///   - [`keyspace_name(impl Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::keyspace_name) / [`set_keyspace_name(Option<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_keyspace_name):<br>required: **true**<br><p>The name of the keyspace of the to be deleted table.</p><br>
+    ///   - [`table_name(impl Into<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::table_name) / [`set_table_name(Option<String>)`](crate::operation::delete_table::builders::DeleteTableFluentBuilder::set_table_name):<br>required: **true**<br><p>The name of the table to be deleted.</p><br>
     /// - On success, responds with [`DeleteTableOutput`](crate::operation::delete_table::DeleteTableOutput)
     /// - On failure, responds with [`SdkError<DeleteTableError>`](crate::operation::delete_table::DeleteTableError)
     pub fn delete_table(&self) -> crate::operation::delete_table::builders::DeleteTableFluentBuilder {

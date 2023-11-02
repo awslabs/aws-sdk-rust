@@ -3,17 +3,17 @@ pub fn ser_batch_update_rule_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::batch_update_rule::BatchUpdateRuleInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        let mut array_1 = object.key("rules").start_array();
-        for item_2 in &input.rules {
+    if let Some(var_1) = &input.rules {
+        let mut array_2 = object.key("rules").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_3 = array_1.value().start_object();
-                crate::protocol_serde::shape_rule_update::ser_rule_update(&mut object_3, item_2)?;
-                object_3.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_rule_update::ser_rule_update(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_1.finish();
+        array_2.finish();
     }
     Ok(())
 }

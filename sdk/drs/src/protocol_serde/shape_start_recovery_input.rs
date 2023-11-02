@@ -6,27 +6,27 @@ pub fn ser_start_recovery_input(
     if let Some(var_1) = &input.is_drill {
         object.key("isDrill").boolean(*var_1);
     }
-    {
-        let mut array_2 = object.key("sourceServers").start_array();
-        for item_3 in &input.source_servers {
+    if let Some(var_2) = &input.source_servers {
+        let mut array_3 = object.key("sourceServers").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_start_recovery_request_source_server::ser_start_recovery_request_source_server(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_start_recovery_request_source_server::ser_start_recovery_request_source_server(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_6.finish();
+        object_7.finish();
     }
     Ok(())
 }

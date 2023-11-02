@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeletePlaybackKeyPair`](crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder::arn) / [`set_arn(impl Into<String>)`](crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder::set_arn):<br>required: **true**<br><p>ARN of the key pair to be deleted.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder::set_arn):<br>required: **true**<br><p>ARN of the key pair to be deleted.</p><br>
     /// - On success, responds with [`DeletePlaybackKeyPairOutput`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairOutput)
     /// - On failure, responds with [`SdkError<DeletePlaybackKeyPairError>`](crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairError)
     pub fn delete_playback_key_pair(&self) -> crate::operation::delete_playback_key_pair::builders::DeletePlaybackKeyPairFluentBuilder {

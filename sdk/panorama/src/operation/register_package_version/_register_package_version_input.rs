@@ -6,13 +6,13 @@ pub struct RegisterPackageVersionInput {
     /// <p>An owner account.</p>
     pub owner_account: ::std::option::Option<::std::string::String>,
     /// <p>A package ID.</p>
-    pub package_id: ::std::string::String,
+    pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>A package version.</p>
-    pub package_version: ::std::string::String,
+    pub package_version: ::std::option::Option<::std::string::String>,
     /// <p>A patch version.</p>
-    pub patch_version: ::std::string::String,
+    pub patch_version: ::std::option::Option<::std::string::String>,
     /// <p>Whether to mark the new version as the latest version.</p>
-    pub mark_latest: bool,
+    pub mark_latest: ::std::option::Option<bool>,
 }
 impl RegisterPackageVersionInput {
     /// <p>An owner account.</p>
@@ -20,22 +20,19 @@ impl RegisterPackageVersionInput {
         self.owner_account.as_deref()
     }
     /// <p>A package ID.</p>
-    pub fn package_id(&self) -> &str {
-        use std::ops::Deref;
-        self.package_id.deref()
+    pub fn package_id(&self) -> ::std::option::Option<&str> {
+        self.package_id.as_deref()
     }
     /// <p>A package version.</p>
-    pub fn package_version(&self) -> &str {
-        use std::ops::Deref;
-        self.package_version.deref()
+    pub fn package_version(&self) -> ::std::option::Option<&str> {
+        self.package_version.as_deref()
     }
     /// <p>A patch version.</p>
-    pub fn patch_version(&self) -> &str {
-        use std::ops::Deref;
-        self.patch_version.deref()
+    pub fn patch_version(&self) -> ::std::option::Option<&str> {
+        self.patch_version.as_deref()
     }
     /// <p>Whether to mark the new version as the latest version.</p>
-    pub fn mark_latest(&self) -> bool {
+    pub fn mark_latest(&self) -> ::std::option::Option<bool> {
         self.mark_latest
     }
 }
@@ -131,35 +128,16 @@ impl RegisterPackageVersionInputBuilder {
         &self.mark_latest
     }
     /// Consumes the builder and constructs a [`RegisterPackageVersionInput`](crate::operation::register_package_version::RegisterPackageVersionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`package_id`](crate::operation::register_package_version::builders::RegisterPackageVersionInputBuilder::package_id)
-    /// - [`package_version`](crate::operation::register_package_version::builders::RegisterPackageVersionInputBuilder::package_version)
-    /// - [`patch_version`](crate::operation::register_package_version::builders::RegisterPackageVersionInputBuilder::patch_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::register_package_version::RegisterPackageVersionInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::register_package_version::RegisterPackageVersionInput {
             owner_account: self.owner_account,
-            package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "package_id",
-                    "package_id was not specified but it is required when building RegisterPackageVersionInput",
-                )
-            })?,
-            package_version: self.package_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "package_version",
-                    "package_version was not specified but it is required when building RegisterPackageVersionInput",
-                )
-            })?,
-            patch_version: self.patch_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "patch_version",
-                    "patch_version was not specified but it is required when building RegisterPackageVersionInput",
-                )
-            })?,
-            mark_latest: self.mark_latest.unwrap_or_default(),
+            package_id: self.package_id,
+            package_version: self.package_version,
+            patch_version: self.patch_version,
+            mark_latest: self.mark_latest,
         })
     }
 }

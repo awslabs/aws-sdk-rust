@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetComponentInput {
     /// <p>The name of the component that you want to get the detailed data for.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetComponentInput {
     /// <p>The name of the component that you want to get the detailed data for.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl GetComponentInput {
@@ -43,16 +42,7 @@ impl GetComponentInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetComponentInput`](crate::operation::get_component::GetComponentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::get_component::builders::GetComponentInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_component::GetComponentInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_component::GetComponentInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetComponentInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_component::GetComponentInput { name: self.name })
     }
 }

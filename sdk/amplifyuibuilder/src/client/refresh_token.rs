@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`RefreshToken`](crate::operation::refresh_token::builders::RefreshTokenFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`provider(TokenProviders)`](crate::operation::refresh_token::builders::RefreshTokenFluentBuilder::provider) / [`set_provider(TokenProviders)`](crate::operation::refresh_token::builders::RefreshTokenFluentBuilder::set_provider):<br>required: **true**<br><p>The third-party provider for the token. The only valid value is <code>figma</code>.</p><br>
+    ///   - [`provider(TokenProviders)`](crate::operation::refresh_token::builders::RefreshTokenFluentBuilder::provider) / [`set_provider(Option<TokenProviders>)`](crate::operation::refresh_token::builders::RefreshTokenFluentBuilder::set_provider):<br>required: **true**<br><p>The third-party provider for the token. The only valid value is <code>figma</code>.</p><br>
     ///   - [`refresh_token_body(RefreshTokenRequestBody)`](crate::operation::refresh_token::builders::RefreshTokenFluentBuilder::refresh_token_body) / [`set_refresh_token_body(Option<RefreshTokenRequestBody>)`](crate::operation::refresh_token::builders::RefreshTokenFluentBuilder::set_refresh_token_body):<br>required: **true**<br><p>Information about the refresh token request.</p><br>
     /// - On success, responds with [`RefreshTokenOutput`](crate::operation::refresh_token::RefreshTokenOutput) with field(s):
     ///   - [`access_token(String)`](crate::operation::refresh_token::RefreshTokenOutput::access_token): <p>The access token.</p>

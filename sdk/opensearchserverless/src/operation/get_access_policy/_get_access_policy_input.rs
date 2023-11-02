@@ -4,19 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAccessPolicyInput {
     /// <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
-    pub r#type: crate::types::AccessPolicyType,
+    pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>The name of the access policy.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl GetAccessPolicyInput {
     /// <p>Tye type of policy. Currently, the only supported value is <code>data</code>.</p>
-    pub fn r#type(&self) -> &crate::types::AccessPolicyType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessPolicyType> {
+        self.r#type.as_ref()
     }
     /// <p>The name of the access policy.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl GetAccessPolicyInput {
@@ -65,25 +64,12 @@ impl GetAccessPolicyInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`GetAccessPolicyInput`](crate::operation::get_access_policy::GetAccessPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::operation::get_access_policy::builders::GetAccessPolicyInputBuilder::r#type)
-    /// - [`name`](crate::operation::get_access_policy::builders::GetAccessPolicyInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_access_policy::GetAccessPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_access_policy::GetAccessPolicyInput {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building GetAccessPolicyInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetAccessPolicyInput",
-                )
-            })?,
+            r#type: self.r#type,
+            name: self.name,
         })
     }
 }

@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
-    pub resource_arn: ::std::string::String,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource policy you're deleting.</p>
-    pub policy_id: ::std::string::String,
+    pub policy_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource you're deleting the policy from.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
     /// <p>The ID of the resource policy you're deleting.</p>
-    pub fn policy_id(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_id.deref()
+    pub fn policy_id(&self) -> ::std::option::Option<&str> {
+        self.policy_id.as_deref()
     }
 }
 impl DeleteResourcePolicyInput {
@@ -66,26 +64,13 @@ impl DeleteResourcePolicyInputBuilder {
         &self.policy_id
     }
     /// Consumes the builder and constructs a [`DeleteResourcePolicyInput`](crate::operation::delete_resource_policy::DeleteResourcePolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`resource_arn`](crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder::resource_arn)
-    /// - [`policy_id`](crate::operation::delete_resource_policy::builders::DeleteResourcePolicyInputBuilder::policy_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_resource_policy::DeleteResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_resource_policy::DeleteResourcePolicyInput {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building DeleteResourcePolicyInput",
-                )
-            })?,
-            policy_id: self.policy_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "policy_id",
-                    "policy_id was not specified but it is required when building DeleteResourcePolicyInput",
-                )
-            })?,
+            resource_arn: self.resource_arn,
+            policy_id: self.policy_id,
         })
     }
 }

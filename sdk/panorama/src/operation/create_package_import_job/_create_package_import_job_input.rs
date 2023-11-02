@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePackageImportJobInput {
     /// <p>A job type for the package import job.</p>
-    pub job_type: crate::types::PackageImportJobType,
+    pub job_type: ::std::option::Option<crate::types::PackageImportJobType>,
     /// <p>An input config for the package import job.</p>
     pub input_config: ::std::option::Option<crate::types::PackageImportJobInputConfig>,
     /// <p>An output config for the package import job.</p>
     pub output_config: ::std::option::Option<crate::types::PackageImportJobOutputConfig>,
     /// <p>A client token for the package import job.</p>
-    pub client_token: ::std::string::String,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the package import job.</p>
     pub job_tags: ::std::option::Option<::std::vec::Vec<crate::types::JobResourceTags>>,
 }
 impl CreatePackageImportJobInput {
     /// <p>A job type for the package import job.</p>
-    pub fn job_type(&self) -> &crate::types::PackageImportJobType {
-        &self.job_type
+    pub fn job_type(&self) -> ::std::option::Option<&crate::types::PackageImportJobType> {
+        self.job_type.as_ref()
     }
     /// <p>An input config for the package import job.</p>
     pub fn input_config(&self) -> ::std::option::Option<&crate::types::PackageImportJobInputConfig> {
@@ -28,9 +28,8 @@ impl CreatePackageImportJobInput {
         self.output_config.as_ref()
     }
     /// <p>A client token for the package import job.</p>
-    pub fn client_token(&self) -> &str {
-        use std::ops::Deref;
-        self.client_token.deref()
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
     /// <p>Tags for the package import job.</p>
     ///
@@ -138,9 +137,6 @@ impl CreatePackageImportJobInputBuilder {
         &self.job_tags
     }
     /// Consumes the builder and constructs a [`CreatePackageImportJobInput`](crate::operation::create_package_import_job::CreatePackageImportJobInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`job_type`](crate::operation::create_package_import_job::builders::CreatePackageImportJobInputBuilder::job_type)
-    /// - [`client_token`](crate::operation::create_package_import_job::builders::CreatePackageImportJobInputBuilder::client_token)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -148,20 +144,10 @@ impl CreatePackageImportJobInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_package_import_job::CreatePackageImportJobInput {
-            job_type: self.job_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "job_type",
-                    "job_type was not specified but it is required when building CreatePackageImportJobInput",
-                )
-            })?,
+            job_type: self.job_type,
             input_config: self.input_config,
             output_config: self.output_config,
-            client_token: self.client_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "client_token",
-                    "client_token was not specified but it is required when building CreatePackageImportJobInput",
-                )
-            })?,
+            client_token: self.client_token,
             job_tags: self.job_tags,
         })
     }

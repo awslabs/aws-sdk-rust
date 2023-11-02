@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateServerConfigInput {
     /// <p> The ID of the server. </p>
-    pub server_id: ::std::string::String,
+    pub server_id: ::std::option::Option<::std::string::String>,
     /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub strategy_option: ::std::option::Option<crate::types::StrategyOption>,
 }
 impl UpdateServerConfigInput {
     /// <p> The ID of the server. </p>
-    pub fn server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.server_id.deref()
+    pub fn server_id(&self) -> ::std::option::Option<&str> {
+        self.server_id.as_deref()
     }
     /// <p> The preferred strategy options for the application component. See the response from <code>GetServerStrategies</code>.</p>
     pub fn strategy_option(&self) -> ::std::option::Option<&crate::types::StrategyOption> {
@@ -64,18 +63,11 @@ impl UpdateServerConfigInputBuilder {
         &self.strategy_option
     }
     /// Consumes the builder and constructs a [`UpdateServerConfigInput`](crate::operation::update_server_config::UpdateServerConfigInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`server_id`](crate::operation::update_server_config::builders::UpdateServerConfigInputBuilder::server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_server_config::UpdateServerConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_server_config::UpdateServerConfigInput {
-            server_id: self.server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "server_id",
-                    "server_id was not specified but it is required when building UpdateServerConfigInput",
-                )
-            })?,
+            server_id: self.server_id,
             strategy_option: self.strategy_option,
         })
     }

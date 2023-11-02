@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct ListResourcesInput {
     /// <p>The name of the resource type.</p>
-    pub type_name: ::std::string::String,
+    pub type_name: ::std::option::Option<::std::string::String>,
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
     pub type_version_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for Cloud Control API to use when performing this resource operation. The role specified must have the permissions required for this operation. The necessary permissions for each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a> </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource type definition schema</a>.</p>
@@ -20,9 +20,8 @@ pub struct ListResourcesInput {
 }
 impl ListResourcesInput {
     /// <p>The name of the resource type.</p>
-    pub fn type_name(&self) -> &str {
-        use std::ops::Deref;
-        self.type_name.deref()
+    pub fn type_name(&self) -> ::std::option::Option<&str> {
+        self.type_name.as_deref()
     }
     /// <p>For private resource types, the type version to use in this resource operation. If you do not specify a resource version, CloudFormation uses the default version.</p>
     pub fn type_version_id(&self) -> ::std::option::Option<&str> {
@@ -170,18 +169,11 @@ impl ListResourcesInputBuilder {
         &self.resource_model
     }
     /// Consumes the builder and constructs a [`ListResourcesInput`](crate::operation::list_resources::ListResourcesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`type_name`](crate::operation::list_resources::builders::ListResourcesInputBuilder::type_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_resources::ListResourcesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_resources::ListResourcesInput {
-            type_name: self.type_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "type_name",
-                    "type_name was not specified but it is required when building ListResourcesInput",
-                )
-            })?,
+            type_name: self.type_name,
             type_version_id: self.type_version_id,
             role_arn: self.role_arn,
             next_token: self.next_token,

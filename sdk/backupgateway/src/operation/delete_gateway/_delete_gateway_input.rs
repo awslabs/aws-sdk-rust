@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
-    pub gateway_arn: ::std::string::String,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteGatewayInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway to delete.</p>
-    pub fn gateway_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.gateway_arn.deref()
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+        self.gateway_arn.as_deref()
     }
 }
 impl DeleteGatewayInput {
@@ -43,18 +42,11 @@ impl DeleteGatewayInputBuilder {
         &self.gateway_arn
     }
     /// Consumes the builder and constructs a [`DeleteGatewayInput`](crate::operation::delete_gateway::DeleteGatewayInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`gateway_arn`](crate::operation::delete_gateway::builders::DeleteGatewayInputBuilder::gateway_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_gateway::DeleteGatewayInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_gateway::DeleteGatewayInput {
-            gateway_arn: self.gateway_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "gateway_arn",
-                    "gateway_arn was not specified but it is required when building DeleteGatewayInput",
-                )
-            })?,
+            gateway_arn: self.gateway_arn,
         })
     }
 }

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVirtualRoutersInput {
     /// <p>The name of the service mesh to list virtual routers in.</p>
-    pub mesh_name: ::std::string::String,
+    pub mesh_name: ::std::option::Option<::std::string::String>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results returned by <code>ListVirtualRouters</code> in paginated output. When you use this parameter, <code>ListVirtualRouters</code> returns only <code>limit</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListVirtualRouters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListVirtualRouters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.</p>
@@ -14,9 +14,8 @@ pub struct ListVirtualRoutersInput {
 }
 impl ListVirtualRoutersInput {
     /// <p>The name of the service mesh to list virtual routers in.</p>
-    pub fn mesh_name(&self) -> &str {
-        use std::ops::Deref;
-        self.mesh_name.deref()
+    pub fn mesh_name(&self) -> ::std::option::Option<&str> {
+        self.mesh_name.as_deref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListVirtualRouters</code> request where <code>limit</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -106,18 +105,11 @@ impl ListVirtualRoutersInputBuilder {
         &self.mesh_owner
     }
     /// Consumes the builder and constructs a [`ListVirtualRoutersInput`](crate::operation::list_virtual_routers::ListVirtualRoutersInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`mesh_name`](crate::operation::list_virtual_routers::builders::ListVirtualRoutersInputBuilder::mesh_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_virtual_routers::ListVirtualRoutersInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_virtual_routers::ListVirtualRoutersInput {
-            mesh_name: self.mesh_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "mesh_name",
-                    "mesh_name was not specified but it is required when building ListVirtualRoutersInput",
-                )
-            })?,
+            mesh_name: self.mesh_name,
             next_token: self.next_token,
             limit: self.limit,
             mesh_owner: self.mesh_owner,

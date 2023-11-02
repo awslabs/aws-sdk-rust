@@ -3,8 +3,8 @@ pub fn ser_delete_hypervisor_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_hypervisor::DeleteHypervisorInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("HypervisorArn").string(input.hypervisor_arn.as_str());
+    if let Some(var_1) = &input.hypervisor_arn {
+        object.key("HypervisorArn").string(var_1.as_str());
     }
     Ok(())
 }

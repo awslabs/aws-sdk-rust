@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationSettingsInput {
     /// <p>The ID of the application.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The credentials to be added or updated.</p>
     pub credentials_to_add_or_update: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationCredential>>,
     /// <p>The credentials to be removed.</p>
@@ -16,9 +16,8 @@ pub struct UpdateApplicationSettingsInput {
 }
 impl UpdateApplicationSettingsInput {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>The credentials to be added or updated.</p>
     ///
@@ -143,8 +142,6 @@ impl UpdateApplicationSettingsInputBuilder {
         &self.database_arn
     }
     /// Consumes the builder and constructs a [`UpdateApplicationSettingsInput`](crate::operation::update_application_settings::UpdateApplicationSettingsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::update_application_settings::builders::UpdateApplicationSettingsInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -152,12 +149,7 @@ impl UpdateApplicationSettingsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_application_settings::UpdateApplicationSettingsInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building UpdateApplicationSettingsInput",
-                )
-            })?,
+            application_id: self.application_id,
             credentials_to_add_or_update: self.credentials_to_add_or_update,
             credentials_to_remove: self.credentials_to_remove,
             backint: self.backint,

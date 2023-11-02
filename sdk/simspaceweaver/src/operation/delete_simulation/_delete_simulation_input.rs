@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSimulationInput {
     /// <p>The name of the simulation.</p>
-    pub simulation: ::std::string::String,
+    pub simulation: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSimulationInput {
     /// <p>The name of the simulation.</p>
-    pub fn simulation(&self) -> &str {
-        use std::ops::Deref;
-        self.simulation.deref()
+    pub fn simulation(&self) -> ::std::option::Option<&str> {
+        self.simulation.as_deref()
     }
 }
 impl DeleteSimulationInput {
@@ -43,18 +42,9 @@ impl DeleteSimulationInputBuilder {
         &self.simulation
     }
     /// Consumes the builder and constructs a [`DeleteSimulationInput`](crate::operation::delete_simulation::DeleteSimulationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`simulation`](crate::operation::delete_simulation::builders::DeleteSimulationInputBuilder::simulation)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_simulation::DeleteSimulationInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_simulation::DeleteSimulationInput {
-            simulation: self.simulation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "simulation",
-                    "simulation was not specified but it is required when building DeleteSimulationInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_simulation::DeleteSimulationInput { simulation: self.simulation })
     }
 }

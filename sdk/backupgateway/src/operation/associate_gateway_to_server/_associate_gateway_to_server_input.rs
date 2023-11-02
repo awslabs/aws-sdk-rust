@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateGatewayToServerInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub gateway_arn: ::std::string::String,
+    pub gateway_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
-    pub server_arn: ::std::string::String,
+    pub server_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateGatewayToServerInput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
-    pub fn gateway_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.gateway_arn.deref()
+    pub fn gateway_arn(&self) -> ::std::option::Option<&str> {
+        self.gateway_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the server that hosts your virtual machines.</p>
-    pub fn server_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.server_arn.deref()
+    pub fn server_arn(&self) -> ::std::option::Option<&str> {
+        self.server_arn.as_deref()
     }
 }
 impl AssociateGatewayToServerInput {
@@ -66,9 +64,6 @@ impl AssociateGatewayToServerInputBuilder {
         &self.server_arn
     }
     /// Consumes the builder and constructs a [`AssociateGatewayToServerInput`](crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`gateway_arn`](crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerInputBuilder::gateway_arn)
-    /// - [`server_arn`](crate::operation::associate_gateway_to_server::builders::AssociateGatewayToServerInputBuilder::server_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -76,18 +71,8 @@ impl AssociateGatewayToServerInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput {
-            gateway_arn: self.gateway_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "gateway_arn",
-                    "gateway_arn was not specified but it is required when building AssociateGatewayToServerInput",
-                )
-            })?,
-            server_arn: self.server_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "server_arn",
-                    "server_arn was not specified but it is required when building AssociateGatewayToServerInput",
-                )
-            })?,
+            gateway_arn: self.gateway_arn,
+            server_arn: self.server_arn,
         })
     }
 }

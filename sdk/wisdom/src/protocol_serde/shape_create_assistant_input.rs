@@ -9,27 +9,27 @@ pub fn ser_create_assistant_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.server_side_encryption_configuration {
+    if let Some(var_4) = &input.server_side_encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("serverSideEncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_server_side_encryption_configuration::ser_server_side_encryption_configuration(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("serverSideEncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_server_side_encryption_configuration::ser_server_side_encryption_configuration(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.tags {
+    if let Some(var_6) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("tags").start_object();
-        for (key_7, value_8) in var_5 {
+        let mut object_7 = object.key("tags").start_object();
+        for (key_8, value_9) in var_6 {
             {
-                object_6.key(key_7.as_str()).string(value_8.as_str());
+                object_7.key(key_8.as_str()).string(value_9.as_str());
             }
         }
-        object_6.finish();
+        object_7.finish();
     }
-    {
-        object.key("type").string(input.r#type.as_str());
+    if let Some(var_10) = &input.r#type {
+        object.key("type").string(var_10.as_str());
     }
     Ok(())
 }

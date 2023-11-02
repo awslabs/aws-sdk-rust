@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetQuantumTask`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`quantum_task_arn(impl Into<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::quantum_task_arn) / [`set_quantum_task_arn(impl Into<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_quantum_task_arn):<br>required: **true**<br><p>the ARN of the task to retrieve.</p><br>
+    ///   - [`quantum_task_arn(impl Into<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::quantum_task_arn) / [`set_quantum_task_arn(Option<String>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_quantum_task_arn):<br>required: **true**<br><p>the ARN of the task to retrieve.</p><br>
     ///   - [`additional_attribute_names(QuantumTaskAdditionalAttributeName)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::additional_attribute_names) / [`set_additional_attribute_names(Option<Vec<QuantumTaskAdditionalAttributeName>>)`](crate::operation::get_quantum_task::builders::GetQuantumTaskFluentBuilder::set_additional_attribute_names):<br>required: **false**<br><p>A list of attributes to return information for.</p><br>
     /// - On success, responds with [`GetQuantumTaskOutput`](crate::operation::get_quantum_task::GetQuantumTaskOutput) with field(s):
     ///   - [`quantum_task_arn(String)`](crate::operation::get_quantum_task::GetQuantumTaskOutput::quantum_task_arn): <p>The ARN of the task.</p>

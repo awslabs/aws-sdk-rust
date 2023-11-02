@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ActivateNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub network_site_arn: ::std::string::String,
+    pub network_site_arn: ::std::option::Option<::std::string::String>,
     /// <p>The shipping address of the network site.</p>
     pub shipping_address: ::std::option::Option<crate::types::Address>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.</p>
@@ -21,9 +21,8 @@ pub struct ActivateNetworkSiteInput {
 }
 impl ActivateNetworkSiteInput {
     /// <p>The Amazon Resource Name (ARN) of the network site.</p>
-    pub fn network_site_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.network_site_arn.deref()
+    pub fn network_site_arn(&self) -> ::std::option::Option<&str> {
+        self.network_site_arn.as_deref()
     }
     /// <p>The shipping address of the network site.</p>
     pub fn shipping_address(&self) -> ::std::option::Option<&crate::types::Address> {
@@ -142,19 +141,12 @@ impl ActivateNetworkSiteInputBuilder {
         &self.commitment_configuration
     }
     /// Consumes the builder and constructs a [`ActivateNetworkSiteInput`](crate::operation::activate_network_site::ActivateNetworkSiteInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`network_site_arn`](crate::operation::activate_network_site::builders::ActivateNetworkSiteInputBuilder::network_site_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::activate_network_site::ActivateNetworkSiteInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::activate_network_site::ActivateNetworkSiteInput {
-            network_site_arn: self.network_site_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "network_site_arn",
-                    "network_site_arn was not specified but it is required when building ActivateNetworkSiteInput",
-                )
-            })?,
+            network_site_arn: self.network_site_arn,
             shipping_address: self.shipping_address,
             client_token: self.client_token,
             commitment_configuration: self.commitment_configuration,

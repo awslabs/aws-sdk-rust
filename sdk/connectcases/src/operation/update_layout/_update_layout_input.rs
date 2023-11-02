@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the layout.</p>
-    pub layout_id: ::std::string::String,
+    pub layout_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the layout. It must be unique per domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Information about which fields will be present in the layout, the order of the fields.</p>
@@ -14,14 +14,12 @@ pub struct UpdateLayoutInput {
 }
 impl UpdateLayoutInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The unique identifier of the layout.</p>
-    pub fn layout_id(&self) -> &str {
-        use std::ops::Deref;
-        self.layout_id.deref()
+    pub fn layout_id(&self) -> ::std::option::Option<&str> {
+        self.layout_id.as_deref()
     }
     /// <p>The name of the layout. It must be unique per domain.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -108,23 +106,10 @@ impl UpdateLayoutInputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`UpdateLayoutInput`](crate::operation::update_layout::UpdateLayoutInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::update_layout::builders::UpdateLayoutInputBuilder::domain_id)
-    /// - [`layout_id`](crate::operation::update_layout::builders::UpdateLayoutInputBuilder::layout_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_layout::UpdateLayoutInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_layout::UpdateLayoutInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building UpdateLayoutInput",
-                )
-            })?,
-            layout_id: self.layout_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "layout_id",
-                    "layout_id was not specified but it is required when building UpdateLayoutInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            layout_id: self.layout_id,
             name: self.name,
             content: self.content,
         })

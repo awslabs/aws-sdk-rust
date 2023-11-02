@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForPositionInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub index_name: ::std::string::String,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
-    pub position: ::std::vec::Vec<f64>,
+    pub position: ::std::option::Option<::std::vec::Vec<f64>>,
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code> </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     /// <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p>
@@ -23,20 +23,20 @@ pub struct SearchPlaceIndexForPositionInput {
 }
 impl SearchPlaceIndexForPositionInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
+        self.index_name.as_deref()
     }
     /// <p>Specifies the longitude and latitude of the position to query.</p>
     /// <p> This parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.position.is_none()`.
     pub fn position(&self) -> &[f64] {
-        use std::ops::Deref;
-        self.position.deref()
+        self.position.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter. The maximum number of results returned per request.</p>
     /// <p>Default value: <code>50</code> </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
@@ -180,9 +180,6 @@ impl SearchPlaceIndexForPositionInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionInput`](crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`index_name`](crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionInputBuilder::index_name)
-    /// - [`position`](crate::operation::search_place_index_for_position::builders::SearchPlaceIndexForPositionInputBuilder::position)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -190,19 +187,9 @@ impl SearchPlaceIndexForPositionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_place_index_for_position::SearchPlaceIndexForPositionInput {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building SearchPlaceIndexForPositionInput",
-                )
-            })?,
-            position: self.position.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "position",
-                    "position was not specified but it is required when building SearchPlaceIndexForPositionInput",
-                )
-            })?,
-            max_results: self.max_results.unwrap_or_default(),
+            index_name: self.index_name,
+            position: self.position,
+            max_results: self.max_results,
             language: self.language,
             key: self.key,
         })

@@ -3,8 +3,8 @@ pub fn ser_disable_delegated_admin_account_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("delegatedAdminAccountId").string(input.delegated_admin_account_id.as_str());
+    if let Some(var_1) = &input.delegated_admin_account_id {
+        object.key("delegatedAdminAccountId").string(var_1.as_str());
     }
     Ok(())
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateSite`](crate::operation::update_site::builders::UpdateSiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_id):<br>required: **true**<br>Site ARN.<br>
+    ///   - [`id(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_id):<br>required: **true**<br>Site ARN.<br>
     ///   - [`name(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_name):<br>required: **false**<br>Human friendly name of the resource.<br>
     ///   - [`country_code(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::country_code) / [`set_country_code(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_country_code):<br>required: **false**<br>A valid ISO 3166-1 alpha-2 code for the country in which the site resides. e.g., US.<br>
     ///   - [`description(impl Into<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_site::builders::UpdateSiteFluentBuilder::set_description):<br>required: **false**<br>A high-level description of the site.<br>

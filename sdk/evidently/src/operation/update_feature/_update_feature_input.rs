@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateFeatureInput {
     /// <p>The name or ARN of the project that contains the feature to be updated.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature to be updated.</p>
-    pub feature: ::std::string::String,
+    pub feature: ::std::option::Option<::std::string::String>,
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub evaluation_strategy: ::std::option::Option<crate::types::FeatureEvaluationStrategy>,
     /// <p>An optional description of the feature.</p>
@@ -24,14 +24,12 @@ pub struct UpdateFeatureInput {
 }
 impl UpdateFeatureInput {
     /// <p>The name or ARN of the project that contains the feature to be updated.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name of the feature to be updated.</p>
-    pub fn feature(&self) -> &str {
-        use std::ops::Deref;
-        self.feature.deref()
+    pub fn feature(&self) -> ::std::option::Option<&str> {
+        self.feature.as_deref()
     }
     /// <p>Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the default variation to all users instead.</p>
     pub fn evaluation_strategy(&self) -> ::std::option::Option<&crate::types::FeatureEvaluationStrategy> {
@@ -231,25 +229,12 @@ impl UpdateFeatureInputBuilder {
         &self.entity_overrides
     }
     /// Consumes the builder and constructs a [`UpdateFeatureInput`](crate::operation::update_feature::UpdateFeatureInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::update_feature::builders::UpdateFeatureInputBuilder::project)
-    /// - [`feature`](crate::operation::update_feature::builders::UpdateFeatureInputBuilder::feature)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_feature::UpdateFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_feature::UpdateFeatureInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building UpdateFeatureInput",
-                )
-            })?,
-            feature: self.feature.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "feature",
-                    "feature was not specified but it is required when building UpdateFeatureInput",
-                )
-            })?,
+            project: self.project,
+            feature: self.feature,
             evaluation_strategy: self.evaluation_strategy,
             description: self.description,
             add_or_update_variations: self.add_or_update_variations,

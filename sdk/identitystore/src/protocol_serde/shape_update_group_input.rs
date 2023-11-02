@@ -3,23 +3,23 @@ pub fn ser_update_group_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_group::UpdateGroupInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("IdentityStoreId").string(input.identity_store_id.as_str());
+    if let Some(var_1) = &input.identity_store_id {
+        object.key("IdentityStoreId").string(var_1.as_str());
     }
-    {
-        object.key("GroupId").string(input.group_id.as_str());
+    if let Some(var_2) = &input.group_id {
+        object.key("GroupId").string(var_2.as_str());
     }
-    {
-        let mut array_1 = object.key("Operations").start_array();
-        for item_2 in &input.operations {
+    if let Some(var_3) = &input.operations {
+        let mut array_4 = object.key("Operations").start_array();
+        for item_5 in var_3 {
             {
                 #[allow(unused_mut)]
-                let mut object_3 = array_1.value().start_object();
-                crate::protocol_serde::shape_attribute_operation::ser_attribute_operation(&mut object_3, item_2)?;
-                object_3.finish();
+                let mut object_6 = array_4.value().start_object();
+                crate::protocol_serde::shape_attribute_operation::ser_attribute_operation(&mut object_6, item_5)?;
+                object_6.finish();
             }
         }
-        array_1.finish();
+        array_4.finish();
     }
     Ok(())
 }

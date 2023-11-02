@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOperationInput {
     /// <p>The ID of the operation.</p>
-    pub operation_id: ::std::string::String,
+    pub operation_id: ::std::option::Option<::std::string::String>,
 }
 impl GetOperationInput {
     /// <p>The ID of the operation.</p>
-    pub fn operation_id(&self) -> &str {
-        use std::ops::Deref;
-        self.operation_id.deref()
+    pub fn operation_id(&self) -> ::std::option::Option<&str> {
+        self.operation_id.as_deref()
     }
 }
 impl GetOperationInput {
@@ -43,16 +42,9 @@ impl GetOperationInputBuilder {
         &self.operation_id
     }
     /// Consumes the builder and constructs a [`GetOperationInput`](crate::operation::get_operation::GetOperationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`operation_id`](crate::operation::get_operation::builders::GetOperationInputBuilder::operation_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_operation::GetOperationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_operation::GetOperationInput {
-            operation_id: self.operation_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "operation_id",
-                    "operation_id was not specified but it is required when building GetOperationInput",
-                )
-            })?,
+            operation_id: self.operation_id,
         })
     }
 }

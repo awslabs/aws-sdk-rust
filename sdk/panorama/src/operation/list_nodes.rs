@@ -210,8 +210,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListNodesReq
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_6));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                if let ::std::option::Option::Some(inner_7) = &_input.max_results {
+                    if *inner_7 != 0 {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_7).encode());
+                    }
                 }
                 ::std::result::Result::Ok(())
             }

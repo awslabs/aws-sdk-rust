@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetStreamInput {
     /// <p>Channel ARN for stream to be accessed.</p>
-    pub channel_arn: ::std::string::String,
+    pub channel_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetStreamInput {
     /// <p>Channel ARN for stream to be accessed.</p>
-    pub fn channel_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_arn.deref()
+    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+        self.channel_arn.as_deref()
     }
 }
 impl GetStreamInput {
@@ -43,16 +42,9 @@ impl GetStreamInputBuilder {
         &self.channel_arn
     }
     /// Consumes the builder and constructs a [`GetStreamInput`](crate::operation::get_stream::GetStreamInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_arn`](crate::operation::get_stream::builders::GetStreamInputBuilder::channel_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_stream::GetStreamInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_stream::GetStreamInput {
-            channel_arn: self.channel_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_arn",
-                    "channel_arn was not specified but it is required when building GetStreamInput",
-                )
-            })?,
+            channel_arn: self.channel_arn,
         })
     }
 }

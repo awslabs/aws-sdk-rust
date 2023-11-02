@@ -22,21 +22,21 @@ pub fn ser_create_entity_input(
     if let Some(var_7) = &input.entity_id {
         object.key("entityId").string(var_7.as_str());
     }
-    {
-        object.key("entityName").string(input.entity_name.as_str());
+    if let Some(var_8) = &input.entity_name {
+        object.key("entityName").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.parent_entity_id {
-        object.key("parentEntityId").string(var_8.as_str());
+    if let Some(var_9) = &input.parent_entity_id {
+        object.key("parentEntityId").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_10) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_11 = object.key("tags").start_object();
+        for (key_12, value_13) in var_10 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_11.key(key_12.as_str()).string(value_13.as_str());
             }
         }
-        object_10.finish();
+        object_11.finish();
     }
     Ok(())
 }

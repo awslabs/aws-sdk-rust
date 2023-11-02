@@ -3,41 +3,41 @@ pub fn ser_update_application_settings_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_application_settings::UpdateApplicationSettingsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("ApplicationId").string(input.application_id.as_str());
+    if let Some(var_1) = &input.application_id {
+        object.key("ApplicationId").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.backint {
+    if let Some(var_2) = &input.backint {
         #[allow(unused_mut)]
-        let mut object_2 = object.key("Backint").start_object();
-        crate::protocol_serde::shape_backint_config::ser_backint_config(&mut object_2, var_1)?;
-        object_2.finish();
+        let mut object_3 = object.key("Backint").start_object();
+        crate::protocol_serde::shape_backint_config::ser_backint_config(&mut object_3, var_2)?;
+        object_3.finish();
     }
-    if let Some(var_3) = &input.credentials_to_add_or_update {
-        let mut array_4 = object.key("CredentialsToAddOrUpdate").start_array();
-        for item_5 in var_3 {
+    if let Some(var_4) = &input.credentials_to_add_or_update {
+        let mut array_5 = object.key("CredentialsToAddOrUpdate").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_6 = array_4.value().start_object();
-                crate::protocol_serde::shape_application_credential::ser_application_credential(&mut object_6, item_5)?;
-                object_6.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_application_credential::ser_application_credential(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_4.finish();
+        array_5.finish();
     }
-    if let Some(var_7) = &input.credentials_to_remove {
-        let mut array_8 = object.key("CredentialsToRemove").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.credentials_to_remove {
+        let mut array_9 = object.key("CredentialsToRemove").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_application_credential::ser_application_credential(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_application_credential::ser_application_credential(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_11) = &input.database_arn {
-        object.key("DatabaseArn").string(var_11.as_str());
+    if let Some(var_12) = &input.database_arn {
+        object.key("DatabaseArn").string(var_12.as_str());
     }
     Ok(())
 }

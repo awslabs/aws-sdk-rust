@@ -6,7 +6,7 @@ pub struct StartIncidentInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    pub response_plan_arn: ::std::string::String,
+    pub response_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub title: ::std::option::Option<::std::string::String>,
     /// <p>Defines the impact to the customers. Providing an impact overwrites the impact provided by a response plan.</p>
@@ -30,9 +30,8 @@ impl StartIncidentInput {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan that pre-defines summary, chat channels, Amazon SNS topics, runbooks, title, and impact of the incident. </p>
-    pub fn response_plan_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.response_plan_arn.deref()
+    pub fn response_plan_arn(&self) -> ::std::option::Option<&str> {
+        self.response_plan_arn.as_deref()
     }
     /// <p>Provide a title for the incident. Providing a title overwrites the title provided by the response plan. </p>
     pub fn title(&self) -> ::std::option::Option<&str> {
@@ -196,19 +195,12 @@ impl StartIncidentInputBuilder {
         &self.related_items
     }
     /// Consumes the builder and constructs a [`StartIncidentInput`](crate::operation::start_incident::StartIncidentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`response_plan_arn`](crate::operation::start_incident::builders::StartIncidentInputBuilder::response_plan_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_incident::StartIncidentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_incident::StartIncidentInput {
             client_token: self.client_token,
-            response_plan_arn: self.response_plan_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "response_plan_arn",
-                    "response_plan_arn was not specified but it is required when building StartIncidentInput",
-                )
-            })?,
+            response_plan_arn: self.response_plan_arn,
             title: self.title,
             impact: self.impact,
             trigger_details: self.trigger_details,

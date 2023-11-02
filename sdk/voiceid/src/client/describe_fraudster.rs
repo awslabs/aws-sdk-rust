@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeFraudster`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::domain_id) / [`set_domain_id(impl Into<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::set_domain_id):<br>required: **true**<br><p>The identifier of the domain that contains the fraudster.</p><br>
-    ///   - [`fraudster_id(impl Into<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::fraudster_id) / [`set_fraudster_id(impl Into<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::set_fraudster_id):<br>required: **true**<br><p>The identifier of the fraudster you are describing.</p><br>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::set_domain_id):<br>required: **true**<br><p>The identifier of the domain that contains the fraudster.</p><br>
+    ///   - [`fraudster_id(impl Into<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::fraudster_id) / [`set_fraudster_id(Option<String>)`](crate::operation::describe_fraudster::builders::DescribeFraudsterFluentBuilder::set_fraudster_id):<br>required: **true**<br><p>The identifier of the fraudster you are describing.</p><br>
     /// - On success, responds with [`DescribeFraudsterOutput`](crate::operation::describe_fraudster::DescribeFraudsterOutput) with field(s):
     ///   - [`fraudster(Option<Fraudster>)`](crate::operation::describe_fraudster::DescribeFraudsterOutput::fraudster): <p>Information about the specified fraudster.</p>
     /// - On failure, responds with [`SdkError<DescribeFraudsterError>`](crate::operation::describe_fraudster::DescribeFraudsterError)

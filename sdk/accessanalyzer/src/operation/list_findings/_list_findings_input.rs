@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
-    pub analyzer_arn: ::std::string::String,
+    pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>A filter to match for the findings to return.</p>
     pub filter: ::std::option::Option<::std::collections::HashMap<::std::string::String, crate::types::Criterion>>,
     /// <p>The sort order for the findings returned.</p>
@@ -17,9 +17,8 @@ pub struct ListFindingsInput {
 }
 impl ListFindingsInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve findings from.</p>
-    pub fn analyzer_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.analyzer_arn.deref()
+    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
     }
     /// <p>A filter to match for the findings to return.</p>
     pub fn filter(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, crate::types::Criterion>> {
@@ -134,16 +133,9 @@ impl ListFindingsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListFindingsInput`](crate::operation::list_findings::ListFindingsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`analyzer_arn`](crate::operation::list_findings::builders::ListFindingsInputBuilder::analyzer_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_findings::ListFindingsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_findings::ListFindingsInput {
-            analyzer_arn: self.analyzer_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "analyzer_arn",
-                    "analyzer_arn was not specified but it is required when building ListFindingsInput",
-                )
-            })?,
+            analyzer_arn: self.analyzer_arn,
             filter: self.filter,
             sort: self.sort,
             next_token: self.next_token,

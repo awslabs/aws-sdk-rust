@@ -3,23 +3,14 @@ pub fn ser_create_vpc_endpoint_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_vpc_endpoint::CreateVpcEndpointInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
-    {
-        object.key("vpcId").string(input.vpc_id.as_str());
+    if let Some(var_2) = &input.vpc_id {
+        object.key("vpcId").string(var_2.as_str());
     }
-    {
-        let mut array_1 = object.key("subnetIds").start_array();
-        for item_2 in &input.subnet_ids {
-            {
-                array_1.value().string(item_2.as_str());
-            }
-        }
-        array_1.finish();
-    }
-    if let Some(var_3) = &input.security_group_ids {
-        let mut array_4 = object.key("securityGroupIds").start_array();
+    if let Some(var_3) = &input.subnet_ids {
+        let mut array_4 = object.key("subnetIds").start_array();
         for item_5 in var_3 {
             {
                 array_4.value().string(item_5.as_str());
@@ -27,8 +18,17 @@ pub fn ser_create_vpc_endpoint_input(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.client_token {
-        object.key("clientToken").string(var_6.as_str());
+    if let Some(var_6) = &input.security_group_ids {
+        let mut array_7 = object.key("securityGroupIds").start_array();
+        for item_8 in var_6 {
+            {
+                array_7.value().string(item_8.as_str());
+            }
+        }
+        array_7.finish();
+    }
+    if let Some(var_9) = &input.client_token {
+        object.key("clientToken").string(var_9.as_str());
     }
     Ok(())
 }

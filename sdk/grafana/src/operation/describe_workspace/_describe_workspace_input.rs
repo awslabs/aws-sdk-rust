@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeWorkspaceInput {
     /// <p>The ID of the workspace to display information about.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeWorkspaceInput {
     /// <p>The ID of the workspace to display information about.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
 }
 impl DescribeWorkspaceInput {
@@ -43,18 +42,11 @@ impl DescribeWorkspaceInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`DescribeWorkspaceInput`](crate::operation::describe_workspace::DescribeWorkspaceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::describe_workspace::builders::DescribeWorkspaceInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_workspace::DescribeWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_workspace::DescribeWorkspaceInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building DescribeWorkspaceInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
         })
     }
 }

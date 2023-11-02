@@ -9,8 +9,8 @@ pub fn ser_update_network_site_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    {
-        object.key("networkSiteArn").string(input.network_site_arn.as_str());
+    if let Some(var_3) = &input.network_site_arn {
+        object.key("networkSiteArn").string(var_3.as_str());
     }
     Ok(())
 }

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CancelTaskInput {
     /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
-    pub task_id: ::std::string::String,
+    pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl CancelTaskInput {
     /// <p>The ID of the task that you are attempting to cancel. You can retrieve a task ID by using the <code>ListTasks</code> operation.</p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> ::std::option::Option<&str> {
+        self.task_id.as_deref()
     }
 }
 impl CancelTaskInput {
@@ -43,16 +42,7 @@ impl CancelTaskInputBuilder {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`CancelTaskInput`](crate::operation::cancel_task::CancelTaskInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`task_id`](crate::operation::cancel_task::builders::CancelTaskInputBuilder::task_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::cancel_task::CancelTaskInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::cancel_task::CancelTaskInput {
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building CancelTaskInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::cancel_task::CancelTaskInput { task_id: self.task_id })
     }
 }

@@ -5,19 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub config_id: ::std::string::String,
+    pub config_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of a <code>Config</code>.</p>
-    pub config_type: crate::types::ConfigCapabilityType,
+    pub config_type: ::std::option::Option<crate::types::ConfigCapabilityType>,
 }
 impl DeleteConfigInput {
     /// <p>UUID of a <code>Config</code>.</p>
-    pub fn config_id(&self) -> &str {
-        use std::ops::Deref;
-        self.config_id.deref()
+    pub fn config_id(&self) -> ::std::option::Option<&str> {
+        self.config_id.as_deref()
     }
     /// <p>Type of a <code>Config</code>.</p>
-    pub fn config_type(&self) -> &crate::types::ConfigCapabilityType {
-        &self.config_type
+    pub fn config_type(&self) -> ::std::option::Option<&crate::types::ConfigCapabilityType> {
+        self.config_type.as_ref()
     }
 }
 impl DeleteConfigInput {
@@ -66,23 +65,10 @@ impl DeleteConfigInputBuilder {
         &self.config_type
     }
     /// Consumes the builder and constructs a [`DeleteConfigInput`](crate::operation::delete_config::DeleteConfigInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`config_id`](crate::operation::delete_config::builders::DeleteConfigInputBuilder::config_id)
-    /// - [`config_type`](crate::operation::delete_config::builders::DeleteConfigInputBuilder::config_type)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_config::DeleteConfigInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_config::DeleteConfigInput {
-            config_id: self.config_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "config_id",
-                    "config_id was not specified but it is required when building DeleteConfigInput",
-                )
-            })?,
-            config_type: self.config_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "config_type",
-                    "config_type was not specified but it is required when building DeleteConfigInput",
-                )
-            })?,
+            config_id: self.config_id,
+            config_type: self.config_type,
         })
     }
 }

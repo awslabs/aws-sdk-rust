@@ -3,11 +3,11 @@ pub fn ser_delete_repository_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_repository::DeleteRepositoryInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("provider").string(input.provider.as_str());
+    if let Some(var_1) = &input.provider {
+        object.key("provider").string(var_1.as_str());
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("name").string(var_2.as_str());
     }
     Ok(())
 }

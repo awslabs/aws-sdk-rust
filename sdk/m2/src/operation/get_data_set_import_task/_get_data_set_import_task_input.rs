@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataSetImportTaskInput {
     /// <p>The application identifier.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
-    pub task_id: ::std::string::String,
+    pub task_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataSetImportTaskInput {
     /// <p>The application identifier.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>The task identifier returned by the <code>CreateDataSetImportTask</code> operation. </p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> ::std::option::Option<&str> {
+        self.task_id.as_deref()
     }
 }
 impl GetDataSetImportTaskInput {
@@ -66,26 +64,13 @@ impl GetDataSetImportTaskInputBuilder {
         &self.task_id
     }
     /// Consumes the builder and constructs a [`GetDataSetImportTaskInput`](crate::operation::get_data_set_import_task::GetDataSetImportTaskInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskInputBuilder::application_id)
-    /// - [`task_id`](crate::operation::get_data_set_import_task::builders::GetDataSetImportTaskInputBuilder::task_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_data_set_import_task::GetDataSetImportTaskInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_data_set_import_task::GetDataSetImportTaskInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building GetDataSetImportTaskInput",
-                )
-            })?,
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building GetDataSetImportTaskInput",
-                )
-            })?,
+            application_id: self.application_id,
+            task_id: self.task_id,
         })
     }
 }

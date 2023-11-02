@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProjectDataDeliveryInput {
     /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
     pub s3_destination: ::std::option::Option<crate::types::S3DestinationConfig>,
     /// <p>A structure containing the CloudWatch Logs log group where you want to store evaluation events.</p>
@@ -12,9 +12,8 @@ pub struct UpdateProjectDataDeliveryInput {
 }
 impl UpdateProjectDataDeliveryInput {
     /// <p>The name or ARN of the project that you want to modify the data storage options for.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>A structure containing the S3 bucket name and bucket prefix where you want to store evaluation events.</p>
     pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::S3DestinationConfig> {
@@ -85,8 +84,6 @@ impl UpdateProjectDataDeliveryInputBuilder {
         &self.cloud_watch_logs
     }
     /// Consumes the builder and constructs a [`UpdateProjectDataDeliveryInput`](crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::update_project_data_delivery::builders::UpdateProjectDataDeliveryInputBuilder::project)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -94,12 +91,7 @@ impl UpdateProjectDataDeliveryInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building UpdateProjectDataDeliveryInput",
-                )
-            })?,
+            project: self.project,
             s3_destination: self.s3_destination,
             cloud_watch_logs: self.cloud_watch_logs,
         })

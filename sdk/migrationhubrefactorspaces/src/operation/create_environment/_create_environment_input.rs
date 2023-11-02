@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateEnvironmentInput {
     /// <p>The name of the environment.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the environment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The network fabric type of the environment.</p>
-    pub network_fabric_type: crate::types::NetworkFabricType,
+    pub network_fabric_type: ::std::option::Option<crate::types::NetworkFabricType>,
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
@@ -16,17 +16,16 @@ pub struct CreateEnvironmentInput {
 }
 impl CreateEnvironmentInput {
     /// <p>The name of the environment.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The description of the environment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The network fabric type of the environment.</p>
-    pub fn network_fabric_type(&self) -> &crate::types::NetworkFabricType {
-        &self.network_fabric_type
+    pub fn network_fabric_type(&self) -> ::std::option::Option<&crate::types::NetworkFabricType> {
+        self.network_fabric_type.as_ref()
     }
     /// <p>The tags to assign to the environment. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -145,26 +144,13 @@ impl CreateEnvironmentInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentInput`](crate::operation::create_environment::CreateEnvironmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::name)
-    /// - [`network_fabric_type`](crate::operation::create_environment::builders::CreateEnvironmentInputBuilder::network_fabric_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_environment::CreateEnvironmentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_environment::CreateEnvironmentInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateEnvironmentInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
-            network_fabric_type: self.network_fabric_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "network_fabric_type",
-                    "network_fabric_type was not specified but it is required when building CreateEnvironmentInput",
-                )
-            })?,
+            network_fabric_type: self.network_fabric_type,
             tags: self.tags,
             client_token: self.client_token,
         })

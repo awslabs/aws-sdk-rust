@@ -236,8 +236,20 @@ pub struct RuntimePlugins {
 }
 
 impl RuntimePlugins {
+    /// Create a new empty set of runtime plugins.
     pub fn new() -> Self {
         Default::default()
+    }
+
+    /// Add several client-level runtime plugins from an iterator.
+    pub fn with_client_plugins(
+        mut self,
+        plugins: impl IntoIterator<Item = SharedRuntimePlugin>,
+    ) -> Self {
+        for plugin in plugins.into_iter() {
+            self = self.with_client_plugin(plugin);
+        }
+        self
     }
 
     /// Adds a client-level runtime plugin.
@@ -246,6 +258,17 @@ impl RuntimePlugins {
             self.client_plugins,
             IntoShared::<SharedRuntimePlugin>::into_shared(plugin)
         );
+        self
+    }
+
+    /// Add several operation-level runtime plugins from an iterator.
+    pub fn with_operation_plugins(
+        mut self,
+        plugins: impl IntoIterator<Item = SharedRuntimePlugin>,
+    ) -> Self {
+        for plugin in plugins.into_iter() {
+            self = self.with_operation_plugin(plugin);
+        }
         self
     }
 
@@ -258,6 +281,7 @@ impl RuntimePlugins {
         self
     }
 
+    /// Apply the client-level runtime plugins' config to the given config bag.
     pub fn apply_client_configuration(
         &self,
         cfg: &mut ConfigBag,
@@ -265,6 +289,7 @@ impl RuntimePlugins {
         apply_plugins!(client, self.client_plugins, cfg)
     }
 
+    /// Apply the operation-level runtime plugins' config to the given config bag.
     pub fn apply_operation_configuration(
         &self,
         cfg: &mut ConfigBag,

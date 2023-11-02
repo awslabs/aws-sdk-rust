@@ -3,17 +3,17 @@ pub fn ser_get_repository_sync_status_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("repositoryName").string(input.repository_name.as_str());
+    if let Some(var_1) = &input.repository_name {
+        object.key("repositoryName").string(var_1.as_str());
     }
-    {
-        object.key("repositoryProvider").string(input.repository_provider.as_str());
+    if let Some(var_2) = &input.repository_provider {
+        object.key("repositoryProvider").string(var_2.as_str());
     }
-    {
-        object.key("branch").string(input.branch.as_str());
+    if let Some(var_3) = &input.branch {
+        object.key("branch").string(var_3.as_str());
     }
-    {
-        object.key("syncType").string(input.sync_type.as_str());
+    if let Some(var_4) = &input.sync_type {
+        object.key("syncType").string(var_4.as_str());
     }
     Ok(())
 }

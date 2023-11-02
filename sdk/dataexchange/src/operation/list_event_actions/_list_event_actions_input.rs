@@ -6,7 +6,7 @@ pub struct ListEventActionsInput {
     /// <p>The unique identifier for the event source.</p>
     pub event_source_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results returned by a single call.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -16,7 +16,7 @@ impl ListEventActionsInput {
         self.event_source_id.as_deref()
     }
     /// <p>The maximum number of results returned by a single call.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token value retrieved from a previous call to access the next page of results.</p>
@@ -88,7 +88,7 @@ impl ListEventActionsInputBuilder {
     ) -> ::std::result::Result<crate::operation::list_event_actions::ListEventActionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_event_actions::ListEventActionsInput {
             event_source_id: self.event_source_id,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

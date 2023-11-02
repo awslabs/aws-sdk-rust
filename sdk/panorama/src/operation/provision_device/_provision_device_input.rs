@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProvisionDeviceInput {
     /// <p>A name for the device.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description for the device.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Tags for the device.</p>
@@ -14,9 +14,8 @@ pub struct ProvisionDeviceInput {
 }
 impl ProvisionDeviceInput {
     /// <p>A name for the device.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A description for the device.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -112,18 +111,11 @@ impl ProvisionDeviceInputBuilder {
         &self.networking_configuration
     }
     /// Consumes the builder and constructs a [`ProvisionDeviceInput`](crate::operation::provision_device::ProvisionDeviceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::provision_device::builders::ProvisionDeviceInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::provision_device::ProvisionDeviceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::provision_device::ProvisionDeviceInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building ProvisionDeviceInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
             tags: self.tags,
             networking_configuration: self.networking_configuration,

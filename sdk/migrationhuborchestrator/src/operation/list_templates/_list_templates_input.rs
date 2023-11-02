@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTemplatesInput {
     /// <p>The maximum number of results that can be returned.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The pagination token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template.</p>
@@ -12,7 +12,7 @@ pub struct ListTemplatesInput {
 }
 impl ListTemplatesInput {
     /// <p>The maximum number of results that can be returned.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The pagination token.</p>
@@ -87,7 +87,7 @@ impl ListTemplatesInputBuilder {
         self,
     ) -> ::std::result::Result<crate::operation::list_templates::ListTemplatesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_templates::ListTemplatesInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             name: self.name,
         })

@@ -8,7 +8,7 @@ pub struct ListAssistantAssociationsInput {
     /// <p>The maximum number of results to return per page.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_id: ::std::string::String,
+    pub assistant_id: ::std::option::Option<::std::string::String>,
 }
 impl ListAssistantAssociationsInput {
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
@@ -20,9 +20,8 @@ impl ListAssistantAssociationsInput {
         self.max_results
     }
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.assistant_id.deref()
+    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+        self.assistant_id.as_deref()
     }
 }
 impl ListAssistantAssociationsInput {
@@ -85,8 +84,6 @@ impl ListAssistantAssociationsInputBuilder {
         &self.assistant_id
     }
     /// Consumes the builder and constructs a [`ListAssistantAssociationsInput`](crate::operation::list_assistant_associations::ListAssistantAssociationsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`assistant_id`](crate::operation::list_assistant_associations::builders::ListAssistantAssociationsInputBuilder::assistant_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -96,12 +93,7 @@ impl ListAssistantAssociationsInputBuilder {
         ::std::result::Result::Ok(crate::operation::list_assistant_associations::ListAssistantAssociationsInput {
             next_token: self.next_token,
             max_results: self.max_results,
-            assistant_id: self.assistant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "assistant_id",
-                    "assistant_id was not specified but it is required when building ListAssistantAssociationsInput",
-                )
-            })?,
+            assistant_id: self.assistant_id,
         })
     }
 }

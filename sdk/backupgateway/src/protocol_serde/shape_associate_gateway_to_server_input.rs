@@ -3,11 +3,11 @@ pub fn ser_associate_gateway_to_server_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_gateway_to_server::AssociateGatewayToServerInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("GatewayArn").string(input.gateway_arn.as_str());
+    if let Some(var_1) = &input.gateway_arn {
+        object.key("GatewayArn").string(var_1.as_str());
     }
-    {
-        object.key("ServerArn").string(input.server_arn.as_str());
+    if let Some(var_2) = &input.server_arn {
+        object.key("ServerArn").string(var_2.as_str());
     }
     Ok(())
 }

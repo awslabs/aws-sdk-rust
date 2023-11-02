@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetLaunchInput {
     /// <p>The name or ARN of the project that contains the launch.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch that you want to see the details of.</p>
-    pub launch: ::std::string::String,
+    pub launch: ::std::option::Option<::std::string::String>,
 }
 impl GetLaunchInput {
     /// <p>The name or ARN of the project that contains the launch.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name of the launch that you want to see the details of.</p>
-    pub fn launch(&self) -> &str {
-        use std::ops::Deref;
-        self.launch.deref()
+    pub fn launch(&self) -> ::std::option::Option<&str> {
+        self.launch.as_deref()
     }
 }
 impl GetLaunchInput {
@@ -66,23 +64,10 @@ impl GetLaunchInputBuilder {
         &self.launch
     }
     /// Consumes the builder and constructs a [`GetLaunchInput`](crate::operation::get_launch::GetLaunchInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::get_launch::builders::GetLaunchInputBuilder::project)
-    /// - [`launch`](crate::operation::get_launch::builders::GetLaunchInputBuilder::launch)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_launch::GetLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_launch::GetLaunchInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building GetLaunchInput",
-                )
-            })?,
-            launch: self.launch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "launch",
-                    "launch was not specified but it is required when building GetLaunchInput",
-                )
-            })?,
+            project: self.project,
+            launch: self.launch,
         })
     }
 }

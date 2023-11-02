@@ -6,7 +6,7 @@ pub struct CreateFindingsReportInput {
     /// <p>The filter criteria to apply to the results of the finding report.</p>
     pub filter_criteria: ::std::option::Option<crate::types::FilterCriteria>,
     /// <p>The format to generate the report in.</p>
-    pub report_format: crate::types::ReportFormat,
+    pub report_format: ::std::option::Option<crate::types::ReportFormat>,
     /// <p>The Amazon S3 export destination for the report.</p>
     pub s3_destination: ::std::option::Option<crate::types::Destination>,
 }
@@ -16,8 +16,8 @@ impl CreateFindingsReportInput {
         self.filter_criteria.as_ref()
     }
     /// <p>The format to generate the report in.</p>
-    pub fn report_format(&self) -> &crate::types::ReportFormat {
-        &self.report_format
+    pub fn report_format(&self) -> ::std::option::Option<&crate::types::ReportFormat> {
+        self.report_format.as_ref()
     }
     /// <p>The Amazon S3 export destination for the report.</p>
     pub fn s3_destination(&self) -> ::std::option::Option<&crate::types::Destination> {
@@ -85,20 +85,13 @@ impl CreateFindingsReportInputBuilder {
         &self.s3_destination
     }
     /// Consumes the builder and constructs a [`CreateFindingsReportInput`](crate::operation::create_findings_report::CreateFindingsReportInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`report_format`](crate::operation::create_findings_report::builders::CreateFindingsReportInputBuilder::report_format)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_findings_report::CreateFindingsReportInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_findings_report::CreateFindingsReportInput {
             filter_criteria: self.filter_criteria,
-            report_format: self.report_format.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "report_format",
-                    "report_format was not specified but it is required when building CreateFindingsReportInput",
-                )
-            })?,
+            report_format: self.report_format,
             s3_destination: self.s3_destination,
         })
     }

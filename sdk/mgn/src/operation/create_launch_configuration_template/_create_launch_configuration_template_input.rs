@@ -26,7 +26,7 @@ pub struct CreateLaunchConfigurationTemplateInput {
     /// <p>Launch configuration template boot mode.</p>
     pub boot_mode: ::std::option::Option<crate::types::BootMode>,
     /// <p>Small volume maximum size.</p>
-    pub small_volume_max_size: i64,
+    pub small_volume_max_size: ::std::option::Option<i64>,
     /// <p>Small volume config.</p>
     pub small_volume_conf: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
     /// <p>Large volume config.</p>
@@ -78,7 +78,7 @@ impl CreateLaunchConfigurationTemplateInput {
         self.boot_mode.as_ref()
     }
     /// <p>Small volume maximum size.</p>
-    pub fn small_volume_max_size(&self) -> i64 {
+    pub fn small_volume_max_size(&self) -> ::std::option::Option<i64> {
         self.small_volume_max_size
     }
     /// <p>Small volume config.</p>
@@ -362,7 +362,7 @@ impl CreateLaunchConfigurationTemplateInputBuilder {
                 copy_tags: self.copy_tags,
                 licensing: self.licensing,
                 boot_mode: self.boot_mode,
-                small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
+                small_volume_max_size: self.small_volume_max_size,
                 small_volume_conf: self.small_volume_conf,
                 large_volume_conf: self.large_volume_conf,
             },

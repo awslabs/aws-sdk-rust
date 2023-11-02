@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration Source Server ID request.</p>
-    pub source_server_id: ::std::string::String,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration name request.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration Staging Area subnet request.</p>
@@ -26,7 +26,7 @@ pub struct UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration EBS encryption key ARN request.</p>
     pub ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration bandwidth throttling request.</p>
-    pub bandwidth_throttling: i64,
+    pub bandwidth_throttling: ::std::option::Option<i64>,
     /// <p>Update replication configuration data plane routing request.</p>
     pub data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Update replication configuration create Public IP request.</p>
@@ -40,9 +40,8 @@ pub struct UpdateReplicationConfigurationInput {
 }
 impl UpdateReplicationConfigurationInput {
     /// <p>Update replication configuration Source Server ID request.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+        self.source_server_id.as_deref()
     }
     /// <p>Update replication configuration name request.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -89,7 +88,7 @@ impl UpdateReplicationConfigurationInput {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Update replication configuration bandwidth throttling request.</p>
-    pub fn bandwidth_throttling(&self) -> i64 {
+    pub fn bandwidth_throttling(&self) -> ::std::option::Option<i64> {
         self.bandwidth_throttling
     }
     /// <p>Update replication configuration data plane routing request.</p>
@@ -437,8 +436,6 @@ impl UpdateReplicationConfigurationInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationInput`](crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_id`](crate::operation::update_replication_configuration::builders::UpdateReplicationConfigurationInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -446,12 +443,7 @@ impl UpdateReplicationConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_replication_configuration::UpdateReplicationConfigurationInput {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building UpdateReplicationConfigurationInput",
-                )
-            })?,
+            source_server_id: self.source_server_id,
             name: self.name,
             staging_area_subnet_id: self.staging_area_subnet_id,
             associate_default_security_group: self.associate_default_security_group,
@@ -462,7 +454,7 @@ impl UpdateReplicationConfigurationInputBuilder {
             replicated_disks: self.replicated_disks,
             ebs_encryption: self.ebs_encryption,
             ebs_encryption_key_arn: self.ebs_encryption_key_arn,
-            bandwidth_throttling: self.bandwidth_throttling.unwrap_or_default(),
+            bandwidth_throttling: self.bandwidth_throttling,
             data_plane_routing: self.data_plane_routing,
             create_public_ip: self.create_public_ip,
             staging_area_tags: self.staging_area_tags,

@@ -4,22 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
-    pub cluster_arn: ::std::string::String,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub snapshot_name: ::std::string::String,
+    pub snapshot_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateClusterSnapshotInput {
     /// <p>The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.</p>
-    pub fn cluster_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.cluster_arn.deref()
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+        self.cluster_arn.as_deref()
     }
     /// <p>The name of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_name(&self) -> &str {
-        use std::ops::Deref;
-        self.snapshot_name.deref()
+    pub fn snapshot_name(&self) -> ::std::option::Option<&str> {
+        self.snapshot_name.as_deref()
     }
     /// <p>The tags to be assigned to the new Elastic DocumentDB snapshot.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -93,26 +91,13 @@ impl CreateClusterSnapshotInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateClusterSnapshotInput`](crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`cluster_arn`](crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder::cluster_arn)
-    /// - [`snapshot_name`](crate::operation::create_cluster_snapshot::builders::CreateClusterSnapshotInputBuilder::snapshot_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_cluster_snapshot::CreateClusterSnapshotInput {
-            cluster_arn: self.cluster_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "cluster_arn",
-                    "cluster_arn was not specified but it is required when building CreateClusterSnapshotInput",
-                )
-            })?,
-            snapshot_name: self.snapshot_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "snapshot_name",
-                    "snapshot_name was not specified but it is required when building CreateClusterSnapshotInput",
-                )
-            })?,
+            cluster_arn: self.cluster_arn,
+            snapshot_name: self.snapshot_name,
             tags: self.tags,
         })
     }

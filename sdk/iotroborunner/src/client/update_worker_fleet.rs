@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateWorkerFleet`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder::set_id):<br>required: **true**<br>Full ARN of the worker fleet.<br>
+    ///   - [`id(impl Into<String>)`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder::set_id):<br>required: **true**<br>Full ARN of the worker fleet.<br>
     ///   - [`name(impl Into<String>)`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder::set_name):<br>required: **false**<br>Human friendly name of the resource.<br>
     ///   - [`additional_fixed_properties(impl Into<String>)`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder::additional_fixed_properties) / [`set_additional_fixed_properties(Option<String>)`](crate::operation::update_worker_fleet::builders::UpdateWorkerFleetFluentBuilder::set_additional_fixed_properties):<br>required: **false**<br>JSON blob containing additional fixed properties regarding the worker fleet<br>
     /// - On success, responds with [`UpdateWorkerFleetOutput`](crate::operation::update_worker_fleet::UpdateWorkerFleetOutput) with field(s):

@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
-    pub origination_identity: ::std::string::String,
+    pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The keyword to delete.</p>
-    pub keyword: ::std::string::String,
+    pub keyword: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeywordInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, PoolId or PoolArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn and <code>DescribePools</code> to find the values of PoolId and PoolArn.</p>
-    pub fn origination_identity(&self) -> &str {
-        use std::ops::Deref;
-        self.origination_identity.deref()
+    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+        self.origination_identity.as_deref()
     }
     /// <p>The keyword to delete.</p>
-    pub fn keyword(&self) -> &str {
-        use std::ops::Deref;
-        self.keyword.deref()
+    pub fn keyword(&self) -> ::std::option::Option<&str> {
+        self.keyword.as_deref()
     }
 }
 impl DeleteKeywordInput {
@@ -66,25 +64,12 @@ impl DeleteKeywordInputBuilder {
         &self.keyword
     }
     /// Consumes the builder and constructs a [`DeleteKeywordInput`](crate::operation::delete_keyword::DeleteKeywordInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`origination_identity`](crate::operation::delete_keyword::builders::DeleteKeywordInputBuilder::origination_identity)
-    /// - [`keyword`](crate::operation::delete_keyword::builders::DeleteKeywordInputBuilder::keyword)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_keyword::DeleteKeywordInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_keyword::DeleteKeywordInput {
-            origination_identity: self.origination_identity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "origination_identity",
-                    "origination_identity was not specified but it is required when building DeleteKeywordInput",
-                )
-            })?,
-            keyword: self.keyword.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "keyword",
-                    "keyword was not specified but it is required when building DeleteKeywordInput",
-                )
-            })?,
+            origination_identity: self.origination_identity,
+            keyword: self.keyword,
         })
     }
 }

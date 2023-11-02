@@ -6,7 +6,7 @@ pub struct ListPricingRulesAssociatedToPricingPlanInput {
     /// <p> The billing period for which the pricing rule associations are to be listed. </p>
     pub billing_period: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
-    pub pricing_plan_arn: ::std::string::String,
+    pub pricing_plan_arn: ::std::option::Option<::std::string::String>,
     /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p> The optional pagination token returned by a previous call. </p>
@@ -18,9 +18,8 @@ impl ListPricingRulesAssociatedToPricingPlanInput {
         self.billing_period.as_deref()
     }
     /// <p> The Amazon Resource Name (ARN) of the pricing plan for which associations are to be listed.</p>
-    pub fn pricing_plan_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.pricing_plan_arn.deref()
+    pub fn pricing_plan_arn(&self) -> ::std::option::Option<&str> {
+        self.pricing_plan_arn.as_deref()
     }
     /// <p>The optional maximum number of pricing rule associations to retrieve.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -107,8 +106,6 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListPricingRulesAssociatedToPricingPlanInput`](crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`pricing_plan_arn`](crate::operation::list_pricing_rules_associated_to_pricing_plan::builders::ListPricingRulesAssociatedToPricingPlanInputBuilder::pricing_plan_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -118,12 +115,7 @@ impl ListPricingRulesAssociatedToPricingPlanInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::list_pricing_rules_associated_to_pricing_plan::ListPricingRulesAssociatedToPricingPlanInput {
                 billing_period: self.billing_period,
-                pricing_plan_arn: self.pricing_plan_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "pricing_plan_arn",
-                        "pricing_plan_arn was not specified but it is required when building ListPricingRulesAssociatedToPricingPlanInput",
-                    )
-                })?,
+                pricing_plan_arn: self.pricing_plan_arn,
                 max_results: self.max_results,
                 next_token: self.next_token,
             },

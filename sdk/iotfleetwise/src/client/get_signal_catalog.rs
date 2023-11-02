@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSignalCatalog`](crate::operation::get_signal_catalog::builders::GetSignalCatalogFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_signal_catalog::builders::GetSignalCatalogFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::get_signal_catalog::builders::GetSignalCatalogFluentBuilder::set_name):<br>required: **true**<br><p> The name of the signal catalog to retrieve information about. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_signal_catalog::builders::GetSignalCatalogFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_signal_catalog::builders::GetSignalCatalogFluentBuilder::set_name):<br>required: **true**<br><p> The name of the signal catalog to retrieve information about. </p><br>
     /// - On success, responds with [`GetSignalCatalogOutput`](crate::operation::get_signal_catalog::GetSignalCatalogOutput) with field(s):
     ///   - [`name(String)`](crate::operation::get_signal_catalog::GetSignalCatalogOutput::name): <p> The name of the signal catalog. </p>
     ///   - [`arn(String)`](crate::operation::get_signal_catalog::GetSignalCatalogOutput::arn): <p> The Amazon Resource Name (ARN) of the signal catalog. </p>

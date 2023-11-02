@@ -183,6 +183,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UntagResourc
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.resource_arn;
+                let inner_1 = inner_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("resource_arn", "cannot be empty or unset"))?;
                 if inner_1.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "resource_arn",
@@ -191,6 +194,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UntagResourc
                 }
                 query.push_kv("resourceARN", &::aws_smithy_http::query::fmt_string(&inner_1));
                 let inner_2 = &_input.tag_keys;
+                let inner_2 = inner_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("tag_keys", "cannot be empty or unset"))?;
                 for inner_3 in inner_2 {
                     query.push_kv("tagKeys", &::aws_smithy_http::query::fmt_string(&inner_3));
                 }

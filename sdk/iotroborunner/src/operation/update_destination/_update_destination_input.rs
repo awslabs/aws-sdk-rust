@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateDestinationInput {
     /// Destination ARN.
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
     pub name: ::std::option::Option<::std::string::String>,
     /// State of the destination.
@@ -14,9 +14,8 @@ pub struct UpdateDestinationInput {
 }
 impl UpdateDestinationInput {
     /// Destination ARN.
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// Human friendly name of the resource.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -106,18 +105,11 @@ impl UpdateDestinationInputBuilder {
         &self.additional_fixed_properties
     }
     /// Consumes the builder and constructs a [`UpdateDestinationInput`](crate::operation::update_destination::UpdateDestinationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::update_destination::builders::UpdateDestinationInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_destination::UpdateDestinationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_destination::UpdateDestinationInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building UpdateDestinationInput",
-                )
-            })?,
+            id: self.id,
             name: self.name,
             state: self.state,
             additional_fixed_properties: self.additional_fixed_properties,

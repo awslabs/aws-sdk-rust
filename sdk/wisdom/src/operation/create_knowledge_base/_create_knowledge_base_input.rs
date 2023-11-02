@@ -6,9 +6,9 @@ pub struct CreateKnowledgeBaseInput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the knowledge base.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
-    pub knowledge_base_type: crate::types::KnowledgeBaseType,
+    pub knowledge_base_type: ::std::option::Option<crate::types::KnowledgeBaseType>,
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
     pub source_configuration: ::std::option::Option<crate::types::SourceConfiguration>,
     /// <p>Information about how to render the content.</p>
@@ -28,13 +28,12 @@ impl CreateKnowledgeBaseInput {
         self.client_token.as_deref()
     }
     /// <p>The name of the knowledge base.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The type of knowledge base. Only CUSTOM knowledge bases allow you to upload your own content. EXTERNAL knowledge bases support integrations with third-party systems whose content is synchronized automatically. </p>
-    pub fn knowledge_base_type(&self) -> &crate::types::KnowledgeBaseType {
-        &self.knowledge_base_type
+    pub fn knowledge_base_type(&self) -> ::std::option::Option<&crate::types::KnowledgeBaseType> {
+        self.knowledge_base_type.as_ref()
     }
     /// <p>The source of the knowledge base content. Only set this argument for EXTERNAL knowledge bases.</p>
     pub fn source_configuration(&self) -> ::std::option::Option<&crate::types::SourceConfiguration> {
@@ -207,27 +206,14 @@ impl CreateKnowledgeBaseInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateKnowledgeBaseInput`](crate::operation::create_knowledge_base::CreateKnowledgeBaseInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder::name)
-    /// - [`knowledge_base_type`](crate::operation::create_knowledge_base::builders::CreateKnowledgeBaseInputBuilder::knowledge_base_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_knowledge_base::CreateKnowledgeBaseInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_knowledge_base::CreateKnowledgeBaseInput {
             client_token: self.client_token,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateKnowledgeBaseInput",
-                )
-            })?,
-            knowledge_base_type: self.knowledge_base_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "knowledge_base_type",
-                    "knowledge_base_type was not specified but it is required when building CreateKnowledgeBaseInput",
-                )
-            })?,
+            name: self.name,
+            knowledge_base_type: self.knowledge_base_type,
             source_configuration: self.source_configuration,
             rendering_configuration: self.rendering_configuration,
             server_side_encryption_configuration: self.server_side_encryption_configuration,

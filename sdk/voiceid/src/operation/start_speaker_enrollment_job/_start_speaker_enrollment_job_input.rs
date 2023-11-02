@@ -8,9 +8,9 @@ pub struct StartSpeakerEnrollmentJobInput {
     /// <p>A name for your speaker enrollment job.</p>
     pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
-    pub data_access_role_arn: ::std::string::String,
+    pub data_access_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
     pub enrollment_config: ::std::option::Option<crate::types::EnrollmentConfig>,
     /// <p>The input data config containing the S3 location for the input manifest file that contains the list of speaker enrollment requests.</p>
@@ -28,14 +28,12 @@ impl StartSpeakerEnrollmentJobInput {
         self.job_name.as_deref()
     }
     /// <p>The identifier of the domain that contains the speaker enrollment job and in which the speakers are enrolled. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The IAM role Amazon Resource Name (ARN) that grants Voice ID permissions to access customer's buckets to read the input manifest file and write the job output file. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/voiceid-batch-enrollment.html">Batch enrollment using audio data from prior calls</a> for the permissions needed in this role.</p>
-    pub fn data_access_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.data_access_role_arn.deref()
+    pub fn data_access_role_arn(&self) -> ::std::option::Option<&str> {
+        self.data_access_role_arn.as_deref()
     }
     /// <p>The enrollment config that contains details such as the action to take when a speaker is already enrolled in Voice ID or when a speaker is identified as a fraudster.</p>
     pub fn enrollment_config(&self) -> ::std::option::Option<&crate::types::EnrollmentConfig> {
@@ -186,9 +184,6 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         &self.output_data_config
     }
     /// Consumes the builder and constructs a [`StartSpeakerEnrollmentJobInput`](crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder::domain_id)
-    /// - [`data_access_role_arn`](crate::operation::start_speaker_enrollment_job::builders::StartSpeakerEnrollmentJobInputBuilder::data_access_role_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -198,18 +193,8 @@ impl StartSpeakerEnrollmentJobInputBuilder {
         ::std::result::Result::Ok(crate::operation::start_speaker_enrollment_job::StartSpeakerEnrollmentJobInput {
             client_token: self.client_token,
             job_name: self.job_name,
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building StartSpeakerEnrollmentJobInput",
-                )
-            })?,
-            data_access_role_arn: self.data_access_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "data_access_role_arn",
-                    "data_access_role_arn was not specified but it is required when building StartSpeakerEnrollmentJobInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            data_access_role_arn: self.data_access_role_arn,
             enrollment_config: self.enrollment_config,
             input_data_config: self.input_data_config,
             output_data_config: self.output_data_config,

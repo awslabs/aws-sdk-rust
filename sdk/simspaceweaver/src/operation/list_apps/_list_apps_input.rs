@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAppsInput {
     /// <p>The name of the simulation that you want to list apps for.</p>
-    pub simulation: ::std::string::String,
+    pub simulation: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain that you want to list apps for.</p>
     pub domain: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of apps to list.</p>
@@ -14,9 +14,8 @@ pub struct ListAppsInput {
 }
 impl ListAppsInput {
     /// <p>The name of the simulation that you want to list apps for.</p>
-    pub fn simulation(&self) -> &str {
-        use std::ops::Deref;
-        self.simulation.deref()
+    pub fn simulation(&self) -> ::std::option::Option<&str> {
+        self.simulation.as_deref()
     }
     /// <p>The name of the domain that you want to list apps for.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
@@ -106,16 +105,9 @@ impl ListAppsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListAppsInput`](crate::operation::list_apps::ListAppsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`simulation`](crate::operation::list_apps::builders::ListAppsInputBuilder::simulation)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_apps::ListAppsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_apps::ListAppsInput {
-            simulation: self.simulation.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "simulation",
-                    "simulation was not specified but it is required when building ListAppsInput",
-                )
-            })?,
+            simulation: self.simulation,
             domain: self.domain,
             max_results: self.max_results,
             next_token: self.next_token,

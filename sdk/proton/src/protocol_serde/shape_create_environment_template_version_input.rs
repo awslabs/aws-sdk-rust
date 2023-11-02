@@ -6,32 +6,32 @@ pub fn ser_create_environment_template_version_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    {
-        object.key("templateName").string(input.template_name.as_str());
+    if let Some(var_2) = &input.template_name {
+        object.key("templateName").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.description {
-        object.key("description").string(var_2.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("description").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.major_version {
-        object.key("majorVersion").string(var_3.as_str());
+    if let Some(var_4) = &input.major_version {
+        object.key("majorVersion").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.source {
+    if let Some(var_5) = &input.source {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("source").start_object();
-        crate::protocol_serde::shape_template_version_source_input::ser_template_version_source_input(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("source").start_object();
+        crate::protocol_serde::shape_template_version_source_input::ser_template_version_source_input(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    if let Some(var_6) = &input.tags {
-        let mut array_7 = object.key("tags").start_array();
-        for item_8 in var_6 {
+    if let Some(var_7) = &input.tags {
+        let mut array_8 = object.key("tags").start_array();
+        for item_9 in var_7 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_10 = array_8.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_10, item_9)?;
+                object_10.finish();
             }
         }
-        array_7.finish();
+        array_8.finish();
     }
     Ok(())
 }

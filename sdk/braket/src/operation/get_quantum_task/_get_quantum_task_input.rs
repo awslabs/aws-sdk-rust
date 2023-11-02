@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetQuantumTaskInput {
     /// <p>the ARN of the task to retrieve.</p>
-    pub quantum_task_arn: ::std::string::String,
+    pub quantum_task_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of attributes to return information for.</p>
     pub additional_attribute_names: ::std::option::Option<::std::vec::Vec<crate::types::QuantumTaskAdditionalAttributeName>>,
 }
 impl GetQuantumTaskInput {
     /// <p>the ARN of the task to retrieve.</p>
-    pub fn quantum_task_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.quantum_task_arn.deref()
+    pub fn quantum_task_arn(&self) -> ::std::option::Option<&str> {
+        self.quantum_task_arn.as_deref()
     }
     /// <p>A list of attributes to return information for.</p>
     ///
@@ -75,18 +74,11 @@ impl GetQuantumTaskInputBuilder {
         &self.additional_attribute_names
     }
     /// Consumes the builder and constructs a [`GetQuantumTaskInput`](crate::operation::get_quantum_task::GetQuantumTaskInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`quantum_task_arn`](crate::operation::get_quantum_task::builders::GetQuantumTaskInputBuilder::quantum_task_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_quantum_task::GetQuantumTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_quantum_task::GetQuantumTaskInput {
-            quantum_task_arn: self.quantum_task_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "quantum_task_arn",
-                    "quantum_task_arn was not specified but it is required when building GetQuantumTaskInput",
-                )
-            })?,
+            quantum_task_arn: self.quantum_task_arn,
             additional_attribute_names: self.additional_attribute_names,
         })
     }

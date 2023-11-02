@@ -64,11 +64,11 @@ impl ModifyVerifiedAccessInstanceLoggingConfiguration {
         let mut runtime_plugins = client_runtime_plugins.with_operation_plugin(Self::new());
         runtime_plugins = runtime_plugins
                                     .with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(|token_provider, input| {
-                                    let input: &mut crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput = input.downcast_mut().expect("correct type");
-                                    if input.client_token.is_none() {
-                                        input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
-                                    }
-                                }));
+                                let input: &mut crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationInput = input.downcast_mut().expect("correct type");
+                                if input.client_token.is_none() {
+                                    input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
+                                }
+                            }));
         if let ::std::option::Option::Some(config_override) = config_override {
             for plugin in config_override.runtime_plugins.iter().cloned() {
                 runtime_plugins = runtime_plugins.with_operation_plugin(plugin);

@@ -5,13 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCampaignStateBatchInput {
     /// List of CampaignId
-    pub campaign_ids: ::std::vec::Vec<::std::string::String>,
+    pub campaign_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl GetCampaignStateBatchInput {
     /// List of CampaignId
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.campaign_ids.is_none()`.
     pub fn campaign_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.campaign_ids.deref()
+        self.campaign_ids.as_deref().unwrap_or_default()
     }
 }
 impl GetCampaignStateBatchInput {
@@ -49,19 +50,12 @@ impl GetCampaignStateBatchInputBuilder {
         &self.campaign_ids
     }
     /// Consumes the builder and constructs a [`GetCampaignStateBatchInput`](crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`campaign_ids`](crate::operation::get_campaign_state_batch::builders::GetCampaignStateBatchInputBuilder::campaign_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput {
-            campaign_ids: self.campaign_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "campaign_ids",
-                    "campaign_ids was not specified but it is required when building GetCampaignStateBatchInput",
-                )
-            })?,
+            campaign_ids: self.campaign_ids,
         })
     }
 }

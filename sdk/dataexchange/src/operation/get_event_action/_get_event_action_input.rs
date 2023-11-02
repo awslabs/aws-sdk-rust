@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEventActionInput {
     /// <p>The unique identifier for the event action.</p>
-    pub event_action_id: ::std::string::String,
+    pub event_action_id: ::std::option::Option<::std::string::String>,
 }
 impl GetEventActionInput {
     /// <p>The unique identifier for the event action.</p>
-    pub fn event_action_id(&self) -> &str {
-        use std::ops::Deref;
-        self.event_action_id.deref()
+    pub fn event_action_id(&self) -> ::std::option::Option<&str> {
+        self.event_action_id.as_deref()
     }
 }
 impl GetEventActionInput {
@@ -43,18 +42,11 @@ impl GetEventActionInputBuilder {
         &self.event_action_id
     }
     /// Consumes the builder and constructs a [`GetEventActionInput`](crate::operation::get_event_action::GetEventActionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`event_action_id`](crate::operation::get_event_action::builders::GetEventActionInputBuilder::event_action_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_event_action::GetEventActionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_event_action::GetEventActionInput {
-            event_action_id: self.event_action_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "event_action_id",
-                    "event_action_id was not specified but it is required when building GetEventActionInput",
-                )
-            })?,
+            event_action_id: self.event_action_id,
         })
     }
 }

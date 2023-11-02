@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
-    pub opt_out_list_name: ::std::string::String,
+    pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
-    pub opted_out_number: ::std::string::String,
+    pub opted_out_number: ::std::option::Option<::std::string::String>,
 }
 impl DeleteOptedOutNumberInput {
     /// <p>The OptOutListName or OptOutListArn to remove the phone number from.</p>
-    pub fn opt_out_list_name(&self) -> &str {
-        use std::ops::Deref;
-        self.opt_out_list_name.deref()
+    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
+        self.opt_out_list_name.as_deref()
     }
     /// <p>The phone number, in E.164 format, to remove from the OptOutList.</p>
-    pub fn opted_out_number(&self) -> &str {
-        use std::ops::Deref;
-        self.opted_out_number.deref()
+    pub fn opted_out_number(&self) -> ::std::option::Option<&str> {
+        self.opted_out_number.as_deref()
     }
 }
 impl DeleteOptedOutNumberInput {
@@ -66,26 +64,13 @@ impl DeleteOptedOutNumberInputBuilder {
         &self.opted_out_number
     }
     /// Consumes the builder and constructs a [`DeleteOptedOutNumberInput`](crate::operation::delete_opted_out_number::DeleteOptedOutNumberInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`opt_out_list_name`](crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberInputBuilder::opt_out_list_name)
-    /// - [`opted_out_number`](crate::operation::delete_opted_out_number::builders::DeleteOptedOutNumberInputBuilder::opted_out_number)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_opted_out_number::DeleteOptedOutNumberInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_opted_out_number::DeleteOptedOutNumberInput {
-            opt_out_list_name: self.opt_out_list_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "opt_out_list_name",
-                    "opt_out_list_name was not specified but it is required when building DeleteOptedOutNumberInput",
-                )
-            })?,
-            opted_out_number: self.opted_out_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "opted_out_number",
-                    "opted_out_number was not specified but it is required when building DeleteOptedOutNumberInput",
-                )
-            })?,
+            opt_out_list_name: self.opt_out_list_name,
+            opted_out_number: self.opted_out_number,
         })
     }
 }

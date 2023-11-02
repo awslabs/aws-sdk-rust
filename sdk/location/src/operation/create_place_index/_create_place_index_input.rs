@@ -10,7 +10,7 @@ pub struct CreatePlaceIndexInput {
     /// <li> <p>Must be a unique place index resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
-    pub index_name: ::std::string::String,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
     /// </note>
@@ -23,7 +23,7 @@ pub struct CreatePlaceIndexInput {
     /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub data_source: ::std::string::String,
+    pub data_source: ::std::option::Option<::std::string::String>,
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
     pub pricing_plan: ::std::option::Option<crate::types::PricingPlan>,
@@ -52,9 +52,8 @@ impl CreatePlaceIndexInput {
     /// <li> <p>Must be a unique place index resource name.</p> </li>
     /// <li> <p>No spaces allowed. For example, <code>ExamplePlaceIndex</code>.</p> </li>
     /// </ul>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
+        self.index_name.as_deref()
     }
     /// <p>Specifies the geospatial data provider for the new place index.</p> <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering <code>HERE</code> returns an error.</p>
@@ -68,9 +67,8 @@ impl CreatePlaceIndexInput {
     /// </important> </li>
     /// </ul>
     /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
-    pub fn data_source(&self) -> &str {
-        use std::ops::Deref;
-        self.data_source.deref()
+    pub fn data_source(&self) -> ::std::option::Option<&str> {
+        self.data_source.as_deref()
     }
     /// <p>No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.</p>
     #[deprecated(note = "Deprecated. If included, the only allowed value is RequestBasedUsage.", since = "2022-02-01")]
@@ -296,25 +294,12 @@ impl CreatePlaceIndexInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreatePlaceIndexInput`](crate::operation::create_place_index::CreatePlaceIndexInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`index_name`](crate::operation::create_place_index::builders::CreatePlaceIndexInputBuilder::index_name)
-    /// - [`data_source`](crate::operation::create_place_index::builders::CreatePlaceIndexInputBuilder::data_source)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_place_index::CreatePlaceIndexInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_place_index::CreatePlaceIndexInput {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building CreatePlaceIndexInput",
-                )
-            })?,
-            data_source: self.data_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "data_source",
-                    "data_source was not specified but it is required when building CreatePlaceIndexInput",
-                )
-            })?,
+            index_name: self.index_name,
+            data_source: self.data_source,
             pricing_plan: self.pricing_plan,
             description: self.description,
             data_source_configuration: self.data_source_configuration,

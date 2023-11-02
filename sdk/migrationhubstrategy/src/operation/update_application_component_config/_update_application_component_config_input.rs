@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateApplicationComponentConfigInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
-    pub application_component_id: ::std::string::String,
+    pub application_component_id: ::std::option::Option<::std::string::String>,
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub inclusion_status: ::std::option::Option<crate::types::InclusionStatus>,
     /// <p> The preferred strategy options for the application component. Use values from the <code>GetApplicationComponentStrategies</code> response. </p>
@@ -20,9 +20,8 @@ pub struct UpdateApplicationComponentConfigInput {
 }
 impl UpdateApplicationComponentConfigInput {
     /// <p> The ID of the application component. The ID is unique within an AWS account. </p>
-    pub fn application_component_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_component_id.deref()
+    pub fn application_component_id(&self) -> ::std::option::Option<&str> {
+        self.application_component_id.as_deref()
     }
     /// <p> Indicates whether the application component has been included for server recommendation or not. </p>
     pub fn inclusion_status(&self) -> ::std::option::Option<&crate::types::InclusionStatus> {
@@ -190,8 +189,6 @@ impl UpdateApplicationComponentConfigInputBuilder {
         &self.app_type
     }
     /// Consumes the builder and constructs a [`UpdateApplicationComponentConfigInput`](crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_component_id`](crate::operation::update_application_component_config::builders::UpdateApplicationComponentConfigInputBuilder::application_component_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -200,12 +197,7 @@ impl UpdateApplicationComponentConfigInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_application_component_config::UpdateApplicationComponentConfigInput {
-                application_component_id: self.application_component_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "application_component_id",
-                        "application_component_id was not specified but it is required when building UpdateApplicationComponentConfigInput",
-                    )
-                })?,
+                application_component_id: self.application_component_id,
                 inclusion_status: self.inclusion_status,
                 strategy_option: self.strategy_option,
                 source_code_list: self.source_code_list,

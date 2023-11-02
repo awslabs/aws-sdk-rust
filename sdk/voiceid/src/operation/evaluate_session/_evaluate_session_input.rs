@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluateSessionInput {
     /// <p>The identifier of the domain where the session started.</p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
-    pub session_name_or_id: ::std::string::String,
+    pub session_name_or_id: ::std::option::Option<::std::string::String>,
 }
 impl EvaluateSessionInput {
     /// <p>The identifier of the domain where the session started.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The session identifier, or name of the session, that you want to evaluate. In Voice ID integration, this is the Contact-Id.</p>
-    pub fn session_name_or_id(&self) -> &str {
-        use std::ops::Deref;
-        self.session_name_or_id.deref()
+    pub fn session_name_or_id(&self) -> ::std::option::Option<&str> {
+        self.session_name_or_id.as_deref()
     }
 }
 impl EvaluateSessionInput {
@@ -66,25 +64,12 @@ impl EvaluateSessionInputBuilder {
         &self.session_name_or_id
     }
     /// Consumes the builder and constructs a [`EvaluateSessionInput`](crate::operation::evaluate_session::EvaluateSessionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::evaluate_session::builders::EvaluateSessionInputBuilder::domain_id)
-    /// - [`session_name_or_id`](crate::operation::evaluate_session::builders::EvaluateSessionInputBuilder::session_name_or_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::evaluate_session::EvaluateSessionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::evaluate_session::EvaluateSessionInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building EvaluateSessionInput",
-                )
-            })?,
-            session_name_or_id: self.session_name_or_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "session_name_or_id",
-                    "session_name_or_id was not specified but it is required when building EvaluateSessionInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            session_name_or_id: self.session_name_or_id,
         })
     }
 }

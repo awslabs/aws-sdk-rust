@@ -6,7 +6,7 @@ pub struct GetSyncJobInput {
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
-    pub sync_source: ::std::string::String,
+    pub sync_source: ::std::option::Option<::std::string::String>,
     /// <p>The workspace ID.</p>
     pub workspace_id: ::std::option::Option<::std::string::String>,
 }
@@ -14,9 +14,8 @@ impl GetSyncJobInput {
     /// <p>The sync source.</p> <note>
     /// <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p>
     /// </note>
-    pub fn sync_source(&self) -> &str {
-        use std::ops::Deref;
-        self.sync_source.deref()
+    pub fn sync_source(&self) -> ::std::option::Option<&str> {
+        self.sync_source.as_deref()
     }
     /// <p>The workspace ID.</p>
     pub fn workspace_id(&self) -> ::std::option::Option<&str> {
@@ -74,16 +73,9 @@ impl GetSyncJobInputBuilder {
         &self.workspace_id
     }
     /// Consumes the builder and constructs a [`GetSyncJobInput`](crate::operation::get_sync_job::GetSyncJobInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`sync_source`](crate::operation::get_sync_job::builders::GetSyncJobInputBuilder::sync_source)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_sync_job::GetSyncJobInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_sync_job::GetSyncJobInput {
-            sync_source: self.sync_source.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "sync_source",
-                    "sync_source was not specified but it is required when building GetSyncJobInput",
-                )
-            })?,
+            sync_source: self.sync_source,
             workspace_id: self.workspace_id,
         })
     }

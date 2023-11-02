@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeResiliencyPolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub policy_arn: ::std::string::String,
+    pub policy_arn: ::std::option::Option<::std::string::String>,
 }
 impl DescribeResiliencyPolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn policy_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_arn.deref()
+    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+        self.policy_arn.as_deref()
     }
 }
 impl DescribeResiliencyPolicyInput {
@@ -43,21 +42,12 @@ impl DescribeResiliencyPolicyInputBuilder {
         &self.policy_arn
     }
     /// Consumes the builder and constructs a [`DescribeResiliencyPolicyInput`](crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`policy_arn`](crate::operation::describe_resiliency_policy::builders::DescribeResiliencyPolicyInputBuilder::policy_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput {
-            policy_arn: self.policy_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "policy_arn",
-                    "policy_arn was not specified but it is required when building DescribeResiliencyPolicyInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput { policy_arn: self.policy_arn })
     }
 }

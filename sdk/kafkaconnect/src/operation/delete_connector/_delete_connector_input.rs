@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
-    pub connector_arn: ::std::string::String,
+    pub connector_arn: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the connector that you want to delete.</p>
     pub current_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteConnectorInput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you want to delete.</p>
-    pub fn connector_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.connector_arn.deref()
+    pub fn connector_arn(&self) -> ::std::option::Option<&str> {
+        self.connector_arn.as_deref()
     }
     /// <p>The current version of the connector that you want to delete.</p>
     pub fn current_version(&self) -> ::std::option::Option<&str> {
@@ -64,18 +63,11 @@ impl DeleteConnectorInputBuilder {
         &self.current_version
     }
     /// Consumes the builder and constructs a [`DeleteConnectorInput`](crate::operation::delete_connector::DeleteConnectorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`connector_arn`](crate::operation::delete_connector::builders::DeleteConnectorInputBuilder::connector_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_connector::DeleteConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_connector::DeleteConnectorInput {
-            connector_arn: self.connector_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "connector_arn",
-                    "connector_arn was not specified but it is required when building DeleteConnectorInput",
-                )
-            })?,
+            connector_arn: self.connector_arn,
             current_version: self.current_version,
         })
     }

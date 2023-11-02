@@ -4,15 +4,15 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateExperimentInput {
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>A name for the new experiment.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>An optional description of the experiment.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
-    pub treatments: ::std::vec::Vec<crate::types::TreatmentConfig>,
+    pub treatments: ::std::option::Option<::std::vec::Vec<crate::types::TreatmentConfig>>,
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
-    pub metric_goals: ::std::vec::Vec<crate::types::MetricGoalConfig>,
+    pub metric_goals: ::std::option::Option<::std::vec::Vec<crate::types::MetricGoalConfig>>,
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub randomization_salt: ::std::option::Option<::std::string::String>,
     /// <p>The portion of the available audience that you want to allocate to this experiment, in thousandths of a percent. The available audience is the total audience minus the audience that you have allocated to overrides or current launches of this feature.</p>
@@ -31,28 +31,28 @@ pub struct CreateExperimentInput {
 }
 impl CreateExperimentInput {
     /// <p>The name or ARN of the project that you want to create the new experiment in.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>A name for the new experiment.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>An optional description of the experiment.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>An array of structures that describe the configuration of each feature variation used in the experiment.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.treatments.is_none()`.
     pub fn treatments(&self) -> &[crate::types::TreatmentConfig] {
-        use std::ops::Deref;
-        self.treatments.deref()
+        self.treatments.as_deref().unwrap_or_default()
     }
     /// <p>An array of structures that defines the metrics used for the experiment, and whether a higher or lower value for each metric is the goal.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_goals.is_none()`.
     pub fn metric_goals(&self) -> &[crate::types::MetricGoalConfig] {
-        use std::ops::Deref;
-        self.metric_goals.deref()
+        self.metric_goals.as_deref().unwrap_or_default()
     }
     /// <p>When Evidently assigns a particular user session to an experiment, it must use a randomization ID to determine which variation the user session is served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>, Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
     pub fn randomization_salt(&self) -> ::std::option::Option<&str> {
@@ -279,40 +279,15 @@ impl CreateExperimentInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateExperimentInput`](crate::operation::create_experiment::CreateExperimentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::create_experiment::builders::CreateExperimentInputBuilder::project)
-    /// - [`name`](crate::operation::create_experiment::builders::CreateExperimentInputBuilder::name)
-    /// - [`treatments`](crate::operation::create_experiment::builders::CreateExperimentInputBuilder::treatments)
-    /// - [`metric_goals`](crate::operation::create_experiment::builders::CreateExperimentInputBuilder::metric_goals)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_experiment::CreateExperimentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_experiment::CreateExperimentInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building CreateExperimentInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateExperimentInput",
-                )
-            })?,
+            project: self.project,
+            name: self.name,
             description: self.description,
-            treatments: self.treatments.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "treatments",
-                    "treatments was not specified but it is required when building CreateExperimentInput",
-                )
-            })?,
-            metric_goals: self.metric_goals.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "metric_goals",
-                    "metric_goals was not specified but it is required when building CreateExperimentInput",
-                )
-            })?,
+            treatments: self.treatments,
+            metric_goals: self.metric_goals,
             randomization_salt: self.randomization_salt,
             sampling_rate: self.sampling_rate,
             online_ab_config: self.online_ab_config,

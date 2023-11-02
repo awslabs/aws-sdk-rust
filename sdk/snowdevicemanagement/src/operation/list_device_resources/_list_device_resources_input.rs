@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListDeviceResourcesInput {
     /// <p>The ID of the managed device that you are listing the resources of.</p>
-    pub managed_device_id: ::std::string::String,
+    pub managed_device_id: ::std::option::Option<::std::string::String>,
     /// <p>A structure used to filter the results by type of resource.</p>
     pub r#type: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of resources per page.</p>
@@ -14,9 +14,8 @@ pub struct ListDeviceResourcesInput {
 }
 impl ListDeviceResourcesInput {
     /// <p>The ID of the managed device that you are listing the resources of.</p>
-    pub fn managed_device_id(&self) -> &str {
-        use std::ops::Deref;
-        self.managed_device_id.deref()
+    pub fn managed_device_id(&self) -> ::std::option::Option<&str> {
+        self.managed_device_id.as_deref()
     }
     /// <p>A structure used to filter the results by type of resource.</p>
     pub fn r#type(&self) -> ::std::option::Option<&str> {
@@ -106,19 +105,12 @@ impl ListDeviceResourcesInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListDeviceResourcesInput`](crate::operation::list_device_resources::ListDeviceResourcesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`managed_device_id`](crate::operation::list_device_resources::builders::ListDeviceResourcesInputBuilder::managed_device_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_device_resources::ListDeviceResourcesInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_device_resources::ListDeviceResourcesInput {
-            managed_device_id: self.managed_device_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "managed_device_id",
-                    "managed_device_id was not specified but it is required when building ListDeviceResourcesInput",
-                )
-            })?,
+            managed_device_id: self.managed_device_id,
             r#type: self.r#type,
             max_results: self.max_results,
             next_token: self.next_token,

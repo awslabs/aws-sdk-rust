@@ -24,8 +24,8 @@ pub fn ser_create_virtual_node_input(
         }
         array_5.finish();
     }
-    {
-        object.key("virtualNodeName").string(input.virtual_node_name.as_str());
+    if let Some(var_8) = &input.virtual_node_name {
+        object.key("virtualNodeName").string(var_8.as_str());
     }
     Ok(())
 }

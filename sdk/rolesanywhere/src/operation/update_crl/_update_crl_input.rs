@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub crl_id: ::std::string::String,
+    pub crl_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Crl.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>The x509 v3 specified certificate revocation list (CRL).</p>
@@ -12,9 +12,8 @@ pub struct UpdateCrlInput {
 }
 impl UpdateCrlInput {
     /// <p>The unique identifier of the certificate revocation list (CRL).</p>
-    pub fn crl_id(&self) -> &str {
-        use std::ops::Deref;
-        self.crl_id.deref()
+    pub fn crl_id(&self) -> ::std::option::Option<&str> {
+        self.crl_id.as_deref()
     }
     /// <p>The name of the Crl.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -85,16 +84,9 @@ impl UpdateCrlInputBuilder {
         &self.crl_data
     }
     /// Consumes the builder and constructs a [`UpdateCrlInput`](crate::operation::update_crl::UpdateCrlInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`crl_id`](crate::operation::update_crl::builders::UpdateCrlInputBuilder::crl_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_crl::UpdateCrlInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_crl::UpdateCrlInput {
-            crl_id: self.crl_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "crl_id",
-                    "crl_id was not specified but it is required when building UpdateCrlInput",
-                )
-            })?,
+            crl_id: self.crl_id,
             name: self.name,
             crl_data: self.crl_data,
         })

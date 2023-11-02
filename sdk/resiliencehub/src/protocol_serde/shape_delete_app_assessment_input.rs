@@ -3,11 +3,11 @@ pub fn ser_delete_app_assessment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_app_assessment::DeleteAppAssessmentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("assessmentArn").string(input.assessment_arn.as_str());
+    if let Some(var_1) = &input.assessment_arn {
+        object.key("assessmentArn").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.client_token {
-        object.key("clientToken").string(var_1.as_str());
+    if let Some(var_2) = &input.client_token {
+        object.key("clientToken").string(var_2.as_str());
     }
     Ok(())
 }

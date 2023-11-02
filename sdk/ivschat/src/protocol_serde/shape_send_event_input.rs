@@ -13,11 +13,11 @@ pub fn ser_send_event_input(
         }
         object_2.finish();
     }
-    {
-        object.key("eventName").string(input.event_name.as_str());
+    if let Some(var_5) = &input.event_name {
+        object.key("eventName").string(var_5.as_str());
     }
-    {
-        object.key("roomIdentifier").string(input.room_identifier.as_str());
+    if let Some(var_6) = &input.room_identifier {
+        object.key("roomIdentifier").string(var_6.as_str());
     }
     Ok(())
 }

@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteApp`](crate::operation::delete_app::builders::DeleteAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`simulation(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::simulation) / [`set_simulation(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation of the app.</p><br>
-    ///   - [`domain(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::domain) / [`set_domain(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_domain):<br>required: **true**<br><p>The name of the domain of the app.</p><br>
-    ///   - [`app(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::app) / [`set_app(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_app):<br>required: **true**<br><p>The name of the app.</p><br>
+    ///   - [`simulation(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation of the app.</p><br>
+    ///   - [`domain(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_domain):<br>required: **true**<br><p>The name of the domain of the app.</p><br>
+    ///   - [`app(impl Into<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::app) / [`set_app(Option<String>)`](crate::operation::delete_app::builders::DeleteAppFluentBuilder::set_app):<br>required: **true**<br><p>The name of the app.</p><br>
     /// - On success, responds with [`DeleteAppOutput`](crate::operation::delete_app::DeleteAppOutput)
     /// - On failure, responds with [`SdkError<DeleteAppError>`](crate::operation::delete_app::DeleteAppError)
     pub fn delete_app(&self) -> crate::operation::delete_app::builders::DeleteAppFluentBuilder {

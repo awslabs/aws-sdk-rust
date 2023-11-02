@@ -10,7 +10,7 @@ pub struct ListNetworkSitesInput {
     /// <p>Filter values are case sensitive. If you specify multiple values for a filter, the values are joined with an <code>OR</code>, and the request returns all results that match any of the specified values.</p>
     pub filters: ::std::option::Option<::std::collections::HashMap<crate::types::NetworkSiteFilterKeys, ::std::vec::Vec<::std::string::String>>>,
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub network_arn: ::std::string::String,
+    pub network_arn: ::std::option::Option<::std::string::String>,
     /// <p>The token for the next page of results.</p>
     pub start_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return.</p>
@@ -28,9 +28,8 @@ impl ListNetworkSitesInput {
         self.filters.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the network.</p>
-    pub fn network_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.network_arn.deref()
+    pub fn network_arn(&self) -> ::std::option::Option<&str> {
+        self.network_arn.as_deref()
     }
     /// <p>The token for the next page of results.</p>
     pub fn start_token(&self) -> ::std::option::Option<&str> {
@@ -140,19 +139,12 @@ impl ListNetworkSitesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListNetworkSitesInput`](crate::operation::list_network_sites::ListNetworkSitesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`network_arn`](crate::operation::list_network_sites::builders::ListNetworkSitesInputBuilder::network_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_network_sites::ListNetworkSitesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_network_sites::ListNetworkSitesInput {
             filters: self.filters,
-            network_arn: self.network_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "network_arn",
-                    "network_arn was not specified but it is required when building ListNetworkSitesInput",
-                )
-            })?,
+            network_arn: self.network_arn,
             start_token: self.start_token,
             max_results: self.max_results,
         })

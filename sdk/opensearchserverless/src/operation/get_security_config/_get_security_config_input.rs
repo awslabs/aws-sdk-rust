@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSecurityConfigInput {
     /// <p>The unique identifier of the security configuration.</p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
 }
 impl GetSecurityConfigInput {
     /// <p>The unique identifier of the security configuration.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
 }
 impl GetSecurityConfigInput {
@@ -43,18 +42,9 @@ impl GetSecurityConfigInputBuilder {
         &self.id
     }
     /// Consumes the builder and constructs a [`GetSecurityConfigInput`](crate::operation::get_security_config::GetSecurityConfigInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::get_security_config::builders::GetSecurityConfigInputBuilder::id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_security_config::GetSecurityConfigInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_security_config::GetSecurityConfigInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetSecurityConfigInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_security_config::GetSecurityConfigInput { id: self.id })
     }
 }

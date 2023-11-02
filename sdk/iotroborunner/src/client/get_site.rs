@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSite`](crate::operation::get_site::builders::GetSiteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::set_id):<br>required: **true**<br>Site ARN.<br>
+    ///   - [`id(impl Into<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::get_site::builders::GetSiteFluentBuilder::set_id):<br>required: **true**<br>Site ARN.<br>
     /// - On success, responds with [`GetSiteOutput`](crate::operation::get_site::GetSiteOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::get_site::GetSiteOutput::arn): Site ARN.
     ///   - [`id(String)`](crate::operation::get_site::GetSiteOutput::id): Filters access by the site's identifier

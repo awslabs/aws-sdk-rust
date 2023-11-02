@@ -3,11 +3,11 @@ pub fn ser_register_package_version_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_package_version::RegisterPackageVersionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.mark_latest {
-        object.key("MarkLatest").boolean(input.mark_latest);
+    if let Some(var_1) = &input.mark_latest {
+        object.key("MarkLatest").boolean(*var_1);
     }
-    if let Some(var_1) = &input.owner_account {
-        object.key("OwnerAccount").string(var_1.as_str());
+    if let Some(var_2) = &input.owner_account {
+        object.key("OwnerAccount").string(var_2.as_str());
     }
     Ok(())
 }

@@ -3,44 +3,44 @@ pub fn ser_execute_statement_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::execute_statement::ExecuteStatementInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("Sql").string(input.sql.as_str());
+    if let Some(var_1) = &input.sql {
+        object.key("Sql").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.cluster_identifier {
-        object.key("ClusterIdentifier").string(var_1.as_str());
+    if let Some(var_2) = &input.cluster_identifier {
+        object.key("ClusterIdentifier").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.secret_arn {
-        object.key("SecretArn").string(var_2.as_str());
+    if let Some(var_3) = &input.secret_arn {
+        object.key("SecretArn").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.db_user {
-        object.key("DbUser").string(var_3.as_str());
+    if let Some(var_4) = &input.db_user {
+        object.key("DbUser").string(var_4.as_str());
     }
-    {
-        object.key("Database").string(input.database.as_str());
+    if let Some(var_5) = &input.database {
+        object.key("Database").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.with_event {
-        object.key("WithEvent").boolean(*var_4);
+    if let Some(var_6) = &input.with_event {
+        object.key("WithEvent").boolean(*var_6);
     }
-    if let Some(var_5) = &input.statement_name {
-        object.key("StatementName").string(var_5.as_str());
+    if let Some(var_7) = &input.statement_name {
+        object.key("StatementName").string(var_7.as_str());
     }
-    if let Some(var_6) = &input.parameters {
-        let mut array_7 = object.key("Parameters").start_array();
-        for item_8 in var_6 {
+    if let Some(var_8) = &input.parameters {
+        let mut array_9 = object.key("Parameters").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_9 = array_7.value().start_object();
-                crate::protocol_serde::shape_sql_parameter::ser_sql_parameter(&mut object_9, item_8)?;
-                object_9.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_sql_parameter::ser_sql_parameter(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_7.finish();
+        array_9.finish();
     }
-    if let Some(var_10) = &input.workgroup_name {
-        object.key("WorkgroupName").string(var_10.as_str());
+    if let Some(var_12) = &input.workgroup_name {
+        object.key("WorkgroupName").string(var_12.as_str());
     }
-    if let Some(var_11) = &input.client_token {
-        object.key("ClientToken").string(var_11.as_str());
+    if let Some(var_13) = &input.client_token {
+        object.key("ClientToken").string(var_13.as_str());
     }
     Ok(())
 }

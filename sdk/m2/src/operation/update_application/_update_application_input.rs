@@ -4,26 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationInput {
     /// <p>The unique identifier of the application you want to update.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the application to update.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The current version of the application to update.</p>
-    pub current_application_version: i32,
+    pub current_application_version: ::std::option::Option<i32>,
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
     pub definition: ::std::option::Option<crate::types::Definition>,
 }
 impl UpdateApplicationInput {
     /// <p>The unique identifier of the application you want to update.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>The description of the application to update.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The current version of the application to update.</p>
-    pub fn current_application_version(&self) -> i32 {
+    pub fn current_application_version(&self) -> ::std::option::Option<i32> {
         self.current_application_version
     }
     /// <p>The application definition for this application. You can specify either inline JSON or an S3 bucket location.</p>
@@ -107,26 +106,13 @@ impl UpdateApplicationInputBuilder {
         &self.definition
     }
     /// Consumes the builder and constructs a [`UpdateApplicationInput`](crate::operation::update_application::UpdateApplicationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::update_application::builders::UpdateApplicationInputBuilder::application_id)
-    /// - [`current_application_version`](crate::operation::update_application::builders::UpdateApplicationInputBuilder::current_application_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_application::UpdateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_application::UpdateApplicationInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building UpdateApplicationInput",
-                )
-            })?,
+            application_id: self.application_id,
             description: self.description,
-            current_application_version: self.current_application_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "current_application_version",
-                    "current_application_version was not specified but it is required when building UpdateApplicationInput",
-                )
-            })?,
+            current_application_version: self.current_application_version,
             definition: self.definition,
         })
     }

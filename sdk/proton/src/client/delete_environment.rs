@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteEnvironment`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::set_name):<br>required: **true**<br><p>The name of the environment to delete.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::delete_environment::builders::DeleteEnvironmentFluentBuilder::set_name):<br>required: **true**<br><p>The name of the environment to delete.</p><br>
     /// - On success, responds with [`DeleteEnvironmentOutput`](crate::operation::delete_environment::DeleteEnvironmentOutput) with field(s):
     ///   - [`environment(Option<Environment>)`](crate::operation::delete_environment::DeleteEnvironmentOutput::environment): <p>The detailed data of the environment being deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteEnvironmentError>`](crate::operation::delete_environment::DeleteEnvironmentError)

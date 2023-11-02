@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDataflowEndpointGroup`](crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`dataflow_endpoint_group_id(impl Into<String>)`](crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupFluentBuilder::dataflow_endpoint_group_id) / [`set_dataflow_endpoint_group_id(impl Into<String>)`](crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupFluentBuilder::set_dataflow_endpoint_group_id):<br>required: **true**<br><p>UUID of a dataflow endpoint group.</p><br>
+    ///   - [`dataflow_endpoint_group_id(impl Into<String>)`](crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupFluentBuilder::dataflow_endpoint_group_id) / [`set_dataflow_endpoint_group_id(Option<String>)`](crate::operation::delete_dataflow_endpoint_group::builders::DeleteDataflowEndpointGroupFluentBuilder::set_dataflow_endpoint_group_id):<br>required: **true**<br><p>UUID of a dataflow endpoint group.</p><br>
     /// - On success, responds with [`DeleteDataflowEndpointGroupOutput`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput) with field(s):
     ///   - [`dataflow_endpoint_group_id(Option<String>)`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupOutput::dataflow_endpoint_group_id): <p>UUID of a dataflow endpoint group.</p>
     /// - On failure, responds with [`SdkError<DeleteDataflowEndpointGroupError>`](crate::operation::delete_dataflow_endpoint_group::DeleteDataflowEndpointGroupError)

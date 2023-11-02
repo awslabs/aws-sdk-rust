@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProfileInput {
     /// <p>The unique identifier of the profile.</p>
-    pub profile_id: ::std::string::String,
+    pub profile_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProfileInput {
     /// <p>The unique identifier of the profile.</p>
-    pub fn profile_id(&self) -> &str {
-        use std::ops::Deref;
-        self.profile_id.deref()
+    pub fn profile_id(&self) -> ::std::option::Option<&str> {
+        self.profile_id.as_deref()
     }
 }
 impl DeleteProfileInput {
@@ -43,18 +42,9 @@ impl DeleteProfileInputBuilder {
         &self.profile_id
     }
     /// Consumes the builder and constructs a [`DeleteProfileInput`](crate::operation::delete_profile::DeleteProfileInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`profile_id`](crate::operation::delete_profile::builders::DeleteProfileInputBuilder::profile_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_profile::DeleteProfileInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_profile::DeleteProfileInput {
-            profile_id: self.profile_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "profile_id",
-                    "profile_id was not specified but it is required when building DeleteProfileInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_profile::DeleteProfileInput { profile_id: self.profile_id })
     }
 }

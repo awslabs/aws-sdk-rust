@@ -5,13 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    pub mission_profile_id: ::std::string::String,
+    pub mission_profile_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> &str {
-        use std::ops::Deref;
-        self.mission_profile_id.deref()
+    pub fn mission_profile_id(&self) -> ::std::option::Option<&str> {
+        self.mission_profile_id.as_deref()
     }
 }
 impl GetMissionProfileInput {
@@ -44,18 +43,11 @@ impl GetMissionProfileInputBuilder {
         &self.mission_profile_id
     }
     /// Consumes the builder and constructs a [`GetMissionProfileInput`](crate::operation::get_mission_profile::GetMissionProfileInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`mission_profile_id`](crate::operation::get_mission_profile::builders::GetMissionProfileInputBuilder::mission_profile_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_mission_profile::GetMissionProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_mission_profile::GetMissionProfileInput {
-            mission_profile_id: self.mission_profile_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "mission_profile_id",
-                    "mission_profile_id was not specified but it is required when building GetMissionProfileInput",
-                )
-            })?,
+            mission_profile_id: self.mission_profile_id,
         })
     }
 }

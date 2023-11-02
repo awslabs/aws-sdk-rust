@@ -3,14 +3,14 @@ pub fn ser_list_environment_outputs_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_environment_outputs::ListEnvironmentOutputsInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("environmentName").string(input.environment_name.as_str());
+    if let Some(var_1) = &input.environment_name {
+        object.key("environmentName").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.next_token {
-        object.key("nextToken").string(var_1.as_str());
+    if let Some(var_2) = &input.next_token {
+        object.key("nextToken").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.deployment_id {
-        object.key("deploymentId").string(var_2.as_str());
+    if let Some(var_3) = &input.deployment_id {
+        object.key("deploymentId").string(var_3.as_str());
     }
     Ok(())
 }

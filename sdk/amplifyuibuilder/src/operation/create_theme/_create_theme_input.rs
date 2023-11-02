@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateThemeInput {
     /// <p>The unique ID of the Amplify app associated with the theme.</p>
-    pub app_id: ::std::string::String,
+    pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub environment_name: ::std::string::String,
+    pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The unique client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>Represents the configuration of the theme to create.</p>
@@ -14,14 +14,12 @@ pub struct CreateThemeInput {
 }
 impl CreateThemeInput {
     /// <p>The unique ID of the Amplify app associated with the theme.</p>
-    pub fn app_id(&self) -> &str {
-        use std::ops::Deref;
-        self.app_id.deref()
+    pub fn app_id(&self) -> ::std::option::Option<&str> {
+        self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is a part of the Amplify app.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+        self.environment_name.as_deref()
     }
     /// <p>The unique client token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -109,23 +107,10 @@ impl CreateThemeInputBuilder {
         &self.theme_to_create
     }
     /// Consumes the builder and constructs a [`CreateThemeInput`](crate::operation::create_theme::CreateThemeInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_id`](crate::operation::create_theme::builders::CreateThemeInputBuilder::app_id)
-    /// - [`environment_name`](crate::operation::create_theme::builders::CreateThemeInputBuilder::environment_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_theme::CreateThemeInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_theme::CreateThemeInput {
-            app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_id",
-                    "app_id was not specified but it is required when building CreateThemeInput",
-                )
-            })?,
-            environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_name",
-                    "environment_name was not specified but it is required when building CreateThemeInput",
-                )
-            })?,
+            app_id: self.app_id,
+            environment_name: self.environment_name,
             client_token: self.client_token,
             theme_to_create: self.theme_to_create,
         })

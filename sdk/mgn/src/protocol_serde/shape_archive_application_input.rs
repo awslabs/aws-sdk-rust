@@ -6,8 +6,8 @@ pub fn ser_archive_application_input(
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    {
-        object.key("applicationID").string(input.application_id.as_str());
+    if let Some(var_2) = &input.application_id {
+        object.key("applicationID").string(var_2.as_str());
     }
     Ok(())
 }

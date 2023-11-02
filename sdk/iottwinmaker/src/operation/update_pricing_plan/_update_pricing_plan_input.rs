@@ -4,14 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdatePricingPlanInput {
     /// <p>The pricing mode.</p>
-    pub pricing_mode: crate::types::PricingMode,
+    pub pricing_mode: ::std::option::Option<crate::types::PricingMode>,
     /// <p>The bundle names.</p>
     pub bundle_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl UpdatePricingPlanInput {
     /// <p>The pricing mode.</p>
-    pub fn pricing_mode(&self) -> &crate::types::PricingMode {
-        &self.pricing_mode
+    pub fn pricing_mode(&self) -> ::std::option::Option<&crate::types::PricingMode> {
+        self.pricing_mode.as_ref()
     }
     /// <p>The bundle names.</p>
     ///
@@ -71,18 +71,11 @@ impl UpdatePricingPlanInputBuilder {
         &self.bundle_names
     }
     /// Consumes the builder and constructs a [`UpdatePricingPlanInput`](crate::operation::update_pricing_plan::UpdatePricingPlanInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`pricing_mode`](crate::operation::update_pricing_plan::builders::UpdatePricingPlanInputBuilder::pricing_mode)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_pricing_plan::UpdatePricingPlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pricing_plan::UpdatePricingPlanInput {
-            pricing_mode: self.pricing_mode.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "pricing_mode",
-                    "pricing_mode was not specified but it is required when building UpdatePricingPlanInput",
-                )
-            })?,
+            pricing_mode: self.pricing_mode,
             bundle_names: self.bundle_names,
         })
     }

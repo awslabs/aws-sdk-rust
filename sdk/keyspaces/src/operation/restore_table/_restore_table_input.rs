@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreTableInput {
     /// <p>The keyspace name of the source table.</p>
-    pub source_keyspace_name: ::std::string::String,
+    pub source_keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source table.</p>
-    pub source_table_name: ::std::string::String,
+    pub source_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target keyspace.</p>
-    pub target_keyspace_name: ::std::string::String,
+    pub target_keyspace_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the target table.</p>
-    pub target_table_name: ::std::string::String,
+    pub target_table_name: ::std::option::Option<::std::string::String>,
     /// <p>The restore timestamp in ISO 8601 format.</p>
     pub restore_timestamp: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>Specifies the read/write throughput capacity mode for the target table. The options are:</p>
@@ -43,24 +43,20 @@ pub struct RestoreTableInput {
 }
 impl RestoreTableInput {
     /// <p>The keyspace name of the source table.</p>
-    pub fn source_keyspace_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_keyspace_name.deref()
+    pub fn source_keyspace_name(&self) -> ::std::option::Option<&str> {
+        self.source_keyspace_name.as_deref()
     }
     /// <p>The name of the source table.</p>
-    pub fn source_table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_table_name.deref()
+    pub fn source_table_name(&self) -> ::std::option::Option<&str> {
+        self.source_table_name.as_deref()
     }
     /// <p>The name of the target keyspace.</p>
-    pub fn target_keyspace_name(&self) -> &str {
-        use std::ops::Deref;
-        self.target_keyspace_name.deref()
+    pub fn target_keyspace_name(&self) -> ::std::option::Option<&str> {
+        self.target_keyspace_name.as_deref()
     }
     /// <p>The name of the target table.</p>
-    pub fn target_table_name(&self) -> &str {
-        use std::ops::Deref;
-        self.target_table_name.deref()
+    pub fn target_table_name(&self) -> ::std::option::Option<&str> {
+        self.target_table_name.as_deref()
     }
     /// <p>The restore timestamp in ISO 8601 format.</p>
     pub fn restore_timestamp(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -320,37 +316,12 @@ impl RestoreTableInputBuilder {
         &self.tags_override
     }
     /// Consumes the builder and constructs a [`RestoreTableInput`](crate::operation::restore_table::RestoreTableInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_keyspace_name`](crate::operation::restore_table::builders::RestoreTableInputBuilder::source_keyspace_name)
-    /// - [`source_table_name`](crate::operation::restore_table::builders::RestoreTableInputBuilder::source_table_name)
-    /// - [`target_keyspace_name`](crate::operation::restore_table::builders::RestoreTableInputBuilder::target_keyspace_name)
-    /// - [`target_table_name`](crate::operation::restore_table::builders::RestoreTableInputBuilder::target_table_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::restore_table::RestoreTableInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::restore_table::RestoreTableInput {
-            source_keyspace_name: self.source_keyspace_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_keyspace_name",
-                    "source_keyspace_name was not specified but it is required when building RestoreTableInput",
-                )
-            })?,
-            source_table_name: self.source_table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_table_name",
-                    "source_table_name was not specified but it is required when building RestoreTableInput",
-                )
-            })?,
-            target_keyspace_name: self.target_keyspace_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "target_keyspace_name",
-                    "target_keyspace_name was not specified but it is required when building RestoreTableInput",
-                )
-            })?,
-            target_table_name: self.target_table_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "target_table_name",
-                    "target_table_name was not specified but it is required when building RestoreTableInput",
-                )
-            })?,
+            source_keyspace_name: self.source_keyspace_name,
+            source_table_name: self.source_table_name,
+            target_keyspace_name: self.target_keyspace_name,
+            target_table_name: self.target_table_name,
             restore_timestamp: self.restore_timestamp,
             capacity_specification_override: self.capacity_specification_override,
             encryption_specification_override: self.encryption_specification_override,

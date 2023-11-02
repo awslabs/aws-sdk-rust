@@ -182,6 +182,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAccessLog
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.access_log_subscription_identifier;
+                let input_1 = input_1.as_ref().ok_or_else(|| {
+                    ::aws_smithy_http::operation::error::BuildError::missing_field("access_log_subscription_identifier", "cannot be empty or unset")
+                })?;
                 let access_log_subscription_identifier =
                     ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if access_log_subscription_identifier.is_empty() {

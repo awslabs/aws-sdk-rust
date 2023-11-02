@@ -4,24 +4,23 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListStreamSessionsInput {
     /// <p>Channel ARN used to filter the list.</p>
-    pub channel_arn: ::std::string::String,
+    pub channel_arn: ::std::option::Option<::std::string::String>,
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of streams to return. Default: 100.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListStreamSessionsInput {
     /// <p>Channel ARN used to filter the list.</p>
-    pub fn channel_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_arn.deref()
+    pub fn channel_arn(&self) -> ::std::option::Option<&str> {
+        self.channel_arn.as_deref()
     }
     /// <p>The first stream to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of streams to return. Default: 100.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -85,20 +84,13 @@ impl ListStreamSessionsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListStreamSessionsInput`](crate::operation::list_stream_sessions::ListStreamSessionsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_arn`](crate::operation::list_stream_sessions::builders::ListStreamSessionsInputBuilder::channel_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_stream_sessions::ListStreamSessionsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_stream_sessions::ListStreamSessionsInput {
-            channel_arn: self.channel_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_arn",
-                    "channel_arn was not specified but it is required when building ListStreamSessionsInput",
-                )
-            })?,
+            channel_arn: self.channel_arn,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

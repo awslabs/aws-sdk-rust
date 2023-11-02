@@ -5,20 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAnalyzedResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
-    pub analyzer_arn: ::std::string::String,
+    pub analyzer_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the resource to retrieve information about.</p>
-    pub resource_arn: ::std::string::String,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetAnalyzedResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN of the analyzer</a> to retrieve information from.</p>
-    pub fn analyzer_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.analyzer_arn.deref()
+    pub fn analyzer_arn(&self) -> ::std::option::Option<&str> {
+        self.analyzer_arn.as_deref()
     }
     /// <p>The ARN of the resource to retrieve information about.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
 }
 impl GetAnalyzedResourceInput {
@@ -67,26 +65,13 @@ impl GetAnalyzedResourceInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`GetAnalyzedResourceInput`](crate::operation::get_analyzed_resource::GetAnalyzedResourceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`analyzer_arn`](crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceInputBuilder::analyzer_arn)
-    /// - [`resource_arn`](crate::operation::get_analyzed_resource::builders::GetAnalyzedResourceInputBuilder::resource_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_analyzed_resource::GetAnalyzedResourceInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_analyzed_resource::GetAnalyzedResourceInput {
-            analyzer_arn: self.analyzer_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "analyzer_arn",
-                    "analyzer_arn was not specified but it is required when building GetAnalyzedResourceInput",
-                )
-            })?,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building GetAnalyzedResourceInput",
-                )
-            })?,
+            analyzer_arn: self.analyzer_arn,
+            resource_arn: self.resource_arn,
         })
     }
 }

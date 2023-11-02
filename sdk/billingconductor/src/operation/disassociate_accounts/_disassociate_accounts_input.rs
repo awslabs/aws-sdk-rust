@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateAccountsInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The array of account IDs to disassociate. </p>
-    pub account_ids: ::std::vec::Vec<::std::string::String>,
+    pub account_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociateAccountsInput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs will disassociate from. </p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>The array of account IDs to disassociate. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.account_ids.is_none()`.
     pub fn account_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.account_ids.deref()
+        self.account_ids.as_deref().unwrap_or_default()
     }
 }
 impl DisassociateAccountsInput {
@@ -71,26 +71,13 @@ impl DisassociateAccountsInputBuilder {
         &self.account_ids
     }
     /// Consumes the builder and constructs a [`DisassociateAccountsInput`](crate::operation::disassociate_accounts::DisassociateAccountsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::disassociate_accounts::builders::DisassociateAccountsInputBuilder::arn)
-    /// - [`account_ids`](crate::operation::disassociate_accounts::builders::DisassociateAccountsInputBuilder::account_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::disassociate_accounts::DisassociateAccountsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_accounts::DisassociateAccountsInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DisassociateAccountsInput",
-                )
-            })?,
-            account_ids: self.account_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "account_ids",
-                    "account_ids was not specified but it is required when building DisassociateAccountsInput",
-                )
-            })?,
+            arn: self.arn,
+            account_ids: self.account_ids,
         })
     }
 }

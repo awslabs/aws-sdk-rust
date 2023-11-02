@@ -3,8 +3,8 @@ pub fn ser_reject_environment_account_connection_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("id").string(input.id.as_str());
+    if let Some(var_1) = &input.id {
+        object.key("id").string(var_1.as_str());
     }
     Ok(())
 }

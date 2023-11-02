@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListArchiveRulesInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub analyzer_name: ::std::string::String,
+    pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>A token used for pagination of results returned.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return in the request.</p>
@@ -13,9 +13,8 @@ pub struct ListArchiveRulesInput {
 }
 impl ListArchiveRulesInput {
     /// <p>The name of the analyzer to retrieve rules from.</p>
-    pub fn analyzer_name(&self) -> &str {
-        use std::ops::Deref;
-        self.analyzer_name.deref()
+    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
+        self.analyzer_name.as_deref()
     }
     /// <p>A token used for pagination of results returned.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -86,18 +85,11 @@ impl ListArchiveRulesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListArchiveRulesInput`](crate::operation::list_archive_rules::ListArchiveRulesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`analyzer_name`](crate::operation::list_archive_rules::builders::ListArchiveRulesInputBuilder::analyzer_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_archive_rules::ListArchiveRulesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_archive_rules::ListArchiveRulesInput {
-            analyzer_name: self.analyzer_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "analyzer_name",
-                    "analyzer_name was not specified but it is required when building ListArchiveRulesInput",
-                )
-            })?,
+            analyzer_name: self.analyzer_name,
             next_token: self.next_token,
             max_results: self.max_results,
         })

@@ -238,13 +238,14 @@ impl ImdsCommonRuntimePlugin {
     fn new(
         config: &ProviderConfig,
         endpoint_resolver: ImdsEndpointResolver,
-        retry_config: &RetryConfig,
+        retry_config: RetryConfig,
         timeout_config: TimeoutConfig,
     ) -> Self {
         let mut layer = Layer::new("ImdsCommonRuntimePlugin");
         layer.store_put(AuthSchemeOptionResolverParams::new(()));
         layer.store_put(EndpointResolverParams::new(()));
         layer.store_put(SensitiveOutput);
+        layer.store_put(retry_config);
         layer.store_put(timeout_config);
         layer.store_put(user_agent());
 
@@ -255,7 +256,7 @@ impl ImdsCommonRuntimePlugin {
                 .with_endpoint_resolver(Some(endpoint_resolver))
                 .with_interceptor(UserAgentInterceptor::new())
                 .with_retry_classifier(SharedRetryClassifier::new(ImdsResponseRetryClassifier))
-                .with_retry_strategy(Some(StandardRetryStrategy::new(retry_config)))
+                .with_retry_strategy(Some(StandardRetryStrategy::new()))
                 .with_time_source(Some(config.time_source()))
                 .with_sleep_impl(config.sleep_impl()),
         }
@@ -423,7 +424,7 @@ impl Builder {
         let common_plugin = SharedRuntimePlugin::new(ImdsCommonRuntimePlugin::new(
             &config,
             endpoint_resolver,
-            &retry_config,
+            retry_config,
             timeout_config,
         ));
         let operation = Operation::builder()

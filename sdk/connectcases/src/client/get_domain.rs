@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDomain`](crate::operation::get_domain::builders::GetDomainFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::domain_id) / [`set_domain_id(impl Into<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::get_domain::builders::GetDomainFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
     /// - On success, responds with [`GetDomainOutput`](crate::operation::get_domain::GetDomainOutput) with field(s):
     ///   - [`domain_id(String)`](crate::operation::get_domain::GetDomainOutput::domain_id): <p>The unique identifier of the Cases domain. </p>
     ///   - [`domain_arn(String)`](crate::operation::get_domain::GetDomainOutput::domain_arn): <p>The Amazon Resource Name (ARN) for the Cases domain.</p>

@@ -11,52 +11,52 @@ pub fn ser_get_experiment_results_input(
             .key("endTime")
             .date_time(var_2, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    {
-        let mut array_3 = object.key("metricNames").start_array();
-        for item_4 in &input.metric_names {
+    if let Some(var_3) = &input.metric_names {
+        let mut array_4 = object.key("metricNames").start_array();
+        for item_5 in var_3 {
             {
-                array_3.value().string(item_4.as_str());
+                array_4.value().string(item_5.as_str());
             }
         }
-        array_3.finish();
+        array_4.finish();
     }
-    if input.period != 0 {
+    if let Some(var_6) = &input.period {
         object.key("period").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.period).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_5) = &input.report_names {
-        let mut array_6 = object.key("reportNames").start_array();
-        for item_7 in var_5 {
+    if let Some(var_7) = &input.report_names {
+        let mut array_8 = object.key("reportNames").start_array();
+        for item_9 in var_7 {
             {
-                array_6.value().string(item_7.as_str());
+                array_8.value().string(item_9.as_str());
             }
         }
-        array_6.finish();
+        array_8.finish();
     }
-    if let Some(var_8) = &input.result_stats {
-        let mut array_9 = object.key("resultStats").start_array();
-        for item_10 in var_8 {
+    if let Some(var_10) = &input.result_stats {
+        let mut array_11 = object.key("resultStats").start_array();
+        for item_12 in var_10 {
             {
-                array_9.value().string(item_10.as_str());
+                array_11.value().string(item_12.as_str());
             }
         }
-        array_9.finish();
+        array_11.finish();
     }
-    if let Some(var_11) = &input.start_time {
+    if let Some(var_13) = &input.start_time {
         object
             .key("startTime")
-            .date_time(var_11, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_13, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
-    {
-        let mut array_12 = object.key("treatmentNames").start_array();
-        for item_13 in &input.treatment_names {
+    if let Some(var_14) = &input.treatment_names {
+        let mut array_15 = object.key("treatmentNames").start_array();
+        for item_16 in var_14 {
             {
-                array_12.value().string(item_13.as_str());
+                array_15.value().string(item_16.as_str());
             }
         }
-        array_12.finish();
+        array_15.finish();
     }
     Ok(())
 }

@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
-    pub resource_arn: ::std::string::String,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
-    pub policy: ::std::string::String,
+    pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the resource to which the policy is being attached. </p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> ::std::option::Option<&str> {
+        self.policy.as_deref()
     }
 }
 impl PutResourcePolicyInput {
@@ -66,25 +64,12 @@ impl PutResourcePolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutResourcePolicyInput`](crate::operation::put_resource_policy::PutResourcePolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`resource_arn`](crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder::resource_arn)
-    /// - [`policy`](crate::operation::put_resource_policy::builders::PutResourcePolicyInputBuilder::policy)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_resource_policy::PutResourcePolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_resource_policy::PutResourcePolicyInput {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building PutResourcePolicyInput",
-                )
-            })?,
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building PutResourcePolicyInput",
-                )
-            })?,
+            resource_arn: self.resource_arn,
+            policy: self.policy,
         })
     }
 }

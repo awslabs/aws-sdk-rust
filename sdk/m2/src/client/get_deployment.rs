@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetDeployment`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`deployment_id(impl Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(impl Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::set_deployment_id):<br>required: **true**<br><p>The unique identifier for the deployment.</p><br>
-    ///   - [`application_id(impl Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::application_id) / [`set_application_id(impl Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application.</p><br>
+    ///   - [`deployment_id(impl Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::deployment_id) / [`set_deployment_id(Option<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::set_deployment_id):<br>required: **true**<br><p>The unique identifier for the deployment.</p><br>
+    ///   - [`application_id(impl Into<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::application_id) / [`set_application_id(Option<String>)`](crate::operation::get_deployment::builders::GetDeploymentFluentBuilder::set_application_id):<br>required: **true**<br><p>The unique identifier of the application.</p><br>
     /// - On success, responds with [`GetDeploymentOutput`](crate::operation::get_deployment::GetDeploymentOutput) with field(s):
     ///   - [`deployment_id(String)`](crate::operation::get_deployment::GetDeploymentOutput::deployment_id): <p>The unique identifier of the deployment.</p>
     ///   - [`application_id(String)`](crate::operation::get_deployment::GetDeploymentOutput::application_id): <p>The unique identifier of the application.</p>

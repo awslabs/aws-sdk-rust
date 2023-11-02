@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateGatewayFromServer`](crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerFluentBuilder::gateway_arn) / [`set_gateway_arn(impl Into<String>)`](crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerFluentBuilder::set_gateway_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p><br>
+    ///   - [`gateway_arn(impl Into<String>)`](crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerFluentBuilder::gateway_arn) / [`set_gateway_arn(Option<String>)`](crate::operation::disassociate_gateway_from_server::builders::DisassociateGatewayFromServerFluentBuilder::set_gateway_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the gateway to disassociate.</p><br>
     /// - On success, responds with [`DisassociateGatewayFromServerOutput`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput) with field(s):
     ///   - [`gateway_arn(Option<String>)`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput::gateway_arn): <p>The Amazon Resource Name (ARN) of the gateway you disassociated.</p>
     /// - On failure, responds with [`SdkError<DisassociateGatewayFromServerError>`](crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError)

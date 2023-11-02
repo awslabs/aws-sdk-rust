@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCollaborationAnalysisTemplateInput {
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
-    pub collaboration_identifier: ::std::string::String,
+    pub collaboration_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
-    pub analysis_template_arn: ::std::string::String,
+    pub analysis_template_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetCollaborationAnalysisTemplateInput {
     /// <p>A unique identifier for the collaboration that the analysis templates belong to. Currently accepts collaboration ID.</p>
-    pub fn collaboration_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_identifier.deref()
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+        self.collaboration_identifier.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) associated with the analysis template within a collaboration.</p>
-    pub fn analysis_template_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.analysis_template_arn.deref()
+    pub fn analysis_template_arn(&self) -> ::std::option::Option<&str> {
+        self.analysis_template_arn.as_deref()
     }
 }
 impl GetCollaborationAnalysisTemplateInput {
@@ -66,9 +64,6 @@ impl GetCollaborationAnalysisTemplateInputBuilder {
         &self.analysis_template_arn
     }
     /// Consumes the builder and constructs a [`GetCollaborationAnalysisTemplateInput`](crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`collaboration_identifier`](crate::operation::get_collaboration_analysis_template::builders::GetCollaborationAnalysisTemplateInputBuilder::collaboration_identifier)
-    /// - [`analysis_template_arn`](crate::operation::get_collaboration_analysis_template::builders::GetCollaborationAnalysisTemplateInputBuilder::analysis_template_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -77,18 +72,8 @@ impl GetCollaborationAnalysisTemplateInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_collaboration_analysis_template::GetCollaborationAnalysisTemplateInput {
-                collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "collaboration_identifier",
-                        "collaboration_identifier was not specified but it is required when building GetCollaborationAnalysisTemplateInput",
-                    )
-                })?,
-                analysis_template_arn: self.analysis_template_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "analysis_template_arn",
-                        "analysis_template_arn was not specified but it is required when building GetCollaborationAnalysisTemplateInput",
-                    )
-                })?,
+                collaboration_identifier: self.collaboration_identifier,
+                analysis_template_arn: self.analysis_template_arn,
             },
         )
     }

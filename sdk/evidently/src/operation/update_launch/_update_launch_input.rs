@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchInput {
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the launch that is to be updated.</p>
-    pub launch: ::std::string::String,
+    pub launch: ::std::option::Option<::std::string::String>,
     /// <p>An optional description for the launch.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>An array of structures that contains the feature and variations that are to be used for the launch.</p>
@@ -20,14 +20,12 @@ pub struct UpdateLaunchInput {
 }
 impl UpdateLaunchInput {
     /// <p>The name or ARN of the project that contains the launch that you want to update.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name of the launch that is to be updated.</p>
-    pub fn launch(&self) -> &str {
-        use std::ops::Deref;
-        self.launch.deref()
+    pub fn launch(&self) -> ::std::option::Option<&str> {
+        self.launch.as_deref()
     }
     /// <p>An optional description for the launch.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -187,23 +185,10 @@ impl UpdateLaunchInputBuilder {
         &self.scheduled_splits_config
     }
     /// Consumes the builder and constructs a [`UpdateLaunchInput`](crate::operation::update_launch::UpdateLaunchInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::update_launch::builders::UpdateLaunchInputBuilder::project)
-    /// - [`launch`](crate::operation::update_launch::builders::UpdateLaunchInputBuilder::launch)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_launch::UpdateLaunchInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_launch::UpdateLaunchInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building UpdateLaunchInput",
-                )
-            })?,
-            launch: self.launch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "launch",
-                    "launch was not specified but it is required when building UpdateLaunchInput",
-                )
-            })?,
+            project: self.project,
+            launch: self.launch,
             description: self.description,
             groups: self.groups,
             metric_monitors: self.metric_monitors,

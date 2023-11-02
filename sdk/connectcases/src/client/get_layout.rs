@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetLayout`](crate::operation::get_layout::builders::GetLayoutFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain_id(impl Into<String>)`](crate::operation::get_layout::builders::GetLayoutFluentBuilder::domain_id) / [`set_domain_id(impl Into<String>)`](crate::operation::get_layout::builders::GetLayoutFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
-    ///   - [`layout_id(impl Into<String>)`](crate::operation::get_layout::builders::GetLayoutFluentBuilder::layout_id) / [`set_layout_id(impl Into<String>)`](crate::operation::get_layout::builders::GetLayoutFluentBuilder::set_layout_id):<br>required: **true**<br><p>The unique identifier of the layout.</p><br>
+    ///   - [`domain_id(impl Into<String>)`](crate::operation::get_layout::builders::GetLayoutFluentBuilder::domain_id) / [`set_domain_id(Option<String>)`](crate::operation::get_layout::builders::GetLayoutFluentBuilder::set_domain_id):<br>required: **true**<br><p>The unique identifier of the Cases domain. </p><br>
+    ///   - [`layout_id(impl Into<String>)`](crate::operation::get_layout::builders::GetLayoutFluentBuilder::layout_id) / [`set_layout_id(Option<String>)`](crate::operation::get_layout::builders::GetLayoutFluentBuilder::set_layout_id):<br>required: **true**<br><p>The unique identifier of the layout.</p><br>
     /// - On success, responds with [`GetLayoutOutput`](crate::operation::get_layout::GetLayoutOutput) with field(s):
     ///   - [`layout_id(String)`](crate::operation::get_layout::GetLayoutOutput::layout_id): <p>The unique identifier of the layout.</p>
     ///   - [`layout_arn(String)`](crate::operation::get_layout::GetLayoutOutput::layout_arn): <p>The Amazon Resource Name (ARN) of the newly created layout.</p>

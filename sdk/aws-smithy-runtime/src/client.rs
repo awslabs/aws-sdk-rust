@@ -6,6 +6,8 @@
 /// Smithy auth scheme implementations.
 pub mod auth;
 
+pub mod defaults;
+
 pub mod dns;
 
 /// Built-in Smithy HTTP clients and connectors.

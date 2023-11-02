@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateWorkspace`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`workspace_id(impl Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(impl Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace.</p><br>
+    ///   - [`workspace_id(impl Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::workspace_id) / [`set_workspace_id(Option<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::set_workspace_id):<br>required: **true**<br><p>The ID of the workspace.</p><br>
     ///   - [`description(impl Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::description) / [`set_description(Option<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::set_description):<br>required: **false**<br><p>The description of the workspace.</p><br>
     ///   - [`role(impl Into<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::role) / [`set_role(Option<String>)`](crate::operation::update_workspace::builders::UpdateWorkspaceFluentBuilder::set_role):<br>required: **false**<br><p>The ARN of the execution role associated with the workspace.</p><br>
     /// - On success, responds with [`UpdateWorkspaceOutput`](crate::operation::update_workspace::UpdateWorkspaceOutput) with field(s):

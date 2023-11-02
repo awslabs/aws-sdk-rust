@@ -3,26 +3,26 @@ pub fn ser_create_keyspace_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_keyspace::CreateKeyspaceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("keyspaceName").string(input.keyspace_name.as_str());
+    if let Some(var_1) = &input.keyspace_name {
+        object.key("keyspaceName").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.tags {
-        let mut array_2 = object.key("tags").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.tags {
+        let mut array_3 = object.key("tags").start_array();
+        for item_4 in var_2 {
             {
                 #[allow(unused_mut)]
-                let mut object_4 = array_2.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_4, item_3)?;
-                object_4.finish();
+                let mut object_5 = array_3.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_5, item_4)?;
+                object_5.finish();
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if let Some(var_5) = &input.replication_specification {
+    if let Some(var_6) = &input.replication_specification {
         #[allow(unused_mut)]
-        let mut object_6 = object.key("replicationSpecification").start_object();
-        crate::protocol_serde::shape_replication_specification::ser_replication_specification(&mut object_6, var_5)?;
-        object_6.finish();
+        let mut object_7 = object.key("replicationSpecification").start_object();
+        crate::protocol_serde::shape_replication_specification::ser_replication_specification(&mut object_7, var_6)?;
+        object_7.finish();
     }
     Ok(())
 }

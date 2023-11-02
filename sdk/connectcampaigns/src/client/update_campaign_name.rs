@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateCampaignName`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::set_id):<br>required: **true**<br>Identifier representing a Campaign<br>
-    ///   - [`name(impl Into<String>)`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::set_name):<br>required: **true**<br>The name of an Amazon Connect Campaign name.<br>
+    ///   - [`id(impl Into<String>)`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::set_id):<br>required: **true**<br>Identifier representing a Campaign<br>
+    ///   - [`name(impl Into<String>)`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder::set_name):<br>required: **true**<br>The name of an Amazon Connect Campaign name.<br>
     /// - On success, responds with [`UpdateCampaignNameOutput`](crate::operation::update_campaign_name::UpdateCampaignNameOutput)
     /// - On failure, responds with [`SdkError<UpdateCampaignNameError>`](crate::operation::update_campaign_name::UpdateCampaignNameError)
     pub fn update_campaign_name(&self) -> crate::operation::update_campaign_name::builders::UpdateCampaignNameFluentBuilder {

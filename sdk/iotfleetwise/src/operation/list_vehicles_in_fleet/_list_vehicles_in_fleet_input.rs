@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListVehiclesInFleetInput {
     /// <p> The ID of a fleet. </p>
-    pub fleet_id: ::std::string::String,
+    pub fleet_id: ::std::option::Option<::std::string::String>,
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
@@ -13,9 +13,8 @@ pub struct ListVehiclesInFleetInput {
 }
 impl ListVehiclesInFleetInput {
     /// <p> The ID of a fleet. </p>
-    pub fn fleet_id(&self) -> &str {
-        use std::ops::Deref;
-        self.fleet_id.deref()
+    pub fn fleet_id(&self) -> ::std::option::Option<&str> {
+        self.fleet_id.as_deref()
     }
     /// <p>A pagination token for the next set of results.</p>
     /// <p>If the results of a search are large, only a portion of the results are returned, and a <code>nextToken</code> pagination token is returned in the response. To retrieve the next set of results, reissue the search request and include the returned token. When all results have been returned, the response does not contain a pagination token value. </p>
@@ -90,19 +89,12 @@ impl ListVehiclesInFleetInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListVehiclesInFleetInput`](crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`fleet_id`](crate::operation::list_vehicles_in_fleet::builders::ListVehiclesInFleetInputBuilder::fleet_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_vehicles_in_fleet::ListVehiclesInFleetInput {
-            fleet_id: self.fleet_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "fleet_id",
-                    "fleet_id was not specified but it is required when building ListVehiclesInFleetInput",
-                )
-            })?,
+            fleet_id: self.fleet_id,
             next_token: self.next_token,
             max_results: self.max_results,
         })

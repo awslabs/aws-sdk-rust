@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopFailbackInput {
     /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
-    pub recovery_instance_id: ::std::string::String,
+    pub recovery_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl StopFailbackInput {
     /// <p>The ID of the Recovery Instance we want to stop failback for.</p>
-    pub fn recovery_instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.recovery_instance_id.deref()
+    pub fn recovery_instance_id(&self) -> ::std::option::Option<&str> {
+        self.recovery_instance_id.as_deref()
     }
 }
 impl StopFailbackInput {
@@ -43,16 +42,9 @@ impl StopFailbackInputBuilder {
         &self.recovery_instance_id
     }
     /// Consumes the builder and constructs a [`StopFailbackInput`](crate::operation::stop_failback::StopFailbackInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`recovery_instance_id`](crate::operation::stop_failback::builders::StopFailbackInputBuilder::recovery_instance_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::stop_failback::StopFailbackInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_failback::StopFailbackInput {
-            recovery_instance_id: self.recovery_instance_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "recovery_instance_id",
-                    "recovery_instance_id was not specified but it is required when building StopFailbackInput",
-                )
-            })?,
+            recovery_instance_id: self.recovery_instance_id,
         })
     }
 }

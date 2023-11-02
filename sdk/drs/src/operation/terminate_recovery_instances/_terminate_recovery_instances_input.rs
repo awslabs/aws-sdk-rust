@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesInput {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub recovery_instance_ids: ::std::vec::Vec<::std::string::String>,
+    pub recovery_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TerminateRecoveryInstancesInput {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_instance_ids.is_none()`.
     pub fn recovery_instance_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.recovery_instance_ids.deref()
+        self.recovery_instance_ids.as_deref().unwrap_or_default()
     }
 }
 impl TerminateRecoveryInstancesInput {
@@ -48,8 +49,6 @@ impl TerminateRecoveryInstancesInputBuilder {
         &self.recovery_instance_ids
     }
     /// Consumes the builder and constructs a [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`recovery_instance_ids`](crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder::recovery_instance_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -57,12 +56,7 @@ impl TerminateRecoveryInstancesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput {
-            recovery_instance_ids: self.recovery_instance_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "recovery_instance_ids",
-                    "recovery_instance_ids was not specified but it is required when building TerminateRecoveryInstancesInput",
-                )
-            })?,
+            recovery_instance_ids: self.recovery_instance_ids,
         })
     }
 }

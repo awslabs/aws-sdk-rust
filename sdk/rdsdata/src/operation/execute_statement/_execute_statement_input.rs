@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub resource_arn: ::std::string::String,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub secret_arn: ::std::string::String,
+    pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SQL statement to run.</p>
-    pub sql: ::std::string::String,
+    pub sql: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database.</p>
     pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database schema.</p> <note>
@@ -25,11 +25,11 @@ pub struct ExecuteStatementInput {
     /// <p>If the SQL statement is not part of a transaction, don't set this parameter.</p>
     pub transaction_id: ::std::option::Option<::std::string::String>,
     /// <p>A value that indicates whether to include metadata in the results.</p>
-    pub include_result_metadata: bool,
+    pub include_result_metadata: ::std::option::Option<bool>,
     /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
-    pub continue_after_timeout: bool,
+    pub continue_after_timeout: ::std::option::Option<bool>,
     /// <p>Options that control how the result set is returned.</p>
     pub result_set_options: ::std::option::Option<crate::types::ResultSetOptions>,
     /// <p>A value that indicates whether to format the result set as a single JSON string. This parameter only applies to <code>SELECT</code> statements and is ignored for other types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code> field.</p>
@@ -38,20 +38,17 @@ pub struct ExecuteStatementInput {
 }
 impl ExecuteStatementInput {
     /// <p>The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
     /// <p>The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.</p>
     /// <p>For information about creating the secret, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create_database_secret.html">Create a database secret</a>.</p>
-    pub fn secret_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.secret_arn.deref()
+    pub fn secret_arn(&self) -> ::std::option::Option<&str> {
+        self.secret_arn.as_deref()
     }
     /// <p>The SQL statement to run.</p>
-    pub fn sql(&self) -> &str {
-        use std::ops::Deref;
-        self.sql.deref()
+    pub fn sql(&self) -> ::std::option::Option<&str> {
+        self.sql.as_deref()
     }
     /// <p>The name of the database.</p>
     pub fn database(&self) -> ::std::option::Option<&str> {
@@ -77,13 +74,13 @@ impl ExecuteStatementInput {
         self.transaction_id.as_deref()
     }
     /// <p>A value that indicates whether to include metadata in the results.</p>
-    pub fn include_result_metadata(&self) -> bool {
+    pub fn include_result_metadata(&self) -> ::std::option::Option<bool> {
         self.include_result_metadata
     }
     /// <p>A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.</p> <note>
     /// <p>For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.</p>
     /// </note>
-    pub fn continue_after_timeout(&self) -> bool {
+    pub fn continue_after_timeout(&self) -> ::std::option::Option<bool> {
         self.continue_after_timeout
     }
     /// <p>Options that control how the result set is returned.</p>
@@ -311,38 +308,19 @@ impl ExecuteStatementInputBuilder {
         &self.format_records_as
     }
     /// Consumes the builder and constructs a [`ExecuteStatementInput`](crate::operation::execute_statement::ExecuteStatementInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`resource_arn`](crate::operation::execute_statement::builders::ExecuteStatementInputBuilder::resource_arn)
-    /// - [`secret_arn`](crate::operation::execute_statement::builders::ExecuteStatementInputBuilder::secret_arn)
-    /// - [`sql`](crate::operation::execute_statement::builders::ExecuteStatementInputBuilder::sql)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::execute_statement::ExecuteStatementInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_statement::ExecuteStatementInput {
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building ExecuteStatementInput",
-                )
-            })?,
-            secret_arn: self.secret_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "secret_arn",
-                    "secret_arn was not specified but it is required when building ExecuteStatementInput",
-                )
-            })?,
-            sql: self.sql.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "sql",
-                    "sql was not specified but it is required when building ExecuteStatementInput",
-                )
-            })?,
+            resource_arn: self.resource_arn,
+            secret_arn: self.secret_arn,
+            sql: self.sql,
             database: self.database,
             schema: self.schema,
             parameters: self.parameters,
             transaction_id: self.transaction_id,
-            include_result_metadata: self.include_result_metadata.unwrap_or_default(),
-            continue_after_timeout: self.continue_after_timeout.unwrap_or_default(),
+            include_result_metadata: self.include_result_metadata,
+            continue_after_timeout: self.continue_after_timeout,
             result_set_options: self.result_set_options,
             format_records_as: self.format_records_as,
         })

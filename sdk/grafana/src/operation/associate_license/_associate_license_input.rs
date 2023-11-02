@@ -4,19 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateLicenseInput {
     /// <p>The ID of the workspace to associate the license with.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of license to associate with the workspace.</p>
-    pub license_type: crate::types::LicenseType,
+    pub license_type: ::std::option::Option<crate::types::LicenseType>,
 }
 impl AssociateLicenseInput {
     /// <p>The ID of the workspace to associate the license with.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>The type of license to associate with the workspace.</p>
-    pub fn license_type(&self) -> &crate::types::LicenseType {
-        &self.license_type
+    pub fn license_type(&self) -> ::std::option::Option<&crate::types::LicenseType> {
+        self.license_type.as_ref()
     }
 }
 impl AssociateLicenseInput {
@@ -65,25 +64,12 @@ impl AssociateLicenseInputBuilder {
         &self.license_type
     }
     /// Consumes the builder and constructs a [`AssociateLicenseInput`](crate::operation::associate_license::AssociateLicenseInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::associate_license::builders::AssociateLicenseInputBuilder::workspace_id)
-    /// - [`license_type`](crate::operation::associate_license::builders::AssociateLicenseInputBuilder::license_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::associate_license::AssociateLicenseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::associate_license::AssociateLicenseInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building AssociateLicenseInput",
-                )
-            })?,
-            license_type: self.license_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "license_type",
-                    "license_type was not specified but it is required when building AssociateLicenseInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
+            license_type: self.license_type,
         })
     }
 }

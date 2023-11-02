@@ -3,14 +3,14 @@ pub fn ser_get_campaign_state_batch_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_campaign_state_batch::GetCampaignStateBatchInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        let mut array_1 = object.key("campaignIds").start_array();
-        for item_2 in &input.campaign_ids {
+    if let Some(var_1) = &input.campaign_ids {
+        let mut array_2 = object.key("campaignIds").start_array();
+        for item_3 in var_1 {
             {
-                array_1.value().string(item_2.as_str());
+                array_2.value().string(item_3.as_str());
             }
         }
-        array_1.finish();
+        array_2.finish();
     }
     Ok(())
 }

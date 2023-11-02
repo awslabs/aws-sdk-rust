@@ -3,27 +3,27 @@ pub fn ser_create_vod_source_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_vod_source::CreateVodSourceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        let mut array_1 = object.key("HttpPackageConfigurations").start_array();
-        for item_2 in &input.http_package_configurations {
+    if let Some(var_1) = &input.http_package_configurations {
+        let mut array_2 = object.key("HttpPackageConfigurations").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_3 = array_1.value().start_object();
-                crate::protocol_serde::shape_http_package_configuration::ser_http_package_configuration(&mut object_3, item_2)?;
-                object_3.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_http_package_configuration::ser_http_package_configuration(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_1.finish();
+        array_2.finish();
     }
-    if let Some(var_4) = &input.tags {
+    if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("tags").start_object();
-        for (key_6, value_7) in var_4 {
+        let mut object_6 = object.key("tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_5.key(key_6.as_str()).string(value_7.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_5.finish();
+        object_6.finish();
     }
     Ok(())
 }

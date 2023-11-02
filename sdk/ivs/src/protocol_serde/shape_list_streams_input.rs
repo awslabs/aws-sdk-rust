@@ -9,14 +9,14 @@ pub fn ser_list_streams_input(
         crate::protocol_serde::shape_stream_filters::ser_stream_filters(&mut object_2, var_1)?;
         object_2.finish();
     }
-    if input.max_results != 0 {
+    if let Some(var_3) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_3).into()),
         );
     }
-    if let Some(var_3) = &input.next_token {
-        object.key("nextToken").string(var_3.as_str());
+    if let Some(var_4) = &input.next_token {
+        object.key("nextToken").string(var_4.as_str());
     }
     Ok(())
 }

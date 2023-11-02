@@ -4,33 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateVodSourceInput {
     /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
-    pub http_package_configurations: ::std::vec::Vec<crate::types::HttpPackageConfiguration>,
+    pub http_package_configurations: ::std::option::Option<::std::vec::Vec<crate::types::HttpPackageConfiguration>>,
     /// <p>The name of the source location for this VOD source.</p>
-    pub source_location_name: ::std::string::String,
+    pub source_location_name: ::std::option::Option<::std::string::String>,
     /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The name associated with the VOD source.&gt;</p>
-    pub vod_source_name: ::std::string::String,
+    pub vod_source_name: ::std::option::Option<::std::string::String>,
 }
 impl CreateVodSourceInput {
     /// <p>A list of HTTP package configuration parameters for this VOD source.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.http_package_configurations.is_none()`.
     pub fn http_package_configurations(&self) -> &[crate::types::HttpPackageConfiguration] {
-        use std::ops::Deref;
-        self.http_package_configurations.deref()
+        self.http_package_configurations.as_deref().unwrap_or_default()
     }
     /// <p>The name of the source location for this VOD source.</p>
-    pub fn source_location_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_location_name.deref()
+    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+        self.source_location_name.as_deref()
     }
     /// <p>The tags to assign to the VOD source. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
         self.tags.as_ref()
     }
     /// <p>The name associated with the VOD source.&gt;</p>
-    pub fn vod_source_name(&self) -> &str {
-        use std::ops::Deref;
-        self.vod_source_name.deref()
+    pub fn vod_source_name(&self) -> ::std::option::Option<&str> {
+        self.vod_source_name.as_deref()
     }
 }
 impl CreateVodSourceInput {
@@ -121,33 +120,14 @@ impl CreateVodSourceInputBuilder {
         &self.vod_source_name
     }
     /// Consumes the builder and constructs a [`CreateVodSourceInput`](crate::operation::create_vod_source::CreateVodSourceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`http_package_configurations`](crate::operation::create_vod_source::builders::CreateVodSourceInputBuilder::http_package_configurations)
-    /// - [`source_location_name`](crate::operation::create_vod_source::builders::CreateVodSourceInputBuilder::source_location_name)
-    /// - [`vod_source_name`](crate::operation::create_vod_source::builders::CreateVodSourceInputBuilder::vod_source_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_vod_source::CreateVodSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_vod_source::CreateVodSourceInput {
-            http_package_configurations: self.http_package_configurations.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "http_package_configurations",
-                    "http_package_configurations was not specified but it is required when building CreateVodSourceInput",
-                )
-            })?,
-            source_location_name: self.source_location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_location_name",
-                    "source_location_name was not specified but it is required when building CreateVodSourceInput",
-                )
-            })?,
+            http_package_configurations: self.http_package_configurations,
+            source_location_name: self.source_location_name,
             tags: self.tags,
-            vod_source_name: self.vod_source_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "vod_source_name",
-                    "vod_source_name was not specified but it is required when building CreateVodSourceInput",
-                )
-            })?,
+            vod_source_name: self.vod_source_name,
         })
     }
 }

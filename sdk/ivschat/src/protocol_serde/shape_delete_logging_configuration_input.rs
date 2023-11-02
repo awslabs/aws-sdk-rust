@@ -3,8 +3,8 @@ pub fn ser_delete_logging_configuration_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_logging_configuration::DeleteLoggingConfigurationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("identifier").string(input.identifier.as_str());
+    if let Some(var_1) = &input.identifier {
+        object.key("identifier").string(var_1.as_str());
     }
     Ok(())
 }

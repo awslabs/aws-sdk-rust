@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateMesh`](crate::operation::update_mesh::builders::UpdateMeshFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`mesh_name(impl Into<String>)`](crate::operation::update_mesh::builders::UpdateMeshFluentBuilder::mesh_name) / [`set_mesh_name(impl Into<String>)`](crate::operation::update_mesh::builders::UpdateMeshFluentBuilder::set_mesh_name):<br>required: **true**<br><p>The name of the service mesh to update.</p><br>
+    ///   - [`mesh_name(impl Into<String>)`](crate::operation::update_mesh::builders::UpdateMeshFluentBuilder::mesh_name) / [`set_mesh_name(Option<String>)`](crate::operation::update_mesh::builders::UpdateMeshFluentBuilder::set_mesh_name):<br>required: **true**<br><p>The name of the service mesh to update.</p><br>
     ///   - [`spec(MeshSpec)`](crate::operation::update_mesh::builders::UpdateMeshFluentBuilder::spec) / [`set_spec(Option<MeshSpec>)`](crate::operation::update_mesh::builders::UpdateMeshFluentBuilder::set_spec):<br>required: **false**<br><p>The service mesh specification to apply.</p><br>
     ///   - [`client_token(impl Into<String>)`](crate::operation::update_mesh::builders::UpdateMeshFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::update_mesh::builders::UpdateMeshFluentBuilder::set_client_token):<br>required: **false**<br><p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 36 letters, numbers, hyphens, and underscores are allowed.</p><br>
     /// - On success, responds with [`UpdateMeshOutput`](crate::operation::update_mesh::UpdateMeshOutput) with field(s):

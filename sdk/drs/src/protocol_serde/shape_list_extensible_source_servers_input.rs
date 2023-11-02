@@ -3,17 +3,17 @@ pub fn ser_list_extensible_source_servers_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.max_results != 0 {
+    if let Some(var_1) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_1) = &input.next_token {
-        object.key("nextToken").string(var_1.as_str());
+    if let Some(var_2) = &input.next_token {
+        object.key("nextToken").string(var_2.as_str());
     }
-    {
-        object.key("stagingAccountID").string(input.staging_account_id.as_str());
+    if let Some(var_3) = &input.staging_account_id {
+        object.key("stagingAccountID").string(var_3.as_str());
     }
     Ok(())
 }

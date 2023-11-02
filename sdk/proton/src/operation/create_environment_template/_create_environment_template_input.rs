@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateEnvironmentTemplateInput {
     /// <p>The name of the environment template.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The environment template name as displayed in the developer interface.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the environment template.</p>
@@ -19,9 +19,8 @@ pub struct CreateEnvironmentTemplateInput {
 }
 impl CreateEnvironmentTemplateInput {
     /// <p>The name of the environment template.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The environment template name as displayed in the developer interface.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -173,8 +172,6 @@ impl CreateEnvironmentTemplateInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentTemplateInput`](crate::operation::create_environment_template::CreateEnvironmentTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_environment_template::builders::CreateEnvironmentTemplateInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -182,12 +179,7 @@ impl CreateEnvironmentTemplateInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_environment_template::CreateEnvironmentTemplateInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateEnvironmentTemplateInput",
-                )
-            })?,
+            name: self.name,
             display_name: self.display_name,
             description: self.description,
             encryption_key: self.encryption_key,

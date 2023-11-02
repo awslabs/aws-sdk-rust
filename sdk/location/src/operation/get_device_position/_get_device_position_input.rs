@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDevicePositionInput {
     /// <p>The tracker resource receiving the position update.</p>
-    pub tracker_name: ::std::string::String,
+    pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>The device whose position you want to retrieve.</p>
-    pub device_id: ::std::string::String,
+    pub device_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDevicePositionInput {
     /// <p>The tracker resource receiving the position update.</p>
-    pub fn tracker_name(&self) -> &str {
-        use std::ops::Deref;
-        self.tracker_name.deref()
+    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
+        self.tracker_name.as_deref()
     }
     /// <p>The device whose position you want to retrieve.</p>
-    pub fn device_id(&self) -> &str {
-        use std::ops::Deref;
-        self.device_id.deref()
+    pub fn device_id(&self) -> ::std::option::Option<&str> {
+        self.device_id.as_deref()
     }
 }
 impl GetDevicePositionInput {
@@ -66,25 +64,12 @@ impl GetDevicePositionInputBuilder {
         &self.device_id
     }
     /// Consumes the builder and constructs a [`GetDevicePositionInput`](crate::operation::get_device_position::GetDevicePositionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`tracker_name`](crate::operation::get_device_position::builders::GetDevicePositionInputBuilder::tracker_name)
-    /// - [`device_id`](crate::operation::get_device_position::builders::GetDevicePositionInputBuilder::device_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_device_position::GetDevicePositionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_device_position::GetDevicePositionInput {
-            tracker_name: self.tracker_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "tracker_name",
-                    "tracker_name was not specified but it is required when building GetDevicePositionInput",
-                )
-            })?,
-            device_id: self.device_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "device_id",
-                    "device_id was not specified but it is required when building GetDevicePositionInput",
-                )
-            })?,
+            tracker_name: self.tracker_name,
+            device_id: self.device_id,
         })
     }
 }

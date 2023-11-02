@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetJob`](crate::operation::get_job::builders::GetJobFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`job_arn(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_arn) / [`set_job_arn(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_arn):<br>required: **true**<br><p>The ARN of the job to retrieve.</p><br>
+    ///   - [`job_arn(impl Into<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::job_arn) / [`set_job_arn(Option<String>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_job_arn):<br>required: **true**<br><p>The ARN of the job to retrieve.</p><br>
     ///   - [`additional_attribute_names(HybridJobAdditionalAttributeName)`](crate::operation::get_job::builders::GetJobFluentBuilder::additional_attribute_names) / [`set_additional_attribute_names(Option<Vec<HybridJobAdditionalAttributeName>>)`](crate::operation::get_job::builders::GetJobFluentBuilder::set_additional_attribute_names):<br>required: **false**<br><p>A list of attributes to return information for.</p><br>
     /// - On success, responds with [`GetJobOutput`](crate::operation::get_job::GetJobOutput) with field(s):
     ///   - [`status(JobPrimaryStatus)`](crate::operation::get_job::GetJobOutput::status): <p>The status of the Amazon Braket job.</p>

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListWorkerFleetsInput {
     /// Site ARN.
-    pub site: ::std::string::String,
+    pub site: ::std::option::Option<::std::string::String>,
     /// Maximum number of results to retrieve in a single ListWorkerFleets call.
     pub max_results: ::std::option::Option<i32>,
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
@@ -12,9 +12,8 @@ pub struct ListWorkerFleetsInput {
 }
 impl ListWorkerFleetsInput {
     /// Site ARN.
-    pub fn site(&self) -> &str {
-        use std::ops::Deref;
-        self.site.deref()
+    pub fn site(&self) -> ::std::option::Option<&str> {
+        self.site.as_deref()
     }
     /// Maximum number of results to retrieve in a single ListWorkerFleets call.
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -85,18 +84,11 @@ impl ListWorkerFleetsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListWorkerFleetsInput`](crate::operation::list_worker_fleets::ListWorkerFleetsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`site`](crate::operation::list_worker_fleets::builders::ListWorkerFleetsInputBuilder::site)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_worker_fleets::ListWorkerFleetsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_worker_fleets::ListWorkerFleetsInput {
-            site: self.site.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "site",
-                    "site was not specified but it is required when building ListWorkerFleetsInput",
-                )
-            })?,
+            site: self.site,
             max_results: self.max_results,
             next_token: self.next_token,
         })

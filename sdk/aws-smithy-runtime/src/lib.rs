@@ -22,6 +22,9 @@
 #[cfg(feature = "client")]
 pub mod client;
 
+/// Cache for entries that have an expiration time.
+pub mod expiring_cache;
+
 /// A data structure for persisting and sharing state between multiple clients.
 pub mod static_partition_map;
 

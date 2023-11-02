@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StartChannel`](crate::operation::start_channel::builders::StartChannelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`channel_name(impl Into<String>)`](crate::operation::start_channel::builders::StartChannelFluentBuilder::channel_name) / [`set_channel_name(impl Into<String>)`](crate::operation::start_channel::builders::StartChannelFluentBuilder::set_channel_name):<br>required: **true**<br><p>The name of the channel.</p><br>
+    ///   - [`channel_name(impl Into<String>)`](crate::operation::start_channel::builders::StartChannelFluentBuilder::channel_name) / [`set_channel_name(Option<String>)`](crate::operation::start_channel::builders::StartChannelFluentBuilder::set_channel_name):<br>required: **true**<br><p>The name of the channel.</p><br>
     /// - On success, responds with [`StartChannelOutput`](crate::operation::start_channel::StartChannelOutput)
     /// - On failure, responds with [`SdkError<StartChannelError>`](crate::operation::start_channel::StartChannelError)
     pub fn start_channel(&self) -> crate::operation::start_channel::builders::StartChannelFluentBuilder {

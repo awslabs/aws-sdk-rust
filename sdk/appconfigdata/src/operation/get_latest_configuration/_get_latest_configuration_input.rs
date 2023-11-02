@@ -6,15 +6,14 @@ pub struct GetLatestConfigurationInput {
     /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and <i>must</i> be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p> <important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
-    pub configuration_token: ::std::string::String,
+    pub configuration_token: ::std::option::Option<::std::string::String>,
 }
 impl GetLatestConfigurationInput {
     /// <p>Token describing the current state of the configuration session. To obtain a token, first call the <code>StartConfigurationSession</code> API. Note that every call to <code>GetLatestConfiguration</code> will return a new <code>ConfigurationToken</code> (<code>NextPollConfigurationToken</code> in the response) and <i>must</i> be provided to subsequent <code>GetLatestConfiguration</code> API calls.</p> <important>
     /// <p>This token should only be used once. To support long poll use cases, the token is valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token, the system returns <code>BadRequestException</code>.</p>
     /// </important>
-    pub fn configuration_token(&self) -> &str {
-        use std::ops::Deref;
-        self.configuration_token.deref()
+    pub fn configuration_token(&self) -> ::std::option::Option<&str> {
+        self.configuration_token.as_deref()
     }
 }
 impl GetLatestConfigurationInput {
@@ -53,19 +52,12 @@ impl GetLatestConfigurationInputBuilder {
         &self.configuration_token
     }
     /// Consumes the builder and constructs a [`GetLatestConfigurationInput`](crate::operation::get_latest_configuration::GetLatestConfigurationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`configuration_token`](crate::operation::get_latest_configuration::builders::GetLatestConfigurationInputBuilder::configuration_token)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_latest_configuration::GetLatestConfigurationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_latest_configuration::GetLatestConfigurationInput {
-            configuration_token: self.configuration_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "configuration_token",
-                    "configuration_token was not specified but it is required when building GetLatestConfigurationInput",
-                )
-            })?,
+            configuration_token: self.configuration_token,
         })
     }
 }

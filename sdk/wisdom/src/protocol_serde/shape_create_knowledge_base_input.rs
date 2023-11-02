@@ -9,39 +9,39 @@ pub fn ser_create_knowledge_base_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    {
-        object.key("knowledgeBaseType").string(input.knowledge_base_type.as_str());
+    if let Some(var_3) = &input.knowledge_base_type {
+        object.key("knowledgeBaseType").string(var_3.as_str());
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_4) = &input.name {
+        object.key("name").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.rendering_configuration {
+    if let Some(var_5) = &input.rendering_configuration {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("renderingConfiguration").start_object();
-        crate::protocol_serde::shape_rendering_configuration::ser_rendering_configuration(&mut object_4, var_3)?;
-        object_4.finish();
-    }
-    if let Some(var_5) = &input.server_side_encryption_configuration {
-        #[allow(unused_mut)]
-        let mut object_6 = object.key("serverSideEncryptionConfiguration").start_object();
-        crate::protocol_serde::shape_server_side_encryption_configuration::ser_server_side_encryption_configuration(&mut object_6, var_5)?;
+        let mut object_6 = object.key("renderingConfiguration").start_object();
+        crate::protocol_serde::shape_rendering_configuration::ser_rendering_configuration(&mut object_6, var_5)?;
         object_6.finish();
     }
-    if let Some(var_7) = &input.source_configuration {
+    if let Some(var_7) = &input.server_side_encryption_configuration {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("sourceConfiguration").start_object();
-        crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_8, var_7)?;
+        let mut object_8 = object.key("serverSideEncryptionConfiguration").start_object();
+        crate::protocol_serde::shape_server_side_encryption_configuration::ser_server_side_encryption_configuration(&mut object_8, var_7)?;
         object_8.finish();
     }
-    if let Some(var_9) = &input.tags {
+    if let Some(var_9) = &input.source_configuration {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("tags").start_object();
-        for (key_11, value_12) in var_9 {
+        let mut object_10 = object.key("sourceConfiguration").start_object();
+        crate::protocol_serde::shape_source_configuration::ser_source_configuration(&mut object_10, var_9)?;
+        object_10.finish();
+    }
+    if let Some(var_11) = &input.tags {
+        #[allow(unused_mut)]
+        let mut object_12 = object.key("tags").start_object();
+        for (key_13, value_14) in var_11 {
             {
-                object_10.key(key_11.as_str()).string(value_12.as_str());
+                object_12.key(key_13.as_str()).string(value_14.as_str());
             }
         }
-        object_10.finish();
+        object_12.finish();
     }
     Ok(())
 }

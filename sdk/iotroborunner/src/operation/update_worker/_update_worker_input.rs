@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkerInput {
     /// Full ARN of the worker.
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// Human friendly name of the resource.
     pub name: ::std::option::Option<::std::string::String>,
     /// JSON blob containing unstructured worker properties that are transient and may change during regular operation.
@@ -20,9 +20,8 @@ pub struct UpdateWorkerInput {
 }
 impl UpdateWorkerInput {
     /// Full ARN of the worker.
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// Human friendly name of the resource.
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -169,16 +168,9 @@ impl UpdateWorkerInputBuilder {
         &self.orientation
     }
     /// Consumes the builder and constructs a [`UpdateWorkerInput`](crate::operation::update_worker::UpdateWorkerInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::update_worker::builders::UpdateWorkerInputBuilder::id)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_worker::UpdateWorkerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_worker::UpdateWorkerInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building UpdateWorkerInput",
-                )
-            })?,
+            id: self.id,
             name: self.name,
             additional_transient_properties: self.additional_transient_properties,
             additional_fixed_properties: self.additional_fixed_properties,

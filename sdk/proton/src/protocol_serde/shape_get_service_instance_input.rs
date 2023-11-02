@@ -3,11 +3,11 @@ pub fn ser_get_service_instance_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::get_service_instance::GetServiceInstanceInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_1) = &input.name {
+        object.key("name").string(var_1.as_str());
     }
-    {
-        object.key("serviceName").string(input.service_name.as_str());
+    if let Some(var_2) = &input.service_name {
+        object.key("serviceName").string(var_2.as_str());
     }
     Ok(())
 }

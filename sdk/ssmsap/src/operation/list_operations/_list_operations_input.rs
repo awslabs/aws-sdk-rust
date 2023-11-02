@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListOperationsInput {
     /// <p>The ID of the application.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token for the next page of results. </p>
@@ -14,9 +14,8 @@ pub struct ListOperationsInput {
 }
 impl ListOperationsInput {
     /// <p>The ID of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
     /// <p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value. If you do not specify a value for MaxResults, the request returns 50 items per page by default.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -114,18 +113,11 @@ impl ListOperationsInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`ListOperationsInput`](crate::operation::list_operations::ListOperationsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::list_operations::builders::ListOperationsInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_operations::ListOperationsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_operations::ListOperationsInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building ListOperationsInput",
-                )
-            })?,
+            application_id: self.application_id,
             max_results: self.max_results,
             next_token: self.next_token,
             filters: self.filters,

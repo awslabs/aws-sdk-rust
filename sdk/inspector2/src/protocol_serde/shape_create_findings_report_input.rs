@@ -9,14 +9,14 @@ pub fn ser_create_findings_report_input(
         crate::protocol_serde::shape_filter_criteria::ser_filter_criteria(&mut object_2, var_1)?;
         object_2.finish();
     }
-    {
-        object.key("reportFormat").string(input.report_format.as_str());
+    if let Some(var_3) = &input.report_format {
+        object.key("reportFormat").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.s3_destination {
+    if let Some(var_4) = &input.s3_destination {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("s3Destination").start_object();
-        crate::protocol_serde::shape_destination::ser_destination(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("s3Destination").start_object();
+        crate::protocol_serde::shape_destination::ser_destination(&mut object_5, var_4)?;
+        object_5.finish();
     }
     Ok(())
 }

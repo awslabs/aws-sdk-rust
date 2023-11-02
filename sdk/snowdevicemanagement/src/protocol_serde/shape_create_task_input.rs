@@ -25,14 +25,14 @@ pub fn ser_create_task_input(
         }
         object_6.finish();
     }
-    {
-        let mut array_9 = object.key("targets").start_array();
-        for item_10 in &input.targets {
+    if let Some(var_9) = &input.targets {
+        let mut array_10 = object.key("targets").start_array();
+        for item_11 in var_9 {
             {
-                array_9.value().string(item_10.as_str());
+                array_10.value().string(item_11.as_str());
             }
         }
-        array_9.finish();
+        array_10.finish();
     }
     Ok(())
 }

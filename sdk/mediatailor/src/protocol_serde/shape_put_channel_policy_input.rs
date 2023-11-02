@@ -3,8 +3,8 @@ pub fn ser_put_channel_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::put_channel_policy::PutChannelPolicyInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("Policy").string(input.policy.as_str());
+    if let Some(var_1) = &input.policy {
+        object.key("Policy").string(var_1.as_str());
     }
     Ok(())
 }

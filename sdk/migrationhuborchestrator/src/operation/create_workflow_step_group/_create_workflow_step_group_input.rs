@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow that will contain the step group.</p>
-    pub workflow_id: ::std::string::String,
+    pub workflow_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the step group.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the step group.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The next step group.</p>
@@ -16,14 +16,12 @@ pub struct CreateWorkflowStepGroupInput {
 }
 impl CreateWorkflowStepGroupInput {
     /// <p>The ID of the migration workflow that will contain the step group.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+        self.workflow_id.as_deref()
     }
     /// <p>The name of the step group.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The description of the step group.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -145,9 +143,6 @@ impl CreateWorkflowStepGroupInputBuilder {
         &self.previous
     }
     /// Consumes the builder and constructs a [`CreateWorkflowStepGroupInput`](crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workflow_id`](crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupInputBuilder::workflow_id)
-    /// - [`name`](crate::operation::create_workflow_step_group::builders::CreateWorkflowStepGroupInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -155,18 +150,8 @@ impl CreateWorkflowStepGroupInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_workflow_step_group::CreateWorkflowStepGroupInput {
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building CreateWorkflowStepGroupInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateWorkflowStepGroupInput",
-                )
-            })?,
+            workflow_id: self.workflow_id,
+            name: self.name,
             description: self.description,
             next: self.next,
             previous: self.previous,

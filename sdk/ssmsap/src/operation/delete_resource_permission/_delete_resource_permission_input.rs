@@ -8,7 +8,7 @@ pub struct DeleteResourcePermissionInput {
     /// <p>The Amazon Resource Name (ARN) of the source resource.</p>
     pub source_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub resource_arn: ::std::string::String,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResourcePermissionInput {
     /// <p>Delete or restore the permissions on the target database.</p>
@@ -20,9 +20,8 @@ impl DeleteResourcePermissionInput {
         self.source_resource_arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the resource.</p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
 }
 impl DeleteResourcePermissionInput {
@@ -85,8 +84,6 @@ impl DeleteResourcePermissionInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`DeleteResourcePermissionInput`](crate::operation::delete_resource_permission::DeleteResourcePermissionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`resource_arn`](crate::operation::delete_resource_permission::builders::DeleteResourcePermissionInputBuilder::resource_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -96,12 +93,7 @@ impl DeleteResourcePermissionInputBuilder {
         ::std::result::Result::Ok(crate::operation::delete_resource_permission::DeleteResourcePermissionInput {
             action_type: self.action_type,
             source_resource_arn: self.source_resource_arn,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building DeleteResourcePermissionInput",
-                )
-            })?,
+            resource_arn: self.resource_arn,
         })
     }
 }

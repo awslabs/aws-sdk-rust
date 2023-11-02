@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateServiceInput {
     /// <p>The name of the service.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The description of the service.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the environment in which the service is created.</p>
-    pub environment_identifier: ::std::string::String,
+    pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application which the service is created.</p>
-    pub application_identifier: ::std::string::String,
+    pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
-    pub endpoint_type: crate::types::ServiceEndpointType,
+    pub endpoint_type: ::std::option::Option<crate::types::ServiceEndpointType>,
     /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
     pub url_endpoint: ::std::option::Option<crate::types::UrlEndpointInput>,
     /// <p>The configuration for the Lambda endpoint type.</p>
@@ -26,31 +26,28 @@ pub struct CreateServiceInput {
 }
 impl CreateServiceInput {
     /// <p>The name of the service.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The description of the service.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ID of the environment in which the service is created.</p>
-    pub fn environment_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_identifier.deref()
+    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_identifier.as_deref()
     }
     /// <p>The ID of the application which the service is created.</p>
-    pub fn application_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.application_identifier.deref()
+    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+        self.application_identifier.as_deref()
     }
     /// <p>The ID of the VPC.</p>
     pub fn vpc_id(&self) -> ::std::option::Option<&str> {
         self.vpc_id.as_deref()
     }
     /// <p>The type of endpoint to use for the service. The type can be a URL in a VPC or an Lambda function.</p>
-    pub fn endpoint_type(&self) -> &crate::types::ServiceEndpointType {
-        &self.endpoint_type
+    pub fn endpoint_type(&self) -> ::std::option::Option<&crate::types::ServiceEndpointType> {
+        self.endpoint_type.as_ref()
     }
     /// <p>The configuration for the URL endpoint type. When creating a route to a service, Refactor Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds.</p>
     pub fn url_endpoint(&self) -> ::std::option::Option<&crate::types::UrlEndpointInput> {
@@ -259,41 +256,16 @@ impl CreateServiceInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateServiceInput`](crate::operation::create_service::CreateServiceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_service::builders::CreateServiceInputBuilder::name)
-    /// - [`environment_identifier`](crate::operation::create_service::builders::CreateServiceInputBuilder::environment_identifier)
-    /// - [`application_identifier`](crate::operation::create_service::builders::CreateServiceInputBuilder::application_identifier)
-    /// - [`endpoint_type`](crate::operation::create_service::builders::CreateServiceInputBuilder::endpoint_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_service::CreateServiceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_service::CreateServiceInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateServiceInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
-            environment_identifier: self.environment_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_identifier",
-                    "environment_identifier was not specified but it is required when building CreateServiceInput",
-                )
-            })?,
-            application_identifier: self.application_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_identifier",
-                    "application_identifier was not specified but it is required when building CreateServiceInput",
-                )
-            })?,
+            environment_identifier: self.environment_identifier,
+            application_identifier: self.application_identifier,
             vpc_id: self.vpc_id,
-            endpoint_type: self.endpoint_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "endpoint_type",
-                    "endpoint_type was not specified but it is required when building CreateServiceInput",
-                )
-            })?,
+            endpoint_type: self.endpoint_type,
             url_endpoint: self.url_endpoint,
             lambda_endpoint: self.lambda_endpoint,
             tags: self.tags,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMonitor`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`monitor_name(impl Into<String>)`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder::monitor_name) / [`set_monitor_name(impl Into<String>)`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder::set_monitor_name):<br>required: **true**<br><p>The name of the monitor.</p><br>
+    ///   - [`monitor_name(impl Into<String>)`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder::monitor_name) / [`set_monitor_name(Option<String>)`](crate::operation::get_monitor::builders::GetMonitorFluentBuilder::set_monitor_name):<br>required: **true**<br><p>The name of the monitor.</p><br>
     /// - On success, responds with [`GetMonitorOutput`](crate::operation::get_monitor::GetMonitorOutput) with field(s):
     ///   - [`monitor_name(String)`](crate::operation::get_monitor::GetMonitorOutput::monitor_name): <p>The name of the monitor.</p>
     ///   - [`monitor_arn(String)`](crate::operation::get_monitor::GetMonitorOutput::monitor_arn): <p>The Amazon Resource Name (ARN) of the monitor.</p>

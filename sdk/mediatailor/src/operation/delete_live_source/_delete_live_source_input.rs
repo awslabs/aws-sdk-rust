@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteLiveSourceInput {
     /// <p>The name of the live source.</p>
-    pub live_source_name: ::std::string::String,
+    pub live_source_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub source_location_name: ::std::string::String,
+    pub source_location_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteLiveSourceInput {
     /// <p>The name of the live source.</p>
-    pub fn live_source_name(&self) -> &str {
-        use std::ops::Deref;
-        self.live_source_name.deref()
+    pub fn live_source_name(&self) -> ::std::option::Option<&str> {
+        self.live_source_name.as_deref()
     }
     /// <p>The name of the source location associated with this Live Source.</p>
-    pub fn source_location_name(&self) -> &str {
-        use std::ops::Deref;
-        self.source_location_name.deref()
+    pub fn source_location_name(&self) -> ::std::option::Option<&str> {
+        self.source_location_name.as_deref()
     }
 }
 impl DeleteLiveSourceInput {
@@ -66,25 +64,12 @@ impl DeleteLiveSourceInputBuilder {
         &self.source_location_name
     }
     /// Consumes the builder and constructs a [`DeleteLiveSourceInput`](crate::operation::delete_live_source::DeleteLiveSourceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`live_source_name`](crate::operation::delete_live_source::builders::DeleteLiveSourceInputBuilder::live_source_name)
-    /// - [`source_location_name`](crate::operation::delete_live_source::builders::DeleteLiveSourceInputBuilder::source_location_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_live_source::DeleteLiveSourceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_live_source::DeleteLiveSourceInput {
-            live_source_name: self.live_source_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "live_source_name",
-                    "live_source_name was not specified but it is required when building DeleteLiveSourceInput",
-                )
-            })?,
-            source_location_name: self.source_location_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_location_name",
-                    "source_location_name was not specified but it is required when building DeleteLiveSourceInput",
-                )
-            })?,
+            live_source_name: self.live_source_name,
+            source_location_name: self.source_location_name,
         })
     }
 }

@@ -4,55 +4,54 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCollaborationInput {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
-    pub members: ::std::vec::Vec<crate::types::MemberSpecification>,
+    pub members: ::std::option::Option<::std::vec::Vec<crate::types::MemberSpecification>>,
     /// <p>The display name for a collaboration.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
-    pub description: ::std::string::String,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The abilities granted to the collaboration creator.</p>
-    pub creator_member_abilities: ::std::vec::Vec<crate::types::MemberAbility>,
+    pub creator_member_abilities: ::std::option::Option<::std::vec::Vec<crate::types::MemberAbility>>,
     /// <p>The display name of the collaboration creator.</p>
-    pub creator_display_name: ::std::string::String,
+    pub creator_display_name: ::std::option::Option<::std::string::String>,
     /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
     pub data_encryption_metadata: ::std::option::Option<crate::types::DataEncryptionMetadata>,
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub query_log_status: crate::types::CollaborationQueryLogStatus,
+    pub query_log_status: ::std::option::Option<crate::types::CollaborationQueryLogStatus>,
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateCollaborationInput {
     /// <p>A list of initial members, not including the creator. This list is immutable.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.members.is_none()`.
     pub fn members(&self) -> &[crate::types::MemberSpecification] {
-        use std::ops::Deref;
-        self.members.deref()
+        self.members.as_deref().unwrap_or_default()
     }
     /// <p>The display name for a collaboration.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A description of the collaboration provided by the collaboration owner.</p>
-    pub fn description(&self) -> &str {
-        use std::ops::Deref;
-        self.description.deref()
+    pub fn description(&self) -> ::std::option::Option<&str> {
+        self.description.as_deref()
     }
     /// <p>The abilities granted to the collaboration creator.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.creator_member_abilities.is_none()`.
     pub fn creator_member_abilities(&self) -> &[crate::types::MemberAbility] {
-        use std::ops::Deref;
-        self.creator_member_abilities.deref()
+        self.creator_member_abilities.as_deref().unwrap_or_default()
     }
     /// <p>The display name of the collaboration creator.</p>
-    pub fn creator_display_name(&self) -> &str {
-        use std::ops::Deref;
-        self.creator_display_name.deref()
+    pub fn creator_display_name(&self) -> ::std::option::Option<&str> {
+        self.creator_display_name.as_deref()
     }
     /// <p>The settings for client-side encryption with Cryptographic Computing for Clean Rooms.</p>
     pub fn data_encryption_metadata(&self) -> ::std::option::Option<&crate::types::DataEncryptionMetadata> {
         self.data_encryption_metadata.as_ref()
     }
     /// <p>An indicator as to whether query logging has been enabled or disabled for the collaboration.</p>
-    pub fn query_log_status(&self) -> &crate::types::CollaborationQueryLogStatus {
-        &self.query_log_status
+    pub fn query_log_status(&self) -> ::std::option::Option<&crate::types::CollaborationQueryLogStatus> {
+        self.query_log_status.as_ref()
     }
     /// <p>An optional label that you can assign to a resource when you create it. Each tag consists of a key and an optional value, both of which you define. When you use tagging, you can also use tag-based access control in IAM policies to control access to this resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -215,55 +214,18 @@ impl CreateCollaborationInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateCollaborationInput`](crate::operation::create_collaboration::CreateCollaborationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`members`](crate::operation::create_collaboration::builders::CreateCollaborationInputBuilder::members)
-    /// - [`name`](crate::operation::create_collaboration::builders::CreateCollaborationInputBuilder::name)
-    /// - [`description`](crate::operation::create_collaboration::builders::CreateCollaborationInputBuilder::description)
-    /// - [`creator_member_abilities`](crate::operation::create_collaboration::builders::CreateCollaborationInputBuilder::creator_member_abilities)
-    /// - [`creator_display_name`](crate::operation::create_collaboration::builders::CreateCollaborationInputBuilder::creator_display_name)
-    /// - [`query_log_status`](crate::operation::create_collaboration::builders::CreateCollaborationInputBuilder::query_log_status)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_collaboration::CreateCollaborationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_collaboration::CreateCollaborationInput {
-            members: self.members.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "members",
-                    "members was not specified but it is required when building CreateCollaborationInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateCollaborationInput",
-                )
-            })?,
-            description: self.description.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "description",
-                    "description was not specified but it is required when building CreateCollaborationInput",
-                )
-            })?,
-            creator_member_abilities: self.creator_member_abilities.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "creator_member_abilities",
-                    "creator_member_abilities was not specified but it is required when building CreateCollaborationInput",
-                )
-            })?,
-            creator_display_name: self.creator_display_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "creator_display_name",
-                    "creator_display_name was not specified but it is required when building CreateCollaborationInput",
-                )
-            })?,
+            members: self.members,
+            name: self.name,
+            description: self.description,
+            creator_member_abilities: self.creator_member_abilities,
+            creator_display_name: self.creator_display_name,
             data_encryption_metadata: self.data_encryption_metadata,
-            query_log_status: self.query_log_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "query_log_status",
-                    "query_log_status was not specified but it is required when building CreateCollaborationInput",
-                )
-            })?,
+            query_log_status: self.query_log_status,
             tags: self.tags,
         })
     }

@@ -12,8 +12,8 @@ pub fn ser_update_wave_input(
     if let Some(var_3) = &input.name {
         object.key("name").string(var_3.as_str());
     }
-    {
-        object.key("waveID").string(input.wave_id.as_str());
+    if let Some(var_4) = &input.wave_id {
+        object.key("waveID").string(var_4.as_str());
     }
     Ok(())
 }

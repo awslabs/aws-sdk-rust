@@ -6,21 +6,21 @@ pub fn ser_create_access_log_subscription_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    {
-        object.key("destinationArn").string(input.destination_arn.as_str());
+    if let Some(var_2) = &input.destination_arn {
+        object.key("destinationArn").string(var_2.as_str());
     }
-    {
-        object.key("resourceIdentifier").string(input.resource_identifier.as_str());
+    if let Some(var_3) = &input.resource_identifier {
+        object.key("resourceIdentifier").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.tags {
+    if let Some(var_4) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("tags").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_5 = object.key("tags").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_3.finish();
+        object_5.finish();
     }
     Ok(())
 }

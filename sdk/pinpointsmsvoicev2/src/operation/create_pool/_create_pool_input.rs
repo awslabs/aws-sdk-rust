@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePoolInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub origination_identity: ::std::string::String,
+    pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the new pool.</p>
-    pub iso_country_code: ::std::string::String,
+    pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub message_type: crate::types::MessageType,
+    pub message_type: ::std::option::Option<crate::types::MessageType>,
     /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
     pub deletion_protection_enabled: ::std::option::Option<bool>,
     /// <p>An array of tags (key and value pairs) associated with the pool.</p>
@@ -18,18 +18,16 @@ pub struct CreatePoolInput {
 }
 impl CreatePoolInput {
     /// <p>The origination identity to use such as a PhoneNumberId, PhoneNumberArn, SenderId or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> &str {
-        use std::ops::Deref;
-        self.origination_identity.deref()
+    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+        self.origination_identity.as_deref()
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the new pool.</p>
-    pub fn iso_country_code(&self) -> &str {
-        use std::ops::Deref;
-        self.iso_country_code.deref()
+    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+        self.iso_country_code.as_deref()
     }
     /// <p>The type of message. Valid values are TRANSACTIONAL for messages that are critical or time-sensitive and PROMOTIONAL for messages that aren't critical or time-sensitive.</p>
-    pub fn message_type(&self) -> &crate::types::MessageType {
-        &self.message_type
+    pub fn message_type(&self) -> ::std::option::Option<&crate::types::MessageType> {
+        self.message_type.as_ref()
     }
     /// <p>By default this is set to false. When set to true the pool can't be deleted. You can change this value using the <code>UpdatePool</code> action.</p>
     pub fn deletion_protection_enabled(&self) -> ::std::option::Option<bool> {
@@ -159,30 +157,11 @@ impl CreatePoolInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreatePoolInput`](crate::operation::create_pool::CreatePoolInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`origination_identity`](crate::operation::create_pool::builders::CreatePoolInputBuilder::origination_identity)
-    /// - [`iso_country_code`](crate::operation::create_pool::builders::CreatePoolInputBuilder::iso_country_code)
-    /// - [`message_type`](crate::operation::create_pool::builders::CreatePoolInputBuilder::message_type)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_pool::CreatePoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_pool::CreatePoolInput {
-            origination_identity: self.origination_identity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "origination_identity",
-                    "origination_identity was not specified but it is required when building CreatePoolInput",
-                )
-            })?,
-            iso_country_code: self.iso_country_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "iso_country_code",
-                    "iso_country_code was not specified but it is required when building CreatePoolInput",
-                )
-            })?,
-            message_type: self.message_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "message_type",
-                    "message_type was not specified but it is required when building CreatePoolInput",
-                )
-            })?,
+            origination_identity: self.origination_identity,
+            iso_country_code: self.iso_country_code,
+            message_type: self.message_type,
             deletion_protection_enabled: self.deletion_protection_enabled,
             tags: self.tags,
             client_token: self.client_token,

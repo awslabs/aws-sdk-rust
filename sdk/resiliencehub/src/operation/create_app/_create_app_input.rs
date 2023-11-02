@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateAppInput {
     /// <p>Name of the application.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The optional description for an app.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
@@ -22,9 +22,8 @@ pub struct CreateAppInput {
 }
 impl CreateAppInput {
     /// <p>Name of the application.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The optional description for an app.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -218,16 +217,9 @@ impl CreateAppInputBuilder {
         &self.event_subscriptions
     }
     /// Consumes the builder and constructs a [`CreateAppInput`](crate::operation::create_app::CreateAppInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_app::builders::CreateAppInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_app::CreateAppInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_app::CreateAppInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateAppInput",
-                )
-            })?,
+            name: self.name,
             description: self.description,
             policy_arn: self.policy_arn,
             tags: self.tags,

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfiguredTableInput {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-    pub configured_table_identifier: ::std::string::String,
+    pub configured_table_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the configured table.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the configured table.</p>
@@ -12,9 +12,8 @@ pub struct UpdateConfiguredTableInput {
 }
 impl UpdateConfiguredTableInput {
     /// <p>The identifier for the configured table to update. Currently accepts the configured table ID.</p>
-    pub fn configured_table_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_table_identifier.deref()
+    pub fn configured_table_identifier(&self) -> ::std::option::Option<&str> {
+        self.configured_table_identifier.as_deref()
     }
     /// <p>A new name for the configured table.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -85,19 +84,12 @@ impl UpdateConfiguredTableInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableInput`](crate::operation::update_configured_table::UpdateConfiguredTableInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`configured_table_identifier`](crate::operation::update_configured_table::builders::UpdateConfiguredTableInputBuilder::configured_table_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_configured_table::UpdateConfiguredTableInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_configured_table::UpdateConfiguredTableInput {
-            configured_table_identifier: self.configured_table_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "configured_table_identifier",
-                    "configured_table_identifier was not specified but it is required when building UpdateConfiguredTableInput",
-                )
-            })?,
+            configured_table_identifier: self.configured_table_identifier,
             name: self.name,
             description: self.description,
         })

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisableProfile`](crate::operation::disable_profile::builders::DisableProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`profile_id(impl Into<String>)`](crate::operation::disable_profile::builders::DisableProfileFluentBuilder::profile_id) / [`set_profile_id(impl Into<String>)`](crate::operation::disable_profile::builders::DisableProfileFluentBuilder::set_profile_id):<br>required: **true**<br><p>The unique identifier of the profile.</p><br>
+    ///   - [`profile_id(impl Into<String>)`](crate::operation::disable_profile::builders::DisableProfileFluentBuilder::profile_id) / [`set_profile_id(Option<String>)`](crate::operation::disable_profile::builders::DisableProfileFluentBuilder::set_profile_id):<br>required: **true**<br><p>The unique identifier of the profile.</p><br>
     /// - On success, responds with [`DisableProfileOutput`](crate::operation::disable_profile::DisableProfileOutput) with field(s):
     ///   - [`profile(Option<ProfileDetail>)`](crate::operation::disable_profile::DisableProfileOutput::profile): <p>The state of the profile after a read or write operation.</p>
     /// - On failure, responds with [`SdkError<DisableProfileError>`](crate::operation::disable_profile::DisableProfileError)

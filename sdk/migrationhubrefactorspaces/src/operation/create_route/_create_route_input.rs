@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateRouteInput {
     /// <p>The ID of the environment in which the route is created.</p>
-    pub environment_identifier: ::std::string::String,
+    pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the application within which the route is being created.</p>
-    pub application_identifier: ::std::string::String,
+    pub application_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
-    pub service_identifier: ::std::string::String,
+    pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
-    pub route_type: crate::types::RouteType,
+    pub route_type: ::std::option::Option<crate::types::RouteType>,
     /// <p> Configuration for the default route type. </p>
     pub default_route: ::std::option::Option<crate::types::DefaultRouteInput>,
     /// <p>The configuration for the URI path route type. </p>
@@ -22,23 +22,20 @@ pub struct CreateRouteInput {
 }
 impl CreateRouteInput {
     /// <p>The ID of the environment in which the route is created.</p>
-    pub fn environment_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_identifier.deref()
+    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_identifier.as_deref()
     }
     /// <p>The ID of the application within which the route is being created.</p>
-    pub fn application_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.application_identifier.deref()
+    pub fn application_identifier(&self) -> ::std::option::Option<&str> {
+        self.application_identifier.as_deref()
     }
     /// <p>The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.</p>
-    pub fn service_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.service_identifier.deref()
+    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+        self.service_identifier.as_deref()
     }
     /// <p>The route type of the route. <code>DEFAULT</code> indicates that all traffic that does not match another route is forwarded to the default route. Applications must have a default route before any other routes can be created. <code>URI_PATH</code> indicates a route that is based on a URI path.</p>
-    pub fn route_type(&self) -> &crate::types::RouteType {
-        &self.route_type
+    pub fn route_type(&self) -> ::std::option::Option<&crate::types::RouteType> {
+        self.route_type.as_ref()
     }
     /// <p> Configuration for the default route type. </p>
     pub fn default_route(&self) -> ::std::option::Option<&crate::types::DefaultRouteInput> {
@@ -215,37 +212,12 @@ impl CreateRouteInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateRouteInput`](crate::operation::create_route::CreateRouteInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`environment_identifier`](crate::operation::create_route::builders::CreateRouteInputBuilder::environment_identifier)
-    /// - [`application_identifier`](crate::operation::create_route::builders::CreateRouteInputBuilder::application_identifier)
-    /// - [`service_identifier`](crate::operation::create_route::builders::CreateRouteInputBuilder::service_identifier)
-    /// - [`route_type`](crate::operation::create_route::builders::CreateRouteInputBuilder::route_type)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_route::CreateRouteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_route::CreateRouteInput {
-            environment_identifier: self.environment_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_identifier",
-                    "environment_identifier was not specified but it is required when building CreateRouteInput",
-                )
-            })?,
-            application_identifier: self.application_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_identifier",
-                    "application_identifier was not specified but it is required when building CreateRouteInput",
-                )
-            })?,
-            service_identifier: self.service_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_identifier",
-                    "service_identifier was not specified but it is required when building CreateRouteInput",
-                )
-            })?,
-            route_type: self.route_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "route_type",
-                    "route_type was not specified but it is required when building CreateRouteInput",
-                )
-            })?,
+            environment_identifier: self.environment_identifier,
+            application_identifier: self.application_identifier,
+            service_identifier: self.service_identifier,
+            route_type: self.route_type,
             default_route: self.default_route,
             uri_path_route: self.uri_path_route,
             tags: self.tags,

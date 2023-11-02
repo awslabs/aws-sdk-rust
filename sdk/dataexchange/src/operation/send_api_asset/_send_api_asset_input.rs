@@ -8,9 +8,9 @@ pub struct SendApiAssetInput {
     /// <p>Attach query string parameters to the end of the URI (for example, /v1/examplePath?exampleParam=exampleValue).</p>
     pub query_string_parameters: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Asset ID value for the API request.</p>
-    pub asset_id: ::std::string::String,
+    pub asset_id: ::std::option::Option<::std::string::String>,
     /// <p>Data set ID value for the API request.</p>
-    pub data_set_id: ::std::string::String,
+    pub data_set_id: ::std::option::Option<::std::string::String>,
     /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
     pub request_headers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>HTTP method value for the API request. Alternatively, you can use the appropriate verb in your request.</p>
@@ -18,7 +18,7 @@ pub struct SendApiAssetInput {
     /// <p>URI path value for the API request. Alternatively, you can set the URI path directly by invoking /v1/{pathValue}.</p>
     pub path: ::std::option::Option<::std::string::String>,
     /// <p>Revision ID value for the API request.</p>
-    pub revision_id: ::std::string::String,
+    pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl SendApiAssetInput {
     /// <p>The request body.</p>
@@ -30,14 +30,12 @@ impl SendApiAssetInput {
         self.query_string_parameters.as_ref()
     }
     /// <p>Asset ID value for the API request.</p>
-    pub fn asset_id(&self) -> &str {
-        use std::ops::Deref;
-        self.asset_id.deref()
+    pub fn asset_id(&self) -> ::std::option::Option<&str> {
+        self.asset_id.as_deref()
     }
     /// <p>Data set ID value for the API request.</p>
-    pub fn data_set_id(&self) -> &str {
-        use std::ops::Deref;
-        self.data_set_id.deref()
+    pub fn data_set_id(&self) -> ::std::option::Option<&str> {
+        self.data_set_id.as_deref()
     }
     /// <p>Any header value prefixed with x-amzn-dataexchange-header- will have that stripped before sending the Asset API request. Use this when you want to override a header that AWS Data Exchange uses. Alternatively, you can use the header without a prefix to the HTTP request.</p>
     pub fn request_headers(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -52,9 +50,8 @@ impl SendApiAssetInput {
         self.path.as_deref()
     }
     /// <p>Revision ID value for the API request.</p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+        self.revision_id.as_deref()
     }
 }
 impl SendApiAssetInput {
@@ -220,37 +217,18 @@ impl SendApiAssetInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`SendApiAssetInput`](crate::operation::send_api_asset::SendApiAssetInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`asset_id`](crate::operation::send_api_asset::builders::SendApiAssetInputBuilder::asset_id)
-    /// - [`data_set_id`](crate::operation::send_api_asset::builders::SendApiAssetInputBuilder::data_set_id)
-    /// - [`revision_id`](crate::operation::send_api_asset::builders::SendApiAssetInputBuilder::revision_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::send_api_asset::SendApiAssetInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_api_asset::SendApiAssetInput {
             body: self.body,
             query_string_parameters: self.query_string_parameters,
-            asset_id: self.asset_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "asset_id",
-                    "asset_id was not specified but it is required when building SendApiAssetInput",
-                )
-            })?,
-            data_set_id: self.data_set_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "data_set_id",
-                    "data_set_id was not specified but it is required when building SendApiAssetInput",
-                )
-            })?,
+            asset_id: self.asset_id,
+            data_set_id: self.data_set_id,
             request_headers: self.request_headers,
             method: self.method,
             path: self.path,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building SendApiAssetInput",
-                )
-            })?,
+            revision_id: self.revision_id,
         })
     }
 }

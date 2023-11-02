@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetMapStyleDescriptor`](crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`map_name(impl Into<String>)`](crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorFluentBuilder::map_name) / [`set_map_name(impl Into<String>)`](crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorFluentBuilder::set_map_name):<br>required: **true**<br><p>The map resource to retrieve the style descriptor from.</p><br>
+    ///   - [`map_name(impl Into<String>)`](crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorFluentBuilder::map_name) / [`set_map_name(Option<String>)`](crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorFluentBuilder::set_map_name):<br>required: **true**<br><p>The map resource to retrieve the style descriptor from.</p><br>
     ///   - [`key(impl Into<String>)`](crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorFluentBuilder::key) / [`set_key(Option<String>)`](crate::operation::get_map_style_descriptor::builders::GetMapStyleDescriptorFluentBuilder::set_key):<br>required: **false**<br><p>The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</p><br>
     /// - On success, responds with [`GetMapStyleDescriptorOutput`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorOutput) with field(s):
     ///   - [`blob(Option<Blob>)`](crate::operation::get_map_style_descriptor::GetMapStyleDescriptorOutput::blob): <p>Contains the body of the style descriptor.</p>

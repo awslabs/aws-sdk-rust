@@ -187,27 +187,29 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDevicesR
                         query.push_kv("NextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
-                }
-                if let ::std::option::Option::Some(inner_2) = &_input.sort_by {
-                    {
-                        query.push_kv("SortBy", &::aws_smithy_http::query::fmt_string(&inner_2));
+                if let ::std::option::Option::Some(inner_2) = &_input.max_results {
+                    if *inner_2 != 0 {
+                        query.push_kv("MaxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_2).encode());
                     }
                 }
-                if let ::std::option::Option::Some(inner_3) = &_input.sort_order {
+                if let ::std::option::Option::Some(inner_3) = &_input.sort_by {
                     {
-                        query.push_kv("SortOrder", &::aws_smithy_http::query::fmt_string(&inner_3));
+                        query.push_kv("SortBy", &::aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if let ::std::option::Option::Some(inner_4) = &_input.name_filter {
+                if let ::std::option::Option::Some(inner_4) = &_input.sort_order {
                     {
-                        query.push_kv("NameFilter", &::aws_smithy_http::query::fmt_string(&inner_4));
+                        query.push_kv("SortOrder", &::aws_smithy_http::query::fmt_string(&inner_4));
                     }
                 }
-                if let ::std::option::Option::Some(inner_5) = &_input.device_aggregated_status_filter {
+                if let ::std::option::Option::Some(inner_5) = &_input.name_filter {
                     {
-                        query.push_kv("DeviceAggregatedStatusFilter", &::aws_smithy_http::query::fmt_string(&inner_5));
+                        query.push_kv("NameFilter", &::aws_smithy_http::query::fmt_string(&inner_5));
+                    }
+                }
+                if let ::std::option::Option::Some(inner_6) = &_input.device_aggregated_status_filter {
+                    {
+                        query.push_kv("DeviceAggregatedStatusFilter", &::aws_smithy_http::query::fmt_string(&inner_6));
                     }
                 }
                 ::std::result::Result::Ok(())

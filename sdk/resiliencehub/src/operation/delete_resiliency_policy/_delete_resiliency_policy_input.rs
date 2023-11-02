@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteResiliencyPolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub policy_arn: ::std::string::String,
+    pub policy_arn: ::std::option::Option<::std::string::String>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteResiliencyPolicyInput {
     /// <p>Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn policy_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.policy_arn.deref()
+    pub fn policy_arn(&self) -> ::std::option::Option<&str> {
+        self.policy_arn.as_deref()
     }
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -64,19 +63,12 @@ impl DeleteResiliencyPolicyInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteResiliencyPolicyInput`](crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`policy_arn`](crate::operation::delete_resiliency_policy::builders::DeleteResiliencyPolicyInputBuilder::policy_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_resiliency_policy::DeleteResiliencyPolicyInput {
-            policy_arn: self.policy_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "policy_arn",
-                    "policy_arn was not specified but it is required when building DeleteResiliencyPolicyInput",
-                )
-            })?,
+            policy_arn: self.policy_arn,
             client_token: self.client_token,
         })
     }

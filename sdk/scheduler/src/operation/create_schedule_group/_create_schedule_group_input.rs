@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateScheduleGroupInput {
     /// <p>The name of the schedule group that you are creating.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags to associate with the schedule group.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p> Unique, case-sensitive identifier you provide to ensure the idempotency of the request. If you do not specify a client token, EventBridge Scheduler uses a randomly generated token for the request to ensure idempotency. </p>
@@ -12,9 +12,8 @@ pub struct CreateScheduleGroupInput {
 }
 impl CreateScheduleGroupInput {
     /// <p>The name of the schedule group that you are creating.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The list of tags to associate with the schedule group.</p>
     ///
@@ -93,19 +92,12 @@ impl CreateScheduleGroupInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateScheduleGroupInput`](crate::operation::create_schedule_group::CreateScheduleGroupInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_schedule_group::builders::CreateScheduleGroupInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_schedule_group::CreateScheduleGroupInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_schedule_group::CreateScheduleGroupInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateScheduleGroupInput",
-                )
-            })?,
+            name: self.name,
             tags: self.tags,
             client_token: self.client_token,
         })

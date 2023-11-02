@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFindingsReportsInput {
     /// <p>The name of the profiling group from which to search for analysis data.</p>
-    pub profiling_group_name: ::std::string::String,
+    pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub start_time: ::aws_smithy_types::DateTime,
+    pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub end_time: ::aws_smithy_types::DateTime,
+    pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
     /// </note>
@@ -21,17 +21,16 @@ pub struct ListFindingsReportsInput {
 }
 impl ListFindingsReportsInput {
     /// <p>The name of the profiling group from which to search for analysis data.</p>
-    pub fn profiling_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.profiling_group_name.deref()
+    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
+        self.profiling_group_name.as_deref()
     }
     /// <p> The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn start_time(&self) -> &::aws_smithy_types::DateTime {
-        &self.start_time
+    pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.start_time.as_ref()
     }
     /// <p> The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
-    pub fn end_time(&self) -> &::aws_smithy_types::DateTime {
-        &self.end_time
+    pub fn end_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
+        self.end_time.as_ref()
     }
     /// <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note>
     /// <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
@@ -161,33 +160,14 @@ impl ListFindingsReportsInputBuilder {
         &self.daily_reports_only
     }
     /// Consumes the builder and constructs a [`ListFindingsReportsInput`](crate::operation::list_findings_reports::ListFindingsReportsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`profiling_group_name`](crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder::profiling_group_name)
-    /// - [`start_time`](crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder::start_time)
-    /// - [`end_time`](crate::operation::list_findings_reports::builders::ListFindingsReportsInputBuilder::end_time)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_findings_reports::ListFindingsReportsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_findings_reports::ListFindingsReportsInput {
-            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "profiling_group_name",
-                    "profiling_group_name was not specified but it is required when building ListFindingsReportsInput",
-                )
-            })?,
-            start_time: self.start_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "start_time",
-                    "start_time was not specified but it is required when building ListFindingsReportsInput",
-                )
-            })?,
-            end_time: self.end_time.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "end_time",
-                    "end_time was not specified but it is required when building ListFindingsReportsInput",
-                )
-            })?,
+            profiling_group_name: self.profiling_group_name,
+            start_time: self.start_time,
+            end_time: self.end_time,
             next_token: self.next_token,
             max_results: self.max_results,
             daily_reports_only: self.daily_reports_only,

@@ -4,26 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateChatTokenInput {
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
-    pub room_identifier: ::std::string::String,
+    pub room_identifier: ::std::option::Option<::std::string::String>,
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
-    pub user_id: ::std::string::String,
+    pub user_id: ::std::option::Option<::std::string::String>,
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
     pub capabilities: ::std::option::Option<::std::vec::Vec<crate::types::ChatTokenCapability>>,
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
-    pub session_duration_in_minutes: i32,
+    pub session_duration_in_minutes: ::std::option::Option<i32>,
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
     pub attributes: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateChatTokenInput {
     /// <p>Identifier of the room that the client is trying to access. Currently this must be an ARN. </p>
-    pub fn room_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.room_identifier.deref()
+    pub fn room_identifier(&self) -> ::std::option::Option<&str> {
+        self.room_identifier.as_deref()
     }
     /// <p>Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.</p>
-    pub fn user_id(&self) -> &str {
-        use std::ops::Deref;
-        self.user_id.deref()
+    pub fn user_id(&self) -> ::std::option::Option<&str> {
+        self.user_id.as_deref()
     }
     /// <p>Set of capabilities that the user is allowed to perform in the room. Default: None (the capability to view messages is implicitly included in all requests).</p>
     ///
@@ -32,7 +30,7 @@ impl CreateChatTokenInput {
         self.capabilities.as_deref().unwrap_or_default()
     }
     /// <p>Session duration (in minutes), after which the session expires. Default: 60 (1 hour).</p>
-    pub fn session_duration_in_minutes(&self) -> i32 {
+    pub fn session_duration_in_minutes(&self) -> ::std::option::Option<i32> {
         self.session_duration_in_minutes
     }
     /// <p>Application-provided attributes to encode into the token and attach to a chat session. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total.</p>
@@ -143,27 +141,14 @@ impl CreateChatTokenInputBuilder {
         &self.attributes
     }
     /// Consumes the builder and constructs a [`CreateChatTokenInput`](crate::operation::create_chat_token::CreateChatTokenInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`room_identifier`](crate::operation::create_chat_token::builders::CreateChatTokenInputBuilder::room_identifier)
-    /// - [`user_id`](crate::operation::create_chat_token::builders::CreateChatTokenInputBuilder::user_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_chat_token::CreateChatTokenInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_chat_token::CreateChatTokenInput {
-            room_identifier: self.room_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "room_identifier",
-                    "room_identifier was not specified but it is required when building CreateChatTokenInput",
-                )
-            })?,
-            user_id: self.user_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "user_id",
-                    "user_id was not specified but it is required when building CreateChatTokenInput",
-                )
-            })?,
+            room_identifier: self.room_identifier,
+            user_id: self.user_id,
             capabilities: self.capabilities,
-            session_duration_in_minutes: self.session_duration_in_minutes.unwrap_or_default(),
+            session_duration_in_minutes: self.session_duration_in_minutes,
             attributes: self.attributes,
         })
     }

@@ -3,8 +3,8 @@ pub fn ser_acknowledge_order_receipt_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("orderArn").string(input.order_arn.as_str());
+    if let Some(var_1) = &input.order_arn {
+        object.key("orderArn").string(var_1.as_str());
     }
     Ok(())
 }

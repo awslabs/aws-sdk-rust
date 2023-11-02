@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the watchlist to be deleted.</p>
-    pub watchlist_id: ::std::string::String,
+    pub watchlist_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The identifier of the watchlist to be deleted.</p>
-    pub fn watchlist_id(&self) -> &str {
-        use std::ops::Deref;
-        self.watchlist_id.deref()
+    pub fn watchlist_id(&self) -> ::std::option::Option<&str> {
+        self.watchlist_id.as_deref()
     }
 }
 impl DeleteWatchlistInput {
@@ -66,25 +64,12 @@ impl DeleteWatchlistInputBuilder {
         &self.watchlist_id
     }
     /// Consumes the builder and constructs a [`DeleteWatchlistInput`](crate::operation::delete_watchlist::DeleteWatchlistInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::delete_watchlist::builders::DeleteWatchlistInputBuilder::domain_id)
-    /// - [`watchlist_id`](crate::operation::delete_watchlist::builders::DeleteWatchlistInputBuilder::watchlist_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_watchlist::DeleteWatchlistInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_watchlist::DeleteWatchlistInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building DeleteWatchlistInput",
-                )
-            })?,
-            watchlist_id: self.watchlist_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "watchlist_id",
-                    "watchlist_id was not specified but it is required when building DeleteWatchlistInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            watchlist_id: self.watchlist_id,
         })
     }
 }

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeOptedOutNumbersInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub opt_out_list_name: ::std::string::String,
+    pub opt_out_list_name: ::std::option::Option<::std::string::String>,
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
     pub opted_out_numbers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of OptedOutFilter objects to filter the results on.</p>
@@ -16,9 +16,8 @@ pub struct DescribeOptedOutNumbersInput {
 }
 impl DescribeOptedOutNumbersInput {
     /// <p>The OptOutListName or OptOutListArn of the OptOutList. You can use <code>DescribeOptOutLists</code> to find the values for OptOutListName and OptOutListArn.</p>
-    pub fn opt_out_list_name(&self) -> &str {
-        use std::ops::Deref;
-        self.opt_out_list_name.deref()
+    pub fn opt_out_list_name(&self) -> ::std::option::Option<&str> {
+        self.opt_out_list_name.as_deref()
     }
     /// <p>An array of phone numbers to search for in the OptOutList.</p>
     ///
@@ -143,8 +142,6 @@ impl DescribeOptedOutNumbersInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`DescribeOptedOutNumbersInput`](crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`opt_out_list_name`](crate::operation::describe_opted_out_numbers::builders::DescribeOptedOutNumbersInputBuilder::opt_out_list_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -152,12 +149,7 @@ impl DescribeOptedOutNumbersInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersInput {
-            opt_out_list_name: self.opt_out_list_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "opt_out_list_name",
-                    "opt_out_list_name was not specified but it is required when building DescribeOptedOutNumbersInput",
-                )
-            })?,
+            opt_out_list_name: self.opt_out_list_name,
             opted_out_numbers: self.opted_out_numbers,
             filters: self.filters,
             next_token: self.next_token,

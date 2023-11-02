@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteIndexInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to delete.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteIndexInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the index that you want to delete.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl DeleteIndexInput {
@@ -43,16 +42,7 @@ impl DeleteIndexInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteIndexInput`](crate::operation::delete_index::DeleteIndexInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::delete_index::builders::DeleteIndexInputBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_index::DeleteIndexInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_index::DeleteIndexInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DeleteIndexInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_index::DeleteIndexInput { arn: self.arn })
     }
 }

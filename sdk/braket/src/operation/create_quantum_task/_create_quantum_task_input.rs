@@ -4,19 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateQuantumTaskInput {
     /// <p>The client token associated with the request.</p>
-    pub client_token: ::std::string::String,
+    pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the device to run the task on.</p>
-    pub device_arn: ::std::string::String,
+    pub device_arn: ::std::option::Option<::std::string::String>,
     /// <p>The parameters for the device to run the task on.</p>
     pub device_parameters: ::std::option::Option<::std::string::String>,
     /// <p>The number of shots to use for the task.</p>
-    pub shots: i64,
+    pub shots: ::std::option::Option<i64>,
     /// <p>The S3 bucket to store task result files in.</p>
-    pub output_s3_bucket: ::std::string::String,
+    pub output_s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
-    pub output_s3_key_prefix: ::std::string::String,
+    pub output_s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The action associated with the task.</p>
-    pub action: ::std::string::String,
+    pub action: ::std::option::Option<::std::string::String>,
     /// <p>Tags to be added to the quantum task you're creating.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The token for an Amazon Braket job that associates it with the quantum task.</p>
@@ -24,37 +24,32 @@ pub struct CreateQuantumTaskInput {
 }
 impl CreateQuantumTaskInput {
     /// <p>The client token associated with the request.</p>
-    pub fn client_token(&self) -> &str {
-        use std::ops::Deref;
-        self.client_token.deref()
+    pub fn client_token(&self) -> ::std::option::Option<&str> {
+        self.client_token.as_deref()
     }
     /// <p>The ARN of the device to run the task on.</p>
-    pub fn device_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.device_arn.deref()
+    pub fn device_arn(&self) -> ::std::option::Option<&str> {
+        self.device_arn.as_deref()
     }
     /// <p>The parameters for the device to run the task on.</p>
     pub fn device_parameters(&self) -> ::std::option::Option<&str> {
         self.device_parameters.as_deref()
     }
     /// <p>The number of shots to use for the task.</p>
-    pub fn shots(&self) -> i64 {
+    pub fn shots(&self) -> ::std::option::Option<i64> {
         self.shots
     }
     /// <p>The S3 bucket to store task result files in.</p>
-    pub fn output_s3_bucket(&self) -> &str {
-        use std::ops::Deref;
-        self.output_s3_bucket.deref()
+    pub fn output_s3_bucket(&self) -> ::std::option::Option<&str> {
+        self.output_s3_bucket.as_deref()
     }
     /// <p>The key prefix for the location in the S3 bucket to store task results in.</p>
-    pub fn output_s3_key_prefix(&self) -> &str {
-        use std::ops::Deref;
-        self.output_s3_key_prefix.deref()
+    pub fn output_s3_key_prefix(&self) -> ::std::option::Option<&str> {
+        self.output_s3_key_prefix.as_deref()
     }
     /// <p>The action associated with the task.</p>
-    pub fn action(&self) -> &str {
-        use std::ops::Deref;
-        self.action.deref()
+    pub fn action(&self) -> ::std::option::Option<&str> {
+        self.action.as_deref()
     }
     /// <p>Tags to be added to the quantum task you're creating.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -226,54 +221,17 @@ impl CreateQuantumTaskInputBuilder {
         &self.job_token
     }
     /// Consumes the builder and constructs a [`CreateQuantumTaskInput`](crate::operation::create_quantum_task::CreateQuantumTaskInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`client_token`](crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder::client_token)
-    /// - [`device_arn`](crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder::device_arn)
-    /// - [`shots`](crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder::shots)
-    /// - [`output_s3_bucket`](crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder::output_s3_bucket)
-    /// - [`output_s3_key_prefix`](crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder::output_s3_key_prefix)
-    /// - [`action`](crate::operation::create_quantum_task::builders::CreateQuantumTaskInputBuilder::action)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_quantum_task::CreateQuantumTaskInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_quantum_task::CreateQuantumTaskInput {
-            client_token: self.client_token.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "client_token",
-                    "client_token was not specified but it is required when building CreateQuantumTaskInput",
-                )
-            })?,
-            device_arn: self.device_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "device_arn",
-                    "device_arn was not specified but it is required when building CreateQuantumTaskInput",
-                )
-            })?,
+            client_token: self.client_token,
+            device_arn: self.device_arn,
             device_parameters: self.device_parameters,
-            shots: self.shots.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "shots",
-                    "shots was not specified but it is required when building CreateQuantumTaskInput",
-                )
-            })?,
-            output_s3_bucket: self.output_s3_bucket.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "output_s3_bucket",
-                    "output_s3_bucket was not specified but it is required when building CreateQuantumTaskInput",
-                )
-            })?,
-            output_s3_key_prefix: self.output_s3_key_prefix.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "output_s3_key_prefix",
-                    "output_s3_key_prefix was not specified but it is required when building CreateQuantumTaskInput",
-                )
-            })?,
-            action: self.action.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "action",
-                    "action was not specified but it is required when building CreateQuantumTaskInput",
-                )
-            })?,
+            shots: self.shots,
+            output_s3_bucket: self.output_s3_bucket,
+            output_s3_key_prefix: self.output_s3_key_prefix,
+            action: self.action,
             tags: self.tags,
             job_token: self.job_token,
         })

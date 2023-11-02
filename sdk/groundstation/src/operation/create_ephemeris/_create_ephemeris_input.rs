@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateEphemerisInput {
     /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
-    pub satellite_id: ::std::string::String,
+    pub satellite_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
     /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
     pub enabled: ::std::option::Option<bool>,
@@ -15,7 +15,7 @@ pub struct CreateEphemerisInput {
     /// <p>An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.</p>
     pub expiration_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
     pub kms_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Ephemeris data.</p>
@@ -25,9 +25,8 @@ pub struct CreateEphemerisInput {
 }
 impl CreateEphemerisInput {
     /// <p>AWS Ground Station satellite ID for this ephemeris.</p>
-    pub fn satellite_id(&self) -> &str {
-        use std::ops::Deref;
-        self.satellite_id.deref()
+    pub fn satellite_id(&self) -> ::std::option::Option<&str> {
+        self.satellite_id.as_deref()
     }
     /// <p>Whether to set the ephemeris status to <code>ENABLED</code> after validation.</p>
     /// <p>Setting this to false will set the ephemeris status to <code>DISABLED</code> after validation.</p>
@@ -45,9 +44,8 @@ impl CreateEphemerisInput {
         self.expiration_time.as_ref()
     }
     /// <p>A name string associated with the ephemeris. Used as a human-readable identifier for the ephemeris.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The ARN of a KMS key used to encrypt the ephemeris in Ground Station.</p>
     pub fn kms_key_arn(&self) -> ::std::option::Option<&str> {
@@ -213,28 +211,15 @@ impl CreateEphemerisInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEphemerisInput`](crate::operation::create_ephemeris::CreateEphemerisInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`satellite_id`](crate::operation::create_ephemeris::builders::CreateEphemerisInputBuilder::satellite_id)
-    /// - [`name`](crate::operation::create_ephemeris::builders::CreateEphemerisInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_ephemeris::CreateEphemerisInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_ephemeris::CreateEphemerisInput {
-            satellite_id: self.satellite_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "satellite_id",
-                    "satellite_id was not specified but it is required when building CreateEphemerisInput",
-                )
-            })?,
+            satellite_id: self.satellite_id,
             enabled: self.enabled,
             priority: self.priority,
             expiration_time: self.expiration_time,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateEphemerisInput",
-                )
-            })?,
+            name: self.name,
             kms_key_arn: self.kms_key_arn,
             ephemeris: self.ephemeris,
             tags: self.tags,

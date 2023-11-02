@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListAccessPoliciesInput {
     /// <p>The type of access policy.</p>
-    pub r#type: crate::types::AccessPolicyType,
+    pub r#type: ::std::option::Option<crate::types::AccessPolicyType>,
     /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
     pub resource: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>If your initial <code>ListAccessPolicies</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListAccessPolicies</code> operations, which returns results in the next page. </p>
@@ -14,8 +14,8 @@ pub struct ListAccessPoliciesInput {
 }
 impl ListAccessPoliciesInput {
     /// <p>The type of access policy.</p>
-    pub fn r#type(&self) -> &crate::types::AccessPolicyType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccessPolicyType> {
+        self.r#type.as_ref()
     }
     /// <p>Resource filters (can be collections or indexes) that policies can apply to.</p>
     ///
@@ -113,18 +113,11 @@ impl ListAccessPoliciesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListAccessPoliciesInput`](crate::operation::list_access_policies::ListAccessPoliciesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::operation::list_access_policies::builders::ListAccessPoliciesInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_access_policies::ListAccessPoliciesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_access_policies::ListAccessPoliciesInput {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ListAccessPoliciesInput",
-                )
-            })?,
+            r#type: self.r#type,
             resource: self.resource,
             next_token: self.next_token,
             max_results: self.max_results,

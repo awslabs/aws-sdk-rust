@@ -3,27 +3,27 @@ pub fn ser_create_route_calculator_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_route_calculator::CreateRouteCalculatorInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("CalculatorName").string(input.calculator_name.as_str());
+    if let Some(var_1) = &input.calculator_name {
+        object.key("CalculatorName").string(var_1.as_str());
     }
-    {
-        object.key("DataSource").string(input.data_source.as_str());
+    if let Some(var_2) = &input.data_source {
+        object.key("DataSource").string(var_2.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("Description").string(var_1.as_str());
+    if let Some(var_3) = &input.description {
+        object.key("Description").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.pricing_plan {
-        object.key("PricingPlan").string(var_2.as_str());
+    if let Some(var_4) = &input.pricing_plan {
+        object.key("PricingPlan").string(var_4.as_str());
     }
-    if let Some(var_3) = &input.tags {
+    if let Some(var_5) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("Tags").start_object();
-        for (key_5, value_6) in var_3 {
+        let mut object_6 = object.key("Tags").start_object();
+        for (key_7, value_8) in var_5 {
             {
-                object_4.key(key_5.as_str()).string(value_6.as_str());
+                object_6.key(key_7.as_str()).string(value_8.as_str());
             }
         }
-        object_4.finish();
+        object_6.finish();
     }
     Ok(())
 }

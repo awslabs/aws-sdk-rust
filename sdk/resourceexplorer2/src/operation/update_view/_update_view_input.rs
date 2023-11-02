@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateViewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to modify.</p>
-    pub view_arn: ::std::string::String,
+    pub view_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.</p>
     /// <p>The default is an empty list, with no optional fields included in the results.</p>
     pub included_properties: ::std::option::Option<::std::vec::Vec<crate::types::IncludedProperty>>,
@@ -16,9 +16,8 @@ pub struct UpdateViewInput {
 }
 impl UpdateViewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to modify.</p>
-    pub fn view_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.view_arn.deref()
+    pub fn view_arn(&self) -> ::std::option::Option<&str> {
+        self.view_arn.as_deref()
     }
     /// <p>Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.</p>
     /// <p>The default is an empty list, with no optional fields included in the results.</p>
@@ -122,16 +121,9 @@ impl UpdateViewInputBuilder {
         &self.filters
     }
     /// Consumes the builder and constructs a [`UpdateViewInput`](crate::operation::update_view::UpdateViewInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`view_arn`](crate::operation::update_view::builders::UpdateViewInputBuilder::view_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_view::UpdateViewInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_view::UpdateViewInput {
-            view_arn: self.view_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "view_arn",
-                    "view_arn was not specified but it is required when building UpdateViewInput",
-                )
-            })?,
+            view_arn: self.view_arn,
             included_properties: self.included_properties,
             filters: self.filters,
         })

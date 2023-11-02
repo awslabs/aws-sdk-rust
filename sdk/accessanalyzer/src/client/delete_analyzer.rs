@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteAnalyzer`](crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`analyzer_name(impl Into<String>)`](crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder::analyzer_name) / [`set_analyzer_name(impl Into<String>)`](crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder::set_analyzer_name):<br>required: **true**<br><p>The name of the analyzer to delete.</p><br>
+    ///   - [`analyzer_name(impl Into<String>)`](crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder::analyzer_name) / [`set_analyzer_name(Option<String>)`](crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder::set_analyzer_name):<br>required: **true**<br><p>The name of the analyzer to delete.</p><br>
     ///   - [`client_token(impl Into<String>)`](crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_analyzer::builders::DeleteAnalyzerFluentBuilder::set_client_token):<br>required: **false**<br><p>A client token.</p><br>
     /// - On success, responds with [`DeleteAnalyzerOutput`](crate::operation::delete_analyzer::DeleteAnalyzerOutput)
     /// - On failure, responds with [`SdkError<DeleteAnalyzerError>`](crate::operation::delete_analyzer::DeleteAnalyzerError)

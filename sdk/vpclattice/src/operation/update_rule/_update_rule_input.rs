@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub service_identifier: ::std::string::String,
+    pub service_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub listener_identifier: ::std::string::String,
+    pub listener_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub rule_identifier: ::std::string::String,
+    pub rule_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The rule match.</p>
     pub r#match: ::std::option::Option<crate::types::RuleMatch>,
     /// <p>The rule priority. A listener can't have multiple rules with the same priority.</p>
@@ -18,19 +18,16 @@ pub struct UpdateRuleInput {
 }
 impl UpdateRuleInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-    pub fn service_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.service_identifier.deref()
+    pub fn service_identifier(&self) -> ::std::option::Option<&str> {
+        self.service_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the listener.</p>
-    pub fn listener_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.listener_identifier.deref()
+    pub fn listener_identifier(&self) -> ::std::option::Option<&str> {
+        self.listener_identifier.as_deref()
     }
     /// <p>The ID or Amazon Resource Name (ARN) of the rule.</p>
-    pub fn rule_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.rule_identifier.deref()
+    pub fn rule_identifier(&self) -> ::std::option::Option<&str> {
+        self.rule_identifier.as_deref()
     }
     /// <p>The rule match.</p>
     pub fn r#match(&self) -> ::std::option::Option<&crate::types::RuleMatch> {
@@ -152,30 +149,11 @@ impl UpdateRuleInputBuilder {
         &self.action
     }
     /// Consumes the builder and constructs a [`UpdateRuleInput`](crate::operation::update_rule::UpdateRuleInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`service_identifier`](crate::operation::update_rule::builders::UpdateRuleInputBuilder::service_identifier)
-    /// - [`listener_identifier`](crate::operation::update_rule::builders::UpdateRuleInputBuilder::listener_identifier)
-    /// - [`rule_identifier`](crate::operation::update_rule::builders::UpdateRuleInputBuilder::rule_identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_rule::UpdateRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_rule::UpdateRuleInput {
-            service_identifier: self.service_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_identifier",
-                    "service_identifier was not specified but it is required when building UpdateRuleInput",
-                )
-            })?,
-            listener_identifier: self.listener_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "listener_identifier",
-                    "listener_identifier was not specified but it is required when building UpdateRuleInput",
-                )
-            })?,
-            rule_identifier: self.rule_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "rule_identifier",
-                    "rule_identifier was not specified but it is required when building UpdateRuleInput",
-                )
-            })?,
+            service_identifier: self.service_identifier,
+            listener_identifier: self.listener_identifier,
+            rule_identifier: self.rule_identifier,
             r#match: self.r#match,
             priority: self.priority,
             action: self.action,

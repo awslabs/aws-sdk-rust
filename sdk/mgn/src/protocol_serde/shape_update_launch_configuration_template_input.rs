@@ -24,43 +24,41 @@ pub fn ser_update_launch_configuration_template_input(
         crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(&mut object_7, var_6)?;
         object_7.finish();
     }
-    {
-        object
-            .key("launchConfigurationTemplateID")
-            .string(input.launch_configuration_template_id.as_str());
+    if let Some(var_8) = &input.launch_configuration_template_id {
+        object.key("launchConfigurationTemplateID").string(var_8.as_str());
     }
-    if let Some(var_8) = &input.launch_disposition {
-        object.key("launchDisposition").string(var_8.as_str());
+    if let Some(var_9) = &input.launch_disposition {
+        object.key("launchDisposition").string(var_9.as_str());
     }
-    if let Some(var_9) = &input.licensing {
+    if let Some(var_10) = &input.licensing {
         #[allow(unused_mut)]
-        let mut object_10 = object.key("licensing").start_object();
-        crate::protocol_serde::shape_licensing::ser_licensing(&mut object_10, var_9)?;
-        object_10.finish();
+        let mut object_11 = object.key("licensing").start_object();
+        crate::protocol_serde::shape_licensing::ser_licensing(&mut object_11, var_10)?;
+        object_11.finish();
     }
-    if let Some(var_11) = &input.map_auto_tagging_mpe_id {
-        object.key("mapAutoTaggingMpeID").string(var_11.as_str());
+    if let Some(var_12) = &input.map_auto_tagging_mpe_id {
+        object.key("mapAutoTaggingMpeID").string(var_12.as_str());
     }
-    if let Some(var_12) = &input.post_launch_actions {
+    if let Some(var_13) = &input.post_launch_actions {
         #[allow(unused_mut)]
-        let mut object_13 = object.key("postLaunchActions").start_object();
-        crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(&mut object_13, var_12)?;
-        object_13.finish();
+        let mut object_14 = object.key("postLaunchActions").start_object();
+        crate::protocol_serde::shape_post_launch_actions::ser_post_launch_actions(&mut object_14, var_13)?;
+        object_14.finish();
     }
-    if let Some(var_14) = &input.small_volume_conf {
+    if let Some(var_15) = &input.small_volume_conf {
         #[allow(unused_mut)]
-        let mut object_15 = object.key("smallVolumeConf").start_object();
-        crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(&mut object_15, var_14)?;
-        object_15.finish();
+        let mut object_16 = object.key("smallVolumeConf").start_object();
+        crate::protocol_serde::shape_launch_template_disk_conf::ser_launch_template_disk_conf(&mut object_16, var_15)?;
+        object_16.finish();
     }
-    if input.small_volume_max_size != 0 {
+    if let Some(var_17) = &input.small_volume_max_size {
         object.key("smallVolumeMaxSize").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.small_volume_max_size).into()),
+            ::aws_smithy_types::Number::NegInt((*var_17).into()),
         );
     }
-    if let Some(var_16) = &input.target_instance_type_right_sizing_method {
-        object.key("targetInstanceTypeRightSizingMethod").string(var_16.as_str());
+    if let Some(var_18) = &input.target_instance_type_right_sizing_method {
+        object.key("targetInstanceTypeRightSizingMethod").string(var_18.as_str());
     }
     Ok(())
 }

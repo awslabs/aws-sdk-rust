@@ -183,6 +183,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateCompon
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.app_id;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("app_id", "cannot be empty or unset"))?;
                 let app_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if app_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -191,6 +194,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateCompon
                     ));
                 }
                 let input_2 = &_input.environment_name;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("environment_name", "cannot be empty or unset"))?;
                 let environment_name = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if environment_name.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -199,6 +205,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateCompon
                     ));
                 }
                 let input_3 = &_input.id;
+                let input_3 = input_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("id", "cannot be empty or unset"))?;
                 let id = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

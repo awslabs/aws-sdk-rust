@@ -3,29 +3,29 @@ pub fn ser_update_channel_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_channel::UpdateChannelInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("arn").string(input.arn.as_str());
+    if let Some(var_1) = &input.arn {
+        object.key("arn").string(var_1.as_str());
     }
-    if input.authorized {
-        object.key("authorized").boolean(input.authorized);
+    if let Some(var_2) = &input.authorized {
+        object.key("authorized").boolean(*var_2);
     }
-    if input.insecure_ingest {
-        object.key("insecureIngest").boolean(input.insecure_ingest);
+    if let Some(var_3) = &input.insecure_ingest {
+        object.key("insecureIngest").boolean(*var_3);
     }
-    if let Some(var_1) = &input.latency_mode {
-        object.key("latencyMode").string(var_1.as_str());
+    if let Some(var_4) = &input.latency_mode {
+        object.key("latencyMode").string(var_4.as_str());
     }
-    if let Some(var_2) = &input.name {
-        object.key("name").string(var_2.as_str());
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
     }
-    if let Some(var_3) = &input.preset {
-        object.key("preset").string(var_3.as_str());
+    if let Some(var_6) = &input.preset {
+        object.key("preset").string(var_6.as_str());
     }
-    if let Some(var_4) = &input.recording_configuration_arn {
-        object.key("recordingConfigurationArn").string(var_4.as_str());
+    if let Some(var_7) = &input.recording_configuration_arn {
+        object.key("recordingConfigurationArn").string(var_7.as_str());
     }
-    if let Some(var_5) = &input.r#type {
-        object.key("type").string(var_5.as_str());
+    if let Some(var_8) = &input.r#type {
+        object.key("type").string(var_8.as_str());
     }
     Ok(())
 }

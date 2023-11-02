@@ -14,6 +14,8 @@
     unreachable_pub
 )]
 pub mod base64;
+pub mod body;
+pub mod byte_stream;
 /// A typemap for storing configuration.
 pub mod config_bag;
 pub mod date_time;

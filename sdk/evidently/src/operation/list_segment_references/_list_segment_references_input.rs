@@ -4,19 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListSegmentReferencesInput {
     /// <p>The ARN of the segment that you want to view information for.</p>
-    pub segment: ::std::string::String,
+    pub segment: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
-    pub r#type: crate::types::SegmentReferenceResourceType,
+    pub r#type: ::std::option::Option<crate::types::SegmentReferenceResourceType>,
 }
 impl ListSegmentReferencesInput {
     /// <p>The ARN of the segment that you want to view information for.</p>
-    pub fn segment(&self) -> &str {
-        use std::ops::Deref;
-        self.segment.deref()
+    pub fn segment(&self) -> ::std::option::Option<&str> {
+        self.segment.as_deref()
     }
     /// <p>The maximum number of results to include in the response. If you omit this, the default of 50 is used.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -27,8 +26,8 @@ impl ListSegmentReferencesInput {
         self.next_token.as_deref()
     }
     /// <p>Specifies whether to return information about launches or experiments that use this segment.</p>
-    pub fn r#type(&self) -> &crate::types::SegmentReferenceResourceType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SegmentReferenceResourceType> {
+        self.r#type.as_ref()
     }
 }
 impl ListSegmentReferencesInput {
@@ -107,28 +106,15 @@ impl ListSegmentReferencesInputBuilder {
         &self.r#type
     }
     /// Consumes the builder and constructs a [`ListSegmentReferencesInput`](crate::operation::list_segment_references::ListSegmentReferencesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`segment`](crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder::segment)
-    /// - [`r#type`](crate::operation::list_segment_references::builders::ListSegmentReferencesInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_segment_references::ListSegmentReferencesInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_segment_references::ListSegmentReferencesInput {
-            segment: self.segment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "segment",
-                    "segment was not specified but it is required when building ListSegmentReferencesInput",
-                )
-            })?,
+            segment: self.segment,
             max_results: self.max_results,
             next_token: self.next_token,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building ListSegmentReferencesInput",
-                )
-            })?,
+            r#type: self.r#type,
         })
     }
 }

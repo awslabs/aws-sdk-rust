@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteVpcEndpoint`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::id) / [`set_id(impl Into<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::set_id):<br>required: **true**<br><p>The VPC endpoint identifier.</p><br>
+    ///   - [`id(impl Into<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::set_id):<br>required: **true**<br><p>The VPC endpoint identifier.</p><br>
     ///   - [`client_token(impl Into<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::client_token) / [`set_client_token(Option<String>)`](crate::operation::delete_vpc_endpoint::builders::DeleteVpcEndpointFluentBuilder::set_client_token):<br>required: **false**<br><p>Unique, case-sensitive identifier to ensure idempotency of the request.</p><br>
     /// - On success, responds with [`DeleteVpcEndpointOutput`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput) with field(s):
     ///   - [`delete_vpc_endpoint_detail(Option<DeleteVpcEndpointDetail>)`](crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput::delete_vpc_endpoint_detail): <p>Details about the deleted endpoint.</p>

@@ -10,7 +10,7 @@ pub struct ListSchemasInput {
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
     pub db_user: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub database: ::std::string::String,
+    pub database: ::std::option::Option<::std::string::String>,
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
     pub connected_database: ::std::option::Option<::std::string::String>,
     /// <p>A pattern to filter results by schema name. Within a schema pattern, "%" means match any substring of 0 or more characters and "_" means match any one character. Only schema name entries matching the search pattern are returned. </p>
@@ -18,7 +18,7 @@ pub struct ListSchemasInput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of schemas to return in the response. If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
@@ -36,9 +36,8 @@ impl ListSchemasInput {
         self.db_user.as_deref()
     }
     /// <p>The name of the database that contains the schemas to list. If <code>ConnectedDatabase</code> is not specified, this is also the database to connect to with your authentication credentials.</p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> ::std::option::Option<&str> {
+        self.database.as_deref()
     }
     /// <p>A database name. The connected database is specified when you connect with your authentication credentials. </p>
     pub fn connected_database(&self) -> ::std::option::Option<&str> {
@@ -53,7 +52,7 @@ impl ListSchemasInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of schemas to return in the response. If more schemas exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
@@ -211,23 +210,16 @@ impl ListSchemasInputBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`ListSchemasInput`](crate::operation::list_schemas::ListSchemasInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`database`](crate::operation::list_schemas::builders::ListSchemasInputBuilder::database)
     pub fn build(self) -> ::std::result::Result<crate::operation::list_schemas::ListSchemasInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_schemas::ListSchemasInput {
             cluster_identifier: self.cluster_identifier,
             secret_arn: self.secret_arn,
             db_user: self.db_user,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building ListSchemasInput",
-                )
-            })?,
+            database: self.database,
             connected_database: self.connected_database,
             schema_pattern: self.schema_pattern,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             workgroup_name: self.workgroup_name,
         })
     }

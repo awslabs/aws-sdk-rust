@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRoomInput {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
-    pub identifier: ::std::string::String,
+    pub identifier: ::std::option::Option<::std::string::String>,
     /// <p>Room name. The value does not need to be unique.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
-    pub maximum_message_rate_per_second: i32,
+    pub maximum_message_rate_per_second: ::std::option::Option<i32>,
     /// <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
-    pub maximum_message_length: i32,
+    pub maximum_message_length: ::std::option::Option<i32>,
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
     pub message_review_handler: ::std::option::Option<crate::types::MessageReviewHandler>,
     /// <p>Array of logging-configuration identifiers attached to the room.</p>
@@ -18,20 +18,19 @@ pub struct UpdateRoomInput {
 }
 impl UpdateRoomInput {
     /// <p>Identifier of the room to be updated. Currently this must be an ARN.</p>
-    pub fn identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.identifier.deref()
+    pub fn identifier(&self) -> ::std::option::Option<&str> {
+        self.identifier.as_deref()
     }
     /// <p>Room name. The value does not need to be unique.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.</p>
-    pub fn maximum_message_rate_per_second(&self) -> i32 {
+    pub fn maximum_message_rate_per_second(&self) -> ::std::option::Option<i32> {
         self.maximum_message_rate_per_second
     }
     /// <p>The maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.</p>
-    pub fn maximum_message_length(&self) -> i32 {
+    pub fn maximum_message_length(&self) -> ::std::option::Option<i32> {
         self.maximum_message_length
     }
     /// <p>Configuration information for optional review of messages. Specify an empty <code>uri</code> string to disassociate a message review handler from the specified room.</p>
@@ -156,19 +155,12 @@ impl UpdateRoomInputBuilder {
         &self.logging_configuration_identifiers
     }
     /// Consumes the builder and constructs a [`UpdateRoomInput`](crate::operation::update_room::UpdateRoomInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`identifier`](crate::operation::update_room::builders::UpdateRoomInputBuilder::identifier)
     pub fn build(self) -> ::std::result::Result<crate::operation::update_room::UpdateRoomInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_room::UpdateRoomInput {
-            identifier: self.identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identifier",
-                    "identifier was not specified but it is required when building UpdateRoomInput",
-                )
-            })?,
+            identifier: self.identifier,
             name: self.name,
-            maximum_message_rate_per_second: self.maximum_message_rate_per_second.unwrap_or_default(),
-            maximum_message_length: self.maximum_message_length.unwrap_or_default(),
+            maximum_message_rate_per_second: self.maximum_message_rate_per_second,
+            maximum_message_length: self.maximum_message_length,
             message_review_handler: self.message_review_handler,
             logging_configuration_identifiers: self.logging_configuration_identifiers,
         })

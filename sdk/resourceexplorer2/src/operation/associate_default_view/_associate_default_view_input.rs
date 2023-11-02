@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateDefaultViewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.</p>
-    pub view_arn: ::std::string::String,
+    pub view_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateDefaultViewInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.</p>
-    pub fn view_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.view_arn.deref()
+    pub fn view_arn(&self) -> ::std::option::Option<&str> {
+        self.view_arn.as_deref()
     }
 }
 impl AssociateDefaultViewInput {
@@ -43,19 +42,10 @@ impl AssociateDefaultViewInputBuilder {
         &self.view_arn
     }
     /// Consumes the builder and constructs a [`AssociateDefaultViewInput`](crate::operation::associate_default_view::AssociateDefaultViewInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`view_arn`](crate::operation::associate_default_view::builders::AssociateDefaultViewInputBuilder::view_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::associate_default_view::AssociateDefaultViewInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::associate_default_view::AssociateDefaultViewInput {
-            view_arn: self.view_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "view_arn",
-                    "view_arn was not specified but it is required when building AssociateDefaultViewInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::associate_default_view::AssociateDefaultViewInput { view_arn: self.view_arn })
     }
 }

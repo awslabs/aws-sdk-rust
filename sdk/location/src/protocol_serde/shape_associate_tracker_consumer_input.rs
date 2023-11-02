@@ -3,8 +3,8 @@ pub fn ser_associate_tracker_consumer_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("ConsumerArn").string(input.consumer_arn.as_str());
+    if let Some(var_1) = &input.consumer_arn {
+        object.key("ConsumerArn").string(var_1.as_str());
     }
     Ok(())
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    pub mission_profile_id: ::std::string::String,
+    pub mission_profile_id: ::std::option::Option<::std::string::String>,
     /// <p>Name of a mission profile.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>Amount of time after a contact ends that you’d like to receive a CloudWatch event indicating the pass has finished.</p>
@@ -25,9 +25,8 @@ pub struct UpdateMissionProfileInput {
 }
 impl UpdateMissionProfileInput {
     /// <p>UUID of a mission profile.</p>
-    pub fn mission_profile_id(&self) -> &str {
-        use std::ops::Deref;
-        self.mission_profile_id.deref()
+    pub fn mission_profile_id(&self) -> ::std::option::Option<&str> {
+        self.mission_profile_id.as_deref()
     }
     /// <p>Name of a mission profile.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -220,19 +219,12 @@ impl UpdateMissionProfileInputBuilder {
         &self.streams_kms_role
     }
     /// Consumes the builder and constructs a [`UpdateMissionProfileInput`](crate::operation::update_mission_profile::UpdateMissionProfileInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`mission_profile_id`](crate::operation::update_mission_profile::builders::UpdateMissionProfileInputBuilder::mission_profile_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_mission_profile::UpdateMissionProfileInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_mission_profile::UpdateMissionProfileInput {
-            mission_profile_id: self.mission_profile_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "mission_profile_id",
-                    "mission_profile_id was not specified but it is required when building UpdateMissionProfileInput",
-                )
-            })?,
+            mission_profile_id: self.mission_profile_id,
             name: self.name,
             contact_pre_pass_duration_seconds: self.contact_pre_pass_duration_seconds,
             contact_post_pass_duration_seconds: self.contact_post_pass_duration_seconds,

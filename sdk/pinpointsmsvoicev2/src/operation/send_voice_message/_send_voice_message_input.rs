@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SendVoiceMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
-    pub destination_phone_number: ::std::string::String,
+    pub destination_phone_number: ::std::option::Option<::std::string::String>,
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
-    pub origination_identity: ::std::string::String,
+    pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The text to convert to a voice message.</p>
     pub message_body: ::std::option::Option<::std::string::String>,
     /// <p>Specifies if the MessageBody field contains text or <a href="https://docs.aws.amazon.com/polly/latest/dg/what-is.html">speech synthesis markup language (SSML)</a>.</p>
@@ -26,18 +26,16 @@ pub struct SendVoiceMessageInput {
     /// <p>You can specify custom data in this field. If you do, that data is logged to the event destination.</p>
     pub context: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    pub dry_run: bool,
+    pub dry_run: ::std::option::Option<bool>,
 }
 impl SendVoiceMessageInput {
     /// <p>The destination phone number in E.164 format.</p>
-    pub fn destination_phone_number(&self) -> &str {
-        use std::ops::Deref;
-        self.destination_phone_number.deref()
+    pub fn destination_phone_number(&self) -> ::std::option::Option<&str> {
+        self.destination_phone_number.as_deref()
     }
     /// <p>The origination identity to use for the voice call. This can be the PhoneNumber, PhoneNumberId, PhoneNumberArn, PoolId, or PoolArn.</p>
-    pub fn origination_identity(&self) -> &str {
-        use std::ops::Deref;
-        self.origination_identity.deref()
+    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+        self.origination_identity.as_deref()
     }
     /// <p>The text to convert to a voice message.</p>
     pub fn message_body(&self) -> ::std::option::Option<&str> {
@@ -72,7 +70,7 @@ impl SendVoiceMessageInput {
         self.context.as_ref()
     }
     /// <p>When set to true, the message is checked and validated, but isn't sent to the end recipient.</p>
-    pub fn dry_run(&self) -> bool {
+    pub fn dry_run(&self) -> ::std::option::Option<bool> {
         self.dry_run
     }
 }
@@ -260,25 +258,12 @@ impl SendVoiceMessageInputBuilder {
         &self.dry_run
     }
     /// Consumes the builder and constructs a [`SendVoiceMessageInput`](crate::operation::send_voice_message::SendVoiceMessageInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`destination_phone_number`](crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder::destination_phone_number)
-    /// - [`origination_identity`](crate::operation::send_voice_message::builders::SendVoiceMessageInputBuilder::origination_identity)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::send_voice_message::SendVoiceMessageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::send_voice_message::SendVoiceMessageInput {
-            destination_phone_number: self.destination_phone_number.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "destination_phone_number",
-                    "destination_phone_number was not specified but it is required when building SendVoiceMessageInput",
-                )
-            })?,
-            origination_identity: self.origination_identity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "origination_identity",
-                    "origination_identity was not specified but it is required when building SendVoiceMessageInput",
-                )
-            })?,
+            destination_phone_number: self.destination_phone_number,
+            origination_identity: self.origination_identity,
             message_body: self.message_body,
             message_body_text_type: self.message_body_text_type,
             voice_id: self.voice_id,
@@ -286,7 +271,7 @@ impl SendVoiceMessageInputBuilder {
             max_price_per_minute: self.max_price_per_minute,
             time_to_live: self.time_to_live,
             context: self.context,
-            dry_run: self.dry_run.unwrap_or_default(),
+            dry_run: self.dry_run,
         })
     }
 }

@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWorkspaceAliasInput {
     /// The ID of the workspace being updated.
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// The new alias of the workspace.
     pub alias: ::std::option::Option<::std::string::String>,
     /// Optional, unique, case-sensitive, user-provided identifier to ensure the idempotency of the request.
@@ -13,9 +13,8 @@ pub struct UpdateWorkspaceAliasInput {
 }
 impl UpdateWorkspaceAliasInput {
     /// The ID of the workspace being updated.
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// The new alias of the workspace.
     pub fn alias(&self) -> ::std::option::Option<&str> {
@@ -86,19 +85,12 @@ impl UpdateWorkspaceAliasInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceAliasInput`](crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::update_workspace_alias::builders::UpdateWorkspaceAliasInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_workspace_alias::UpdateWorkspaceAliasInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building UpdateWorkspaceAliasInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
             alias: self.alias,
             client_token: self.client_token,
         })

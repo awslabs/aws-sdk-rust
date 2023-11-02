@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdateReplicationConfigurationTemplateInput {
     /// <p>Update replication configuration template template ID request.</p>
-    pub replication_configuration_template_id: ::std::string::String,
+    pub replication_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration template ARN request.</p>
     pub arn: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration template Staging Area subnet ID request.</p>
@@ -24,7 +24,7 @@ pub struct UpdateReplicationConfigurationTemplateInput {
     /// <p>Update replication configuration template EBS encryption key ARN request.</p>
     pub ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Update replication configuration template bandwidth throttling request.</p>
-    pub bandwidth_throttling: i64,
+    pub bandwidth_throttling: ::std::option::Option<i64>,
     /// <p>Update replication configuration template data plane routing request.</p>
     pub data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Update replication configuration template create Public IP request.</p>
@@ -36,9 +36,8 @@ pub struct UpdateReplicationConfigurationTemplateInput {
 }
 impl UpdateReplicationConfigurationTemplateInput {
     /// <p>Update replication configuration template template ID request.</p>
-    pub fn replication_configuration_template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.replication_configuration_template_id.deref()
+    pub fn replication_configuration_template_id(&self) -> ::std::option::Option<&str> {
+        self.replication_configuration_template_id.as_deref()
     }
     /// <p>Update replication configuration template ARN request.</p>
     pub fn arn(&self) -> ::std::option::Option<&str> {
@@ -79,7 +78,7 @@ impl UpdateReplicationConfigurationTemplateInput {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Update replication configuration template bandwidth throttling request.</p>
-    pub fn bandwidth_throttling(&self) -> i64 {
+    pub fn bandwidth_throttling(&self) -> ::std::option::Option<i64> {
         self.bandwidth_throttling
     }
     /// <p>Update replication configuration template data plane routing request.</p>
@@ -382,8 +381,6 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
         &self.use_fips_endpoint
     }
     /// Consumes the builder and constructs a [`UpdateReplicationConfigurationTemplateInput`](crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`replication_configuration_template_id`](crate::operation::update_replication_configuration_template::builders::UpdateReplicationConfigurationTemplateInputBuilder::replication_configuration_template_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -392,41 +389,22 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateInput {
-                replication_configuration_template_id: self.replication_configuration_template_id
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("replication_configuration_template_id", "replication_configuration_template_id was not specified but it is required when building UpdateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                arn: self.arn
-                ,
-                staging_area_subnet_id: self.staging_area_subnet_id
-                ,
-                associate_default_security_group: self.associate_default_security_group
-                ,
-                replication_servers_security_groups_ids: self.replication_servers_security_groups_ids
-                ,
-                replication_server_instance_type: self.replication_server_instance_type
-                ,
-                use_dedicated_replication_server: self.use_dedicated_replication_server
-                ,
-                default_large_staging_disk_type: self.default_large_staging_disk_type
-                ,
-                ebs_encryption: self.ebs_encryption
-                ,
-                ebs_encryption_key_arn: self.ebs_encryption_key_arn
-                ,
-                bandwidth_throttling: self.bandwidth_throttling
-                    .unwrap_or_default()
-                ,
-                data_plane_routing: self.data_plane_routing
-                ,
-                create_public_ip: self.create_public_ip
-                ,
-                staging_area_tags: self.staging_area_tags
-                ,
-                use_fips_endpoint: self.use_fips_endpoint
-                ,
-            }
+                replication_configuration_template_id: self.replication_configuration_template_id,
+                arn: self.arn,
+                staging_area_subnet_id: self.staging_area_subnet_id,
+                associate_default_security_group: self.associate_default_security_group,
+                replication_servers_security_groups_ids: self.replication_servers_security_groups_ids,
+                replication_server_instance_type: self.replication_server_instance_type,
+                use_dedicated_replication_server: self.use_dedicated_replication_server,
+                default_large_staging_disk_type: self.default_large_staging_disk_type,
+                ebs_encryption: self.ebs_encryption,
+                ebs_encryption_key_arn: self.ebs_encryption_key_arn,
+                bandwidth_throttling: self.bandwidth_throttling,
+                data_plane_routing: self.data_plane_routing,
+                create_public_ip: self.create_public_ip,
+                staging_area_tags: self.staging_area_tags,
+                use_fips_endpoint: self.use_fips_endpoint,
+            },
         )
     }
 }

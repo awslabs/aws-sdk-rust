@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPlaybackKeyPairInput {
     /// <p>ARN of the key pair to be returned.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl GetPlaybackKeyPairInput {
     /// <p>ARN of the key pair to be returned.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl GetPlaybackKeyPairInput {
@@ -43,19 +42,10 @@ impl GetPlaybackKeyPairInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`GetPlaybackKeyPairInput`](crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::get_playback_key_pair::builders::GetPlaybackKeyPairInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building GetPlaybackKeyPairInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_playback_key_pair::GetPlaybackKeyPairInput { arn: self.arn })
     }
 }

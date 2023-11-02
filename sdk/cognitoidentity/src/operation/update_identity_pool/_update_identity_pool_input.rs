@@ -5,11 +5,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub identity_pool_id: ::std::string::String,
+    pub identity_pool_id: ::std::option::Option<::std::string::String>,
     /// <p>A string that you provide.</p>
-    pub identity_pool_name: ::std::string::String,
+    pub identity_pool_name: ::std::option::Option<::std::string::String>,
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    pub allow_unauthenticated_identities: bool,
+    pub allow_unauthenticated_identities: ::std::option::Option<bool>,
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
     pub allow_classic_flow: ::std::option::Option<bool>,
     /// <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -27,17 +27,15 @@ pub struct UpdateIdentityPoolInput {
 }
 impl UpdateIdentityPoolInput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
-    pub fn identity_pool_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_pool_id.deref()
+    pub fn identity_pool_id(&self) -> ::std::option::Option<&str> {
+        self.identity_pool_id.as_deref()
     }
     /// <p>A string that you provide.</p>
-    pub fn identity_pool_name(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_pool_name.deref()
+    pub fn identity_pool_name(&self) -> ::std::option::Option<&str> {
+        self.identity_pool_name.as_deref()
     }
     /// <p>TRUE if the identity pool supports unauthenticated logins.</p>
-    pub fn allow_unauthenticated_identities(&self) -> bool {
+    pub fn allow_unauthenticated_identities(&self) -> ::std::option::Option<bool> {
         self.allow_unauthenticated_identities
     }
     /// <p>Enables or disables the Basic (Classic) authentication flow. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html">Identity Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
@@ -286,26 +284,13 @@ impl UpdateIdentityPoolInputBuilder {
         &self.identity_pool_tags
     }
     /// Consumes the builder and constructs a [`UpdateIdentityPoolInput`](crate::operation::update_identity_pool::UpdateIdentityPoolInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`identity_pool_id`](crate::operation::update_identity_pool::builders::UpdateIdentityPoolInputBuilder::identity_pool_id)
-    /// - [`identity_pool_name`](crate::operation::update_identity_pool::builders::UpdateIdentityPoolInputBuilder::identity_pool_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_identity_pool::UpdateIdentityPoolInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_identity_pool::UpdateIdentityPoolInput {
-            identity_pool_id: self.identity_pool_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identity_pool_id",
-                    "identity_pool_id was not specified but it is required when building UpdateIdentityPoolInput",
-                )
-            })?,
-            identity_pool_name: self.identity_pool_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identity_pool_name",
-                    "identity_pool_name was not specified but it is required when building UpdateIdentityPoolInput",
-                )
-            })?,
-            allow_unauthenticated_identities: self.allow_unauthenticated_identities.unwrap_or_default(),
+            identity_pool_id: self.identity_pool_id,
+            identity_pool_name: self.identity_pool_name,
+            allow_unauthenticated_identities: self.allow_unauthenticated_identities,
             allow_classic_flow: self.allow_classic_flow,
             supported_login_providers: self.supported_login_providers,
             developer_provider_name: self.developer_provider_name,

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteStageInput {
     /// <p>ARN of the stage to be deleted.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteStageInput {
     /// <p>ARN of the stage to be deleted.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl DeleteStageInput {
@@ -43,16 +42,7 @@ impl DeleteStageInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteStageInput`](crate::operation::delete_stage::DeleteStageInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::delete_stage::builders::DeleteStageInputBuilder::arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_stage::DeleteStageInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_stage::DeleteStageInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DeleteStageInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_stage::DeleteStageInput { arn: self.arn })
     }
 }

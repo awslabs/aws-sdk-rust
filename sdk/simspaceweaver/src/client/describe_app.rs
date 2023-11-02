@@ -3,9 +3,9 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeApp`](crate::operation::describe_app::builders::DescribeAppFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`simulation(impl Into<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::simulation) / [`set_simulation(impl Into<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation of the app.</p><br>
-    ///   - [`domain(impl Into<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::domain) / [`set_domain(impl Into<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::set_domain):<br>required: **true**<br><p>The name of the domain of the app.</p><br>
-    ///   - [`app(impl Into<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::app) / [`set_app(impl Into<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::set_app):<br>required: **true**<br><p>The name of the app.</p><br>
+    ///   - [`simulation(impl Into<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::simulation) / [`set_simulation(Option<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::set_simulation):<br>required: **true**<br><p>The name of the simulation of the app.</p><br>
+    ///   - [`domain(impl Into<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::set_domain):<br>required: **true**<br><p>The name of the domain of the app.</p><br>
+    ///   - [`app(impl Into<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::app) / [`set_app(Option<String>)`](crate::operation::describe_app::builders::DescribeAppFluentBuilder::set_app):<br>required: **true**<br><p>The name of the app.</p><br>
     /// - On success, responds with [`DescribeAppOutput`](crate::operation::describe_app::DescribeAppOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_app::DescribeAppOutput::name): <p>The name of the app.</p>
     ///   - [`simulation(Option<String>)`](crate::operation::describe_app::DescribeAppOutput::simulation): <p>The name of the simulation of the app.</p>

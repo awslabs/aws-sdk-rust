@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub resource_identifier: ::std::string::String,
+    pub resource_identifier: ::std::option::Option<::std::string::String>,
 }
 impl GetAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service.</p>
-    pub fn resource_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_identifier.deref()
+    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+        self.resource_identifier.as_deref()
     }
 }
 impl GetAuthPolicyInput {
@@ -43,18 +42,11 @@ impl GetAuthPolicyInputBuilder {
         &self.resource_identifier
     }
     /// Consumes the builder and constructs a [`GetAuthPolicyInput`](crate::operation::get_auth_policy::GetAuthPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`resource_identifier`](crate::operation::get_auth_policy::builders::GetAuthPolicyInputBuilder::resource_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_auth_policy::GetAuthPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_auth_policy::GetAuthPolicyInput {
-            resource_identifier: self.resource_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_identifier",
-                    "resource_identifier was not specified but it is required when building GetAuthPolicyInput",
-                )
-            })?,
+            resource_identifier: self.resource_identifier,
         })
     }
 }

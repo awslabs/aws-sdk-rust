@@ -10,7 +10,7 @@ pub struct ListChannelsInput {
     /// <p>The first channel to retrieve. This is used for pagination; see the <code>nextToken</code> response field.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of channels to return. Default: 100.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
 }
 impl ListChannelsInput {
     /// <p>Filters the channel list to match the specified name.</p>
@@ -26,7 +26,7 @@ impl ListChannelsInput {
         self.next_token.as_deref()
     }
     /// <p>Maximum number of channels to return. Default: 100.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
 }
@@ -109,7 +109,7 @@ impl ListChannelsInputBuilder {
             filter_by_name: self.filter_by_name,
             filter_by_recording_configuration_arn: self.filter_by_recording_configuration_arn,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
         })
     }
 }

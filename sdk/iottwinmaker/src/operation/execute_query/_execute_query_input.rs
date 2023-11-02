@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecuteQueryInput {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The query statement.</p>
-    pub query_statement: ::std::string::String,
+    pub query_statement: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -15,14 +15,12 @@ pub struct ExecuteQueryInput {
 }
 impl ExecuteQueryInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>The query statement.</p>
-    pub fn query_statement(&self) -> &str {
-        use std::ops::Deref;
-        self.query_statement.deref()
+    pub fn query_statement(&self) -> ::std::option::Option<&str> {
+        self.query_statement.as_deref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
@@ -113,23 +111,10 @@ impl ExecuteQueryInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ExecuteQueryInput`](crate::operation::execute_query::ExecuteQueryInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::execute_query::builders::ExecuteQueryInputBuilder::workspace_id)
-    /// - [`query_statement`](crate::operation::execute_query::builders::ExecuteQueryInputBuilder::query_statement)
     pub fn build(self) -> ::std::result::Result<crate::operation::execute_query::ExecuteQueryInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::execute_query::ExecuteQueryInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building ExecuteQueryInput",
-                )
-            })?,
-            query_statement: self.query_statement.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "query_statement",
-                    "query_statement was not specified but it is required when building ExecuteQueryInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
+            query_statement: self.query_statement,
             max_results: self.max_results,
             next_token: self.next_token,
         })

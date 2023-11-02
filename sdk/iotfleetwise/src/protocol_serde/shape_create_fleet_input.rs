@@ -3,26 +3,26 @@ pub fn ser_create_fleet_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_fleet::CreateFleetInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("fleetId").string(input.fleet_id.as_str());
+    if let Some(var_1) = &input.fleet_id {
+        object.key("fleetId").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.description {
-        object.key("description").string(var_1.as_str());
+    if let Some(var_2) = &input.description {
+        object.key("description").string(var_2.as_str());
     }
-    {
-        object.key("signalCatalogArn").string(input.signal_catalog_arn.as_str());
+    if let Some(var_3) = &input.signal_catalog_arn {
+        object.key("signalCatalogArn").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.tags {
-        let mut array_3 = object.key("tags").start_array();
-        for item_4 in var_2 {
+    if let Some(var_4) = &input.tags {
+        let mut array_5 = object.key("tags").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_3.finish();
+        array_5.finish();
     }
     Ok(())
 }

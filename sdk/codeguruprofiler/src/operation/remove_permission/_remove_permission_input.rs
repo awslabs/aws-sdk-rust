@@ -5,26 +5,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemovePermissionInput {
     /// <p>The name of the profiling group.</p>
-    pub profiling_group_name: ::std::string::String,
+    pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub action_group: crate::types::ActionGroup,
+    pub action_group: ::std::option::Option<crate::types::ActionGroup>,
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
-    pub revision_id: ::std::string::String,
+    pub revision_id: ::std::option::Option<::std::string::String>,
 }
 impl RemovePermissionInput {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.profiling_group_name.deref()
+    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
+        self.profiling_group_name.as_deref()
     }
     /// <p> Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. </p>
-    pub fn action_group(&self) -> &crate::types::ActionGroup {
-        &self.action_group
+    pub fn action_group(&self) -> ::std::option::Option<&crate::types::ActionGroup> {
+        self.action_group.as_ref()
     }
     /// <p> A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. </p>
-    pub fn revision_id(&self) -> &str {
-        use std::ops::Deref;
-        self.revision_id.deref()
+    pub fn revision_id(&self) -> ::std::option::Option<&str> {
+        self.revision_id.as_deref()
     }
 }
 impl RemovePermissionInput {
@@ -89,32 +87,13 @@ impl RemovePermissionInputBuilder {
         &self.revision_id
     }
     /// Consumes the builder and constructs a [`RemovePermissionInput`](crate::operation::remove_permission::RemovePermissionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`profiling_group_name`](crate::operation::remove_permission::builders::RemovePermissionInputBuilder::profiling_group_name)
-    /// - [`action_group`](crate::operation::remove_permission::builders::RemovePermissionInputBuilder::action_group)
-    /// - [`revision_id`](crate::operation::remove_permission::builders::RemovePermissionInputBuilder::revision_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::remove_permission::RemovePermissionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::remove_permission::RemovePermissionInput {
-            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "profiling_group_name",
-                    "profiling_group_name was not specified but it is required when building RemovePermissionInput",
-                )
-            })?,
-            action_group: self.action_group.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "action_group",
-                    "action_group was not specified but it is required when building RemovePermissionInput",
-                )
-            })?,
-            revision_id: self.revision_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "revision_id",
-                    "revision_id was not specified but it is required when building RemovePermissionInput",
-                )
-            })?,
+            profiling_group_name: self.profiling_group_name,
+            action_group: self.action_group,
+            revision_id: self.revision_id,
         })
     }
 }

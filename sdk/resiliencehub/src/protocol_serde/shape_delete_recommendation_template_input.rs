@@ -6,8 +6,8 @@ pub fn ser_delete_recommendation_template_input(
     if let Some(var_1) = &input.client_token {
         object.key("clientToken").string(var_1.as_str());
     }
-    {
-        object.key("recommendationTemplateArn").string(input.recommendation_template_arn.as_str());
+    if let Some(var_2) = &input.recommendation_template_arn {
+        object.key("recommendationTemplateArn").string(var_2.as_str());
     }
     Ok(())
 }

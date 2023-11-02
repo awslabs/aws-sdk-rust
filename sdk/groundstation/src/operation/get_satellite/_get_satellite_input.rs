@@ -5,13 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetSatelliteInput {
     /// <p>UUID of a satellite.</p>
-    pub satellite_id: ::std::string::String,
+    pub satellite_id: ::std::option::Option<::std::string::String>,
 }
 impl GetSatelliteInput {
     /// <p>UUID of a satellite.</p>
-    pub fn satellite_id(&self) -> &str {
-        use std::ops::Deref;
-        self.satellite_id.deref()
+    pub fn satellite_id(&self) -> ::std::option::Option<&str> {
+        self.satellite_id.as_deref()
     }
 }
 impl GetSatelliteInput {
@@ -44,16 +43,9 @@ impl GetSatelliteInputBuilder {
         &self.satellite_id
     }
     /// Consumes the builder and constructs a [`GetSatelliteInput`](crate::operation::get_satellite::GetSatelliteInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`satellite_id`](crate::operation::get_satellite::builders::GetSatelliteInputBuilder::satellite_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_satellite::GetSatelliteInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_satellite::GetSatelliteInput {
-            satellite_id: self.satellite_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "satellite_id",
-                    "satellite_id was not specified but it is required when building GetSatelliteInput",
-                )
-            })?,
+            satellite_id: self.satellite_id,
         })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeApplicationInstance`](crate::operation::describe_application_instance::builders::DescribeApplicationInstanceFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`application_instance_id(impl Into<String>)`](crate::operation::describe_application_instance::builders::DescribeApplicationInstanceFluentBuilder::application_instance_id) / [`set_application_instance_id(impl Into<String>)`](crate::operation::describe_application_instance::builders::DescribeApplicationInstanceFluentBuilder::set_application_instance_id):<br>required: **true**<br><p>The application instance's ID.</p><br>
+    ///   - [`application_instance_id(impl Into<String>)`](crate::operation::describe_application_instance::builders::DescribeApplicationInstanceFluentBuilder::application_instance_id) / [`set_application_instance_id(Option<String>)`](crate::operation::describe_application_instance::builders::DescribeApplicationInstanceFluentBuilder::set_application_instance_id):<br>required: **true**<br><p>The application instance's ID.</p><br>
     /// - On success, responds with [`DescribeApplicationInstanceOutput`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::name): <p>The application instance's name.</p>
     ///   - [`description(Option<String>)`](crate::operation::describe_application_instance::DescribeApplicationInstanceOutput::description): <p>The application instance's description.</p>

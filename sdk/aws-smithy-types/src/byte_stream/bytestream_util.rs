@@ -64,7 +64,7 @@ impl PathBody {
 /// ```no_run
 /// # #[cfg(feature = "rt-tokio")]
 /// # {
-/// use aws_smithy_http::byte_stream::{ByteStream, Length};
+/// use aws_smithy_types::byte_stream::{ByteStream, Length};
 /// use std::path::Path;
 /// struct GetObjectInput {
 ///     body: ByteStream

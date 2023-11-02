@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the watchlist.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of this watchlist.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.</p>
@@ -14,14 +14,12 @@ pub struct CreateWatchlistInput {
 }
 impl CreateWatchlistInput {
     /// <p>The identifier of the domain that contains the watchlist.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The name of the watchlist.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A brief description of this watchlist.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -118,25 +116,12 @@ impl CreateWatchlistInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateWatchlistInput`](crate::operation::create_watchlist::CreateWatchlistInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::create_watchlist::builders::CreateWatchlistInputBuilder::domain_id)
-    /// - [`name`](crate::operation::create_watchlist::builders::CreateWatchlistInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_watchlist::CreateWatchlistInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_watchlist::CreateWatchlistInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building CreateWatchlistInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateWatchlistInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            name: self.name,
             description: self.description,
             client_token: self.client_token,
         })

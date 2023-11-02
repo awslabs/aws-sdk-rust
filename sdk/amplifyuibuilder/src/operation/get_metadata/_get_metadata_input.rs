@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMetadataInput {
     /// <p>The unique ID of the Amplify app.</p>
-    pub app_id: ::std::string::String,
+    pub app_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub environment_name: ::std::string::String,
+    pub environment_name: ::std::option::Option<::std::string::String>,
 }
 impl GetMetadataInput {
     /// <p>The unique ID of the Amplify app.</p>
-    pub fn app_id(&self) -> &str {
-        use std::ops::Deref;
-        self.app_id.deref()
+    pub fn app_id(&self) -> ::std::option::Option<&str> {
+        self.app_id.as_deref()
     }
     /// <p>The name of the backend environment that is part of the Amplify app.</p>
-    pub fn environment_name(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_name.deref()
+    pub fn environment_name(&self) -> ::std::option::Option<&str> {
+        self.environment_name.as_deref()
     }
 }
 impl GetMetadataInput {
@@ -66,23 +64,10 @@ impl GetMetadataInputBuilder {
         &self.environment_name
     }
     /// Consumes the builder and constructs a [`GetMetadataInput`](crate::operation::get_metadata::GetMetadataInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_id`](crate::operation::get_metadata::builders::GetMetadataInputBuilder::app_id)
-    /// - [`environment_name`](crate::operation::get_metadata::builders::GetMetadataInputBuilder::environment_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_metadata::GetMetadataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_metadata::GetMetadataInput {
-            app_id: self.app_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_id",
-                    "app_id was not specified but it is required when building GetMetadataInput",
-                )
-            })?,
-            environment_name: self.environment_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_name",
-                    "environment_name was not specified but it is required when building GetMetadataInput",
-                )
-            })?,
+            app_id: self.app_id,
+            environment_name: self.environment_name,
         })
     }
 }

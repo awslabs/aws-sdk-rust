@@ -3,11 +3,11 @@ pub fn ser_cancel_service_instance_deployment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_service_instance_deployment::CancelServiceInstanceDeploymentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("serviceInstanceName").string(input.service_instance_name.as_str());
+    if let Some(var_1) = &input.service_instance_name {
+        object.key("serviceInstanceName").string(var_1.as_str());
     }
-    {
-        object.key("serviceName").string(input.service_name.as_str());
+    if let Some(var_2) = &input.service_name {
+        object.key("serviceName").string(var_2.as_str());
     }
     Ok(())
 }

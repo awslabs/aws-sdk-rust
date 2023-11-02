@@ -4,27 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
-    pub template_name: ::std::string::String,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>The service template major version to delete.</p>
-    pub major_version: ::std::string::String,
+    pub major_version: ::std::option::Option<::std::string::String>,
     /// <p>The service template minor version to delete.</p>
-    pub minor_version: ::std::string::String,
+    pub minor_version: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceTemplateVersionInput {
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
+        self.template_name.as_deref()
     }
     /// <p>The service template major version to delete.</p>
-    pub fn major_version(&self) -> &str {
-        use std::ops::Deref;
-        self.major_version.deref()
+    pub fn major_version(&self) -> ::std::option::Option<&str> {
+        self.major_version.as_deref()
     }
     /// <p>The service template minor version to delete.</p>
-    pub fn minor_version(&self) -> &str {
-        use std::ops::Deref;
-        self.minor_version.deref()
+    pub fn minor_version(&self) -> ::std::option::Option<&str> {
+        self.minor_version.as_deref()
     }
 }
 impl DeleteServiceTemplateVersionInput {
@@ -89,10 +86,6 @@ impl DeleteServiceTemplateVersionInputBuilder {
         &self.minor_version
     }
     /// Consumes the builder and constructs a [`DeleteServiceTemplateVersionInput`](crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`template_name`](crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder::template_name)
-    /// - [`major_version`](crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder::major_version)
-    /// - [`minor_version`](crate::operation::delete_service_template_version::builders::DeleteServiceTemplateVersionInputBuilder::minor_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -100,24 +93,9 @@ impl DeleteServiceTemplateVersionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_service_template_version::DeleteServiceTemplateVersionInput {
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building DeleteServiceTemplateVersionInput",
-                )
-            })?,
-            major_version: self.major_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "major_version",
-                    "major_version was not specified but it is required when building DeleteServiceTemplateVersionInput",
-                )
-            })?,
-            minor_version: self.minor_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "minor_version",
-                    "minor_version was not specified but it is required when building DeleteServiceTemplateVersionInput",
-                )
-            })?,
+            template_name: self.template_name,
+            major_version: self.major_version,
+            minor_version: self.minor_version,
         })
     }
 }

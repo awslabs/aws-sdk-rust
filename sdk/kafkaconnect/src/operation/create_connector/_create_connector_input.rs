@@ -6,11 +6,11 @@ pub struct CreateConnectorInput {
     /// <p>Information about the capacity allocated to the connector. Exactly one of the two properties must be specified.</p>
     pub capacity: ::std::option::Option<crate::types::Capacity>,
     /// <p>A map of keys to values that represent the configuration for the connector.</p>
-    pub connector_configuration: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub connector_configuration: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>A summary description of the connector.</p>
     pub connector_description: ::std::option::Option<::std::string::String>,
     /// <p>The name of the connector.</p>
-    pub connector_name: ::std::string::String,
+    pub connector_name: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which Apache Kafka cluster to connect to.</p>
     pub kafka_cluster: ::std::option::Option<crate::types::KafkaCluster>,
     /// <p>Details of the client authentication used by the Apache Kafka cluster.</p>
@@ -18,13 +18,13 @@ pub struct CreateConnectorInput {
     /// <p>Details of encryption in transit to the Apache Kafka cluster.</p>
     pub kafka_cluster_encryption_in_transit: ::std::option::Option<crate::types::KafkaClusterEncryptionInTransit>,
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-    pub kafka_connect_version: ::std::string::String,
+    pub kafka_connect_version: ::std::option::Option<::std::string::String>,
     /// <p>Details about log delivery.</p>
     pub log_delivery: ::std::option::Option<crate::types::LogDelivery>,
     /// <p>Specifies which plugins to use for the connector.</p>
-    pub plugins: ::std::vec::Vec<crate::types::Plugin>,
+    pub plugins: ::std::option::Option<::std::vec::Vec<crate::types::Plugin>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
-    pub service_execution_role_arn: ::std::string::String,
+    pub service_execution_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Specifies which worker configuration to use with the connector.</p>
     pub worker_configuration: ::std::option::Option<crate::types::WorkerConfiguration>,
 }
@@ -34,17 +34,16 @@ impl CreateConnectorInput {
         self.capacity.as_ref()
     }
     /// <p>A map of keys to values that represent the configuration for the connector.</p>
-    pub fn connector_configuration(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
-        &self.connector_configuration
+    pub fn connector_configuration(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.connector_configuration.as_ref()
     }
     /// <p>A summary description of the connector.</p>
     pub fn connector_description(&self) -> ::std::option::Option<&str> {
         self.connector_description.as_deref()
     }
     /// <p>The name of the connector.</p>
-    pub fn connector_name(&self) -> &str {
-        use std::ops::Deref;
-        self.connector_name.deref()
+    pub fn connector_name(&self) -> ::std::option::Option<&str> {
+        self.connector_name.as_deref()
     }
     /// <p>Specifies which Apache Kafka cluster to connect to.</p>
     pub fn kafka_cluster(&self) -> ::std::option::Option<&crate::types::KafkaCluster> {
@@ -59,23 +58,22 @@ impl CreateConnectorInput {
         self.kafka_cluster_encryption_in_transit.as_ref()
     }
     /// <p>The version of Kafka Connect. It has to be compatible with both the Apache Kafka cluster's version and the plugins.</p>
-    pub fn kafka_connect_version(&self) -> &str {
-        use std::ops::Deref;
-        self.kafka_connect_version.deref()
+    pub fn kafka_connect_version(&self) -> ::std::option::Option<&str> {
+        self.kafka_connect_version.as_deref()
     }
     /// <p>Details about log delivery.</p>
     pub fn log_delivery(&self) -> ::std::option::Option<&crate::types::LogDelivery> {
         self.log_delivery.as_ref()
     }
     /// <p>Specifies which plugins to use for the connector.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.plugins.is_none()`.
     pub fn plugins(&self) -> &[crate::types::Plugin] {
-        use std::ops::Deref;
-        self.plugins.deref()
+        self.plugins.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role used by the connector to access the Amazon Web Services resources that it needs. The types of resources depends on the logic of the connector. For example, a connector that has Amazon S3 as a destination must have permissions that allow it to write to the S3 destination bucket.</p>
-    pub fn service_execution_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.service_execution_role_arn.deref()
+    pub fn service_execution_role_arn(&self) -> ::std::option::Option<&str> {
+        self.service_execution_role_arn.as_deref()
     }
     /// <p>Specifies which worker configuration to use with the connector.</p>
     pub fn worker_configuration(&self) -> ::std::option::Option<&crate::types::WorkerConfiguration> {
@@ -320,52 +318,21 @@ impl CreateConnectorInputBuilder {
         &self.worker_configuration
     }
     /// Consumes the builder and constructs a [`CreateConnectorInput`](crate::operation::create_connector::CreateConnectorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`connector_configuration`](crate::operation::create_connector::builders::CreateConnectorInputBuilder::connector_configuration)
-    /// - [`connector_name`](crate::operation::create_connector::builders::CreateConnectorInputBuilder::connector_name)
-    /// - [`kafka_connect_version`](crate::operation::create_connector::builders::CreateConnectorInputBuilder::kafka_connect_version)
-    /// - [`plugins`](crate::operation::create_connector::builders::CreateConnectorInputBuilder::plugins)
-    /// - [`service_execution_role_arn`](crate::operation::create_connector::builders::CreateConnectorInputBuilder::service_execution_role_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_connector::CreateConnectorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_connector::CreateConnectorInput {
             capacity: self.capacity,
-            connector_configuration: self.connector_configuration.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "connector_configuration",
-                    "connector_configuration was not specified but it is required when building CreateConnectorInput",
-                )
-            })?,
+            connector_configuration: self.connector_configuration,
             connector_description: self.connector_description,
-            connector_name: self.connector_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "connector_name",
-                    "connector_name was not specified but it is required when building CreateConnectorInput",
-                )
-            })?,
+            connector_name: self.connector_name,
             kafka_cluster: self.kafka_cluster,
             kafka_cluster_client_authentication: self.kafka_cluster_client_authentication,
             kafka_cluster_encryption_in_transit: self.kafka_cluster_encryption_in_transit,
-            kafka_connect_version: self.kafka_connect_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "kafka_connect_version",
-                    "kafka_connect_version was not specified but it is required when building CreateConnectorInput",
-                )
-            })?,
+            kafka_connect_version: self.kafka_connect_version,
             log_delivery: self.log_delivery,
-            plugins: self.plugins.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "plugins",
-                    "plugins was not specified but it is required when building CreateConnectorInput",
-                )
-            })?,
-            service_execution_role_arn: self.service_execution_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_execution_role_arn",
-                    "service_execution_role_arn was not specified but it is required when building CreateConnectorInput",
-                )
-            })?,
+            plugins: self.plugins,
+            service_execution_role_arn: self.service_execution_role_arn,
             worker_configuration: self.worker_configuration,
         })
     }

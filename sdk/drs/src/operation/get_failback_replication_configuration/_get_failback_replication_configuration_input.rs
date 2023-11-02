@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFailbackReplicationConfigurationInput {
     /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
-    pub recovery_instance_id: ::std::string::String,
+    pub recovery_instance_id: ::std::option::Option<::std::string::String>,
 }
 impl GetFailbackReplicationConfigurationInput {
     /// <p>The ID of the Recovery Instance whose failback replication configuration should be returned.</p>
-    pub fn recovery_instance_id(&self) -> &str {
-        use std::ops::Deref;
-        self.recovery_instance_id.deref()
+    pub fn recovery_instance_id(&self) -> ::std::option::Option<&str> {
+        self.recovery_instance_id.as_deref()
     }
 }
 impl GetFailbackReplicationConfigurationInput {
@@ -43,8 +42,6 @@ impl GetFailbackReplicationConfigurationInputBuilder {
         &self.recovery_instance_id
     }
     /// Consumes the builder and constructs a [`GetFailbackReplicationConfigurationInput`](crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`recovery_instance_id`](crate::operation::get_failback_replication_configuration::builders::GetFailbackReplicationConfigurationInputBuilder::recovery_instance_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -53,12 +50,7 @@ impl GetFailbackReplicationConfigurationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationInput {
-                recovery_instance_id: self.recovery_instance_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "recovery_instance_id",
-                        "recovery_instance_id was not specified but it is required when building GetFailbackReplicationConfigurationInput",
-                    )
-                })?,
+                recovery_instance_id: self.recovery_instance_id,
             },
         )
     }

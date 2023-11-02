@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetMemberInput {
     /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
-    pub account_id: ::std::string::String,
+    pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl GetMemberInput {
     /// <p>The Amazon Web Services account ID of the member account to retrieve information on.</p>
-    pub fn account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.account_id.deref()
+    pub fn account_id(&self) -> ::std::option::Option<&str> {
+        self.account_id.as_deref()
     }
 }
 impl GetMemberInput {
@@ -43,16 +42,7 @@ impl GetMemberInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`GetMemberInput`](crate::operation::get_member::GetMemberInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`account_id`](crate::operation::get_member::builders::GetMemberInputBuilder::account_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_member::GetMemberInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::get_member::GetMemberInput {
-            account_id: self.account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "account_id",
-                    "account_id was not specified but it is required when building GetMemberInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::get_member::GetMemberInput { account_id: self.account_id })
     }
 }

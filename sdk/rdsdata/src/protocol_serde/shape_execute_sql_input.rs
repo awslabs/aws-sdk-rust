@@ -3,20 +3,20 @@ pub fn ser_execute_sql_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::execute_sql::ExecuteSqlInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("awsSecretStoreArn").string(input.aws_secret_store_arn.as_str());
+    if let Some(var_1) = &input.aws_secret_store_arn {
+        object.key("awsSecretStoreArn").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.database {
-        object.key("database").string(var_1.as_str());
+    if let Some(var_2) = &input.database {
+        object.key("database").string(var_2.as_str());
     }
-    {
-        object.key("dbClusterOrInstanceArn").string(input.db_cluster_or_instance_arn.as_str());
+    if let Some(var_3) = &input.db_cluster_or_instance_arn {
+        object.key("dbClusterOrInstanceArn").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.schema {
-        object.key("schema").string(var_2.as_str());
+    if let Some(var_4) = &input.schema {
+        object.key("schema").string(var_4.as_str());
     }
-    {
-        object.key("sqlStatements").string(input.sql_statements.as_str());
+    if let Some(var_5) = &input.sql_statements {
+        object.key("sqlStatements").string(var_5.as_str());
     }
     Ok(())
 }

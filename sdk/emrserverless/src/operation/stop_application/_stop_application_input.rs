@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopApplicationInput {
     /// <p>The ID of the application to stop.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl StopApplicationInput {
     /// <p>The ID of the application to stop.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
 }
 impl StopApplicationInput {
@@ -43,18 +42,11 @@ impl StopApplicationInputBuilder {
         &self.application_id
     }
     /// Consumes the builder and constructs a [`StopApplicationInput`](crate::operation::stop_application::StopApplicationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`application_id`](crate::operation::stop_application::builders::StopApplicationInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::stop_application::StopApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::stop_application::StopApplicationInput {
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building StopApplicationInput",
-                )
-            })?,
+            application_id: self.application_id,
         })
     }
 }

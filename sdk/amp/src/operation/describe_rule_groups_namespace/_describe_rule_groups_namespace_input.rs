@@ -5,20 +5,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeRuleGroupsNamespaceInput {
     /// The ID of the workspace to describe.
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// The rule groups namespace.
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl DescribeRuleGroupsNamespaceInput {
     /// The ID of the workspace to describe.
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// The rule groups namespace.
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl DescribeRuleGroupsNamespaceInput {
@@ -67,9 +65,6 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`DescribeRuleGroupsNamespaceInput`](crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceInputBuilder::workspace_id)
-    /// - [`name`](crate::operation::describe_rule_groups_namespace::builders::DescribeRuleGroupsNamespaceInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -77,18 +72,8 @@ impl DescribeRuleGroupsNamespaceInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_rule_groups_namespace::DescribeRuleGroupsNamespaceInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building DescribeRuleGroupsNamespaceInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building DescribeRuleGroupsNamespaceInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
+            name: self.name,
         })
     }
 }

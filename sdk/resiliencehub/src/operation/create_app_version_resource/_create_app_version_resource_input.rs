@@ -4,21 +4,21 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateAppVersionResourceInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub app_arn: ::std::string::String,
+    pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Name of the resource.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>Logical identifier of the resource.</p>
     pub logical_resource_id: ::std::option::Option<crate::types::LogicalResourceId>,
     /// <p>Physical identifier of the resource.</p>
-    pub physical_resource_id: ::std::string::String,
+    pub physical_resource_id: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services region that owns the physical resource.</p>
     pub aws_region: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Web Services account that owns the physical resource.</p>
     pub aws_account_id: ::std::option::Option<::std::string::String>,
     /// <p>Type of resource.</p>
-    pub resource_type: ::std::string::String,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>List of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
-    pub app_components: ::std::vec::Vec<::std::string::String>,
+    pub app_components: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Currently, there is no supported additional information for resources.</p>
     pub additional_info: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::vec::Vec<::std::string::String>>>,
     /// <p>Used for an idempotency token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. You should not reuse the same client token for other API requests.</p>
@@ -26,9 +26,8 @@ pub struct CreateAppVersionResourceInput {
 }
 impl CreateAppVersionResourceInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+        self.app_arn.as_deref()
     }
     /// <p>Name of the resource.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
@@ -39,9 +38,8 @@ impl CreateAppVersionResourceInput {
         self.logical_resource_id.as_ref()
     }
     /// <p>Physical identifier of the resource.</p>
-    pub fn physical_resource_id(&self) -> &str {
-        use std::ops::Deref;
-        self.physical_resource_id.deref()
+    pub fn physical_resource_id(&self) -> ::std::option::Option<&str> {
+        self.physical_resource_id.as_deref()
     }
     /// <p>Amazon Web Services region that owns the physical resource.</p>
     pub fn aws_region(&self) -> ::std::option::Option<&str> {
@@ -52,14 +50,14 @@ impl CreateAppVersionResourceInput {
         self.aws_account_id.as_deref()
     }
     /// <p>Type of resource.</p>
-    pub fn resource_type(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_type.deref()
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
+        self.resource_type.as_deref()
     }
     /// <p>List of Application Components that this resource belongs to. If an Application Component is not part of the Resilience Hub application, it will be added.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.app_components.is_none()`.
     pub fn app_components(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.app_components.deref()
+        self.app_components.as_deref().unwrap_or_default()
     }
     /// <p>Currently, there is no supported additional information for resources.</p>
     pub fn additional_info(
@@ -257,11 +255,6 @@ impl CreateAppVersionResourceInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateAppVersionResourceInput`](crate::operation::create_app_version_resource::CreateAppVersionResourceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_arn`](crate::operation::create_app_version_resource::builders::CreateAppVersionResourceInputBuilder::app_arn)
-    /// - [`physical_resource_id`](crate::operation::create_app_version_resource::builders::CreateAppVersionResourceInputBuilder::physical_resource_id)
-    /// - [`resource_type`](crate::operation::create_app_version_resource::builders::CreateAppVersionResourceInputBuilder::resource_type)
-    /// - [`app_components`](crate::operation::create_app_version_resource::builders::CreateAppVersionResourceInputBuilder::app_components)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -269,34 +262,14 @@ impl CreateAppVersionResourceInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::create_app_version_resource::CreateAppVersionResourceInput {
-            app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_arn",
-                    "app_arn was not specified but it is required when building CreateAppVersionResourceInput",
-                )
-            })?,
+            app_arn: self.app_arn,
             resource_name: self.resource_name,
             logical_resource_id: self.logical_resource_id,
-            physical_resource_id: self.physical_resource_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "physical_resource_id",
-                    "physical_resource_id was not specified but it is required when building CreateAppVersionResourceInput",
-                )
-            })?,
+            physical_resource_id: self.physical_resource_id,
             aws_region: self.aws_region,
             aws_account_id: self.aws_account_id,
-            resource_type: self.resource_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_type",
-                    "resource_type was not specified but it is required when building CreateAppVersionResourceInput",
-                )
-            })?,
-            app_components: self.app_components.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_components",
-                    "app_components was not specified but it is required when building CreateAppVersionResourceInput",
-                )
-            })?,
+            resource_type: self.resource_type,
+            app_components: self.app_components,
             additional_info: self.additional_info,
             client_token: self.client_token,
         })

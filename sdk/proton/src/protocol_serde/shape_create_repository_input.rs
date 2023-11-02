@@ -3,29 +3,29 @@ pub fn ser_create_repository_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_repository::CreateRepositoryInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("provider").string(input.provider.as_str());
+    if let Some(var_1) = &input.provider {
+        object.key("provider").string(var_1.as_str());
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_2) = &input.name {
+        object.key("name").string(var_2.as_str());
     }
-    {
-        object.key("connectionArn").string(input.connection_arn.as_str());
+    if let Some(var_3) = &input.connection_arn {
+        object.key("connectionArn").string(var_3.as_str());
     }
-    if let Some(var_1) = &input.encryption_key {
-        object.key("encryptionKey").string(var_1.as_str());
+    if let Some(var_4) = &input.encryption_key {
+        object.key("encryptionKey").string(var_4.as_str());
     }
-    if let Some(var_2) = &input.tags {
-        let mut array_3 = object.key("tags").start_array();
-        for item_4 in var_2 {
+    if let Some(var_5) = &input.tags {
+        let mut array_6 = object.key("tags").start_array();
+        for item_7 in var_5 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_8 = array_6.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_8, item_7)?;
+                object_8.finish();
             }
         }
-        array_3.finish();
+        array_6.finish();
     }
     Ok(())
 }

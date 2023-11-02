@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetChannelScheduleInput {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
-    pub channel_name: ::std::string::String,
+    pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The duration in minutes of the channel schedule.</p>
     pub duration_minutes: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>GetChannelScheduleRequest</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
@@ -17,16 +17,15 @@ pub struct GetChannelScheduleInput {
 }
 impl GetChannelScheduleInput {
     /// <p>The name of the channel associated with this Channel Schedule.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
     /// <p>The duration in minutes of the channel schedule.</p>
     pub fn duration_minutes(&self) -> ::std::option::Option<&str> {
         self.duration_minutes.as_deref()
     }
     /// <p>The maximum number of channel schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> channel schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> channel schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
@@ -121,20 +120,13 @@ impl GetChannelScheduleInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetChannelScheduleInput`](crate::operation::get_channel_schedule::GetChannelScheduleInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_name`](crate::operation::get_channel_schedule::builders::GetChannelScheduleInputBuilder::channel_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_channel_schedule::GetChannelScheduleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_channel_schedule::GetChannelScheduleInput {
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building GetChannelScheduleInput",
-                )
-            })?,
+            channel_name: self.channel_name,
             duration_minutes: self.duration_minutes,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

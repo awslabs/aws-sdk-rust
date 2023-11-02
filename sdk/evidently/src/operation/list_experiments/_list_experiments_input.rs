@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExperimentsInput {
     /// <p>The name or ARN of the project to return the experiment list from.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to include in the response.</p>
     pub max_results: ::std::option::Option<i32>,
     /// <p>The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</p>
@@ -14,9 +14,8 @@ pub struct ListExperimentsInput {
 }
 impl ListExperimentsInput {
     /// <p>The name or ARN of the project to return the experiment list from.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The maximum number of results to include in the response.</p>
     pub fn max_results(&self) -> ::std::option::Option<i32> {
@@ -106,18 +105,11 @@ impl ListExperimentsInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`ListExperimentsInput`](crate::operation::list_experiments::ListExperimentsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::list_experiments::builders::ListExperimentsInputBuilder::project)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_experiments::ListExperimentsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_experiments::ListExperimentsInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building ListExperimentsInput",
-                )
-            })?,
+            project: self.project,
             max_results: self.max_results,
             next_token: self.next_token,
             status: self.status,

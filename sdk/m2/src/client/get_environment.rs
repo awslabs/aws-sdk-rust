@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetEnvironment`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::environment_id) / [`set_environment_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_environment_id):<br>required: **true**<br><p>The unique identifier of the runtime environment.</p><br>
+    ///   - [`environment_id(impl Into<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::environment_id) / [`set_environment_id(Option<String>)`](crate::operation::get_environment::builders::GetEnvironmentFluentBuilder::set_environment_id):<br>required: **true**<br><p>The unique identifier of the runtime environment.</p><br>
     /// - On success, responds with [`GetEnvironmentOutput`](crate::operation::get_environment::GetEnvironmentOutput) with field(s):
     ///   - [`name(String)`](crate::operation::get_environment::GetEnvironmentOutput::name): <p>The name of the runtime environment. Must be unique within the account.</p>
     ///   - [`description(Option<String>)`](crate::operation::get_environment::GetEnvironmentOutput::description): <p>The description of the runtime environment.</p>

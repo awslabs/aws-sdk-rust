@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociatePricingRulesInput {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
-    pub pricing_rule_arns: ::std::vec::Vec<::std::string::String>,
+    pub pricing_rule_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DisassociatePricingRulesInput {
     /// <p> The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from. </p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p> A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pricing_rule_arns.is_none()`.
     pub fn pricing_rule_arns(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.pricing_rule_arns.deref()
+        self.pricing_rule_arns.as_deref().unwrap_or_default()
     }
 }
 impl DisassociatePricingRulesInput {
@@ -71,9 +71,6 @@ impl DisassociatePricingRulesInputBuilder {
         &self.pricing_rule_arns
     }
     /// Consumes the builder and constructs a [`DisassociatePricingRulesInput`](crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder::arn)
-    /// - [`pricing_rule_arns`](crate::operation::disassociate_pricing_rules::builders::DisassociatePricingRulesInputBuilder::pricing_rule_arns)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -81,18 +78,8 @@ impl DisassociatePricingRulesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::disassociate_pricing_rules::DisassociatePricingRulesInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DisassociatePricingRulesInput",
-                )
-            })?,
-            pricing_rule_arns: self.pricing_rule_arns.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "pricing_rule_arns",
-                    "pricing_rule_arns was not specified but it is required when building DisassociatePricingRulesInput",
-                )
-            })?,
+            arn: self.arn,
+            pricing_rule_arns: self.pricing_rule_arns,
         })
     }
 }

@@ -4,7 +4,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`action(Action)`](crate::operation::update_event_action::builders::UpdateEventActionFluentBuilder::action) / [`set_action(Option<Action>)`](crate::operation::update_event_action::builders::UpdateEventActionFluentBuilder::set_action):<br>required: **false**<br><p>What occurs after a certain event.</p><br>
-    ///   - [`event_action_id(impl Into<String>)`](crate::operation::update_event_action::builders::UpdateEventActionFluentBuilder::event_action_id) / [`set_event_action_id(impl Into<String>)`](crate::operation::update_event_action::builders::UpdateEventActionFluentBuilder::set_event_action_id):<br>required: **true**<br><p>The unique identifier for the event action.</p><br>
+    ///   - [`event_action_id(impl Into<String>)`](crate::operation::update_event_action::builders::UpdateEventActionFluentBuilder::event_action_id) / [`set_event_action_id(Option<String>)`](crate::operation::update_event_action::builders::UpdateEventActionFluentBuilder::set_event_action_id):<br>required: **true**<br><p>The unique identifier for the event action.</p><br>
     /// - On success, responds with [`UpdateEventActionOutput`](crate::operation::update_event_action::UpdateEventActionOutput) with field(s):
     ///   - [`action(Option<Action>)`](crate::operation::update_event_action::UpdateEventActionOutput::action): <p>What occurs after a certain event.</p>
     ///   - [`arn(Option<String>)`](crate::operation::update_event_action::UpdateEventActionOutput::arn): <p>The ARN for the event action.</p>

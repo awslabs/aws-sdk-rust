@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetVpcEndpointInput {
     /// <p>A list of VPC endpoint identifiers.</p>
-    pub ids: ::std::vec::Vec<::std::string::String>,
+    pub ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl BatchGetVpcEndpointInput {
     /// <p>A list of VPC endpoint identifiers.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ids.is_none()`.
     pub fn ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.ids.deref()
+        self.ids.as_deref().unwrap_or_default()
     }
 }
 impl BatchGetVpcEndpointInput {
@@ -48,19 +49,10 @@ impl BatchGetVpcEndpointInputBuilder {
         &self.ids
     }
     /// Consumes the builder and constructs a [`BatchGetVpcEndpointInput`](crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`ids`](crate::operation::batch_get_vpc_endpoint::builders::BatchGetVpcEndpointInputBuilder::ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput, ::aws_smithy_http::operation::error::BuildError>
     {
-        ::std::result::Result::Ok(crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput {
-            ids: self.ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "ids",
-                    "ids was not specified but it is required when building BatchGetVpcEndpointInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointInput { ids: self.ids })
     }
 }

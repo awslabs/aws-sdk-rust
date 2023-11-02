@@ -3,8 +3,8 @@ pub fn ser_register_slack_workspace_for_organization_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::register_slack_workspace_for_organization::RegisterSlackWorkspaceForOrganizationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("teamId").string(input.team_id.as_str());
+    if let Some(var_1) = &input.team_id {
+        object.key("teamId").string(var_1.as_str());
     }
     Ok(())
 }

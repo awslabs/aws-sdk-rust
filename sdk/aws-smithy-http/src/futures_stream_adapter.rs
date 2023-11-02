@@ -17,6 +17,7 @@ use std::task::{Context, Poll};
 /// new-type to enable the trait when it is required.
 ///
 /// This is meant to be used by codegen code, and users should not need to use it directly.
+#[derive(Debug)]
 pub struct FuturesStreamCompatByteStream(ByteStream);
 
 impl FuturesStreamCompatByteStream {

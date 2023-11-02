@@ -4,15 +4,16 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartFailbackLaunchInput {
     /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
-    pub recovery_instance_ids: ::std::vec::Vec<::std::string::String>,
+    pub recovery_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The tags to be associated with the failback launch Job.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl StartFailbackLaunchInput {
     /// <p>The IDs of the Recovery Instance whose failback launch we want to request.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recovery_instance_ids.is_none()`.
     pub fn recovery_instance_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.recovery_instance_ids.deref()
+        self.recovery_instance_ids.as_deref().unwrap_or_default()
     }
     /// <p>The tags to be associated with the failback launch Job.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -83,19 +84,12 @@ impl StartFailbackLaunchInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`StartFailbackLaunchInput`](crate::operation::start_failback_launch::StartFailbackLaunchInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`recovery_instance_ids`](crate::operation::start_failback_launch::builders::StartFailbackLaunchInputBuilder::recovery_instance_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::start_failback_launch::StartFailbackLaunchInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::start_failback_launch::StartFailbackLaunchInput {
-            recovery_instance_ids: self.recovery_instance_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "recovery_instance_ids",
-                    "recovery_instance_ids was not specified but it is required when building StartFailbackLaunchInput",
-                )
-            })?,
+            recovery_instance_ids: self.recovery_instance_ids,
             tags: self.tags,
         })
     }

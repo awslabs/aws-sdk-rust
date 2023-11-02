@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub collaboration_identifier: ::std::string::String,
+    pub collaboration_identifier: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCollaborationInput {
     /// <p>The identifier for the collaboration.</p>
-    pub fn collaboration_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.collaboration_identifier.deref()
+    pub fn collaboration_identifier(&self) -> ::std::option::Option<&str> {
+        self.collaboration_identifier.as_deref()
     }
 }
 impl DeleteCollaborationInput {
@@ -43,19 +42,12 @@ impl DeleteCollaborationInputBuilder {
         &self.collaboration_identifier
     }
     /// Consumes the builder and constructs a [`DeleteCollaborationInput`](crate::operation::delete_collaboration::DeleteCollaborationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`collaboration_identifier`](crate::operation::delete_collaboration::builders::DeleteCollaborationInputBuilder::collaboration_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_collaboration::DeleteCollaborationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_collaboration::DeleteCollaborationInput {
-            collaboration_identifier: self.collaboration_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "collaboration_identifier",
-                    "collaboration_identifier was not specified but it is required when building DeleteCollaborationInput",
-                )
-            })?,
+            collaboration_identifier: self.collaboration_identifier,
         })
     }
 }

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub hypervisor_arn: ::std::string::String,
+    pub hypervisor_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetHypervisorInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.hypervisor_arn.deref()
+    pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
+        self.hypervisor_arn.as_deref()
     }
 }
 impl GetHypervisorInput {
@@ -43,18 +42,11 @@ impl GetHypervisorInputBuilder {
         &self.hypervisor_arn
     }
     /// Consumes the builder and constructs a [`GetHypervisorInput`](crate::operation::get_hypervisor::GetHypervisorInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`hypervisor_arn`](crate::operation::get_hypervisor::builders::GetHypervisorInputBuilder::hypervisor_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_hypervisor::GetHypervisorInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_hypervisor::GetHypervisorInput {
-            hypervisor_arn: self.hypervisor_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "hypervisor_arn",
-                    "hypervisor_arn was not specified but it is required when building GetHypervisorInput",
-                )
-            })?,
+            hypervisor_arn: self.hypervisor_arn,
         })
     }
 }

@@ -6,8 +6,8 @@ pub fn ser_update_revision_input(
     if let Some(var_1) = &input.comment {
         object.key("Comment").string(var_1.as_str());
     }
-    if input.finalized {
-        object.key("Finalized").boolean(input.finalized);
+    if let Some(var_2) = &input.finalized {
+        object.key("Finalized").boolean(*var_2);
     }
     Ok(())
 }

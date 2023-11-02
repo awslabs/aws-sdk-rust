@@ -4,29 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateOriginationIdentityInput {
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
-    pub pool_id: ::std::string::String,
+    pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub origination_identity: ::std::string::String,
+    pub origination_identity: ::std::option::Option<::std::string::String>,
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    pub iso_country_code: ::std::string::String,
+    pub iso_country_code: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl AssociateOriginationIdentityInput {
     /// <p>The pool to update with the new Identity. This value can be either the PoolId or PoolArn, and you can find these values using <code>DescribePools</code>.</p>
-    pub fn pool_id(&self) -> &str {
-        use std::ops::Deref;
-        self.pool_id.deref()
+    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+        self.pool_id.as_deref()
     }
     /// <p>The origination identity to use, such as PhoneNumberId, PhoneNumberArn, SenderId, or SenderIdArn. You can use <code>DescribePhoneNumbers</code> to find the values for PhoneNumberId and PhoneNumberArn, while <code>DescribeSenderIds</code> can be used to get the values for SenderId and SenderIdArn.</p>
-    pub fn origination_identity(&self) -> &str {
-        use std::ops::Deref;
-        self.origination_identity.deref()
+    pub fn origination_identity(&self) -> ::std::option::Option<&str> {
+        self.origination_identity.as_deref()
     }
     /// <p>The new two-character code, in ISO 3166-1 alpha-2 format, for the country or region of the origination identity.</p>
-    pub fn iso_country_code(&self) -> &str {
-        use std::ops::Deref;
-        self.iso_country_code.deref()
+    pub fn iso_country_code(&self) -> ::std::option::Option<&str> {
+        self.iso_country_code.as_deref()
     }
     /// <p>Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you don't specify a client token, a randomly generated token is used for the request to ensure idempotency.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -110,10 +107,6 @@ impl AssociateOriginationIdentityInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`AssociateOriginationIdentityInput`](crate::operation::associate_origination_identity::AssociateOriginationIdentityInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`pool_id`](crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityInputBuilder::pool_id)
-    /// - [`origination_identity`](crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityInputBuilder::origination_identity)
-    /// - [`iso_country_code`](crate::operation::associate_origination_identity::builders::AssociateOriginationIdentityInputBuilder::iso_country_code)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -121,24 +114,9 @@ impl AssociateOriginationIdentityInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_origination_identity::AssociateOriginationIdentityInput {
-            pool_id: self.pool_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "pool_id",
-                    "pool_id was not specified but it is required when building AssociateOriginationIdentityInput",
-                )
-            })?,
-            origination_identity: self.origination_identity.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "origination_identity",
-                    "origination_identity was not specified but it is required when building AssociateOriginationIdentityInput",
-                )
-            })?,
-            iso_country_code: self.iso_country_code.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "iso_country_code",
-                    "iso_country_code was not specified but it is required when building AssociateOriginationIdentityInput",
-                )
-            })?,
+            pool_id: self.pool_id,
+            origination_identity: self.origination_identity,
+            iso_country_code: self.iso_country_code,
             client_token: self.client_token,
         })
     }

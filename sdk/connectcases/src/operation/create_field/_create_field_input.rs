@@ -4,28 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the field.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>Defines the data type, some system constraints, and default display of the field.</p>
-    pub r#type: crate::types::FieldType,
+    pub r#type: ::std::option::Option<crate::types::FieldType>,
     /// <p>The description of the field.</p>
     pub description: ::std::option::Option<::std::string::String>,
 }
 impl CreateFieldInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>The name of the field.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>Defines the data type, some system constraints, and default display of the field.</p>
-    pub fn r#type(&self) -> &crate::types::FieldType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::FieldType> {
+        self.r#type.as_ref()
     }
     /// <p>The description of the field.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -109,30 +107,11 @@ impl CreateFieldInputBuilder {
         &self.description
     }
     /// Consumes the builder and constructs a [`CreateFieldInput`](crate::operation::create_field::CreateFieldInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::create_field::builders::CreateFieldInputBuilder::domain_id)
-    /// - [`name`](crate::operation::create_field::builders::CreateFieldInputBuilder::name)
-    /// - [`r#type`](crate::operation::create_field::builders::CreateFieldInputBuilder::r#type)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_field::CreateFieldInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_field::CreateFieldInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building CreateFieldInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateFieldInput",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CreateFieldInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            name: self.name,
+            r#type: self.r#type,
             description: self.description,
         })
     }

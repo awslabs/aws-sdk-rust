@@ -6,23 +6,23 @@ pub fn ser_search_place_index_for_position_input(
     if let Some(var_1) = &input.language {
         object.key("Language").string(var_1.as_str());
     }
-    if input.max_results != 0 {
+    if let Some(var_2) = &input.max_results {
         object.key("MaxResults").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.max_results).into()),
+            ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    {
-        let mut array_2 = object.key("Position").start_array();
-        for item_3 in &input.position {
+    if let Some(var_3) = &input.position {
+        let mut array_4 = object.key("Position").start_array();
+        for item_5 in var_3 {
             {
-                array_2.value().number(
+                array_4.value().number(
                     #[allow(clippy::useless_conversion)]
-                    ::aws_smithy_types::Number::Float((*item_3).into()),
+                    ::aws_smithy_types::Number::Float((*item_5).into()),
                 );
             }
         }
-        array_2.finish();
+        array_4.finish();
     }
     Ok(())
 }

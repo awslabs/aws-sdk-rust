@@ -20,27 +20,27 @@ pub fn ser_create_ephemeris_input(
     if let Some(var_5) = &input.kms_key_arn {
         object.key("kmsKeyArn").string(var_5.as_str());
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.priority {
+    if let Some(var_7) = &input.priority {
         object.key("priority").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((*var_6).into()),
+            ::aws_smithy_types::Number::NegInt((*var_7).into()),
         );
     }
-    {
-        object.key("satelliteId").string(input.satellite_id.as_str());
+    if let Some(var_8) = &input.satellite_id {
+        object.key("satelliteId").string(var_8.as_str());
     }
-    if let Some(var_7) = &input.tags {
+    if let Some(var_9) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_8 = object.key("tags").start_object();
-        for (key_9, value_10) in var_7 {
+        let mut object_10 = object.key("tags").start_object();
+        for (key_11, value_12) in var_9 {
             {
-                object_8.key(key_9.as_str()).string(value_10.as_str());
+                object_10.key(key_11.as_str()).string(value_12.as_str());
             }
         }
-        object_8.finish();
+        object_10.finish();
     }
     Ok(())
 }

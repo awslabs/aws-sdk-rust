@@ -6,7 +6,7 @@ pub struct ListDatabasesInput {
     /// <p>The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials. </p>
     pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub database: ::std::string::String,
+    pub database: ::std::option::Option<::std::string::String>,
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub secret_arn: ::std::option::Option<::std::string::String>,
     /// <p>The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials. </p>
@@ -14,7 +14,7 @@ pub struct ListDatabasesInput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of databases to return in the response. If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
     pub workgroup_name: ::std::option::Option<::std::string::String>,
 }
@@ -24,9 +24,8 @@ impl ListDatabasesInput {
         self.cluster_identifier.as_deref()
     }
     /// <p>The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials. </p>
-    pub fn database(&self) -> &str {
-        use std::ops::Deref;
-        self.database.deref()
+    pub fn database(&self) -> ::std::option::Option<&str> {
+        self.database.as_deref()
     }
     /// <p>The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager. </p>
     pub fn secret_arn(&self) -> ::std::option::Option<&str> {
@@ -41,7 +40,7 @@ impl ListDatabasesInput {
         self.next_token.as_deref()
     }
     /// <p>The maximum number of databases to return in the response. If more databases exist than fit in one response, then <code>NextToken</code> is returned to page through the results. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.</p>
@@ -169,23 +168,16 @@ impl ListDatabasesInputBuilder {
         &self.workgroup_name
     }
     /// Consumes the builder and constructs a [`ListDatabasesInput`](crate::operation::list_databases::ListDatabasesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`database`](crate::operation::list_databases::builders::ListDatabasesInputBuilder::database)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_databases::ListDatabasesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_databases::ListDatabasesInput {
             cluster_identifier: self.cluster_identifier,
-            database: self.database.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "database",
-                    "database was not specified but it is required when building ListDatabasesInput",
-                )
-            })?,
+            database: self.database,
             secret_arn: self.secret_arn,
             db_user: self.db_user,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             workgroup_name: self.workgroup_name,
         })
     }

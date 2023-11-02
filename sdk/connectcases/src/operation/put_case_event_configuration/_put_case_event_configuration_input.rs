@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutCaseEventConfigurationInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     pub event_bridge: ::std::option::Option<crate::types::EventBridgeConfiguration>,
 }
 impl PutCaseEventConfigurationInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>Configuration to enable EventBridge case event delivery and determine what data is delivered.</p>
     pub fn event_bridge(&self) -> ::std::option::Option<&crate::types::EventBridgeConfiguration> {
@@ -65,8 +64,6 @@ impl PutCaseEventConfigurationInputBuilder {
         &self.event_bridge
     }
     /// Consumes the builder and constructs a [`PutCaseEventConfigurationInput`](crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::put_case_event_configuration::builders::PutCaseEventConfigurationInputBuilder::domain_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -74,12 +71,7 @@ impl PutCaseEventConfigurationInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_case_event_configuration::PutCaseEventConfigurationInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building PutCaseEventConfigurationInput",
-                )
-            })?,
+            domain_id: self.domain_id,
             event_bridge: self.event_bridge,
         })
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCampaign`](crate::operation::get_campaign::builders::GetCampaignFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`name(impl Into<String>)`](crate::operation::get_campaign::builders::GetCampaignFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::get_campaign::builders::GetCampaignFluentBuilder::set_name):<br>required: **true**<br><p> The name of the campaign to retrieve information about. </p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_campaign::builders::GetCampaignFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_campaign::builders::GetCampaignFluentBuilder::set_name):<br>required: **true**<br><p> The name of the campaign to retrieve information about. </p><br>
     /// - On success, responds with [`GetCampaignOutput`](crate::operation::get_campaign::GetCampaignOutput) with field(s):
     ///   - [`name(Option<String>)`](crate::operation::get_campaign::GetCampaignOutput::name): <p>The name of the campaign.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_campaign::GetCampaignOutput::arn): <p> The Amazon Resource Name (ARN) of the campaign. </p>

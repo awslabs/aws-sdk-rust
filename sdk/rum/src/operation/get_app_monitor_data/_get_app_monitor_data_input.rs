@@ -4,21 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAppMonitorDataInput {
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A structure that defines the time range that you want to retrieve results from.</p>
     pub time_range: ::std::option::Option<crate::types::TimeRange>,
     /// <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::QueryFilter>>,
     /// <p>The maximum number of results to return in one operation. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetAppMonitorDataInput {
     /// <p>The name of the app monitor that collected the data that you want to retrieve.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A structure that defines the time range that you want to retrieve results from.</p>
     pub fn time_range(&self) -> ::std::option::Option<&crate::types::TimeRange> {
@@ -31,7 +30,7 @@ impl GetAppMonitorDataInput {
         self.filters.as_deref().unwrap_or_default()
     }
     /// <p>The maximum number of results to return in one operation. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Use the token returned by the previous operation to request the next page of results.</p>
@@ -136,21 +135,14 @@ impl GetAppMonitorDataInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetAppMonitorDataInput`](crate::operation::get_app_monitor_data::GetAppMonitorDataInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::get_app_monitor_data::builders::GetAppMonitorDataInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_app_monitor_data::GetAppMonitorDataInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_app_monitor_data::GetAppMonitorDataInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building GetAppMonitorDataInput",
-                )
-            })?,
+            name: self.name,
             time_range: self.time_range,
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

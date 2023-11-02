@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteSegmentInput {
     /// <p>Specifies the segment to delete.</p>
-    pub segment: ::std::string::String,
+    pub segment: ::std::option::Option<::std::string::String>,
 }
 impl DeleteSegmentInput {
     /// <p>Specifies the segment to delete.</p>
-    pub fn segment(&self) -> &str {
-        use std::ops::Deref;
-        self.segment.deref()
+    pub fn segment(&self) -> ::std::option::Option<&str> {
+        self.segment.as_deref()
     }
 }
 impl DeleteSegmentInput {
@@ -43,18 +42,9 @@ impl DeleteSegmentInputBuilder {
         &self.segment
     }
     /// Consumes the builder and constructs a [`DeleteSegmentInput`](crate::operation::delete_segment::DeleteSegmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`segment`](crate::operation::delete_segment::builders::DeleteSegmentInputBuilder::segment)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_segment::DeleteSegmentInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_segment::DeleteSegmentInput {
-            segment: self.segment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "segment",
-                    "segment was not specified but it is required when building DeleteSegmentInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_segment::DeleteSegmentInput { segment: self.segment })
     }
 }

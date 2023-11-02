@@ -4,27 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutHypervisorPropertyMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub hypervisor_arn: ::std::string::String,
+    pub hypervisor_arn: ::std::option::Option<::std::string::String>,
     /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
-    pub vmware_to_aws_tag_mappings: ::std::vec::Vec<crate::types::VmwareToAwsTagMapping>,
+    pub vmware_to_aws_tag_mappings: ::std::option::Option<::std::vec::Vec<crate::types::VmwareToAwsTagMapping>>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
-    pub iam_role_arn: ::std::string::String,
+    pub iam_role_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutHypervisorPropertyMappingsInput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
-    pub fn hypervisor_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.hypervisor_arn.deref()
+    pub fn hypervisor_arn(&self) -> ::std::option::Option<&str> {
+        self.hypervisor_arn.as_deref()
     }
     /// <p>This action requests the mappings of on-premises VMware tags to the Amazon Web Services tags.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vmware_to_aws_tag_mappings.is_none()`.
     pub fn vmware_to_aws_tag_mappings(&self) -> &[crate::types::VmwareToAwsTagMapping] {
-        use std::ops::Deref;
-        self.vmware_to_aws_tag_mappings.deref()
+        self.vmware_to_aws_tag_mappings.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
-    pub fn iam_role_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.iam_role_arn.deref()
+    pub fn iam_role_arn(&self) -> ::std::option::Option<&str> {
+        self.iam_role_arn.as_deref()
     }
 }
 impl PutHypervisorPropertyMappingsInput {
@@ -94,10 +93,6 @@ impl PutHypervisorPropertyMappingsInputBuilder {
         &self.iam_role_arn
     }
     /// Consumes the builder and constructs a [`PutHypervisorPropertyMappingsInput`](crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`hypervisor_arn`](crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder::hypervisor_arn)
-    /// - [`vmware_to_aws_tag_mappings`](crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder::vmware_to_aws_tag_mappings)
-    /// - [`iam_role_arn`](crate::operation::put_hypervisor_property_mappings::builders::PutHypervisorPropertyMappingsInputBuilder::iam_role_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -105,24 +100,9 @@ impl PutHypervisorPropertyMappingsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::put_hypervisor_property_mappings::PutHypervisorPropertyMappingsInput {
-            hypervisor_arn: self.hypervisor_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "hypervisor_arn",
-                    "hypervisor_arn was not specified but it is required when building PutHypervisorPropertyMappingsInput",
-                )
-            })?,
-            vmware_to_aws_tag_mappings: self.vmware_to_aws_tag_mappings.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "vmware_to_aws_tag_mappings",
-                    "vmware_to_aws_tag_mappings was not specified but it is required when building PutHypervisorPropertyMappingsInput",
-                )
-            })?,
-            iam_role_arn: self.iam_role_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "iam_role_arn",
-                    "iam_role_arn was not specified but it is required when building PutHypervisorPropertyMappingsInput",
-                )
-            })?,
+            hypervisor_arn: self.hypervisor_arn,
+            vmware_to_aws_tag_mappings: self.vmware_to_aws_tag_mappings,
+            iam_role_arn: self.iam_role_arn,
         })
     }
 }

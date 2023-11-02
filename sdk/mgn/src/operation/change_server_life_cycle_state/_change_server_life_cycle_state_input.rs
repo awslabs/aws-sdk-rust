@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeServerLifeCycleStateInput {
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    pub source_server_id: ::std::string::String,
+    pub source_server_id: ::std::option::Option<::std::string::String>,
     /// <p>The request to change the source server migration lifecycle state.</p>
     pub life_cycle: ::std::option::Option<crate::types::ChangeServerLifeCycleStateSourceServerLifecycle>,
     /// <p>The request to change the source server migration account ID.</p>
@@ -12,9 +12,8 @@ pub struct ChangeServerLifeCycleStateInput {
 }
 impl ChangeServerLifeCycleStateInput {
     /// <p>The request to change the source server migration lifecycle state by source server ID.</p>
-    pub fn source_server_id(&self) -> &str {
-        use std::ops::Deref;
-        self.source_server_id.deref()
+    pub fn source_server_id(&self) -> ::std::option::Option<&str> {
+        self.source_server_id.as_deref()
     }
     /// <p>The request to change the source server migration lifecycle state.</p>
     pub fn life_cycle(&self) -> ::std::option::Option<&crate::types::ChangeServerLifeCycleStateSourceServerLifecycle> {
@@ -86,8 +85,6 @@ impl ChangeServerLifeCycleStateInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`ChangeServerLifeCycleStateInput`](crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_id`](crate::operation::change_server_life_cycle_state::builders::ChangeServerLifeCycleStateInputBuilder::source_server_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -95,12 +92,7 @@ impl ChangeServerLifeCycleStateInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateInput {
-            source_server_id: self.source_server_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_id",
-                    "source_server_id was not specified but it is required when building ChangeServerLifeCycleStateInput",
-                )
-            })?,
+            source_server_id: self.source_server_id,
             life_cycle: self.life_cycle,
             account_id: self.account_id,
         })

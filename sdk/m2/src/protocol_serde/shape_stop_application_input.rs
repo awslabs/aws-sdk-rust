@@ -3,8 +3,8 @@ pub fn ser_stop_application_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_application::StopApplicationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if input.force_stop {
-        object.key("forceStop").boolean(input.force_stop);
+    if let Some(var_1) = &input.force_stop {
+        object.key("forceStop").boolean(*var_1);
     }
     Ok(())
 }

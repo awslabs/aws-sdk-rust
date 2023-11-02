@@ -4,26 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct IsMemberInGroupsInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub identity_store_id: ::std::string::String,
+    pub identity_store_id: ::std::option::Option<::std::string::String>,
     /// <p>An object containing the identifier of a group member.</p>
     pub member_id: ::std::option::Option<crate::types::MemberId>,
     /// <p>A list of identifiers for groups in the identity store.</p>
-    pub group_ids: ::std::vec::Vec<::std::string::String>,
+    pub group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl IsMemberInGroupsInput {
     /// <p>The globally unique identifier for the identity store.</p>
-    pub fn identity_store_id(&self) -> &str {
-        use std::ops::Deref;
-        self.identity_store_id.deref()
+    pub fn identity_store_id(&self) -> ::std::option::Option<&str> {
+        self.identity_store_id.as_deref()
     }
     /// <p>An object containing the identifier of a group member.</p>
     pub fn member_id(&self) -> ::std::option::Option<&crate::types::MemberId> {
         self.member_id.as_ref()
     }
     /// <p>A list of identifiers for groups in the identity store.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.group_ids.is_none()`.
     pub fn group_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.group_ids.deref()
+        self.group_ids.as_deref().unwrap_or_default()
     }
 }
 impl IsMemberInGroupsInput {
@@ -93,26 +93,13 @@ impl IsMemberInGroupsInputBuilder {
         &self.group_ids
     }
     /// Consumes the builder and constructs a [`IsMemberInGroupsInput`](crate::operation::is_member_in_groups::IsMemberInGroupsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`identity_store_id`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder::identity_store_id)
-    /// - [`group_ids`](crate::operation::is_member_in_groups::builders::IsMemberInGroupsInputBuilder::group_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::is_member_in_groups::IsMemberInGroupsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::is_member_in_groups::IsMemberInGroupsInput {
-            identity_store_id: self.identity_store_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "identity_store_id",
-                    "identity_store_id was not specified but it is required when building IsMemberInGroupsInput",
-                )
-            })?,
+            identity_store_id: self.identity_store_id,
             member_id: self.member_id,
-            group_ids: self.group_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "group_ids",
-                    "group_ids was not specified but it is required when building IsMemberInGroupsInput",
-                )
-            })?,
+            group_ids: self.group_ids,
         })
     }
 }

@@ -3,8 +3,8 @@ pub fn ser_describe_resiliency_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("policyArn").string(input.policy_arn.as_str());
+    if let Some(var_1) = &input.policy_arn {
+        object.key("policyArn").string(var_1.as_str());
     }
     Ok(())
 }

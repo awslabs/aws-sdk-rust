@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`BatchCreateVehicle`](crate::operation::batch_create_vehicle::builders::BatchCreateVehicleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`vehicles(CreateVehicleRequestItem)`](crate::operation::batch_create_vehicle::builders::BatchCreateVehicleFluentBuilder::vehicles) / [`set_vehicles(Vec<CreateVehicleRequestItem>)`](crate::operation::batch_create_vehicle::builders::BatchCreateVehicleFluentBuilder::set_vehicles):<br>required: **true**<br><p> A list of information about each vehicle to create. For more information, see the API data type.</p><br>
+    ///   - [`vehicles(CreateVehicleRequestItem)`](crate::operation::batch_create_vehicle::builders::BatchCreateVehicleFluentBuilder::vehicles) / [`set_vehicles(Option<Vec<CreateVehicleRequestItem>>)`](crate::operation::batch_create_vehicle::builders::BatchCreateVehicleFluentBuilder::set_vehicles):<br>required: **true**<br><p> A list of information about each vehicle to create. For more information, see the API data type.</p><br>
     /// - On success, responds with [`BatchCreateVehicleOutput`](crate::operation::batch_create_vehicle::BatchCreateVehicleOutput) with field(s):
     ///   - [`vehicles(Option<Vec<CreateVehicleResponseItem>>)`](crate::operation::batch_create_vehicle::BatchCreateVehicleOutput::vehicles): <p> A list of information about a batch of created vehicles. For more information, see the API data type.</p>
     ///   - [`errors(Option<Vec<CreateVehicleError>>)`](crate::operation::batch_create_vehicle::BatchCreateVehicleOutput::errors): <p>A list of information about creation errors, or an empty list if there aren't any errors. </p>

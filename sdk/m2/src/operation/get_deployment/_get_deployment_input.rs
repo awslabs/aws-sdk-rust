@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDeploymentInput {
     /// <p>The unique identifier for the deployment.</p>
-    pub deployment_id: ::std::string::String,
+    pub deployment_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the application.</p>
-    pub application_id: ::std::string::String,
+    pub application_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDeploymentInput {
     /// <p>The unique identifier for the deployment.</p>
-    pub fn deployment_id(&self) -> &str {
-        use std::ops::Deref;
-        self.deployment_id.deref()
+    pub fn deployment_id(&self) -> ::std::option::Option<&str> {
+        self.deployment_id.as_deref()
     }
     /// <p>The unique identifier of the application.</p>
-    pub fn application_id(&self) -> &str {
-        use std::ops::Deref;
-        self.application_id.deref()
+    pub fn application_id(&self) -> ::std::option::Option<&str> {
+        self.application_id.as_deref()
     }
 }
 impl GetDeploymentInput {
@@ -66,25 +64,12 @@ impl GetDeploymentInputBuilder {
         &self.application_id
     }
     /// Consumes the builder and constructs a [`GetDeploymentInput`](crate::operation::get_deployment::GetDeploymentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`deployment_id`](crate::operation::get_deployment::builders::GetDeploymentInputBuilder::deployment_id)
-    /// - [`application_id`](crate::operation::get_deployment::builders::GetDeploymentInputBuilder::application_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_deployment::GetDeploymentInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_deployment::GetDeploymentInput {
-            deployment_id: self.deployment_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "deployment_id",
-                    "deployment_id was not specified but it is required when building GetDeploymentInput",
-                )
-            })?,
-            application_id: self.application_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_id",
-                    "application_id was not specified but it is required when building GetDeploymentInput",
-                )
-            })?,
+            deployment_id: self.deployment_id,
+            application_id: self.application_id,
         })
     }
 }

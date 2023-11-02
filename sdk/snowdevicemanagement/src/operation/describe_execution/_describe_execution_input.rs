@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeExecutionInput {
     /// <p>The ID of the task that the action is describing.</p>
-    pub task_id: ::std::string::String,
+    pub task_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the managed device.</p>
-    pub managed_device_id: ::std::string::String,
+    pub managed_device_id: ::std::option::Option<::std::string::String>,
 }
 impl DescribeExecutionInput {
     /// <p>The ID of the task that the action is describing.</p>
-    pub fn task_id(&self) -> &str {
-        use std::ops::Deref;
-        self.task_id.deref()
+    pub fn task_id(&self) -> ::std::option::Option<&str> {
+        self.task_id.as_deref()
     }
     /// <p>The ID of the managed device.</p>
-    pub fn managed_device_id(&self) -> &str {
-        use std::ops::Deref;
-        self.managed_device_id.deref()
+    pub fn managed_device_id(&self) -> ::std::option::Option<&str> {
+        self.managed_device_id.as_deref()
     }
 }
 impl DescribeExecutionInput {
@@ -66,25 +64,12 @@ impl DescribeExecutionInputBuilder {
         &self.managed_device_id
     }
     /// Consumes the builder and constructs a [`DescribeExecutionInput`](crate::operation::describe_execution::DescribeExecutionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`task_id`](crate::operation::describe_execution::builders::DescribeExecutionInputBuilder::task_id)
-    /// - [`managed_device_id`](crate::operation::describe_execution::builders::DescribeExecutionInputBuilder::managed_device_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_execution::DescribeExecutionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::describe_execution::DescribeExecutionInput {
-            task_id: self.task_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "task_id",
-                    "task_id was not specified but it is required when building DescribeExecutionInput",
-                )
-            })?,
-            managed_device_id: self.managed_device_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "managed_device_id",
-                    "managed_device_id was not specified but it is required when building DescribeExecutionInput",
-                )
-            })?,
+            task_id: self.task_id,
+            managed_device_id: self.managed_device_id,
         })
     }
 }

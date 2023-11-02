@@ -4,28 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StopProductSubscriptionInput {
     /// <p>The user name from the identity provider for the user.</p>
-    pub username: ::std::string::String,
+    pub username: ::std::option::Option<::std::string::String>,
     /// <p>An object that specifies details for the identity provider.</p>
     pub identity_provider: ::std::option::Option<crate::types::IdentityProvider>,
     /// <p>The name of the user-based subscription product.</p>
-    pub product: ::std::string::String,
+    pub product: ::std::option::Option<::std::string::String>,
     /// <p>The domain name of the user.</p>
     pub domain: ::std::option::Option<::std::string::String>,
 }
 impl StopProductSubscriptionInput {
     /// <p>The user name from the identity provider for the user.</p>
-    pub fn username(&self) -> &str {
-        use std::ops::Deref;
-        self.username.deref()
+    pub fn username(&self) -> ::std::option::Option<&str> {
+        self.username.as_deref()
     }
     /// <p>An object that specifies details for the identity provider.</p>
     pub fn identity_provider(&self) -> ::std::option::Option<&crate::types::IdentityProvider> {
         self.identity_provider.as_ref()
     }
     /// <p>The name of the user-based subscription product.</p>
-    pub fn product(&self) -> &str {
-        use std::ops::Deref;
-        self.product.deref()
+    pub fn product(&self) -> ::std::option::Option<&str> {
+        self.product.as_deref()
     }
     /// <p>The domain name of the user.</p>
     pub fn domain(&self) -> ::std::option::Option<&str> {
@@ -109,9 +107,6 @@ impl StopProductSubscriptionInputBuilder {
         &self.domain
     }
     /// Consumes the builder and constructs a [`StopProductSubscriptionInput`](crate::operation::stop_product_subscription::StopProductSubscriptionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`username`](crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder::username)
-    /// - [`product`](crate::operation::stop_product_subscription::builders::StopProductSubscriptionInputBuilder::product)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -119,19 +114,9 @@ impl StopProductSubscriptionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::stop_product_subscription::StopProductSubscriptionInput {
-            username: self.username.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "username",
-                    "username was not specified but it is required when building StopProductSubscriptionInput",
-                )
-            })?,
+            username: self.username,
             identity_provider: self.identity_provider,
-            product: self.product.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "product",
-                    "product was not specified but it is required when building StopProductSubscriptionInput",
-                )
-            })?,
+            product: self.product,
             domain: self.domain,
         })
     }

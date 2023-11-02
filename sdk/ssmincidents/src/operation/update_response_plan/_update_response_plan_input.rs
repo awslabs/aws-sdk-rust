@@ -6,7 +6,7 @@ pub struct UpdateResponsePlanInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The long format name of the response plan. The display name can't contain spaces.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The short format name of the incident. The title can't contain spaces.</p>
@@ -45,9 +45,8 @@ impl UpdateResponsePlanInput {
         self.client_token.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the response plan.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p>The long format name of the response plan. The display name can't contain spaces.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -388,19 +387,12 @@ impl UpdateResponsePlanInputBuilder {
         &self.integrations
     }
     /// Consumes the builder and constructs a [`UpdateResponsePlanInput`](crate::operation::update_response_plan::UpdateResponsePlanInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::update_response_plan::builders::UpdateResponsePlanInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_response_plan::UpdateResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_response_plan::UpdateResponsePlanInput {
             client_token: self.client_token,
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building UpdateResponsePlanInput",
-                )
-            })?,
+            arn: self.arn,
             display_name: self.display_name,
             incident_template_title: self.incident_template_title,
             incident_template_impact: self.incident_template_impact,

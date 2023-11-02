@@ -4,25 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateJobForDevicesInput {
     /// <p>ID of target device.</p>
-    pub device_ids: ::std::vec::Vec<::std::string::String>,
+    pub device_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Configuration settings for a software update job.</p>
     pub device_job_config: ::std::option::Option<crate::types::DeviceJobConfig>,
     /// <p>The type of job to run.</p>
-    pub job_type: crate::types::JobType,
+    pub job_type: ::std::option::Option<crate::types::JobType>,
 }
 impl CreateJobForDevicesInput {
     /// <p>ID of target device.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.device_ids.is_none()`.
     pub fn device_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.device_ids.deref()
+        self.device_ids.as_deref().unwrap_or_default()
     }
     /// <p>Configuration settings for a software update job.</p>
     pub fn device_job_config(&self) -> ::std::option::Option<&crate::types::DeviceJobConfig> {
         self.device_job_config.as_ref()
     }
     /// <p>The type of job to run.</p>
-    pub fn job_type(&self) -> &crate::types::JobType {
-        &self.job_type
+    pub fn job_type(&self) -> ::std::option::Option<&crate::types::JobType> {
+        self.job_type.as_ref()
     }
 }
 impl CreateJobForDevicesInput {
@@ -91,27 +92,14 @@ impl CreateJobForDevicesInputBuilder {
         &self.job_type
     }
     /// Consumes the builder and constructs a [`CreateJobForDevicesInput`](crate::operation::create_job_for_devices::CreateJobForDevicesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`device_ids`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder::device_ids)
-    /// - [`job_type`](crate::operation::create_job_for_devices::builders::CreateJobForDevicesInputBuilder::job_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_job_for_devices::CreateJobForDevicesInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_job_for_devices::CreateJobForDevicesInput {
-            device_ids: self.device_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "device_ids",
-                    "device_ids was not specified but it is required when building CreateJobForDevicesInput",
-                )
-            })?,
+            device_ids: self.device_ids,
             device_job_config: self.device_job_config,
-            job_type: self.job_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "job_type",
-                    "job_type was not specified but it is required when building CreateJobForDevicesInput",
-                )
-            })?,
+            job_type: self.job_type,
         })
     }
 }

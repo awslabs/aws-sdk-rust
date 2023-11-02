@@ -4,34 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateSecurityPolicyInput {
     /// <p>The type of security policy.</p>
-    pub r#type: crate::types::SecurityPolicyType,
+    pub r#type: ::std::option::Option<crate::types::SecurityPolicyType>,
     /// <p>The name of the policy.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The JSON policy document to use as the content for the new policy.</p>
-    pub policy: ::std::string::String,
+    pub policy: ::std::option::Option<::std::string::String>,
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl CreateSecurityPolicyInput {
     /// <p>The type of security policy.</p>
-    pub fn r#type(&self) -> &crate::types::SecurityPolicyType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::SecurityPolicyType> {
+        self.r#type.as_ref()
     }
     /// <p>The name of the policy.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>A description of the policy. Typically used to store information about the permissions defined in the policy.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The JSON policy document to use as the content for the new policy.</p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> ::std::option::Option<&str> {
+        self.policy.as_deref()
     }
     /// <p>Unique, case-sensitive identifier to ensure idempotency of the request.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -130,34 +128,15 @@ impl CreateSecurityPolicyInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateSecurityPolicyInput`](crate::operation::create_security_policy::CreateSecurityPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`r#type`](crate::operation::create_security_policy::builders::CreateSecurityPolicyInputBuilder::r#type)
-    /// - [`name`](crate::operation::create_security_policy::builders::CreateSecurityPolicyInputBuilder::name)
-    /// - [`policy`](crate::operation::create_security_policy::builders::CreateSecurityPolicyInputBuilder::policy)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_security_policy::CreateSecurityPolicyInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_security_policy::CreateSecurityPolicyInput {
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CreateSecurityPolicyInput",
-                )
-            })?,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateSecurityPolicyInput",
-                )
-            })?,
+            r#type: self.r#type,
+            name: self.name,
             description: self.description,
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building CreateSecurityPolicyInput",
-                )
-            })?,
+            policy: self.policy,
             client_token: self.client_token,
         })
     }

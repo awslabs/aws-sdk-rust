@@ -6,7 +6,7 @@ pub struct CreateResponsePlanInput {
     /// <p>A token ensuring that the operation is called only once with the specified details.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The short format name of the response plan. Can't include spaces.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The long format of the response plan name. This field can contain spaces.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>Details used to create an incident when using this response plan.</p>
@@ -28,9 +28,8 @@ impl CreateResponsePlanInput {
         self.client_token.as_deref()
     }
     /// <p>The short format name of the response plan. Can't include spaces.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The long format of the response plan name. This field can contain spaces.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -242,19 +241,12 @@ impl CreateResponsePlanInputBuilder {
         &self.integrations
     }
     /// Consumes the builder and constructs a [`CreateResponsePlanInput`](crate::operation::create_response_plan::CreateResponsePlanInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_response_plan::builders::CreateResponsePlanInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_response_plan::CreateResponsePlanInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_response_plan::CreateResponsePlanInput {
             client_token: self.client_token,
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateResponsePlanInput",
-                )
-            })?,
+            name: self.name,
             display_name: self.display_name,
             incident_template: self.incident_template,
             chat_channel: self.chat_channel,

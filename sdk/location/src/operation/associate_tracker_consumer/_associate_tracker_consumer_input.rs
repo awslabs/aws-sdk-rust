@@ -4,26 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AssociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
-    pub tracker_name: ::std::string::String,
+    pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
-    pub consumer_arn: ::std::string::String,
+    pub consumer_arn: ::std::option::Option<::std::string::String>,
 }
 impl AssociateTrackerConsumerInput {
     /// <p>The name of the tracker resource to be associated with a geofence collection.</p>
-    pub fn tracker_name(&self) -> &str {
-        use std::ops::Deref;
-        self.tracker_name.deref()
+    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
+        self.tracker_name.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) for the geofence collection to be associated to tracker resource. Used when you need to specify a resource across all Amazon Web Services.</p>
     /// <ul>
     /// <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li>
     /// </ul>
-    pub fn consumer_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.consumer_arn.deref()
+    pub fn consumer_arn(&self) -> ::std::option::Option<&str> {
+        self.consumer_arn.as_deref()
     }
 }
 impl AssociateTrackerConsumerInput {
@@ -81,9 +79,6 @@ impl AssociateTrackerConsumerInputBuilder {
         &self.consumer_arn
     }
     /// Consumes the builder and constructs a [`AssociateTrackerConsumerInput`](crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`tracker_name`](crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder::tracker_name)
-    /// - [`consumer_arn`](crate::operation::associate_tracker_consumer::builders::AssociateTrackerConsumerInputBuilder::consumer_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -91,18 +86,8 @@ impl AssociateTrackerConsumerInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::associate_tracker_consumer::AssociateTrackerConsumerInput {
-            tracker_name: self.tracker_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "tracker_name",
-                    "tracker_name was not specified but it is required when building AssociateTrackerConsumerInput",
-                )
-            })?,
-            consumer_arn: self.consumer_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "consumer_arn",
-                    "consumer_arn was not specified but it is required when building AssociateTrackerConsumerInput",
-                )
-            })?,
+            tracker_name: self.tracker_name,
+            consumer_arn: self.consumer_arn,
         })
     }
 }

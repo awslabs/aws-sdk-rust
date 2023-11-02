@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetRumMetricDefinitionsInput {
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
-    pub app_monitor_name: ::std::string::String,
+    pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub destination: crate::types::MetricDestination,
+    pub destination: ::std::option::Option<crate::types::MetricDestination>,
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
@@ -18,13 +18,12 @@ pub struct BatchGetRumMetricDefinitionsInput {
 }
 impl BatchGetRumMetricDefinitionsInput {
     /// <p>The name of the CloudWatch RUM app monitor that is sending the metrics.</p>
-    pub fn app_monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.app_monitor_name.deref()
+    pub fn app_monitor_name(&self) -> ::std::option::Option<&str> {
+        self.app_monitor_name.as_deref()
     }
     /// <p>The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</p>
-    pub fn destination(&self) -> &crate::types::MetricDestination {
-        &self.destination
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::MetricDestination> {
+        self.destination.as_ref()
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
@@ -138,9 +137,6 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`BatchGetRumMetricDefinitionsInput`](crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_monitor_name`](crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder::app_monitor_name)
-    /// - [`destination`](crate::operation::batch_get_rum_metric_definitions::builders::BatchGetRumMetricDefinitionsInputBuilder::destination)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -148,18 +144,8 @@ impl BatchGetRumMetricDefinitionsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsInput {
-            app_monitor_name: self.app_monitor_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_monitor_name",
-                    "app_monitor_name was not specified but it is required when building BatchGetRumMetricDefinitionsInput",
-                )
-            })?,
-            destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "destination",
-                    "destination was not specified but it is required when building BatchGetRumMetricDefinitionsInput",
-                )
-            })?,
+            app_monitor_name: self.app_monitor_name,
+            destination: self.destination,
             destination_arn: self.destination_arn,
             max_results: self.max_results,
             next_token: self.next_token,

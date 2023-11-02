@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct UpdatePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p> The new description for the pricing rule. </p>
@@ -18,9 +18,8 @@ pub struct UpdatePricingRuleInput {
 }
 impl UpdatePricingRuleInput {
     /// <p> The Amazon Resource Name (ARN) of the pricing rule to update. </p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
     /// <p> The new name of the pricing rule. The name must be unique to each pricing rule. </p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -160,18 +159,11 @@ impl UpdatePricingRuleInputBuilder {
         &self.tiering
     }
     /// Consumes the builder and constructs a [`UpdatePricingRuleInput`](crate::operation::update_pricing_rule::UpdatePricingRuleInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::update_pricing_rule::builders::UpdatePricingRuleInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_pricing_rule::UpdatePricingRuleInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_pricing_rule::UpdatePricingRuleInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building UpdatePricingRuleInput",
-                )
-            })?,
+            arn: self.arn,
             name: self.name,
             description: self.description,
             r#type: self.r#type,

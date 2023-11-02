@@ -3,77 +3,77 @@ pub fn ser_create_user_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::create_user::CreateUserInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("IdentityStoreId").string(input.identity_store_id.as_str());
+    if let Some(var_1) = &input.identity_store_id {
+        object.key("IdentityStoreId").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.user_name {
-        object.key("UserName").string(var_1.as_str());
+    if let Some(var_2) = &input.user_name {
+        object.key("UserName").string(var_2.as_str());
     }
-    if let Some(var_2) = &input.name {
+    if let Some(var_3) = &input.name {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("Name").start_object();
-        crate::protocol_serde::shape_name::ser_name(&mut object_3, var_2)?;
-        object_3.finish();
+        let mut object_4 = object.key("Name").start_object();
+        crate::protocol_serde::shape_name::ser_name(&mut object_4, var_3)?;
+        object_4.finish();
     }
-    if let Some(var_4) = &input.display_name {
-        object.key("DisplayName").string(var_4.as_str());
+    if let Some(var_5) = &input.display_name {
+        object.key("DisplayName").string(var_5.as_str());
     }
-    if let Some(var_5) = &input.nick_name {
-        object.key("NickName").string(var_5.as_str());
+    if let Some(var_6) = &input.nick_name {
+        object.key("NickName").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.profile_url {
-        object.key("ProfileUrl").string(var_6.as_str());
+    if let Some(var_7) = &input.profile_url {
+        object.key("ProfileUrl").string(var_7.as_str());
     }
-    if let Some(var_7) = &input.emails {
-        let mut array_8 = object.key("Emails").start_array();
-        for item_9 in var_7 {
+    if let Some(var_8) = &input.emails {
+        let mut array_9 = object.key("Emails").start_array();
+        for item_10 in var_8 {
             {
                 #[allow(unused_mut)]
-                let mut object_10 = array_8.value().start_object();
-                crate::protocol_serde::shape_email::ser_email(&mut object_10, item_9)?;
-                object_10.finish();
+                let mut object_11 = array_9.value().start_object();
+                crate::protocol_serde::shape_email::ser_email(&mut object_11, item_10)?;
+                object_11.finish();
             }
         }
-        array_8.finish();
+        array_9.finish();
     }
-    if let Some(var_11) = &input.addresses {
-        let mut array_12 = object.key("Addresses").start_array();
-        for item_13 in var_11 {
+    if let Some(var_12) = &input.addresses {
+        let mut array_13 = object.key("Addresses").start_array();
+        for item_14 in var_12 {
             {
                 #[allow(unused_mut)]
-                let mut object_14 = array_12.value().start_object();
-                crate::protocol_serde::shape_address::ser_address(&mut object_14, item_13)?;
-                object_14.finish();
+                let mut object_15 = array_13.value().start_object();
+                crate::protocol_serde::shape_address::ser_address(&mut object_15, item_14)?;
+                object_15.finish();
             }
         }
-        array_12.finish();
+        array_13.finish();
     }
-    if let Some(var_15) = &input.phone_numbers {
-        let mut array_16 = object.key("PhoneNumbers").start_array();
-        for item_17 in var_15 {
+    if let Some(var_16) = &input.phone_numbers {
+        let mut array_17 = object.key("PhoneNumbers").start_array();
+        for item_18 in var_16 {
             {
                 #[allow(unused_mut)]
-                let mut object_18 = array_16.value().start_object();
-                crate::protocol_serde::shape_phone_number::ser_phone_number(&mut object_18, item_17)?;
-                object_18.finish();
+                let mut object_19 = array_17.value().start_object();
+                crate::protocol_serde::shape_phone_number::ser_phone_number(&mut object_19, item_18)?;
+                object_19.finish();
             }
         }
-        array_16.finish();
+        array_17.finish();
     }
-    if let Some(var_19) = &input.user_type {
-        object.key("UserType").string(var_19.as_str());
+    if let Some(var_20) = &input.user_type {
+        object.key("UserType").string(var_20.as_str());
     }
-    if let Some(var_20) = &input.title {
-        object.key("Title").string(var_20.as_str());
+    if let Some(var_21) = &input.title {
+        object.key("Title").string(var_21.as_str());
     }
-    if let Some(var_21) = &input.preferred_language {
-        object.key("PreferredLanguage").string(var_21.as_str());
+    if let Some(var_22) = &input.preferred_language {
+        object.key("PreferredLanguage").string(var_22.as_str());
     }
-    if let Some(var_22) = &input.locale {
-        object.key("Locale").string(var_22.as_str());
+    if let Some(var_23) = &input.locale {
+        object.key("Locale").string(var_23.as_str());
     }
-    if let Some(var_23) = &input.timezone {
-        object.key("Timezone").string(var_23.as_str());
+    if let Some(var_24) = &input.timezone {
+        object.key("Timezone").string(var_24.as_str());
     }
     Ok(())
 }

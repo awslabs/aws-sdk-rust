@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateLaunchConfigurationTemplateInput {
     /// <p>Launch Configuration Template ID.</p>
-    pub launch_configuration_template_id: ::std::string::String,
+    pub launch_configuration_template_id: ::std::option::Option<::std::string::String>,
     /// <p>Post Launch Action to execute on the Test or Cutover instance.</p>
     pub post_launch_actions: ::std::option::Option<crate::types::PostLaunchActions>,
     /// <p>Enable map auto tagging.</p>
@@ -26,7 +26,7 @@ pub struct UpdateLaunchConfigurationTemplateInput {
     /// <p>Launch configuration template boot mode.</p>
     pub boot_mode: ::std::option::Option<crate::types::BootMode>,
     /// <p>Small volume maximum size.</p>
-    pub small_volume_max_size: i64,
+    pub small_volume_max_size: ::std::option::Option<i64>,
     /// <p>Small volume config.</p>
     pub small_volume_conf: ::std::option::Option<crate::types::LaunchTemplateDiskConf>,
     /// <p>Large volume config.</p>
@@ -34,9 +34,8 @@ pub struct UpdateLaunchConfigurationTemplateInput {
 }
 impl UpdateLaunchConfigurationTemplateInput {
     /// <p>Launch Configuration Template ID.</p>
-    pub fn launch_configuration_template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.launch_configuration_template_id.deref()
+    pub fn launch_configuration_template_id(&self) -> ::std::option::Option<&str> {
+        self.launch_configuration_template_id.as_deref()
     }
     /// <p>Post Launch Action to execute on the Test or Cutover instance.</p>
     pub fn post_launch_actions(&self) -> ::std::option::Option<&crate::types::PostLaunchActions> {
@@ -79,7 +78,7 @@ impl UpdateLaunchConfigurationTemplateInput {
         self.boot_mode.as_ref()
     }
     /// <p>Small volume maximum size.</p>
-    pub fn small_volume_max_size(&self) -> i64 {
+    pub fn small_volume_max_size(&self) -> ::std::option::Option<i64> {
         self.small_volume_max_size
     }
     /// <p>Small volume config.</p>
@@ -319,8 +318,6 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
         &self.large_volume_conf
     }
     /// Consumes the builder and constructs a [`UpdateLaunchConfigurationTemplateInput`](crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`launch_configuration_template_id`](crate::operation::update_launch_configuration_template::builders::UpdateLaunchConfigurationTemplateInputBuilder::launch_configuration_template_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -329,12 +326,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_launch_configuration_template::UpdateLaunchConfigurationTemplateInput {
-                launch_configuration_template_id: self.launch_configuration_template_id.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "launch_configuration_template_id",
-                        "launch_configuration_template_id was not specified but it is required when building UpdateLaunchConfigurationTemplateInput",
-                    )
-                })?,
+                launch_configuration_template_id: self.launch_configuration_template_id,
                 post_launch_actions: self.post_launch_actions,
                 enable_map_auto_tagging: self.enable_map_auto_tagging,
                 map_auto_tagging_mpe_id: self.map_auto_tagging_mpe_id,
@@ -345,7 +337,7 @@ impl UpdateLaunchConfigurationTemplateInputBuilder {
                 copy_tags: self.copy_tags,
                 licensing: self.licensing,
                 boot_mode: self.boot_mode,
-                small_volume_max_size: self.small_volume_max_size.unwrap_or_default(),
+                small_volume_max_size: self.small_volume_max_size,
                 small_volume_conf: self.small_volume_conf,
                 large_volume_conf: self.large_volume_conf,
             },

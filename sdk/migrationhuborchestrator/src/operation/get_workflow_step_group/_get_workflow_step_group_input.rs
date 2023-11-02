@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetWorkflowStepGroupInput {
     /// <p>The ID of the step group.</p>
-    pub id: ::std::string::String,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the migration workflow.</p>
-    pub workflow_id: ::std::string::String,
+    pub workflow_id: ::std::option::Option<::std::string::String>,
 }
 impl GetWorkflowStepGroupInput {
     /// <p>The ID of the step group.</p>
-    pub fn id(&self) -> &str {
-        use std::ops::Deref;
-        self.id.deref()
+    pub fn id(&self) -> ::std::option::Option<&str> {
+        self.id.as_deref()
     }
     /// <p>The ID of the migration workflow.</p>
-    pub fn workflow_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workflow_id.deref()
+    pub fn workflow_id(&self) -> ::std::option::Option<&str> {
+        self.workflow_id.as_deref()
     }
 }
 impl GetWorkflowStepGroupInput {
@@ -66,26 +64,13 @@ impl GetWorkflowStepGroupInputBuilder {
         &self.workflow_id
     }
     /// Consumes the builder and constructs a [`GetWorkflowStepGroupInput`](crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`id`](crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupInputBuilder::id)
-    /// - [`workflow_id`](crate::operation::get_workflow_step_group::builders::GetWorkflowStepGroupInputBuilder::workflow_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_workflow_step_group::GetWorkflowStepGroupInput {
-            id: self.id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "id",
-                    "id was not specified but it is required when building GetWorkflowStepGroupInput",
-                )
-            })?,
-            workflow_id: self.workflow_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workflow_id",
-                    "workflow_id was not specified but it is required when building GetWorkflowStepGroupInput",
-                )
-            })?,
+            id: self.id,
+            workflow_id: self.workflow_id,
         })
     }
 }

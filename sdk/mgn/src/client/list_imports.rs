@@ -5,7 +5,7 @@ impl super::Client {
     ///
     /// - The fluent builder is configurable:
     ///   - [`filters(ListImportsRequestFilters)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::filters) / [`set_filters(Option<ListImportsRequestFilters>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_filters):<br>required: **false**<br><p>List imports request filters.</p><br>
-    ///   - [`max_results(i32)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::max_results) / [`set_max_results(i32)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_max_results):<br>required: **false**<br><p>List imports request max results.</p><br>
+    ///   - [`max_results(i32)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_max_results):<br>required: **false**<br><p>List imports request max results.</p><br>
     ///   - [`next_token(impl Into<String>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_imports::builders::ListImportsFluentBuilder::set_next_token):<br>required: **false**<br><p>List imports request next token.</p><br>
     /// - On success, responds with [`ListImportsOutput`](crate::operation::list_imports::ListImportsOutput) with field(s):
     ///   - [`items(Option<Vec<ImportTask>>)`](crate::operation::list_imports::ListImportsOutput::items): <p>List import response items.</p>

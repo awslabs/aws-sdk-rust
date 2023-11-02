@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
-    pub resource_identifier: ::std::string::String,
+    pub resource_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The auth policy.</p>
-    pub policy: ::std::string::String,
+    pub policy: ::std::option::Option<::std::string::String>,
 }
 impl PutAuthPolicyInput {
     /// <p>The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.</p>
-    pub fn resource_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_identifier.deref()
+    pub fn resource_identifier(&self) -> ::std::option::Option<&str> {
+        self.resource_identifier.as_deref()
     }
     /// <p>The auth policy.</p>
-    pub fn policy(&self) -> &str {
-        use std::ops::Deref;
-        self.policy.deref()
+    pub fn policy(&self) -> ::std::option::Option<&str> {
+        self.policy.as_deref()
     }
 }
 impl PutAuthPolicyInput {
@@ -66,25 +64,12 @@ impl PutAuthPolicyInputBuilder {
         &self.policy
     }
     /// Consumes the builder and constructs a [`PutAuthPolicyInput`](crate::operation::put_auth_policy::PutAuthPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`resource_identifier`](crate::operation::put_auth_policy::builders::PutAuthPolicyInputBuilder::resource_identifier)
-    /// - [`policy`](crate::operation::put_auth_policy::builders::PutAuthPolicyInputBuilder::policy)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_auth_policy::PutAuthPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::put_auth_policy::PutAuthPolicyInput {
-            resource_identifier: self.resource_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_identifier",
-                    "resource_identifier was not specified but it is required when building PutAuthPolicyInput",
-                )
-            })?,
-            policy: self.policy.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "policy",
-                    "policy was not specified but it is required when building PutAuthPolicyInput",
-                )
-            })?,
+            resource_identifier: self.resource_identifier,
+            policy: self.policy,
         })
     }
 }

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct StartJobInput {
     /// <p>The unique identifier for a job.</p>
-    pub job_id: ::std::string::String,
+    pub job_id: ::std::option::Option<::std::string::String>,
 }
 impl StartJobInput {
     /// <p>The unique identifier for a job.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
+        self.job_id.as_deref()
     }
 }
 impl StartJobInput {
@@ -43,16 +42,7 @@ impl StartJobInputBuilder {
         &self.job_id
     }
     /// Consumes the builder and constructs a [`StartJobInput`](crate::operation::start_job::StartJobInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`job_id`](crate::operation::start_job::builders::StartJobInputBuilder::job_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::start_job::StartJobInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::start_job::StartJobInput {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building StartJobInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::start_job::StartJobInput { job_id: self.job_id })
     }
 }

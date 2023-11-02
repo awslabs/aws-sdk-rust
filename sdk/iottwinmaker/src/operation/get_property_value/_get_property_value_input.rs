@@ -10,9 +10,9 @@ pub struct GetPropertyValueInput {
     /// <p>The ID of the entity whose property values the operation returns.</p>
     pub entity_id: ::std::option::Option<::std::string::String>,
     /// <p>The properties whose values the operation returns.</p>
-    pub selected_properties: ::std::vec::Vec<::std::string::String>,
+    pub selected_properties: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The ID of the workspace whose values the operation returns.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
     pub max_results: ::std::option::Option<i32>,
@@ -37,14 +37,14 @@ impl GetPropertyValueInput {
         self.entity_id.as_deref()
     }
     /// <p>The properties whose values the operation returns.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.selected_properties.is_none()`.
     pub fn selected_properties(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.selected_properties.deref()
+        self.selected_properties.as_deref().unwrap_or_default()
     }
     /// <p>The ID of the workspace whose values the operation returns.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>The maximum number of results to return at one time. The default is 25.</p>
     /// <p>Valid Range: Minimum value of 1. Maximum value of 250.</p>
@@ -223,9 +223,6 @@ impl GetPropertyValueInputBuilder {
         &self.tabular_conditions
     }
     /// Consumes the builder and constructs a [`GetPropertyValueInput`](crate::operation::get_property_value::GetPropertyValueInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`selected_properties`](crate::operation::get_property_value::builders::GetPropertyValueInputBuilder::selected_properties)
-    /// - [`workspace_id`](crate::operation::get_property_value::builders::GetPropertyValueInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_property_value::GetPropertyValueInput, ::aws_smithy_http::operation::error::BuildError> {
@@ -233,18 +230,8 @@ impl GetPropertyValueInputBuilder {
             component_name: self.component_name,
             component_type_id: self.component_type_id,
             entity_id: self.entity_id,
-            selected_properties: self.selected_properties.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "selected_properties",
-                    "selected_properties was not specified but it is required when building GetPropertyValueInput",
-                )
-            })?,
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building GetPropertyValueInput",
-                )
-            })?,
+            selected_properties: self.selected_properties,
+            workspace_id: self.workspace_id,
             max_results: self.max_results,
             next_token: self.next_token,
             property_group_name: self.property_group_name,

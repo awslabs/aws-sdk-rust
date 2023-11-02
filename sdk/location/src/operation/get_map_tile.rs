@@ -173,6 +173,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMapTileRe
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.map_name;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("map_name", "cannot be empty or unset"))?;
                 let map_name = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if map_name.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -181,6 +184,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMapTileRe
                     ));
                 }
                 let input_2 = &_input.z;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("z", "cannot be empty or unset"))?;
                 let z = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if z.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -189,6 +195,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMapTileRe
                     ));
                 }
                 let input_3 = &_input.x;
+                let input_3 = input_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("x", "cannot be empty or unset"))?;
                 let x = ::aws_smithy_http::label::fmt_string(input_3, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if x.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -197,6 +206,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMapTileRe
                     ));
                 }
                 let input_4 = &_input.y;
+                let input_4 = input_4
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("y", "cannot be empty or unset"))?;
                 let y = ::aws_smithy_http::label::fmt_string(input_4, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if y.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

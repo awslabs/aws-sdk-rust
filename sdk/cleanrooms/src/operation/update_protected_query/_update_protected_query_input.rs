@@ -4,26 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateProtectedQueryInput {
     /// <p>The identifier for a member of a protected query instance.</p>
-    pub membership_identifier: ::std::string::String,
+    pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The identifier for a protected query instance.</p>
-    pub protected_query_identifier: ::std::string::String,
+    pub protected_query_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
-    pub target_status: crate::types::TargetProtectedQueryStatus,
+    pub target_status: ::std::option::Option<crate::types::TargetProtectedQueryStatus>,
 }
 impl UpdateProtectedQueryInput {
     /// <p>The identifier for a member of a protected query instance.</p>
-    pub fn membership_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_identifier.deref()
+    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+        self.membership_identifier.as_deref()
     }
     /// <p>The identifier for a protected query instance.</p>
-    pub fn protected_query_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.protected_query_identifier.deref()
+    pub fn protected_query_identifier(&self) -> ::std::option::Option<&str> {
+        self.protected_query_identifier.as_deref()
     }
     /// <p>The target status of a query. Used to update the execution status of a currently running query.</p>
-    pub fn target_status(&self) -> &crate::types::TargetProtectedQueryStatus {
-        &self.target_status
+    pub fn target_status(&self) -> ::std::option::Option<&crate::types::TargetProtectedQueryStatus> {
+        self.target_status.as_ref()
     }
 }
 impl UpdateProtectedQueryInput {
@@ -88,33 +86,14 @@ impl UpdateProtectedQueryInputBuilder {
         &self.target_status
     }
     /// Consumes the builder and constructs a [`UpdateProtectedQueryInput`](crate::operation::update_protected_query::UpdateProtectedQueryInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`membership_identifier`](crate::operation::update_protected_query::builders::UpdateProtectedQueryInputBuilder::membership_identifier)
-    /// - [`protected_query_identifier`](crate::operation::update_protected_query::builders::UpdateProtectedQueryInputBuilder::protected_query_identifier)
-    /// - [`target_status`](crate::operation::update_protected_query::builders::UpdateProtectedQueryInputBuilder::target_status)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_protected_query::UpdateProtectedQueryInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::update_protected_query::UpdateProtectedQueryInput {
-            membership_identifier: self.membership_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "membership_identifier",
-                    "membership_identifier was not specified but it is required when building UpdateProtectedQueryInput",
-                )
-            })?,
-            protected_query_identifier: self.protected_query_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "protected_query_identifier",
-                    "protected_query_identifier was not specified but it is required when building UpdateProtectedQueryInput",
-                )
-            })?,
-            target_status: self.target_status.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "target_status",
-                    "target_status was not specified but it is required when building UpdateProtectedQueryInput",
-                )
-            })?,
+            membership_identifier: self.membership_identifier,
+            protected_query_identifier: self.protected_query_identifier,
+            target_status: self.target_status,
         })
     }
 }

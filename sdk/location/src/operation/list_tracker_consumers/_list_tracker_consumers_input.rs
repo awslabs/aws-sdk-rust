@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListTrackerConsumersInput {
     /// <p>The tracker resource whose associated geofence collections you want to list.</p>
-    pub tracker_name: ::std::string::String,
+    pub tracker_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
     pub max_results: ::std::option::Option<i32>,
@@ -14,9 +14,8 @@ pub struct ListTrackerConsumersInput {
 }
 impl ListTrackerConsumersInput {
     /// <p>The tracker resource whose associated geofence collections you want to list.</p>
-    pub fn tracker_name(&self) -> &str {
-        use std::ops::Deref;
-        self.tracker_name.deref()
+    pub fn tracker_name(&self) -> ::std::option::Option<&str> {
+        self.tracker_name.as_deref()
     }
     /// <p>An optional limit for the number of resources returned in a single call. </p>
     /// <p>Default value: <code>100</code> </p>
@@ -95,19 +94,12 @@ impl ListTrackerConsumersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListTrackerConsumersInput`](crate::operation::list_tracker_consumers::ListTrackerConsumersInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`tracker_name`](crate::operation::list_tracker_consumers::builders::ListTrackerConsumersInputBuilder::tracker_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_tracker_consumers::ListTrackerConsumersInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_tracker_consumers::ListTrackerConsumersInput {
-            tracker_name: self.tracker_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "tracker_name",
-                    "tracker_name was not specified but it is required when building ListTrackerConsumersInput",
-                )
-            })?,
+            tracker_name: self.tracker_name,
             max_results: self.max_results,
             next_token: self.next_token,
         })

@@ -70,8 +70,8 @@ impl CreateProfilingGroup {
         runtime_plugins = runtime_plugins.with_operation_plugin(crate::client_idempotency_token::IdempotencyTokenRuntimePlugin::new(
             |token_provider, input| {
                 let input: &mut crate::operation::create_profiling_group::CreateProfilingGroupInput = input.downcast_mut().expect("correct type");
-                if input.client_token.is_empty() {
-                    input.client_token = token_provider.make_idempotency_token();
+                if input.client_token.is_none() {
+                    input.client_token = ::std::option::Option::Some(token_provider.make_idempotency_token());
                 }
             },
         ));
@@ -197,6 +197,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateProfil
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
                 let inner_1 = &_input.client_token;
+                let inner_1 = inner_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("client_token", "cannot be empty or unset"))?;
                 if inner_1.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "client_token",

@@ -6,7 +6,7 @@ pub struct DescribeSourceServersInput {
     /// <p>Request to filter Source Servers list.</p>
     pub filters: ::std::option::Option<crate::types::DescribeSourceServersRequestFilters>,
     /// <p>Request to filter Source Servers list by maximum results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Request to filter Source Servers list by next token.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Request to filter Source Servers list by Accoun ID.</p>
@@ -18,7 +18,7 @@ impl DescribeSourceServersInput {
         self.filters.as_ref()
     }
     /// <p>Request to filter Source Servers list by maximum results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Request to filter Source Servers list by next token.</p>
@@ -110,7 +110,7 @@ impl DescribeSourceServersInputBuilder {
     {
         ::std::result::Result::Ok(crate::operation::describe_source_servers::DescribeSourceServersInput {
             filters: self.filters,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
             account_id: self.account_id,
         })

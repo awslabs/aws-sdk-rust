@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPoolOriginationIdentitiesInput {
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
-    pub pool_id: ::std::string::String,
+    pub pool_id: ::std::option::Option<::std::string::String>,
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::PoolOriginationIdentitiesFilter>>,
     /// <p>The token to be used for the next set of paginated results. You don't need to supply a value for this field in the initial request.</p>
@@ -14,9 +14,8 @@ pub struct ListPoolOriginationIdentitiesInput {
 }
 impl ListPoolOriginationIdentitiesInput {
     /// <p>The unique identifier for the pool. This value can be either the PoolId or PoolArn.</p>
-    pub fn pool_id(&self) -> &str {
-        use std::ops::Deref;
-        self.pool_id.deref()
+    pub fn pool_id(&self) -> ::std::option::Option<&str> {
+        self.pool_id.as_deref()
     }
     /// <p>An array of PoolOriginationIdentitiesFilter objects to filter the results..</p>
     ///
@@ -114,8 +113,6 @@ impl ListPoolOriginationIdentitiesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListPoolOriginationIdentitiesInput`](crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`pool_id`](crate::operation::list_pool_origination_identities::builders::ListPoolOriginationIdentitiesInputBuilder::pool_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -123,12 +120,7 @@ impl ListPoolOriginationIdentitiesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesInput {
-            pool_id: self.pool_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "pool_id",
-                    "pool_id was not specified but it is required when building ListPoolOriginationIdentitiesInput",
-                )
-            })?,
+            pool_id: self.pool_id,
             filters: self.filters,
             next_token: self.next_token,
             max_results: self.max_results,

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DescribeTask`](crate::operation::describe_task::builders::DescribeTaskFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_task::builders::DescribeTaskFluentBuilder::task_id) / [`set_task_id(impl Into<String>)`](crate::operation::describe_task::builders::DescribeTaskFluentBuilder::set_task_id):<br>required: **true**<br><p>The ID of the task to be described.</p><br>
+    ///   - [`task_id(impl Into<String>)`](crate::operation::describe_task::builders::DescribeTaskFluentBuilder::task_id) / [`set_task_id(Option<String>)`](crate::operation::describe_task::builders::DescribeTaskFluentBuilder::set_task_id):<br>required: **true**<br><p>The ID of the task to be described.</p><br>
     /// - On success, responds with [`DescribeTaskOutput`](crate::operation::describe_task::DescribeTaskOutput) with field(s):
     ///   - [`task_id(Option<String>)`](crate::operation::describe_task::DescribeTaskOutput::task_id): <p>The ID of the task.</p>
     ///   - [`task_arn(Option<String>)`](crate::operation::describe_task::DescribeTaskOutput::task_arn): <p>The Amazon Resource Name (ARN) of the task.</p>

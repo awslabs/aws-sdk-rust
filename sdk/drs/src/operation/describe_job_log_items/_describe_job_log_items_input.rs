@@ -4,20 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobLogItemsInput {
     /// <p>The ID of the Job for which Job log items will be retrieved.</p>
-    pub job_id: ::std::string::String,
+    pub job_id: ::std::option::Option<::std::string::String>,
     /// <p>Maximum number of Job log items to retrieve.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token of the next Job log items to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobLogItemsInput {
     /// <p>The ID of the Job for which Job log items will be retrieved.</p>
-    pub fn job_id(&self) -> &str {
-        use std::ops::Deref;
-        self.job_id.deref()
+    pub fn job_id(&self) -> ::std::option::Option<&str> {
+        self.job_id.as_deref()
     }
     /// <p>Maximum number of Job log items to retrieve.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token of the next Job log items to retrieve.</p>
@@ -85,20 +84,13 @@ impl DescribeJobLogItemsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`DescribeJobLogItemsInput`](crate::operation::describe_job_log_items::DescribeJobLogItemsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`job_id`](crate::operation::describe_job_log_items::builders::DescribeJobLogItemsInputBuilder::job_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::describe_job_log_items::DescribeJobLogItemsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::describe_job_log_items::DescribeJobLogItemsInput {
-            job_id: self.job_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "job_id",
-                    "job_id was not specified but it is required when building DescribeJobLogItemsInput",
-                )
-            })?,
-            max_results: self.max_results.unwrap_or_default(),
+            job_id: self.job_id,
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

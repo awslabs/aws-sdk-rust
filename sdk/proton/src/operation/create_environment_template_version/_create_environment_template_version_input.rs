@@ -6,7 +6,7 @@ pub struct CreateEnvironmentTemplateVersionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the environment template version that the first request created.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the environment template.</p>
-    pub template_name: ::std::string::String,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the new version of an environment template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>To create a new minor version of the environment template, include <code>major Version</code>.</p>
@@ -24,9 +24,8 @@ impl CreateEnvironmentTemplateVersionInput {
         self.client_token.as_deref()
     }
     /// <p>The name of the environment template.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
+        self.template_name.as_deref()
     }
     /// <p>A description of the new version of an environment template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -179,8 +178,6 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateEnvironmentTemplateVersionInput`](crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`template_name`](crate::operation::create_environment_template_version::builders::CreateEnvironmentTemplateVersionInputBuilder::template_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -190,12 +187,7 @@ impl CreateEnvironmentTemplateVersionInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionInput {
                 client_token: self.client_token,
-                template_name: self.template_name.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "template_name",
-                        "template_name was not specified but it is required when building CreateEnvironmentTemplateVersionInput",
-                    )
-                })?,
+                template_name: self.template_name,
                 description: self.description,
                 major_version: self.major_version,
                 source: self.source,

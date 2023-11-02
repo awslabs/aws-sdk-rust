@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AcknowledgeOrderReceiptInput {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
-    pub order_arn: ::std::string::String,
+    pub order_arn: ::std::option::Option<::std::string::String>,
 }
 impl AcknowledgeOrderReceiptInput {
     /// <p>The Amazon Resource Name (ARN) of the order.</p>
-    pub fn order_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.order_arn.deref()
+    pub fn order_arn(&self) -> ::std::option::Option<&str> {
+        self.order_arn.as_deref()
     }
 }
 impl AcknowledgeOrderReceiptInput {
@@ -43,21 +42,12 @@ impl AcknowledgeOrderReceiptInputBuilder {
         &self.order_arn
     }
     /// Consumes the builder and constructs a [`AcknowledgeOrderReceiptInput`](crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`order_arn`](crate::operation::acknowledge_order_receipt::builders::AcknowledgeOrderReceiptInputBuilder::order_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput {
-            order_arn: self.order_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "order_arn",
-                    "order_arn was not specified but it is required when building AcknowledgeOrderReceiptInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptInput { order_arn: self.order_arn })
     }
 }

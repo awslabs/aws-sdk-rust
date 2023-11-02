@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub incident_record_arn: ::std::string::String,
+    pub incident_record_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
-    pub event_id: ::std::string::String,
+    pub event_id: ::std::option::Option<::std::string::String>,
 }
 impl GetTimelineEventInput {
     /// <p>The Amazon Resource Name (ARN) of the incident that includes the timeline event.</p>
-    pub fn incident_record_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.incident_record_arn.deref()
+    pub fn incident_record_arn(&self) -> ::std::option::Option<&str> {
+        self.incident_record_arn.as_deref()
     }
     /// <p>The ID of the event. You can get an event's ID when you create it, or by using <code>ListTimelineEvents</code>.</p>
-    pub fn event_id(&self) -> &str {
-        use std::ops::Deref;
-        self.event_id.deref()
+    pub fn event_id(&self) -> ::std::option::Option<&str> {
+        self.event_id.as_deref()
     }
 }
 impl GetTimelineEventInput {
@@ -66,25 +64,12 @@ impl GetTimelineEventInputBuilder {
         &self.event_id
     }
     /// Consumes the builder and constructs a [`GetTimelineEventInput`](crate::operation::get_timeline_event::GetTimelineEventInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`incident_record_arn`](crate::operation::get_timeline_event::builders::GetTimelineEventInputBuilder::incident_record_arn)
-    /// - [`event_id`](crate::operation::get_timeline_event::builders::GetTimelineEventInputBuilder::event_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_timeline_event::GetTimelineEventInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_timeline_event::GetTimelineEventInput {
-            incident_record_arn: self.incident_record_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "incident_record_arn",
-                    "incident_record_arn was not specified but it is required when building GetTimelineEventInput",
-                )
-            })?,
-            event_id: self.event_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "event_id",
-                    "event_id was not specified but it is required when building GetTimelineEventInput",
-                )
-            })?,
+            incident_record_arn: self.incident_record_arn,
+            event_id: self.event_id,
         })
     }
 }

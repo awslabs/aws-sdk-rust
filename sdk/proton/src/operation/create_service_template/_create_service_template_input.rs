@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateServiceTemplateInput {
     /// <p>The name of the service template.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template as displayed in the developer interface.</p>
     pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the service template.</p>
@@ -19,9 +19,8 @@ pub struct CreateServiceTemplateInput {
 }
 impl CreateServiceTemplateInput {
     /// <p>The name of the service template.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The name of the service template as displayed in the developer interface.</p>
     pub fn display_name(&self) -> ::std::option::Option<&str> {
@@ -173,19 +172,12 @@ impl CreateServiceTemplateInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateServiceTemplateInput`](crate::operation::create_service_template::CreateServiceTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_service_template::builders::CreateServiceTemplateInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_service_template::CreateServiceTemplateInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_service_template::CreateServiceTemplateInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateServiceTemplateInput",
-                )
-            })?,
+            name: self.name,
             display_name: self.display_name,
             description: self.description,
             encryption_key: self.encryption_key,

@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListComponentTypesInput {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of objects that filter the request.</p>
     pub filters: ::std::option::Option<::std::vec::Vec<crate::types::ListComponentTypesFilter>>,
     /// <p>The string that specifies the next page of results.</p>
@@ -15,9 +15,8 @@ pub struct ListComponentTypesInput {
 }
 impl ListComponentTypesInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>A list of objects that filter the request.</p>
     ///
@@ -119,18 +118,11 @@ impl ListComponentTypesInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListComponentTypesInput`](crate::operation::list_component_types::ListComponentTypesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::list_component_types::builders::ListComponentTypesInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_component_types::ListComponentTypesInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_component_types::ListComponentTypesInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building ListComponentTypesInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
             filters: self.filters,
             next_token: self.next_token,
             max_results: self.max_results,

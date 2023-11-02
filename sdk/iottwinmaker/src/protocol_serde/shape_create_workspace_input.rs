@@ -6,21 +6,21 @@ pub fn ser_create_workspace_input(
     if let Some(var_1) = &input.description {
         object.key("description").string(var_1.as_str());
     }
-    {
-        object.key("role").string(input.role.as_str());
+    if let Some(var_2) = &input.role {
+        object.key("role").string(var_2.as_str());
     }
-    {
-        object.key("s3Location").string(input.s3_location.as_str());
+    if let Some(var_3) = &input.s3_location {
+        object.key("s3Location").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.tags {
+    if let Some(var_4) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_3 = object.key("tags").start_object();
-        for (key_4, value_5) in var_2 {
+        let mut object_5 = object.key("tags").start_object();
+        for (key_6, value_7) in var_4 {
             {
-                object_3.key(key_4.as_str()).string(value_5.as_str());
+                object_5.key(key_6.as_str()).string(value_7.as_str());
             }
         }
-        object_3.finish();
+        object_5.finish();
     }
     Ok(())
 }

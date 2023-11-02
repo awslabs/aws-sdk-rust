@@ -6,7 +6,7 @@ pub struct DescribeLaunchConfigurationTemplatesInput {
     /// <p>Request to filter Launch Configuration Templates list by Launch Configuration Template ID.</p>
     pub launch_configuration_template_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -18,7 +18,7 @@ impl DescribeLaunchConfigurationTemplatesInput {
         self.launch_configuration_template_ids.as_deref().unwrap_or_default()
     }
     /// <p>Maximum results to be returned in DescribeLaunchConfigurationTemplates.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>Next pagination token returned from DescribeLaunchConfigurationTemplates.</p>
@@ -100,7 +100,7 @@ impl DescribeLaunchConfigurationTemplatesInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesInput {
                 launch_configuration_template_ids: self.launch_configuration_template_ids,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

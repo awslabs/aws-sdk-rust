@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteKeyInput {
     /// <p>The name of the API key to delete.</p>
-    pub key_name: ::std::string::String,
+    pub key_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteKeyInput {
     /// <p>The name of the API key to delete.</p>
-    pub fn key_name(&self) -> &str {
-        use std::ops::Deref;
-        self.key_name.deref()
+    pub fn key_name(&self) -> ::std::option::Option<&str> {
+        self.key_name.as_deref()
     }
 }
 impl DeleteKeyInput {
@@ -43,16 +42,7 @@ impl DeleteKeyInputBuilder {
         &self.key_name
     }
     /// Consumes the builder and constructs a [`DeleteKeyInput`](crate::operation::delete_key::DeleteKeyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`key_name`](crate::operation::delete_key::builders::DeleteKeyInputBuilder::key_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_key::DeleteKeyInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::delete_key::DeleteKeyInput {
-            key_name: self.key_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "key_name",
-                    "key_name was not specified but it is required when building DeleteKeyInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_key::DeleteKeyInput { key_name: self.key_name })
     }
 }

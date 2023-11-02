@@ -3,8 +3,8 @@ pub fn ser_update_gateway_software_now_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("GatewayArn").string(input.gateway_arn.as_str());
+    if let Some(var_1) = &input.gateway_arn {
+        object.key("GatewayArn").string(var_1.as_str());
     }
     Ok(())
 }

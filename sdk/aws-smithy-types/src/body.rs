@@ -197,7 +197,7 @@ impl SdkBody {
         }
     }
 
-    /// Update this `SdkBody` with `map`. **This function MUST NOT alert the data of the body.**
+    /// Update this `SdkBody` with `map`. **This function MUST NOT alter the data of the body.**
     ///
     /// This function is useful for adding metadata like progress tracking to an [`SdkBody`] that
     /// does not alter the actual byte data. If your mapper alters the contents of the body, use [`SdkBody::map`]

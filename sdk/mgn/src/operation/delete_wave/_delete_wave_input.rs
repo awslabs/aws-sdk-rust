@@ -4,15 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteWaveInput {
     /// <p>Wave ID.</p>
-    pub wave_id: ::std::string::String,
+    pub wave_id: ::std::option::Option<::std::string::String>,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
 impl DeleteWaveInput {
     /// <p>Wave ID.</p>
-    pub fn wave_id(&self) -> &str {
-        use std::ops::Deref;
-        self.wave_id.deref()
+    pub fn wave_id(&self) -> ::std::option::Option<&str> {
+        self.wave_id.as_deref()
     }
     /// <p>Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -64,16 +63,9 @@ impl DeleteWaveInputBuilder {
         &self.account_id
     }
     /// Consumes the builder and constructs a [`DeleteWaveInput`](crate::operation::delete_wave::DeleteWaveInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`wave_id`](crate::operation::delete_wave::builders::DeleteWaveInputBuilder::wave_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::delete_wave::DeleteWaveInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_wave::DeleteWaveInput {
-            wave_id: self.wave_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "wave_id",
-                    "wave_id was not specified but it is required when building DeleteWaveInput",
-                )
-            })?,
+            wave_id: self.wave_id,
             account_id: self.account_id,
         })
     }

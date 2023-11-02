@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteFilter`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::arn) / [`set_arn(impl Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Number (ARN) of the filter to be deleted.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::delete_filter::builders::DeleteFilterFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Number (ARN) of the filter to be deleted.</p><br>
     /// - On success, responds with [`DeleteFilterOutput`](crate::operation::delete_filter::DeleteFilterOutput) with field(s):
     ///   - [`arn(String)`](crate::operation::delete_filter::DeleteFilterOutput::arn): <p>The Amazon Resource Number (ARN) of the filter that has been deleted.</p>
     /// - On failure, responds with [`SdkError<DeleteFilterError>`](crate::operation::delete_filter::DeleteFilterError)

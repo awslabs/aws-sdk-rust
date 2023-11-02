@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnectionsInput {
     /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
-    pub requested_by: crate::types::EnvironmentAccountConnectionRequesterAccountType,
+    pub requested_by: ::std::option::Option<crate::types::EnvironmentAccountConnectionRequesterAccountType>,
     /// <p>The environment name that's associated with each listed environment account connection.</p>
     pub environment_name: ::std::option::Option<::std::string::String>,
     /// <p>The status details for each listed environment account connection.</p>
@@ -16,8 +16,8 @@ pub struct ListEnvironmentAccountConnectionsInput {
 }
 impl ListEnvironmentAccountConnectionsInput {
     /// <p>The type of account making the <code>ListEnvironmentAccountConnections</code> request.</p>
-    pub fn requested_by(&self) -> &crate::types::EnvironmentAccountConnectionRequesterAccountType {
-        &self.requested_by
+    pub fn requested_by(&self) -> ::std::option::Option<&crate::types::EnvironmentAccountConnectionRequesterAccountType> {
+        self.requested_by.as_ref()
     }
     /// <p>The environment name that's associated with each listed environment account connection.</p>
     pub fn environment_name(&self) -> ::std::option::Option<&str> {
@@ -134,8 +134,6 @@ impl ListEnvironmentAccountConnectionsInputBuilder {
         &self.max_results
     }
     /// Consumes the builder and constructs a [`ListEnvironmentAccountConnectionsInput`](crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`requested_by`](crate::operation::list_environment_account_connections::builders::ListEnvironmentAccountConnectionsInputBuilder::requested_by)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -144,12 +142,7 @@ impl ListEnvironmentAccountConnectionsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsInput {
-                requested_by: self.requested_by.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "requested_by",
-                        "requested_by was not specified but it is required when building ListEnvironmentAccountConnectionsInput",
-                    )
-                })?,
+                requested_by: self.requested_by,
                 environment_name: self.environment_name,
                 statuses: self.statuses,
                 next_token: self.next_token,

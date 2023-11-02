@@ -3,17 +3,17 @@ pub fn ser_signal_application_instance_node_instances_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        let mut array_1 = object.key("NodeSignals").start_array();
-        for item_2 in &input.node_signals {
+    if let Some(var_1) = &input.node_signals {
+        let mut array_2 = object.key("NodeSignals").start_array();
+        for item_3 in var_1 {
             {
                 #[allow(unused_mut)]
-                let mut object_3 = array_1.value().start_object();
-                crate::protocol_serde::shape_node_signal::ser_node_signal(&mut object_3, item_2)?;
-                object_3.finish();
+                let mut object_4 = array_2.value().start_object();
+                crate::protocol_serde::shape_node_signal::ser_node_signal(&mut object_4, item_3)?;
+                object_4.finish();
             }
         }
-        array_1.finish();
+        array_2.finish();
     }
     Ok(())
 }

@@ -24,8 +24,8 @@ pub fn ser_create_virtual_service_input(
         }
         array_5.finish();
     }
-    {
-        object.key("virtualServiceName").string(input.virtual_service_name.as_str());
+    if let Some(var_8) = &input.virtual_service_name {
+        object.key("virtualServiceName").string(var_8.as_str());
     }
     Ok(())
 }

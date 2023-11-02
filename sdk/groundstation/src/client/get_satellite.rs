@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetSatellite`](crate::operation::get_satellite::builders::GetSatelliteFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`satellite_id(impl Into<String>)`](crate::operation::get_satellite::builders::GetSatelliteFluentBuilder::satellite_id) / [`set_satellite_id(impl Into<String>)`](crate::operation::get_satellite::builders::GetSatelliteFluentBuilder::set_satellite_id):<br>required: **true**<br><p>UUID of a satellite.</p><br>
+    ///   - [`satellite_id(impl Into<String>)`](crate::operation::get_satellite::builders::GetSatelliteFluentBuilder::satellite_id) / [`set_satellite_id(Option<String>)`](crate::operation::get_satellite::builders::GetSatelliteFluentBuilder::set_satellite_id):<br>required: **true**<br><p>UUID of a satellite.</p><br>
     /// - On success, responds with [`GetSatelliteOutput`](crate::operation::get_satellite::GetSatelliteOutput) with field(s):
     ///   - [`satellite_id(Option<String>)`](crate::operation::get_satellite::GetSatelliteOutput::satellite_id): <p>UUID of a satellite.</p>
     ///   - [`satellite_arn(Option<String>)`](crate::operation::get_satellite::GetSatelliteOutput::satellite_arn): <p>ARN of a satellite.</p>

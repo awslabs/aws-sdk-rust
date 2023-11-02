@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteServiceSyncConfigInput {
     /// <p>The name of the service that you want to delete the service sync configuration for.</p>
-    pub service_name: ::std::string::String,
+    pub service_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteServiceSyncConfigInput {
     /// <p>The name of the service that you want to delete the service sync configuration for.</p>
-    pub fn service_name(&self) -> &str {
-        use std::ops::Deref;
-        self.service_name.deref()
+    pub fn service_name(&self) -> ::std::option::Option<&str> {
+        self.service_name.as_deref()
     }
 }
 impl DeleteServiceSyncConfigInput {
@@ -43,8 +42,6 @@ impl DeleteServiceSyncConfigInputBuilder {
         &self.service_name
     }
     /// Consumes the builder and constructs a [`DeleteServiceSyncConfigInput`](crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`service_name`](crate::operation::delete_service_sync_config::builders::DeleteServiceSyncConfigInputBuilder::service_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -52,12 +49,7 @@ impl DeleteServiceSyncConfigInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::delete_service_sync_config::DeleteServiceSyncConfigInput {
-            service_name: self.service_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "service_name",
-                    "service_name was not specified but it is required when building DeleteServiceSyncConfigInput",
-                )
-            })?,
+            service_name: self.service_name,
         })
     }
 }

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetRepository`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`provider(RepositoryProvider)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::provider) / [`set_provider(RepositoryProvider)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::set_provider):<br>required: **true**<br><p>The repository provider.</p><br>
-    ///   - [`name(impl Into<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::name) / [`set_name(impl Into<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::set_name):<br>required: **true**<br><p>The repository name, for example <code>myrepos/myrepo</code>.</p><br>
+    ///   - [`provider(RepositoryProvider)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::provider) / [`set_provider(Option<RepositoryProvider>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::set_provider):<br>required: **true**<br><p>The repository provider.</p><br>
+    ///   - [`name(impl Into<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::get_repository::builders::GetRepositoryFluentBuilder::set_name):<br>required: **true**<br><p>The repository name, for example <code>myrepos/myrepo</code>.</p><br>
     /// - On success, responds with [`GetRepositoryOutput`](crate::operation::get_repository::GetRepositoryOutput) with field(s):
     ///   - [`repository(Option<Repository>)`](crate::operation::get_repository::GetRepositoryOutput::repository): <p>The repository link's detail data that's returned by Proton.</p>
     /// - On failure, responds with [`SdkError<GetRepositoryError>`](crate::operation::get_repository::GetRepositoryError)

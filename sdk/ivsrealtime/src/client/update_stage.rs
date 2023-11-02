@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`UpdateStage`](crate::operation::update_stage::builders::UpdateStageFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::update_stage::builders::UpdateStageFluentBuilder::arn) / [`set_arn(impl Into<String>)`](crate::operation::update_stage::builders::UpdateStageFluentBuilder::set_arn):<br>required: **true**<br><p>ARN of the stage to be updated.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::update_stage::builders::UpdateStageFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::update_stage::builders::UpdateStageFluentBuilder::set_arn):<br>required: **true**<br><p>ARN of the stage to be updated.</p><br>
     ///   - [`name(impl Into<String>)`](crate::operation::update_stage::builders::UpdateStageFluentBuilder::name) / [`set_name(Option<String>)`](crate::operation::update_stage::builders::UpdateStageFluentBuilder::set_name):<br>required: **false**<br><p>Name of the stage to be updated.</p><br>
     /// - On success, responds with [`UpdateStageOutput`](crate::operation::update_stage::UpdateStageOutput) with field(s):
     ///   - [`stage(Option<Stage>)`](crate::operation::update_stage::UpdateStageOutput::stage): <p>The updated stage.</p>

@@ -3,8 +3,8 @@ pub fn ser_cancel_component_deployment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::cancel_component_deployment::CancelComponentDeploymentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("componentName").string(input.component_name.as_str());
+    if let Some(var_1) = &input.component_name {
+        object.key("componentName").string(var_1.as_str());
     }
     Ok(())
 }

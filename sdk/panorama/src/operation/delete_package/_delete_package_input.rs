@@ -4,18 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeletePackageInput {
     /// <p>The package's ID.</p>
-    pub package_id: ::std::string::String,
+    pub package_id: ::std::option::Option<::std::string::String>,
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
-    pub force_delete: bool,
+    pub force_delete: ::std::option::Option<bool>,
 }
 impl DeletePackageInput {
     /// <p>The package's ID.</p>
-    pub fn package_id(&self) -> &str {
-        use std::ops::Deref;
-        self.package_id.deref()
+    pub fn package_id(&self) -> ::std::option::Option<&str> {
+        self.package_id.as_deref()
     }
     /// <p>Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</p>
-    pub fn force_delete(&self) -> bool {
+    pub fn force_delete(&self) -> ::std::option::Option<bool> {
         self.force_delete
     }
 }
@@ -64,19 +63,12 @@ impl DeletePackageInputBuilder {
         &self.force_delete
     }
     /// Consumes the builder and constructs a [`DeletePackageInput`](crate::operation::delete_package::DeletePackageInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`package_id`](crate::operation::delete_package::builders::DeletePackageInputBuilder::package_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_package::DeletePackageInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_package::DeletePackageInput {
-            package_id: self.package_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "package_id",
-                    "package_id was not specified but it is required when building DeletePackageInput",
-                )
-            })?,
-            force_delete: self.force_delete.unwrap_or_default(),
+            package_id: self.package_id,
+            force_delete: self.force_delete,
         })
     }
 }

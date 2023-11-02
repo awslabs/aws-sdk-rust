@@ -4,35 +4,32 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The description of the workspace.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    pub s3_location: ::std::string::String,
+    pub s3_location: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    pub role: ::std::string::String,
+    pub role: ::std::option::Option<::std::string::String>,
     /// <p>Metadata that you can use to manage the workspace</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateWorkspaceInput {
     /// <p>The ID of the workspace.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>The description of the workspace.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The ARN of the S3 bucket where resources associated with the workspace are stored.</p>
-    pub fn s3_location(&self) -> &str {
-        use std::ops::Deref;
-        self.s3_location.deref()
+    pub fn s3_location(&self) -> ::std::option::Option<&str> {
+        self.s3_location.as_deref()
     }
     /// <p>The ARN of the execution role associated with the workspace.</p>
-    pub fn role(&self) -> &str {
-        use std::ops::Deref;
-        self.role.deref()
+    pub fn role(&self) -> ::std::option::Option<&str> {
+        self.role.as_deref()
     }
     /// <p>Metadata that you can use to manage the workspace</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -137,33 +134,14 @@ impl CreateWorkspaceInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`CreateWorkspaceInput`](crate::operation::create_workspace::CreateWorkspaceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::create_workspace::builders::CreateWorkspaceInputBuilder::workspace_id)
-    /// - [`s3_location`](crate::operation::create_workspace::builders::CreateWorkspaceInputBuilder::s3_location)
-    /// - [`role`](crate::operation::create_workspace::builders::CreateWorkspaceInputBuilder::role)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_workspace::CreateWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_workspace::CreateWorkspaceInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building CreateWorkspaceInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
             description: self.description,
-            s3_location: self.s3_location.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "s3_location",
-                    "s3_location was not specified but it is required when building CreateWorkspaceInput",
-                )
-            })?,
-            role: self.role.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "role",
-                    "role was not specified but it is required when building CreateWorkspaceInput",
-                )
-            })?,
+            s3_location: self.s3_location,
+            role: self.role,
             tags: self.tags,
         })
     }

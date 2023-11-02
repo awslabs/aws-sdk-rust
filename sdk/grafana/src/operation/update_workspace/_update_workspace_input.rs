@@ -21,7 +21,7 @@ pub struct UpdateWorkspaceInput {
     /// <p>A description for the workspace. This is used only to help you identify this workspace.</p>
     pub workspace_description: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the workspace to update.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>A new name for the workspace to update.</p>
     pub workspace_name: ::std::option::Option<::std::string::String>,
     /// <p>Specify the Amazon Web Services notification channels that you plan to use in this workspace. Specifying these data sources here enables Amazon Managed Grafana to create IAM roles and permissions that allow Amazon Managed Grafana to use these channels.</p>
@@ -77,9 +77,8 @@ impl UpdateWorkspaceInput {
         self.workspace_description.as_deref()
     }
     /// <p>The ID of the workspace to update.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>A new name for the workspace to update.</p>
     pub fn workspace_name(&self) -> ::std::option::Option<&str> {
@@ -435,8 +434,6 @@ impl UpdateWorkspaceInputBuilder {
         &self.remove_network_access_configuration
     }
     /// Consumes the builder and constructs a [`UpdateWorkspaceInput`](crate::operation::update_workspace::UpdateWorkspaceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::update_workspace::builders::UpdateWorkspaceInputBuilder::workspace_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_workspace::UpdateWorkspaceInput, ::aws_smithy_http::operation::error::BuildError> {
@@ -447,12 +444,7 @@ impl UpdateWorkspaceInputBuilder {
             stack_set_name: self.stack_set_name,
             workspace_data_sources: self.workspace_data_sources,
             workspace_description: self.workspace_description,
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building UpdateWorkspaceInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
             workspace_name: self.workspace_name,
             workspace_notification_destinations: self.workspace_notification_destinations,
             workspace_organizational_units: self.workspace_organizational_units,

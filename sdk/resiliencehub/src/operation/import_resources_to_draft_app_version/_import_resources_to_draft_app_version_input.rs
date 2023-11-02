@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ImportResourcesToDraftAppVersionInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub app_arn: ::std::string::String,
+    pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARNs) for the resources.</p>
     pub source_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> A list of terraform file s3 URLs you need to import. </p>
@@ -16,9 +16,8 @@ pub struct ImportResourcesToDraftAppVersionInput {
 }
 impl ImportResourcesToDraftAppVersionInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+        self.app_arn.as_deref()
     }
     /// <p>The Amazon Resource Names (ARNs) for the resources.</p>
     ///
@@ -151,8 +150,6 @@ impl ImportResourcesToDraftAppVersionInputBuilder {
         &self.eks_sources
     }
     /// Consumes the builder and constructs a [`ImportResourcesToDraftAppVersionInput`](crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_arn`](crate::operation::import_resources_to_draft_app_version::builders::ImportResourcesToDraftAppVersionInputBuilder::app_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -161,12 +158,7 @@ impl ImportResourcesToDraftAppVersionInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionInput {
-                app_arn: self.app_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_arn",
-                        "app_arn was not specified but it is required when building ImportResourcesToDraftAppVersionInput",
-                    )
-                })?,
+                app_arn: self.app_arn,
                 source_arns: self.source_arns,
                 terraform_sources: self.terraform_sources,
                 import_strategy: self.import_strategy,

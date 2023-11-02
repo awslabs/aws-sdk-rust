@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListHealthEventsInput {
     /// <p>The name of the monitor.</p>
-    pub monitor_name: ::std::string::String,
+    pub monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The time when a health event started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The time when a health event ended. If the health event is still ongoing, then the end time is not set.</p>
@@ -12,15 +12,14 @@ pub struct ListHealthEventsInput {
     /// <p>The token for the next set of results. You receive this token from a previous call.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>The number of health event objects that you want to return with this call. </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The status of a health event.</p>
     pub event_status: ::std::option::Option<crate::types::HealthEventStatus>,
 }
 impl ListHealthEventsInput {
     /// <p>The name of the monitor.</p>
-    pub fn monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.monitor_name.deref()
+    pub fn monitor_name(&self) -> ::std::option::Option<&str> {
+        self.monitor_name.as_deref()
     }
     /// <p>The time when a health event started.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -35,7 +34,7 @@ impl ListHealthEventsInput {
         self.next_token.as_deref()
     }
     /// <p>The number of health event objects that you want to return with this call. </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The status of a health event.</p>
@@ -148,22 +147,15 @@ impl ListHealthEventsInputBuilder {
         &self.event_status
     }
     /// Consumes the builder and constructs a [`ListHealthEventsInput`](crate::operation::list_health_events::ListHealthEventsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`monitor_name`](crate::operation::list_health_events::builders::ListHealthEventsInputBuilder::monitor_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_health_events::ListHealthEventsInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::list_health_events::ListHealthEventsInput {
-            monitor_name: self.monitor_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "monitor_name",
-                    "monitor_name was not specified but it is required when building ListHealthEventsInput",
-                )
-            })?,
+            monitor_name: self.monitor_name,
             start_time: self.start_time,
             end_time: self.end_time,
             next_token: self.next_token,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             event_status: self.event_status,
         })
     }

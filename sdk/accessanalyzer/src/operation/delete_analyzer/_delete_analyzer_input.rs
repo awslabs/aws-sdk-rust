@@ -5,15 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteAnalyzerInput {
     /// <p>The name of the analyzer to delete.</p>
-    pub analyzer_name: ::std::string::String,
+    pub analyzer_name: ::std::option::Option<::std::string::String>,
     /// <p>A client token.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
 }
 impl DeleteAnalyzerInput {
     /// <p>The name of the analyzer to delete.</p>
-    pub fn analyzer_name(&self) -> &str {
-        use std::ops::Deref;
-        self.analyzer_name.deref()
+    pub fn analyzer_name(&self) -> ::std::option::Option<&str> {
+        self.analyzer_name.as_deref()
     }
     /// <p>A client token.</p>
     pub fn client_token(&self) -> ::std::option::Option<&str> {
@@ -65,18 +64,11 @@ impl DeleteAnalyzerInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`DeleteAnalyzerInput`](crate::operation::delete_analyzer::DeleteAnalyzerInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`analyzer_name`](crate::operation::delete_analyzer::builders::DeleteAnalyzerInputBuilder::analyzer_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_analyzer::DeleteAnalyzerInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_analyzer::DeleteAnalyzerInput {
-            analyzer_name: self.analyzer_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "analyzer_name",
-                    "analyzer_name was not specified but it is required when building DeleteAnalyzerInput",
-                )
-            })?,
+            analyzer_name: self.analyzer_name,
             client_token: self.client_token,
         })
     }

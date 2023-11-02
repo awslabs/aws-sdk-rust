@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateApplicationInput {
     /// <p>The name to use for the application. </p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the environment.</p>
-    pub environment_identifier: ::std::string::String,
+    pub environment_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the virtual private cloud (VPC).</p>
-    pub vpc_id: ::std::string::String,
+    pub vpc_id: ::std::option::Option<::std::string::String>,
     /// <p>The proxy type of the proxy created within the application. </p>
-    pub proxy_type: crate::types::ProxyType,
+    pub proxy_type: ::std::option::Option<crate::types::ProxyType>,
     /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
     pub api_gateway_proxy: ::std::option::Option<crate::types::ApiGatewayProxyInput>,
     /// <p>The tags to assign to the application. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key-value pair.</p>
@@ -20,23 +20,20 @@ pub struct CreateApplicationInput {
 }
 impl CreateApplicationInput {
     /// <p>The name to use for the application. </p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The unique identifier of the environment.</p>
-    pub fn environment_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.environment_identifier.deref()
+    pub fn environment_identifier(&self) -> ::std::option::Option<&str> {
+        self.environment_identifier.as_deref()
     }
     /// <p>The ID of the virtual private cloud (VPC).</p>
-    pub fn vpc_id(&self) -> &str {
-        use std::ops::Deref;
-        self.vpc_id.deref()
+    pub fn vpc_id(&self) -> ::std::option::Option<&str> {
+        self.vpc_id.as_deref()
     }
     /// <p>The proxy type of the proxy created within the application. </p>
-    pub fn proxy_type(&self) -> &crate::types::ProxyType {
-        &self.proxy_type
+    pub fn proxy_type(&self) -> ::std::option::Option<&crate::types::ProxyType> {
+        self.proxy_type.as_ref()
     }
     /// <p>A wrapper object holding the API Gateway endpoint type and stage name for the proxy. </p>
     pub fn api_gateway_proxy(&self) -> ::std::option::Option<&crate::types::ApiGatewayProxyInput> {
@@ -193,39 +190,14 @@ impl CreateApplicationInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateApplicationInput`](crate::operation::create_application::CreateApplicationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_application::builders::CreateApplicationInputBuilder::name)
-    /// - [`environment_identifier`](crate::operation::create_application::builders::CreateApplicationInputBuilder::environment_identifier)
-    /// - [`vpc_id`](crate::operation::create_application::builders::CreateApplicationInputBuilder::vpc_id)
-    /// - [`proxy_type`](crate::operation::create_application::builders::CreateApplicationInputBuilder::proxy_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_application::CreateApplicationInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_application::CreateApplicationInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateApplicationInput",
-                )
-            })?,
-            environment_identifier: self.environment_identifier.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "environment_identifier",
-                    "environment_identifier was not specified but it is required when building CreateApplicationInput",
-                )
-            })?,
-            vpc_id: self.vpc_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "vpc_id",
-                    "vpc_id was not specified but it is required when building CreateApplicationInput",
-                )
-            })?,
-            proxy_type: self.proxy_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "proxy_type",
-                    "proxy_type was not specified but it is required when building CreateApplicationInput",
-                )
-            })?,
+            name: self.name,
+            environment_identifier: self.environment_identifier,
+            vpc_id: self.vpc_id,
+            proxy_type: self.proxy_type,
             api_gateway_proxy: self.api_gateway_proxy,
             tags: self.tags,
             client_token: self.client_token,

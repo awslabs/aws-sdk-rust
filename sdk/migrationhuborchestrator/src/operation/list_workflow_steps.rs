@@ -185,6 +185,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListWorkflow
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.workflow_id;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("workflow_id", "cannot be empty or unset"))?;
                 let workflow_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if workflow_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -193,6 +196,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListWorkflow
                     ));
                 }
                 let input_2 = &_input.step_group_id;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("step_group_id", "cannot be empty or unset"))?;
                 let step_group_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if step_group_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -219,8 +225,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListWorkflow
                         query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_3));
                     }
                 }
-                if _input.max_results != 0 {
-                    query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
+                if let ::std::option::Option::Some(inner_4) = &_input.max_results {
+                    if *inner_4 != 0 {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_4).encode());
+                    }
                 }
                 ::std::result::Result::Ok(())
             }

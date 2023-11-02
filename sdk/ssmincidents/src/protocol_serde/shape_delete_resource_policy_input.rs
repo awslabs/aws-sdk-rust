@@ -3,11 +3,11 @@ pub fn ser_delete_resource_policy_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_resource_policy::DeleteResourcePolicyInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("policyId").string(input.policy_id.as_str());
+    if let Some(var_1) = &input.policy_id {
+        object.key("policyId").string(var_1.as_str());
     }
-    {
-        object.key("resourceArn").string(input.resource_arn.as_str());
+    if let Some(var_2) = &input.resource_arn {
+        object.key("resourceArn").string(var_2.as_str());
     }
     Ok(())
 }

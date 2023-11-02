@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetConfig`](crate::operation::get_config::builders::GetConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`config_id(impl Into<String>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::config_id) / [`set_config_id(impl Into<String>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::set_config_id):<br>required: **true**<br><p>UUID of a <code>Config</code>.</p><br>
-    ///   - [`config_type(ConfigCapabilityType)`](crate::operation::get_config::builders::GetConfigFluentBuilder::config_type) / [`set_config_type(ConfigCapabilityType)`](crate::operation::get_config::builders::GetConfigFluentBuilder::set_config_type):<br>required: **true**<br><p>Type of a <code>Config</code>.</p><br>
+    ///   - [`config_id(impl Into<String>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::config_id) / [`set_config_id(Option<String>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::set_config_id):<br>required: **true**<br><p>UUID of a <code>Config</code>.</p><br>
+    ///   - [`config_type(ConfigCapabilityType)`](crate::operation::get_config::builders::GetConfigFluentBuilder::config_type) / [`set_config_type(Option<ConfigCapabilityType>)`](crate::operation::get_config::builders::GetConfigFluentBuilder::set_config_type):<br>required: **true**<br><p>Type of a <code>Config</code>.</p><br>
     /// - On success, responds with [`GetConfigOutput`](crate::operation::get_config::GetConfigOutput) with field(s):
     ///   - [`config_id(String)`](crate::operation::get_config::GetConfigOutput::config_id): <p>UUID of a <code>Config</code>.</p>
     ///   - [`config_arn(String)`](crate::operation::get_config::GetConfigOutput::config_arn): <p>ARN of a <code>Config</code> </p>

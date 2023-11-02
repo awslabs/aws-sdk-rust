@@ -4,26 +4,24 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PutResourcePermissionInput {
     /// <p></p>
-    pub action_type: crate::types::PermissionActionType,
+    pub action_type: ::std::option::Option<crate::types::PermissionActionType>,
     /// <p></p>
-    pub source_resource_arn: ::std::string::String,
+    pub source_resource_arn: ::std::option::Option<::std::string::String>,
     /// <p></p>
-    pub resource_arn: ::std::string::String,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
 }
 impl PutResourcePermissionInput {
     /// <p></p>
-    pub fn action_type(&self) -> &crate::types::PermissionActionType {
-        &self.action_type
+    pub fn action_type(&self) -> ::std::option::Option<&crate::types::PermissionActionType> {
+        self.action_type.as_ref()
     }
     /// <p></p>
-    pub fn source_resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.source_resource_arn.deref()
+    pub fn source_resource_arn(&self) -> ::std::option::Option<&str> {
+        self.source_resource_arn.as_deref()
     }
     /// <p></p>
-    pub fn resource_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.resource_arn.deref()
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
+        self.resource_arn.as_deref()
     }
 }
 impl PutResourcePermissionInput {
@@ -88,33 +86,14 @@ impl PutResourcePermissionInputBuilder {
         &self.resource_arn
     }
     /// Consumes the builder and constructs a [`PutResourcePermissionInput`](crate::operation::put_resource_permission::PutResourcePermissionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`action_type`](crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder::action_type)
-    /// - [`source_resource_arn`](crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder::source_resource_arn)
-    /// - [`resource_arn`](crate::operation::put_resource_permission::builders::PutResourcePermissionInputBuilder::resource_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::put_resource_permission::PutResourcePermissionInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::put_resource_permission::PutResourcePermissionInput {
-            action_type: self.action_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "action_type",
-                    "action_type was not specified but it is required when building PutResourcePermissionInput",
-                )
-            })?,
-            source_resource_arn: self.source_resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_resource_arn",
-                    "source_resource_arn was not specified but it is required when building PutResourcePermissionInput",
-                )
-            })?,
-            resource_arn: self.resource_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "resource_arn",
-                    "resource_arn was not specified but it is required when building PutResourcePermissionInput",
-                )
-            })?,
+            action_type: self.action_type,
+            source_resource_arn: self.source_resource_arn,
+            resource_arn: self.resource_arn,
         })
     }
 }

@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDomainInput {
     /// <p>The name for your Cases domain. It must be unique for your Amazon Web Services account.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
 }
 impl CreateDomainInput {
     /// <p>The name for your Cases domain. It must be unique for your Amazon Web Services account.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
 }
 impl CreateDomainInput {
@@ -43,16 +42,7 @@ impl CreateDomainInputBuilder {
         &self.name
     }
     /// Consumes the builder and constructs a [`CreateDomainInput`](crate::operation::create_domain::CreateDomainInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_domain::builders::CreateDomainInputBuilder::name)
     pub fn build(self) -> ::std::result::Result<crate::operation::create_domain::CreateDomainInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateDomainInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::create_domain::CreateDomainInput { name: self.name })
     }
 }

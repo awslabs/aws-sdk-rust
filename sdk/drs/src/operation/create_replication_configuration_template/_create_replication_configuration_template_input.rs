@@ -4,31 +4,31 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct CreateReplicationConfigurationTemplateInput {
     /// <p>The subnet to be used by the replication staging area.</p>
-    pub staging_area_subnet_id: ::std::string::String,
+    pub staging_area_subnet_id: ::std::option::Option<::std::string::String>,
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-    pub associate_default_security_group: bool,
+    pub associate_default_security_group: ::std::option::Option<bool>,
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub replication_servers_security_groups_ids: ::std::vec::Vec<::std::string::String>,
+    pub replication_servers_security_groups_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance type to be used for the replication server.</p>
-    pub replication_server_instance_type: ::std::string::String,
+    pub replication_server_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-    pub use_dedicated_replication_server: bool,
+    pub use_dedicated_replication_server: ::std::option::Option<bool>,
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    pub default_large_staging_disk_type: crate::types::ReplicationConfigurationDefaultLargeStagingDiskType,
+    pub default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
     /// <p>The type of EBS encryption to be used during replication.</p>
-    pub ebs_encryption: crate::types::ReplicationConfigurationEbsEncryption,
+    pub ebs_encryption: ::std::option::Option<crate::types::ReplicationConfigurationEbsEncryption>,
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
     pub ebs_encryption_key_arn: ::std::option::Option<::std::string::String>,
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-    pub bandwidth_throttling: i64,
+    pub bandwidth_throttling: ::std::option::Option<i64>,
     /// <p>The data plane routing mechanism that will be used for replication.</p>
-    pub data_plane_routing: crate::types::ReplicationConfigurationDataPlaneRouting,
+    pub data_plane_routing: ::std::option::Option<crate::types::ReplicationConfigurationDataPlaneRouting>,
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-    pub create_public_ip: bool,
+    pub create_public_ip: ::std::option::Option<bool>,
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-    pub staging_area_tags: ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    pub staging_area_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
-    pub pit_policy: ::std::vec::Vec<crate::types::PitPolicyRule>,
+    pub pit_policy: ::std::option::Option<::std::vec::Vec<crate::types::PitPolicyRule>>,
     /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Whether to allow the AWS replication agent to automatically replicate newly added disks.</p>
@@ -36,60 +36,60 @@ pub struct CreateReplicationConfigurationTemplateInput {
 }
 impl CreateReplicationConfigurationTemplateInput {
     /// <p>The subnet to be used by the replication staging area.</p>
-    pub fn staging_area_subnet_id(&self) -> &str {
-        use std::ops::Deref;
-        self.staging_area_subnet_id.deref()
+    pub fn staging_area_subnet_id(&self) -> ::std::option::Option<&str> {
+        self.staging_area_subnet_id.as_deref()
     }
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
-    pub fn associate_default_security_group(&self) -> bool {
+    pub fn associate_default_security_group(&self) -> ::std::option::Option<bool> {
         self.associate_default_security_group
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_ids.is_none()`.
     pub fn replication_servers_security_groups_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.replication_servers_security_groups_ids.deref()
+        self.replication_servers_security_groups_ids.as_deref().unwrap_or_default()
     }
     /// <p>The instance type to be used for the replication server.</p>
-    pub fn replication_server_instance_type(&self) -> &str {
-        use std::ops::Deref;
-        self.replication_server_instance_type.deref()
+    pub fn replication_server_instance_type(&self) -> ::std::option::Option<&str> {
+        self.replication_server_instance_type.as_deref()
     }
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
-    pub fn use_dedicated_replication_server(&self) -> bool {
+    pub fn use_dedicated_replication_server(&self) -> ::std::option::Option<bool> {
         self.use_dedicated_replication_server
     }
     /// <p>The Staging Disk EBS volume type to be used during replication.</p>
-    pub fn default_large_staging_disk_type(&self) -> &crate::types::ReplicationConfigurationDefaultLargeStagingDiskType {
-        &self.default_large_staging_disk_type
+    pub fn default_large_staging_disk_type(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationDefaultLargeStagingDiskType> {
+        self.default_large_staging_disk_type.as_ref()
     }
     /// <p>The type of EBS encryption to be used during replication.</p>
-    pub fn ebs_encryption(&self) -> &crate::types::ReplicationConfigurationEbsEncryption {
-        &self.ebs_encryption
+    pub fn ebs_encryption(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationEbsEncryption> {
+        self.ebs_encryption.as_ref()
     }
     /// <p>The ARN of the EBS encryption key to be used during replication.</p>
     pub fn ebs_encryption_key_arn(&self) -> ::std::option::Option<&str> {
         self.ebs_encryption_key_arn.as_deref()
     }
     /// <p>Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.</p>
-    pub fn bandwidth_throttling(&self) -> i64 {
+    pub fn bandwidth_throttling(&self) -> ::std::option::Option<i64> {
         self.bandwidth_throttling
     }
     /// <p>The data plane routing mechanism that will be used for replication.</p>
-    pub fn data_plane_routing(&self) -> &crate::types::ReplicationConfigurationDataPlaneRouting {
-        &self.data_plane_routing
+    pub fn data_plane_routing(&self) -> ::std::option::Option<&crate::types::ReplicationConfigurationDataPlaneRouting> {
+        self.data_plane_routing.as_ref()
     }
     /// <p>Whether to create a Public IP for the Recovery Instance by default.</p>
-    pub fn create_public_ip(&self) -> bool {
+    pub fn create_public_ip(&self) -> ::std::option::Option<bool> {
         self.create_public_ip
     }
     /// <p>A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.</p>
-    pub fn staging_area_tags(&self) -> &::std::collections::HashMap<::std::string::String, ::std::string::String> {
-        &self.staging_area_tags
+    pub fn staging_area_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
+        self.staging_area_tags.as_ref()
     }
     /// <p>The Point in time (PIT) policy to manage snapshots taken during replication.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.pit_policy.is_none()`.
     pub fn pit_policy(&self) -> &[crate::types::PitPolicyRule] {
-        use std::ops::Deref;
-        self.pit_policy.deref()
+        self.pit_policy.as_deref().unwrap_or_default()
     }
     /// <p>A set of tags to be associated with the Replication Configuration Template resource.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -403,18 +403,6 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
         &self.auto_replicate_new_disks
     }
     /// Consumes the builder and constructs a [`CreateReplicationConfigurationTemplateInput`](crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`staging_area_subnet_id`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::staging_area_subnet_id)
-    /// - [`associate_default_security_group`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::associate_default_security_group)
-    /// - [`replication_servers_security_groups_ids`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::replication_servers_security_groups_ids)
-    /// - [`replication_server_instance_type`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::replication_server_instance_type)
-    /// - [`use_dedicated_replication_server`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::use_dedicated_replication_server)
-    /// - [`default_large_staging_disk_type`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::default_large_staging_disk_type)
-    /// - [`ebs_encryption`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::ebs_encryption)
-    /// - [`data_plane_routing`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::data_plane_routing)
-    /// - [`create_public_ip`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::create_public_ip)
-    /// - [`staging_area_tags`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::staging_area_tags)
-    /// - [`pit_policy`](crate::operation::create_replication_configuration_template::builders::CreateReplicationConfigurationTemplateInputBuilder::pit_policy)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -423,71 +411,22 @@ impl CreateReplicationConfigurationTemplateInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::create_replication_configuration_template::CreateReplicationConfigurationTemplateInput {
-                staging_area_subnet_id: self.staging_area_subnet_id
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("staging_area_subnet_id", "staging_area_subnet_id was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                associate_default_security_group: self.associate_default_security_group
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("associate_default_security_group", "associate_default_security_group was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                replication_servers_security_groups_ids: self.replication_servers_security_groups_ids
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("replication_servers_security_groups_ids", "replication_servers_security_groups_ids was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                replication_server_instance_type: self.replication_server_instance_type
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("replication_server_instance_type", "replication_server_instance_type was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                use_dedicated_replication_server: self.use_dedicated_replication_server
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("use_dedicated_replication_server", "use_dedicated_replication_server was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                default_large_staging_disk_type: self.default_large_staging_disk_type
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("default_large_staging_disk_type", "default_large_staging_disk_type was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                ebs_encryption: self.ebs_encryption
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("ebs_encryption", "ebs_encryption was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                ebs_encryption_key_arn: self.ebs_encryption_key_arn
-                ,
-                bandwidth_throttling: self.bandwidth_throttling
-                    .unwrap_or_default()
-                ,
-                data_plane_routing: self.data_plane_routing
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("data_plane_routing", "data_plane_routing was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                create_public_ip: self.create_public_ip
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("create_public_ip", "create_public_ip was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                staging_area_tags: self.staging_area_tags
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("staging_area_tags", "staging_area_tags was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                pit_policy: self.pit_policy
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("pit_policy", "pit_policy was not specified but it is required when building CreateReplicationConfigurationTemplateInput")
-                    )?
-                ,
-                tags: self.tags
-                ,
-                auto_replicate_new_disks: self.auto_replicate_new_disks
-                ,
-            }
+                staging_area_subnet_id: self.staging_area_subnet_id,
+                associate_default_security_group: self.associate_default_security_group,
+                replication_servers_security_groups_ids: self.replication_servers_security_groups_ids,
+                replication_server_instance_type: self.replication_server_instance_type,
+                use_dedicated_replication_server: self.use_dedicated_replication_server,
+                default_large_staging_disk_type: self.default_large_staging_disk_type,
+                ebs_encryption: self.ebs_encryption,
+                ebs_encryption_key_arn: self.ebs_encryption_key_arn,
+                bandwidth_throttling: self.bandwidth_throttling,
+                data_plane_routing: self.data_plane_routing,
+                create_public_ip: self.create_public_ip,
+                staging_area_tags: self.staging_area_tags,
+                pit_policy: self.pit_policy,
+                tags: self.tags,
+                auto_replicate_new_disks: self.auto_replicate_new_disks,
+            },
         )
     }
 }

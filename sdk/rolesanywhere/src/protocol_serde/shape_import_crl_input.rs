@@ -3,31 +3,29 @@ pub fn ser_import_crl_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::import_crl::ImportCrlInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object
-            .key("crlData")
-            .string_unchecked(&::aws_smithy_types::base64::encode(&input.crl_data));
+    if let Some(var_1) = &input.crl_data {
+        object.key("crlData").string_unchecked(&::aws_smithy_types::base64::encode(var_1));
     }
-    if let Some(var_1) = &input.enabled {
-        object.key("enabled").boolean(*var_1);
+    if let Some(var_2) = &input.enabled {
+        object.key("enabled").boolean(*var_2);
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_3) = &input.name {
+        object.key("name").string(var_3.as_str());
     }
-    if let Some(var_2) = &input.tags {
-        let mut array_3 = object.key("tags").start_array();
-        for item_4 in var_2 {
+    if let Some(var_4) = &input.tags {
+        let mut array_5 = object.key("tags").start_array();
+        for item_6 in var_4 {
             {
                 #[allow(unused_mut)]
-                let mut object_5 = array_3.value().start_object();
-                crate::protocol_serde::shape_tag::ser_tag(&mut object_5, item_4)?;
-                object_5.finish();
+                let mut object_7 = array_5.value().start_object();
+                crate::protocol_serde::shape_tag::ser_tag(&mut object_7, item_6)?;
+                object_7.finish();
             }
         }
-        array_3.finish();
+        array_5.finish();
     }
-    {
-        object.key("trustAnchorArn").string(input.trust_anchor_arn.as_str());
+    if let Some(var_8) = &input.trust_anchor_arn {
+        object.key("trustAnchorArn").string(var_8.as_str());
     }
     Ok(())
 }

@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct SearchPlaceIndexForTextInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub index_name: ::std::string::String,
+    pub index_name: ::std::option::Option<::std::string::String>,
     /// <p>The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.</p>
-    pub text: ::std::string::String,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
     /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
     /// <p>For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude <code>-123.1174</code> and latitude <code>49.2847</code>.</p> <note>
@@ -26,7 +26,7 @@ pub struct SearchPlaceIndexForTextInput {
     pub filter_countries: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
     /// <p>The default: <code>50</code> </p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
     /// <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p>
     /// <p>For an example, we'll use the Greek language. You search for <code>Athens, Greece</code>, with the <code>language</code> parameter set to <code>en</code>. The result found will most likely be returned as <code>Athens</code>.</p>
@@ -41,14 +41,12 @@ pub struct SearchPlaceIndexForTextInput {
 }
 impl SearchPlaceIndexForTextInput {
     /// <p>The name of the place index resource you want to use for the search.</p>
-    pub fn index_name(&self) -> &str {
-        use std::ops::Deref;
-        self.index_name.deref()
+    pub fn index_name(&self) -> ::std::option::Option<&str> {
+        self.index_name.as_deref()
     }
     /// <p>The address, name, city, or region to be used in the search in free-form text format. For example, <code>123 Any Street</code>.</p>
-    pub fn text(&self) -> &str {
-        use std::ops::Deref;
-        self.text.deref()
+    pub fn text(&self) -> ::std::option::Option<&str> {
+        self.text.as_deref()
     }
     /// <p>An optional parameter that indicates a preference for places that are closer to a specified position.</p>
     /// <p> If provided, this parameter must contain a pair of numbers. The first number represents the X coordinate, or longitude; the second number represents the Y coordinate, or latitude.</p>
@@ -81,7 +79,7 @@ impl SearchPlaceIndexForTextInput {
     }
     /// <p>An optional parameter. The maximum number of results returned per request. </p>
     /// <p>The default: <code>50</code> </p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p>
@@ -345,9 +343,6 @@ impl SearchPlaceIndexForTextInputBuilder {
         &self.key
     }
     /// Consumes the builder and constructs a [`SearchPlaceIndexForTextInput`](crate::operation::search_place_index_for_text::SearchPlaceIndexForTextInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`index_name`](crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder::index_name)
-    /// - [`text`](crate::operation::search_place_index_for_text::builders::SearchPlaceIndexForTextInputBuilder::text)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -355,22 +350,12 @@ impl SearchPlaceIndexForTextInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::search_place_index_for_text::SearchPlaceIndexForTextInput {
-            index_name: self.index_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "index_name",
-                    "index_name was not specified but it is required when building SearchPlaceIndexForTextInput",
-                )
-            })?,
-            text: self.text.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "text",
-                    "text was not specified but it is required when building SearchPlaceIndexForTextInput",
-                )
-            })?,
+            index_name: self.index_name,
+            text: self.text,
             bias_position: self.bias_position,
             filter_b_box: self.filter_b_box,
             filter_countries: self.filter_countries,
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             language: self.language,
             filter_categories: self.filter_categories,
             key: self.key,

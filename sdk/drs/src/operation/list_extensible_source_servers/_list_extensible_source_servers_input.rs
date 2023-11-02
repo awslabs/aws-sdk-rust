@@ -4,20 +4,19 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListExtensibleSourceServersInput {
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-    pub staging_account_id: ::std::string::String,
+    pub staging_account_id: ::std::option::Option<::std::string::String>,
     /// <p>The maximum number of extensible source servers to retrieve.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token of the next extensible source server to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl ListExtensibleSourceServersInput {
     /// <p>The Id of the staging Account to retrieve extensible source servers from.</p>
-    pub fn staging_account_id(&self) -> &str {
-        use std::ops::Deref;
-        self.staging_account_id.deref()
+    pub fn staging_account_id(&self) -> ::std::option::Option<&str> {
+        self.staging_account_id.as_deref()
     }
     /// <p>The maximum number of extensible source servers to retrieve.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token of the next extensible source server to retrieve.</p>
@@ -85,8 +84,6 @@ impl ListExtensibleSourceServersInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListExtensibleSourceServersInput`](crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`staging_account_id`](crate::operation::list_extensible_source_servers::builders::ListExtensibleSourceServersInputBuilder::staging_account_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -94,13 +91,8 @@ impl ListExtensibleSourceServersInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_extensible_source_servers::ListExtensibleSourceServersInput {
-            staging_account_id: self.staging_account_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "staging_account_id",
-                    "staging_account_id was not specified but it is required when building ListExtensibleSourceServersInput",
-                )
-            })?,
-            max_results: self.max_results.unwrap_or_default(),
+            staging_account_id: self.staging_account_id,
+            max_results: self.max_results,
             next_token: self.next_token,
         })
     }

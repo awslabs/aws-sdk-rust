@@ -4,13 +4,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchCreateVehicleInput {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
-    pub vehicles: ::std::vec::Vec<crate::types::CreateVehicleRequestItem>,
+    pub vehicles: ::std::option::Option<::std::vec::Vec<crate::types::CreateVehicleRequestItem>>,
 }
 impl BatchCreateVehicleInput {
     /// <p> A list of information about each vehicle to create. For more information, see the API data type.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.vehicles.is_none()`.
     pub fn vehicles(&self) -> &[crate::types::CreateVehicleRequestItem] {
-        use std::ops::Deref;
-        self.vehicles.deref()
+        self.vehicles.as_deref().unwrap_or_default()
     }
 }
 impl BatchCreateVehicleInput {
@@ -48,18 +49,9 @@ impl BatchCreateVehicleInputBuilder {
         &self.vehicles
     }
     /// Consumes the builder and constructs a [`BatchCreateVehicleInput`](crate::operation::batch_create_vehicle::BatchCreateVehicleInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`vehicles`](crate::operation::batch_create_vehicle::builders::BatchCreateVehicleInputBuilder::vehicles)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::batch_create_vehicle::BatchCreateVehicleInput, ::aws_smithy_http::operation::error::BuildError> {
-        ::std::result::Result::Ok(crate::operation::batch_create_vehicle::BatchCreateVehicleInput {
-            vehicles: self.vehicles.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "vehicles",
-                    "vehicles was not specified but it is required when building BatchCreateVehicleInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::batch_create_vehicle::BatchCreateVehicleInput { vehicles: self.vehicles })
     }
 }

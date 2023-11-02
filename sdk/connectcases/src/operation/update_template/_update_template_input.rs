@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier for the template.</p>
-    pub template_id: ::std::string::String,
+    pub template_id: ::std::option::Option<::std::string::String>,
     /// <p>The name of the template. It must be unique per domain.</p>
     pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the template.</p>
@@ -20,14 +20,12 @@ pub struct UpdateTemplateInput {
 }
 impl UpdateTemplateInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>A unique identifier for the template.</p>
-    pub fn template_id(&self) -> &str {
-        use std::ops::Deref;
-        self.template_id.deref()
+    pub fn template_id(&self) -> ::std::option::Option<&str> {
+        self.template_id.as_deref()
     }
     /// <p>The name of the template. It must be unique per domain.</p>
     pub fn name(&self) -> ::std::option::Option<&str> {
@@ -179,25 +177,12 @@ impl UpdateTemplateInputBuilder {
         &self.status
     }
     /// Consumes the builder and constructs a [`UpdateTemplateInput`](crate::operation::update_template::UpdateTemplateInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::update_template::builders::UpdateTemplateInputBuilder::domain_id)
-    /// - [`template_id`](crate::operation::update_template::builders::UpdateTemplateInputBuilder::template_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::update_template::UpdateTemplateInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::update_template::UpdateTemplateInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building UpdateTemplateInput",
-                )
-            })?,
-            template_id: self.template_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "template_id",
-                    "template_id was not specified but it is required when building UpdateTemplateInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            template_id: self.template_id,
             name: self.name,
             description: self.description,
             layout_configuration: self.layout_configuration,

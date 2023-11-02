@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_id: ::std::string::String,
+    pub assistant_id: ::std::option::Option<::std::string::String>,
 }
 impl GetAssistantInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.assistant_id.deref()
+    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+        self.assistant_id.as_deref()
     }
 }
 impl GetAssistantInput {
@@ -43,16 +42,9 @@ impl GetAssistantInputBuilder {
         &self.assistant_id
     }
     /// Consumes the builder and constructs a [`GetAssistantInput`](crate::operation::get_assistant::GetAssistantInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`assistant_id`](crate::operation::get_assistant::builders::GetAssistantInputBuilder::assistant_id)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_assistant::GetAssistantInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_assistant::GetAssistantInput {
-            assistant_id: self.assistant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "assistant_id",
-                    "assistant_id was not specified but it is required when building GetAssistantInput",
-                )
-            })?,
+            assistant_id: self.assistant_id,
         })
     }
 }

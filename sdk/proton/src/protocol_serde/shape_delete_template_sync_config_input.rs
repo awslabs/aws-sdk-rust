@@ -3,11 +3,11 @@ pub fn ser_delete_template_sync_config_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("templateName").string(input.template_name.as_str());
+    if let Some(var_1) = &input.template_name {
+        object.key("templateName").string(var_1.as_str());
     }
-    {
-        object.key("templateType").string(input.template_type.as_str());
+    if let Some(var_2) = &input.template_type {
+        object.key("templateType").string(var_2.as_str());
     }
     Ok(())
 }

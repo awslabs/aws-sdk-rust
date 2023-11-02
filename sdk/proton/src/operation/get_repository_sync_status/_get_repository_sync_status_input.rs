@@ -4,32 +4,30 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetRepositorySyncStatusInput {
     /// <p>The repository name.</p>
-    pub repository_name: ::std::string::String,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The repository provider.</p>
-    pub repository_provider: crate::types::RepositoryProvider,
+    pub repository_provider: ::std::option::Option<crate::types::RepositoryProvider>,
     /// <p>The repository branch.</p>
-    pub branch: ::std::string::String,
+    pub branch: ::std::option::Option<::std::string::String>,
     /// <p>The repository sync type.</p>
-    pub sync_type: crate::types::SyncType,
+    pub sync_type: ::std::option::Option<crate::types::SyncType>,
 }
 impl GetRepositorySyncStatusInput {
     /// <p>The repository name.</p>
-    pub fn repository_name(&self) -> &str {
-        use std::ops::Deref;
-        self.repository_name.deref()
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
+        self.repository_name.as_deref()
     }
     /// <p>The repository provider.</p>
-    pub fn repository_provider(&self) -> &crate::types::RepositoryProvider {
-        &self.repository_provider
+    pub fn repository_provider(&self) -> ::std::option::Option<&crate::types::RepositoryProvider> {
+        self.repository_provider.as_ref()
     }
     /// <p>The repository branch.</p>
-    pub fn branch(&self) -> &str {
-        use std::ops::Deref;
-        self.branch.deref()
+    pub fn branch(&self) -> ::std::option::Option<&str> {
+        self.branch.as_deref()
     }
     /// <p>The repository sync type.</p>
-    pub fn sync_type(&self) -> &crate::types::SyncType {
-        &self.sync_type
+    pub fn sync_type(&self) -> ::std::option::Option<&crate::types::SyncType> {
+        self.sync_type.as_ref()
     }
 }
 impl GetRepositorySyncStatusInput {
@@ -110,11 +108,6 @@ impl GetRepositorySyncStatusInputBuilder {
         &self.sync_type
     }
     /// Consumes the builder and constructs a [`GetRepositorySyncStatusInput`](crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`repository_name`](crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder::repository_name)
-    /// - [`repository_provider`](crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder::repository_provider)
-    /// - [`branch`](crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder::branch)
-    /// - [`sync_type`](crate::operation::get_repository_sync_status::builders::GetRepositorySyncStatusInputBuilder::sync_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -122,30 +115,10 @@ impl GetRepositorySyncStatusInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::get_repository_sync_status::GetRepositorySyncStatusInput {
-            repository_name: self.repository_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "repository_name",
-                    "repository_name was not specified but it is required when building GetRepositorySyncStatusInput",
-                )
-            })?,
-            repository_provider: self.repository_provider.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "repository_provider",
-                    "repository_provider was not specified but it is required when building GetRepositorySyncStatusInput",
-                )
-            })?,
-            branch: self.branch.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "branch",
-                    "branch was not specified but it is required when building GetRepositorySyncStatusInput",
-                )
-            })?,
-            sync_type: self.sync_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "sync_type",
-                    "sync_type was not specified but it is required when building GetRepositorySyncStatusInput",
-                )
-            })?,
+            repository_name: self.repository_name,
+            repository_provider: self.repository_provider,
+            branch: self.branch,
+            sync_type: self.sync_type,
         })
     }
 }

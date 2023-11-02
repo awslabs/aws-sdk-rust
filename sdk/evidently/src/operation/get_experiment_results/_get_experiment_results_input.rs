@@ -4,17 +4,17 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetExperimentResultsInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the experiment to retrieve the results of.</p>
-    pub experiment: ::std::string::String,
+    pub experiment: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the experiment started.</p>
     pub start_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date and time that the experiment ended, if it is completed. This must be no longer than 30 days after the experiment start time.</p>
     pub end_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
-    pub metric_names: ::std::vec::Vec<::std::string::String>,
+    pub metric_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
-    pub treatment_names: ::std::vec::Vec<::std::string::String>,
+    pub treatment_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
     pub base_stat: ::std::option::Option<crate::types::ExperimentBaseStat>,
     /// <p>The statistics that you want to see in the returned results.</p>
@@ -28,18 +28,16 @@ pub struct GetExperimentResultsInput {
     /// <p>The names of the report types that you want to see. Currently, <code>BayesianInference</code> is the only valid value.</p>
     pub report_names: ::std::option::Option<::std::vec::Vec<crate::types::ExperimentReportName>>,
     /// <p>In seconds, the amount of time to aggregate results together. </p>
-    pub period: i64,
+    pub period: ::std::option::Option<i64>,
 }
 impl GetExperimentResultsInput {
     /// <p>The name or ARN of the project that contains the experiment that you want to see the results of.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name of the experiment to retrieve the results of.</p>
-    pub fn experiment(&self) -> &str {
-        use std::ops::Deref;
-        self.experiment.deref()
+    pub fn experiment(&self) -> ::std::option::Option<&str> {
+        self.experiment.as_deref()
     }
     /// <p>The date and time that the experiment started.</p>
     pub fn start_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
@@ -50,14 +48,16 @@ impl GetExperimentResultsInput {
         self.end_time.as_ref()
     }
     /// <p>The names of the experiment metrics that you want to see the results of.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.metric_names.is_none()`.
     pub fn metric_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.metric_names.deref()
+        self.metric_names.as_deref().unwrap_or_default()
     }
     /// <p>The names of the experiment treatments that you want to see the results for.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.treatment_names.is_none()`.
     pub fn treatment_names(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.treatment_names.deref()
+        self.treatment_names.as_deref().unwrap_or_default()
     }
     /// <p>The statistic used to calculate experiment results. Currently the only valid value is <code>mean</code>, which uses the mean of the collected values as the statistic.</p>
     pub fn base_stat(&self) -> ::std::option::Option<&crate::types::ExperimentBaseStat> {
@@ -82,7 +82,7 @@ impl GetExperimentResultsInput {
         self.report_names.as_deref().unwrap_or_default()
     }
     /// <p>In seconds, the amount of time to aggregate results together. </p>
-    pub fn period(&self) -> i64 {
+    pub fn period(&self) -> ::std::option::Option<i64> {
         self.period
     }
 }
@@ -294,46 +294,21 @@ impl GetExperimentResultsInputBuilder {
         &self.period
     }
     /// Consumes the builder and constructs a [`GetExperimentResultsInput`](crate::operation::get_experiment_results::GetExperimentResultsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder::project)
-    /// - [`experiment`](crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder::experiment)
-    /// - [`metric_names`](crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder::metric_names)
-    /// - [`treatment_names`](crate::operation::get_experiment_results::builders::GetExperimentResultsInputBuilder::treatment_names)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::get_experiment_results::GetExperimentResultsInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::get_experiment_results::GetExperimentResultsInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building GetExperimentResultsInput",
-                )
-            })?,
-            experiment: self.experiment.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "experiment",
-                    "experiment was not specified but it is required when building GetExperimentResultsInput",
-                )
-            })?,
+            project: self.project,
+            experiment: self.experiment,
             start_time: self.start_time,
             end_time: self.end_time,
-            metric_names: self.metric_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "metric_names",
-                    "metric_names was not specified but it is required when building GetExperimentResultsInput",
-                )
-            })?,
-            treatment_names: self.treatment_names.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "treatment_names",
-                    "treatment_names was not specified but it is required when building GetExperimentResultsInput",
-                )
-            })?,
+            metric_names: self.metric_names,
+            treatment_names: self.treatment_names,
             base_stat: self.base_stat,
             result_stats: self.result_stats,
             report_names: self.report_names,
-            period: self.period.unwrap_or_default(),
+            period: self.period,
         })
     }
 }

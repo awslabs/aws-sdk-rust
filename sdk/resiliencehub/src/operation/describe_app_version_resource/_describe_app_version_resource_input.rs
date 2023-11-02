@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeAppVersionResourceInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub app_arn: ::std::string::String,
+    pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>Resilience Hub application version.</p>
-    pub app_version: ::std::string::String,
+    pub app_version: ::std::option::Option<::std::string::String>,
     /// <p>Name of the resource.</p>
     pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>Logical identifier of the resource.</p>
@@ -20,14 +20,12 @@ pub struct DescribeAppVersionResourceInput {
 }
 impl DescribeAppVersionResourceInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+        self.app_arn.as_deref()
     }
     /// <p>Resilience Hub application version.</p>
-    pub fn app_version(&self) -> &str {
-        use std::ops::Deref;
-        self.app_version.deref()
+    pub fn app_version(&self) -> ::std::option::Option<&str> {
+        self.app_version.as_deref()
     }
     /// <p>Name of the resource.</p>
     pub fn resource_name(&self) -> ::std::option::Option<&str> {
@@ -171,9 +169,6 @@ impl DescribeAppVersionResourceInputBuilder {
         &self.aws_account_id
     }
     /// Consumes the builder and constructs a [`DescribeAppVersionResourceInput`](crate::operation::describe_app_version_resource::DescribeAppVersionResourceInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_arn`](crate::operation::describe_app_version_resource::builders::DescribeAppVersionResourceInputBuilder::app_arn)
-    /// - [`app_version`](crate::operation::describe_app_version_resource::builders::DescribeAppVersionResourceInputBuilder::app_version)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -181,18 +176,8 @@ impl DescribeAppVersionResourceInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::describe_app_version_resource::DescribeAppVersionResourceInput {
-            app_arn: self.app_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_arn",
-                    "app_arn was not specified but it is required when building DescribeAppVersionResourceInput",
-                )
-            })?,
-            app_version: self.app_version.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_version",
-                    "app_version was not specified but it is required when building DescribeAppVersionResourceInput",
-                )
-            })?,
+            app_arn: self.app_arn,
+            app_version: self.app_version,
             resource_name: self.resource_name,
             logical_resource_id: self.logical_resource_id,
             physical_resource_id: self.physical_resource_id,

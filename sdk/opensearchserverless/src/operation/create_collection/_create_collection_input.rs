@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateCollectionInput {
     /// <p>Name of the collection.</p>
-    pub name: ::std::string::String,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The type of collection.</p>
     pub r#type: ::std::option::Option<crate::types::CollectionType>,
     /// <p>Description of the collection.</p>
@@ -16,9 +16,8 @@ pub struct CreateCollectionInput {
 }
 impl CreateCollectionInput {
     /// <p>Name of the collection.</p>
-    pub fn name(&self) -> &str {
-        use std::ops::Deref;
-        self.name.deref()
+    pub fn name(&self) -> ::std::option::Option<&str> {
+        self.name.as_deref()
     }
     /// <p>The type of collection.</p>
     pub fn r#type(&self) -> ::std::option::Option<&crate::types::CollectionType> {
@@ -135,18 +134,11 @@ impl CreateCollectionInputBuilder {
         &self.client_token
     }
     /// Consumes the builder and constructs a [`CreateCollectionInput`](crate::operation::create_collection::CreateCollectionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`name`](crate::operation::create_collection::builders::CreateCollectionInputBuilder::name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_collection::CreateCollectionInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_collection::CreateCollectionInput {
-            name: self.name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "name",
-                    "name was not specified but it is required when building CreateCollectionInput",
-                )
-            })?,
+            name: self.name,
             r#type: self.r#type,
             description: self.description,
             tags: self.tags,

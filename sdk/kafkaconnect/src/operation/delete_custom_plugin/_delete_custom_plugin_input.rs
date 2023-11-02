@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteCustomPluginInput {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
-    pub custom_plugin_arn: ::std::string::String,
+    pub custom_plugin_arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteCustomPluginInput {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you want to delete.</p>
-    pub fn custom_plugin_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.custom_plugin_arn.deref()
+    pub fn custom_plugin_arn(&self) -> ::std::option::Option<&str> {
+        self.custom_plugin_arn.as_deref()
     }
 }
 impl DeleteCustomPluginInput {
@@ -43,18 +42,11 @@ impl DeleteCustomPluginInputBuilder {
         &self.custom_plugin_arn
     }
     /// Consumes the builder and constructs a [`DeleteCustomPluginInput`](crate::operation::delete_custom_plugin::DeleteCustomPluginInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`custom_plugin_arn`](crate::operation::delete_custom_plugin::builders::DeleteCustomPluginInputBuilder::custom_plugin_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_custom_plugin::DeleteCustomPluginInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_custom_plugin::DeleteCustomPluginInput {
-            custom_plugin_arn: self.custom_plugin_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "custom_plugin_arn",
-                    "custom_plugin_arn was not specified but it is required when building DeleteCustomPluginInput",
-                )
-            })?,
+            custom_plugin_arn: self.custom_plugin_arn,
         })
     }
 }

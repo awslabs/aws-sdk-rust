@@ -12,29 +12,29 @@ pub fn ser_create_worker_input(
     if let Some(var_3) = &input.client_token {
         object.key("clientToken").string(var_3.as_str());
     }
-    {
-        object.key("fleet").string(input.fleet.as_str());
+    if let Some(var_4) = &input.fleet {
+        object.key("fleet").string(var_4.as_str());
     }
-    {
-        object.key("name").string(input.name.as_str());
+    if let Some(var_5) = &input.name {
+        object.key("name").string(var_5.as_str());
     }
-    if let Some(var_4) = &input.orientation {
+    if let Some(var_6) = &input.orientation {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("orientation").start_object();
-        crate::protocol_serde::shape_orientation::ser_orientation(&mut object_5, var_4)?;
-        object_5.finish();
-    }
-    if let Some(var_6) = &input.position {
-        #[allow(unused_mut)]
-        let mut object_7 = object.key("position").start_object();
-        crate::protocol_serde::shape_position_coordinates::ser_position_coordinates(&mut object_7, var_6)?;
+        let mut object_7 = object.key("orientation").start_object();
+        crate::protocol_serde::shape_orientation::ser_orientation(&mut object_7, var_6)?;
         object_7.finish();
     }
-    if let Some(var_8) = &input.vendor_properties {
+    if let Some(var_8) = &input.position {
         #[allow(unused_mut)]
-        let mut object_9 = object.key("vendorProperties").start_object();
-        crate::protocol_serde::shape_vendor_properties::ser_vendor_properties(&mut object_9, var_8)?;
+        let mut object_9 = object.key("position").start_object();
+        crate::protocol_serde::shape_position_coordinates::ser_position_coordinates(&mut object_9, var_8)?;
         object_9.finish();
+    }
+    if let Some(var_10) = &input.vendor_properties {
+        #[allow(unused_mut)]
+        let mut object_11 = object.key("vendorProperties").start_object();
+        crate::protocol_serde::shape_vendor_properties::ser_vendor_properties(&mut object_11, var_10)?;
+        object_11.finish();
     }
     Ok(())
 }

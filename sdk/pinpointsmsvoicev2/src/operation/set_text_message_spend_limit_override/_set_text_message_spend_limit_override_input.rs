@@ -4,11 +4,11 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetTextMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on text messages.</p>
-    pub monthly_limit: i64,
+    pub monthly_limit: ::std::option::Option<i64>,
 }
 impl SetTextMessageSpendLimitOverrideInput {
     /// <p>The new monthly limit to enforce on text messages.</p>
-    pub fn monthly_limit(&self) -> i64 {
+    pub fn monthly_limit(&self) -> ::std::option::Option<i64> {
         self.monthly_limit
     }
 }
@@ -42,8 +42,6 @@ impl SetTextMessageSpendLimitOverrideInputBuilder {
         &self.monthly_limit
     }
     /// Consumes the builder and constructs a [`SetTextMessageSpendLimitOverrideInput`](crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`monthly_limit`](crate::operation::set_text_message_spend_limit_override::builders::SetTextMessageSpendLimitOverrideInputBuilder::monthly_limit)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -52,12 +50,7 @@ impl SetTextMessageSpendLimitOverrideInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideInput {
-                monthly_limit: self.monthly_limit.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "monthly_limit",
-                        "monthly_limit was not specified but it is required when building SetTextMessageSpendLimitOverrideInput",
-                    )
-                })?,
+                monthly_limit: self.monthly_limit,
             },
         )
     }

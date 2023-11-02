@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetFeatureInput {
     /// <p>The name or ARN of the project that contains the feature.</p>
-    pub project: ::std::string::String,
+    pub project: ::std::option::Option<::std::string::String>,
     /// <p>The name of the feature that you want to retrieve information for.</p>
-    pub feature: ::std::string::String,
+    pub feature: ::std::option::Option<::std::string::String>,
 }
 impl GetFeatureInput {
     /// <p>The name or ARN of the project that contains the feature.</p>
-    pub fn project(&self) -> &str {
-        use std::ops::Deref;
-        self.project.deref()
+    pub fn project(&self) -> ::std::option::Option<&str> {
+        self.project.as_deref()
     }
     /// <p>The name of the feature that you want to retrieve information for.</p>
-    pub fn feature(&self) -> &str {
-        use std::ops::Deref;
-        self.feature.deref()
+    pub fn feature(&self) -> ::std::option::Option<&str> {
+        self.feature.as_deref()
     }
 }
 impl GetFeatureInput {
@@ -66,23 +64,10 @@ impl GetFeatureInputBuilder {
         &self.feature
     }
     /// Consumes the builder and constructs a [`GetFeatureInput`](crate::operation::get_feature::GetFeatureInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`project`](crate::operation::get_feature::builders::GetFeatureInputBuilder::project)
-    /// - [`feature`](crate::operation::get_feature::builders::GetFeatureInputBuilder::feature)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_feature::GetFeatureInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_feature::GetFeatureInput {
-            project: self.project.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project",
-                    "project was not specified but it is required when building GetFeatureInput",
-                )
-            })?,
-            feature: self.feature.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "feature",
-                    "feature was not specified but it is required when building GetFeatureInput",
-                )
-            })?,
+            project: self.project,
+            feature: self.feature,
         })
     }
 }

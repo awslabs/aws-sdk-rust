@@ -4,20 +4,20 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPrefetchSchedulesInput {
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
     /// <p> For the first <code>ListPrefetchSchedulesRequest</code> request, omit this value.</p>
     /// <p> For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value for <code>NextToken</code> in the request.</p>
     /// <p> If the previous response didn't include a <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    pub playback_configuration_name: ::std::string::String,
+    pub playback_configuration_name: ::std::option::Option<::std::string::String>,
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub stream_id: ::std::option::Option<::std::string::String>,
 }
 impl ListPrefetchSchedulesInput {
     /// <p>The maximum number of prefetch schedules that you want MediaTailor to return in response to the current request. If there are more than <code>MaxResults</code> prefetch schedules, use the value of <code>NextToken</code> in the response to get the next page of results.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>(Optional) If the playback configuration has more than <code>MaxResults</code> prefetch schedules, use <code>NextToken</code> to get the second and subsequent pages of results.</p>
@@ -28,9 +28,8 @@ impl ListPrefetchSchedulesInput {
         self.next_token.as_deref()
     }
     /// <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
-    pub fn playback_configuration_name(&self) -> &str {
-        use std::ops::Deref;
-        self.playback_configuration_name.deref()
+    pub fn playback_configuration_name(&self) -> ::std::option::Option<&str> {
+        self.playback_configuration_name.as_deref()
     }
     /// <p>An optional filtering parameter whereby MediaTailor filters the prefetch schedules to include only specific streams.</p>
     pub fn stream_id(&self) -> ::std::option::Option<&str> {
@@ -121,21 +120,14 @@ impl ListPrefetchSchedulesInputBuilder {
         &self.stream_id
     }
     /// Consumes the builder and constructs a [`ListPrefetchSchedulesInput`](crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`playback_configuration_name`](crate::operation::list_prefetch_schedules::builders::ListPrefetchSchedulesInputBuilder::playback_configuration_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::list_prefetch_schedules::ListPrefetchSchedulesInput {
-            max_results: self.max_results.unwrap_or_default(),
+            max_results: self.max_results,
             next_token: self.next_token,
-            playback_configuration_name: self.playback_configuration_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "playback_configuration_name",
-                    "playback_configuration_name was not specified but it is required when building ListPrefetchSchedulesInput",
-                )
-            })?,
+            playback_configuration_name: self.playback_configuration_name,
             stream_id: self.stream_id,
         })
     }

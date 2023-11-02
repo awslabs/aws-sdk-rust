@@ -3,8 +3,8 @@ pub fn ser_update_service_network_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_service_network::UpdateServiceNetworkInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("authType").string(input.auth_type.as_str());
+    if let Some(var_1) = &input.auth_type {
+        object.key("authType").string(var_1.as_str());
     }
     Ok(())
 }

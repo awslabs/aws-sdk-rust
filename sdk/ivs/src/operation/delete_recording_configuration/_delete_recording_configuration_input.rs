@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be deleted.</p>
-    pub arn: ::std::string::String,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl DeleteRecordingConfigurationInput {
     /// <p>ARN of the recording configuration to be deleted.</p>
-    pub fn arn(&self) -> &str {
-        use std::ops::Deref;
-        self.arn.deref()
+    pub fn arn(&self) -> ::std::option::Option<&str> {
+        self.arn.as_deref()
     }
 }
 impl DeleteRecordingConfigurationInput {
@@ -43,21 +42,12 @@ impl DeleteRecordingConfigurationInputBuilder {
         &self.arn
     }
     /// Consumes the builder and constructs a [`DeleteRecordingConfigurationInput`](crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`arn`](crate::operation::delete_recording_configuration::builders::DeleteRecordingConfigurationInputBuilder::arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput,
         ::aws_smithy_http::operation::error::BuildError,
     > {
-        ::std::result::Result::Ok(crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput {
-            arn: self.arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "arn",
-                    "arn was not specified but it is required when building DeleteRecordingConfigurationInput",
-                )
-            })?,
-        })
+        ::std::result::Result::Ok(crate::operation::delete_recording_configuration::DeleteRecordingConfigurationInput { arn: self.arn })
     }
 }

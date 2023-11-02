@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteProgramInput {
     /// <p>The name of the channel.</p>
-    pub channel_name: ::std::string::String,
+    pub channel_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the program.</p>
-    pub program_name: ::std::string::String,
+    pub program_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteProgramInput {
     /// <p>The name of the channel.</p>
-    pub fn channel_name(&self) -> &str {
-        use std::ops::Deref;
-        self.channel_name.deref()
+    pub fn channel_name(&self) -> ::std::option::Option<&str> {
+        self.channel_name.as_deref()
     }
     /// <p>The name of the program.</p>
-    pub fn program_name(&self) -> &str {
-        use std::ops::Deref;
-        self.program_name.deref()
+    pub fn program_name(&self) -> ::std::option::Option<&str> {
+        self.program_name.as_deref()
     }
 }
 impl DeleteProgramInput {
@@ -66,25 +64,12 @@ impl DeleteProgramInputBuilder {
         &self.program_name
     }
     /// Consumes the builder and constructs a [`DeleteProgramInput`](crate::operation::delete_program::DeleteProgramInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`channel_name`](crate::operation::delete_program::builders::DeleteProgramInputBuilder::channel_name)
-    /// - [`program_name`](crate::operation::delete_program::builders::DeleteProgramInputBuilder::program_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_program::DeleteProgramInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::delete_program::DeleteProgramInput {
-            channel_name: self.channel_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "channel_name",
-                    "channel_name was not specified but it is required when building DeleteProgramInput",
-                )
-            })?,
-            program_name: self.program_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "program_name",
-                    "program_name was not specified but it is required when building DeleteProgramInput",
-                )
-            })?,
+            channel_name: self.channel_name,
+            program_name: self.program_name,
         })
     }
 }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetReplicationSet`](crate::operation::get_replication_set::builders::GetReplicationSetFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`arn(impl Into<String>)`](crate::operation::get_replication_set::builders::GetReplicationSetFluentBuilder::arn) / [`set_arn(impl Into<String>)`](crate::operation::get_replication_set::builders::GetReplicationSetFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p><br>
+    ///   - [`arn(impl Into<String>)`](crate::operation::get_replication_set::builders::GetReplicationSetFluentBuilder::arn) / [`set_arn(Option<String>)`](crate::operation::get_replication_set::builders::GetReplicationSetFluentBuilder::set_arn):<br>required: **true**<br><p>The Amazon Resource Name (ARN) of the replication set you want to retrieve.</p><br>
     /// - On success, responds with [`GetReplicationSetOutput`](crate::operation::get_replication_set::GetReplicationSetOutput) with field(s):
     ///   - [`replication_set(Option<ReplicationSet>)`](crate::operation::get_replication_set::GetReplicationSetOutput::replication_set): <p>Details of the replication set.</p>
     /// - On failure, responds with [`SdkError<GetReplicationSetError>`](crate::operation::get_replication_set::GetReplicationSetError)

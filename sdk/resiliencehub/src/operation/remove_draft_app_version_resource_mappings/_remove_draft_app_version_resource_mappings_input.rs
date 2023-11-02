@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RemoveDraftAppVersionResourceMappingsInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub app_arn: ::std::string::String,
+    pub app_arn: ::std::option::Option<::std::string::String>,
     /// <p>The names of the resources you want to remove from the resource mappings.</p>
     pub resource_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The names of the CloudFormation stacks you want to remove from the resource mappings.</p>
@@ -22,9 +22,8 @@ pub struct RemoveDraftAppVersionResourceMappingsInput {
 }
 impl RemoveDraftAppVersionResourceMappingsInput {
     /// <p>Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i> guide.</p>
-    pub fn app_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.app_arn.deref()
+    pub fn app_arn(&self) -> ::std::option::Option<&str> {
+        self.app_arn.as_deref()
     }
     /// <p>The names of the resources you want to remove from the resource mappings.</p>
     ///
@@ -227,8 +226,6 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
         &self.eks_source_names
     }
     /// Consumes the builder and constructs a [`RemoveDraftAppVersionResourceMappingsInput`](crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_arn`](crate::operation::remove_draft_app_version_resource_mappings::builders::RemoveDraftAppVersionResourceMappingsInputBuilder::app_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -237,12 +234,7 @@ impl RemoveDraftAppVersionResourceMappingsInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsInput {
-                app_arn: self.app_arn.ok_or_else(|| {
-                    ::aws_smithy_http::operation::error::BuildError::missing_field(
-                        "app_arn",
-                        "app_arn was not specified but it is required when building RemoveDraftAppVersionResourceMappingsInput",
-                    )
-                })?,
+                app_arn: self.app_arn,
                 resource_names: self.resource_names,
                 logical_stack_names: self.logical_stack_names,
                 app_registry_app_names: self.app_registry_app_names,

@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreClusterFromSnapshotInput {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
-    pub cluster_name: ::std::string::String,
+    pub cluster_name: ::std::option::Option<::std::string::String>,
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
-    pub snapshot_arn: ::std::string::String,
+    pub snapshot_arn: ::std::option::Option<::std::string::String>,
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
     pub vpc_security_group_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The Amazon EC2 subnet IDs for the Elastic DocumentDB cluster.</p>
@@ -20,14 +20,12 @@ pub struct RestoreClusterFromSnapshotInput {
 }
 impl RestoreClusterFromSnapshotInput {
     /// <p>The name of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_name(&self) -> &str {
-        use std::ops::Deref;
-        self.cluster_name.deref()
+    pub fn cluster_name(&self) -> ::std::option::Option<&str> {
+        self.cluster_name.as_deref()
     }
     /// <p>The arn of the Elastic DocumentDB snapshot.</p>
-    pub fn snapshot_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.snapshot_arn.deref()
+    pub fn snapshot_arn(&self) -> ::std::option::Option<&str> {
+        self.snapshot_arn.as_deref()
     }
     /// <p>A list of EC2 VPC security groups to associate with the Elastic DocumentDB cluster.</p>
     ///
@@ -182,9 +180,6 @@ impl RestoreClusterFromSnapshotInputBuilder {
         &self.tags
     }
     /// Consumes the builder and constructs a [`RestoreClusterFromSnapshotInput`](crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`cluster_name`](crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder::cluster_name)
-    /// - [`snapshot_arn`](crate::operation::restore_cluster_from_snapshot::builders::RestoreClusterFromSnapshotInputBuilder::snapshot_arn)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -192,18 +187,8 @@ impl RestoreClusterFromSnapshotInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotInput {
-            cluster_name: self.cluster_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "cluster_name",
-                    "cluster_name was not specified but it is required when building RestoreClusterFromSnapshotInput",
-                )
-            })?,
-            snapshot_arn: self.snapshot_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "snapshot_arn",
-                    "snapshot_arn was not specified but it is required when building RestoreClusterFromSnapshotInput",
-                )
-            })?,
+            cluster_name: self.cluster_name,
+            snapshot_arn: self.snapshot_arn,
             vpc_security_group_ids: self.vpc_security_group_ids,
             subnet_ids: self.subnet_ids,
             kms_key_id: self.kms_key_id,

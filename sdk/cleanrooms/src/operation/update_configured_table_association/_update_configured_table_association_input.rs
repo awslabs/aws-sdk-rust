@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateConfiguredTableAssociationInput {
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-    pub configured_table_association_identifier: ::std::string::String,
+    pub configured_table_association_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub membership_identifier: ::std::string::String,
+    pub membership_identifier: ::std::option::Option<::std::string::String>,
     /// <p>A new description for the configured table association.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>The service will assume this role to access catalog metadata and query the table.</p>
@@ -14,14 +14,12 @@ pub struct UpdateConfiguredTableAssociationInput {
 }
 impl UpdateConfiguredTableAssociationInput {
     /// <p>The unique identifier for the configured table association to update. Currently accepts the configured table association ID.</p>
-    pub fn configured_table_association_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.configured_table_association_identifier.deref()
+    pub fn configured_table_association_identifier(&self) -> ::std::option::Option<&str> {
+        self.configured_table_association_identifier.as_deref()
     }
     /// <p>The unique ID for the membership that the configured table association belongs to.</p>
-    pub fn membership_identifier(&self) -> &str {
-        use std::ops::Deref;
-        self.membership_identifier.deref()
+    pub fn membership_identifier(&self) -> ::std::option::Option<&str> {
+        self.membership_identifier.as_deref()
     }
     /// <p>A new description for the configured table association.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -108,9 +106,6 @@ impl UpdateConfiguredTableAssociationInputBuilder {
         &self.role_arn
     }
     /// Consumes the builder and constructs a [`UpdateConfiguredTableAssociationInput`](crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`configured_table_association_identifier`](crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationInputBuilder::configured_table_association_identifier)
-    /// - [`membership_identifier`](crate::operation::update_configured_table_association::builders::UpdateConfiguredTableAssociationInputBuilder::membership_identifier)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -119,21 +114,11 @@ impl UpdateConfiguredTableAssociationInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationInput {
-                configured_table_association_identifier: self.configured_table_association_identifier
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("configured_table_association_identifier", "configured_table_association_identifier was not specified but it is required when building UpdateConfiguredTableAssociationInput")
-                    )?
-                ,
-                membership_identifier: self.membership_identifier
-                    .ok_or_else(||
-                        ::aws_smithy_http::operation::error::BuildError::missing_field("membership_identifier", "membership_identifier was not specified but it is required when building UpdateConfiguredTableAssociationInput")
-                    )?
-                ,
-                description: self.description
-                ,
-                role_arn: self.role_arn
-                ,
-            }
+                configured_table_association_identifier: self.configured_table_association_identifier,
+                membership_identifier: self.membership_identifier,
+                description: self.description,
+                role_arn: self.role_arn,
+            },
         )
     }
 }

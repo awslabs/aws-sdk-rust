@@ -6,11 +6,11 @@ pub fn ser_update_source_server_replication_type_input(
     if let Some(var_1) = &input.account_id {
         object.key("accountID").string(var_1.as_str());
     }
-    {
-        object.key("replicationType").string(input.replication_type.as_str());
+    if let Some(var_2) = &input.replication_type {
+        object.key("replicationType").string(var_2.as_str());
     }
-    {
-        object.key("sourceServerID").string(input.source_server_id.as_str());
+    if let Some(var_3) = &input.source_server_id {
+        object.key("sourceServerID").string(var_3.as_str());
     }
     Ok(())
 }

@@ -4,29 +4,28 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetCaseInput {
     /// <p>A unique identifier of the case.</p>
-    pub case_id: ::std::string::String,
+    pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A list of unique field identifiers. </p>
-    pub fields: ::std::vec::Vec<crate::types::FieldIdentifier>,
+    pub fields: ::std::option::Option<::std::vec::Vec<crate::types::FieldIdentifier>>,
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
 impl GetCaseInput {
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> &str {
-        use std::ops::Deref;
-        self.case_id.deref()
+    pub fn case_id(&self) -> ::std::option::Option<&str> {
+        self.case_id.as_deref()
     }
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>A list of unique field identifiers. </p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.fields.is_none()`.
     pub fn fields(&self) -> &[crate::types::FieldIdentifier] {
-        use std::ops::Deref;
-        self.fields.deref()
+        self.fields.as_deref().unwrap_or_default()
     }
     /// <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p>
     pub fn next_token(&self) -> ::std::option::Option<&str> {
@@ -115,30 +114,11 @@ impl GetCaseInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`GetCaseInput`](crate::operation::get_case::GetCaseInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`case_id`](crate::operation::get_case::builders::GetCaseInputBuilder::case_id)
-    /// - [`domain_id`](crate::operation::get_case::builders::GetCaseInputBuilder::domain_id)
-    /// - [`fields`](crate::operation::get_case::builders::GetCaseInputBuilder::fields)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_case::GetCaseInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_case::GetCaseInput {
-            case_id: self.case_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "case_id",
-                    "case_id was not specified but it is required when building GetCaseInput",
-                )
-            })?,
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building GetCaseInput",
-                )
-            })?,
-            fields: self.fields.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "fields",
-                    "fields was not specified but it is required when building GetCaseInput",
-                )
-            })?,
+            case_id: self.case_id,
+            domain_id: self.domain_id,
+            fields: self.fields,
             next_token: self.next_token,
         })
     }

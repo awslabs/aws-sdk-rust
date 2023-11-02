@@ -4,20 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeleteEventDestinationInput {
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub configuration_set_name: ::std::string::String,
+    pub configuration_set_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the event destination to delete.</p>
-    pub event_destination_name: ::std::string::String,
+    pub event_destination_name: ::std::option::Option<::std::string::String>,
 }
 impl DeleteEventDestinationInput {
     /// <p>The name of the configuration set or the configuration set's Amazon Resource Name (ARN) to remove the event destination from. The ConfigurateSetName and ConfigurationSetArn can be found using the <code>DescribeConfigurationSets</code> action.</p>
-    pub fn configuration_set_name(&self) -> &str {
-        use std::ops::Deref;
-        self.configuration_set_name.deref()
+    pub fn configuration_set_name(&self) -> ::std::option::Option<&str> {
+        self.configuration_set_name.as_deref()
     }
     /// <p>The name of the event destination to delete.</p>
-    pub fn event_destination_name(&self) -> &str {
-        use std::ops::Deref;
-        self.event_destination_name.deref()
+    pub fn event_destination_name(&self) -> ::std::option::Option<&str> {
+        self.event_destination_name.as_deref()
     }
 }
 impl DeleteEventDestinationInput {
@@ -66,26 +64,13 @@ impl DeleteEventDestinationInputBuilder {
         &self.event_destination_name
     }
     /// Consumes the builder and constructs a [`DeleteEventDestinationInput`](crate::operation::delete_event_destination::DeleteEventDestinationInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`configuration_set_name`](crate::operation::delete_event_destination::builders::DeleteEventDestinationInputBuilder::configuration_set_name)
-    /// - [`event_destination_name`](crate::operation::delete_event_destination::builders::DeleteEventDestinationInputBuilder::event_destination_name)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::delete_event_destination::DeleteEventDestinationInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::delete_event_destination::DeleteEventDestinationInput {
-            configuration_set_name: self.configuration_set_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "configuration_set_name",
-                    "configuration_set_name was not specified but it is required when building DeleteEventDestinationInput",
-                )
-            })?,
-            event_destination_name: self.event_destination_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "event_destination_name",
-                    "event_destination_name was not specified but it is required when building DeleteEventDestinationInput",
-                )
-            })?,
+            configuration_set_name: self.configuration_set_name,
+            event_destination_name: self.event_destination_name,
         })
     }
 }

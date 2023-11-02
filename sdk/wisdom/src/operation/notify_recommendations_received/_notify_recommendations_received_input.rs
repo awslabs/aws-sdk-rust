@@ -4,27 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotifyRecommendationsReceivedInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub assistant_id: ::std::string::String,
+    pub assistant_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub session_id: ::std::string::String,
+    pub session_id: ::std::option::Option<::std::string::String>,
     /// <p>The identifiers of the recommendations.</p>
-    pub recommendation_ids: ::std::vec::Vec<::std::string::String>,
+    pub recommendation_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl NotifyRecommendationsReceivedInput {
     /// <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn assistant_id(&self) -> &str {
-        use std::ops::Deref;
-        self.assistant_id.deref()
+    pub fn assistant_id(&self) -> ::std::option::Option<&str> {
+        self.assistant_id.as_deref()
     }
     /// <p>The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</p>
-    pub fn session_id(&self) -> &str {
-        use std::ops::Deref;
-        self.session_id.deref()
+    pub fn session_id(&self) -> ::std::option::Option<&str> {
+        self.session_id.as_deref()
     }
     /// <p>The identifiers of the recommendations.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.recommendation_ids.is_none()`.
     pub fn recommendation_ids(&self) -> &[::std::string::String] {
-        use std::ops::Deref;
-        self.recommendation_ids.deref()
+        self.recommendation_ids.as_deref().unwrap_or_default()
     }
 }
 impl NotifyRecommendationsReceivedInput {
@@ -94,10 +93,6 @@ impl NotifyRecommendationsReceivedInputBuilder {
         &self.recommendation_ids
     }
     /// Consumes the builder and constructs a [`NotifyRecommendationsReceivedInput`](crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`assistant_id`](crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder::assistant_id)
-    /// - [`session_id`](crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder::session_id)
-    /// - [`recommendation_ids`](crate::operation::notify_recommendations_received::builders::NotifyRecommendationsReceivedInputBuilder::recommendation_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -105,24 +100,9 @@ impl NotifyRecommendationsReceivedInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedInput {
-            assistant_id: self.assistant_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "assistant_id",
-                    "assistant_id was not specified but it is required when building NotifyRecommendationsReceivedInput",
-                )
-            })?,
-            session_id: self.session_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "session_id",
-                    "session_id was not specified but it is required when building NotifyRecommendationsReceivedInput",
-                )
-            })?,
-            recommendation_ids: self.recommendation_ids.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "recommendation_ids",
-                    "recommendation_ids was not specified but it is required when building NotifyRecommendationsReceivedInput",
-                )
-            })?,
+            assistant_id: self.assistant_id,
+            session_id: self.session_id,
+            recommendation_ids: self.recommendation_ids,
         })
     }
 }

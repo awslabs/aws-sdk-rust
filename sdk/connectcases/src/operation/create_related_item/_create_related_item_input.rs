@@ -4,28 +4,26 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateRelatedItemInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>A unique identifier of the case.</p>
-    pub case_id: ::std::string::String,
+    pub case_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of a related item.</p>
-    pub r#type: crate::types::RelatedItemType,
+    pub r#type: ::std::option::Option<crate::types::RelatedItemType>,
     /// <p>The content of a related item to be created.</p>
     pub content: ::std::option::Option<crate::types::RelatedItemInputContent>,
 }
 impl CreateRelatedItemInput {
     /// <p>The unique identifier of the Cases domain. </p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>A unique identifier of the case.</p>
-    pub fn case_id(&self) -> &str {
-        use std::ops::Deref;
-        self.case_id.deref()
+    pub fn case_id(&self) -> ::std::option::Option<&str> {
+        self.case_id.as_deref()
     }
     /// <p>The type of a related item.</p>
-    pub fn r#type(&self) -> &crate::types::RelatedItemType {
-        &self.r#type
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RelatedItemType> {
+        self.r#type.as_ref()
     }
     /// <p>The content of a related item to be created.</p>
     pub fn content(&self) -> ::std::option::Option<&crate::types::RelatedItemInputContent> {
@@ -110,32 +108,13 @@ impl CreateRelatedItemInputBuilder {
         &self.content
     }
     /// Consumes the builder and constructs a [`CreateRelatedItemInput`](crate::operation::create_related_item::CreateRelatedItemInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::create_related_item::builders::CreateRelatedItemInputBuilder::domain_id)
-    /// - [`case_id`](crate::operation::create_related_item::builders::CreateRelatedItemInputBuilder::case_id)
-    /// - [`r#type`](crate::operation::create_related_item::builders::CreateRelatedItemInputBuilder::r#type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_related_item::CreateRelatedItemInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::create_related_item::CreateRelatedItemInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building CreateRelatedItemInput",
-                )
-            })?,
-            case_id: self.case_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "case_id",
-                    "case_id was not specified but it is required when building CreateRelatedItemInput",
-                )
-            })?,
-            r#type: self.r#type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "r#type",
-                    "r#type was not specified but it is required when building CreateRelatedItemInput",
-                )
-            })?,
+            domain_id: self.domain_id,
+            case_id: self.case_id,
+            r#type: self.r#type,
             content: self.content,
         })
     }

@@ -4,19 +4,18 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DisassociateLicenseInput {
     /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-    pub workspace_id: ::std::string::String,
+    pub workspace_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of license to remove from the workspace.</p>
-    pub license_type: crate::types::LicenseType,
+    pub license_type: ::std::option::Option<crate::types::LicenseType>,
 }
 impl DisassociateLicenseInput {
     /// <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-    pub fn workspace_id(&self) -> &str {
-        use std::ops::Deref;
-        self.workspace_id.deref()
+    pub fn workspace_id(&self) -> ::std::option::Option<&str> {
+        self.workspace_id.as_deref()
     }
     /// <p>The type of license to remove from the workspace.</p>
-    pub fn license_type(&self) -> &crate::types::LicenseType {
-        &self.license_type
+    pub fn license_type(&self) -> ::std::option::Option<&crate::types::LicenseType> {
+        self.license_type.as_ref()
     }
 }
 impl DisassociateLicenseInput {
@@ -65,26 +64,13 @@ impl DisassociateLicenseInputBuilder {
         &self.license_type
     }
     /// Consumes the builder and constructs a [`DisassociateLicenseInput`](crate::operation::disassociate_license::DisassociateLicenseInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`workspace_id`](crate::operation::disassociate_license::builders::DisassociateLicenseInputBuilder::workspace_id)
-    /// - [`license_type`](crate::operation::disassociate_license::builders::DisassociateLicenseInputBuilder::license_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::disassociate_license::DisassociateLicenseInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::disassociate_license::DisassociateLicenseInput {
-            workspace_id: self.workspace_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "workspace_id",
-                    "workspace_id was not specified but it is required when building DisassociateLicenseInput",
-                )
-            })?,
-            license_type: self.license_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "license_type",
-                    "license_type was not specified but it is required when building DisassociateLicenseInput",
-                )
-            })?,
+            workspace_id: self.workspace_id,
+            license_type: self.license_type,
         })
     }
 }

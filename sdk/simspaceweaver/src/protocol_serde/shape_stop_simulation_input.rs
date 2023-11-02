@@ -3,8 +3,8 @@ pub fn ser_stop_simulation_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::stop_simulation::StopSimulationInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("Simulation").string(input.simulation.as_str());
+    if let Some(var_1) = &input.simulation {
+        object.key("Simulation").string(var_1.as_str());
     }
     Ok(())
 }

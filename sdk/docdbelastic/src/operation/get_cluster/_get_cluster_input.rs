@@ -4,13 +4,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub cluster_arn: ::std::string::String,
+    pub cluster_arn: ::std::option::Option<::std::string::String>,
 }
 impl GetClusterInput {
     /// <p>The arn of the Elastic DocumentDB cluster.</p>
-    pub fn cluster_arn(&self) -> &str {
-        use std::ops::Deref;
-        self.cluster_arn.deref()
+    pub fn cluster_arn(&self) -> ::std::option::Option<&str> {
+        self.cluster_arn.as_deref()
     }
 }
 impl GetClusterInput {
@@ -43,16 +42,9 @@ impl GetClusterInputBuilder {
         &self.cluster_arn
     }
     /// Consumes the builder and constructs a [`GetClusterInput`](crate::operation::get_cluster::GetClusterInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`cluster_arn`](crate::operation::get_cluster::builders::GetClusterInputBuilder::cluster_arn)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_cluster::GetClusterInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_cluster::GetClusterInput {
-            cluster_arn: self.cluster_arn.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "cluster_arn",
-                    "cluster_arn was not specified but it is required when building GetClusterInput",
-                )
-            })?,
+            cluster_arn: self.cluster_arn,
         })
     }
 }

@@ -59,33 +59,33 @@ pub fn ser_put_playback_configuration_input(
         crate::protocol_serde::shape_manifest_processing_rules::ser_manifest_processing_rules(&mut object_20, var_19)?;
         object_20.finish();
     }
-    {
-        object.key("Name").string(input.name.as_str());
+    if let Some(var_21) = &input.name {
+        object.key("Name").string(var_21.as_str());
     }
-    if input.personalization_threshold_seconds != 0 {
+    if let Some(var_22) = &input.personalization_threshold_seconds {
         object.key("PersonalizationThresholdSeconds").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.personalization_threshold_seconds).into()),
+            ::aws_smithy_types::Number::NegInt((*var_22).into()),
         );
     }
-    if let Some(var_21) = &input.slate_ad_url {
-        object.key("SlateAdUrl").string(var_21.as_str());
+    if let Some(var_23) = &input.slate_ad_url {
+        object.key("SlateAdUrl").string(var_23.as_str());
     }
-    if let Some(var_22) = &input.tags {
+    if let Some(var_24) = &input.tags {
         #[allow(unused_mut)]
-        let mut object_23 = object.key("tags").start_object();
-        for (key_24, value_25) in var_22 {
+        let mut object_25 = object.key("tags").start_object();
+        for (key_26, value_27) in var_24 {
             {
-                object_23.key(key_24.as_str()).string(value_25.as_str());
+                object_25.key(key_26.as_str()).string(value_27.as_str());
             }
         }
-        object_23.finish();
+        object_25.finish();
     }
-    if let Some(var_26) = &input.transcode_profile_name {
-        object.key("TranscodeProfileName").string(var_26.as_str());
+    if let Some(var_28) = &input.transcode_profile_name {
+        object.key("TranscodeProfileName").string(var_28.as_str());
     }
-    if let Some(var_27) = &input.video_content_source_url {
-        object.key("VideoContentSourceUrl").string(var_27.as_str());
+    if let Some(var_29) = &input.video_content_source_url {
+        object.key("VideoContentSourceUrl").string(var_29.as_str());
     }
     Ok(())
 }

@@ -39,15 +39,6 @@ impl Config {
             runtime_plugins: self.runtime_plugins.clone(),
         }
     }
-    /// Returns a copy of the idempotency token provider.
-    /// If a random token provider was configured,
-    /// a newly-randomized token provider will be returned.
-    pub fn idempotency_token_provider(&self) -> crate::idempotency_token::IdempotencyTokenProvider {
-        self.config
-            .load::<crate::idempotency_token::IdempotencyTokenProvider>()
-            .expect("the idempotency provider should be set")
-            .clone()
-    }
     /// Deprecated. Don't use.
     #[deprecated(note = "HTTP connector configuration changed. See https://github.com/awslabs/smithy-rs/discussions/3022 for upgrade guidance.")]
     pub fn http_connector(&self) -> Option<::aws_smithy_runtime_api::client::http::SharedHttpClient> {
@@ -302,7 +293,11 @@ impl Builder {
         &mut self,
         endpoint_resolver: ::std::option::Option<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::config::endpoint::Params>>,
     ) -> &mut Self {
-        self.config.store_or_unset(endpoint_resolver);
+        self.runtime_components.set_endpoint_resolver(endpoint_resolver.map(|r| {
+            ::aws_smithy_runtime::client::orchestrator::endpoints::DefaultEndpointResolver::<crate::config::endpoint::Params>::new(
+                ::aws_smithy_http::endpoint::SharedEndpointResolver::new(r),
+            )
+        }));
         self
     }
     /// Set the retry_config for the builder
@@ -925,62 +920,6 @@ impl Builder {
     #[allow(unused_mut)]
     pub fn build(mut self) -> Config {
         let mut layer = self.config;
-        let mut resolver = ::aws_smithy_runtime::client::config_override::Resolver::initial(&mut layer, &mut self.runtime_components);
-        if !resolver.is_set::<crate::idempotency_token::IdempotencyTokenProvider>() {
-            resolver.config_mut().store_put(crate::idempotency_token::default_provider());
-        }
-        crate::config::set_endpoint_resolver(&mut resolver);
-        if layer.load::<::aws_smithy_types::retry::RetryConfig>().is_none() {
-            layer.store_put(::aws_smithy_types::retry::RetryConfig::disabled());
-        }
-        let retry_config = layer
-            .load::<::aws_smithy_types::retry::RetryConfig>()
-            .expect("set to default above")
-            .clone();
-
-        if layer.load::<::aws_smithy_runtime::client::retries::RetryPartition>().is_none() {
-            layer.store_put(::aws_smithy_runtime::client::retries::RetryPartition::new("ssmincidents"));
-        }
-        let retry_partition = layer
-            .load::<::aws_smithy_runtime::client::retries::RetryPartition>()
-            .expect("set to default above")
-            .clone();
-
-        if retry_config.has_retry() {
-            ::tracing::debug!("using retry strategy with partition '{}'", retry_partition);
-        }
-
-        if retry_config.mode() == ::aws_smithy_types::retry::RetryMode::Adaptive {
-            if let ::std::option::Option::Some(time_source) = self.runtime_components.time_source() {
-                let seconds_since_unix_epoch = time_source
-                    .now()
-                    .duration_since(::std::time::SystemTime::UNIX_EPOCH)
-                    .expect("the present takes place after the UNIX_EPOCH")
-                    .as_secs_f64();
-                let client_rate_limiter_partition = ::aws_smithy_runtime::client::retries::ClientRateLimiterPartition::new(retry_partition.clone());
-                let client_rate_limiter = CLIENT_RATE_LIMITER.get_or_init(client_rate_limiter_partition, || {
-                    ::aws_smithy_runtime::client::retries::ClientRateLimiter::new(seconds_since_unix_epoch)
-                });
-                layer.store_put(client_rate_limiter);
-            }
-        }
-
-        // The token bucket is used for both standard AND adaptive retries.
-        let token_bucket_partition = ::aws_smithy_runtime::client::retries::TokenBucketPartition::new(retry_partition);
-        let token_bucket = TOKEN_BUCKET.get_or_init(token_bucket_partition, ::aws_smithy_runtime::client::retries::TokenBucket::default);
-        layer.store_put(token_bucket);
-
-        // TODO(enableNewSmithyRuntimeCleanup): Should not need to provide a default once smithy-rs#2770
-        //  is resolved
-        if layer.load::<::aws_smithy_types::timeout::TimeoutConfig>().is_none() {
-            layer.store_put(::aws_smithy_types::timeout::TimeoutConfig::disabled());
-        }
-
-        self.runtime_components.set_retry_strategy(::std::option::Option::Some(
-            ::aws_smithy_runtime_api::client::retries::SharedRetryStrategy::new(
-                ::aws_smithy_runtime::client::retries::strategy::StandardRetryStrategy::new(&retry_config),
-            ),
-        ));
         if self.runtime_components.time_source().is_none() {
             self.runtime_components
                 .set_time_source(::std::option::Option::Some(::std::default::Default::default()));
@@ -1022,8 +961,17 @@ pub(crate) struct ServiceRuntimePlugin {
 
 impl ServiceRuntimePlugin {
     pub fn new(_service_config: crate::config::Config) -> Self {
-        let config = { None };
+        let config = {
+            let mut cfg = ::aws_smithy_types::config_bag::Layer::new("SSMIncidents");
+            cfg.store_put(crate::idempotency_token::default_provider());
+            ::std::option::Option::Some(cfg.freeze())
+        };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
+        runtime_components.set_endpoint_resolver(Some(::aws_smithy_runtime::client::orchestrator::endpoints::DefaultEndpointResolver::<
+            crate::config::endpoint::Params,
+        >::new(::aws_smithy_http::endpoint::SharedEndpointResolver::new(
+            crate::config::endpoint::DefaultResolver::new(),
+        ))));
         runtime_components.push_interceptor(::aws_smithy_runtime::client::http::connection_poisoning::ConnectionPoisoningInterceptor::new());
         runtime_components.push_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::HttpStatusCodeClassifier::default());
         runtime_components.push_interceptor(::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new());
@@ -1049,6 +997,10 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Service
         self.config.clone()
     }
 
+    fn order(&self) -> ::aws_smithy_runtime_api::client::runtime_plugin::Order {
+        ::aws_smithy_runtime_api::client::runtime_plugin::Order::Defaults
+    }
+
     fn runtime_components(
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
@@ -1058,14 +1010,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Service
 }
 
 /// Cross-operation shared-state singletons
-static TOKEN_BUCKET: ::aws_smithy_runtime::static_partition_map::StaticPartitionMap<
-    ::aws_smithy_runtime::client::retries::TokenBucketPartition,
-    ::aws_smithy_runtime::client::retries::TokenBucket,
-> = ::aws_smithy_runtime::static_partition_map::StaticPartitionMap::new();
-static CLIENT_RATE_LIMITER: ::aws_smithy_runtime::static_partition_map::StaticPartitionMap<
-    ::aws_smithy_runtime::client::retries::ClientRateLimiterPartition,
-    ::aws_smithy_runtime::client::retries::ClientRateLimiter,
-> = ::aws_smithy_runtime::static_partition_map::StaticPartitionMap::new();
+
 /// A plugin that enables configuration for a single operation invocation
 ///
 /// The `config` method will return a `FrozenLayer` by storing values from `config_override`.
@@ -1085,10 +1030,10 @@ impl ConfigOverrideRuntimePlugin {
     ) -> Self {
         let mut layer = config_override.config;
         let mut components = config_override.runtime_components;
+        #[allow(unused_mut)]
         let mut resolver =
             ::aws_smithy_runtime::client::config_override::Resolver::overrid(initial_config, initial_components, &mut layer, &mut components);
 
-        crate::config::set_endpoint_resolver(&mut resolver);
         resolver
             .config_mut()
             .load::<::aws_types::region::Region>()
@@ -1186,44 +1131,33 @@ pub use ::aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
 pub(crate) fn base_client_runtime_plugins(mut config: crate::Config) -> ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins {
     let mut configured_plugins = ::std::vec::Vec::new();
     ::std::mem::swap(&mut config.runtime_plugins, &mut configured_plugins);
+
+    let defaults = [
+        ::aws_smithy_runtime::client::defaults::default_http_client_plugin(),
+        ::aws_smithy_runtime::client::defaults::default_retry_config_plugin("ssmincidents"),
+        ::aws_smithy_runtime::client::defaults::default_sleep_impl_plugin(),
+        ::aws_smithy_runtime::client::defaults::default_time_source_plugin(),
+        ::aws_smithy_runtime::client::defaults::default_timeout_config_plugin(),
+    ]
+    .into_iter()
+    .flatten();
+
     let mut plugins = ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins::new()
-        .with_client_plugin(::aws_smithy_runtime::client::http::default_http_client_plugin())
+        // defaults
+        .with_client_plugins(defaults)
+        // user config
         .with_client_plugin(
             ::aws_smithy_runtime_api::client::runtime_plugin::StaticRuntimePlugin::new()
                 .with_config(config.config.clone())
                 .with_runtime_components(config.runtime_components.clone()),
         )
+        // codegen config
         .with_client_plugin(crate::config::ServiceRuntimePlugin::new(config))
         .with_client_plugin(::aws_smithy_runtime::client::auth::no_auth::NoAuthRuntimePlugin::new());
     for plugin in configured_plugins {
         plugins = plugins.with_client_plugin(plugin);
     }
     plugins
-}
-
-fn set_endpoint_resolver(resolver: &mut ::aws_smithy_runtime::client::config_override::Resolver<'_>) {
-    let endpoint_resolver = if resolver.is_initial() {
-        Some(
-            resolver
-                .resolve_config::<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::config::endpoint::Params>>()
-                .cloned()
-                .unwrap_or_else(|| ::aws_smithy_http::endpoint::SharedEndpointResolver::new(crate::config::endpoint::DefaultResolver::new())),
-        )
-    } else if resolver.is_latest_set::<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::config::endpoint::Params>>() {
-        resolver
-            .resolve_config::<::aws_smithy_http::endpoint::SharedEndpointResolver<crate::config::endpoint::Params>>()
-            .cloned()
-    } else {
-        None
-    };
-    if let Some(endpoint_resolver) = endpoint_resolver {
-        let shared = ::aws_smithy_runtime_api::client::endpoint::SharedEndpointResolver::new(
-            ::aws_smithy_runtime::client::orchestrator::endpoints::DefaultEndpointResolver::<crate::config::endpoint::Params>::new(endpoint_resolver),
-        );
-        resolver
-            .runtime_components_mut()
-            .set_endpoint_resolver(::std::option::Option::Some(shared));
-    }
 }
 
 /// Types needed to configure endpoint resolution.

@@ -3,10 +3,10 @@ pub fn ser_start_experiment_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::start_experiment::StartExperimentInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
+    if let Some(var_1) = &input.analysis_complete_time {
         object
             .key("analysisCompleteTime")
-            .date_time(&input.analysis_complete_time, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
+            .date_time(var_1, ::aws_smithy_types::date_time::Format::EpochSeconds)?;
     }
     Ok(())
 }

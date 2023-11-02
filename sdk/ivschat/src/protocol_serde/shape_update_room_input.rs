@@ -3,38 +3,38 @@ pub fn ser_update_room_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::update_room::UpdateRoomInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    {
-        object.key("identifier").string(input.identifier.as_str());
+    if let Some(var_1) = &input.identifier {
+        object.key("identifier").string(var_1.as_str());
     }
-    if let Some(var_1) = &input.logging_configuration_identifiers {
-        let mut array_2 = object.key("loggingConfigurationIdentifiers").start_array();
-        for item_3 in var_1 {
+    if let Some(var_2) = &input.logging_configuration_identifiers {
+        let mut array_3 = object.key("loggingConfigurationIdentifiers").start_array();
+        for item_4 in var_2 {
             {
-                array_2.value().string(item_3.as_str());
+                array_3.value().string(item_4.as_str());
             }
         }
-        array_2.finish();
+        array_3.finish();
     }
-    if input.maximum_message_length != 0 {
+    if let Some(var_5) = &input.maximum_message_length {
         object.key("maximumMessageLength").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.maximum_message_length).into()),
+            ::aws_smithy_types::Number::NegInt((*var_5).into()),
         );
     }
-    if input.maximum_message_rate_per_second != 0 {
+    if let Some(var_6) = &input.maximum_message_rate_per_second {
         object.key("maximumMessageRatePerSecond").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.maximum_message_rate_per_second).into()),
+            ::aws_smithy_types::Number::NegInt((*var_6).into()),
         );
     }
-    if let Some(var_4) = &input.message_review_handler {
+    if let Some(var_7) = &input.message_review_handler {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("messageReviewHandler").start_object();
-        crate::protocol_serde::shape_message_review_handler::ser_message_review_handler(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_8 = object.key("messageReviewHandler").start_object();
+        crate::protocol_serde::shape_message_review_handler::ser_message_review_handler(&mut object_8, var_7)?;
+        object_8.finish();
     }
-    if let Some(var_6) = &input.name {
-        object.key("name").string(var_6.as_str());
+    if let Some(var_9) = &input.name {
+        object.key("name").string(var_9.as_str());
     }
     Ok(())
 }

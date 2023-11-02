@@ -4,26 +4,25 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateRumMetricDefinitionInput {
     /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
-    pub app_monitor_name: ::std::string::String,
+    pub app_monitor_name: ::std::option::Option<::std::string::String>,
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
-    pub destination: crate::types::MetricDestination,
+    pub destination: ::std::option::Option<crate::types::MetricDestination>,
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
     pub destination_arn: ::std::option::Option<::std::string::String>,
     /// <p>A structure that contains the new definition that you want to use for this metric.</p>
     pub metric_definition: ::std::option::Option<crate::types::MetricDefinitionRequest>,
     /// <p>The ID of the metric definition to update.</p>
-    pub metric_definition_id: ::std::string::String,
+    pub metric_definition_id: ::std::option::Option<::std::string::String>,
 }
 impl UpdateRumMetricDefinitionInput {
     /// <p>The name of the CloudWatch RUM app monitor that sends these metrics.</p>
-    pub fn app_monitor_name(&self) -> &str {
-        use std::ops::Deref;
-        self.app_monitor_name.deref()
+    pub fn app_monitor_name(&self) -> ::std::option::Option<&str> {
+        self.app_monitor_name.as_deref()
     }
     /// <p>The destination to send the metrics to. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that will receive the metrics and an IAM role that has permission to write to the experiment.</p>
-    pub fn destination(&self) -> &crate::types::MetricDestination {
-        &self.destination
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::MetricDestination> {
+        self.destination.as_ref()
     }
     /// <p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p>
     /// <p>This parameter specifies the ARN of the Evidently experiment that is to receive the metrics. You must have already defined this experiment as a valid destination. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p>
@@ -35,9 +34,8 @@ impl UpdateRumMetricDefinitionInput {
         self.metric_definition.as_ref()
     }
     /// <p>The ID of the metric definition to update.</p>
-    pub fn metric_definition_id(&self) -> &str {
-        use std::ops::Deref;
-        self.metric_definition_id.deref()
+    pub fn metric_definition_id(&self) -> ::std::option::Option<&str> {
+        self.metric_definition_id.as_deref()
     }
 }
 impl UpdateRumMetricDefinitionInput {
@@ -136,10 +134,6 @@ impl UpdateRumMetricDefinitionInputBuilder {
         &self.metric_definition_id
     }
     /// Consumes the builder and constructs a [`UpdateRumMetricDefinitionInput`](crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`app_monitor_name`](crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionInputBuilder::app_monitor_name)
-    /// - [`destination`](crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionInputBuilder::destination)
-    /// - [`metric_definition_id`](crate::operation::update_rum_metric_definition::builders::UpdateRumMetricDefinitionInputBuilder::metric_definition_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -147,26 +141,11 @@ impl UpdateRumMetricDefinitionInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionInput {
-            app_monitor_name: self.app_monitor_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "app_monitor_name",
-                    "app_monitor_name was not specified but it is required when building UpdateRumMetricDefinitionInput",
-                )
-            })?,
-            destination: self.destination.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "destination",
-                    "destination was not specified but it is required when building UpdateRumMetricDefinitionInput",
-                )
-            })?,
+            app_monitor_name: self.app_monitor_name,
+            destination: self.destination,
             destination_arn: self.destination_arn,
             metric_definition: self.metric_definition,
-            metric_definition_id: self.metric_definition_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "metric_definition_id",
-                    "metric_definition_id was not specified but it is required when building UpdateRumMetricDefinitionInput",
-                )
-            })?,
+            metric_definition_id: self.metric_definition_id,
         })
     }
 }

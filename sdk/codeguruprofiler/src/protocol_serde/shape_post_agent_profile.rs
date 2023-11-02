@@ -95,10 +95,10 @@ pub fn ser_post_agent_profile_headers(
     input: &crate::operation::post_agent_profile::PostAgentProfileInput,
     mut builder: ::http::request::Builder,
 ) -> std::result::Result<::http::request::Builder, ::aws_smithy_http::operation::error::BuildError> {
-    {
-        let formatted_1 = &input.content_type.as_str();
-        if !formatted_1.is_empty() {
-            let header_value = formatted_1;
+    if let ::std::option::Option::Some(inner_1) = &input.content_type {
+        let formatted_2 = inner_1.as_str();
+        if !formatted_2.is_empty() {
+            let header_value = formatted_2;
             let header_value: ::http::HeaderValue = header_value.parse().map_err(|err| {
                 ::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "content_type",

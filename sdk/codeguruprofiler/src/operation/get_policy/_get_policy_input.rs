@@ -5,13 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetPolicyInput {
     /// <p>The name of the profiling group.</p>
-    pub profiling_group_name: ::std::string::String,
+    pub profiling_group_name: ::std::option::Option<::std::string::String>,
 }
 impl GetPolicyInput {
     /// <p>The name of the profiling group.</p>
-    pub fn profiling_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.profiling_group_name.deref()
+    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
+        self.profiling_group_name.as_deref()
     }
 }
 impl GetPolicyInput {
@@ -44,16 +43,9 @@ impl GetPolicyInputBuilder {
         &self.profiling_group_name
     }
     /// Consumes the builder and constructs a [`GetPolicyInput`](crate::operation::get_policy::GetPolicyInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`profiling_group_name`](crate::operation::get_policy::builders::GetPolicyInputBuilder::profiling_group_name)
     pub fn build(self) -> ::std::result::Result<crate::operation::get_policy::GetPolicyInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::get_policy::GetPolicyInput {
-            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "profiling_group_name",
-                    "profiling_group_name was not specified but it is required when building GetPolicyInput",
-                )
-            })?,
+            profiling_group_name: self.profiling_group_name,
         })
     }
 }

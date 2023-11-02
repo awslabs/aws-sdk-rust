@@ -192,30 +192,38 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTemplate
                 mut output: &mut ::std::string::String,
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 let mut query = ::aws_smithy_http::query::Writer::new(output);
-                if _input.max_results != 0 {
-                    query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(_input.max_results).encode());
-                }
-                if let ::std::option::Option::Some(inner_1) = &_input.next_token {
-                    {
-                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_1));
+                if let ::std::option::Option::Some(inner_1) = &_input.max_results {
+                    if *inner_1 != 0 {
+                        query.push_kv("maxResults", ::aws_smithy_types::primitive::Encoder::from(*inner_1).encode());
                     }
                 }
-                let inner_2 = &_input.template_id;
-                if inner_2.is_empty() {
+                if let ::std::option::Option::Some(inner_2) = &_input.next_token {
+                    {
+                        query.push_kv("nextToken", &::aws_smithy_http::query::fmt_string(&inner_2));
+                    }
+                }
+                let inner_3 = &_input.template_id;
+                let inner_3 = inner_3
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("template_id", "cannot be empty or unset"))?;
+                if inner_3.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "template_id",
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("templateId", &::aws_smithy_http::query::fmt_string(&inner_2));
-                let inner_3 = &_input.step_group_id;
-                if inner_3.is_empty() {
+                query.push_kv("templateId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                let inner_4 = &_input.step_group_id;
+                let inner_4 = inner_4
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("step_group_id", "cannot be empty or unset"))?;
+                if inner_4.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
                         "step_group_id",
                         "cannot be empty or unset",
                     ));
                 }
-                query.push_kv("stepGroupId", &::aws_smithy_http::query::fmt_string(&inner_3));
+                query.push_kv("stepGroupId", &::aws_smithy_http::query::fmt_string(&inner_4));
                 ::std::result::Result::Ok(())
             }
             #[allow(clippy::unnecessary_wraps)]

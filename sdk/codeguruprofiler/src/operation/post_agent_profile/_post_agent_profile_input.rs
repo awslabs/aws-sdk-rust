@@ -5,9 +5,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PostAgentProfileInput {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
-    pub profiling_group_name: ::std::string::String,
+    pub profiling_group_name: ::std::option::Option<::std::string::String>,
     /// <p> The submitted profiling data. </p>
-    pub agent_profile: ::aws_smithy_types::Blob,
+    pub agent_profile: ::std::option::Option<::aws_smithy_types::Blob>,
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
     pub profile_token: ::std::option::Option<::std::string::String>,
     /// <p> The format of the submitted profiling data. The format maps to the <code>Accept</code> and <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default . </p>
@@ -15,17 +15,16 @@ pub struct PostAgentProfileInput {
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
-    pub content_type: ::std::string::String,
+    pub content_type: ::std::option::Option<::std::string::String>,
 }
 impl PostAgentProfileInput {
     /// <p> The name of the profiling group with the aggregated profile that receives the submitted profiling data. </p>
-    pub fn profiling_group_name(&self) -> &str {
-        use std::ops::Deref;
-        self.profiling_group_name.deref()
+    pub fn profiling_group_name(&self) -> ::std::option::Option<&str> {
+        self.profiling_group_name.as_deref()
     }
     /// <p> The submitted profiling data. </p>
-    pub fn agent_profile(&self) -> &::aws_smithy_types::Blob {
-        &self.agent_profile
+    pub fn agent_profile(&self) -> ::std::option::Option<&::aws_smithy_types::Blob> {
+        self.agent_profile.as_ref()
     }
     /// <p> Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. </p>
     pub fn profile_token(&self) -> ::std::option::Option<&str> {
@@ -36,9 +35,8 @@ impl PostAgentProfileInput {
     /// <li> <p> <code>application/json</code> — standard JSON format </p> </li>
     /// <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li>
     /// </ul>
-    pub fn content_type(&self) -> &str {
-        use std::ops::Deref;
-        self.content_type.deref()
+    pub fn content_type(&self) -> ::std::option::Option<&str> {
+        self.content_type.as_deref()
     }
 }
 impl PostAgentProfileInput {
@@ -130,33 +128,14 @@ impl PostAgentProfileInputBuilder {
         &self.content_type
     }
     /// Consumes the builder and constructs a [`PostAgentProfileInput`](crate::operation::post_agent_profile::PostAgentProfileInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`profiling_group_name`](crate::operation::post_agent_profile::builders::PostAgentProfileInputBuilder::profiling_group_name)
-    /// - [`agent_profile`](crate::operation::post_agent_profile::builders::PostAgentProfileInputBuilder::agent_profile)
-    /// - [`content_type`](crate::operation::post_agent_profile::builders::PostAgentProfileInputBuilder::content_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::post_agent_profile::PostAgentProfileInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::post_agent_profile::PostAgentProfileInput {
-            profiling_group_name: self.profiling_group_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "profiling_group_name",
-                    "profiling_group_name was not specified but it is required when building PostAgentProfileInput",
-                )
-            })?,
-            agent_profile: self.agent_profile.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "agent_profile",
-                    "agent_profile was not specified but it is required when building PostAgentProfileInput",
-                )
-            })?,
+            profiling_group_name: self.profiling_group_name,
+            agent_profile: self.agent_profile,
             profile_token: self.profile_token,
-            content_type: self.content_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "content_type",
-                    "content_type was not specified but it is required when building PostAgentProfileInput",
-                )
-            })?,
+            content_type: self.content_type,
         })
     }
 }

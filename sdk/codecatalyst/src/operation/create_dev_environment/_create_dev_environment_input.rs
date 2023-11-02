@@ -4,9 +4,9 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    pub space_name: ::std::string::String,
+    pub space_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the project in the space.</p>
-    pub project_name: ::std::string::String,
+    pub project_name: ::std::option::Option<::std::string::String>,
     /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
     pub repositories: ::std::option::Option<::std::vec::Vec<crate::types::RepositoryInput>>,
     /// <p>A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.</p>
@@ -18,9 +18,9 @@ pub struct CreateDevEnvironmentInput {
     /// </note>
     pub ides: ::std::option::Option<::std::vec::Vec<crate::types::IdeConfiguration>>,
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub instance_type: crate::types::InstanceType,
+    pub instance_type: ::std::option::Option<crate::types::InstanceType>,
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    pub inactivity_timeout_minutes: i32,
+    pub inactivity_timeout_minutes: ::std::option::Option<i32>,
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
     /// <p>By default, a Dev Environment is configured to have 16GB of persistent storage when created from the Amazon CodeCatalyst console, but there is no default when programmatically creating a Dev Environment. Valid values for persistent storage are based on memory sizes in 16GB increments. Valid values are 16, 32, and 64.</p>
     /// </note>
@@ -28,14 +28,12 @@ pub struct CreateDevEnvironmentInput {
 }
 impl CreateDevEnvironmentInput {
     /// <p>The name of the space.</p>
-    pub fn space_name(&self) -> &str {
-        use std::ops::Deref;
-        self.space_name.deref()
+    pub fn space_name(&self) -> ::std::option::Option<&str> {
+        self.space_name.as_deref()
     }
     /// <p>The name of the project in the space.</p>
-    pub fn project_name(&self) -> &str {
-        use std::ops::Deref;
-        self.project_name.deref()
+    pub fn project_name(&self) -> ::std::option::Option<&str> {
+        self.project_name.as_deref()
     }
     /// <p>The source repository that contains the branch to clone into the Dev Environment. </p>
     ///
@@ -60,11 +58,11 @@ impl CreateDevEnvironmentInput {
         self.ides.as_deref().unwrap_or_default()
     }
     /// <p>The Amazon EC2 instace type to use for the Dev Environment. </p>
-    pub fn instance_type(&self) -> &crate::types::InstanceType {
-        &self.instance_type
+    pub fn instance_type(&self) -> ::std::option::Option<&crate::types::InstanceType> {
+        self.instance_type.as_ref()
     }
     /// <p>The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.</p>
-    pub fn inactivity_timeout_minutes(&self) -> i32 {
+    pub fn inactivity_timeout_minutes(&self) -> ::std::option::Option<i32> {
         self.inactivity_timeout_minutes
     }
     /// <p>Information about the amount of storage allocated to the Dev Environment. </p> <note>
@@ -251,38 +249,19 @@ impl CreateDevEnvironmentInputBuilder {
         &self.persistent_storage
     }
     /// Consumes the builder and constructs a [`CreateDevEnvironmentInput`](crate::operation::create_dev_environment::CreateDevEnvironmentInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`space_name`](crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder::space_name)
-    /// - [`project_name`](crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder::project_name)
-    /// - [`instance_type`](crate::operation::create_dev_environment::builders::CreateDevEnvironmentInputBuilder::instance_type)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::create_dev_environment::CreateDevEnvironmentInput, ::aws_smithy_http::operation::error::BuildError>
     {
         ::std::result::Result::Ok(crate::operation::create_dev_environment::CreateDevEnvironmentInput {
-            space_name: self.space_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "space_name",
-                    "space_name was not specified but it is required when building CreateDevEnvironmentInput",
-                )
-            })?,
-            project_name: self.project_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "project_name",
-                    "project_name was not specified but it is required when building CreateDevEnvironmentInput",
-                )
-            })?,
+            space_name: self.space_name,
+            project_name: self.project_name,
             repositories: self.repositories,
             client_token: self.client_token,
             alias: self.alias,
             ides: self.ides,
-            instance_type: self.instance_type.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "instance_type",
-                    "instance_type was not specified but it is required when building CreateDevEnvironmentInput",
-                )
-            })?,
-            inactivity_timeout_minutes: self.inactivity_timeout_minutes.unwrap_or_default(),
+            instance_type: self.instance_type,
+            inactivity_timeout_minutes: self.inactivity_timeout_minutes,
             persistent_storage: self.persistent_storage,
         })
     }

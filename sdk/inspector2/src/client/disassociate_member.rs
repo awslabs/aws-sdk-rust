@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DisassociateMember`](crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`account_id(impl Into<String>)`](crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder::account_id) / [`set_account_id(impl Into<String>)`](crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID of the member account to disassociate.</p><br>
+    ///   - [`account_id(impl Into<String>)`](crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder::account_id) / [`set_account_id(Option<String>)`](crate::operation::disassociate_member::builders::DisassociateMemberFluentBuilder::set_account_id):<br>required: **true**<br><p>The Amazon Web Services account ID of the member account to disassociate.</p><br>
     /// - On success, responds with [`DisassociateMemberOutput`](crate::operation::disassociate_member::DisassociateMemberOutput) with field(s):
     ///   - [`account_id(String)`](crate::operation::disassociate_member::DisassociateMemberOutput::account_id): <p>The Amazon Web Services account ID of the successfully disassociated member.</p>
     /// - On failure, responds with [`SdkError<DisassociateMemberError>`](crate::operation::disassociate_member::DisassociateMemberError)

@@ -173,6 +173,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateCaseRe
             ) -> ::std::result::Result<(), ::aws_smithy_http::operation::error::BuildError> {
                 use ::std::fmt::Write as _;
                 let input_1 = &_input.domain_id;
+                let input_1 = input_1
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("domain_id", "cannot be empty or unset"))?;
                 let domain_id = ::aws_smithy_http::label::fmt_string(input_1, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if domain_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(
@@ -181,6 +184,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateCaseRe
                     ));
                 }
                 let input_2 = &_input.case_id;
+                let input_2 = input_2
+                    .as_ref()
+                    .ok_or_else(|| ::aws_smithy_http::operation::error::BuildError::missing_field("case_id", "cannot be empty or unset"))?;
                 let case_id = ::aws_smithy_http::label::fmt_string(input_2, ::aws_smithy_http::label::EncodingStrategy::Default);
                 if case_id.is_empty() {
                     return ::std::result::Result::Err(::aws_smithy_http::operation::error::BuildError::missing_field(

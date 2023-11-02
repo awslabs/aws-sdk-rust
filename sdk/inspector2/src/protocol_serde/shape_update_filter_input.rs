@@ -9,20 +9,20 @@ pub fn ser_update_filter_input(
     if let Some(var_2) = &input.description {
         object.key("description").string(var_2.as_str());
     }
-    {
-        object.key("filterArn").string(input.filter_arn.as_str());
+    if let Some(var_3) = &input.filter_arn {
+        object.key("filterArn").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.filter_criteria {
+    if let Some(var_4) = &input.filter_criteria {
         #[allow(unused_mut)]
-        let mut object_4 = object.key("filterCriteria").start_object();
-        crate::protocol_serde::shape_filter_criteria::ser_filter_criteria(&mut object_4, var_3)?;
-        object_4.finish();
+        let mut object_5 = object.key("filterCriteria").start_object();
+        crate::protocol_serde::shape_filter_criteria::ser_filter_criteria(&mut object_5, var_4)?;
+        object_5.finish();
     }
-    if let Some(var_5) = &input.name {
-        object.key("name").string(var_5.as_str());
+    if let Some(var_6) = &input.name {
+        object.key("name").string(var_6.as_str());
     }
-    if let Some(var_6) = &input.reason {
-        object.key("reason").string(var_6.as_str());
+    if let Some(var_7) = &input.reason {
+        object.key("reason").string(var_7.as_str());
     }
     Ok(())
 }

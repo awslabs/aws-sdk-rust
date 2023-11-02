@@ -6,7 +6,7 @@ pub struct DescribeReplicationConfigurationTemplatesInput {
     /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
     pub replication_configuration_template_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
-    pub max_results: i32,
+    pub max_results: ::std::option::Option<i32>,
     /// <p>The token of the next Replication Configuration Template to retrieve.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
 }
@@ -18,7 +18,7 @@ impl DescribeReplicationConfigurationTemplatesInput {
         self.replication_configuration_template_ids.as_deref().unwrap_or_default()
     }
     /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
-    pub fn max_results(&self) -> i32 {
+    pub fn max_results(&self) -> ::std::option::Option<i32> {
         self.max_results
     }
     /// <p>The token of the next Replication Configuration Template to retrieve.</p>
@@ -101,7 +101,7 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput {
                 replication_configuration_template_ids: self.replication_configuration_template_ids,
-                max_results: self.max_results.unwrap_or_default(),
+                max_results: self.max_results,
                 next_token: self.next_token,
             },
         )

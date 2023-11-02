@@ -9,20 +9,20 @@ pub fn ser_start_network_resource_update_input(
         crate::protocol_serde::shape_commitment_configuration::ser_commitment_configuration(&mut object_2, var_1)?;
         object_2.finish();
     }
-    {
-        object.key("networkResourceArn").string(input.network_resource_arn.as_str());
+    if let Some(var_3) = &input.network_resource_arn {
+        object.key("networkResourceArn").string(var_3.as_str());
     }
-    if let Some(var_3) = &input.return_reason {
-        object.key("returnReason").string(var_3.as_str());
+    if let Some(var_4) = &input.return_reason {
+        object.key("returnReason").string(var_4.as_str());
     }
-    if let Some(var_4) = &input.shipping_address {
+    if let Some(var_5) = &input.shipping_address {
         #[allow(unused_mut)]
-        let mut object_5 = object.key("shippingAddress").start_object();
-        crate::protocol_serde::shape_address::ser_address(&mut object_5, var_4)?;
-        object_5.finish();
+        let mut object_6 = object.key("shippingAddress").start_object();
+        crate::protocol_serde::shape_address::ser_address(&mut object_6, var_5)?;
+        object_6.finish();
     }
-    {
-        object.key("updateType").string(input.update_type.as_str());
+    if let Some(var_7) = &input.update_type {
+        object.key("updateType").string(var_7.as_str());
     }
     Ok(())
 }

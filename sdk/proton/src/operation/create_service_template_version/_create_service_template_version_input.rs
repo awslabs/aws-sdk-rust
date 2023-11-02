@@ -6,7 +6,7 @@ pub struct CreateServiceTemplateVersionInput {
     /// <p>When included, if two identical requests are made with the same client token, Proton returns the service template version that the first request created.</p>
     pub client_token: ::std::option::Option<::std::string::String>,
     /// <p>The name of the service template.</p>
-    pub template_name: ::std::string::String,
+    pub template_name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the new version of a service template.</p>
     pub description: ::std::option::Option<::std::string::String>,
     /// <p>To create a new minor version of the service template, include a <code>major Version</code>.</p>
@@ -15,7 +15,7 @@ pub struct CreateServiceTemplateVersionInput {
     /// <p>An object that includes the template bundle S3 bucket path and name for the new version of a service template.</p>
     pub source: ::std::option::Option<crate::types::TemplateVersionSourceInput>,
     /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
-    pub compatible_environment_templates: ::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>,
+    pub compatible_environment_templates: ::std::option::Option<::std::vec::Vec<crate::types::CompatibleEnvironmentTemplateInput>>,
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -29,9 +29,8 @@ impl CreateServiceTemplateVersionInput {
         self.client_token.as_deref()
     }
     /// <p>The name of the service template.</p>
-    pub fn template_name(&self) -> &str {
-        use std::ops::Deref;
-        self.template_name.deref()
+    pub fn template_name(&self) -> ::std::option::Option<&str> {
+        self.template_name.as_deref()
     }
     /// <p>A description of the new version of a service template.</p>
     pub fn description(&self) -> ::std::option::Option<&str> {
@@ -47,9 +46,10 @@ impl CreateServiceTemplateVersionInput {
         self.source.as_ref()
     }
     /// <p>An array of environment template objects that are compatible with the new service template version. A service instance based on this service template version can run in environments based on compatible templates.</p>
+    ///
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.compatible_environment_templates.is_none()`.
     pub fn compatible_environment_templates(&self) -> &[crate::types::CompatibleEnvironmentTemplateInput] {
-        use std::ops::Deref;
-        self.compatible_environment_templates.deref()
+        self.compatible_environment_templates.as_deref().unwrap_or_default()
     }
     /// <p>An optional list of metadata items that you can associate with the Proton service template version. A tag is a key-value pair.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton resources and tagging</a> in the <i>Proton User Guide</i>.</p>
@@ -251,9 +251,6 @@ impl CreateServiceTemplateVersionInputBuilder {
         &self.supported_component_sources
     }
     /// Consumes the builder and constructs a [`CreateServiceTemplateVersionInput`](crate::operation::create_service_template_version::CreateServiceTemplateVersionInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`template_name`](crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionInputBuilder::template_name)
-    /// - [`compatible_environment_templates`](crate::operation::create_service_template_version::builders::CreateServiceTemplateVersionInputBuilder::compatible_environment_templates)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -262,21 +259,11 @@ impl CreateServiceTemplateVersionInputBuilder {
     > {
         ::std::result::Result::Ok(crate::operation::create_service_template_version::CreateServiceTemplateVersionInput {
             client_token: self.client_token,
-            template_name: self.template_name.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "template_name",
-                    "template_name was not specified but it is required when building CreateServiceTemplateVersionInput",
-                )
-            })?,
+            template_name: self.template_name,
             description: self.description,
             major_version: self.major_version,
             source: self.source,
-            compatible_environment_templates: self.compatible_environment_templates.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "compatible_environment_templates",
-                    "compatible_environment_templates was not specified but it is required when building CreateServiceTemplateVersionInput",
-                )
-            })?,
+            compatible_environment_templates: self.compatible_environment_templates,
             tags: self.tags,
             supported_component_sources: self.supported_component_sources,
         })

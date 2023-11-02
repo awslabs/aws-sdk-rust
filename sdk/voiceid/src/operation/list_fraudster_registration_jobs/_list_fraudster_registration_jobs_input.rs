@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListFraudsterRegistrationJobsInput {
     /// <p>The identifier of the domain that contains the fraudster registration Jobs.</p>
-    pub domain_id: ::std::string::String,
+    pub domain_id: ::std::option::Option<::std::string::String>,
     /// <p>Provides the status of your fraudster registration job.</p>
     pub job_status: ::std::option::Option<crate::types::FraudsterRegistrationJobStatus>,
     /// <p>The maximum number of results that are returned per call. You can use <code>NextToken</code> to obtain more pages of results. The default is 100; the maximum allowed page size is also 100. </p>
@@ -14,9 +14,8 @@ pub struct ListFraudsterRegistrationJobsInput {
 }
 impl ListFraudsterRegistrationJobsInput {
     /// <p>The identifier of the domain that contains the fraudster registration Jobs.</p>
-    pub fn domain_id(&self) -> &str {
-        use std::ops::Deref;
-        self.domain_id.deref()
+    pub fn domain_id(&self) -> ::std::option::Option<&str> {
+        self.domain_id.as_deref()
     }
     /// <p>Provides the status of your fraudster registration job.</p>
     pub fn job_status(&self) -> ::std::option::Option<&crate::types::FraudsterRegistrationJobStatus> {
@@ -106,8 +105,6 @@ impl ListFraudsterRegistrationJobsInputBuilder {
         &self.next_token
     }
     /// Consumes the builder and constructs a [`ListFraudsterRegistrationJobsInput`](crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput).
-    /// This method will fail if any of the following fields are not set:
-    /// - [`domain_id`](crate::operation::list_fraudster_registration_jobs::builders::ListFraudsterRegistrationJobsInputBuilder::domain_id)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -115,12 +112,7 @@ impl ListFraudsterRegistrationJobsInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::list_fraudster_registration_jobs::ListFraudsterRegistrationJobsInput {
-            domain_id: self.domain_id.ok_or_else(|| {
-                ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "domain_id",
-                    "domain_id was not specified but it is required when building ListFraudsterRegistrationJobsInput",
-                )
-            })?,
+            domain_id: self.domain_id,
             job_status: self.job_status,
             max_results: self.max_results,
             next_token: self.next_token,
