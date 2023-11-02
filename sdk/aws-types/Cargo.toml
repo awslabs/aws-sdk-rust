@@ -52,11 +52,12 @@ features = ["rustls-native-certs", "http2", "webpki-roots"]
 
 [dev-dependencies]
 http = "0.2.4"
+tempfile = "3"
 tracing-test = "0.2.4"
 
-[dev-dependencies.futures-util]
-version = "0.3.16"
-default-features = false
+[dev-dependencies.tokio]
+version = "1"
+features = ["rt", "macros"]
 
 [build-dependencies]
 rustc_version = "0.4.0"

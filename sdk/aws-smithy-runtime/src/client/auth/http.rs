@@ -405,4 +405,32 @@ mod tests {
             request.headers().get("Authorization").unwrap()
         );
     }
+
+    #[test]
+    fn test_bearer_auth_overwrite_existing_header() {
+        let signer = BearerAuthSigner;
+
+        let config_bag = ConfigBag::base();
+        let runtime_components = RuntimeComponentsBuilder::for_tests().build().unwrap();
+        let identity = Identity::new(Token::new("some-token", None), None);
+        let mut request = http::Request::builder()
+            .header("Authorization", "wrong")
+            .body(SdkBody::empty())
+            .unwrap()
+            .try_into()
+            .unwrap();
+        signer
+            .sign_http_request(
+                &mut request,
+                &identity,
+                AuthSchemeEndpointConfig::empty(),
+                &runtime_components,
+                &config_bag,
+            )
+            .expect("success");
+        assert_eq!(
+            "Bearer some-token",
+            request.headers().get("Authorization").unwrap()
+        );
+    }
 }

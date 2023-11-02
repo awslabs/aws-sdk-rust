@@ -66,10 +66,6 @@ version = "1.5.5"
 
 [dependencies.tracing]
 version = "0.1"
-[dev-dependencies.aws-config]
-path = "../aws-config"
-version = "0.56.1"
-
 [dev-dependencies.aws-credential-types]
 path = "../aws-credential-types"
 features = ["test-util"]

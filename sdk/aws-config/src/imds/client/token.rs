@@ -194,7 +194,11 @@ fn parse_token_response(response: &HttpResponse, now: SystemTime) -> Result<Toke
 }
 
 impl ResolveIdentity for TokenResolver {
-    fn resolve_identity<'a>(&'a self, _config_bag: &'a ConfigBag) -> IdentityFuture<'a> {
+    fn resolve_identity<'a>(
+        &'a self,
+        _components: &'a RuntimeComponents,
+        _config_bag: &'a ConfigBag,
+    ) -> IdentityFuture<'a> {
         IdentityFuture::new(async {
             let preloaded_token = self
                 .inner

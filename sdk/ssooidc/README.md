@@ -33,7 +33,7 @@ tokio = { version = "1", features = ["full"] }
 
 Then in code, a client can be created with the following:
 
-```rust,no_run
+```rust,ignore
 use aws_sdk_ssooidc as ssooidc;
 
 #[::tokio::main]

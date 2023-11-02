@@ -7,8 +7,6 @@ use super::repr::{self, BaseProvider};
 use crate::credential_process::CredentialProcessProvider;
 use crate::profile::credentials::ProfileFileError;
 use crate::provider_config::ProviderConfig;
-#[cfg(feature = "credentials-sso")]
-use crate::sso::{SsoCredentialsProvider, SsoProviderConfig};
 use crate::sts;
 use crate::web_identity_token::{StaticConfiguration, WebIdentityTokenCredentialsProvider};
 use aws_credential_types::provider::{
@@ -119,21 +117,25 @@ impl ProviderChain {
                 sso_role_name,
                 sso_start_url,
             } => {
-                #[cfg(feature = "credentials-sso")]
+                #[cfg(feature = "sso")]
                 {
+                    use crate::sso::{credentials::SsoProviderConfig, SsoCredentialsProvider};
                     use aws_types::region::Region;
+
                     let sso_config = SsoProviderConfig {
                         account_id: sso_account_id.to_string(),
                         role_name: sso_role_name.to_string(),
                         start_url: sso_start_url.to_string(),
                         region: Region::new(sso_region.to_string()),
+                        // TODO(https://github.com/awslabs/aws-sdk-rust/issues/703): Implement sso_session_name profile property
+                        session_name: None,
                     };
                     Arc::new(SsoCredentialsProvider::new(provider_config, sso_config))
                 }
-                #[cfg(not(feature = "credentials-sso"))]
+                #[cfg(not(feature = "sso"))]
                 {
                     Err(ProfileFileError::FeatureNotEnabled {
-                        feature: "credentials-sso".into(),
+                        feature: "sso".into(),
                     })?
                 }
             }

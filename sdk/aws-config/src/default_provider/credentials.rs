@@ -295,15 +295,15 @@ mod test {
     make_test!(ecs_credentials);
     make_test!(ecs_credentials_invalid_profile);
 
-    #[cfg(not(feature = "credentials-sso"))]
-    make_test!(sso_assume_role #[should_panic(expected = "This behavior requires following cargo feature(s) enabled: credentials-sso")]);
-    #[cfg(not(feature = "credentials-sso"))]
-    make_test!(sso_no_token_file #[should_panic(expected = "This behavior requires following cargo feature(s) enabled: credentials-sso")]);
+    #[cfg(not(feature = "sso"))]
+    make_test!(sso_assume_role #[should_panic(expected = "This behavior requires following cargo feature(s) enabled: sso")]);
+    #[cfg(not(feature = "sso"))]
+    make_test!(sso_no_token_file #[should_panic(expected = "This behavior requires following cargo feature(s) enabled: sso")]);
 
-    #[cfg(feature = "credentials-sso")]
+    #[cfg(feature = "sso")]
     make_test!(sso_assume_role);
 
-    #[cfg(feature = "credentials-sso")]
+    #[cfg(feature = "sso")]
     make_test!(sso_no_token_file);
 
     #[cfg(feature = "credentials-sso")]

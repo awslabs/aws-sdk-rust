@@ -121,7 +121,7 @@ pub mod meta;
 pub mod profile;
 pub mod provider_config;
 pub mod retry;
-#[cfg(feature = "credentials-sso")]
+#[cfg(feature = "sso")]
 pub mod sso;
 pub(crate) mod standard_property;
 pub mod sts;
