@@ -9,7 +9,20 @@ use aws_sdk_lambda::config::{AsyncSleep, Region, Sleep};
 use aws_sdk_lambda::primitives::SdkBody;
 use aws_sdk_lambda::{meta::PKG_VERSION, Client};
 use aws_smithy_async::time::TimeSource;
-use aws_smithy_http::result::ConnectorError;
+use aws_smithy_runtime_api::client::http::request::Request;
+use aws_smithy_runtime_api::client::result::ConnectorError;
+use aws_smithy_runtime_api::{
+    client::{
+        http::{
+            HttpClient, HttpConnector, HttpConnectorFuture, HttpConnectorSettings,
+            SharedHttpConnector,
+        },
+        orchestrator::HttpRequest,
+        runtime_components::RuntimeComponents,
+    },
+    shared::IntoShared,
+};
+
 use serde::Deserialize;
 use std::time::SystemTime;
 use wasm_bindgen::{prelude::*, JsCast};
@@ -63,7 +76,7 @@ pub async fn main(region: String, verbose: bool) -> Result<String, String> {
         .region(Region::new(region))
         .time_source(BrowserNow)
         .credentials_provider(credentials_provider)
-        .http_connector(Adapter::new(verbose, access_key == "access_key"))
+        .http_client(Adapter::new(verbose, access_key == "access_key"))
         .load()
         .await;
     tracing::info!("sdk config: {:#?}", shared_config);
@@ -73,15 +86,16 @@ pub async fn main(region: String, verbose: bool) -> Result<String, String> {
         .list_functions()
         .send()
         .await
-        .map_err(|e| format!("{:?}", e))?;
-    let functions = resp.functions().unwrap_or_default();
+        .map_err(|e| format!("{e:?}"))?;
 
+    let functions = resp.functions();
     for function in functions {
         log!(
             "Function Name: {}",
             function.function_name().unwrap_or_default()
         );
     }
+
     let output = functions.len().to_string();
 
     Ok(output)
@@ -124,10 +138,7 @@ fn static_credential_provider() -> impl ProvideCredentials {
 /// https://github.com/WebAssembly/wasi-http
 #[async_trait(?Send)]
 trait MakeRequestBrowser {
-    async fn send(
-        parts: http::request::Parts,
-        body: SdkBody,
-    ) -> Result<http::Response<SdkBody>, JsValue>;
+    async fn send(req: Request) -> Result<http::Response<SdkBody>, JsValue>;
 }
 
 pub struct BrowserHttpClient {}
@@ -138,30 +149,23 @@ impl MakeRequestBrowser for BrowserHttpClient {
     /// will be used to actually send the outbound HTTP request.
     /// Most of the logic here is around converting from
     /// the [http::Request]'s shape to [web_sys::Request].
-    async fn send(
-        parts: http::request::Parts,
-        body: SdkBody,
-    ) -> Result<http::Response<SdkBody>, JsValue> {
+    async fn send(req: Request) -> Result<http::Response<SdkBody>, JsValue> {
         use js_sys::{Array, ArrayBuffer, Reflect, Uint8Array};
         use wasm_bindgen_futures::JsFuture;
 
         let mut opts = web_sys::RequestInit::new();
-        opts.method(parts.method.as_str());
+        opts.method(req.method());
         opts.mode(web_sys::RequestMode::Cors);
 
-        let body_pinned = std::pin::Pin::new(body.bytes().unwrap());
+        let body_pinned = std::pin::Pin::new(req.body().bytes().unwrap());
         if body_pinned.len() > 0 {
             let uint_8_array = unsafe { Uint8Array::view(&body_pinned) };
             opts.body(Some(&uint_8_array));
         }
 
-        let request = web_sys::Request::new_with_str_and_init(&parts.uri.to_string(), &opts)?;
+        let request = web_sys::Request::new_with_str_and_init(req.uri(), &opts)?;
 
-        for (name, value) in parts
-            .headers
-            .iter()
-            .map(|(n, v)| (n.as_str(), v.to_str().unwrap()))
-        {
+        for (name, value) in req.headers() {
             request.headers().set(name, value)?;
         }
 
@@ -200,10 +204,7 @@ pub struct MockedHttpClient {}
 
 #[async_trait(?Send)]
 impl MakeRequestBrowser for MockedHttpClient {
-    async fn send(
-        _parts: http::request::Parts,
-        _body: SdkBody,
-    ) -> Result<http::Response<SdkBody>, JsValue> {
+    async fn send(_req: Request) -> Result<http::Response<SdkBody>, JsValue> {
         let body = "{
             \"Functions\": [
                 {
@@ -233,53 +234,50 @@ impl Adapter {
     }
 }
 
-impl tower::Service<http::Request<SdkBody>> for Adapter {
-    type Response = http::Response<SdkBody>;
-
-    type Error = ConnectorError;
-
-    #[allow(clippy::type_complexity)]
-    type Future = std::pin::Pin<
-        Box<dyn std::future::Future<Output = Result<Self::Response, Self::Error>> + Send + 'static>,
-    >;
-
-    fn poll_ready(
-        &mut self,
-        _cx: &mut std::task::Context<'_>,
-    ) -> std::task::Poll<Result<(), Self::Error>> {
-        std::task::Poll::Ready(Ok(()))
-    }
-
-    fn call(&mut self, req: http::Request<SdkBody>) -> Self::Future {
-        let (parts, body) = req.into_parts();
-        let uri = parts.uri.to_string();
-        if self.verbose {
-            log!("sending request to {}", uri);
-            log!("http::Request parts: {:?}", parts);
-            log!("http::Request body: {:?}", body);
-            log!("");
+impl HttpConnector for Adapter {
+    fn call(&self, req: HttpRequest) -> HttpConnectorFuture {
+        {
+            if self.verbose {
+                log!("sending request to {}", req.uri());
+                log!("http::Request method: {:?}", req.method());
+                log!("http::Request headers: {:?}", req.headers());
+                log!("http::Request body: {:?}", req.body());
+                log!("");
+            }
         }
 
         let (tx, rx) = tokio::sync::oneshot::channel();
 
         log!("begin request...");
+        let uri = req.uri().to_string();
         let use_mock = self.use_mock;
         wasm_bindgen_futures::spawn_local(async move {
             let fut = if use_mock {
-                MockedHttpClient::send(parts, body)
+                MockedHttpClient::send(req)
             } else {
-                BrowserHttpClient::send(parts, body)
+                BrowserHttpClient::send(req)
             };
-            let _ = tx.send(
+            tx.send(
                 fut.await
-                    .unwrap_or_else(|_| panic!("failure while making request to: {}", uri)),
-            );
+                    .unwrap_or_else(|_| panic!("sending request to {uri}")),
+            )
+            .expect("sent request to channel");
         });
 
-        Box::pin(async move {
+        HttpConnectorFuture::new(async move {
             let response = rx.await.map_err(|e| ConnectorError::user(Box::new(e)))?;
             log!("response received");
             Ok(response)
         })
+    }
+}
+
+impl HttpClient for Adapter {
+    fn http_connector(
+        &self,
+        _settings: &HttpConnectorSettings,
+        _components: &RuntimeComponents,
+    ) -> SharedHttpConnector {
+        self.clone().into_shared()
     }
 }

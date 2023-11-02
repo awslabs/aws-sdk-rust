@@ -35,14 +35,18 @@ aws-sdk-dynamodb= { version = "0.35.0", path = "../../../sdk/dynamodb" }
 aws-sdk-rekognition= { version = "0.35.0", path = "../../../sdk/rekognition" }
 aws-sdk-s3= { version = "0.35.0", path = "../../../sdk/s3" }
 aws-sdk-sns= { version = "0.35.0", path = "../../../sdk/sns" }
-aws-smithy-client= { version = "0.57.1", path = "../../../sdk/aws-smithy-client", features = ["test-util"] }
 aws-smithy-http= { version = "0.57.1", path = "../../../sdk/aws-smithy-http" }
+aws-smithy-runtime= { version = "0.57.1", path = "../../../sdk/aws-smithy-runtime" }
 aws-smithy-types-convert= { version = "0.57.1", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
 [dependencies.aws_lambda_events]
-version = "0.10.0"
+version = "0.11.1"
 features = ["s3", "apigw"]
 default-features = false
+
+[dependencies.sdk-examples-test-utils]
+path = "../../test-utils"
+version = "0.1.0"
 
 [dependencies.serde]
 version = "1.0.159"

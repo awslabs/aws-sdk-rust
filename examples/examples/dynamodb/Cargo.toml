@@ -8,20 +8,23 @@ publish = false
 
 [dependencies]
 axum = "0.5.16"
-http = "0.2.5"
 futures = "0.3"
+http = "0.2.5"
 log = "0.4.17"
 rand = "0.8.3"
 serde_json = "1"
-tracing = "0.1"
 thiserror = "1.0"
 tokio-stream = "0.1.8"
+tracing = "0.1"
 aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
-aws-sdk-dynamodb= { version = "0.35.0", path = "../../../sdk/dynamodb" }
 aws-http= { version = "0.57.1", path = "../../../sdk/aws-http" }
-aws-smithy-client= { version = "0.57.1", path = "../../../sdk/aws-smithy-client", features = ["client-hyper", "rustls", "rt-tokio"] }
-aws-smithy-http= { version = "0.57.1", path = "../../../sdk/aws-smithy-http", features = ["rt-tokio"] }
+aws-sdk-dynamodb= { version = "0.35.0", path = "../../../sdk/dynamodb" }
+aws-smithy-runtime= { version = "0.57.1", path = "../../../sdk/aws-smithy-runtime", features = ["test-util"] }
 aws-smithy-types= { version = "0.57.1", path = "../../../sdk/aws-smithy-types" }
+
+[dependencies.clap]
+version = "~4.4"
+features = ["derive"]
 
 [dependencies.sdk-examples-test-utils]
 path = "../../test-utils"
@@ -34,10 +37,6 @@ features = ["derive"]
 [dependencies.serde_dynamo]
 version = "4"
 features = ["aws-sdk-dynamodb+0_22"]
-
-[dependencies.clap]
-version = "~4.2"
-features = ["derive"]
 
 [dependencies.tokio]
 version = "1.20.1"

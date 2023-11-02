@@ -1,6 +1,7 @@
 [workspace]
 exclude = [
     "examples/cross_service",
+    "examples/lambda",
     "examples/test-utils",
     "examples/examples",
     "examples/webassembly",

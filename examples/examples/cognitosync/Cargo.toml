@@ -13,7 +13,7 @@ aws-sdk-cognitosync= { version = "0.35.0", path = "../../../sdk/cognitosync" }
 aws-smithy-types-convert= { version = "0.57.1", path = "../../../sdk/aws-smithy-types-convert", features = ["convert-chrono"] }
 
 [dependencies.clap]
-version = "~4.2"
+version = "~4.4"
 features = ["derive"]
 
 [dependencies.tokio]

@@ -19,34 +19,34 @@ assert_cmd = "2.0"
 predicates = "3.0.3"
 
 [dependencies]
+anyhow = "1.0.70"
 bytes = "1.4.0"
 http = "0.2.8"
 http-body = "0.4.5"
 md-5 = "0.10.1"
+pin-project = "1.0.12"
 rand = "0.8.5"
 thiserror = "1.0"
 tokio-stream = "0.1.8"
 tracing = "0.1.37"
-anyhow = "1.0.70"
-pin-project = "1.0.12"
 aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
 aws-endpoint= { version = "0.57.1", path = "../../../sdk/aws-endpoint" }
-aws-sdk-s3= { version = "0.35.0", path = "../../../sdk/s3" }
-aws-smithy-client= { version = "0.57.1", path = "../../../sdk/aws-smithy-client", features = ["test-util"] }
-aws-smithy-http= { version = "0.57.1", path = "../../../sdk/aws-smithy-http", features = ["rt-tokio"] }
-aws-smithy-types= { version = "0.57.1", path = "../../../sdk/aws-smithy-types" }
+aws-sdk-s3= { version = "0.35.0", path = "../../../sdk/s3", features = ["rt-tokio"] }
+aws-smithy-runtime= { version = "0.57.1", path = "../../../sdk/aws-smithy-runtime" }
+aws-smithy-runtime-api= { version = "0.57.1", path = "../../../sdk/aws-smithy-runtime-api", features = ["client"] }
+aws-smithy-types= { version = "0.57.1", path = "../../../sdk/aws-smithy-types", features = ["http-body-0-4-x"] }
 
 [dependencies.sdk-examples-test-utils]
 path = "../../test-utils"
 version = "0.1.0"
 
+[dependencies.clap]
+version = "~4.4"
+features = ["derive"]
+
 [dependencies.futures-util]
 version = "0.3.21"
 features = ["alloc"]
-
-[dependencies.clap]
-version = "~4.2"
-features = ["derive"]
 
 [dependencies.tokio]
 version = "1.20.1"

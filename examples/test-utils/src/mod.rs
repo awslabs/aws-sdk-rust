@@ -1,6 +1,7 @@
-use aws_smithy_http::body::SdkBody;
+use aws_smithy_types::body::SdkBody;
 
 pub mod macros;
+pub mod waiter;
 
 /// Create a single-shot test connection. The arguments are the same as test_event,
 /// but the expanded macro creates a TestConnection. The `TestConnection` can be
@@ -8,8 +9,8 @@ pub mod macros;
 pub fn single_shot(
     req: SdkBody,
     res: (http::StatusCode, Vec<(&str, &str)>, SdkBody),
-) -> aws_smithy_client::test_connection::TestConnection<SdkBody> {
-    aws_smithy_client::test_connection::TestConnection::new(vec![
+) -> aws_smithy_runtime::client::http::test_util::StaticReplayClient {
+    aws_smithy_runtime::client::http::test_util::StaticReplayClient::new(vec![
         (test_event!(req, (res.0, res.1, res.2))),
     ])
 }

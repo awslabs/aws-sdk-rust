@@ -1,11 +1,13 @@
 # Note: this workspace exists solely for the convenience of 
 # compiling/auto-formatting/testing all the AWS Rust SDK examples together.
 [workspace]
+resolver = "2"
 members = [
     "apigateway",
     "apigatewaymanagement",
     "applicationautoscaling",
-    "autoscaling",
+    "aurora",
+    "auto-scaling",
     "autoscalingplans",
     "batch",
     "cloudformation",
