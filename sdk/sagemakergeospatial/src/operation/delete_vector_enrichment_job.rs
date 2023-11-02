@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteV
 
 #[derive(Debug)]
 struct DeleteVectorEnrichmentJobResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteVectorEnrichmentJobResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteVectorEnrichmentJobResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteVe
 }
 #[derive(Debug)]
 struct DeleteVectorEnrichmentJobRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteVectorEnrichmentJobRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteVectorEnrichmentJobRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -212,13 +212,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteVecto
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteVectorEnrichmentJobEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteVectorEnrichmentJobEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteVectorEnrichmentJobEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteVectorEnrichmentJobEndpointParamsInterceptor"
     }

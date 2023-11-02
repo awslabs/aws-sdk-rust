@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetBuck
 
 #[derive(Debug)]
 struct GetBucketLoggingResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetBucketLoggingResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetBucketLoggingResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -163,7 +163,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetBucke
 }
 #[derive(Debug)]
 struct GetBucketLoggingRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetBucketLoggingRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetBucketLoggingRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -210,13 +210,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetBucketLo
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetBucketLoggingEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetBucketLoggingEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetBucketLoggingEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetBucketLoggingEndpointParamsInterceptor"
     }

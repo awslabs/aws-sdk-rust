@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAppL
 
 #[derive(Debug)]
 struct GetAppLaunchConfigurationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetAppLaunchConfigurationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetAppLaunchConfigurationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetAppLa
 }
 #[derive(Debug)]
 struct GetAppLaunchConfigurationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetAppLaunchConfigurationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAppLaunchConfigurationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -203,13 +203,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetAppLaunc
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetAppLaunchConfigurationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetAppLaunchConfigurationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAppLaunchConfigurationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetAppLaunchConfigurationEndpointParamsInterceptor"
     }

@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteD
 
 #[derive(Debug)]
 struct DeleteDirectoryRegistrationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteDirectoryRegistrationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteDirectoryRegistrationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteDi
 }
 #[derive(Debug)]
 struct DeleteDirectoryRegistrationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteDirectoryRegistrationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteDirectoryRegistrationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -217,13 +217,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteDirec
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteDirectoryRegistrationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteDirectoryRegistrationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteDirectoryRegistrationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteDirectoryRegistrationEndpointParamsInterceptor"
     }

@@ -124,7 +124,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DetachC
 
 #[derive(Debug)]
 struct DetachCustomerManagedPolicyReferenceFromPermissionSetResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DetachCustomerManagedPolicyReferenceFromPermissionSetResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DetachCustomerManagedPolicyReferenceFromPermissionSetResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -145,7 +145,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DetachCu
 }
 #[derive(Debug)]
 struct DetachCustomerManagedPolicyReferenceFromPermissionSetRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DetachCustomerManagedPolicyReferenceFromPermissionSetRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DetachCustomerManagedPolicyReferenceFromPermissionSetRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -189,13 +189,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DetachCusto
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DetachCustomerManagedPolicyReferenceFromPermissionSetEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DetachCustomerManagedPolicyReferenceFromPermissionSetEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DetachCustomerManagedPolicyReferenceFromPermissionSetEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DetachCustomerManagedPolicyReferenceFromPermissionSetEndpointParamsInterceptor"
     }

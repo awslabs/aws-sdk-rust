@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetDocu
 
 #[derive(Debug)]
 struct GetDocumentationPartsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetDocumentationPartsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetDocumentationPartsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetDocum
 }
 #[derive(Debug)]
 struct GetDocumentationPartsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetDocumentationPartsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDocumentationPartsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -241,13 +241,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetDocument
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetDocumentationPartsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetDocumentationPartsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDocumentationPartsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetDocumentationPartsEndpointParamsInterceptor"
     }

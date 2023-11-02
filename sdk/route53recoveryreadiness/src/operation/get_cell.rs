@@ -127,7 +127,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetCell
 
 #[derive(Debug)]
 struct GetCellResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetCellResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetCellResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -148,7 +148,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetCellR
 }
 #[derive(Debug)]
 struct GetCellRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetCellRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetCellRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -194,13 +194,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetCellRequ
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetCellEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetCellEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetCellEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetCellEndpointParamsInterceptor"
     }

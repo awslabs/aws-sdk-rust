@@ -141,7 +141,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
 
 #[derive(Debug)]
 struct DescribeWorkspaceAuthenticationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DescribeWorkspaceAuthenticationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeWorkspaceAuthenticationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -162,7 +162,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Describe
 }
 #[derive(Debug)]
 struct DescribeWorkspaceAuthenticationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeWorkspaceAuthenticationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeWorkspaceAuthenticationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -207,13 +207,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeWor
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DescribeWorkspaceAuthenticationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DescribeWorkspaceAuthenticationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeWorkspaceAuthenticationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DescribeWorkspaceAuthenticationEndpointParamsInterceptor"
     }

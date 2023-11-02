@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListOrg
 
 #[derive(Debug)]
 struct ListOrganizationAdminAccountsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListOrganizationAdminAccountsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListOrganizationAdminAccountsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListOrga
 }
 #[derive(Debug)]
 struct ListOrganizationAdminAccountsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListOrganizationAdminAccountsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListOrganizationAdminAccountsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -219,13 +219,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListOrganiz
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListOrganizationAdminAccountsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListOrganizationAdminAccountsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListOrganizationAdminAccountsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListOrganizationAdminAccountsEndpointParamsInterceptor"
     }

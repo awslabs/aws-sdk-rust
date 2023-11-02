@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteP
 
 #[derive(Debug)]
 struct DeleteProvisionedConcurrencyConfigResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteProvisionedConcurrencyConfigResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteProvisionedConcurrencyConfigResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeletePr
 }
 #[derive(Debug)]
 struct DeleteProvisionedConcurrencyConfigRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteProvisionedConcurrencyConfigRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteProvisionedConcurrencyConfigRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -240,13 +240,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteProvi
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteProvisionedConcurrencyConfigEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteProvisionedConcurrencyConfigEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteProvisionedConcurrencyConfigEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteProvisionedConcurrencyConfigEndpointParamsInterceptor"
     }

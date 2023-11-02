@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListMul
 
 #[derive(Debug)]
 struct ListMultiplexProgramsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListMultiplexProgramsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListMultiplexProgramsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListMult
 }
 #[derive(Debug)]
 struct ListMultiplexProgramsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListMultiplexProgramsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMultiplexProgramsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -221,13 +221,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListMultipl
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListMultiplexProgramsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListMultiplexProgramsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListMultiplexProgramsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListMultiplexProgramsEndpointParamsInterceptor"
     }

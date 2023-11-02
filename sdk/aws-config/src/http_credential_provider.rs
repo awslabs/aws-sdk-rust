@@ -135,7 +135,11 @@ impl Builder {
                 if let Some(auth) = input.auth {
                     http_req = http_req.header(AUTHORIZATION, auth);
                 }
-                Ok(http_req.body(SdkBody::empty()).expect("valid request"))
+                Ok(http_req
+                    .body(SdkBody::empty())
+                    .expect("valid request")
+                    .try_into()
+                    .unwrap())
             })
             .deserializer(move |response| parse_response(provider_name, response))
             .build();

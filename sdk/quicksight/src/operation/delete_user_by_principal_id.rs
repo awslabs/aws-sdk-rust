@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteU
 
 #[derive(Debug)]
 struct DeleteUserByPrincipalIdResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteUserByPrincipalIdResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteUserByPrincipalIdResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteUs
 }
 #[derive(Debug)]
 struct DeleteUserByPrincipalIdRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteUserByPrincipalIdRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteUserByPrincipalIdRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -238,13 +238,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteUserB
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteUserByPrincipalIdEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteUserByPrincipalIdEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteUserByPrincipalIdEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteUserByPrincipalIdEndpointParamsInterceptor"
     }

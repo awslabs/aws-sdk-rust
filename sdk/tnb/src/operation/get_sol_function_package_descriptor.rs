@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetSolF
 
 #[derive(Debug)]
 struct GetSolFunctionPackageDescriptorResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetSolFunctionPackageDescriptorResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetSolFunctionPackageDescriptorResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -163,7 +163,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetSolFu
 }
 #[derive(Debug)]
 struct GetSolFunctionPackageDescriptorRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetSolFunctionPackageDescriptorRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSolFunctionPackageDescriptorRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -214,13 +214,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetSolFunct
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetSolFunctionPackageDescriptorEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetSolFunctionPackageDescriptorEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetSolFunctionPackageDescriptorEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetSolFunctionPackageDescriptorEndpointParamsInterceptor"
     }

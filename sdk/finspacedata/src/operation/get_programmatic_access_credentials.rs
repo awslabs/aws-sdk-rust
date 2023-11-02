@@ -144,7 +144,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetProg
 
 #[derive(Debug)]
 struct GetProgrammaticAccessCredentialsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetProgrammaticAccessCredentialsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetProgrammaticAccessCredentialsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -167,7 +167,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetProgr
 }
 #[derive(Debug)]
 struct GetProgrammaticAccessCredentialsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetProgrammaticAccessCredentialsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetProgrammaticAccessCredentialsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -228,13 +228,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetProgramm
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetProgrammaticAccessCredentialsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetProgrammaticAccessCredentialsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetProgrammaticAccessCredentialsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetProgrammaticAccessCredentialsEndpointParamsInterceptor"
     }

@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RedactR
 
 #[derive(Debug)]
 struct RedactRoomMessageResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RedactRoomMessageResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RedactRoomMessageResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RedactRo
 }
 #[derive(Debug)]
 struct RedactRoomMessageRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RedactRoomMessageRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RedactRoomMessageRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -240,13 +240,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RedactRoomM
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RedactRoomMessageEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RedactRoomMessageEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RedactRoomMessageEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RedactRoomMessageEndpointParamsInterceptor"
     }

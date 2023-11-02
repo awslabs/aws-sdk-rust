@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Simulat
 
 #[derive(Debug)]
 struct SimulatePrincipalPolicyResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for SimulatePrincipalPolicyResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SimulatePrincipalPolicyResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Simulate
 }
 #[derive(Debug)]
 struct SimulatePrincipalPolicyRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for SimulatePrincipalPolicyRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SimulatePrincipalPolicyRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -197,13 +197,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for SimulatePri
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct SimulatePrincipalPolicyEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for SimulatePrincipalPolicyEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SimulatePrincipalPolicyEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SimulatePrincipalPolicyEndpointParamsInterceptor"
     }

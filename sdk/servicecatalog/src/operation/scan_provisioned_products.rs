@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ScanPro
 
 #[derive(Debug)]
 struct ScanProvisionedProductsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ScanProvisionedProductsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ScanProvisionedProductsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ScanProv
 }
 #[derive(Debug)]
 struct ScanProvisionedProductsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ScanProvisionedProductsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ScanProvisionedProductsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -209,13 +209,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ScanProvisi
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ScanProvisionedProductsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ScanProvisionedProductsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ScanProvisionedProductsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ScanProvisionedProductsEndpointParamsInterceptor"
     }

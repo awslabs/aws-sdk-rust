@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteA
 
 #[derive(Debug)]
 struct DeleteAccessPointForObjectLambdaResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteAccessPointForObjectLambdaResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteAccessPointForObjectLambdaResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteAc
 }
 #[derive(Debug)]
 struct DeleteAccessPointForObjectLambdaRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteAccessPointForObjectLambdaRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAccessPointForObjectLambdaRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -219,13 +219,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteAcces
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteAccessPointForObjectLambdaEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteAccessPointForObjectLambdaEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteAccessPointForObjectLambdaEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteAccessPointForObjectLambdaEndpointParamsInterceptor"
     }

@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteF
 
 #[derive(Debug)]
 struct DeleteFargateProfileResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteFargateProfileResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteFargateProfileResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteFa
 }
 #[derive(Debug)]
 struct DeleteFargateProfileRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteFargateProfileRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteFargateProfileRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -219,13 +219,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteFarga
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteFargateProfileEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteFargateProfileEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteFargateProfileEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteFargateProfileEndpointParamsInterceptor"
     }

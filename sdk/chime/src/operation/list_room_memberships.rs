@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRoo
 
 #[derive(Debug)]
 struct ListRoomMembershipsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListRoomMembershipsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListRoomMembershipsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListRoom
 }
 #[derive(Debug)]
 struct ListRoomMembershipsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListRoomMembershipsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListRoomMembershipsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -238,13 +238,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListRoomMem
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListRoomMembershipsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListRoomMembershipsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListRoomMembershipsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListRoomMembershipsEndpointParamsInterceptor"
     }

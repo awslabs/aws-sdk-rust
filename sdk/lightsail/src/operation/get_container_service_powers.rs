@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetCont
 
 #[derive(Debug)]
 struct GetContainerServicePowersResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetContainerServicePowersResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetContainerServicePowersResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetConta
 }
 #[derive(Debug)]
 struct GetContainerServicePowersRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetContainerServicePowersRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetContainerServicePowersRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -206,13 +206,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetContaine
             crate::protocol_serde::shape_get_container_service_powers::ser_get_container_service_powers_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetContainerServicePowersEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetContainerServicePowersEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetContainerServicePowersEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetContainerServicePowersEndpointParamsInterceptor"
     }

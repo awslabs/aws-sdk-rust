@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListVer
 
 #[derive(Debug)]
 struct ListVerifiedEmailAddressesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListVerifiedEmailAddressesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListVerifiedEmailAddressesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListVeri
 }
 #[derive(Debug)]
 struct ListVerifiedEmailAddressesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListVerifiedEmailAddressesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListVerifiedEmailAddressesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -195,13 +195,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListVerifie
             crate::protocol_serde::shape_list_verified_email_addresses_input::ser_list_verified_email_addresses_input_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListVerifiedEmailAddressesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListVerifiedEmailAddressesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListVerifiedEmailAddressesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListVerifiedEmailAddressesEndpointParamsInterceptor"
     }

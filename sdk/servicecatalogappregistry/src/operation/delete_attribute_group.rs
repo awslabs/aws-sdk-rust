@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteA
 
 #[derive(Debug)]
 struct DeleteAttributeGroupResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteAttributeGroupResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteAttributeGroupResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteAt
 }
 #[derive(Debug)]
 struct DeleteAttributeGroupRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteAttributeGroupRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteAttributeGroupRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -212,13 +212,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteAttri
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteAttributeGroupEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteAttributeGroupEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteAttributeGroupEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteAttributeGroupEndpointParamsInterceptor"
     }

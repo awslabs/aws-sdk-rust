@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
 
 #[derive(Debug)]
 struct DescribeTunnelResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DescribeTunnelResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeTunnelResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Describe
 }
 #[derive(Debug)]
 struct DescribeTunnelRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeTunnelRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeTunnelRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -201,13 +201,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeTun
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DescribeTunnelEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DescribeTunnelEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeTunnelEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DescribeTunnelEndpointParamsInterceptor"
     }

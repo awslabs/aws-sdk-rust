@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CancelM
 
 #[derive(Debug)]
 struct CancelMLModelTransformJobResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CancelMLModelTransformJobResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CancelMLModelTransformJobResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CancelML
 }
 #[derive(Debug)]
 struct CancelMLModelTransformJobRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CancelMLModelTransformJobRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CancelMLModelTransformJobRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -227,13 +227,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CancelMLMod
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct CancelMLModelTransformJobEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CancelMLModelTransformJobEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CancelMLModelTransformJobEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CancelMLModelTransformJobEndpointParamsInterceptor"
     }

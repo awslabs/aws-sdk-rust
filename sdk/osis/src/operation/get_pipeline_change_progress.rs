@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetPipe
 
 #[derive(Debug)]
 struct GetPipelineChangeProgressResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetPipelineChangeProgressResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetPipelineChangeProgressResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetPipel
 }
 #[derive(Debug)]
 struct GetPipelineChangeProgressRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetPipelineChangeProgressRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPipelineChangeProgressRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -208,13 +208,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetPipeline
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetPipelineChangeProgressEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetPipelineChangeProgressEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPipelineChangeProgressEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetPipelineChangeProgressEndpointParamsInterceptor"
     }

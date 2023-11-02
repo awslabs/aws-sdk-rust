@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateI
 
 #[derive(Debug)]
 struct CreateIPSetResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CreateIPSetResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateIPSetResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CreateIP
 }
 #[derive(Debug)]
 struct CreateIPSetRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateIPSetRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateIPSetRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -213,13 +213,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateIPSet
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct CreateIPSetEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CreateIPSetEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateIPSetEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CreateIPSetEndpointParamsInterceptor"
     }

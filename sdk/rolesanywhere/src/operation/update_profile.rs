@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateP
 
 #[derive(Debug)]
 struct UpdateProfileResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdateProfileResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateProfileResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdatePr
 }
 #[derive(Debug)]
 struct UpdateProfileRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateProfileRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateProfileRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -203,13 +203,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateProfi
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct UpdateProfileEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UpdateProfileEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateProfileEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateProfileEndpointParamsInterceptor"
     }

@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteM
 
 #[derive(Debug)]
 struct DeleteMessagingStreamingConfigurationsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteMessagingStreamingConfigurationsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteMessagingStreamingConfigurationsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteMe
 }
 #[derive(Debug)]
 struct DeleteMessagingStreamingConfigurationsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteMessagingStreamingConfigurationsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteMessagingStreamingConfigurationsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -221,13 +221,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteMessa
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteMessagingStreamingConfigurationsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteMessagingStreamingConfigurationsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteMessagingStreamingConfigurationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteMessagingStreamingConfigurationsEndpointParamsInterceptor"
     }

@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetDist
 
 #[derive(Debug)]
 struct GetDistributionsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetDistributionsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetDistributionsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetDistr
 }
 #[derive(Debug)]
 struct GetDistributionsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetDistributionsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDistributionsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetDistribu
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetDistributionsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetDistributionsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDistributionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetDistributionsEndpointParamsInterceptor"
     }

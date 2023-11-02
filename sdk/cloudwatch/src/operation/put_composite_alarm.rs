@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutComp
 
 #[derive(Debug)]
 struct PutCompositeAlarmResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutCompositeAlarmResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutCompositeAlarmResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutCompo
 }
 #[derive(Debug)]
 struct PutCompositeAlarmRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutCompositeAlarmRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutCompositeAlarmRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -198,13 +198,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutComposit
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct PutCompositeAlarmEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for PutCompositeAlarmEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutCompositeAlarmEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutCompositeAlarmEndpointParamsInterceptor"
     }

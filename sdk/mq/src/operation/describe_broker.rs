@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
 
 #[derive(Debug)]
 struct DescribeBrokerResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DescribeBrokerResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeBrokerResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Describe
 }
 #[derive(Debug)]
 struct DescribeBrokerRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeBrokerRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeBrokerRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -202,13 +202,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeBro
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DescribeBrokerEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DescribeBrokerEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeBrokerEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DescribeBrokerEndpointParamsInterceptor"
     }

@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateS
 
 #[derive(Debug)]
 struct CreateStorageLocationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CreateStorageLocationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateStorageLocationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CreateSt
 }
 #[derive(Debug)]
 struct CreateStorageLocationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateStorageLocationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateStorageLocationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -201,13 +201,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateStora
             crate::protocol_serde::shape_create_storage_location_input::ser_create_storage_location_input_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct CreateStorageLocationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CreateStorageLocationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateStorageLocationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CreateStorageLocationEndpointParamsInterceptor"
     }

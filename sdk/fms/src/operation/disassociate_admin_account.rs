@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
 
 #[derive(Debug)]
 struct DisassociateAdminAccountResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DisassociateAdminAccountResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DisassociateAdminAccountResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Disassoc
 }
 #[derive(Debug)]
 struct DisassociateAdminAccountRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DisassociateAdminAccountRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DisassociateAdminAccountRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for Disassociat
             crate::protocol_serde::shape_disassociate_admin_account::ser_disassociate_admin_account_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DisassociateAdminAccountEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DisassociateAdminAccountEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisassociateAdminAccountEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DisassociateAdminAccountEndpointParamsInterceptor"
     }

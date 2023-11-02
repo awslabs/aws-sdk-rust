@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListNam
 
 #[derive(Debug)]
 struct ListNamedShadowsForThingResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListNamedShadowsForThingResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListNamedShadowsForThingResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListName
 }
 #[derive(Debug)]
 struct ListNamedShadowsForThingRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListNamedShadowsForThingRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListNamedShadowsForThingRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -228,13 +228,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListNamedSh
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListNamedShadowsForThingEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListNamedShadowsForThingEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListNamedShadowsForThingEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListNamedShadowsForThingEndpointParamsInterceptor"
     }

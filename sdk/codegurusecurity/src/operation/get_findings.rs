@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetFind
 
 #[derive(Debug)]
 struct GetFindingsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetFindingsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetFindingsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetFindi
 }
 #[derive(Debug)]
 struct GetFindingsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetFindingsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetFindingsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -226,13 +226,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetFindings
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetFindingsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetFindingsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetFindingsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetFindingsEndpointParamsInterceptor"
     }

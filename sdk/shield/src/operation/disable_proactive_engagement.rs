@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disable
 
 #[derive(Debug)]
 struct DisableProactiveEngagementResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DisableProactiveEngagementResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DisableProactiveEngagementResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DisableP
 }
 #[derive(Debug)]
 struct DisableProactiveEngagementRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DisableProactiveEngagementRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DisableProactiveEngagementRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DisableProa
             crate::protocol_serde::shape_disable_proactive_engagement::ser_disable_proactive_engagement_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DisableProactiveEngagementEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DisableProactiveEngagementEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisableProactiveEngagementEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DisableProactiveEngagementEndpointParamsInterceptor"
     }

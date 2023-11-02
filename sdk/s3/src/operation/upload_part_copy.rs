@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UploadP
 
 #[derive(Debug)]
 struct UploadPartCopyResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UploadPartCopyResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UploadPartCopyResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UploadPa
 }
 #[derive(Debug)]
 struct UploadPartCopyRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UploadPartCopyRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UploadPartCopyRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -238,13 +238,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UploadPartC
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct UploadPartCopyEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UploadPartCopyEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UploadPartCopyEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UploadPartCopyEndpointParamsInterceptor"
     }

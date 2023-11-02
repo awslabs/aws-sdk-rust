@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
 
 #[derive(Debug)]
 struct DescribeElasticsearchDomainConfigResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DescribeElasticsearchDomainConfigResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeElasticsearchDomainConfigResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Describe
 }
 #[derive(Debug)]
 struct DescribeElasticsearchDomainConfigRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeElasticsearchDomainConfigRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeElasticsearchDomainConfigRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -216,13 +216,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeEla
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DescribeElasticsearchDomainConfigEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DescribeElasticsearchDomainConfigEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeElasticsearchDomainConfigEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DescribeElasticsearchDomainConfigEndpointParamsInterceptor"
     }

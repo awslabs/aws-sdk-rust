@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetTraf
 
 #[derive(Debug)]
 struct GetTrafficDistributionResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetTrafficDistributionResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetTrafficDistributionResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetTraff
 }
 #[derive(Debug)]
 struct GetTrafficDistributionRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetTrafficDistributionRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTrafficDistributionRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -203,13 +203,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetTrafficD
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetTrafficDistributionEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetTrafficDistributionEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetTrafficDistributionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetTrafficDistributionEndpointParamsInterceptor"
     }

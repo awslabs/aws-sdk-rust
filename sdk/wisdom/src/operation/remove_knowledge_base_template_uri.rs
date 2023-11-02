@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RemoveK
 
 #[derive(Debug)]
 struct RemoveKnowledgeBaseTemplateUriResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RemoveKnowledgeBaseTemplateUriResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RemoveKnowledgeBaseTemplateUriResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -163,7 +163,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RemoveKn
 }
 #[derive(Debug)]
 struct RemoveKnowledgeBaseTemplateUriRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RemoveKnowledgeBaseTemplateUriRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveKnowledgeBaseTemplateUriRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -213,13 +213,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RemoveKnowl
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RemoveKnowledgeBaseTemplateUriEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RemoveKnowledgeBaseTemplateUriEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RemoveKnowledgeBaseTemplateUriEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RemoveKnowledgeBaseTemplateUriEndpointParamsInterceptor"
     }

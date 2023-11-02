@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetProp
 
 #[derive(Debug)]
 struct GetProposalResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetProposalResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetProposalResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetPropo
 }
 #[derive(Debug)]
 struct GetProposalRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetProposalRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetProposalRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -220,13 +220,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetProposal
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetProposalEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetProposalEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetProposalEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetProposalEndpointParamsInterceptor"
     }

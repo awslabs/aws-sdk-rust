@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAppl
 
 #[derive(Debug)]
 struct GetApplicationComponentStrategiesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetApplicationComponentStrategiesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetApplicationComponentStrategiesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetAppli
 }
 #[derive(Debug)]
 struct GetApplicationComponentStrategiesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetApplicationComponentStrategiesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetApplicationComponentStrategiesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -218,13 +218,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetApplicat
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetApplicationComponentStrategiesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetApplicationComponentStrategiesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetApplicationComponentStrategiesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetApplicationComponentStrategiesEndpointParamsInterceptor"
     }

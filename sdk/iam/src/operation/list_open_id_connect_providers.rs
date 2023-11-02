@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListOpe
 
 #[derive(Debug)]
 struct ListOpenIDConnectProvidersResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListOpenIDConnectProvidersResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListOpenIDConnectProvidersResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListOpen
 }
 #[derive(Debug)]
 struct ListOpenIDConnectProvidersRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListOpenIDConnectProvidersRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListOpenIDConnectProvidersRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -195,13 +195,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListOpenIDC
             crate::protocol_serde::shape_list_open_id_connect_providers_input::ser_list_open_id_connect_providers_input_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListOpenIDConnectProvidersEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListOpenIDConnectProvidersEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListOpenIDConnectProvidersEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListOpenIDConnectProvidersEndpointParamsInterceptor"
     }

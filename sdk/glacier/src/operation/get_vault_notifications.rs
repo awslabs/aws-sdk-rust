@@ -137,7 +137,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetVaul
 
 #[derive(Debug)]
 struct GetVaultNotificationsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetVaultNotificationsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetVaultNotificationsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -158,7 +158,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetVault
 }
 #[derive(Debug)]
 struct GetVaultNotificationsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetVaultNotificationsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetVaultNotificationsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -223,13 +223,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetVaultNot
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetVaultNotificationsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetVaultNotificationsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetVaultNotificationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetVaultNotificationsEndpointParamsInterceptor"
     }

@@ -126,7 +126,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetQueu
 
 #[derive(Debug)]
 struct GetQueueResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetQueueResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetQueueResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -147,7 +147,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetQueue
 }
 #[derive(Debug)]
 struct GetQueueRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetQueueRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetQueueRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -193,13 +193,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetQueueReq
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetQueueEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetQueueEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetQueueEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetQueueEndpointParamsInterceptor"
     }

@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDis
 
 #[derive(Debug)]
 struct ListDiscoveredResourcesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListDiscoveredResourcesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListDiscoveredResourcesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListDisc
 }
 #[derive(Debug)]
 struct ListDiscoveredResourcesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListDiscoveredResourcesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDiscoveredResourcesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -202,13 +202,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListDiscove
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListDiscoveredResourcesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListDiscoveredResourcesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDiscoveredResourcesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListDiscoveredResourcesEndpointParamsInterceptor"
     }

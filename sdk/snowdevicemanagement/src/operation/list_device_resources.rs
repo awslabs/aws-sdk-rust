@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDev
 
 #[derive(Debug)]
 struct ListDeviceResourcesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListDeviceResourcesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListDeviceResourcesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListDevi
 }
 #[derive(Debug)]
 struct ListDeviceResourcesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListDeviceResourcesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDeviceResourcesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -230,13 +230,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListDeviceR
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListDeviceResourcesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListDeviceResourcesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDeviceResourcesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListDeviceResourcesEndpointParamsInterceptor"
     }

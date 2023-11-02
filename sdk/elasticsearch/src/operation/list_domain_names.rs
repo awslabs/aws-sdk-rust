@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListDom
 
 #[derive(Debug)]
 struct ListDomainNamesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListDomainNamesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListDomainNamesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListDoma
 }
 #[derive(Debug)]
 struct ListDomainNamesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListDomainNamesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListDomainNamesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -211,13 +211,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListDomainN
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListDomainNamesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListDomainNamesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListDomainNamesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListDomainNamesEndpointParamsInterceptor"
     }

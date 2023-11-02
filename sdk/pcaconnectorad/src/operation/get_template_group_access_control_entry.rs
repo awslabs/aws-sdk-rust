@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetTemp
 
 #[derive(Debug)]
 struct GetTemplateGroupAccessControlEntryResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetTemplateGroupAccessControlEntryResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetTemplateGroupAccessControlEntryResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetTempl
 }
 #[derive(Debug)]
 struct GetTemplateGroupAccessControlEntryRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetTemplateGroupAccessControlEntryRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTemplateGroupAccessControlEntryRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -233,13 +233,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetTemplate
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetTemplateGroupAccessControlEntryEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetTemplateGroupAccessControlEntryEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetTemplateGroupAccessControlEntryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetTemplateGroupAccessControlEntryEndpointParamsInterceptor"
     }

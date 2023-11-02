@@ -144,7 +144,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetMedi
 
 #[derive(Debug)]
 struct GetMediaPipelineKinesisVideoStreamPoolResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetMediaPipelineKinesisVideoStreamPoolResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetMediaPipelineKinesisVideoStreamPoolResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -169,7 +169,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetMedia
 }
 #[derive(Debug)]
 struct GetMediaPipelineKinesisVideoStreamPoolRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetMediaPipelineKinesisVideoStreamPoolRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetMediaPipelineKinesisVideoStreamPoolRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -218,13 +218,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetMediaPip
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetMediaPipelineKinesisVideoStreamPoolEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetMediaPipelineKinesisVideoStreamPoolEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetMediaPipelineKinesisVideoStreamPoolEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetMediaPipelineKinesisVideoStreamPoolEndpointParamsInterceptor"
     }

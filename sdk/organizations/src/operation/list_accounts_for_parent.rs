@@ -141,7 +141,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAcc
 
 #[derive(Debug)]
 struct ListAccountsForParentResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListAccountsForParentResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListAccountsForParentResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -162,7 +162,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListAcco
 }
 #[derive(Debug)]
 struct ListAccountsForParentRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListAccountsForParentRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAccountsForParentRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -210,13 +210,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListAccount
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListAccountsForParentEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListAccountsForParentEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAccountsForParentEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAccountsForParentEndpointParamsInterceptor"
     }

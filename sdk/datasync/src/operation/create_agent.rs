@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateA
 
 #[derive(Debug)]
 struct CreateAgentResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CreateAgentResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateAgentResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CreateAg
 }
 #[derive(Debug)]
 struct CreateAgentRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateAgentRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateAgentRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateAgent
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct CreateAgentEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CreateAgentEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateAgentEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CreateAgentEndpointParamsInterceptor"
     }

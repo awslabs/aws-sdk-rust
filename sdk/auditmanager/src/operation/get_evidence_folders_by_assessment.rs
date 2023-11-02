@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEvid
 
 #[derive(Debug)]
 struct GetEvidenceFoldersByAssessmentResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetEvidenceFoldersByAssessmentResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetEvidenceFoldersByAssessmentResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -166,7 +166,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetEvide
 }
 #[derive(Debug)]
 struct GetEvidenceFoldersByAssessmentRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetEvidenceFoldersByAssessmentRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetEvidenceFoldersByAssessmentRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -233,13 +233,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetEvidence
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetEvidenceFoldersByAssessmentEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetEvidenceFoldersByAssessmentEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetEvidenceFoldersByAssessmentEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetEvidenceFoldersByAssessmentEndpointParamsInterceptor"
     }

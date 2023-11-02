@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RemoveF
 
 #[derive(Debug)]
 struct RemoveFacetFromObjectResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RemoveFacetFromObjectResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RemoveFacetFromObjectResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RemoveFa
 }
 #[derive(Debug)]
 struct RemoveFacetFromObjectRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RemoveFacetFromObjectRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveFacetFromObjectRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -205,13 +205,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RemoveFacet
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RemoveFacetFromObjectEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RemoveFacetFromObjectEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RemoveFacetFromObjectEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RemoveFacetFromObjectEndpointParamsInterceptor"
     }

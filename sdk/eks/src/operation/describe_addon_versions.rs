@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Describ
 
 #[derive(Debug)]
 struct DescribeAddonVersionsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DescribeAddonVersionsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DescribeAddonVersionsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Describe
 }
 #[derive(Debug)]
 struct DescribeAddonVersionsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeAddonVersionsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DescribeAddonVersionsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -240,13 +240,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeAdd
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DescribeAddonVersionsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DescribeAddonVersionsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DescribeAddonVersionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DescribeAddonVersionsEndpointParamsInterceptor"
     }

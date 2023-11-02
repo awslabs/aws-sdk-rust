@@ -13,9 +13,12 @@
 mod urlencoded;
 mod xml;
 
+use crate::sealed::GetNormalizedHeader;
 use crate::xml::try_xml_equivalent;
 use assert_json_diff::assert_json_eq_no_panic;
-use http::{header::HeaderMap, Request, Uri};
+use aws_smithy_runtime_api::client::http::request::Headers;
+use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+use http::{HeaderMap, Uri};
 use pretty_assertions::Comparison;
 use std::collections::HashSet;
 use std::fmt::{self, Debug};
@@ -122,18 +125,18 @@ impl<'a> QueryParam<'a> {
     }
 }
 
-fn extract_params(uri: &Uri) -> HashSet<&str> {
-    uri.query().unwrap_or_default().split('&').collect()
+fn extract_params(uri: &str) -> HashSet<&str> {
+    let query = uri.rsplit_once('?').map(|s| s.1).unwrap_or_default();
+    query.split('&').collect()
 }
 
 #[track_caller]
-pub fn assert_uris_match(left: &Uri, right: &Uri) {
+pub fn assert_uris_match(left: impl AsRef<str>, right: impl AsRef<str>) {
+    let left = left.as_ref();
+    let right = right.as_ref();
     if left == right {
         return;
     }
-    assert_eq!(left.authority(), right.authority());
-    assert_eq!(left.scheme(), right.scheme());
-    assert_eq!(left.path(), right.path());
     assert_eq!(
         extract_params(left),
         extract_params(right),
@@ -141,10 +144,15 @@ pub fn assert_uris_match(left: &Uri, right: &Uri) {
         left,
         right
     );
+    let left: Uri = left.parse().expect("left is not a valid URI");
+    let right: Uri = right.parse().expect("left is not a valid URI");
+    assert_eq!(left.authority(), right.authority());
+    assert_eq!(left.scheme(), right.scheme());
+    assert_eq!(left.path(), right.path());
 }
 
-pub fn validate_query_string<B>(
-    request: &Request<B>,
+pub fn validate_query_string(
+    request: &HttpRequest,
     expected_params: &[&str],
 ) -> Result<(), ProtocolTestFailure> {
     let actual_params = extract_params(request.uri());
@@ -159,8 +167,8 @@ pub fn validate_query_string<B>(
     Ok(())
 }
 
-pub fn forbid_query_params<B>(
-    request: &Request<B>,
+pub fn forbid_query_params(
+    request: &HttpRequest,
     forbid_params: &[&str],
 ) -> Result<(), ProtocolTestFailure> {
     let actual_params: HashSet<QueryParam<'_>> = extract_params(request.uri())
@@ -186,8 +194,8 @@ pub fn forbid_query_params<B>(
     Ok(())
 }
 
-pub fn require_query_params<B>(
-    request: &Request<B>,
+pub fn require_query_params(
+    request: &HttpRequest,
     require_keys: &[&str],
 ) -> Result<(), ProtocolTestFailure> {
     let actual_keys: HashSet<&str> = extract_params(request.uri())
@@ -204,14 +212,46 @@ pub fn require_query_params<B>(
     Ok(())
 }
 
+mod sealed {
+    pub trait GetNormalizedHeader {
+        fn get_header(&self, key: &str) -> Option<String>;
+    }
+}
+
+impl<'a> GetNormalizedHeader for &'a Headers {
+    fn get_header(&self, key: &str) -> Option<String> {
+        if !self.contains_key(key) {
+            None
+        } else {
+            Some(self.get_all(key).collect::<Vec<_>>().join(", "))
+        }
+    }
+}
+
+impl<'a> GetNormalizedHeader for &'a HeaderMap {
+    fn get_header(&self, key: &str) -> Option<String> {
+        if !self.contains_key(key) {
+            None
+        } else {
+            Some(
+                self.get_all(key)
+                    .iter()
+                    .map(|value| std::str::from_utf8(value.as_bytes()).expect("invalid utf-8"))
+                    .collect::<Vec<_>>()
+                    .join(", "),
+            )
+        }
+    }
+}
+
 pub fn validate_headers<'a>(
-    actual_headers: &HeaderMap,
+    actual_headers: impl GetNormalizedHeader,
     expected_headers: impl IntoIterator<Item = (impl AsRef<str> + 'a, impl AsRef<str> + 'a)>,
 ) -> Result<(), ProtocolTestFailure> {
     for (key, expected_value) in expected_headers {
         let key = key.as_ref();
         let expected_value = expected_value.as_ref();
-        match normalized_header(actual_headers, key) {
+        match actual_headers.get_header(key) {
             None => {
                 return Err(ProtocolTestFailure::MissingHeader {
                     expected: key.to_string(),
@@ -230,28 +270,13 @@ pub fn validate_headers<'a>(
     Ok(())
 }
 
-fn normalized_header(headers: &HeaderMap, key: &str) -> Option<String> {
-    if !headers.contains_key(key) {
-        None
-    } else {
-        Some(
-            headers
-                .get_all(key)
-                .iter()
-                .map(|hv| hv.to_str().unwrap())
-                .collect::<Vec<_>>()
-                .join(", "),
-        )
-    }
-}
-
 pub fn forbid_headers(
-    headers: &HeaderMap,
+    headers: impl GetNormalizedHeader,
     forbidden_headers: &[&str],
 ) -> Result<(), ProtocolTestFailure> {
     for key in forbidden_headers {
         // Protocol tests store header lists as comma-delimited
-        if let Some(value) = normalized_header(headers, key) {
+        if let Some(value) = headers.get_header(key) {
             return Err(ProtocolTestFailure::ForbiddenHeader {
                 forbidden: key.to_string(),
                 found: format!("{}: {}", key, value),
@@ -262,12 +287,12 @@ pub fn forbid_headers(
 }
 
 pub fn require_headers(
-    headers: &HeaderMap,
+    headers: impl GetNormalizedHeader,
     required_headers: &[&str],
 ) -> Result<(), ProtocolTestFailure> {
     for key in required_headers {
         // Protocol tests store header lists as comma-delimited
-        if normalized_header(headers, key).is_none() {
+        if headers.get_header(key).is_none() {
             return Err(ProtocolTestFailure::MissingHeader {
                 expected: key.to_string(),
             });
@@ -388,21 +413,25 @@ mod tests {
         forbid_headers, forbid_query_params, require_headers, require_query_params, validate_body,
         validate_headers, validate_query_string, FloatEquals, MediaType, ProtocolTestFailure,
     };
-    use http::{header::HeaderMap, Request};
+    use aws_smithy_runtime_api::client::http::request::Headers;
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+
+    fn make_request(uri: &str) -> HttpRequest {
+        let mut req = HttpRequest::empty();
+        req.set_uri(uri).unwrap();
+        req
+    }
 
     #[test]
     fn test_validate_empty_query_string() {
-        let request = Request::builder().uri("/foo").body(()).unwrap();
+        let request = HttpRequest::empty();
         validate_query_string(&request, &[]).expect("no required params should pass");
         validate_query_string(&request, &["a"]).expect_err("no params provided");
     }
 
     #[test]
     fn test_validate_query_string() {
-        let request = Request::builder()
-            .uri("/foo?a=b&c&d=efg&hello=a%20b")
-            .body(())
-            .unwrap();
+        let request = make_request("/foo?a=b&c&d=efg&hello=a%20b");
         validate_query_string(&request, &["a=b"]).expect("a=b is in the query string");
         validate_query_string(&request, &["c", "a=b"])
             .expect("both params are in the query string");
@@ -418,10 +447,7 @@ mod tests {
 
     #[test]
     fn test_forbid_query_param() {
-        let request = Request::builder()
-            .uri("/foo?a=b&c&d=efg&hello=a%20b")
-            .body(())
-            .unwrap();
+        let request = make_request("/foo?a=b&c&d=efg&hello=a%20b");
         forbid_query_params(&request, &["a"]).expect_err("a is a query param");
         forbid_query_params(&request, &["not_included"]).expect("query param not included");
         forbid_query_params(&request, &["a=b"]).expect_err("if there is an `=`, match against KV");
@@ -431,10 +457,7 @@ mod tests {
 
     #[test]
     fn test_require_query_param() {
-        let request = Request::builder()
-            .uri("/foo?a=b&c&d=efg&hello=a%20b")
-            .body(())
-            .unwrap();
+        let request = make_request("/foo?a=b&c&d=efg&hello=a%20b");
         require_query_params(&request, &["a"]).expect("a is a query param");
         require_query_params(&request, &["not_included"]).expect_err("query param not included");
         require_query_params(&request, &["a=b"]).expect_err("should be matching against keys");
@@ -443,11 +466,11 @@ mod tests {
 
     #[test]
     fn test_validate_headers() {
-        let mut headers = HeaderMap::new();
-        headers.append("X-Foo", "foo".parse().unwrap());
-        headers.append("X-Foo-List", "foo".parse().unwrap());
-        headers.append("X-Foo-List", "bar".parse().unwrap());
-        headers.append("X-Inline", "inline, other".parse().unwrap());
+        let mut headers = Headers::new();
+        headers.append("x-foo", "foo");
+        headers.append("x-foo-list", "foo");
+        headers.append("x-foo-list", "bar");
+        headers.append("x-inline", "inline, other");
 
         validate_headers(&headers, [("X-Foo", "foo")]).expect("header present");
         validate_headers(&headers, [("X-Foo", "Foo")]).expect_err("case sensitive");
@@ -466,30 +489,24 @@ mod tests {
 
     #[test]
     fn test_forbidden_headers() {
-        let request = Request::builder()
-            .uri("/")
-            .header("X-Foo", "foo")
-            .body(())
-            .unwrap();
+        let mut headers = Headers::new();
+        headers.append("x-foo", "foo");
         assert_eq!(
-            forbid_headers(request.headers(), &["X-Foo"]).expect_err("should be error"),
+            forbid_headers(&headers, &["X-Foo"]).expect_err("should be error"),
             ProtocolTestFailure::ForbiddenHeader {
                 forbidden: "X-Foo".to_string(),
                 found: "X-Foo: foo".to_string()
             }
         );
-        forbid_headers(request.headers(), &["X-Bar"]).expect("header not present");
+        forbid_headers(&headers, &["X-Bar"]).expect("header not present");
     }
 
     #[test]
     fn test_required_headers() {
-        let request = Request::builder()
-            .uri("/")
-            .header("X-Foo", "foo")
-            .body(())
-            .unwrap();
-        require_headers(request.headers(), &["X-Foo"]).expect("header present");
-        require_headers(request.headers(), &["X-Bar"]).expect_err("header not present");
+        let mut headers = Headers::new();
+        headers.append("x-foo", "foo");
+        require_headers(&headers, &["X-Foo"]).expect("header present");
+        require_headers(&headers, &["X-Bar"]).expect_err("header not present");
     }
 
     #[test]
@@ -526,6 +543,12 @@ mod tests {
 
         validate_body(expected, expected, MediaType::from("something/else"))
             .expect("inputs matched exactly")
+    }
+
+    #[test]
+    fn test_validate_headers_http0x() {
+        let request = http::Request::builder().header("a", "b").body(()).unwrap();
+        validate_headers(request.headers(), [("a", "b")]).unwrap()
     }
 
     #[test]

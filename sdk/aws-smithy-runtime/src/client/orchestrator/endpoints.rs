@@ -4,13 +4,11 @@
  */
 
 use aws_smithy_http::endpoint::error::ResolveEndpointError;
-use aws_smithy_http::endpoint::{
-    apply_endpoint as apply_endpoint_to_request_uri, EndpointPrefix, ResolveEndpoint,
-    SharedEndpointResolver,
-};
+use aws_smithy_http::endpoint::EndpointPrefix;
+use aws_smithy_http::endpoint::SharedEndpointResolver;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::endpoint::{
-    EndpointFuture, EndpointResolver, EndpointResolverParams,
+    EndpointFuture, EndpointResolverParams, ResolveEndpoint,
 };
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
@@ -18,7 +16,9 @@ use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
 use http::header::HeaderName;
+use http::uri::PathAndQuery;
 use http::{HeaderValue, Uri};
+use std::borrow::Cow;
 use std::fmt::Debug;
 use std::str::FromStr;
 use tracing::trace;
@@ -45,7 +45,7 @@ impl StaticUriEndpointResolver {
     }
 }
 
-impl EndpointResolver for StaticUriEndpointResolver {
+impl ResolveEndpoint for StaticUriEndpointResolver {
     fn resolve_endpoint<'a>(&'a self, _params: &'a EndpointResolverParams) -> EndpointFuture<'a> {
         EndpointFuture::ready(Ok(Endpoint::builder()
             .url(self.endpoint.to_string())
@@ -70,9 +70,9 @@ impl From<StaticUriEndpointResolverParams> for EndpointResolverParams {
     }
 }
 
-/// Default implementation of [`EndpointResolver`].
+/// Default implementation of [`ResolveEndpoint`].
 ///
-/// This default endpoint resolver implements the `EndpointResolver` trait by
+/// This default endpoint resolver implements the `ResolveEndpoint` trait by
 /// converting the type-erased [`EndpointResolverParams`] into the concrete
 /// endpoint params for the service. It then delegates endpoint resolution
 /// to an underlying resolver that is aware of the concrete type.
@@ -97,11 +97,12 @@ impl<Params> DefaultEndpointResolver<Params> {
     }
 }
 
-impl<Params> EndpointResolver for DefaultEndpointResolver<Params>
+impl<Params> ResolveEndpoint for DefaultEndpointResolver<Params>
 where
     Params: Debug + Send + Sync + 'static,
 {
     fn resolve_endpoint<'a>(&'a self, params: &'a EndpointResolverParams) -> EndpointFuture<'a> {
+        use aws_smithy_http::endpoint::ResolveEndpoint as _;
         let ep = match params.get::<Params>() {
             Some(params) => self.inner.resolve_endpoint(params).map_err(Box::new),
             None => Err(Box::new(ResolveEndpointError::message(
@@ -144,17 +145,34 @@ fn apply_endpoint(
     endpoint: &Endpoint,
     endpoint_prefix: Option<&EndpointPrefix>,
 ) -> Result<(), BoxError> {
-    let uri: Uri = endpoint.url().parse().map_err(|err| {
-        ResolveEndpointError::from_source("endpoint did not have a valid uri", err)
-    })?;
+    let endpoint_url = match endpoint_prefix {
+        None => Cow::Borrowed(endpoint.url()),
+        Some(prefix) => {
+            let parsed = endpoint.url().parse::<Uri>()?;
+            let scheme = parsed.scheme_str().unwrap_or_default();
+            let prefix = prefix.as_str();
+            let authority = parsed
+                .authority()
+                .map(|auth| auth.as_str())
+                .unwrap_or_default();
+            let path_and_query = parsed
+                .path_and_query()
+                .map(PathAndQuery::as_str)
+                .unwrap_or_default();
+            Cow::Owned(format!("{scheme}://{prefix}{authority}{path_and_query}"))
+        }
+    };
 
-    apply_endpoint_to_request_uri(request.uri_mut(), &uri, endpoint_prefix).map_err(|err| {
-        ResolveEndpointError::message(format!(
-            "failed to apply endpoint `{:?}` to request `{:?}`",
-            uri, request,
-        ))
-        .with_source(Some(err.into()))
-    })?;
+    request
+        .uri_mut()
+        .set_endpoint(&endpoint_url)
+        .map_err(|err| {
+            ResolveEndpointError::message(format!(
+                "failed to apply endpoint `{}` to request `{:?}`",
+                endpoint_url, request,
+            ))
+            .with_source(Some(err.into()))
+        })?;
 
     for (header_name, header_values) in endpoint.headers() {
         request.headers_mut().remove(header_name);
@@ -172,4 +190,24 @@ fn apply_endpoint(
         }
     }
     Ok(())
+}
+
+#[cfg(test)]
+mod test {
+    use aws_smithy_http::endpoint::EndpointPrefix;
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
+    use aws_smithy_types::endpoint::Endpoint;
+
+    #[test]
+    fn test_apply_endpoint() {
+        let mut req = HttpRequest::empty();
+        req.set_uri("/foo?bar=1").unwrap();
+        let endpoint = Endpoint::builder().url("https://s3.amazon.com").build();
+        let prefix = EndpointPrefix::new("prefix.subdomain.").unwrap();
+        super::apply_endpoint(&mut req, &endpoint, Some(&prefix)).expect("should succeed");
+        assert_eq!(
+            req.uri(),
+            "https://prefix.subdomain.s3.amazon.com/foo?bar=1"
+        );
+    }
 }

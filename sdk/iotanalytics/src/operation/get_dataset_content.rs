@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetData
 
 #[derive(Debug)]
 struct GetDatasetContentResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetDatasetContentResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetDatasetContentResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetDatas
 }
 #[derive(Debug)]
 struct GetDatasetContentRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetDatasetContentRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDatasetContentRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -216,13 +216,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetDatasetC
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetDatasetContentEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetDatasetContentEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDatasetContentEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetDatasetContentEndpointParamsInterceptor"
     }

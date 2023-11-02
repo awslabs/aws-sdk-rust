@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Termina
 
 #[derive(Debug)]
 struct TerminateClientVpnConnectionsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for TerminateClientVpnConnectionsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for TerminateClientVpnConnectionsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Terminat
 }
 #[derive(Debug)]
 struct TerminateClientVpnConnectionsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TerminateClientVpnConnectionsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TerminateClientVpnConnectionsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -198,13 +198,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TerminateCl
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct TerminateClientVpnConnectionsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for TerminateClientVpnConnectionsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TerminateClientVpnConnectionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "TerminateClientVpnConnectionsEndpointParamsInterceptor"
     }

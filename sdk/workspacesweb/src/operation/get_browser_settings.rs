@@ -135,7 +135,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetBrow
 
 #[derive(Debug)]
 struct GetBrowserSettingsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetBrowserSettingsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetBrowserSettingsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -156,7 +156,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetBrows
 }
 #[derive(Debug)]
 struct GetBrowserSettingsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetBrowserSettingsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetBrowserSettingsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -205,13 +205,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetBrowserS
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetBrowserSettingsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetBrowserSettingsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetBrowserSettingsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetBrowserSettingsEndpointParamsInterceptor"
     }

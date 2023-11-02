@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteT
 
 #[derive(Debug)]
 struct DeleteTextMessageSpendLimitOverrideResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteTextMessageSpendLimitOverrideResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteTextMessageSpendLimitOverrideResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteTe
 }
 #[derive(Debug)]
 struct DeleteTextMessageSpendLimitOverrideRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteTextMessageSpendLimitOverrideRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteTextMessageSpendLimitOverrideRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -213,13 +213,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteTextM
             crate::protocol_serde::shape_delete_text_message_spend_limit_override::ser_delete_text_message_spend_limit_override_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteTextMessageSpendLimitOverrideEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteTextMessageSpendLimitOverrideEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteTextMessageSpendLimitOverrideEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteTextMessageSpendLimitOverrideEndpointParamsInterceptor"
     }

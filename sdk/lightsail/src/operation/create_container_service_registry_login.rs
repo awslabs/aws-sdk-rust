@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CreateC
 
 #[derive(Debug)]
 struct CreateContainerServiceRegistryLoginResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CreateContainerServiceRegistryLoginResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CreateContainerServiceRegistryLoginResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CreateCo
 }
 #[derive(Debug)]
 struct CreateContainerServiceRegistryLoginRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateContainerServiceRegistryLoginRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CreateContainerServiceRegistryLoginRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -213,13 +213,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateConta
             crate::protocol_serde::shape_create_container_service_registry_login::ser_create_container_service_registry_login_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct CreateContainerServiceRegistryLoginEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CreateContainerServiceRegistryLoginEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CreateContainerServiceRegistryLoginEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CreateContainerServiceRegistryLoginEndpointParamsInterceptor"
     }

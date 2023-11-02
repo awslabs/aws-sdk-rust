@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetDete
 
 #[derive(Debug)]
 struct GetDetectorModelAnalysisResultsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetDetectorModelAnalysisResultsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetDetectorModelAnalysisResultsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -166,7 +166,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetDetec
 }
 #[derive(Debug)]
 struct GetDetectorModelAnalysisResultsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetDetectorModelAnalysisResultsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetDetectorModelAnalysisResultsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -232,13 +232,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetDetector
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetDetectorModelAnalysisResultsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetDetectorModelAnalysisResultsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetDetectorModelAnalysisResultsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetDetectorModelAnalysisResultsEndpointParamsInterceptor"
     }

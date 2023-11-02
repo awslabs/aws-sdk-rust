@@ -144,7 +144,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateD
 
 #[derive(Debug)]
 struct UpdateDistributionWithStagingConfigResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdateDistributionWithStagingConfigResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateDistributionWithStagingConfigResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -169,7 +169,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdateDi
 }
 #[derive(Debug)]
 struct UpdateDistributionWithStagingConfigRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateDistributionWithStagingConfigRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateDistributionWithStagingConfigRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -234,13 +234,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateDistr
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct UpdateDistributionWithStagingConfigEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UpdateDistributionWithStagingConfigEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateDistributionWithStagingConfigEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateDistributionWithStagingConfigEndpointParamsInterceptor"
     }

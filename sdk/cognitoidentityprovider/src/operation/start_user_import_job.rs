@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartUs
 
 #[derive(Debug)]
 struct StartUserImportJobResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StartUserImportJobResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartUserImportJobResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StartUse
 }
 #[derive(Debug)]
 struct StartUserImportJobRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StartUserImportJobRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartUserImportJobRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -212,13 +212,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StartUserIm
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct StartUserImportJobEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for StartUserImportJobEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartUserImportJobEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartUserImportJobEndpointParamsInterceptor"
     }

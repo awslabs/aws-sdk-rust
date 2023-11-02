@@ -151,7 +151,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
 
 #[derive(Debug)]
 struct DisassociateUserFromPermissionGroupResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DisassociateUserFromPermissionGroupResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DisassociateUserFromPermissionGroupResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -176,7 +176,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Disassoc
 }
 #[derive(Debug)]
 struct DisassociateUserFromPermissionGroupRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DisassociateUserFromPermissionGroupRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DisassociateUserFromPermissionGroupRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -254,13 +254,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for Disassociat
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DisassociateUserFromPermissionGroupEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DisassociateUserFromPermissionGroupEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisassociateUserFromPermissionGroupEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DisassociateUserFromPermissionGroupEndpointParamsInterceptor"
     }

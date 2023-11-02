@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutPort
 
 #[derive(Debug)]
 struct PutPortfolioPreferencesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutPortfolioPreferencesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutPortfolioPreferencesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutPortf
 }
 #[derive(Debug)]
 struct PutPortfolioPreferencesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutPortfolioPreferencesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutPortfolioPreferencesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -207,13 +207,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutPortfoli
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct PutPortfolioPreferencesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for PutPortfolioPreferencesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutPortfolioPreferencesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutPortfolioPreferencesEndpointParamsInterceptor"
     }

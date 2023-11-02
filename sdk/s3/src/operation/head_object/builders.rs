@@ -197,7 +197,7 @@ impl HeadObjectFluentBuilder {
             })
         })?;
         let request = context.take_request().expect("request set before transmit");
-        Ok(crate::presigning::PresignedRequest::new(request.map(|_| ())))
+        Ok(crate::presigning::PresignedRequest::new(request))
     }
     /// <p>The name of the bucket containing the object.</p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>

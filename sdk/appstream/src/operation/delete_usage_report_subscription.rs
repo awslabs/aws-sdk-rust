@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteU
 
 #[derive(Debug)]
 struct DeleteUsageReportSubscriptionResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteUsageReportSubscriptionResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteUsageReportSubscriptionResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteUs
 }
 #[derive(Debug)]
 struct DeleteUsageReportSubscriptionRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteUsageReportSubscriptionRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteUsageReportSubscriptionRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -206,13 +206,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteUsage
             crate::protocol_serde::shape_delete_usage_report_subscription::ser_delete_usage_report_subscription_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteUsageReportSubscriptionEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteUsageReportSubscriptionEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteUsageReportSubscriptionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteUsageReportSubscriptionEndpointParamsInterceptor"
     }

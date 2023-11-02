@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListEnv
 
 #[derive(Debug)]
 struct ListEnvironmentBlueprintConfigurationsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListEnvironmentBlueprintConfigurationsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListEnvironmentBlueprintConfigurationsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListEnvi
 }
 #[derive(Debug)]
 struct ListEnvironmentBlueprintConfigurationsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListEnvironmentBlueprintConfigurationsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListEnvironmentBlueprintConfigurationsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -239,13 +239,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListEnviron
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListEnvironmentBlueprintConfigurationsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListEnvironmentBlueprintConfigurationsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListEnvironmentBlueprintConfigurationsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListEnvironmentBlueprintConfigurationsEndpointParamsInterceptor"
     }

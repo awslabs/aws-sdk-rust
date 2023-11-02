@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StopWor
 
 #[derive(Debug)]
 struct StopWorkflowResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StopWorkflowResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StopWorkflowResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StopWork
 }
 #[derive(Debug)]
 struct StopWorkflowRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StopWorkflowRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopWorkflowRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -206,13 +206,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StopWorkflo
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct StopWorkflowEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for StopWorkflowEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopWorkflowEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StopWorkflowEndpointParamsInterceptor"
     }

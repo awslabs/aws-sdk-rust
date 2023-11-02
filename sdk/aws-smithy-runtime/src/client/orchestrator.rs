@@ -27,7 +27,7 @@ use aws_smithy_runtime_api::client::retries::{RequestAttempts, RetryStrategy, Sh
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugins;
 use aws_smithy_runtime_api::client::ser_de::{
-    RequestSerializer, ResponseDeserializer, SharedRequestSerializer, SharedResponseDeserializer,
+    DeserializeResponse, SerializeRequest, SharedRequestSerializer, SharedResponseDeserializer,
 };
 use aws_smithy_types::config_bag::ConfigBag;
 use aws_smithy_types::timeout::TimeoutConfig;
@@ -446,7 +446,7 @@ mod tests {
     use crate::client::test_util::{
         deserializer::CannedResponseDeserializer, serializer::CannedRequestSerializer,
     };
-    use ::http::{Request, Response, StatusCode};
+    use ::http::{Response, StatusCode};
     use aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver;
     use aws_smithy_runtime_api::client::auth::{
         AuthSchemeOptionResolverParams, SharedAuthSchemeOptionResolver,
@@ -464,7 +464,7 @@ mod tests {
         BeforeTransmitInterceptorContextRef, FinalizerInterceptorContextMut,
         FinalizerInterceptorContextRef,
     };
-    use aws_smithy_runtime_api::client::interceptors::{Interceptor, SharedInterceptor};
+    use aws_smithy_runtime_api::client::interceptors::{Intercept, SharedInterceptor};
     use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_runtime_api::client::retries::SharedRetryStrategy;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
@@ -477,11 +477,7 @@ mod tests {
     use tracing_test::traced_test;
 
     fn new_request_serializer() -> CannedRequestSerializer {
-        CannedRequestSerializer::success(
-            Request::builder()
-                .body(SdkBody::empty())
-                .expect("request is valid"),
-        )
+        CannedRequestSerializer::success(HttpRequest::empty())
     }
 
     fn new_response_deserializer() -> CannedResponseDeserializer {
@@ -564,7 +560,7 @@ mod tests {
         (__private $interceptor:ident, $ctx:ty, $expected:expr, $($rc_arg:tt)*) => {
             #[derive(Debug)]
             struct FailingInterceptorA;
-            impl Interceptor for FailingInterceptorA {
+            impl Intercept for FailingInterceptorA {
                 fn name(&self) -> &'static str { "FailingInterceptorA" }
 
                 fn $interceptor(
@@ -580,7 +576,7 @@ mod tests {
 
             #[derive(Debug)]
             struct FailingInterceptorB;
-            impl Interceptor for FailingInterceptorB {
+            impl Intercept for FailingInterceptorB {
                 fn name(&self) -> &'static str { "FailingInterceptorB" }
 
                 fn $interceptor(
@@ -596,7 +592,7 @@ mod tests {
 
             #[derive(Debug)]
             struct FailingInterceptorC;
-            impl Interceptor for FailingInterceptorC {
+            impl Intercept for FailingInterceptorC {
                 fn name(&self) -> &'static str { "FailingInterceptorC" }
 
                 fn $interceptor(
@@ -877,7 +873,7 @@ mod tests {
         (__private $origin_interceptor:ident, $origin_ctx:ty, $destination_interceptor:ident, $destination_ctx:ty, $expected:expr, $($rc_arg:tt)*) => {
             #[derive(Debug)]
             struct OriginInterceptor;
-            impl Interceptor for OriginInterceptor {
+            impl Intercept for OriginInterceptor {
                 fn name(&self) -> &'static str { "OriginInterceptor" }
 
                 fn $origin_interceptor(
@@ -893,7 +889,7 @@ mod tests {
 
             #[derive(Debug)]
             struct DestinationInterceptor;
-            impl Interceptor for DestinationInterceptor {
+            impl Intercept for DestinationInterceptor {
                 fn name(&self) -> &'static str { "DestinationInterceptor" }
 
                 fn $destination_interceptor(
@@ -1211,7 +1207,7 @@ mod tests {
             inner: Arc<Inner>,
         }
 
-        impl Interceptor for TestInterceptor {
+        impl Intercept for TestInterceptor {
             fn name(&self) -> &'static str {
                 "TestInterceptor"
             }

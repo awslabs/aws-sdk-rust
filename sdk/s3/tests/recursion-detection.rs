@@ -8,7 +8,6 @@ use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::Client;
 use aws_smithy_runtime::client::http::test_util::capture_request;
-use http::HeaderValue;
 
 #[tokio::test]
 async fn recursion_detection_applied() {
@@ -27,6 +26,6 @@ async fn recursion_detection_applied() {
             .expect_request()
             .headers()
             .get("x-amzn-trace-id"),
-        Some(&HeaderValue::from_static("traceid"))
+        Some("traceid")
     );
 }

@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAdmi
 
 #[derive(Debug)]
 struct GetAdminAccountResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetAdminAccountResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetAdminAccountResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetAdmin
 }
 #[derive(Debug)]
 struct GetAdminAccountRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetAdminAccountRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAdminAccountRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -197,13 +197,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetAdminAcc
         };
         let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_get_admin_account::ser_get_admin_account_input(&input)?);
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetAdminAccountEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetAdminAccountEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAdminAccountEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetAdminAccountEndpointParamsInterceptor"
     }

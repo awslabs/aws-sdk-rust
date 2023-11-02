@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Deregis
 
 #[derive(Debug)]
 struct DeregisterRobotResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeregisterRobotResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeregisterRobotResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Deregist
 }
 #[derive(Debug)]
 struct DeregisterRobotRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeregisterRobotRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeregisterRobotRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -195,13 +195,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeregisterR
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeregisterRobotEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeregisterRobotEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeregisterRobotEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeregisterRobotEndpointParamsInterceptor"
     }

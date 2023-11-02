@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEmai
 
 #[derive(Debug)]
 struct GetEmailTemplateResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetEmailTemplateResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetEmailTemplateResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetEmail
 }
 #[derive(Debug)]
 struct GetEmailTemplateRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetEmailTemplateRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetEmailTemplateRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -202,13 +202,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetEmailTem
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetEmailTemplateEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetEmailTemplateEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetEmailTemplateEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetEmailTemplateEndpointParamsInterceptor"
     }

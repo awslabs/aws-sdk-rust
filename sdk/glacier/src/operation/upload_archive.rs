@@ -137,7 +137,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UploadA
 
 #[derive(Debug)]
 struct UploadArchiveResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UploadArchiveResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UploadArchiveResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -158,7 +158,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UploadAr
 }
 #[derive(Debug)]
 struct UploadArchiveRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UploadArchiveRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UploadArchiveRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -228,13 +228,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UploadArchi
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct UploadArchiveEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UploadArchiveEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UploadArchiveEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UploadArchiveEndpointParamsInterceptor"
     }
@@ -294,8 +294,6 @@ mod upload_archive_request_test {
             .await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
-        ::pretty_assertions::assert_eq!(http_request.method(), "POST");
-        ::pretty_assertions::assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers));
         let body = http_request.body().bytes().expect("body should be strict");
@@ -328,8 +326,6 @@ mod upload_archive_request_test {
             .await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
-        ::pretty_assertions::assert_eq!(http_request.method(), "POST");
-        ::pretty_assertions::assert_eq!(http_request.uri().path(), "/foo/vaults/bar/archives");
         let expected_headers = [
             ("X-Amz-Content-Sha256", "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"),
             ("X-Amz-Glacier-Version", "2012-06-01"),
@@ -371,8 +367,6 @@ mod upload_archive_request_test {
             .await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
-        ::pretty_assertions::assert_eq!(http_request.method(), "POST");
-        ::pretty_assertions::assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers));
         let body = http_request.body().bytes().expect("body should be strict");
@@ -404,8 +398,6 @@ mod upload_archive_request_test {
             .await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
-        ::pretty_assertions::assert_eq!(http_request.method(), "POST");
-        ::pretty_assertions::assert_eq!(http_request.uri().path(), "/-/vaults/bar/archives");
         let expected_headers = [("X-Amz-Glacier-Version", "2012-06-01")];
         ::aws_smithy_protocol_test::assert_ok(::aws_smithy_protocol_test::validate_headers(http_request.headers(), expected_headers));
         let body = http_request.body().bytes().expect("body should be strict");

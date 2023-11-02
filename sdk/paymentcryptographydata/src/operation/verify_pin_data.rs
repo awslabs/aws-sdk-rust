@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for VerifyP
 
 #[derive(Debug)]
 struct VerifyPinDataResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for VerifyPinDataResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for VerifyPinDataResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for VerifyPi
 }
 #[derive(Debug)]
 struct VerifyPinDataRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for VerifyPinDataRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for VerifyPinDataRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -202,13 +202,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for VerifyPinDa
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct VerifyPinDataEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for VerifyPinDataEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for VerifyPinDataEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "VerifyPinDataEndpointParamsInterceptor"
     }

@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetName
 
 #[derive(Debug)]
 struct GetNamespaceDeletionStatusResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetNamespaceDeletionStatusResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetNamespaceDeletionStatusResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetNames
 }
 #[derive(Debug)]
 struct GetNamespaceDeletionStatusRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetNamespaceDeletionStatusRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetNamespaceDeletionStatusRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -209,13 +209,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetNamespac
             crate::protocol_serde::shape_get_namespace_deletion_status::ser_get_namespace_deletion_status_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetNamespaceDeletionStatusEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetNamespaceDeletionStatusEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetNamespaceDeletionStatusEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetNamespaceDeletionStatusEndpointParamsInterceptor"
     }

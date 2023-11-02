@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableH
 
 #[derive(Debug)]
 struct EnableHealthServiceAccessForOrganizationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for EnableHealthServiceAccessForOrganizationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for EnableHealthServiceAccessForOrganizationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for EnableHe
 }
 #[derive(Debug)]
 struct EnableHealthServiceAccessForOrganizationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for EnableHealthServiceAccessForOrganizationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for EnableHealthServiceAccessForOrganizationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -215,13 +215,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for EnableHealt
             )?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct EnableHealthServiceAccessForOrganizationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for EnableHealthServiceAccessForOrganizationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableHealthServiceAccessForOrganizationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "EnableHealthServiceAccessForOrganizationEndpointParamsInterceptor"
     }

@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateB
 
 #[derive(Debug)]
 struct UpdateBackendAuthResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdateBackendAuthResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateBackendAuthResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdateBa
 }
 #[derive(Debug)]
 struct UpdateBackendAuthRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateBackendAuthRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateBackendAuthRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -224,13 +224,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateBacke
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct UpdateBackendAuthEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UpdateBackendAuthEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateBackendAuthEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateBackendAuthEndpointParamsInterceptor"
     }

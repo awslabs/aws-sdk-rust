@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RunFlee
 
 #[derive(Debug)]
 struct RunFleetAdvisorLsaAnalysisResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RunFleetAdvisorLsaAnalysisResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RunFleetAdvisorLsaAnalysisResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RunFleet
 }
 #[derive(Debug)]
 struct RunFleetAdvisorLsaAnalysisRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RunFleetAdvisorLsaAnalysisRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RunFleetAdvisorLsaAnalysisRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -209,13 +209,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RunFleetAdv
             crate::protocol_serde::shape_run_fleet_advisor_lsa_analysis::ser_run_fleet_advisor_lsa_analysis_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RunFleetAdvisorLsaAnalysisEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RunFleetAdvisorLsaAnalysisEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RunFleetAdvisorLsaAnalysisEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RunFleetAdvisorLsaAnalysisEndpointParamsInterceptor"
     }

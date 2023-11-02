@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetLaun
 
 #[derive(Debug)]
 struct GetLaunchTemplateDataResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetLaunchTemplateDataResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetLaunchTemplateDataResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetLaunc
 }
 #[derive(Debug)]
 struct GetLaunchTemplateDataRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetLaunchTemplateDataRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLaunchTemplateDataRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -198,13 +198,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetLaunchTe
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetLaunchTemplateDataEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetLaunchTemplateDataEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetLaunchTemplateDataEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetLaunchTemplateDataEndpointParamsInterceptor"
     }

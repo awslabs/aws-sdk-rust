@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CancelC
 
 #[derive(Debug)]
 struct CancelChangeSetResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CancelChangeSetResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CancelChangeSetResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CancelCh
 }
 #[derive(Debug)]
 struct CancelChangeSetRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CancelChangeSetRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CancelChangeSetRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -228,13 +228,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CancelChang
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct CancelChangeSetEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CancelChangeSetEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CancelChangeSetEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CancelChangeSetEndpointParamsInterceptor"
     }

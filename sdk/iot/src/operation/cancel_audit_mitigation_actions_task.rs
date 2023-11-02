@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CancelA
 
 #[derive(Debug)]
 struct CancelAuditMitigationActionsTaskResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CancelAuditMitigationActionsTaskResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CancelAuditMitigationActionsTaskResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -165,7 +165,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CancelAu
 }
 #[derive(Debug)]
 struct CancelAuditMitigationActionsTaskRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CancelAuditMitigationActionsTaskRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CancelAuditMitigationActionsTaskRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -213,13 +213,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CancelAudit
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct CancelAuditMitigationActionsTaskEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CancelAuditMitigationActionsTaskEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CancelAuditMitigationActionsTaskEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CancelAuditMitigationActionsTaskEndpointParamsInterceptor"
     }

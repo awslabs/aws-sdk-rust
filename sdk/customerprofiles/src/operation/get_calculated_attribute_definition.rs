@@ -144,7 +144,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetCalc
 
 #[derive(Debug)]
 struct GetCalculatedAttributeDefinitionResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetCalculatedAttributeDefinitionResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetCalculatedAttributeDefinitionResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -167,7 +167,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetCalcu
 }
 #[derive(Debug)]
 struct GetCalculatedAttributeDefinitionRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetCalculatedAttributeDefinitionRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetCalculatedAttributeDefinitionRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -232,13 +232,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetCalculat
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetCalculatedAttributeDefinitionEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetCalculatedAttributeDefinitionEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetCalculatedAttributeDefinitionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetCalculatedAttributeDefinitionEndpointParamsInterceptor"
     }

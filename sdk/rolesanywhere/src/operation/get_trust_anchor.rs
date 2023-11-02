@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetTrus
 
 #[derive(Debug)]
 struct GetTrustAnchorResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetTrustAnchorResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetTrustAnchorResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetTrust
 }
 #[derive(Debug)]
 struct GetTrustAnchorRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetTrustAnchorRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetTrustAnchorRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetTrustAnc
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetTrustAnchorEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetTrustAnchorEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetTrustAnchorEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetTrustAnchorEndpointParamsInterceptor"
     }

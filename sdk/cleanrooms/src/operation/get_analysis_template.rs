@@ -135,7 +135,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAnal
 
 #[derive(Debug)]
 struct GetAnalysisTemplateResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetAnalysisTemplateResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetAnalysisTemplateResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -156,7 +156,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetAnaly
 }
 #[derive(Debug)]
 struct GetAnalysisTemplateRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetAnalysisTemplateRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAnalysisTemplateRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -215,13 +215,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetAnalysis
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetAnalysisTemplateEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetAnalysisTemplateEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAnalysisTemplateEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetAnalysisTemplateEndpointParamsInterceptor"
     }

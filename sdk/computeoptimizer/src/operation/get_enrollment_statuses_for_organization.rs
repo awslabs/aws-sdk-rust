@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetEnro
 
 #[derive(Debug)]
 struct GetEnrollmentStatusesForOrganizationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetEnrollmentStatusesForOrganizationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetEnrollmentStatusesForOrganizationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetEnrol
 }
 #[derive(Debug)]
 struct GetEnrollmentStatusesForOrganizationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetEnrollmentStatusesForOrganizationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetEnrollmentStatusesForOrganizationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -216,13 +216,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetEnrollme
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetEnrollmentStatusesForOrganizationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetEnrollmentStatusesForOrganizationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetEnrollmentStatusesForOrganizationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetEnrollmentStatusesForOrganizationEndpointParamsInterceptor"
     }

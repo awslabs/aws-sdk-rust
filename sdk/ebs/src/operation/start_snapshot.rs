@@ -141,7 +141,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartSn
 
 #[derive(Debug)]
 struct StartSnapshotResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StartSnapshotResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartSnapshotResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -162,7 +162,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StartSna
 }
 #[derive(Debug)]
 struct StartSnapshotRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StartSnapshotRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartSnapshotRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -203,13 +203,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StartSnapsh
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct StartSnapshotEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for StartSnapshotEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartSnapshotEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartSnapshotEndpointParamsInterceptor"
     }
@@ -269,7 +269,7 @@ mod start_snapshot_request_test {
             ))
             .unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
-        use ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
 
         let op = crate::operation::start_snapshot::StartSnapshot::new();
         let config = op.config().expect("the operation has config");
@@ -321,7 +321,7 @@ mod start_snapshot_request_test {
             ))
             .unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
-        use ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
 
         let op = crate::operation::start_snapshot::StartSnapshot::new();
         let config = op.config().expect("the operation has config");

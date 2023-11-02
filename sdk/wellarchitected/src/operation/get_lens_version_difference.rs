@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetLens
 
 #[derive(Debug)]
 struct GetLensVersionDifferenceResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetLensVersionDifferenceResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetLensVersionDifferenceResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetLensV
 }
 #[derive(Debug)]
 struct GetLensVersionDifferenceRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetLensVersionDifferenceRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetLensVersionDifferenceRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -227,13 +227,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetLensVers
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetLensVersionDifferenceEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetLensVersionDifferenceEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetLensVersionDifferenceEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetLensVersionDifferenceEndpointParamsInterceptor"
     }

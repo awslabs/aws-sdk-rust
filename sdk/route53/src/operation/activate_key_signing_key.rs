@@ -137,7 +137,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Activat
 
 #[derive(Debug)]
 struct ActivateKeySigningKeyResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ActivateKeySigningKeyResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ActivateKeySigningKeyResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -158,7 +158,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Activate
 }
 #[derive(Debug)]
 struct ActivateKeySigningKeyRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ActivateKeySigningKeyRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ActivateKeySigningKeyRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -223,13 +223,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ActivateKey
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ActivateKeySigningKeyEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ActivateKeySigningKeyEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ActivateKeySigningKeyEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ActivateKeySigningKeyEndpointParamsInterceptor"
     }

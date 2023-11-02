@@ -137,7 +137,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableH
 
 #[derive(Debug)]
 struct EnableHostedZoneDNSSECResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for EnableHostedZoneDNSSECResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for EnableHostedZoneDNSSECResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -158,7 +158,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for EnableHo
 }
 #[derive(Debug)]
 struct EnableHostedZoneDNSSECRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for EnableHostedZoneDNSSECRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for EnableHostedZoneDNSSECRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -211,13 +211,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for EnableHoste
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct EnableHostedZoneDNSSECEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for EnableHostedZoneDNSSECEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableHostedZoneDNSSECEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "EnableHostedZoneDNSSECEndpointParamsInterceptor"
     }

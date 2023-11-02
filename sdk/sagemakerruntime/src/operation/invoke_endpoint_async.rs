@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for InvokeE
 
 #[derive(Debug)]
 struct InvokeEndpointAsyncResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for InvokeEndpointAsyncResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for InvokeEndpointAsyncResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for InvokeEn
 }
 #[derive(Debug)]
 struct InvokeEndpointAsyncRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for InvokeEndpointAsyncRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for InvokeEndpointAsyncRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -211,13 +211,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for InvokeEndpo
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct InvokeEndpointAsyncEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for InvokeEndpointAsyncEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for InvokeEndpointAsyncEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "InvokeEndpointAsyncEndpointParamsInterceptor"
     }

@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRast
 
 #[derive(Debug)]
 struct GetRasterDataCollectionResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetRasterDataCollectionResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetRasterDataCollectionResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetRaste
 }
 #[derive(Debug)]
 struct GetRasterDataCollectionRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetRasterDataCollectionRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRasterDataCollectionRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -209,13 +209,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetRasterDa
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetRasterDataCollectionEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetRasterDataCollectionEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetRasterDataCollectionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetRasterDataCollectionEndpointParamsInterceptor"
     }

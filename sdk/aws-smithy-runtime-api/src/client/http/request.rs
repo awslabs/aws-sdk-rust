@@ -7,7 +7,7 @@
 
 use aws_smithy_http::body::SdkBody;
 use http as http0;
-use http::header::{InvalidHeaderName, InvalidHeaderValue, ToStrError};
+use http::header::{InvalidHeaderName, InvalidHeaderValue};
 use http::uri::InvalidUri;
 use http0::header::Iter;
 use http0::uri::PathAndQuery;
@@ -15,7 +15,7 @@ use http0::{Extensions, HeaderMap, Method};
 use std::borrow::Cow;
 use std::error::Error;
 use std::fmt::{Debug, Display, Formatter};
-use std::str::FromStr;
+use std::str::{FromStr, Utf8Error};
 
 #[derive(Debug)]
 /// An HTTP Request Type
@@ -115,7 +115,7 @@ impl<B> TryInto<http0::Request<B>> for Request<B> {
     type Error = HttpError;
 
     fn try_into(self) -> Result<http::Request<B>, Self::Error> {
-        self.into_http03x()
+        self.into_http02x()
     }
 }
 
@@ -124,7 +124,7 @@ impl<B> Request<B> {
     ///
     /// Depending on the internal storage type, this operation may be free or it may have an internal
     /// cost.
-    pub fn into_http03x(self) -> Result<http0::Request<B>, HttpError> {
+    pub fn into_http02x(self) -> Result<http0::Request<B>, HttpError> {
         let mut req = http::Request::builder()
             .uri(self.uri.parsed)
             .method(self.method)
@@ -135,11 +135,22 @@ impl<B> Request<B> {
             self.headers
                 .headers
                 .into_iter()
-                .map(|(k, v)| (k, v.into_http03x())),
+                .map(|(k, v)| (k, v.into_http02x())),
         );
         *req.headers_mut() = headers;
         *req.extensions_mut() = self.extensions;
         Ok(req)
+    }
+
+    /// Update the body of this request to be a new body.
+    pub fn map<U>(self, f: impl Fn(B) -> U) -> Request<U> {
+        Request {
+            body: f(self.body),
+            uri: self.uri,
+            method: self.method,
+            extensions: self.extensions,
+            headers: self.headers,
+        }
     }
 
     /// Returns a GET request with no URI
@@ -223,6 +234,18 @@ impl Request<SdkBody> {
     pub fn take_body(&mut self) -> SdkBody {
         std::mem::replace(self.body_mut(), SdkBody::taken())
     }
+
+    /// Create a GET request to `/` with an empty body
+    pub fn empty() -> Self {
+        Self::new(SdkBody::empty())
+    }
+
+    /// Creates a GET request to `uri` with an empty body
+    pub fn get(uri: impl AsRef<str>) -> Result<Self, HttpError> {
+        let mut req = Self::new(SdkBody::empty());
+        req.set_uri(uri.as_ref())?;
+        Ok(req)
+    }
 }
 
 impl<B> TryFrom<http0::Request<B>> for Request<B> {
@@ -232,7 +255,7 @@ impl<B> TryFrom<http0::Request<B>> for Request<B> {
         if let Some(e) = value
             .headers()
             .values()
-            .filter_map(|value| value.to_str().err())
+            .filter_map(|value| std::str::from_utf8(value.as_bytes()).err())
             .next()
         {
             Err(HttpError::header_was_not_a_string(e))
@@ -243,7 +266,7 @@ impl<B> TryFrom<http0::Request<B>> for Request<B> {
                 parts
                     .headers
                     .into_iter()
-                    .map(|(k, v)| (k, HeaderValue::from_http03x(v).expect("validated above"))),
+                    .map(|(k, v)| (k, HeaderValue::from_http02x(v).expect("validated above"))),
             );
             Ok(Self {
                 body,
@@ -289,12 +312,25 @@ impl<'a> Iterator for HeadersIter<'a> {
 }
 
 impl Headers {
+    /// Create an empty header map
+    pub fn new() -> Self {
+        Self::default()
+    }
+
     /// Returns the value for a given key
     ///
     /// If multiple values are associated, the first value is returned
     /// See [HeaderMap::get]
     pub fn get(&self, key: impl AsRef<str>) -> Option<&str> {
         self.headers.get(key.as_ref()).map(|v| v.as_ref())
+    }
+
+    /// Returns all values for a given key
+    pub fn get_all(&self, key: impl AsRef<str>) -> impl Iterator<Item = &str> {
+        self.headers
+            .get_all(key.as_ref())
+            .iter()
+            .map(|v| v.as_ref())
     }
 
     /// Returns an iterator over the headers
@@ -391,8 +427,8 @@ mod sealed {
         /// If the component can be represented as a Cow<'static, str>, return it
         fn into_maybe_static(self) -> Result<MaybeStatic, HttpError>;
 
-        /// If a component is already internally represented as a `http03x::HeaderName`, return it
-        fn repr_as_http03x_header_name(self) -> Result<http0::HeaderName, Self>
+        /// If a component is already internally represented as a `http02x::HeaderName`, return it
+        fn repr_as_http02x_header_name(self) -> Result<http0::HeaderName, Self>
         where
             Self: Sized,
         {
@@ -421,7 +457,7 @@ mod sealed {
     impl AsHeaderComponent for http0::HeaderValue {
         fn into_maybe_static(self) -> Result<MaybeStatic, HttpError> {
             Ok(Cow::Owned(
-                self.to_str()
+                std::str::from_utf8(self.as_bytes())
                     .map_err(HttpError::header_was_not_a_string)?
                     .to_string(),
             ))
@@ -433,7 +469,7 @@ mod sealed {
             Ok(self.to_string().into())
         }
 
-        fn repr_as_http03x_header_name(self) -> Result<http0::HeaderName, Self>
+        fn repr_as_http02x_header_name(self) -> Result<http0::HeaderName, Self>
         where
             Self: Sized,
         {
@@ -455,12 +491,12 @@ mod header_value {
     }
 
     impl HeaderValue {
-        pub(crate) fn from_http03x(value: http0::HeaderValue) -> Result<Self, Utf8Error> {
+        pub(crate) fn from_http02x(value: http0::HeaderValue) -> Result<Self, Utf8Error> {
             let _ = std::str::from_utf8(value.as_bytes())?;
             Ok(Self { _private: value })
         }
 
-        pub(crate) fn into_http03x(self) -> http0::HeaderValue {
+        pub(crate) fn into_http02x(self) -> http0::HeaderValue {
             self._private
         }
     }
@@ -501,7 +537,7 @@ impl TryFrom<String> for HeaderValue {
     type Error = HttpError;
 
     fn try_from(value: String) -> Result<Self, Self::Error> {
-        Ok(HeaderValue::from_http03x(
+        Ok(HeaderValue::from_http02x(
             http0::HeaderValue::try_from(value).map_err(HttpError::invalid_header_value)?,
         )
         .expect("input was a string"))
@@ -526,7 +562,7 @@ impl HttpError {
         Self(err.into())
     }
 
-    fn header_was_not_a_string(err: ToStrError) -> Self {
+    fn header_was_not_a_string(err: Utf8Error) -> Self {
         Self(err.into())
     }
 
@@ -552,10 +588,17 @@ impl Error for HttpError {
 }
 
 fn header_name(name: impl AsHeaderComponent) -> Result<http0::HeaderName, HttpError> {
-    name.repr_as_http03x_header_name().or_else(|name| {
-        name.into_maybe_static().and_then(|cow| match cow {
-            Cow::Borrowed(staticc) => Ok(http0::HeaderName::from_static(staticc)),
-            Cow::Owned(s) => http0::HeaderName::try_from(s).map_err(HttpError::invalid_header_name),
+    name.repr_as_http02x_header_name().or_else(|name| {
+        name.into_maybe_static().and_then(|cow| {
+            if cow.chars().any(|c| c.is_uppercase()) {
+                return Err(HttpError::new("Header names must be all lower case"));
+            }
+            match cow {
+                Cow::Borrowed(staticc) => Ok(http0::HeaderName::from_static(staticc)),
+                Cow::Owned(s) => {
+                    http0::HeaderName::try_from(s).map_err(HttpError::invalid_header_name)
+                }
+            }
         })
     })
 }
@@ -567,11 +610,12 @@ fn header_value(value: MaybeStatic) -> Result<HeaderValue, HttpError> {
             http0::HeaderValue::try_from(s).map_err(HttpError::invalid_header_value)?
         }
     };
-    HeaderValue::from_http03x(header).map_err(HttpError::new)
+    HeaderValue::from_http02x(header).map_err(HttpError::new)
 }
 
 #[cfg(test)]
 mod test {
+    use crate::client::orchestrator::HttpRequest;
     use aws_smithy_http::body::SdkBody;
     use http::header::{AUTHORIZATION, CONTENT_LENGTH};
     use http::{HeaderValue, Uri};
@@ -586,6 +630,18 @@ mod test {
     }
 
     #[test]
+    fn non_ascii_requests() {
+        let request = http::Request::builder()
+            .header("k", "😹")
+            .body(SdkBody::empty())
+            .unwrap();
+        let request: HttpRequest = request
+            .try_into()
+            .expect("failed to convert a non-string header");
+        assert_eq!(request.headers().get("k"), Some("😹"))
+    }
+
+    #[test]
     fn request_can_be_created() {
         let req = http::Request::builder()
             .uri("http://foo.com")
@@ -596,7 +652,7 @@ mod test {
         assert_eq!(req.headers().get("a").unwrap(), "b");
         req.headers_mut().append("a", "c");
         assert_eq!(req.headers().get("a").unwrap(), "b");
-        let http0 = req.into_http03x().unwrap();
+        let http0 = req.into_http02x().unwrap();
         assert_eq!(http0.uri(), "http://foo.com");
     }
 
@@ -610,7 +666,7 @@ mod test {
         assert_eq!(req.uri(), "http://foo.com/");
         req.set_uri("http://bar.com").unwrap();
         assert_eq!(req.uri(), "http://bar.com");
-        let http0 = req.into_http03x().unwrap();
+        let http0 = req.into_http02x().unwrap();
         assert_eq!(http0.uri(), "http://bar.com");
     }
 

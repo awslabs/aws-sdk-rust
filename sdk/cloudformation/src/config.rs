@@ -455,7 +455,7 @@ impl Builder {
         retry_partition.map(|r| self.config.store_put(r));
         self
     }
-    /// Add an [`Interceptor`](::aws_smithy_runtime_api::client::interceptors::Interceptor) that runs at specific stages of the request execution pipeline.
+    /// Add an [interceptor](::aws_smithy_runtime_api::client::interceptors::Intercept) that runs at specific stages of the request execution pipeline.
     ///
     /// Interceptors targeted at a certain stage are executed according to the pre-defined priority.
     /// The SDK provides a default set of interceptors. An interceptor configured by this method
@@ -479,7 +479,7 @@ impl Builder {
     ///
     /// #[derive(Debug)]
     /// pub struct UriModifierInterceptor;
-    /// impl Interceptor for UriModifierInterceptor {
+    /// impl Intercept for UriModifierInterceptor {
     ///     fn modify_before_signing(
     ///         &self,
     ///         context: &mut InterceptorContext<BeforeTransmit>,
@@ -499,7 +499,7 @@ impl Builder {
     /// # }
     /// # }
     /// ```
-    pub fn interceptor(mut self, interceptor: impl ::aws_smithy_runtime_api::client::interceptors::Interceptor + 'static) -> Self {
+    pub fn interceptor(mut self, interceptor: impl ::aws_smithy_runtime_api::client::interceptors::Intercept + 'static) -> Self {
         self.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(interceptor));
         self
     }
@@ -529,7 +529,7 @@ impl Builder {
     /// fn modify_request_uri(builder: &mut Builder) {
     ///     #[derive(Debug)]
     ///     pub struct UriModifierInterceptor;
-    ///     impl Interceptor for UriModifierInterceptor {
+    ///     impl Intercept for UriModifierInterceptor {
     ///         fn modify_before_signing(
     ///             &self,
     ///             context: &mut InterceptorContext<BeforeTransmit>,
@@ -1142,7 +1142,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ConfigO
     }
 }
 
-pub use ::aws_smithy_runtime_api::client::interceptors::Interceptor;
+pub use ::aws_smithy_runtime_api::client::interceptors::Intercept;
 pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
 pub use ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 pub use ::aws_smithy_types::config_bag::ConfigBag;

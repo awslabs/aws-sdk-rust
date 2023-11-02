@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetStre
 
 #[derive(Debug)]
 struct GetStreamingSessionBackupResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetStreamingSessionBackupResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetStreamingSessionBackupResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetStrea
 }
 #[derive(Debug)]
 struct GetStreamingSessionBackupRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetStreamingSessionBackupRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStreamingSessionBackupRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -220,13 +220,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetStreamin
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetStreamingSessionBackupEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetStreamingSessionBackupEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetStreamingSessionBackupEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetStreamingSessionBackupEndpointParamsInterceptor"
     }

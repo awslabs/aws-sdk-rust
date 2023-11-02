@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StopSpe
 
 #[derive(Debug)]
 struct StopSpeakerSearchTaskResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StopSpeakerSearchTaskResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StopSpeakerSearchTaskResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StopSpea
 }
 #[derive(Debug)]
 struct StopSpeakerSearchTaskRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StopSpeakerSearchTaskRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopSpeakerSearchTaskRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -235,13 +235,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StopSpeaker
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct StopSpeakerSearchTaskEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for StopSpeakerSearchTaskEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopSpeakerSearchTaskEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StopSpeakerSearchTaskEndpointParamsInterceptor"
     }

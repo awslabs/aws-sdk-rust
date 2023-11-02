@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for QueryFo
 
 #[derive(Debug)]
 struct QueryForecastResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for QueryForecastResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for QueryForecastResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for QueryFor
 }
 #[derive(Debug)]
 struct QueryForecastRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for QueryForecastRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for QueryForecastRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for QueryForeca
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct QueryForecastEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for QueryForecastEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for QueryForecastEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "QueryForecastEndpointParamsInterceptor"
     }

@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateV
 
 #[derive(Debug)]
 struct UpdateVTLDeviceTypeResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdateVTLDeviceTypeResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateVTLDeviceTypeResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdateVT
 }
 #[derive(Debug)]
 struct UpdateVTLDeviceTypeRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateVTLDeviceTypeRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateVTLDeviceTypeRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -209,13 +209,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateVTLDe
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct UpdateVTLDeviceTypeEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UpdateVTLDeviceTypeEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateVTLDeviceTypeEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateVTLDeviceTypeEndpointParamsInterceptor"
     }

@@ -126,7 +126,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for TestRol
 
 #[derive(Debug)]
 struct TestRoleResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for TestRoleResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for TestRoleResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -147,7 +147,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for TestRole
 }
 #[derive(Debug)]
 struct TestRoleRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TestRoleRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TestRoleRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -186,13 +186,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TestRoleReq
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct TestRoleEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for TestRoleEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TestRoleEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "TestRoleEndpointParamsInterceptor"
     }

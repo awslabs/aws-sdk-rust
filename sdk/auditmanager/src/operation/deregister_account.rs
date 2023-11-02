@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Deregis
 
 #[derive(Debug)]
 struct DeregisterAccountResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeregisterAccountResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeregisterAccountResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Deregist
 }
 #[derive(Debug)]
 struct DeregisterAccountRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeregisterAccountRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeregisterAccountRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -192,13 +192,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeregisterA
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeregisterAccountEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeregisterAccountEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeregisterAccountEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeregisterAccountEndpointParamsInterceptor"
     }

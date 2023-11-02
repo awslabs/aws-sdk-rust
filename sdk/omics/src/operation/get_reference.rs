@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRefe
 
 #[derive(Debug)]
 struct GetReferenceResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetReferenceResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetReferenceResponseDeserializer {
     fn deserialize_streaming(
         &self,
         response: &mut ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -166,7 +166,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetRefer
 }
 #[derive(Debug)]
 struct GetReferenceRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetReferenceRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetReferenceRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -250,13 +250,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetReferenc
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetReferenceEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetReferenceEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetReferenceEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetReferenceEndpointParamsInterceptor"
     }

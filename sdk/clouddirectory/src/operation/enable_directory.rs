@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableD
 
 #[derive(Debug)]
 struct EnableDirectoryResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for EnableDirectoryResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for EnableDirectoryResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for EnableDi
 }
 #[derive(Debug)]
 struct EnableDirectoryRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for EnableDirectoryRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for EnableDirectoryRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -193,13 +193,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for EnableDirec
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct EnableDirectoryEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for EnableDirectoryEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableDirectoryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "EnableDirectoryEndpointParamsInterceptor"
     }

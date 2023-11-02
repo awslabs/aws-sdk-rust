@@ -141,7 +141,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartSi
 
 #[derive(Debug)]
 struct StartSimulationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StartSimulationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartSimulationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -162,7 +162,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StartSim
 }
 #[derive(Debug)]
 struct StartSimulationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StartSimulationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartSimulationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -203,13 +203,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StartSimula
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct StartSimulationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for StartSimulationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartSimulationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartSimulationEndpointParamsInterceptor"
     }

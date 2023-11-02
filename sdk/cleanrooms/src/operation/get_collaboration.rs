@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetColl
 
 #[derive(Debug)]
 struct GetCollaborationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetCollaborationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetCollaborationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetColla
 }
 #[derive(Debug)]
 struct GetCollaborationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetCollaborationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetCollaborationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -204,13 +204,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetCollabor
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetCollaborationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetCollaborationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetCollaborationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetCollaborationEndpointParamsInterceptor"
     }

@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRev
 
 #[derive(Debug)]
 struct ListReviewTemplateAnswersResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListReviewTemplateAnswersResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListReviewTemplateAnswersResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListRevi
 }
 #[derive(Debug)]
 struct ListReviewTemplateAnswersRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListReviewTemplateAnswersRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListReviewTemplateAnswersRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -252,13 +252,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListReviewT
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListReviewTemplateAnswersEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListReviewTemplateAnswersEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListReviewTemplateAnswersEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListReviewTemplateAnswersEndpointParamsInterceptor"
     }

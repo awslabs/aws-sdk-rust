@@ -42,5 +42,5 @@ async fn test_s3_ops_are_customizable() {
         .unwrap()
         .to_owned();
 
-    assert_eq!("test-value", test_header.to_str().unwrap(),);
+    assert_eq!("test-value", test_header);
 }

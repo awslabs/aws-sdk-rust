@@ -8,7 +8,7 @@
 use crate::client::identity::no_auth::NoAuthIdentityResolver;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::{
-    AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, SharedAuthScheme, Signer,
+    AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, SharedAuthScheme, Sign,
 };
 use aws_smithy_runtime_api::client::identity::{Identity, SharedIdentityResolver};
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
@@ -80,7 +80,7 @@ impl NoAuthScheme {
 #[derive(Debug, Default)]
 struct NoAuthSigner;
 
-impl Signer for NoAuthSigner {
+impl Sign for NoAuthSigner {
     fn sign_http_request(
         &self,
         _request: &mut HttpRequest,
@@ -105,7 +105,7 @@ impl AuthScheme for NoAuthScheme {
         identity_resolvers.identity_resolver(NO_AUTH_SCHEME_ID)
     }
 
-    fn signer(&self) -> &dyn Signer {
+    fn signer(&self) -> &dyn Sign {
         &self.signer
     }
 }

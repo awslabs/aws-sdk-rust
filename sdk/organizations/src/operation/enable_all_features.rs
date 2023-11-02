@@ -135,7 +135,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableA
 
 #[derive(Debug)]
 struct EnableAllFeaturesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for EnableAllFeaturesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for EnableAllFeaturesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -156,7 +156,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for EnableAl
 }
 #[derive(Debug)]
 struct EnableAllFeaturesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for EnableAllFeaturesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for EnableAllFeaturesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -199,13 +199,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for EnableAllFe
         };
         let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_enable_all_features::ser_enable_all_features_input(&input)?);
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct EnableAllFeaturesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for EnableAllFeaturesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableAllFeaturesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "EnableAllFeaturesEndpointParamsInterceptor"
     }

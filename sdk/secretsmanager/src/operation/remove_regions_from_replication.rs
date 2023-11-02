@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RemoveR
 
 #[derive(Debug)]
 struct RemoveRegionsFromReplicationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RemoveRegionsFromReplicationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RemoveRegionsFromReplicationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RemoveRe
 }
 #[derive(Debug)]
 struct RemoveRegionsFromReplicationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RemoveRegionsFromReplicationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveRegionsFromReplicationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -212,13 +212,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RemoveRegio
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RemoveRegionsFromReplicationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RemoveRegionsFromReplicationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RemoveRegionsFromReplicationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RemoveRegionsFromReplicationEndpointParamsInterceptor"
     }

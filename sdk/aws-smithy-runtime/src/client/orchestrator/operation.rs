@@ -21,7 +21,7 @@ use aws_smithy_runtime_api::client::endpoint::{EndpointResolverParams, SharedEnd
 use aws_smithy_runtime_api::client::http::HttpClient;
 use aws_smithy_runtime_api::client::identity::SharedIdentityResolver;
 use aws_smithy_runtime_api::client::interceptors::context::{Error, Input, Output};
-use aws_smithy_runtime_api::client::interceptors::Interceptor;
+use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
 use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, OrchestratorError};
 use aws_smithy_runtime_api::client::retries::classifiers::ClassifyRetry;
@@ -31,7 +31,7 @@ use aws_smithy_runtime_api::client::runtime_plugin::{
     RuntimePlugin, RuntimePlugins, SharedRuntimePlugin, StaticRuntimePlugin,
 };
 use aws_smithy_runtime_api::client::ser_de::{
-    RequestSerializer, ResponseDeserializer, SharedRequestSerializer, SharedResponseDeserializer,
+    DeserializeResponse, SerializeRequest, SharedRequestSerializer, SharedResponseDeserializer,
 };
 use aws_smithy_runtime_api::shared::IntoShared;
 use aws_smithy_types::config_bag::{ConfigBag, Layer};
@@ -53,7 +53,7 @@ impl<F, I> FnSerializer<F, I> {
         }
     }
 }
-impl<F, I> RequestSerializer for FnSerializer<F, I>
+impl<F, I> SerializeRequest for FnSerializer<F, I>
 where
     F: Fn(I) -> Result<HttpRequest, BoxError> + Send + Sync,
     I: fmt::Debug + Send + Sync + 'static,
@@ -81,7 +81,7 @@ impl<F, O, E> FnDeserializer<F, O, E> {
         }
     }
 }
-impl<F, O, E> ResponseDeserializer for FnDeserializer<F, O, E>
+impl<F, O, E> DeserializeResponse for FnDeserializer<F, O, E>
 where
     F: Fn(&HttpResponse) -> Result<O, OrchestratorError<E>> + Send + Sync,
     O: fmt::Debug + Send + Sync + 'static,
@@ -261,7 +261,7 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         self
     }
 
-    pub fn interceptor(mut self, interceptor: impl Interceptor + 'static) -> Self {
+    pub fn interceptor(mut self, interceptor: impl Intercept + 'static) -> Self {
         self.runtime_components.push_interceptor(interceptor);
         self
     }
@@ -406,11 +406,7 @@ mod tests {
             .no_auth()
             .no_retry()
             .timeout_config(TimeoutConfig::disabled())
-            .serializer(|input: String| {
-                Ok(http::Request::builder()
-                    .body(SdkBody::from(input.as_bytes()))
-                    .unwrap())
-            })
+            .serializer(|input: String| Ok(HttpRequest::new(SdkBody::from(input.as_bytes()))))
             .deserializer::<_, Infallible>(|response| {
                 assert_eq!(418, response.status());
                 Ok(std::str::from_utf8(response.body().bytes().unwrap())
@@ -426,7 +422,7 @@ mod tests {
         assert_eq!("I'm a teapot!", output);
 
         let request = request_rx.expect_request();
-        assert_eq!("http://localhost:1234", request.uri());
+        assert_eq!("http://localhost:1234/", request.uri());
         assert_eq!(b"what are you?", request.body().bytes().unwrap());
     }
 
@@ -464,11 +460,7 @@ mod tests {
             .retry_classifier(HttpStatusCodeClassifier::default())
             .timeout_config(TimeoutConfig::disabled())
             .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
-            .serializer(|input: String| {
-                Ok(http::Request::builder()
-                    .body(SdkBody::from(input.as_bytes()))
-                    .unwrap())
-            })
+            .serializer(|input: String| Ok(HttpRequest::new(SdkBody::from(input.as_bytes()))))
             .deserializer::<_, Infallible>(|response| {
                 if response.status() == 503 {
                     Err(OrchestratorError::connector(ConnectorError::io(

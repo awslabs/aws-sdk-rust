@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AttachV
 
 #[derive(Debug)]
 struct AttachVolumeResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for AttachVolumeResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AttachVolumeResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for AttachVo
 }
 #[derive(Debug)]
 struct AttachVolumeRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AttachVolumeRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AttachVolumeRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AttachVolum
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct AttachVolumeEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for AttachVolumeEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AttachVolumeEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "AttachVolumeEndpointParamsInterceptor"
     }

@@ -10,7 +10,7 @@ use aws_sdk_s3::config::interceptors::FinalizerInterceptorContextRef;
 use aws_sdk_s3::config::retry::RetryConfig;
 use aws_sdk_s3::config::timeout::TimeoutConfig;
 use aws_sdk_s3::config::{Credentials, Region};
-use aws_sdk_s3::config::{Interceptor, SharedAsyncSleep};
+use aws_sdk_s3::config::{Intercept, SharedAsyncSleep};
 use aws_sdk_s3::Client;
 use aws_smithy_async::test_util::InstantSleep;
 use aws_smithy_async::test_util::ManualTimeSource;
@@ -36,7 +36,7 @@ async fn three_retries_and_then_success() {
     struct TimeInterceptor {
         time_source: ManualTimeSource,
     }
-    impl Interceptor for TimeInterceptor {
+    impl Intercept for TimeInterceptor {
         fn name(&self) -> &'static str {
             "TimeInterceptor"
         }

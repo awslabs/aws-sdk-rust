@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for UpdateW
 
 #[derive(Debug)]
 struct UpdateWirelessDeviceResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdateWirelessDeviceResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for UpdateWirelessDeviceResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for UpdateWi
 }
 #[derive(Debug)]
 struct UpdateWirelessDeviceRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateWirelessDeviceRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for UpdateWirelessDeviceRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -209,13 +209,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateWirel
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct UpdateWirelessDeviceEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UpdateWirelessDeviceEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for UpdateWirelessDeviceEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "UpdateWirelessDeviceEndpointParamsInterceptor"
     }

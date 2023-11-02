@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![cfg(feature = "test-util")]
+
 use aws_sdk_qldbsession::config::{Config, Credentials, Region};
 use aws_sdk_qldbsession::types::StartSessionRequest;
 use aws_sdk_qldbsession::Client;

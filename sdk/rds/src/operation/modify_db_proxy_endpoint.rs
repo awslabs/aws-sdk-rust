@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ModifyD
 
 #[derive(Debug)]
 struct ModifyDBProxyEndpointResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ModifyDBProxyEndpointResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ModifyDBProxyEndpointResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ModifyDB
 }
 #[derive(Debug)]
 struct ModifyDBProxyEndpointRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ModifyDBProxyEndpointRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ModifyDBProxyEndpointRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -197,13 +197,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ModifyDBPro
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ModifyDBProxyEndpointEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ModifyDBProxyEndpointEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ModifyDBProxyEndpointEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ModifyDBProxyEndpointEndpointParamsInterceptor"
     }

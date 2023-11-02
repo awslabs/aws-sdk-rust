@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListAss
 
 #[derive(Debug)]
 struct ListAssociatedRoute53HealthChecksResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListAssociatedRoute53HealthChecksResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListAssociatedRoute53HealthChecksResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListAsso
 }
 #[derive(Debug)]
 struct ListAssociatedRoute53HealthChecksRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListAssociatedRoute53HealthChecksRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListAssociatedRoute53HealthChecksRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -239,13 +239,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListAssocia
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListAssociatedRoute53HealthChecksEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListAssociatedRoute53HealthChecksEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListAssociatedRoute53HealthChecksEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListAssociatedRoute53HealthChecksEndpointParamsInterceptor"
     }

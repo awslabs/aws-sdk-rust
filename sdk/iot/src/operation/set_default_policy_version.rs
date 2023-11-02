@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetDefa
 
 #[derive(Debug)]
 struct SetDefaultPolicyVersionResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for SetDefaultPolicyVersionResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SetDefaultPolicyVersionResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for SetDefau
 }
 #[derive(Debug)]
 struct SetDefaultPolicyVersionRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for SetDefaultPolicyVersionRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SetDefaultPolicyVersionRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -219,13 +219,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for SetDefaultP
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct SetDefaultPolicyVersionEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for SetDefaultPolicyVersionEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SetDefaultPolicyVersionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SetDefaultPolicyVersionEndpointParamsInterceptor"
     }

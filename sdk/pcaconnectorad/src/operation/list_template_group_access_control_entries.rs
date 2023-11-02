@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTem
 
 #[derive(Debug)]
 struct ListTemplateGroupAccessControlEntriesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListTemplateGroupAccessControlEntriesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListTemplateGroupAccessControlEntriesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListTemp
 }
 #[derive(Debug)]
 struct ListTemplateGroupAccessControlEntriesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListTemplateGroupAccessControlEntriesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTemplateGroupAccessControlEntriesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -235,13 +235,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListTemplat
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListTemplateGroupAccessControlEntriesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListTemplateGroupAccessControlEntriesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTemplateGroupAccessControlEntriesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListTemplateGroupAccessControlEntriesEndpointParamsInterceptor"
     }

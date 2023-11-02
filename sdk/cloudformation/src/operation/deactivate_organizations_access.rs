@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Deactiv
 
 #[derive(Debug)]
 struct DeactivateOrganizationsAccessResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeactivateOrganizationsAccessResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeactivateOrganizationsAccessResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Deactiva
 }
 #[derive(Debug)]
 struct DeactivateOrganizationsAccessRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeactivateOrganizationsAccessRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeactivateOrganizationsAccessRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -204,13 +204,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeactivateO
             crate::protocol_serde::shape_deactivate_organizations_access_input::ser_deactivate_organizations_access_input_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeactivateOrganizationsAccessEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeactivateOrganizationsAccessEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeactivateOrganizationsAccessEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeactivateOrganizationsAccessEndpointParamsInterceptor"
     }

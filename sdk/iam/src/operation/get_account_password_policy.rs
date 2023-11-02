@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetAcco
 
 #[derive(Debug)]
 struct GetAccountPasswordPolicyResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetAccountPasswordPolicyResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetAccountPasswordPolicyResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetAccou
 }
 #[derive(Debug)]
 struct GetAccountPasswordPolicyRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetAccountPasswordPolicyRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetAccountPasswordPolicyRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -195,13 +195,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetAccountP
             crate::protocol_serde::shape_get_account_password_policy_input::ser_get_account_password_policy_input_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetAccountPasswordPolicyEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetAccountPasswordPolicyEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetAccountPasswordPolicyEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetAccountPasswordPolicyEndpointParamsInterceptor"
     }

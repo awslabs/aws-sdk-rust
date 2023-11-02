@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetApns
 
 #[derive(Debug)]
 struct GetApnsSandboxChannelResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetApnsSandboxChannelResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetApnsSandboxChannelResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetApnsS
 }
 #[derive(Debug)]
 struct GetApnsSandboxChannelRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetApnsSandboxChannelRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetApnsSandboxChannelRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -204,13 +204,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetApnsSand
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetApnsSandboxChannelEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetApnsSandboxChannelEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetApnsSandboxChannelEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetApnsSandboxChannelEndpointParamsInterceptor"
     }

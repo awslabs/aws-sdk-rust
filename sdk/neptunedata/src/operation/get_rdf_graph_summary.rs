@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetRDFG
 
 #[derive(Debug)]
 struct GetRDFGraphSummaryResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetRDFGraphSummaryResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetRDFGraphSummaryResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetRDFGr
 }
 #[derive(Debug)]
 struct GetRDFGraphSummaryRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetRDFGraphSummaryRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetRDFGraphSummaryRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -205,13 +205,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetRDFGraph
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetRDFGraphSummaryEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetRDFGraphSummaryEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetRDFGraphSummaryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetRDFGraphSummaryEndpointParamsInterceptor"
     }

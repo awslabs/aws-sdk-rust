@@ -151,6 +151,8 @@ async fn wire_level_test(
                     .uri(endpoint_url.clone())
                     // Make the body non-replayable since we don't actually want to retry
                     .body(SdkBody::from_dyn(BoxBody::new(SdkBody::from("body"))))
+                    .unwrap()
+                    .try_into()
                     .unwrap();
                 tracing::info!("serializing request: {request:?}");
                 Ok(request)

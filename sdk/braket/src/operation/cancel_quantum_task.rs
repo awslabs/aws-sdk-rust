@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for CancelQ
 
 #[derive(Debug)]
 struct CancelQuantumTaskResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CancelQuantumTaskResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for CancelQuantumTaskResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for CancelQu
 }
 #[derive(Debug)]
 struct CancelQuantumTaskRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CancelQuantumTaskRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for CancelQuantumTaskRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -210,13 +210,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CancelQuant
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct CancelQuantumTaskEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CancelQuantumTaskEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for CancelQuantumTaskEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "CancelQuantumTaskEndpointParamsInterceptor"
     }

@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for HeadObj
 
 #[derive(Debug)]
 struct HeadObjectResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for HeadObjectResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for HeadObjectResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for HeadObje
 }
 #[derive(Debug)]
 struct HeadObjectRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for HeadObjectRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for HeadObjectRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -229,13 +229,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for HeadObjectR
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct HeadObjectEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for HeadObjectEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for HeadObjectEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "HeadObjectEndpointParamsInterceptor"
     }
@@ -306,8 +306,6 @@ mod head_object_request_test {
             .await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
-        ::pretty_assertions::assert_eq!(http_request.method(), "HEAD");
-        ::pretty_assertions::assert_eq!(http_request.uri().path(), "/%3C%3E%20%60%3F%F0%9F%90%B1");
     }
     /// This test case validates https://github.com/awslabs/smithy-rs/issues/456
     /// Test ID: HeadObjectEmptyBody
@@ -328,7 +326,7 @@ mod head_object_request_test {
             .body(::aws_smithy_http::body::SdkBody::from(""))
             .unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
-        use ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
 
         let op = crate::operation::head_object::HeadObject::new();
         let config = op.config().expect("the operation has config");

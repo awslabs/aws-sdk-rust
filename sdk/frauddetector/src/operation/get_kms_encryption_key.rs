@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetKMSE
 
 #[derive(Debug)]
 struct GetKMSEncryptionKeyResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetKMSEncryptionKeyResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetKMSEncryptionKeyResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetKMSEn
 }
 #[derive(Debug)]
 struct GetKMSEncryptionKeyRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetKMSEncryptionKeyRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetKMSEncryptionKeyRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetKMSEncry
             &input,
         )?);
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetKMSEncryptionKeyEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetKMSEncryptionKeyEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetKMSEncryptionKeyEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetKMSEncryptionKeyEndpointParamsInterceptor"
     }

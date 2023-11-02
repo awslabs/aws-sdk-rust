@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for TagProj
 
 #[derive(Debug)]
 struct TagProjectResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for TagProjectResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for TagProjectResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for TagProje
 }
 #[derive(Debug)]
 struct TagProjectRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TagProjectRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TagProjectRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -198,13 +198,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TagProjectR
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct TagProjectEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for TagProjectEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TagProjectEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "TagProjectEndpointParamsInterceptor"
     }

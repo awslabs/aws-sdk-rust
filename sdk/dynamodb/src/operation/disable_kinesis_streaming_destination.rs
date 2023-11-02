@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disable
 
 #[derive(Debug)]
 struct DisableKinesisStreamingDestinationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DisableKinesisStreamingDestinationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DisableKinesisStreamingDestinationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DisableK
 }
 #[derive(Debug)]
 struct DisableKinesisStreamingDestinationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DisableKinesisStreamingDestinationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DisableKinesisStreamingDestinationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -216,13 +216,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DisableKine
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DisableKinesisStreamingDestinationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DisableKinesisStreamingDestinationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisableKinesisStreamingDestinationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DisableKinesisStreamingDestinationEndpointParamsInterceptor"
     }

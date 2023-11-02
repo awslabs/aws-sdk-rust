@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListTyp
 
 #[derive(Debug)]
 struct ListTypesByAssociationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListTypesByAssociationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListTypesByAssociationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListType
 }
 #[derive(Debug)]
 struct ListTypesByAssociationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListTypesByAssociationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListTypesByAssociationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -243,13 +243,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListTypesBy
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListTypesByAssociationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListTypesByAssociationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListTypesByAssociationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListTypesByAssociationEndpointParamsInterceptor"
     }

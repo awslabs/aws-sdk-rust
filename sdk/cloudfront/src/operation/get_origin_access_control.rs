@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetOrig
 
 #[derive(Debug)]
 struct GetOriginAccessControlResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetOriginAccessControlResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetOriginAccessControlResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetOrigi
 }
 #[derive(Debug)]
 struct GetOriginAccessControlRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetOriginAccessControlRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetOriginAccessControlRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -203,13 +203,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetOriginAc
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetOriginAccessControlEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetOriginAccessControlEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetOriginAccessControlEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetOriginAccessControlEndpointParamsInterceptor"
     }

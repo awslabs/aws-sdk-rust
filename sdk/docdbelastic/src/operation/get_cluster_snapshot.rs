@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetClus
 
 #[derive(Debug)]
 struct GetClusterSnapshotResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetClusterSnapshotResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetClusterSnapshotResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetClust
 }
 #[derive(Debug)]
 struct GetClusterSnapshotRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetClusterSnapshotRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetClusterSnapshotRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetClusterS
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetClusterSnapshotEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetClusterSnapshotEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetClusterSnapshotEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetClusterSnapshotEndpointParamsInterceptor"
     }

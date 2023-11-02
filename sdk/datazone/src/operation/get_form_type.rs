@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetForm
 
 #[derive(Debug)]
 struct GetFormTypeResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetFormTypeResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetFormTypeResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetFormT
 }
 #[derive(Debug)]
 struct GetFormTypeRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetFormTypeRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetFormTypeRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -233,13 +233,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetFormType
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetFormTypeEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetFormTypeEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetFormTypeEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetFormTypeEndpointParamsInterceptor"
     }

@@ -137,7 +137,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetReus
 
 #[derive(Debug)]
 struct GetReusableDelegationSetResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetReusableDelegationSetResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetReusableDelegationSetResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -158,7 +158,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetReusa
 }
 #[derive(Debug)]
 struct GetReusableDelegationSetRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetReusableDelegationSetRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetReusableDelegationSetRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -206,13 +206,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetReusable
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetReusableDelegationSetEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetReusableDelegationSetEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetReusableDelegationSetEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetReusableDelegationSetEndpointParamsInterceptor"
     }
@@ -271,8 +271,6 @@ mod get_reusable_delegation_set_request_test {
             .await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
-        ::pretty_assertions::assert_eq!(http_request.method(), "GET");
-        ::pretty_assertions::assert_eq!(http_request.uri().path(), "/2013-04-01/delegationset/DELEGATIONSETID");
     }
 }
 

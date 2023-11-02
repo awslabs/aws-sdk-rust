@@ -344,7 +344,10 @@ where
     C::Future: Unpin + Send + 'static,
     C::Error: Into<BoxError>,
 {
-    fn call(&self, mut request: HttpRequest) -> HttpConnectorFuture {
+    fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
+        let mut request = request
+            .into_http02x()
+            .expect("TODO(httpRefactor): no panics");
         let capture_connection = capture_connection(&mut request);
         if let Some(capture_smithy_connection) =
             request.extensions().get::<CaptureSmithyConnection>()
@@ -764,7 +767,6 @@ mod timeout_middleware {
         use aws_smithy_async::assert_elapsed;
         use aws_smithy_async::future::never::Never;
         use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
-        use aws_smithy_http::body::SdkBody;
         use aws_smithy_types::error::display::DisplayErrorContext;
         use hyper::client::connect::Connected;
         use std::time::Duration;
@@ -875,12 +877,7 @@ mod timeout_middleware {
             let now = tokio::time::Instant::now();
             tokio::time::pause();
             let resp = hyper
-                .call(
-                    http::Request::builder()
-                        .uri("http://foo.com")
-                        .body(SdkBody::empty())
-                        .unwrap(),
-                )
+                .call(HttpRequest::get("https://static-uri.com").unwrap())
                 .await
                 .unwrap_err();
             assert!(
@@ -913,12 +910,7 @@ mod timeout_middleware {
             let now = tokio::time::Instant::now();
             tokio::time::pause();
             let err = hyper
-                .call(
-                    http::Request::builder()
-                        .uri("http://foo.com")
-                        .body(SdkBody::empty())
-                        .unwrap(),
-                )
+                .call(HttpRequest::get("https://fake-uri.com").unwrap())
                 .await
                 .unwrap_err();
             assert!(
@@ -940,7 +932,6 @@ mod timeout_middleware {
 mod test {
     use super::*;
     use crate::client::http::test_util::NeverTcpConnector;
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use http::Uri;
     use hyper::client::connect::{Connected, Connection};
@@ -1011,12 +1002,7 @@ mod test {
         };
         let adapter = HyperConnector::builder().build(connector).adapter;
         let err = adapter
-            .call(
-                http::Request::builder()
-                    .uri("http://amazon.com")
-                    .body(SdkBody::empty())
-                    .unwrap(),
-            )
+            .call(HttpRequest::get("https://socket-hangup.com").unwrap())
             .await
             .expect_err("socket hangup");
         assert!(err.is_io(), "{:?}", err);

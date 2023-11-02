@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetImpo
 
 #[derive(Debug)]
 struct GetImportFileTaskResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetImportFileTaskResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetImportFileTaskResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetImpor
 }
 #[derive(Debug)]
 struct GetImportFileTaskRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetImportFileTaskRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetImportFileTaskRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -206,13 +206,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetImportFi
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetImportFileTaskEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetImportFileTaskEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetImportFileTaskEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetImportFileTaskEndpointParamsInterceptor"
     }

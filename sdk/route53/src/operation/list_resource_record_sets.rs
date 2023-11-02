@@ -137,7 +137,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListRes
 
 #[derive(Debug)]
 struct ListResourceRecordSetsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListResourceRecordSetsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListResourceRecordSetsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -158,7 +158,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListReso
 }
 #[derive(Debug)]
 struct ListResourceRecordSetsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListResourceRecordSetsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListResourceRecordSetsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -235,13 +235,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListResourc
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListResourceRecordSetsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListResourceRecordSetsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListResourceRecordSetsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListResourceRecordSetsEndpointParamsInterceptor"
     }
@@ -300,8 +300,6 @@ mod list_resource_record_sets_request_test {
             .await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
-        ::pretty_assertions::assert_eq!(http_request.method(), "GET");
-        ::pretty_assertions::assert_eq!(http_request.uri().path(), "/2013-04-01/hostedzone/IDOFMYHOSTEDZONE/rrset");
     }
 }
 

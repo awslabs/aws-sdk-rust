@@ -188,7 +188,7 @@ impl UploadPartFluentBuilder {
             })
         })?;
         let request = context.take_request().expect("request set before transmit");
-        Ok(crate::presigning::PresignedRequest::new(request.map(|_| ())))
+        Ok(crate::presigning::PresignedRequest::new(request))
     }
     /// <p>Object data.</p>
     pub fn body(mut self, input: ::aws_smithy_http::byte_stream::ByteStream) -> Self {

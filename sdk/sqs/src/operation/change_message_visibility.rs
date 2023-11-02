@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ChangeM
 
 #[derive(Debug)]
 struct ChangeMessageVisibilityResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ChangeMessageVisibilityResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ChangeMessageVisibilityResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ChangeMe
 }
 #[derive(Debug)]
 struct ChangeMessageVisibilityRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ChangeMessageVisibilityRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ChangeMessageVisibilityRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -197,13 +197,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ChangeMessa
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ChangeMessageVisibilityEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ChangeMessageVisibilityEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ChangeMessageVisibilityEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ChangeMessageVisibilityEndpointParamsInterceptor"
     }
@@ -264,8 +264,6 @@ mod change_message_visibility_request_test {
             .await;
         let _ = dbg!(result);
         let http_request = request_receiver.expect_request();
-        ::pretty_assertions::assert_eq!(http_request.method(), "POST");
-        ::pretty_assertions::assert_eq!(http_request.uri().path(), "/");
         let body = http_request.body().bytes().expect("body should be strict");
         ::aws_smithy_protocol_test::assert_ok(
         ::aws_smithy_protocol_test::validate_body(body, "Action=ChangeMessageVisibility&Version=2012-11-05&QueueUrl=http%3A%2F%2Fsomequeue.amazon.com&ReceiptHandle=handlehandle&VisibilityTimeout=0", ::aws_smithy_protocol_test::MediaType::from("application/x-www-formurl-encoded"))

@@ -126,8 +126,9 @@ impl ReplayingClient {
                 ))?
                 .take()
                 .await;
-            aws_smithy_protocol_test::assert_uris_match(expected.uri(), actual.uri());
             body_comparer(expected.body().as_ref(), actual.body().as_ref())?;
+            let actual: HttpRequest = actual.map(SdkBody::from).try_into()?;
+            aws_smithy_protocol_test::assert_uris_match(&expected.uri().to_string(), actual.uri());
             let expected_headers = expected
                 .headers()
                 .keys()
@@ -301,7 +302,10 @@ impl HttpConnector for ReplayingClient {
                 data_read
                     .extend_from_slice(data.expect("in memory request should not fail").as_ref())
             }
-            request.map(|_| Bytes::from(data_read))
+            request
+                .into_http02x()
+                .unwrap()
+                .map(|_body| Bytes::from(data_read))
         });
         let mut recorded_request = Waitable::Loading(recorded_request);
         let fut = async move {

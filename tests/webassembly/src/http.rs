@@ -45,7 +45,7 @@ impl WasmHttpConnector {
 impl HttpConnector for WasmHttpConnector {
     fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
         println!("Adapter: sending request...");
-        let res = make_request(request).unwrap();
+        let res = make_request(request.into_http02x().unwrap()).unwrap();
         println!("{:?}", res);
         HttpConnectorFuture::new(async move { Ok(res) })
     }

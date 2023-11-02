@@ -60,7 +60,7 @@ impl InfallibleClientFn {
 
 impl HttpConnector for InfallibleClientFn {
     fn call(&self, request: HttpRequest) -> HttpConnectorFuture {
-        HttpConnectorFuture::ready((self.response)(request))
+        HttpConnectorFuture::ready((self.response)(request.into_http02x().unwrap()))
     }
 }
 

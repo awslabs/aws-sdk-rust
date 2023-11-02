@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListJob
 
 #[derive(Debug)]
 struct ListJobExecutionsForJobResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListJobExecutionsForJobResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListJobExecutionsForJobResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListJobE
 }
 #[derive(Debug)]
 struct ListJobExecutionsForJobRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListJobExecutionsForJobRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJobExecutionsForJobRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -225,13 +225,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListJobExec
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListJobExecutionsForJobEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListJobExecutionsForJobEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListJobExecutionsForJobEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListJobExecutionsForJobEndpointParamsInterceptor"
     }

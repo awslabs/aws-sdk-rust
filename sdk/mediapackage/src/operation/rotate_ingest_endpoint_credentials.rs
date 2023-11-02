@@ -144,7 +144,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RotateI
 
 #[derive(Debug)]
 struct RotateIngestEndpointCredentialsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RotateIngestEndpointCredentialsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RotateIngestEndpointCredentialsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -167,7 +167,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RotateIn
 }
 #[derive(Debug)]
 struct RotateIngestEndpointCredentialsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RotateIngestEndpointCredentialsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RotateIngestEndpointCredentialsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -232,13 +232,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RotateInges
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RotateIngestEndpointCredentialsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RotateIngestEndpointCredentialsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RotateIngestEndpointCredentialsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RotateIngestEndpointCredentialsEndpointParamsInterceptor"
     }

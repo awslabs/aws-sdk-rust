@@ -446,13 +446,7 @@ mod tests {
             .http_client()
             .unwrap()
             .http_connector(&Default::default(), &fake_components)
-            .call(
-                http::Request::builder()
-                    .method("GET")
-                    .uri("/")
-                    .body(SdkBody::empty())
-                    .unwrap(),
-            )
+            .call(HttpRequest::empty())
             .await
             .unwrap();
         dbg!(&resp);

@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ImportS
 
 #[derive(Debug)]
 struct ImportServerCatalogResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ImportServerCatalogResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ImportServerCatalogResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ImportSe
 }
 #[derive(Debug)]
 struct ImportServerCatalogRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ImportServerCatalogRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ImportServerCatalogRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -199,13 +199,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ImportServe
             &input,
         )?);
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ImportServerCatalogEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ImportServerCatalogEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ImportServerCatalogEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ImportServerCatalogEndpointParamsInterceptor"
     }

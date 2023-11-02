@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetKxDa
 
 #[derive(Debug)]
 struct GetKxDatabaseResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetKxDatabaseResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetKxDatabaseResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetKxDat
 }
 #[derive(Debug)]
 struct GetKxDatabaseRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetKxDatabaseRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetKxDatabaseRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -219,13 +219,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetKxDataba
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetKxDatabaseEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetKxDatabaseEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetKxDatabaseEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetKxDatabaseEndpointParamsInterceptor"
     }

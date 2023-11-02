@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DeleteV
 
 #[derive(Debug)]
 struct DeleteVoiceMessageSpendLimitOverrideResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteVoiceMessageSpendLimitOverrideResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DeleteVoiceMessageSpendLimitOverrideResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DeleteVo
 }
 #[derive(Debug)]
 struct DeleteVoiceMessageSpendLimitOverrideRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteVoiceMessageSpendLimitOverrideRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DeleteVoiceMessageSpendLimitOverrideRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -213,13 +213,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DeleteVoice
             crate::protocol_serde::shape_delete_voice_message_spend_limit_override::ser_delete_voice_message_spend_limit_override_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DeleteVoiceMessageSpendLimitOverrideEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DeleteVoiceMessageSpendLimitOverrideEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DeleteVoiceMessageSpendLimitOverrideEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DeleteVoiceMessageSpendLimitOverrideEndpointParamsInterceptor"
     }

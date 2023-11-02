@@ -166,5 +166,5 @@ async fn generate_random_keystore_not_found() {
         inner.request_id(),
         Some("bfe81a0a-9a08-4e71-9910-cdb5ab6ea3b6")
     );
-    http_client.assert_requests_match(&[AUTHORIZATION]);
+    http_client.assert_requests_match(&[AUTHORIZATION.as_str()]);
 }

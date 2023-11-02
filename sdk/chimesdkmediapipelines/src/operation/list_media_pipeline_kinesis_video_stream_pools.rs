@@ -144,7 +144,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListMed
 
 #[derive(Debug)]
 struct ListMediaPipelineKinesisVideoStreamPoolsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListMediaPipelineKinesisVideoStreamPoolsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListMediaPipelineKinesisVideoStreamPoolsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -167,7 +167,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListMedi
 }
 #[derive(Debug)]
 struct ListMediaPipelineKinesisVideoStreamPoolsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListMediaPipelineKinesisVideoStreamPoolsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListMediaPipelineKinesisVideoStreamPoolsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -222,13 +222,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListMediaPi
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListMediaPipelineKinesisVideoStreamPoolsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListMediaPipelineKinesisVideoStreamPoolsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListMediaPipelineKinesisVideoStreamPoolsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListMediaPipelineKinesisVideoStreamPoolsEndpointParamsInterceptor"
     }

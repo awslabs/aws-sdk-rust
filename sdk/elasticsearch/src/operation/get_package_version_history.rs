@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetPack
 
 #[derive(Debug)]
 struct GetPackageVersionHistoryResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetPackageVersionHistoryResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetPackageVersionHistoryResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetPacka
 }
 #[derive(Debug)]
 struct GetPackageVersionHistoryRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetPackageVersionHistoryRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPackageVersionHistoryRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -230,13 +230,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetPackageV
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetPackageVersionHistoryEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetPackageVersionHistoryEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPackageVersionHistoryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetPackageVersionHistoryEndpointParamsInterceptor"
     }

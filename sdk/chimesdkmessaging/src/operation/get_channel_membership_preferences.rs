@@ -144,7 +144,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetChan
 
 #[derive(Debug)]
 struct GetChannelMembershipPreferencesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetChannelMembershipPreferencesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetChannelMembershipPreferencesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -167,7 +167,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetChann
 }
 #[derive(Debug)]
 struct GetChannelMembershipPreferencesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetChannelMembershipPreferencesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetChannelMembershipPreferencesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -234,13 +234,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetChannelM
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetChannelMembershipPreferencesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetChannelMembershipPreferencesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetChannelMembershipPreferencesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetChannelMembershipPreferencesEndpointParamsInterceptor"
     }

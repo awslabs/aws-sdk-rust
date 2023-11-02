@@ -319,7 +319,7 @@ mod tests {
         let mut checksum = Crc32::default();
         checksum.update(TEST_DATA.as_bytes());
         let checksum_result = Box::new(checksum).headers();
-        let encoded_checksum = checksum_result.get(&CRC_32_HEADER_NAME).unwrap();
+        let encoded_checksum = checksum_result.get(CRC_32_HEADER_NAME).unwrap();
         let decoded_checksum = base64_encoded_checksum_to_hex_string(encoded_checksum);
 
         let expected_checksum = "0xD308AEB2";
@@ -335,7 +335,7 @@ mod tests {
         let mut checksum = Crc32c::default();
         checksum.update(TEST_DATA.as_bytes());
         let checksum_result = Box::new(checksum).headers();
-        let encoded_checksum = checksum_result.get(&CRC_32_C_HEADER_NAME).unwrap();
+        let encoded_checksum = checksum_result.get(CRC_32_C_HEADER_NAME).unwrap();
         let decoded_checksum = base64_encoded_checksum_to_hex_string(encoded_checksum);
 
         let expected_checksum = "0x3379B4CA";
@@ -348,7 +348,7 @@ mod tests {
         let mut checksum = Sha1::default();
         checksum.update(TEST_DATA.as_bytes());
         let checksum_result = Box::new(checksum).headers();
-        let encoded_checksum = checksum_result.get(&SHA_1_HEADER_NAME).unwrap();
+        let encoded_checksum = checksum_result.get(SHA_1_HEADER_NAME).unwrap();
         let decoded_checksum = base64_encoded_checksum_to_hex_string(encoded_checksum);
 
         let expected_checksum = "0xF48DD853820860816C75D54D0F584DC863327A7C";
@@ -361,7 +361,7 @@ mod tests {
         let mut checksum = Sha256::default();
         checksum.update(TEST_DATA.as_bytes());
         let checksum_result = Box::new(checksum).headers();
-        let encoded_checksum = checksum_result.get(&SHA_256_HEADER_NAME).unwrap();
+        let encoded_checksum = checksum_result.get(SHA_256_HEADER_NAME).unwrap();
         let decoded_checksum = base64_encoded_checksum_to_hex_string(encoded_checksum);
 
         let expected_checksum =
@@ -375,7 +375,7 @@ mod tests {
         let mut checksum = Md5::default();
         checksum.update(TEST_DATA.as_bytes());
         let checksum_result = Box::new(checksum).headers();
-        let encoded_checksum = checksum_result.get(&MD5_HEADER_NAME).unwrap();
+        let encoded_checksum = checksum_result.get(MD5_HEADER_NAME).unwrap();
         let decoded_checksum = base64_encoded_checksum_to_hex_string(encoded_checksum);
 
         let expected_checksum = "0xEB733A00C0C9D336E65691A37AB54293";

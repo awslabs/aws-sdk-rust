@@ -151,7 +151,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StartRx
 
 #[derive(Debug)]
 struct StartRxNormInferenceJobResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StartRxNormInferenceJobResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StartRxNormInferenceJobResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -172,7 +172,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StartRxN
 }
 #[derive(Debug)]
 struct StartRxNormInferenceJobRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StartRxNormInferenceJobRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StartRxNormInferenceJobRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -220,13 +220,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StartRxNorm
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct StartRxNormInferenceJobEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for StartRxNormInferenceJobEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StartRxNormInferenceJobEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StartRxNormInferenceJobEndpointParamsInterceptor"
     }

@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for IsVpcPe
 
 #[derive(Debug)]
 struct IsVpcPeeredResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for IsVpcPeeredResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for IsVpcPeeredResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for IsVpcPee
 }
 #[derive(Debug)]
 struct IsVpcPeeredRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for IsVpcPeeredRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for IsVpcPeeredRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -197,13 +197,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for IsVpcPeered
         };
         let body = ::aws_smithy_http::body::SdkBody::from(crate::protocol_serde::shape_is_vpc_peered::ser_is_vpc_peered_input(&input)?);
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct IsVpcPeeredEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for IsVpcPeeredEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for IsVpcPeeredEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "IsVpcPeeredEndpointParamsInterceptor"
     }

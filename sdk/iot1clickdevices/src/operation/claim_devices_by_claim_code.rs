@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ClaimDe
 
 #[derive(Debug)]
 struct ClaimDevicesByClaimCodeResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ClaimDevicesByClaimCodeResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ClaimDevicesByClaimCodeResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ClaimDev
 }
 #[derive(Debug)]
 struct ClaimDevicesByClaimCodeRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ClaimDevicesByClaimCodeRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ClaimDevicesByClaimCodeRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -212,13 +212,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ClaimDevice
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ClaimDevicesByClaimCodeEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ClaimDevicesByClaimCodeEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ClaimDevicesByClaimCodeEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ClaimDevicesByClaimCodeEndpointParamsInterceptor"
     }

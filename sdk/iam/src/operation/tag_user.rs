@@ -126,7 +126,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for TagUser
 
 #[derive(Debug)]
 struct TagUserResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for TagUserResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for TagUserResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -147,7 +147,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for TagUserR
 }
 #[derive(Debug)]
 struct TagUserRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TagUserRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TagUserRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -186,13 +186,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TagUserRequ
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct TagUserEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for TagUserEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TagUserEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "TagUserEndpointParamsInterceptor"
     }

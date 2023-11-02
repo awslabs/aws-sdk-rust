@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetPort
 
 #[derive(Debug)]
 struct GetPortfolioSummaryResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetPortfolioSummaryResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetPortfolioSummaryResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetPortf
 }
 #[derive(Debug)]
 struct GetPortfolioSummaryRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetPortfolioSummaryRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPortfolioSummaryRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -198,13 +198,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetPortfoli
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetPortfolioSummaryEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetPortfolioSummaryEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPortfolioSummaryEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetPortfolioSummaryEndpointParamsInterceptor"
     }

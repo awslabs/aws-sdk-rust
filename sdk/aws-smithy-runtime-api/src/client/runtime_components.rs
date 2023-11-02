@@ -12,15 +12,15 @@
 //! [`RuntimeComponents`](RuntimeComponents).
 
 use crate::client::auth::{
-    AuthScheme, AuthSchemeId, AuthSchemeOptionResolver, SharedAuthScheme,
+    AuthScheme, AuthSchemeId, ResolveAuthSchemeOptions, SharedAuthScheme,
     SharedAuthSchemeOptionResolver,
 };
-use crate::client::endpoint::{EndpointResolver, SharedEndpointResolver};
+use crate::client::endpoint::{ResolveEndpoint, SharedEndpointResolver};
 use crate::client::http::{HttpClient, SharedHttpClient};
 use crate::client::identity::{
-    ConfiguredIdentityResolver, IdentityResolver, SharedIdentityResolver,
+    ConfiguredIdentityResolver, ResolveIdentity, SharedIdentityResolver,
 };
-use crate::client::interceptors::{Interceptor, SharedInterceptor};
+use crate::client::interceptors::{Intercept, SharedInterceptor};
 use crate::client::retries::classifiers::{ClassifyRetry, SharedRetryClassifier};
 use crate::client::retries::{RetryStrategy, SharedRetryStrategy};
 use crate::shared::IntoShared;
@@ -278,7 +278,7 @@ impl RuntimeComponentsBuilder {
     /// Sets the auth scheme option resolver.
     pub fn set_auth_scheme_option_resolver(
         &mut self,
-        auth_scheme_option_resolver: Option<impl AuthSchemeOptionResolver + 'static>,
+        auth_scheme_option_resolver: Option<impl ResolveAuthSchemeOptions + 'static>,
     ) -> &mut Self {
         self.auth_scheme_option_resolver =
             auth_scheme_option_resolver.map(|r| Tracked::new(self.builder_name, r.into_shared()));
@@ -288,7 +288,7 @@ impl RuntimeComponentsBuilder {
     /// Sets the auth scheme option resolver.
     pub fn with_auth_scheme_option_resolver(
         mut self,
-        auth_scheme_option_resolver: Option<impl AuthSchemeOptionResolver + 'static>,
+        auth_scheme_option_resolver: Option<impl ResolveAuthSchemeOptions + 'static>,
     ) -> Self {
         self.set_auth_scheme_option_resolver(auth_scheme_option_resolver);
         self
@@ -319,7 +319,7 @@ impl RuntimeComponentsBuilder {
     /// Sets the endpoint resolver.
     pub fn set_endpoint_resolver(
         &mut self,
-        endpoint_resolver: Option<impl EndpointResolver + 'static>,
+        endpoint_resolver: Option<impl ResolveEndpoint + 'static>,
     ) -> &mut Self {
         self.endpoint_resolver =
             endpoint_resolver.map(|s| Tracked::new(self.builder_name, s.into_shared()));
@@ -329,7 +329,7 @@ impl RuntimeComponentsBuilder {
     /// Sets the endpoint resolver.
     pub fn with_endpoint_resolver(
         mut self,
-        endpoint_resolver: Option<impl EndpointResolver + 'static>,
+        endpoint_resolver: Option<impl ResolveEndpoint + 'static>,
     ) -> Self {
         self.set_endpoint_resolver(endpoint_resolver);
         self
@@ -357,7 +357,7 @@ impl RuntimeComponentsBuilder {
     pub fn push_identity_resolver(
         &mut self,
         scheme_id: AuthSchemeId,
-        identity_resolver: impl IdentityResolver + 'static,
+        identity_resolver: impl ResolveIdentity + 'static,
     ) -> &mut Self {
         self.identity_resolvers.push(Tracked::new(
             self.builder_name,
@@ -370,7 +370,7 @@ impl RuntimeComponentsBuilder {
     pub fn with_identity_resolver(
         mut self,
         scheme_id: AuthSchemeId,
-        identity_resolver: impl IdentityResolver + 'static,
+        identity_resolver: impl ResolveIdentity + 'static,
     ) -> Self {
         self.push_identity_resolver(scheme_id, identity_resolver);
         self
@@ -392,14 +392,14 @@ impl RuntimeComponentsBuilder {
     }
 
     /// Adds an interceptor.
-    pub fn push_interceptor(&mut self, interceptor: impl Interceptor + 'static) -> &mut Self {
+    pub fn push_interceptor(&mut self, interceptor: impl Intercept + 'static) -> &mut Self {
         self.interceptors
             .push(Tracked::new(self.builder_name, interceptor.into_shared()));
         self
     }
 
     /// Adds an interceptor.
-    pub fn with_interceptor(mut self, interceptor: impl Interceptor + 'static) -> Self {
+    pub fn with_interceptor(mut self, interceptor: impl Intercept + 'static) -> Self {
         self.push_interceptor(interceptor);
         self
     }
@@ -554,7 +554,7 @@ impl RuntimeComponentsBuilder {
 
         #[derive(Debug)]
         struct FakeAuthSchemeOptionResolver;
-        impl AuthSchemeOptionResolver for FakeAuthSchemeOptionResolver {
+        impl ResolveAuthSchemeOptions for FakeAuthSchemeOptionResolver {
             fn resolve_auth_scheme_options(
                 &self,
                 _: &crate::client::auth::AuthSchemeOptionResolverParams,
@@ -578,7 +578,7 @@ impl RuntimeComponentsBuilder {
 
         #[derive(Debug)]
         struct FakeEndpointResolver;
-        impl EndpointResolver for FakeEndpointResolver {
+        impl ResolveEndpoint for FakeEndpointResolver {
             fn resolve_endpoint<'a>(&'a self, _: &'a EndpointResolverParams) -> EndpointFuture<'a> {
                 unreachable!("fake endpoint resolver must be overridden for this test")
             }
@@ -598,14 +598,14 @@ impl RuntimeComponentsBuilder {
                 None
             }
 
-            fn signer(&self) -> &dyn crate::client::auth::Signer {
+            fn signer(&self) -> &dyn crate::client::auth::Sign {
                 unreachable!("fake http auth scheme must be overridden for this test")
             }
         }
 
         #[derive(Debug)]
         struct FakeIdentityResolver;
-        impl IdentityResolver for FakeIdentityResolver {
+        impl ResolveIdentity for FakeIdentityResolver {
             fn resolve_identity<'a>(&'a self, _: &'a ConfigBag) -> IdentityFuture<'a> {
                 unreachable!("fake identity resolver must be overridden for this test")
             }

@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutAppI
 
 #[derive(Debug)]
 struct PutAppInstanceUserExpirationSettingsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutAppInstanceUserExpirationSettingsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutAppInstanceUserExpirationSettingsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutAppIn
 }
 #[derive(Debug)]
 struct PutAppInstanceUserExpirationSettingsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutAppInstanceUserExpirationSettingsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutAppInstanceUserExpirationSettingsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -227,13 +227,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutAppInsta
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct PutAppInstanceUserExpirationSettingsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for PutAppInstanceUserExpirationSettingsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutAppInstanceUserExpirationSettingsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutAppInstanceUserExpirationSettingsEndpointParamsInterceptor"
     }

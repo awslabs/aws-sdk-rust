@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetBeha
 
 #[derive(Debug)]
 struct GetBehaviorModelTrainingSummariesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetBehaviorModelTrainingSummariesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetBehaviorModelTrainingSummariesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -165,7 +165,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetBehav
 }
 #[derive(Debug)]
 struct GetBehaviorModelTrainingSummariesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetBehaviorModelTrainingSummariesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetBehaviorModelTrainingSummariesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -225,13 +225,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetBehavior
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetBehaviorModelTrainingSummariesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetBehaviorModelTrainingSummariesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetBehaviorModelTrainingSummariesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetBehaviorModelTrainingSummariesEndpointParamsInterceptor"
     }

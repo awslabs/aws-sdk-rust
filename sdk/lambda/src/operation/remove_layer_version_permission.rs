@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RemoveL
 
 #[derive(Debug)]
 struct RemoveLayerVersionPermissionResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RemoveLayerVersionPermissionResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RemoveLayerVersionPermissionResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RemoveLa
 }
 #[derive(Debug)]
 struct RemoveLayerVersionPermissionRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RemoveLayerVersionPermissionRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RemoveLayerVersionPermissionRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -252,13 +252,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RemoveLayer
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RemoveLayerVersionPermissionEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RemoveLayerVersionPermissionEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RemoveLayerVersionPermissionEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RemoveLayerVersionPermissionEndpointParamsInterceptor"
     }

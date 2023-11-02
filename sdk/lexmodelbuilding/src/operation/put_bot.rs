@@ -123,7 +123,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutBot 
 
 #[derive(Debug)]
 struct PutBotResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutBotResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutBotResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -144,7 +144,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutBotRe
 }
 #[derive(Debug)]
 struct PutBotRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutBotRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutBotRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -194,13 +194,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutBotReque
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct PutBotEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for PutBotEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutBotEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutBotEndpointParamsInterceptor"
     }

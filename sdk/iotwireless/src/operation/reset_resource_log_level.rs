@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ResetRe
 
 #[derive(Debug)]
 struct ResetResourceLogLevelResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ResetResourceLogLevelResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ResetResourceLogLevelResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ResetRes
 }
 #[derive(Debug)]
 struct ResetResourceLogLevelRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ResetResourceLogLevelRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ResetResourceLogLevelRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -223,13 +223,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ResetResour
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ResetResourceLogLevelEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ResetResourceLogLevelEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ResetResourceLogLevelEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ResetResourceLogLevelEndpointParamsInterceptor"
     }

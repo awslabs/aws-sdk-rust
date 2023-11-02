@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![cfg(feature = "test-util")]
+
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::{Client, Config};
@@ -45,11 +47,9 @@ async fn test_s3_signer_query_string_with_all_valid_chars() {
         "Signature=9a931d20606f93fa4e5553602866a9b5ccac2cd42b54ae5a4b17e4614fb443ce";
     assert!(
         auth_header
-            .to_str()
-            .unwrap()
             .contains(snapshot_signature),
         "authorization header signature did not match expected signature: got {}, expected it to contain {}",
-        auth_header.to_str().unwrap(),
+        auth_header,
         snapshot_signature
     );
 }

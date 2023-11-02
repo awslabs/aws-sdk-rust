@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListPro
 
 #[derive(Debug)]
 struct ListProtectedResourcesByBackupVaultResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListProtectedResourcesByBackupVaultResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListProtectedResourcesByBackupVaultResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListProt
 }
 #[derive(Debug)]
 struct ListProtectedResourcesByBackupVaultRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListProtectedResourcesByBackupVaultRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListProtectedResourcesByBackupVaultRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -240,13 +240,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListProtect
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListProtectedResourcesByBackupVaultEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListProtectedResourcesByBackupVaultEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListProtectedResourcesByBackupVaultEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListProtectedResourcesByBackupVaultEndpointParamsInterceptor"
     }

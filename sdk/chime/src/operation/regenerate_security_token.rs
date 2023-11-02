@@ -135,7 +135,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Regener
 
 #[derive(Debug)]
 struct RegenerateSecurityTokenResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RegenerateSecurityTokenResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RegenerateSecurityTokenResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -156,7 +156,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Regenera
 }
 #[derive(Debug)]
 struct RegenerateSecurityTokenRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RegenerateSecurityTokenRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RegenerateSecurityTokenRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -225,13 +225,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RegenerateS
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RegenerateSecurityTokenEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RegenerateSecurityTokenEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RegenerateSecurityTokenEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RegenerateSecurityTokenEndpointParamsInterceptor"
     }

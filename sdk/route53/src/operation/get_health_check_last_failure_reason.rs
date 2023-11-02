@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetHeal
 
 #[derive(Debug)]
 struct GetHealthCheckLastFailureReasonResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetHealthCheckLastFailureReasonResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetHealthCheckLastFailureReasonResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -165,7 +165,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetHealt
 }
 #[derive(Debug)]
 struct GetHealthCheckLastFailureReasonRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetHealthCheckLastFailureReasonRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetHealthCheckLastFailureReasonRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -218,13 +218,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetHealthCh
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetHealthCheckLastFailureReasonEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetHealthCheckLastFailureReasonEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetHealthCheckLastFailureReasonEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetHealthCheckLastFailureReasonEndpointParamsInterceptor"
     }

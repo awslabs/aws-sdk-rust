@@ -54,6 +54,9 @@ macro_rules! interceptor_trait_fn {
     };
 }
 
+#[deprecated(note = "Renamed to Intercept.")]
+pub use Intercept as Interceptor;
+
 /// An interceptor allows injecting code into the SDK ’s request execution pipeline.
 ///
 /// ## Terminology:
@@ -64,7 +67,7 @@ macro_rules! interceptor_trait_fn {
 ///   of the SDK ’s request execution pipeline. Hooks are either "read" hooks, which make it possible
 ///   to read in-flight request or response messages, or "read/write" hooks, which make it possible
 ///   to modify in-flight request or output messages.
-pub trait Interceptor: fmt::Debug + Send + Sync {
+pub trait Intercept: fmt::Debug + Send + Sync {
     /// The name of this interceptor, used in error messages for debugging.
     fn name(&self) -> &'static str;
 
@@ -589,7 +592,7 @@ pub trait Interceptor: fmt::Debug + Send + Sync {
 /// Interceptor wrapper that may be shared
 #[derive(Clone)]
 pub struct SharedInterceptor {
-    interceptor: Arc<dyn Interceptor>,
+    interceptor: Arc<dyn Intercept>,
     check_enabled: Arc<dyn Fn(&ConfigBag) -> bool + Send + Sync>,
 }
 
@@ -603,7 +606,7 @@ impl fmt::Debug for SharedInterceptor {
 
 impl SharedInterceptor {
     /// Create a new `SharedInterceptor` from `Interceptor`.
-    pub fn new<T: Interceptor + 'static>(interceptor: T) -> Self {
+    pub fn new<T: Intercept + 'static>(interceptor: T) -> Self {
         Self {
             interceptor: Arc::new(interceptor),
             check_enabled: Arc::new(|conf: &ConfigBag| {
@@ -618,7 +621,7 @@ impl SharedInterceptor {
     }
 }
 
-impl Interceptor for SharedInterceptor {
+impl Intercept for SharedInterceptor {
     fn name(&self) -> &'static str {
         self.interceptor.name()
     }
@@ -812,7 +815,7 @@ impl Interceptor for SharedInterceptor {
     }
 }
 
-impl_shared_conversions!(convert SharedInterceptor from Interceptor using SharedInterceptor::new);
+impl_shared_conversions!(convert SharedInterceptor from Intercept using SharedInterceptor::new);
 
 /// Generalized interceptor disabling interface
 ///
@@ -833,7 +836,7 @@ where
 }
 
 /// Disable an interceptor with a given cause
-pub fn disable_interceptor<T: Interceptor>(cause: &'static str) -> DisableInterceptor<T> {
+pub fn disable_interceptor<T: Intercept>(cause: &'static str) -> DisableInterceptor<T> {
     DisableInterceptor {
         _t: PhantomData::default(),
         cause,

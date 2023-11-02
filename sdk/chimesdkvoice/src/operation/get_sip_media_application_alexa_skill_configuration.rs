@@ -139,7 +139,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetSipM
 
 #[derive(Debug)]
 struct GetSipMediaApplicationAlexaSkillConfigurationResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetSipMediaApplicationAlexaSkillConfigurationResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetSipMediaApplicationAlexaSkillConfigurationResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -160,7 +160,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetSipMe
 }
 #[derive(Debug)]
 struct GetSipMediaApplicationAlexaSkillConfigurationRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetSipMediaApplicationAlexaSkillConfigurationRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetSipMediaApplicationAlexaSkillConfigurationRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -213,13 +213,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetSipMedia
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetSipMediaApplicationAlexaSkillConfigurationEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetSipMediaApplicationAlexaSkillConfigurationEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetSipMediaApplicationAlexaSkillConfigurationEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetSipMediaApplicationAlexaSkillConfigurationEndpointParamsInterceptor"
     }

@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Generat
 
 #[derive(Debug)]
 struct GenerateCredentialReportResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GenerateCredentialReportResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GenerateCredentialReportResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Generate
 }
 #[derive(Debug)]
 struct GenerateCredentialReportRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GenerateCredentialReportRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GenerateCredentialReportRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -195,13 +195,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GenerateCre
             crate::protocol_serde::shape_generate_credential_report_input::ser_generate_credential_report_input_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GenerateCredentialReportEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GenerateCredentialReportEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GenerateCredentialReportEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GenerateCredentialReportEndpointParamsInterceptor"
     }

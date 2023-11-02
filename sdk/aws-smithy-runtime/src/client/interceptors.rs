@@ -13,7 +13,7 @@ use aws_smithy_runtime_api::client::interceptors::context::{
     Error, Input, InterceptorContext, Output,
 };
 use aws_smithy_runtime_api::client::interceptors::{
-    Interceptor, InterceptorError, SharedInterceptor,
+    Intercept, InterceptorError, SharedInterceptor,
 };
 use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
@@ -271,7 +271,7 @@ where
 /// [`DisableInterceptor`](aws_smithy_runtime_api::client::interceptors::DisableInterceptor)
 struct ConditionallyEnabledInterceptor(SharedInterceptor);
 impl ConditionallyEnabledInterceptor {
-    fn if_enabled(&self, cfg: &ConfigBag) -> Option<&dyn Interceptor> {
+    fn if_enabled(&self, cfg: &ConfigBag) -> Option<&dyn Intercept> {
         if self.0.enabled(cfg) {
             Some(&self.0)
         } else {
@@ -302,7 +302,7 @@ impl<F, E> MapRequestInterceptor<F, E> {
     }
 }
 
-impl<F, E> Interceptor for MapRequestInterceptor<F, E>
+impl<F, E> Intercept for MapRequestInterceptor<F, E>
 where
     F: Fn(HttpRequest) -> Result<HttpRequest, E> + Send + Sync + 'static,
     E: StdError + Send + Sync + 'static,
@@ -344,7 +344,7 @@ impl<F> MutateRequestInterceptor<F> {
     }
 }
 
-impl<F> Interceptor for MutateRequestInterceptor<F>
+impl<F> Intercept for MutateRequestInterceptor<F>
 where
     F: Fn(&mut HttpRequest) + Send + Sync + 'static,
 {
@@ -373,7 +373,7 @@ mod tests {
         BeforeTransmitInterceptorContextRef, Input, InterceptorContext,
     };
     use aws_smithy_runtime_api::client::interceptors::{
-        disable_interceptor, Interceptor, SharedInterceptor,
+        disable_interceptor, Intercept, SharedInterceptor,
     };
     use aws_smithy_runtime_api::client::runtime_components::{
         RuntimeComponents, RuntimeComponentsBuilder,
@@ -382,7 +382,7 @@ mod tests {
 
     #[derive(Debug)]
     struct TestInterceptor;
-    impl Interceptor for TestInterceptor {
+    impl Intercept for TestInterceptor {
         fn name(&self) -> &'static str {
             "TestInterceptor"
         }
@@ -392,7 +392,7 @@ mod tests {
     fn test_disable_interceptors() {
         #[derive(Debug)]
         struct PanicInterceptor;
-        impl Interceptor for PanicInterceptor {
+        impl Intercept for PanicInterceptor {
             fn name(&self) -> &'static str {
                 "PanicInterceptor"
             }

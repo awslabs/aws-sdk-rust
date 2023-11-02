@@ -138,7 +138,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for HeadBuc
 
 #[derive(Debug)]
 struct HeadBucketResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for HeadBucketResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for HeadBucketResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -163,7 +163,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for HeadBuck
 }
 #[derive(Debug)]
 struct HeadBucketRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for HeadBucketRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for HeadBucketRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -199,13 +199,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for HeadBucketR
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct HeadBucketEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for HeadBucketEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for HeadBucketEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "HeadBucketEndpointParamsInterceptor"
     }
@@ -272,7 +272,7 @@ mod head_bucket_request_test {
             .body(::aws_smithy_http::body::SdkBody::from(""))
             .unwrap();
         use ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
-        use ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer;
+        use ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse;
 
         let op = crate::operation::head_bucket::HeadBucket::new();
         let config = op.config().expect("the operation has config");

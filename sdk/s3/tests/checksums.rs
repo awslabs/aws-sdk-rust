@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![cfg(feature = "test-util")]
+
 use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::{Credentials, Region};
@@ -94,10 +96,7 @@ async fn test_checksum_on_streaming_response(
         .await
         .unwrap();
 
-    http_client.assert_requests_match(&[
-        http::header::HeaderName::from_static("x-amz-checksum-mode"),
-        AUTHORIZATION,
-    ]);
+    http_client.assert_requests_match(&["x-amz-checksum-mode", AUTHORIZATION.as_str()]);
 
     res
 }
@@ -197,7 +196,7 @@ async fn test_checksum_on_streaming_request<'a>(
         .await
         .unwrap();
 
-    let req = rcvr.expect_request();
+    let mut req = rcvr.expect_request();
 
     let headers = req.headers();
     let x_amz_content_sha256 = headers
@@ -244,10 +243,10 @@ async fn test_checksum_on_streaming_request<'a>(
         content_length,
         "content-length was expected to be {} but was {} instead",
         expected_encoded_content_length,
-        content_length.to_str().unwrap()
+        content_length
     );
 
-    let body = collect_body_into_string(req.into_body()).await;
+    let body = collect_body_into_string(req.take_body()).await;
     // When sending a streaming body with a checksum, the trailers are included as part of the body content
     assert_eq!(body.as_str(), expected_aws_chunked_encoded_body,);
 }

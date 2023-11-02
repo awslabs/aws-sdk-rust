@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for RejectP
 
 #[derive(Debug)]
 struct RejectPredictionsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RejectPredictionsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RejectPredictionsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RejectPr
 }
 #[derive(Debug)]
 struct RejectPredictionsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RejectPredictionsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RejectPredictionsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -243,13 +243,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RejectPredi
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RejectPredictionsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RejectPredictionsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RejectPredictionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RejectPredictionsEndpointParamsInterceptor"
     }

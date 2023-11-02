@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListWir
 
 #[derive(Debug)]
 struct ListWirelessGatewaysResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListWirelessGatewaysResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListWirelessGatewaysResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListWire
 }
 #[derive(Debug)]
 struct ListWirelessGatewaysRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListWirelessGatewaysRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListWirelessGatewaysRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -210,13 +210,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListWireles
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListWirelessGatewaysEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListWirelessGatewaysEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListWirelessGatewaysEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListWirelessGatewaysEndpointParamsInterceptor"
     }

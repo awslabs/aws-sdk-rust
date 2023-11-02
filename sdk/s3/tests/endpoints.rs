@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![cfg(feature = "test-util")]
+
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::Builder;
 use aws_sdk_s3::config::{Credentials, Region};
@@ -75,7 +77,6 @@ async fn multi_region_access_points() {
         "https://mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com/blah?x-id=GetObject"
     );
     let auth_header = captured_request.headers().get("AUTHORIZATION").unwrap();
-    let auth_header = auth_header.to_str().unwrap();
     // Verifies that the sigv4a signing algorithm was used, that the signing scope doesn't include a region, and that the x-amz-region-set header was signed.
     let expected_start =
         "AWS4-ECDSA-P256-SHA256 Credential=ANOTREAL/20090213/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-region-set;x-amz-user-agent, Signature=";
@@ -101,7 +102,6 @@ async fn s3_object_lambda() {
     let captured_request = captured_request.expect_request();
     assert_eq!(captured_request.uri().to_string(), "https://myolap-123412341234.s3-object-lambda.us-east-100.amazonaws.com/s3.txt?x-id=GetObject");
     let auth_header = captured_request.headers().get("AUTHORIZATION").unwrap();
-    let auth_header = auth_header.to_str().unwrap();
     // verifies that both the signing scope (s3-object-lambda) has been set as well as the ARN region
     // us-east-100
     let expected_start =
@@ -138,14 +138,16 @@ async fn s3_object_lambda_no_cross_region() {
 #[tokio::test]
 async fn write_get_object_response() {
     let (req, client) = test_client(|b| b);
-    let _write = client
-        .write_get_object_response()
-        .request_route("req-route")
-        .request_token("token")
-        .status_code(200)
-        .body(vec![1, 2, 3].into())
-        .send()
-        .await;
+    let _write = dbg!(
+        client
+            .write_get_object_response()
+            .request_route("req-route")
+            .request_token("token")
+            .status_code(200)
+            .body(vec![1, 2, 3].into())
+            .send()
+            .await
+    );
 
     let captured_request = req.expect_request();
     assert_eq!(

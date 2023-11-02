@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disable
 
 #[derive(Debug)]
 struct DisableSecurityHubResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DisableSecurityHubResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DisableSecurityHubResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DisableS
 }
 #[derive(Debug)]
 struct DisableSecurityHubRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DisableSecurityHubRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DisableSecurityHubRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -192,13 +192,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DisableSecu
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DisableSecurityHubEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DisableSecurityHubEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisableSecurityHubEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DisableSecurityHubEndpointParamsInterceptor"
     }

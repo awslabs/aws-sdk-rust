@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for DetachL
 
 #[derive(Debug)]
 struct DetachLoadBalancerTargetGroupsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DetachLoadBalancerTargetGroupsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DetachLoadBalancerTargetGroupsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -166,7 +166,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DetachLo
 }
 #[derive(Debug)]
 struct DetachLoadBalancerTargetGroupsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DetachLoadBalancerTargetGroupsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DetachLoadBalancerTargetGroupsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -209,13 +209,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DetachLoadB
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DetachLoadBalancerTargetGroupsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DetachLoadBalancerTargetGroupsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DetachLoadBalancerTargetGroupsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DetachLoadBalancerTargetGroupsEndpointParamsInterceptor"
     }

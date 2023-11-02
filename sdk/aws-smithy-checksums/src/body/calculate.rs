@@ -145,7 +145,7 @@ mod tests {
             .expect("checksum generation was without error")
             .expect("trailers were set");
         let checksum_trailer = trailers
-            .get(&CRC_32_HEADER_NAME)
+            .get(CRC_32_HEADER_NAME)
             .expect("trailers contain crc32 checksum");
         let checksum_trailer = header_value_as_checksum_string(checksum_trailer);
 

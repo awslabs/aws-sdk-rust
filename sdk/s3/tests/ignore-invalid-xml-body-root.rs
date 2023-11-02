@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![cfg(feature = "test-util")]
+
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::Config;
 use aws_sdk_s3::{config::Credentials, config::Region, types::ObjectAttributes, Client};
@@ -58,5 +60,5 @@ async fn ignore_invalid_xml_body_root() {
         .await
         .unwrap();
 
-    http_client.assert_requests_match(&[AUTHORIZATION]);
+    http_client.assert_requests_match(&[AUTHORIZATION.as_str()]);
 }

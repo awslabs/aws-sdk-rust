@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AssumeI
 
 #[derive(Debug)]
 struct AssumeImpersonationRoleResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for AssumeImpersonationRoleResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AssumeImpersonationRoleResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for AssumeIm
 }
 #[derive(Debug)]
 struct AssumeImpersonationRoleRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AssumeImpersonationRoleRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AssumeImpersonationRoleRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -203,13 +203,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AssumeImper
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct AssumeImpersonationRoleEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for AssumeImpersonationRoleEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AssumeImpersonationRoleEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "AssumeImpersonationRoleEndpointParamsInterceptor"
     }

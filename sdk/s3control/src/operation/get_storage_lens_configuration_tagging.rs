@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetStor
 
 #[derive(Debug)]
 struct GetStorageLensConfigurationTaggingResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetStorageLensConfigurationTaggingResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetStorageLensConfigurationTaggingResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetStora
 }
 #[derive(Debug)]
 struct GetStorageLensConfigurationTaggingRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetStorageLensConfigurationTaggingRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetStorageLensConfigurationTaggingRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -220,13 +220,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetStorageL
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetStorageLensConfigurationTaggingEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetStorageLensConfigurationTaggingEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetStorageLensConfigurationTaggingEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetStorageLensConfigurationTaggingEndpointParamsInterceptor"
     }

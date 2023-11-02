@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for AcceptC
 
 #[derive(Debug)]
 struct AcceptCertificateTransferResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for AcceptCertificateTransferResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AcceptCertificateTransferResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for AcceptCe
 }
 #[derive(Debug)]
 struct AcceptCertificateTransferRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AcceptCertificateTransferRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AcceptCertificateTransferRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -217,13 +217,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AcceptCerti
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct AcceptCertificateTransferEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for AcceptCertificateTransferEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AcceptCertificateTransferEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "AcceptCertificateTransferEndpointParamsInterceptor"
     }

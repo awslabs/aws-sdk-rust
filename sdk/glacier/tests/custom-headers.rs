@@ -58,8 +58,8 @@ async fn autofill_account_id() {
         .await;
     let req = handler.expect_request();
     assert_eq!(
-        "/-/vaults/vault/multipart-uploads/some%2Fupload%2Fid",
-        req.uri().path()
+        "https://glacier.us-east-1.amazonaws.com/-/vaults/vault/multipart-uploads/some%2Fupload%2Fid",
+        req.uri()
     );
 }
 

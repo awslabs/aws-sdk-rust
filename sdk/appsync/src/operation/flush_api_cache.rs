@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for FlushAp
 
 #[derive(Debug)]
 struct FlushApiCacheResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for FlushApiCacheResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for FlushApiCacheResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for FlushApi
 }
 #[derive(Debug)]
 struct FlushApiCacheRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for FlushApiCacheRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for FlushApiCacheRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -202,13 +202,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for FlushApiCac
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct FlushApiCacheEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for FlushApiCacheEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for FlushApiCacheEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "FlushApiCacheEndpointParamsInterceptor"
     }

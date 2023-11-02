@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetInvi
 
 #[derive(Debug)]
 struct GetInvitationsCountResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetInvitationsCountResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetInvitationsCountResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetInvit
 }
 #[derive(Debug)]
 struct GetInvitationsCountRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetInvitationsCountRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInvitationsCountRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -191,13 +191,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetInvitati
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetInvitationsCountEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetInvitationsCountEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetInvitationsCountEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetInvitationsCountEndpointParamsInterceptor"
     }

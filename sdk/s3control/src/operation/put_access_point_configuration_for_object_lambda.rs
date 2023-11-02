@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutAcce
 
 #[derive(Debug)]
 struct PutAccessPointConfigurationForObjectLambdaResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutAccessPointConfigurationForObjectLambdaResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutAccessPointConfigurationForObjectLambdaResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -164,7 +164,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutAcces
 }
 #[derive(Debug)]
 struct PutAccessPointConfigurationForObjectLambdaRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutAccessPointConfigurationForObjectLambdaRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutAccessPointConfigurationForObjectLambdaRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -217,13 +217,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutAccessPo
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct PutAccessPointConfigurationForObjectLambdaEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for PutAccessPointConfigurationForObjectLambdaEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutAccessPointConfigurationForObjectLambdaEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutAccessPointConfigurationForObjectLambdaEndpointParamsInterceptor"
     }

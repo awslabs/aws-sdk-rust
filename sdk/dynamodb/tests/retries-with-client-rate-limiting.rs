@@ -10,10 +10,10 @@ use aws_smithy_async::time::SharedTimeSource;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
 use aws_smithy_runtime::client::retries::RetryPartition;
-use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
+use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
 use std::time::{Duration, SystemTime};
 
-fn req() -> HttpRequest {
+fn req() -> http::Request<SdkBody> {
     http::Request::builder()
         .body(SdkBody::from("request body"))
         .unwrap()

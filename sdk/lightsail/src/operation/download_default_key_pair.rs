@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Downloa
 
 #[derive(Debug)]
 struct DownloadDefaultKeyPairResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DownloadDefaultKeyPairResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DownloadDefaultKeyPairResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Download
 }
 #[derive(Debug)]
 struct DownloadDefaultKeyPairRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DownloadDefaultKeyPairRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DownloadDefaultKeyPairRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DownloadDef
             crate::protocol_serde::shape_download_default_key_pair::ser_download_default_key_pair_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DownloadDefaultKeyPairEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DownloadDefaultKeyPairEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DownloadDefaultKeyPairEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DownloadDefaultKeyPairEndpointParamsInterceptor"
     }

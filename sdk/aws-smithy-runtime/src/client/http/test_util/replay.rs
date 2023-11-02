@@ -11,7 +11,7 @@ use aws_smithy_runtime_api::client::http::{
 use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_runtime_api::shared::IntoShared;
-use http::header::{HeaderName, CONTENT_TYPE};
+use http::header::CONTENT_TYPE;
 use std::ops::Deref;
 use std::sync::{Arc, Mutex, MutexGuard};
 
@@ -29,8 +29,11 @@ pub struct ReplayEvent {
 
 impl ReplayEvent {
     /// Creates a new `ReplayEvent`.
-    pub fn new(request: HttpRequest, response: HttpResponse) -> Self {
-        Self { request, response }
+    pub fn new(request: impl TryInto<HttpRequest>, response: impl TryInto<HttpResponse>) -> Self {
+        Self {
+            request: request.try_into().ok().expect("invalid request"),
+            response: response.try_into().ok().expect("invalid response"),
+        }
     }
 
     /// Returns the test request.
@@ -57,7 +60,7 @@ struct ValidateRequest {
 }
 
 impl ValidateRequest {
-    fn assert_matches(&self, index: usize, ignore_headers: &[HeaderName]) {
+    fn assert_matches(&self, index: usize, ignore_headers: &[&str]) {
         let (actual, expected) = (&self.actual, &self.expected);
         assert_eq!(
             actual.uri(),
@@ -65,14 +68,13 @@ impl ValidateRequest {
             "Request #{index} - URI doesn't match expected value"
         );
         for (name, value) in expected.headers() {
-            if !ignore_headers.contains(name) {
+            if !ignore_headers.contains(&name) {
                 let actual_header = actual
                     .headers()
                     .get(name)
                     .unwrap_or_else(|| panic!("Request #{index} - Header {name:?} is missing"));
                 assert_eq!(
-                    actual_header.to_str().unwrap(),
-                    value.to_str().unwrap(),
+                    actual_header, value,
                     "Request #{index} - Header {name:?} doesn't match expected value",
                 );
             }
@@ -82,7 +84,7 @@ impl ValidateRequest {
         let media_type = if actual
             .headers()
             .get(CONTENT_TYPE)
-            .map(|v| v.to_str().unwrap().contains("json"))
+            .map(|v| v.contains("json"))
             .unwrap_or(false)
         {
             MediaType::Json
@@ -215,7 +217,7 @@ impl StaticReplayClient {
     /// A list of headers that should be ignored when comparing requests can be passed
     /// for cases where headers are non-deterministic or are irrelevant to the test.
     #[track_caller]
-    pub fn assert_requests_match(&self, ignore_headers: &[HeaderName]) {
+    pub fn assert_requests_match(&self, ignore_headers: &[&str]) {
         for (i, req) in self.requests().iter().enumerate() {
             req.assert_matches(i, ignore_headers)
         }

@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetInte
 
 #[derive(Debug)]
 struct GetInterpolatedAssetPropertyValuesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetInterpolatedAssetPropertyValuesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetInterpolatedAssetPropertyValuesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetInter
 }
 #[derive(Debug)]
 struct GetInterpolatedAssetPropertyValuesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetInterpolatedAssetPropertyValuesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetInterpolatedAssetPropertyValuesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -287,13 +287,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetInterpol
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetInterpolatedAssetPropertyValuesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetInterpolatedAssetPropertyValuesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetInterpolatedAssetPropertyValuesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetInterpolatedAssetPropertyValuesEndpointParamsInterceptor"
     }

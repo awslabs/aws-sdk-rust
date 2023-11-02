@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetPort
 
 #[derive(Debug)]
 struct GetPortalServiceProviderMetadataResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetPortalServiceProviderMetadataResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetPortalServiceProviderMetadataResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetPorta
 }
 #[derive(Debug)]
 struct GetPortalServiceProviderMetadataRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetPortalServiceProviderMetadataRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetPortalServiceProviderMetadataRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -216,13 +216,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetPortalSe
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetPortalServiceProviderMetadataEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetPortalServiceProviderMetadataEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetPortalServiceProviderMetadataEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetPortalServiceProviderMetadataEndpointParamsInterceptor"
     }

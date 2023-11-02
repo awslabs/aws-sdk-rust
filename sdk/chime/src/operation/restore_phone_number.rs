@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Restore
 
 #[derive(Debug)]
 struct RestorePhoneNumberResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RestorePhoneNumberResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RestorePhoneNumberResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RestoreP
 }
 #[derive(Debug)]
 struct RestorePhoneNumberRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RestorePhoneNumberRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RestorePhoneNumberRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -212,13 +212,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RestorePhon
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RestorePhoneNumberEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RestorePhoneNumberEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RestorePhoneNumberEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RestorePhoneNumberEndpointParamsInterceptor"
     }

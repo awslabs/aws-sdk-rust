@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+#![cfg(feature = "test-util")]
+
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::Config;
 use aws_sdk_s3::{config::Credentials, config::Region, primitives::ByteStream, Client};
@@ -88,12 +90,9 @@ async fn test_s3_signer_with_naughty_string_metadata() {
     let snapshot_signature =
         "Signature=a5115604df66219874a9e5a8eab4c9f7a28c992ab2d918037a285756c019f3b2";
     assert!(
-        auth_header
-            .to_str()
-            .unwrap()
-            .contains(snapshot_signature),
+        auth_header .contains(snapshot_signature),
         "authorization header signature did not match expected signature: got {}, expected it to contain {}",
-        auth_header.to_str().unwrap(),
+        auth_header,
         snapshot_signature
     );
 }

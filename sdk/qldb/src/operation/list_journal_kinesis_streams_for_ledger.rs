@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListJou
 
 #[derive(Debug)]
 struct ListJournalKinesisStreamsForLedgerResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListJournalKinesisStreamsForLedgerResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for ListJournalKinesisStreamsForLedgerResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -165,7 +165,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for ListJour
 }
 #[derive(Debug)]
 struct ListJournalKinesisStreamsForLedgerRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListJournalKinesisStreamsForLedgerRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for ListJournalKinesisStreamsForLedgerRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -231,13 +231,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListJournal
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct ListJournalKinesisStreamsForLedgerEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListJournalKinesisStreamsForLedgerEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for ListJournalKinesisStreamsForLedgerEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "ListJournalKinesisStreamsForLedgerEndpointParamsInterceptor"
     }

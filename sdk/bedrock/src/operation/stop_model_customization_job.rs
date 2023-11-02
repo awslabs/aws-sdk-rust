@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for StopMod
 
 #[derive(Debug)]
 struct StopModelCustomizationJobResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StopModelCustomizationJobResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for StopModelCustomizationJobResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for StopMode
 }
 #[derive(Debug)]
 struct StopModelCustomizationJobRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StopModelCustomizationJobRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for StopModelCustomizationJobRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -204,13 +204,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for StopModelCu
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct StopModelCustomizationJobEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for StopModelCustomizationJobEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for StopModelCustomizationJobEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "StopModelCustomizationJobEndpointParamsInterceptor"
     }

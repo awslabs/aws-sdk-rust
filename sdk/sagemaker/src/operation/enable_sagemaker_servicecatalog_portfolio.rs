@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for EnableS
 
 #[derive(Debug)]
 struct EnableSagemakerServicecatalogPortfolioResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for EnableSagemakerServicecatalogPortfolioResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for EnableSagemakerServicecatalogPortfolioResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for EnableSa
 }
 #[derive(Debug)]
 struct EnableSagemakerServicecatalogPortfolioRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for EnableSagemakerServicecatalogPortfolioRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for EnableSagemakerServicecatalogPortfolioRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -213,13 +213,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for EnableSagem
             crate::protocol_serde::shape_enable_sagemaker_servicecatalog_portfolio::ser_enable_sagemaker_servicecatalog_portfolio_input(&input)?,
         );
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct EnableSagemakerServicecatalogPortfolioEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for EnableSagemakerServicecatalogPortfolioEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for EnableSagemakerServicecatalogPortfolioEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "EnableSagemakerServicecatalogPortfolioEndpointParamsInterceptor"
     }

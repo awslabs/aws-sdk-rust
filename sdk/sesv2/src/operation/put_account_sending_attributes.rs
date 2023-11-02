@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for PutAcco
 
 #[derive(Debug)]
 struct PutAccountSendingAttributesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutAccountSendingAttributesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for PutAccountSendingAttributesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for PutAccou
 }
 #[derive(Debug)]
 struct PutAccountSendingAttributesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutAccountSendingAttributesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for PutAccountSendingAttributesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -198,13 +198,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutAccountS
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct PutAccountSendingAttributesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for PutAccountSendingAttributesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for PutAccountSendingAttributesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "PutAccountSendingAttributesEndpointParamsInterceptor"
     }

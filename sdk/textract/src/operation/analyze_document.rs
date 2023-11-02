@@ -133,7 +133,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Analyze
 
 #[derive(Debug)]
 struct AnalyzeDocumentResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for AnalyzeDocumentResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for AnalyzeDocumentResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -154,7 +154,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for AnalyzeD
 }
 #[derive(Debug)]
 struct AnalyzeDocumentRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AnalyzeDocumentRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for AnalyzeDocumentRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -200,13 +200,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AnalyzeDocu
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct AnalyzeDocumentEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for AnalyzeDocumentEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for AnalyzeDocumentEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "AnalyzeDocumentEndpointParamsInterceptor"
     }

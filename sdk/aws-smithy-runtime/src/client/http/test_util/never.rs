@@ -146,7 +146,6 @@ async fn never_tcp_connector_plugs_into_hyper_014() {
     use super::*;
     use crate::client::http::hyper_014::HyperClientBuilder;
     use aws_smithy_async::rt::sleep::TokioSleep;
-    use aws_smithy_http::body::SdkBody;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use std::time::Duration;
 
@@ -164,12 +163,7 @@ async fn never_tcp_connector_plugs_into_hyper_014() {
     );
 
     let err = http_connector
-        .call(
-            http::Request::builder()
-                .uri("https://example.com/")
-                .body(SdkBody::empty())
-                .unwrap(),
-        )
+        .call(HttpRequest::get("http://fakeuri.com").unwrap())
         .await
         .expect_err("it should time out");
     assert!(dbg!(err).is_timeout());

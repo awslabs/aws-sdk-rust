@@ -8,7 +8,7 @@ use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::Client;
 use aws_smithy_runtime::client::http::test_util::capture_request;
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::interceptors::Interceptor;
+use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Layer, Storable, StoreReplace};
 use http::header::USER_AGENT;
@@ -24,7 +24,7 @@ async fn interceptor_priority() {
 
     #[derive(Debug)]
     struct TestInterceptor(&'static str);
-    impl Interceptor for TestInterceptor {
+    impl Intercept for TestInterceptor {
         fn name(&self) -> &'static str {
             "TestInterceptor"
         }
@@ -81,7 +81,7 @@ async fn interceptor_priority() {
     .expect_err("no fake response set");
 
     let request = rx.expect_request();
-    assert_eq!("value2", request.headers()["test-header"]);
+    assert_eq!("value2", request.headers().get("test-header").unwrap());
 }
 
 #[tokio::test]
@@ -112,6 +112,6 @@ async fn set_test_user_agent_through_request_mutation() {
     .expect_err("no fake response set");
 
     let request = rx.expect_request();
-    assert_eq!("test", request.headers()[USER_AGENT]);
-    assert_eq!("test", request.headers()["x-amz-user-agent"]);
+    assert_eq!("test", request.headers().get(USER_AGENT).unwrap());
+    assert_eq!("test", request.headers().get("x-amz-user-agent").unwrap());
 }

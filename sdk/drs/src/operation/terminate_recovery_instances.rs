@@ -135,7 +135,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Termina
 
 #[derive(Debug)]
 struct TerminateRecoveryInstancesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for TerminateRecoveryInstancesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for TerminateRecoveryInstancesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -156,7 +156,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Terminat
 }
 #[derive(Debug)]
 struct TerminateRecoveryInstancesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TerminateRecoveryInstancesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for TerminateRecoveryInstancesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -199,13 +199,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for TerminateRe
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct TerminateRecoveryInstancesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for TerminateRecoveryInstancesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for TerminateRecoveryInstancesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "TerminateRecoveryInstancesEndpointParamsInterceptor"
     }

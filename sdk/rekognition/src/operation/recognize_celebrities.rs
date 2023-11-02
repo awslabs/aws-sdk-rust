@@ -134,7 +134,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Recogni
 
 #[derive(Debug)]
 struct RecognizeCelebritiesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for RecognizeCelebritiesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for RecognizeCelebritiesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -155,7 +155,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Recogniz
 }
 #[derive(Debug)]
 struct RecognizeCelebritiesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RecognizeCelebritiesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for RecognizeCelebritiesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -203,13 +203,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for RecognizeCe
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct RecognizeCelebritiesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for RecognizeCelebritiesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for RecognizeCelebritiesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "RecognizeCelebritiesEndpointParamsInterceptor"
     }

@@ -143,7 +143,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for Disasso
 
 #[derive(Debug)]
 struct DisassociateWirelessDeviceFromThingResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for DisassociateWirelessDeviceFromThingResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for DisassociateWirelessDeviceFromThingResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -168,7 +168,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for Disassoc
 }
 #[derive(Debug)]
 struct DisassociateWirelessDeviceFromThingRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DisassociateWirelessDeviceFromThingRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for DisassociateWirelessDeviceFromThingRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -216,13 +216,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for Disassociat
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct DisassociateWirelessDeviceFromThingEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DisassociateWirelessDeviceFromThingEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for DisassociateWirelessDeviceFromThingEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "DisassociateWirelessDeviceFromThingEndpointParamsInterceptor"
     }

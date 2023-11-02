@@ -42,29 +42,32 @@ impl Storable for EndpointResolverParams {
     type Storer = StoreReplace<Self>;
 }
 
+#[deprecated(note = "Renamed to ResolveEndpoint.")]
+pub use ResolveEndpoint as EndpointResolver;
+
 /// Configurable endpoint resolver implementation.
-pub trait EndpointResolver: Send + Sync + fmt::Debug {
+pub trait ResolveEndpoint: Send + Sync + fmt::Debug {
     /// Asynchronously resolves an endpoint to use from the given endpoint parameters.
     fn resolve_endpoint<'a>(&'a self, params: &'a EndpointResolverParams) -> EndpointFuture<'a>;
 }
 
 /// Shared endpoint resolver.
 ///
-/// This is a simple shared ownership wrapper type for the [`EndpointResolver`] trait.
+/// This is a simple shared ownership wrapper type for the [`ResolveEndpoint`] trait.
 #[derive(Clone, Debug)]
-pub struct SharedEndpointResolver(Arc<dyn EndpointResolver>);
+pub struct SharedEndpointResolver(Arc<dyn ResolveEndpoint>);
 
 impl SharedEndpointResolver {
     /// Creates a new [`SharedEndpointResolver`].
-    pub fn new(endpoint_resolver: impl EndpointResolver + 'static) -> Self {
+    pub fn new(endpoint_resolver: impl ResolveEndpoint + 'static) -> Self {
         Self(Arc::new(endpoint_resolver))
     }
 }
 
-impl EndpointResolver for SharedEndpointResolver {
+impl ResolveEndpoint for SharedEndpointResolver {
     fn resolve_endpoint<'a>(&'a self, params: &'a EndpointResolverParams) -> EndpointFuture<'a> {
         self.0.resolve_endpoint(params)
     }
 }
 
-impl_shared_conversions!(convert SharedEndpointResolver from EndpointResolver using SharedEndpointResolver::new);
+impl_shared_conversions!(convert SharedEndpointResolver from ResolveEndpoint using SharedEndpointResolver::new);

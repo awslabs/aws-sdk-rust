@@ -5,10 +5,12 @@
 
 use aws_sigv4::http_request::{
     PayloadChecksumKind, PercentEncodingMode, SessionTokenMode, SignableBody, SignatureLocation,
-    SigningSettings, UriPathNormalizationMode,
+    SigningInstructions, SigningSettings, UriPathNormalizationMode,
 };
+use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::AuthSchemeEndpointConfig;
 use aws_smithy_runtime_api::client::identity::Identity;
+use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use aws_smithy_types::Document;
 use aws_types::region::{Region, SigningRegion, SigningRegionSet};
@@ -195,4 +197,25 @@ fn extract_field_from_endpoint_config<'a>(
         .as_document()
         .and_then(Document::as_object)
         .and_then(|config| config.get(field_name))
+}
+
+fn apply_signing_instructions(
+    instructions: SigningInstructions,
+    request: &mut HttpRequest,
+) -> Result<(), BoxError> {
+    let (new_headers, new_query) = instructions.into_parts();
+    for header in new_headers.into_iter() {
+        let mut value = http::HeaderValue::from_str(header.value()).unwrap();
+        value.set_sensitive(header.sensitive());
+        request.headers_mut().insert(header.name(), value);
+    }
+
+    if !new_query.is_empty() {
+        let mut query = aws_smithy_http::query_writer::QueryWriter::new_from_string(request.uri())?;
+        for (name, value) in new_query {
+            query.insert(name, &value);
+        }
+        request.set_uri(query.build_uri())?;
+    }
+    Ok(())
 }

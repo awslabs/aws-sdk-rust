@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SetSecu
 
 #[derive(Debug)]
 struct SetSecurityGroupsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for SetSecurityGroupsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SetSecurityGroupsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for SetSecur
 }
 #[derive(Debug)]
 struct SetSecurityGroupsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for SetSecurityGroupsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SetSecurityGroupsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -204,13 +204,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for SetSecurity
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct SetSecurityGroupsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for SetSecurityGroupsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SetSecurityGroupsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SetSecurityGroupsEndpointParamsInterceptor"
     }

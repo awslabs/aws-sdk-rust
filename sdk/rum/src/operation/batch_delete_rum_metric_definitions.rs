@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for BatchDe
 
 #[derive(Debug)]
 struct BatchDeleteRumMetricDefinitionsResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for BatchDeleteRumMetricDefinitionsResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for BatchDeleteRumMetricDefinitionsResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -163,7 +163,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for BatchDel
 }
 #[derive(Debug)]
 struct BatchDeleteRumMetricDefinitionsRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for BatchDeleteRumMetricDefinitionsRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for BatchDeleteRumMetricDefinitionsRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -227,13 +227,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for BatchDelete
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct BatchDeleteRumMetricDefinitionsEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for BatchDeleteRumMetricDefinitionsEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for BatchDeleteRumMetricDefinitionsEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "BatchDeleteRumMetricDefinitionsEndpointParamsInterceptor"
     }

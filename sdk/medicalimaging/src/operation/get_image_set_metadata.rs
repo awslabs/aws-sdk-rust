@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for GetImag
 
 #[derive(Debug)]
 struct GetImageSetMetadataResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetImageSetMetadataResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for GetImageSetMetadataResponseDeserializer {
     fn deserialize_streaming(
         &self,
         response: &mut ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -173,7 +173,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for GetImage
 }
 #[derive(Debug)]
 struct GetImageSetMetadataRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetImageSetMetadataRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for GetImageSetMetadataRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -251,13 +251,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetImageSet
         };
         let body = ::aws_smithy_http::body::SdkBody::from("");
 
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct GetImageSetMetadataEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetImageSetMetadataEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for GetImageSetMetadataEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "GetImageSetMetadataEndpointParamsInterceptor"
     }

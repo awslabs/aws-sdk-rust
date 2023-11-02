@@ -140,7 +140,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for SearchN
 
 #[derive(Debug)]
 struct SearchNetworkProfilesResponseDeserializer;
-impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for SearchNetworkProfilesResponseDeserializer {
+impl ::aws_smithy_runtime_api::client::ser_de::DeserializeResponse for SearchNetworkProfilesResponseDeserializer {
     fn deserialize_nonstreaming(
         &self,
         response: &::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
@@ -161,7 +161,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::ResponseDeserializer for SearchNe
 }
 #[derive(Debug)]
 struct SearchNetworkProfilesRequestSerializer;
-impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for SearchNetworkProfilesRequestSerializer {
+impl ::aws_smithy_runtime_api::client::ser_de::SerializeRequest for SearchNetworkProfilesRequestSerializer {
     #[allow(unused_mut, clippy::let_and_return, clippy::needless_borrow, clippy::useless_conversion)]
     fn serialize_input(
         &self,
@@ -209,13 +209,13 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for SearchNetwo
             let content_length = content_length.to_string();
             request_builder = _header_serialization_settings.set_default_header(request_builder, ::http::header::CONTENT_LENGTH, &content_length);
         }
-        ::std::result::Result::Ok(request_builder.body(body).expect("valid request"))
+        ::std::result::Result::Ok(request_builder.body(body).expect("valid request").try_into().unwrap())
     }
 }
 #[derive(Debug)]
 struct SearchNetworkProfilesEndpointParamsInterceptor;
 
-impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for SearchNetworkProfilesEndpointParamsInterceptor {
+impl ::aws_smithy_runtime_api::client::interceptors::Intercept for SearchNetworkProfilesEndpointParamsInterceptor {
     fn name(&self) -> &'static str {
         "SearchNetworkProfilesEndpointParamsInterceptor"
     }
