@@ -10,7 +10,7 @@ impl DeleteCrossAccountAuthorizationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DeleteCrossAccountAuthorizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorizationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_cross_account_authorization::DeleteCrossAccountAuthorization::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

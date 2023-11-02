@@ -28,10 +28,6 @@ tracing = "0.1"
 path = "../aws-smithy-async"
 version = "0.56.1"
 
-[dependencies.aws-smithy-http]
-path = "../aws-smithy-http"
-version = "0.56.1"
-
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 version = "0.56.1"

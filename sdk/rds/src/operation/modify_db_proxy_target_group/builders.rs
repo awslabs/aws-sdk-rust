@@ -10,7 +10,7 @@ impl ModifyDbProxyTargetGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ModifyDBProxyTargetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroup::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

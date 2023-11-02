@@ -10,7 +10,7 @@ impl DescribeFleetAdvisorSchemaObjectSummaryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DescribeFleetAdvisorSchemaObjectSummaryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummary::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

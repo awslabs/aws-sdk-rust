@@ -14,12 +14,12 @@ impl UnassignIpv6Addresses {
         input: crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesInput,
     ) -> ::std::result::Result<
         crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let map_err = |err: ::aws_smithy_http::result::SdkError<
+        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
@@ -45,7 +45,7 @@ impl UnassignIpv6Addresses {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -247,7 +247,7 @@ pub enum UnassignIpv6AddressesError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for UnassignIpv6AddressesError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for UnassignIpv6AddressesError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

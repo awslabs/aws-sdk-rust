@@ -10,7 +10,10 @@ impl TagUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::tag_user::TagUserOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::tag_user::TagUserError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.tag_user();
         fluent_builder.inner = self;
@@ -75,9 +78,15 @@ impl TagUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::tag_user::TagUserOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::tag_user::TagUserError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::tag_user::TagUserError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::tag_user::TagUser::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

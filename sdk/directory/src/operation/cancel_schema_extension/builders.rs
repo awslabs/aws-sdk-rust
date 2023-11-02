@@ -10,7 +10,7 @@ impl CancelSchemaExtensionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_schema_extension::CancelSchemaExtensionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::cancel_schema_extension::CancelSchemaExtensionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl CancelSchemaExtensionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_schema_extension::CancelSchemaExtensionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::cancel_schema_extension::CancelSchemaExtensionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::cancel_schema_extension::CancelSchemaExtension::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

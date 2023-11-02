@@ -14,12 +14,12 @@ impl GetGlossaryTerm {
         input: crate::operation::get_glossary_term::GetGlossaryTermInput,
     ) -> ::std::result::Result<
         crate::operation::get_glossary_term::GetGlossaryTermOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_glossary_term::GetGlossaryTermError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let map_err = |err: ::aws_smithy_http::result::SdkError<
+        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
@@ -45,7 +45,7 @@ impl GetGlossaryTerm {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -281,7 +281,7 @@ pub enum GetGlossaryTermError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for GetGlossaryTermError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for GetGlossaryTermError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

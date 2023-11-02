@@ -10,7 +10,10 @@ impl EnableInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::enable::EnableOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::enable::EnableError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable::EnableError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.enable();
         fluent_builder.inner = self;
@@ -63,9 +66,15 @@ impl EnableFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::enable::EnableOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::enable::EnableError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::enable::EnableError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::enable::Enable::operation_runtime_plugins(self.handle.runtime_plugins.clone(), &self.handle.conf, self.config_override);
         crate::operation::enable::Enable::orchestrate(&runtime_plugins, input).await

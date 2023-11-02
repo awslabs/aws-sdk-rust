@@ -10,7 +10,7 @@ impl AllocatePublicVirtualInterfaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -75,12 +75,15 @@ impl AllocatePublicVirtualInterfaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterface::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -3,7 +3,7 @@ pub(crate) mod internal {
     pub type BoxFuture<T> = ::std::pin::Pin<::std::boxed::Box<dyn ::std::future::Future<Output = T> + ::std::marker::Send>>;
 
     pub type SendResult<T, E> =
-        ::std::result::Result<T, ::aws_smithy_http::result::SdkError<E, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>;
+        ::std::result::Result<T, ::aws_smithy_runtime_api::client::result::SdkError<E, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>;
 
     pub trait CustomizableSend<T, E>: ::std::marker::Send + ::std::marker::Sync {
         // Takes an owned `self` as the implementation will internally call methods that take `self`.

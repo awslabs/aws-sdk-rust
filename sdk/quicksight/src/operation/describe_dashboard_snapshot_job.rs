@@ -14,12 +14,12 @@ impl DescribeDashboardSnapshotJob {
         input: crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobInput,
     ) -> ::std::result::Result<
         crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_dashboard_snapshot_job::DescribeDashboardSnapshotJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let map_err = |err: ::aws_smithy_http::result::SdkError<
+        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
@@ -45,7 +45,7 @@ impl DescribeDashboardSnapshotJob {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -299,7 +299,7 @@ pub enum DescribeDashboardSnapshotJobError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for DescribeDashboardSnapshotJobError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for DescribeDashboardSnapshotJobError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

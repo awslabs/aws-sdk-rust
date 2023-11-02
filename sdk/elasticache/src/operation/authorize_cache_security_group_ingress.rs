@@ -14,12 +14,12 @@ impl AuthorizeCacheSecurityGroupIngress {
         input: crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressInput,
     ) -> ::std::result::Result<
         crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let map_err = |err: ::aws_smithy_http::result::SdkError<
+        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
@@ -45,7 +45,7 @@ impl AuthorizeCacheSecurityGroupIngress {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -273,7 +273,7 @@ pub enum AuthorizeCacheSecurityGroupIngressError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for AuthorizeCacheSecurityGroupIngressError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for AuthorizeCacheSecurityGroupIngressError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

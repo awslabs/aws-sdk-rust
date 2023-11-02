@@ -10,7 +10,7 @@ impl CreateClusterSubnetGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl CreateClusterSubnetGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroup::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

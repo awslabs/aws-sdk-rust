@@ -10,7 +10,7 @@ impl AcceptVpcPeeringConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl AcceptVpcPeeringConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnection::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,10 @@ impl PutBotInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_bot::PutBotOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_bot::PutBotError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.put_bot();
         fluent_builder.inner = self;
@@ -65,9 +68,15 @@ impl PutBotFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_bot::PutBotOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_bot::PutBotError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::put_bot::PutBotError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::put_bot::PutBot::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

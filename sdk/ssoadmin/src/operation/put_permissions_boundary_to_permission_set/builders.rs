@@ -10,7 +10,7 @@ impl PutPermissionsBoundaryToPermissionSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl PutPermissionsBoundaryToPermissionSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::put_permissions_boundary_to_permission_set::PutPermissionsBoundaryToPermissionSet::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

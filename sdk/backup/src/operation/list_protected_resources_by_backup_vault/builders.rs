@@ -10,7 +10,7 @@ impl ListProtectedResourcesByBackupVaultInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ListProtectedResourcesByBackupVaultFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVaultError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::list_protected_resources_by_backup_vault::ListProtectedResourcesByBackupVault::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

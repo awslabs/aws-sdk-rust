@@ -10,7 +10,7 @@ impl DecodeAuthorizationMessageInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::decode_authorization_message::DecodeAuthorizationMessageError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -84,12 +84,15 @@ impl DecodeAuthorizationMessageFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::decode_authorization_message::DecodeAuthorizationMessageError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::decode_authorization_message::DecodeAuthorizationMessage::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

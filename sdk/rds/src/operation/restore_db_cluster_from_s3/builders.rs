@@ -10,7 +10,7 @@ impl RestoreDbClusterFromS3InputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -77,12 +77,15 @@ impl RestoreDBClusterFromS3FluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

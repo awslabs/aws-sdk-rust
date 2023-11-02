@@ -10,7 +10,7 @@ impl ReorderReceiptRuleSetInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -76,12 +76,15 @@ impl ReorderReceiptRuleSetFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSet::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

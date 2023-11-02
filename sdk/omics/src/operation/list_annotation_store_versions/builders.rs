@@ -10,7 +10,7 @@ impl ListAnnotationStoreVersionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ListAnnotationStoreVersionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_annotation_store_versions::ListAnnotationStoreVersionsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_annotation_store_versions::ListAnnotationStoreVersions::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

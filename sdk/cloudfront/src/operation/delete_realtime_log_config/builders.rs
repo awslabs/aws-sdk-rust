@@ -10,7 +10,7 @@ impl DeleteRealtimeLogConfigInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DeleteRealtimeLogConfigFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfigError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_realtime_log_config::DeleteRealtimeLogConfig::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

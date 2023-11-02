@@ -10,7 +10,7 @@ impl RetireGrantInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::retire_grant::RetireGrantOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::retire_grant::RetireGrantError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -83,12 +83,15 @@ impl RetireGrantFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retire_grant::RetireGrantOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::retire_grant::RetireGrantError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::retire_grant::RetireGrant::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

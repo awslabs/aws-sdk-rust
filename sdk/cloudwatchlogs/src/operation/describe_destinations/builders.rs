@@ -10,7 +10,7 @@ impl DescribeDestinationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_destinations::DescribeDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_destinations::DescribeDestinationsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DescribeDestinationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_destinations::DescribeDestinationsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_destinations::DescribeDestinationsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::describe_destinations::DescribeDestinations::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

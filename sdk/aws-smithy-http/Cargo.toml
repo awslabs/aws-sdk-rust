@@ -33,6 +33,11 @@ path = "../aws-smithy-eventstream"
 optional = true
 version = "0.56.1"
 
+[dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
+features = ["client"]
+version = "0.56.1"
+
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 features = ["byte-stream-poll-next", "http-body-0-4-x"]

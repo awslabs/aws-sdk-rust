@@ -10,7 +10,7 @@ impl ListControlDomainInsightsByAssessmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -76,12 +76,15 @@ impl ListControlDomainInsightsByAssessmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessmentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::list_control_domain_insights_by_assessment::ListControlDomainInsightsByAssessment::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

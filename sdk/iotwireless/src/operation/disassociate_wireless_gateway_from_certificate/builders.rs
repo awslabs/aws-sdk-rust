@@ -10,7 +10,7 @@ impl DisassociateWirelessGatewayFromCertificateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DisassociateWirelessGatewayFromCertificateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificate::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

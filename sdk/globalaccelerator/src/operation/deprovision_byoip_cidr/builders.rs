@@ -10,7 +10,7 @@ impl DeprovisionByoipCidrInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DeprovisionByoipCidrFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidr::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

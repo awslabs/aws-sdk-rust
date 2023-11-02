@@ -10,7 +10,7 @@ impl ExitStandbyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::exit_standby::ExitStandbyOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::exit_standby::ExitStandbyError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl ExitStandbyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::exit_standby::ExitStandbyOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::exit_standby::ExitStandbyError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::exit_standby::ExitStandby::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

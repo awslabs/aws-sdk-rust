@@ -10,7 +10,7 @@ impl ListRelatedResourcesForAuditFindingInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -85,12 +85,15 @@ impl ListRelatedResourcesForAuditFindingFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFinding::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

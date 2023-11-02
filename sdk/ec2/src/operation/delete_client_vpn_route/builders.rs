@@ -10,7 +10,7 @@ impl DeleteClientVpnRouteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DeleteClientVpnRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_client_vpn_route::DeleteClientVpnRoute::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

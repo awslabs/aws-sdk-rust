@@ -10,7 +10,7 @@ impl GetRuleGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_rule_group::GetRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_rule_group::GetRuleGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl GetRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_rule_group::GetRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_rule_group::GetRuleGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::get_rule_group::GetRuleGroup::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

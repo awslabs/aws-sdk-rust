@@ -10,7 +10,7 @@ impl DeleteResponseHeadersPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DeleteResponseHeadersPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicy::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

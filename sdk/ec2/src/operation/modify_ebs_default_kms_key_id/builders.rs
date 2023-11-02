@@ -10,7 +10,7 @@ impl ModifyEbsDefaultKmsKeyIdInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -75,12 +75,15 @@ impl ModifyEbsDefaultKmsKeyIdFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyId::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,7 @@ impl CreateConfigurationSetEventDestinationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -75,12 +75,15 @@ impl CreateConfigurationSetEventDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestinationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::create_configuration_set_event_destination::CreateConfigurationSetEventDestination::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

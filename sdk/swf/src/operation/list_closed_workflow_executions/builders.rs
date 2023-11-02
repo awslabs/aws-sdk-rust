@@ -10,7 +10,7 @@ impl ListClosedWorkflowExecutionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -87,12 +87,15 @@ impl ListClosedWorkflowExecutionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutions::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

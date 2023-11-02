@@ -10,7 +10,7 @@ impl BatchDeletePhoneNumberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl BatchDeletePhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_delete_phone_number::BatchDeletePhoneNumberError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::batch_delete_phone_number::BatchDeletePhoneNumber::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,7 @@ impl PutObjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_object::PutObjectOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::put_object::PutObjectError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -89,12 +89,15 @@ impl PutObjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_object::PutObjectOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::put_object::PutObjectError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::put_object::PutObject::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -140,7 +143,7 @@ impl PutObjectFluentBuilder {
         presigning_config: crate::presigning::PresigningConfig,
     ) -> ::std::result::Result<
         crate::presigning::PresignedRequest,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::put_object::PutObjectError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -155,7 +158,10 @@ impl PutObjectFluentBuilder {
             ::aws_sigv4::http_request::SignableBody::UnsignedPayload,
         ));
 
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let mut context = crate::operation::put_object::PutObject::orchestrate_with_stop_point(
             &runtime_plugins,
             input,
@@ -169,7 +175,7 @@ impl PutObjectFluentBuilder {
             })
         })?;
         let request = context.take_request().expect("request set before transmit");
-        crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_http::result::SdkError::construction_failure)
+        crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
     }
     /// <p>The canned ACL to apply to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned ACL</a>.</p>
     /// <p>This action is not supported by Amazon S3 on Outposts.</p>

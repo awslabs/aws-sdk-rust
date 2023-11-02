@@ -10,7 +10,7 @@ impl TranslateDocumentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::translate_document::TranslateDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::translate_document::TranslateDocumentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl TranslateDocumentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::translate_document::TranslateDocumentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::translate_document::TranslateDocumentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::translate_document::TranslateDocument::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

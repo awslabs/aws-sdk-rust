@@ -10,7 +10,7 @@ impl AdminGetUserInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::admin_get_user::AdminGetUserOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::admin_get_user::AdminGetUserError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -79,12 +79,15 @@ impl AdminGetUserFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_get_user::AdminGetUserOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::admin_get_user::AdminGetUserError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::admin_get_user::AdminGetUser::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

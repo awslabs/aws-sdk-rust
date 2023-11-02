@@ -10,7 +10,7 @@ impl DescribeSchedulingPoliciesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DescribeSchedulingPoliciesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_scheduling_policies::DescribeSchedulingPoliciesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::describe_scheduling_policies::DescribeSchedulingPolicies::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

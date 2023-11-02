@@ -10,7 +10,7 @@ impl AdminResetUserPasswordInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::admin_reset_user_password::AdminResetUserPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::admin_reset_user_password::AdminResetUserPasswordError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -83,12 +83,15 @@ impl AdminResetUserPasswordFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_reset_user_password::AdminResetUserPasswordOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::admin_reset_user_password::AdminResetUserPasswordError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::admin_reset_user_password::AdminResetUserPassword::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

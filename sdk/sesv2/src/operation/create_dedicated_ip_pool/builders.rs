@@ -10,7 +10,7 @@ impl CreateDedicatedIpPoolInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl CreateDedicatedIpPoolFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPool::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

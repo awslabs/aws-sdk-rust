@@ -10,7 +10,7 @@ impl ListAccessPointsForObjectLambdaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -78,12 +78,15 @@ impl ListAccessPointsForObjectLambdaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambda::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

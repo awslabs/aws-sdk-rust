@@ -10,7 +10,7 @@ impl ActivateNetworkSiteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::activate_network_site::ActivateNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::activate_network_site::ActivateNetworkSiteError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ActivateNetworkSiteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::activate_network_site::ActivateNetworkSiteOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::activate_network_site::ActivateNetworkSiteError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::activate_network_site::ActivateNetworkSite::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

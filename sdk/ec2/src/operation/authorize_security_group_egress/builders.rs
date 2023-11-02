@@ -10,7 +10,7 @@ impl AuthorizeSecurityGroupEgressInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -76,12 +76,15 @@ impl AuthorizeSecurityGroupEgressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgress::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

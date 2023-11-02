@@ -1,4 +1,5 @@
 allowed_external_types = [
+    "aws_smithy_runtime_api::*",
     "aws_smithy_types::*",
     "bytes::bytes::Bytes",
     "http::error::Error",

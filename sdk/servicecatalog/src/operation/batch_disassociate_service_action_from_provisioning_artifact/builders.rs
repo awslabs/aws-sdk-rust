@@ -7,7 +7,7 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactInputBuilder {
     /// Sends a request with this input using the given client.
                     pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
                         crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput,
-                        ::aws_smithy_http::result::SdkError<
+                        ::aws_smithy_runtime_api::client::result::SdkError<
                             crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError,
                             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
                         >
@@ -65,8 +65,11 @@ impl BatchDisassociateServiceActionFromProvisioningArtifactFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>{
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+    pub async fn send(self) -> ::std::result::Result<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifactError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>{
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::batch_disassociate_service_action_from_provisioning_artifact::BatchDisassociateServiceActionFromProvisioningArtifact::operation_runtime_plugins(
                             self.handle.runtime_plugins.clone(),
                             &self.handle.conf,

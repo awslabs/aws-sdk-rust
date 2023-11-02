@@ -60,7 +60,7 @@ async fn test_s3_signer_query_string_with_all_valid_chars() {
 #[ignore]
 async fn test_query_strings_are_correctly_encoded() {
     use aws_sdk_s3::operation::list_objects_v2::ListObjectsV2Error;
-    use aws_smithy_http::result::SdkError;
+    use aws_smithy_runtime_api::client::result::SdkError;
 
     tracing_subscriber::fmt::init();
     let config = aws_config::load_from_env().await;

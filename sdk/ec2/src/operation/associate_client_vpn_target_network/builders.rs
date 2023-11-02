@@ -10,7 +10,7 @@ impl AssociateClientVpnTargetNetworkInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl AssociateClientVpnTargetNetworkFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetworkError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::associate_client_vpn_target_network::AssociateClientVpnTargetNetwork::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

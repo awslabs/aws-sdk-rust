@@ -10,7 +10,7 @@ impl RevokeGrantInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::revoke_grant::RevokeGrantOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::revoke_grant::RevokeGrantError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -83,12 +83,15 @@ impl RevokeGrantFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::revoke_grant::RevokeGrantOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::revoke_grant::RevokeGrantError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::revoke_grant::RevokeGrant::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

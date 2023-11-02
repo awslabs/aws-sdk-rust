@@ -14,12 +14,12 @@ impl UpdateBandwidthRateLimitSchedule {
         input: crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleInput,
     ) -> ::std::result::Result<
         crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let map_err = |err: ::aws_smithy_http::result::SdkError<
+        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
@@ -45,7 +45,7 @@ impl UpdateBandwidthRateLimitSchedule {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -270,7 +270,7 @@ pub enum UpdateBandwidthRateLimitScheduleError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for UpdateBandwidthRateLimitScheduleError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for UpdateBandwidthRateLimitScheduleError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

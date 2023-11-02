@@ -10,7 +10,7 @@ impl AssociateAssessmentReportEvidenceFolderInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl AssociateAssessmentReportEvidenceFolderFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolderError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::associate_assessment_report_evidence_folder::AssociateAssessmentReportEvidenceFolder::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

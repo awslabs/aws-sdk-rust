@@ -10,7 +10,7 @@ impl StartAssetBundleExportJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl StartAssetBundleExportJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::start_asset_bundle_export_job::StartAssetBundleExportJob::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

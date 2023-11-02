@@ -10,7 +10,7 @@ impl BatchAssociateResourcesToCustomLineItemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl BatchAssociateResourcesToCustomLineItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItemError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::batch_associate_resources_to_custom_line_item::BatchAssociateResourcesToCustomLineItem::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

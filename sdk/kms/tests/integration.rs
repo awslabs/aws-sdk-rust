@@ -5,8 +5,8 @@
 
 use aws_sdk_kms as kms;
 use aws_sdk_kms::operation::RequestId;
-use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
+use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_types::body::SdkBody;
 use http::header::AUTHORIZATION;
 use http::Uri;

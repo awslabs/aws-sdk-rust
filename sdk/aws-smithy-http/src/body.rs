@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//TODO(runtimeCratesVersioningCleanup): Re-point those who use the deprecated type aliases to
-// directly depend on `aws_smithy_types` and remove this module.
+//TODO(runtimeCratesVersioningCleanup): Keep the following deprecated type aliases for at least
+// one release since 0.56.1 and then remove this module.
 
 //! Types for representing the body of an HTTP request or response
 

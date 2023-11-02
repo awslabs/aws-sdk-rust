@@ -10,7 +10,7 @@ impl RespondActivityTaskCanceledInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -84,12 +84,15 @@ impl RespondActivityTaskCanceledFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceled::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

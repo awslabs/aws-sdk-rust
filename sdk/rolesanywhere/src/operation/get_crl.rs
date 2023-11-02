@@ -14,10 +14,13 @@ impl GetCrl {
         input: crate::operation::get_crl::GetCrlInput,
     ) -> ::std::result::Result<
         crate::operation::get_crl::GetCrlOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_crl::GetCrlError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_crl::GetCrlError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let map_err =
-            |err: ::aws_smithy_http::result::SdkError<
+            |err: ::aws_smithy_runtime_api::client::result::SdkError<
                 ::aws_smithy_runtime_api::client::interceptors::context::Error,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
             >| { err.map_service_error(|err| err.downcast::<crate::operation::get_crl::GetCrlError>().expect("correct error type")) };
@@ -34,7 +37,7 @@ impl GetCrl {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -238,7 +241,7 @@ pub enum GetCrlError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for GetCrlError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for GetCrlError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

@@ -10,7 +10,7 @@ impl RetryDataReplicationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::retry_data_replication::RetryDataReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::retry_data_replication::RetryDataReplicationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl RetryDataReplicationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::retry_data_replication::RetryDataReplicationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::retry_data_replication::RetryDataReplicationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::retry_data_replication::RetryDataReplication::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

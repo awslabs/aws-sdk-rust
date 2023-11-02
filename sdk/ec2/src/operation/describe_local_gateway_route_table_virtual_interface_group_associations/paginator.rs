@@ -51,7 +51,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
     ///
     /// _Note:_ No requests will be dispatched until the stream is used
     /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
-    pub fn send(self) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<::std::result::Result<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>>{
+    pub fn send(self) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<::std::result::Result<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>>{
         // Move individual fields out of self for the borrow checker
         let builder = self.builder;
         let handle = self.handle;
@@ -64,7 +64,10 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginator {
             move |tx| {
                 ::std::boxed::Box::pin(async move {
                     // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                    let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
+                    let mut input = match builder
+                        .build()
+                        .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
+                    {
                         ::std::result::Result::Ok(input) => input,
                         ::std::result::Result::Err(e) => {
                             let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -118,7 +121,7 @@ impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsPaginatorIte
     /// (e.g. with the [`.next().await`](aws_smithy_async::future::pagination_stream::PaginationStream::next) method).
     ///
     /// To read the entirety of the paginator, use [`.collect::<Result<Vec<_>, _>()`](aws_smithy_async::future::pagination_stream::PaginationStream::collect).
-    pub fn send(self) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<::std::result::Result<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>>{
+    pub fn send(self) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<::std::result::Result<crate::types::LocalGatewayRouteTableVirtualInterfaceGroupAssociation, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>>{
         ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send()).flat_map(|page| crate::lens::lens_describe_local_gateway_route_table_virtual_interface_group_associations_output_local_gateway_route_table_virtual_interface_group_associations(page).unwrap_or_default().into_iter())
     }
 }

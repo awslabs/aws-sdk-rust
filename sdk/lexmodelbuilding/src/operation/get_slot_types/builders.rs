@@ -10,7 +10,7 @@ impl GetSlotTypesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_slot_types::GetSlotTypesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_slot_types::GetSlotTypesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -77,12 +77,15 @@ impl GetSlotTypesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_slot_types::GetSlotTypesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_slot_types::GetSlotTypesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::get_slot_types::GetSlotTypes::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,7 @@ impl AdminAddUserToGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::admin_add_user_to_group::AdminAddUserToGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::admin_add_user_to_group::AdminAddUserToGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -79,12 +79,15 @@ impl AdminAddUserToGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::admin_add_user_to_group::AdminAddUserToGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::admin_add_user_to_group::AdminAddUserToGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::admin_add_user_to_group::AdminAddUserToGroup::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

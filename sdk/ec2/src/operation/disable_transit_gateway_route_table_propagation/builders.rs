@@ -10,7 +10,7 @@ impl DisableTransitGatewayRouteTablePropagationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DisableTransitGatewayRouteTablePropagationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagation::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

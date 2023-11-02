@@ -10,7 +10,7 @@ impl UpdateCampaignNameInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_campaign_name::UpdateCampaignNameOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_campaign_name::UpdateCampaignNameError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl UpdateCampaignNameFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_campaign_name::UpdateCampaignNameOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_campaign_name::UpdateCampaignNameError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::update_campaign_name::UpdateCampaignName::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

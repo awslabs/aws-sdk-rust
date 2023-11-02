@@ -10,7 +10,10 @@ impl StopPipeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_pipe::StopPipeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::stop_pipe::StopPipeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::stop_pipe::StopPipeError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.stop_pipe();
         fluent_builder.inner = self;
@@ -63,9 +66,15 @@ impl StopPipeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_pipe::StopPipeOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::stop_pipe::StopPipeError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::stop_pipe::StopPipeError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::stop_pipe::StopPipe::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

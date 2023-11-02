@@ -10,7 +10,7 @@ impl ListOrganizationPortfolioAccessInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl ListOrganizationPortfolioAccessFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccess::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,7 @@ impl RejectTransitGatewayPeeringAttachmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reject_transit_gateway_peering_attachment::RejectTransitGatewayPeeringAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::reject_transit_gateway_peering_attachment::RejectTransitGatewayPeeringAttachmentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl RejectTransitGatewayPeeringAttachmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reject_transit_gateway_peering_attachment::RejectTransitGatewayPeeringAttachmentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::reject_transit_gateway_peering_attachment::RejectTransitGatewayPeeringAttachmentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::reject_transit_gateway_peering_attachment::RejectTransitGatewayPeeringAttachment::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

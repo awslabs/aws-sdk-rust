@@ -10,7 +10,7 @@ impl SimulatePrincipalPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::simulate_principal_policy::SimulatePrincipalPolicyError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -80,12 +80,15 @@ impl SimulatePrincipalPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::simulate_principal_policy::SimulatePrincipalPolicyError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::simulate_principal_policy::SimulatePrincipalPolicy::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

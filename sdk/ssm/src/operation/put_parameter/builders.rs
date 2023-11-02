@@ -10,7 +10,7 @@ impl PutParameterInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_parameter::PutParameterOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::put_parameter::PutParameterError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl PutParameterFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_parameter::PutParameterOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::put_parameter::PutParameterError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::put_parameter::PutParameter::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,7 @@ impl CreateWirelessGatewayTaskDefinitionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl CreateWirelessGatewayTaskDefinitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinitionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::create_wireless_gateway_task_definition::CreateWirelessGatewayTaskDefinition::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

@@ -18,87 +18,6 @@ impl ByteStream {
     {
         ByteStream::new(SdkBody::from_body_0_4(body))
     }
-
-    /// Returns a [`FsBuilder`](crate::byte_stream::FsBuilder), allowing you to build a `ByteStream` with
-    /// full control over how the file is read (eg. specifying the length of the file or the size of the buffer used to read the file).
-    /// ```no_run
-    /// # #[cfg(all(feature = "rt-tokio", feature = "http-body-0-4-x"))]
-    /// # {
-    /// use aws_smithy_types::byte_stream::{ByteStream, Length};
-    ///
-    /// async fn bytestream_from_file() -> ByteStream {
-    ///     let bytestream = ByteStream::read_with_body_0_4_from()
-    ///         .path("docs/some-large-file.csv")
-    ///         // Specify the size of the buffer used to read the file (in bytes, default is 4096)
-    ///         .buffer_size(32_784)
-    ///         // Specify the length of the file used (skips an additional call to retrieve the size)
-    ///         .length(Length::Exact(123_456))
-    ///         .build()
-    ///         .await
-    ///         .expect("valid path");
-    ///     bytestream
-    /// }
-    /// # }
-    /// ```
-    #[cfg(feature = "rt-tokio")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
-    pub fn read_with_body_0_4_from() -> crate::byte_stream::FsBuilder {
-        crate::byte_stream::FsBuilder::new_with_body_0_4()
-    }
-
-    /// Create a ByteStream that streams data from the filesystem
-    ///
-    /// This function creates a retryable ByteStream for a given `path`. The returned ByteStream
-    /// will provide a size hint when used as an HTTP body. If the request fails, the read will
-    /// begin again by reloading the file handle.
-    ///
-    /// ## Warning
-    /// The contents of the file MUST not change during retries. The length & checksum of the file
-    /// will be cached. If the contents of the file change, the operation will almost certainly fail.
-    ///
-    /// Furthermore, a partial write MAY seek in the file and resume from the previous location.
-    ///
-    /// Note: If you want more control, such as specifying the size of the buffer used to read the file
-    /// or the length of the file, use a [`FsBuilder`](crate::byte_stream::FsBuilder) as returned
-    /// from `ByteStream::read_with_body_0_4_from`
-    ///
-    /// # Examples
-    /// ```no_run
-    /// use aws_smithy_types::byte_stream::ByteStream;
-    /// use std::path::Path;
-    ///  async fn make_bytestream() -> ByteStream {
-    ///     ByteStream::from_path_body_0_4("docs/rows.csv").await.expect("file should be readable")
-    /// }
-    /// ```
-    #[cfg(feature = "rt-tokio")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
-    pub async fn from_path_body_0_4(
-        path: impl AsRef<std::path::Path>,
-    ) -> Result<Self, crate::byte_stream::error::Error> {
-        crate::byte_stream::FsBuilder::new_with_body_0_4()
-            .path(path)
-            .build()
-            .await
-    }
-
-    /// Create a ByteStream from a file
-    ///
-    /// NOTE: This will NOT result in a retryable ByteStream. For a ByteStream that can be retried in the case of
-    /// upstream failures, use [`ByteStream::from_path_body_0_4`](ByteStream::from_path_body_0_4)
-    #[deprecated(
-        since = "0.40.0",
-        note = "Prefer the more extensible ByteStream::read_from() API"
-    )]
-    #[cfg(feature = "rt-tokio")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
-    pub async fn from_file_body_0_4(
-        file: tokio::fs::File,
-    ) -> Result<Self, crate::byte_stream::error::Error> {
-        crate::byte_stream::FsBuilder::new_with_body_0_4()
-            .file(file)
-            .build()
-            .await
-    }
 }
 
 #[cfg(feature = "hyper-0-14-x")]
@@ -141,7 +60,7 @@ mod tests {
         for i in 0..10000 {
             writeln!(file, "Brian was here. Briefly. {}", i)?;
         }
-        let body = ByteStream::from_path_body_0_4(&file).await?.into_inner();
+        let body = ByteStream::from_path(&file).await?.into_inner();
         // assert that a valid size hint is immediately ready
         assert_eq!(body.content_length(), Some(298890));
         let mut body1 = body.try_clone().expect("retryable bodies are cloneable");

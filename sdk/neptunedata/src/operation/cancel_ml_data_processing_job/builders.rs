@@ -10,7 +10,7 @@ impl CancelMlDataProcessingJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl CancelMLDataProcessingJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::cancel_ml_data_processing_job::CancelMlDataProcessingJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::cancel_ml_data_processing_job::CancelMLDataProcessingJob::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

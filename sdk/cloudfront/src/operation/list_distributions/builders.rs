@@ -10,7 +10,7 @@ impl ListDistributionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_distributions::ListDistributionsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_distributions::ListDistributionsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ListDistributionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_distributions::ListDistributionsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_distributions::ListDistributionsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_distributions::ListDistributions::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

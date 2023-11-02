@@ -5,7 +5,7 @@
  */
 
 use aws_smithy_http::http::HttpHeaders;
-use aws_smithy_http::result::SdkError;
+use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata, ProvideErrorMetadata};
 use aws_smithy_types::error::Unhandled;
 use http::{HeaderMap, HeaderValue};
@@ -88,7 +88,7 @@ fn extract_extended_request_id(headers: &HeaderMap<HeaderValue>) -> Option<&str>
 #[cfg(test)]
 mod test {
     use super::*;
-    use aws_smithy_http::result::SdkError;
+    use aws_smithy_runtime_api::client::result::SdkError;
     use aws_smithy_types::body::SdkBody;
     use http::Response;
 

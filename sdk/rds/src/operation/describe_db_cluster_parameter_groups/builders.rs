@@ -10,7 +10,7 @@ impl DescribeDbClusterParameterGroupsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_db_cluster_parameter_groups::DescribeDBClusterParameterGroupsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DescribeDBClusterParameterGroupsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_db_cluster_parameter_groups::DescribeDBClusterParameterGroupsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::describe_db_cluster_parameter_groups::DescribeDBClusterParameterGroups::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

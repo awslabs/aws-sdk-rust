@@ -10,7 +10,7 @@ impl DetachUserPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::detach_user_policy::DetachUserPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::detach_user_policy::DetachUserPolicyError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl DetachUserPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::detach_user_policy::DetachUserPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::detach_user_policy::DetachUserPolicyError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::detach_user_policy::DetachUserPolicy::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

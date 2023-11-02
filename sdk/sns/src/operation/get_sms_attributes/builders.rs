@@ -10,7 +10,7 @@ impl GetSmsAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_sms_attributes::GetSmsAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_sms_attributes::GetSMSAttributesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl GetSMSAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_sms_attributes::GetSmsAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_sms_attributes::GetSMSAttributesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::get_sms_attributes::GetSMSAttributes::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

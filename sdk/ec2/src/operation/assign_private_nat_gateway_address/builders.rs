@@ -10,7 +10,7 @@ impl AssignPrivateNatGatewayAddressInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl AssignPrivateNatGatewayAddressFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddressError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::assign_private_nat_gateway_address::AssignPrivateNatGatewayAddress::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

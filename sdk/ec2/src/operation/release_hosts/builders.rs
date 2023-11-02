@@ -10,7 +10,7 @@ impl ReleaseHostsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::release_hosts::ReleaseHostsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::release_hosts::ReleaseHostsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl ReleaseHostsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::release_hosts::ReleaseHostsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::release_hosts::ReleaseHostsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::release_hosts::ReleaseHosts::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

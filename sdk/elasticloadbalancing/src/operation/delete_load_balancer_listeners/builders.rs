@@ -10,7 +10,7 @@ impl DeleteLoadBalancerListenersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DeleteLoadBalancerListenersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListeners::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

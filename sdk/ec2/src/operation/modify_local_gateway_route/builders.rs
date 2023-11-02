@@ -10,7 +10,7 @@ impl ModifyLocalGatewayRouteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ModifyLocalGatewayRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::modify_local_gateway_route::ModifyLocalGatewayRouteError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::modify_local_gateway_route::ModifyLocalGatewayRoute::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

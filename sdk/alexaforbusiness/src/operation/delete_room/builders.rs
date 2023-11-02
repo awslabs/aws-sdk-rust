@@ -10,7 +10,7 @@ impl DeleteRoomInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_room::DeleteRoomOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_room::DeleteRoomError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl DeleteRoomFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_room::DeleteRoomOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_room::DeleteRoomError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_room::DeleteRoom::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

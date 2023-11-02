@@ -10,7 +10,7 @@ impl GetCelebrityRecognitionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -82,12 +82,15 @@ impl GetCelebrityRecognitionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_celebrity_recognition::GetCelebrityRecognitionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_celebrity_recognition::GetCelebrityRecognitionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::get_celebrity_recognition::GetCelebrityRecognition::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

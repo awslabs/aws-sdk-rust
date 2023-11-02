@@ -10,7 +10,7 @@ impl DiscoverInputSchemaInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::discover_input_schema::DiscoverInputSchemaError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -77,12 +77,15 @@ impl DiscoverInputSchemaFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::discover_input_schema::DiscoverInputSchemaError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::discover_input_schema::DiscoverInputSchema::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

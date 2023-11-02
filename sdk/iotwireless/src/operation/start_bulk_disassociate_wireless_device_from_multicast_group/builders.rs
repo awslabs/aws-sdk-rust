@@ -7,7 +7,7 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupInputBuilder {
     /// Sends a request with this input using the given client.
                     pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<
                         crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput,
-                        ::aws_smithy_http::result::SdkError<
+                        ::aws_smithy_runtime_api::client::result::SdkError<
                             crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError,
                             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse
                         >
@@ -65,8 +65,11 @@ impl StartBulkDisassociateWirelessDeviceFromMulticastGroupFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-    pub async fn send(self) -> ::std::result::Result<crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>{
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+    pub async fn send(self) -> ::std::result::Result<crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupOutput, ::aws_smithy_runtime_api::client::result::SdkError<crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroupError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>>{
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::start_bulk_disassociate_wireless_device_from_multicast_group::StartBulkDisassociateWirelessDeviceFromMulticastGroup::operation_runtime_plugins(
                             self.handle.runtime_plugins.clone(),
                             &self.handle.conf,

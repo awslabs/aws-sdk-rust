@@ -10,7 +10,7 @@ impl PutRuleGroupsNamespaceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl PutRuleGroupsNamespaceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespaceError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::put_rule_groups_namespace::PutRuleGroupsNamespace::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,7 @@ impl GetLaunchProfileMemberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_launch_profile_member::GetLaunchProfileMemberError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl GetLaunchProfileMemberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_launch_profile_member::GetLaunchProfileMemberError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::get_launch_profile_member::GetLaunchProfileMember::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

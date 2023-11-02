@@ -10,7 +10,7 @@ impl DeleteObjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_object::DeleteObjectOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_object::DeleteObjectError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -80,12 +80,15 @@ impl DeleteObjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_object::DeleteObjectOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_object::DeleteObjectError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_object::DeleteObject::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,
@@ -131,7 +134,7 @@ impl DeleteObjectFluentBuilder {
         presigning_config: crate::presigning::PresigningConfig,
     ) -> ::std::result::Result<
         crate::presigning::PresignedRequest,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_object::DeleteObjectError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -146,7 +149,10 @@ impl DeleteObjectFluentBuilder {
             ::aws_sigv4::http_request::SignableBody::UnsignedPayload,
         ));
 
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let mut context = crate::operation::delete_object::DeleteObject::orchestrate_with_stop_point(
             &runtime_plugins,
             input,
@@ -160,7 +166,7 @@ impl DeleteObjectFluentBuilder {
             })
         })?;
         let request = context.take_request().expect("request set before transmit");
-        crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_http::result::SdkError::construction_failure)
+        crate::presigning::PresignedRequest::new(request).map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
     }
     /// <p>The bucket name of the bucket containing the object. </p>
     /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>

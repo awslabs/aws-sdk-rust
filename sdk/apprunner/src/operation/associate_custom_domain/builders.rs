@@ -10,7 +10,7 @@ impl AssociateCustomDomainInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_custom_domain::AssociateCustomDomainOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_custom_domain::AssociateCustomDomainError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl AssociateCustomDomainFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_custom_domain::AssociateCustomDomainOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_custom_domain::AssociateCustomDomainError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::associate_custom_domain::AssociateCustomDomain::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

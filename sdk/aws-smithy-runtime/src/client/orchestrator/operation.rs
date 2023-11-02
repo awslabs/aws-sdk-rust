@@ -12,7 +12,6 @@ use crate::client::orchestrator::endpoints::StaticUriEndpointResolver;
 use crate::client::retries::strategy::{NeverRetryStrategy, StandardRetryStrategy};
 use aws_smithy_async::rt::sleep::AsyncSleep;
 use aws_smithy_async::time::TimeSource;
-use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver;
 use aws_smithy_runtime_api::client::auth::{
@@ -25,6 +24,7 @@ use aws_smithy_runtime_api::client::interceptors::context::{Error, Input, Output
 use aws_smithy_runtime_api::client::interceptors::Intercept;
 use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
 use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, OrchestratorError};
+use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_runtime_api::client::retries::classifiers::ClassifyRetry;
 use aws_smithy_runtime_api::client::retries::SharedRetryStrategy;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
@@ -390,7 +390,7 @@ mod tests {
     use crate::client::http::test_util::{capture_request, ReplayEvent, StaticReplayClient};
     use crate::client::retries::classifiers::HttpStatusCodeClassifier;
     use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
-    use aws_smithy_http::result::ConnectorError;
+    use aws_smithy_runtime_api::client::result::ConnectorError;
     use aws_smithy_types::body::SdkBody;
     use std::convert::Infallible;
 

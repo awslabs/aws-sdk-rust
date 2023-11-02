@@ -10,7 +10,7 @@ impl TestConnectionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::test_connection::TestConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::test_connection::TestConnectionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl TestConnectionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::test_connection::TestConnectionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::test_connection::TestConnectionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::test_connection::TestConnection::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

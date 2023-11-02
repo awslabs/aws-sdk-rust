@@ -10,7 +10,7 @@ impl ApproveAssignmentInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::approve_assignment::ApproveAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::approve_assignment::ApproveAssignmentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -79,12 +79,15 @@ impl ApproveAssignmentFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::approve_assignment::ApproveAssignmentOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::approve_assignment::ApproveAssignmentError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::approve_assignment::ApproveAssignment::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

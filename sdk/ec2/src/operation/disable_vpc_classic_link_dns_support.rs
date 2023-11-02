@@ -14,12 +14,12 @@ impl DisableVpcClassicLinkDnsSupport {
         input: crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportInput,
     ) -> ::std::result::Result<
         crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let map_err = |err: ::aws_smithy_http::result::SdkError<
+        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
@@ -45,7 +45,7 @@ impl DisableVpcClassicLinkDnsSupport {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -258,7 +258,7 @@ pub enum DisableVpcClassicLinkDnsSupportError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for DisableVpcClassicLinkDnsSupportError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for DisableVpcClassicLinkDnsSupportError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

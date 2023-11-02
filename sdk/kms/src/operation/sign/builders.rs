@@ -10,7 +10,10 @@ impl SignInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::sign::SignOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::sign::SignError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::sign::SignError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.sign();
         fluent_builder.inner = self;
@@ -79,9 +82,15 @@ impl SignFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::sign::SignOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::sign::SignError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::sign::SignError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::sign::Sign::operation_runtime_plugins(self.handle.runtime_plugins.clone(), &self.handle.conf, self.config_override);
         crate::operation::sign::Sign::orchestrate(&runtime_plugins, input).await

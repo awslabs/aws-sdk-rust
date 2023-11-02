@@ -10,7 +10,7 @@ impl SuspendGameServerGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -79,12 +79,15 @@ impl SuspendGameServerGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::suspend_game_server_group::SuspendGameServerGroup::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

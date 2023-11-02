@@ -10,7 +10,7 @@ impl AddFlowSourcesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_flow_sources::AddFlowSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_flow_sources::AddFlowSourcesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl AddFlowSourcesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_flow_sources::AddFlowSourcesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_flow_sources::AddFlowSourcesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::add_flow_sources::AddFlowSources::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

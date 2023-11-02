@@ -10,7 +10,7 @@ impl CountPendingDecisionTasksInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -80,12 +80,15 @@ impl CountPendingDecisionTasksFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::count_pending_decision_tasks::CountPendingDecisionTasks::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

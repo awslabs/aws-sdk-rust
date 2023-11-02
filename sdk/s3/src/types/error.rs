@@ -13,7 +13,7 @@ pub enum SelectObjectContentEventStreamError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for SelectObjectContentEventStreamError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for SelectObjectContentEventStreamError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

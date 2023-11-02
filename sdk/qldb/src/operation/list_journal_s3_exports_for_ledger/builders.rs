@@ -10,7 +10,7 @@ impl ListJournalS3ExportsForLedgerInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl ListJournalS3ExportsForLedgerFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedger::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

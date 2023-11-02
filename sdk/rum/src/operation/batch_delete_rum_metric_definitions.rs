@@ -14,12 +14,12 @@ impl BatchDeleteRumMetricDefinitions {
         input: crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsInput,
     ) -> ::std::result::Result<
         crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let map_err = |err: ::aws_smithy_http::result::SdkError<
+        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
@@ -45,7 +45,7 @@ impl BatchDeleteRumMetricDefinitions {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -298,7 +298,7 @@ pub enum BatchDeleteRumMetricDefinitionsError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for BatchDeleteRumMetricDefinitionsError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for BatchDeleteRumMetricDefinitionsError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

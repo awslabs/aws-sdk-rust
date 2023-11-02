@@ -56,7 +56,7 @@ impl ListProjectMembershipsPaginator {
     ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
         ::std::result::Result<
             crate::operation::list_project_memberships::ListProjectMembershipsOutput,
-            ::aws_smithy_http::result::SdkError<
+            ::aws_smithy_runtime_api::client::result::SdkError<
                 crate::operation::list_project_memberships::ListProjectMembershipsError,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
             >,
@@ -74,7 +74,10 @@ impl ListProjectMembershipsPaginator {
             move |tx| {
                 ::std::boxed::Box::pin(async move {
                     // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                    let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
+                    let mut input = match builder
+                        .build()
+                        .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
+                    {
                         ::std::result::Result::Ok(input) => input,
                         ::std::result::Result::Err(e) => {
                             let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -129,7 +132,7 @@ impl ListProjectMembershipsPaginatorItems {
     ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
         ::std::result::Result<
             crate::types::ProjectMember,
-            ::aws_smithy_http::result::SdkError<
+            ::aws_smithy_runtime_api::client::result::SdkError<
                 crate::operation::list_project_memberships::ListProjectMembershipsError,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
             >,

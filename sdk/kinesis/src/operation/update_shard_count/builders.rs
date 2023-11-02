@@ -10,7 +10,7 @@ impl UpdateShardCountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_shard_count::UpdateShardCountOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_shard_count::UpdateShardCountError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -87,12 +87,15 @@ impl UpdateShardCountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_shard_count::UpdateShardCountOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_shard_count::UpdateShardCountError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::update_shard_count::UpdateShardCount::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

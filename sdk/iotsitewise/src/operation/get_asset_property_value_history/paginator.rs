@@ -56,7 +56,7 @@ impl GetAssetPropertyValueHistoryPaginator {
     ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
         ::std::result::Result<
             crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput,
-            ::aws_smithy_http::result::SdkError<
+            ::aws_smithy_runtime_api::client::result::SdkError<
                 crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
             >,
@@ -74,7 +74,10 @@ impl GetAssetPropertyValueHistoryPaginator {
             move |tx| {
                 ::std::boxed::Box::pin(async move {
                     // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                    let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
+                    let mut input = match builder
+                        .build()
+                        .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
+                    {
                         ::std::result::Result::Ok(input) => input,
                         ::std::result::Result::Err(e) => {
                             let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -132,7 +135,7 @@ impl GetAssetPropertyValueHistoryPaginatorItems {
     ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
         ::std::result::Result<
             crate::types::AssetPropertyValue,
-            ::aws_smithy_http::result::SdkError<
+            ::aws_smithy_runtime_api::client::result::SdkError<
                 crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
             >,

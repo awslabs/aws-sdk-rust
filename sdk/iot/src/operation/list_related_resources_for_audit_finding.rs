@@ -14,12 +14,12 @@ impl ListRelatedResourcesForAuditFinding {
         input: crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingInput,
     ) -> ::std::result::Result<
         crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_related_resources_for_audit_finding::ListRelatedResourcesForAuditFindingError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let map_err = |err: ::aws_smithy_http::result::SdkError<
+        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
@@ -45,7 +45,7 @@ impl ListRelatedResourcesForAuditFinding {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -289,7 +289,7 @@ pub enum ListRelatedResourcesForAuditFindingError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for ListRelatedResourcesForAuditFindingError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for ListRelatedResourcesForAuditFindingError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

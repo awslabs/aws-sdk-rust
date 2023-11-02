@@ -21,11 +21,7 @@ async fn set_correct_headers() {
     let _resp = client
         .upload_archive()
         .vault_name("vault")
-        .body(
-            ByteStream::from_path_body_0_4("tests/test-file.txt")
-                .await
-                .unwrap(),
-        )
+        .body(ByteStream::from_path("tests/test-file.txt").await.unwrap())
         .send()
         .await;
     let req = handler.expect_request();

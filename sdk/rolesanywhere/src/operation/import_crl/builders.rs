@@ -10,7 +10,7 @@ impl ImportCrlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::import_crl::ImportCrlOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::import_crl::ImportCrlError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -67,12 +67,15 @@ impl ImportCrlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::import_crl::ImportCrlOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::import_crl::ImportCrlError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::import_crl::ImportCrl::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

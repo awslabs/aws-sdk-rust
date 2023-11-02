@@ -10,7 +10,7 @@ impl DeleteSafetyRuleInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_safety_rule::DeleteSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_safety_rule::DeleteSafetyRuleError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DeleteSafetyRuleFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_safety_rule::DeleteSafetyRuleOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_safety_rule::DeleteSafetyRuleError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_safety_rule::DeleteSafetyRule::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

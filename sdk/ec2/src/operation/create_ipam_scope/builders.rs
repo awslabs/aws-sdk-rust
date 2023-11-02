@@ -10,7 +10,7 @@ impl CreateIpamScopeInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_scope::CreateIpamScopeOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_ipam_scope::CreateIpamScopeError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl CreateIpamScopeFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_ipam_scope::CreateIpamScopeOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_ipam_scope::CreateIpamScopeError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_ipam_scope::CreateIpamScope::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

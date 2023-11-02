@@ -10,7 +10,7 @@ impl DisableProactiveEngagementInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_proactive_engagement::DisableProactiveEngagementError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DisableProactiveEngagementFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_proactive_engagement::DisableProactiveEngagementOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_proactive_engagement::DisableProactiveEngagementError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::disable_proactive_engagement::DisableProactiveEngagement::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,7 @@ impl GetEvidenceFoldersByAssessmentControlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl GetEvidenceFoldersByAssessmentControlFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControl::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

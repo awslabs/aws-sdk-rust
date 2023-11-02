@@ -10,7 +10,7 @@ impl DeleteNetworkInsightsAccessScopeAnalysisInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DeleteNetworkInsightsAccessScopeAnalysisFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysisError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::delete_network_insights_access_scope_analysis::DeleteNetworkInsightsAccessScopeAnalysis::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

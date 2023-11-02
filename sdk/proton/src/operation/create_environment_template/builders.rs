@@ -10,7 +10,7 @@ impl CreateEnvironmentTemplateInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_environment_template::CreateEnvironmentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_environment_template::CreateEnvironmentTemplateError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -77,12 +77,15 @@ impl CreateEnvironmentTemplateFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_environment_template::CreateEnvironmentTemplateOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_environment_template::CreateEnvironmentTemplateError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_environment_template::CreateEnvironmentTemplate::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

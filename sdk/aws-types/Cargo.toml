@@ -41,10 +41,6 @@ path = "../aws-smithy-runtime-api"
 features = ["client"]
 version = "0.56.1"
 
-[dependencies.aws-smithy-http]
-path = "../aws-smithy-http"
-version = "0.56.1"
-
 [dependencies.hyper-rustls]
 version = "0.24"
 optional = true

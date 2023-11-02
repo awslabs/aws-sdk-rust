@@ -14,12 +14,12 @@ impl AttachManagedPolicyToPermissionSet {
         input: crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetInput,
     ) -> ::std::result::Result<
         crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::attach_managed_policy_to_permission_set::AttachManagedPolicyToPermissionSetError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let map_err = |err: ::aws_smithy_http::result::SdkError<
+        let map_err = |err: ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
@@ -45,7 +45,7 @@ impl AttachManagedPolicyToPermissionSet {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -280,7 +280,7 @@ pub enum AttachManagedPolicyToPermissionSetError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for AttachManagedPolicyToPermissionSetError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for AttachManagedPolicyToPermissionSetError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

@@ -10,7 +10,7 @@ impl UnassignPrivateIpAddressesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl UnassignPrivateIpAddressesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddresses::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

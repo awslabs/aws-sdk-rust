@@ -10,7 +10,7 @@ impl CreateReplicationConfigurationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_replication_configuration::CreateReplicationConfigurationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -94,12 +94,15 @@ impl CreateReplicationConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_replication_configuration::CreateReplicationConfigurationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_replication_configuration::CreateReplicationConfiguration::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

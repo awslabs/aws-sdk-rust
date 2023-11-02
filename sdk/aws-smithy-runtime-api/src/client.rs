@@ -91,9 +91,15 @@ macro_rules! new_type_future {
     };
 }
 
+pub mod auth;
+
+pub mod connection;
+
 pub mod dns;
 
 pub mod endpoint;
+
+pub mod http;
 
 /// Smithy identity used by auth and signing.
 pub mod identity;
@@ -102,14 +108,12 @@ pub mod interceptors;
 
 pub mod orchestrator;
 
+pub mod result;
+
 pub mod retries;
 
 pub mod runtime_components;
 
 pub mod runtime_plugin;
-
-pub mod auth;
-
-pub mod http;
 
 pub mod ser_de;

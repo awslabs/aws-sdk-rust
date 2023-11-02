@@ -10,7 +10,10 @@ impl StartAppInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_app::StartAppOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_app::StartAppError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_app::StartAppError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.start_app();
         fluent_builder.inner = self;
@@ -63,9 +66,15 @@ impl StartAppFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_app::StartAppOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_app::StartAppError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_app::StartAppError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::start_app::StartApp::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

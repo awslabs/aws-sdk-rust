@@ -10,7 +10,7 @@ impl GetManagedEndpointSessionCredentialsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl GetManagedEndpointSessionCredentialsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentials::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

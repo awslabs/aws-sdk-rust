@@ -10,7 +10,7 @@ impl UpdateServicePipelineInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_service_pipeline::UpdateServicePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_service_pipeline::UpdateServicePipelineError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -95,12 +95,15 @@ impl UpdateServicePipelineFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_service_pipeline::UpdateServicePipelineOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_service_pipeline::UpdateServicePipelineError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::update_service_pipeline::UpdateServicePipeline::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

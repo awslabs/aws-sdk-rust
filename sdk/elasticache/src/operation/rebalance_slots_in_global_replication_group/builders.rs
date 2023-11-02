@@ -10,7 +10,7 @@ impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl RebalanceSlotsInGlobalReplicationGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroup::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

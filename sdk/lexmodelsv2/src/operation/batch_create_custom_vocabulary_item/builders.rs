@@ -10,7 +10,7 @@ impl BatchCreateCustomVocabularyItemInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl BatchCreateCustomVocabularyItemFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItemError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::batch_create_custom_vocabulary_item::BatchCreateCustomVocabularyItem::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

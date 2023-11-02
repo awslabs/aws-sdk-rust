@@ -10,7 +10,7 @@ impl PromoteResourceShareCreatedFromPolicyInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -77,12 +77,15 @@ impl PromoteResourceShareCreatedFromPolicyFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicyError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::promote_resource_share_created_from_policy::PromoteResourceShareCreatedFromPolicy::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

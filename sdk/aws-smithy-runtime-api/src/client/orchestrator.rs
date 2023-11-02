@@ -20,7 +20,7 @@ use crate::box_error::BoxError;
 use crate::client::interceptors::context::phase::Phase;
 use crate::client::interceptors::context::Error;
 use crate::client::interceptors::InterceptorError;
-use aws_smithy_http::result::{ConnectorError, SdkError};
+use crate::client::result::{ConnectorError, SdkError};
 use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use bytes::Bytes;

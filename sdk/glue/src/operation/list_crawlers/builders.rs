@@ -10,7 +10,7 @@ impl ListCrawlersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_crawlers::ListCrawlersOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_crawlers::ListCrawlersError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl ListCrawlersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_crawlers::ListCrawlersOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_crawlers::ListCrawlersError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_crawlers::ListCrawlers::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

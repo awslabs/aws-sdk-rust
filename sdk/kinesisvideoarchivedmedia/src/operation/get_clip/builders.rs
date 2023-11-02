@@ -10,7 +10,10 @@ impl GetClipInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_clip::GetClipOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_clip::GetClipError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.get_clip();
         fluent_builder.inner = self;
@@ -73,9 +76,15 @@ impl GetClipFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_clip::GetClipOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_clip::GetClipError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::get_clip::GetClipError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::get_clip::GetClip::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -8,7 +8,6 @@ use crate::byte_stream::{error::Error, error::ErrorKind, ByteStream};
 use std::future::Future;
 use std::path::PathBuf;
 use std::pin::Pin;
-use std::sync::Arc;
 use tokio::fs::File;
 use tokio::io::{self, AsyncReadExt, AsyncSeekExt};
 use tokio_util::io::ReaderStream;
@@ -56,11 +55,8 @@ impl PathBody {
 
 /// Builder for creating [`ByteStreams`](ByteStream) from a file/path, with full control over advanced options.
 ///
-/// _Note: A cargo feature `http-body-0-4-x` should be active to call `ByteStream::read_with_body_0_4_from` in the following example._
-///
-/// Example usage:
 /// ```no_run
-/// # #[cfg(all(feature = "rt-tokio", feature = "http-body-0-4-x"))]
+/// # #[cfg(feature = "rt-tokio")]
 /// # {
 /// use aws_smithy_types::byte_stream::{ByteStream, Length};
 /// use std::path::Path;
@@ -69,7 +65,7 @@ impl PathBody {
 /// }
 ///
 /// async fn bytestream_from_file() -> GetObjectInput {
-///     let bytestream = ByteStream::read_with_body_0_4_from()
+///     let bytestream = ByteStream::read_from()
 ///         .path("docs/some-large-file.csv")
 ///         // Specify the size of the buffer used to read the file (in bytes, default is 4096)
 ///         .buffer_size(32_784)
@@ -89,12 +85,12 @@ pub struct FsBuilder {
     length: Option<Length>,
     buffer_size: usize,
     offset: Option<u64>,
-    sdk_body_creator: SdkBodyCreator,
 }
 
-enum SdkBodyCreator {
-    #[cfg(feature = "http-body-0-4-x")]
-    HttpBody04(Arc<dyn Fn(PathBody) -> SdkBody + Send + Sync + 'static>),
+impl Default for FsBuilder {
+    fn default() -> Self {
+        Self::new()
+    }
 }
 
 /// The length (in bytes) to read. Determines whether or not a short read counts as an error.
@@ -108,22 +104,16 @@ pub enum Length {
 }
 
 impl FsBuilder {
-    #[cfg(feature = "http-body-0-4-x")]
     /// Create a new [`FsBuilder`] (using a default read buffer of 4096 bytes).
     ///
     /// You must then call either [`file`](FsBuilder::file) or [`path`](FsBuilder::path) to specify what to read from.
-    ///
-    /// _Note: This is only available with `http-body-0-4-x` enabled._
-    pub fn new_with_body_0_4() -> Self {
+    pub fn new() -> Self {
         Self {
             buffer_size: DEFAULT_BUFFER_SIZE,
             file: None,
             length: None,
             offset: None,
             path: None,
-            sdk_body_creator: SdkBodyCreator::HttpBody04(Arc::new(|body: PathBody| {
-                SdkBody::from_body_0_4(body)
-            })),
         }
     }
 
@@ -203,19 +193,12 @@ impl FsBuilder {
             let body_loader = move || {
                 // If an offset was provided, seeking will be handled in `PathBody::poll_data` each
                 // time the file is loaded.
-                match &self.sdk_body_creator {
-                    #[cfg(feature = "http-body-0-4-x")]
-                    SdkBodyCreator::HttpBody04(f) => f(PathBody::from_path(
-                        path.clone(),
-                        length,
-                        buffer_size,
-                        self.offset,
-                    )),
-                    #[allow(unreachable_patterns)]
-                    _ => unreachable!(
-                        "`http-body-0-4-x` should've been enabled to create an `FsBuilder`"
-                    ),
-                }
+                SdkBody::from_body_0_4(PathBody::from_path(
+                    path.clone(),
+                    length,
+                    buffer_size,
+                    self.offset,
+                ))
             };
 
             Ok(ByteStream::new(SdkBody::retryable(body_loader)))
@@ -225,14 +208,7 @@ impl FsBuilder {
                 let _s = file.seek(io::SeekFrom::Start(offset)).await?;
             }
 
-            let body = match self.sdk_body_creator {
-                #[cfg(feature = "http-body-0-4-x")]
-                SdkBodyCreator::HttpBody04(f) => f(PathBody::from_file(file, length, buffer_size)),
-                #[allow(unreachable_patterns)]
-                _ => unreachable!(
-                    "`http-body-0-4-x` should've been enabled to create an `FsBuilder`"
-                ),
-            };
+            let body = SdkBody::from_body_0_4(PathBody::from_file(file, length, buffer_size));
 
             Ok(ByteStream::new(body))
         } else {
@@ -256,7 +232,6 @@ enum State {
     Loaded(ReaderStream<io::Take<File>>),
 }
 
-#[cfg(feature = "http-body-0-4-x")]
 impl http_body_0_4::Body for PathBody {
     type Data = bytes::Bytes;
     type Error = Box<dyn std::error::Error + Send + Sync + 'static>;
@@ -343,7 +318,7 @@ mod test {
             .expect("file metadata is accessible")
             .len();
 
-        let body = FsBuilder::new_with_body_0_4()
+        let body = FsBuilder::new()
             .path(&file)
             .buffer_size(16384)
             .length(Length::Exact(file_length))
@@ -382,7 +357,7 @@ mod test {
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
 
-        let body = FsBuilder::new_with_body_0_4()
+        let body = FsBuilder::new()
             .path(&file)
             // The file is longer than 1 byte, let's see if this is used to generate the size hint
             .length(Length::Exact(1))
@@ -406,7 +381,7 @@ mod test {
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
 
-        let body = FsBuilder::new_with_body_0_4()
+        let body = FsBuilder::new()
             .path(&file)
             // We're going to read line 0 only
             .length(Length::Exact(line_0.len() as u64))
@@ -430,7 +405,7 @@ mod test {
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
 
-        assert!(FsBuilder::new_with_body_0_4()
+        assert!(FsBuilder::new()
             .path(&file)
             // The file is 30 bytes so this is fine
             .length(Length::Exact(29))
@@ -438,7 +413,7 @@ mod test {
             .await
             .is_ok());
 
-        assert!(FsBuilder::new_with_body_0_4()
+        assert!(FsBuilder::new()
             .path(&file)
             // The file is 30 bytes so this is fine
             .length(Length::Exact(30))
@@ -446,7 +421,7 @@ mod test {
             .await
             .is_ok());
 
-        assert!(FsBuilder::new_with_body_0_4()
+        assert!(FsBuilder::new()
             .path(&file)
             // Larger than 30 bytes, this will cause an error
             .length(Length::Exact(31))
@@ -467,7 +442,7 @@ mod test {
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
 
-        let body = FsBuilder::new_with_body_0_4()
+        let body = FsBuilder::new()
             .path(&file)
             // We're going to skip the first line by using offset
             .offset(line_0.len() as u64)
@@ -495,7 +470,7 @@ mod test {
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
 
-        let body = FsBuilder::new_with_body_0_4()
+        let body = FsBuilder::new()
             .path(&file)
             // We're going to skip line 0 by using offset
             .offset(line_0.len() as u64)
@@ -524,7 +499,7 @@ mod test {
         file.flush().expect("flushing is OK");
 
         assert_eq!(
-            FsBuilder::new_with_body_0_4()
+            FsBuilder::new()
                 .path(&file)
                 // We're going to skip all file contents by setting an offset
                 // much larger than the file size
@@ -549,7 +524,7 @@ mod test {
         // Ensure that the file was written to
         file.flush().expect("flushing is OK");
 
-        let body = FsBuilder::new_with_body_0_4()
+        let body = FsBuilder::new()
             .path(&file)
             .length(Length::UpTo(9000))
             .build()
@@ -601,7 +576,7 @@ mod test {
                 chunk_size
             };
 
-            let byte_stream = FsBuilder::new_with_body_0_4()
+            let byte_stream = FsBuilder::new()
                 .path(&file_path)
                 .offset(i * chunk_size)
                 .length(Length::Exact(length))

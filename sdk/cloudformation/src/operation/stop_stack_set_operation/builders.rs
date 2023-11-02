@@ -10,7 +10,7 @@ impl StopStackSetOperationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_stack_set_operation::StopStackSetOperationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::stop_stack_set_operation::StopStackSetOperationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl StopStackSetOperationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_stack_set_operation::StopStackSetOperationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::stop_stack_set_operation::StopStackSetOperationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::stop_stack_set_operation::StopStackSetOperation::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

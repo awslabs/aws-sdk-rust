@@ -10,7 +10,7 @@ impl RemoveEndpointsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::remove_endpoints::RemoveEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::remove_endpoints::RemoveEndpointsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -77,12 +77,15 @@ impl RemoveEndpointsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::remove_endpoints::RemoveEndpointsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::remove_endpoints::RemoveEndpointsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::remove_endpoints::RemoveEndpoints::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

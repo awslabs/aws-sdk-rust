@@ -10,7 +10,7 @@ impl SearchDataSetsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::search_data_sets::SearchDataSetsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::search_data_sets::SearchDataSetsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl SearchDataSetsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::search_data_sets::SearchDataSetsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::search_data_sets::SearchDataSetsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::search_data_sets::SearchDataSets::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

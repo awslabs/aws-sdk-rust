@@ -10,7 +10,7 @@ impl GetIdentityProviderByIdentifierInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl GetIdentityProviderByIdentifierFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifierError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::get_identity_provider_by_identifier::GetIdentityProviderByIdentifier::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

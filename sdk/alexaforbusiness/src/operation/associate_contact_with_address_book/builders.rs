@@ -10,7 +10,7 @@ impl AssociateContactWithAddressBookInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl AssociateContactWithAddressBookFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBookError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::associate_contact_with_address_book::AssociateContactWithAddressBook::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

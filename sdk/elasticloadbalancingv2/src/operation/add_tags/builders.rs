@@ -10,7 +10,10 @@ impl AddTagsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_tags::AddTagsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::add_tags::AddTagsError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.add_tags();
         fluent_builder.inner = self;
@@ -64,9 +67,15 @@ impl AddTagsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_tags::AddTagsOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::add_tags::AddTagsError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::add_tags::AddTagsError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::add_tags::AddTags::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

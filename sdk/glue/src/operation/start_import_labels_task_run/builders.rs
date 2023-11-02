@@ -10,7 +10,7 @@ impl StartImportLabelsTaskRunInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -75,12 +75,15 @@ impl StartImportLabelsTaskRunFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::start_import_labels_task_run::StartImportLabelsTaskRun::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

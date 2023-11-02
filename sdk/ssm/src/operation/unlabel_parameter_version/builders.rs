@@ -10,7 +10,7 @@ impl UnlabelParameterVersionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::unlabel_parameter_version::UnlabelParameterVersionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl UnlabelParameterVersionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::unlabel_parameter_version::UnlabelParameterVersionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::unlabel_parameter_version::UnlabelParameterVersion::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

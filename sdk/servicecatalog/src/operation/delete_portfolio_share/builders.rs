@@ -10,7 +10,7 @@ impl DeletePortfolioShareInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_portfolio_share::DeletePortfolioShareOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_portfolio_share::DeletePortfolioShareError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl DeletePortfolioShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_portfolio_share::DeletePortfolioShareOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_portfolio_share::DeletePortfolioShareError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_portfolio_share::DeletePortfolioShare::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

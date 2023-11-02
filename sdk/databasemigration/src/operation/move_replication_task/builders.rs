@@ -10,7 +10,7 @@ impl MoveReplicationTaskInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::move_replication_task::MoveReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::move_replication_task::MoveReplicationTaskError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl MoveReplicationTaskFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::move_replication_task::MoveReplicationTaskOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::move_replication_task::MoveReplicationTaskError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::move_replication_task::MoveReplicationTask::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

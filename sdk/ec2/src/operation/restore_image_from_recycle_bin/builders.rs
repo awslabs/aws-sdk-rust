@@ -10,7 +10,7 @@ impl RestoreImageFromRecycleBinInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl RestoreImageFromRecycleBinFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBinError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::restore_image_from_recycle_bin::RestoreImageFromRecycleBin::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

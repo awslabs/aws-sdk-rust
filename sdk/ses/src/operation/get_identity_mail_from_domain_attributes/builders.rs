@@ -10,7 +10,7 @@ impl GetIdentityMailFromDomainAttributesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl GetIdentityMailFromDomainAttributesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::get_identity_mail_from_domain_attributes::GetIdentityMailFromDomainAttributes::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

@@ -10,7 +10,7 @@ impl DisableHealthServiceAccessForOrganizationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -77,12 +77,15 @@ impl DisableHealthServiceAccessForOrganizationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganization::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

@@ -10,7 +10,7 @@ impl RegisterWorkspaceDirectoryInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl RegisterWorkspaceDirectoryFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::register_workspace_directory::RegisterWorkspaceDirectory::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

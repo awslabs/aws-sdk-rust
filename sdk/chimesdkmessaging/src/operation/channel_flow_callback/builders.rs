@@ -10,7 +10,7 @@ impl ChannelFlowCallbackInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::channel_flow_callback::ChannelFlowCallbackOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::channel_flow_callback::ChannelFlowCallbackError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -78,12 +78,15 @@ impl ChannelFlowCallbackFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::channel_flow_callback::ChannelFlowCallbackOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::channel_flow_callback::ChannelFlowCallbackError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::channel_flow_callback::ChannelFlowCallback::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

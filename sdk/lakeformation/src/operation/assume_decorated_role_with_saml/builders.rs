@@ -10,7 +10,7 @@ impl AssumeDecoratedRoleWithSamlInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl AssumeDecoratedRoleWithSAMLFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAML::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

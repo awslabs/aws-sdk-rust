@@ -10,7 +10,7 @@ impl DeleteTopicRuleDestinationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl DeleteTopicRuleDestinationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestination::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

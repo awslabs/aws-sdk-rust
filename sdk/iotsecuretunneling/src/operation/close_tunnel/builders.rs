@@ -10,7 +10,7 @@ impl CloseTunnelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::close_tunnel::CloseTunnelOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::close_tunnel::CloseTunnelError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl CloseTunnelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::close_tunnel::CloseTunnelOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::close_tunnel::CloseTunnelError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::close_tunnel::CloseTunnel::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

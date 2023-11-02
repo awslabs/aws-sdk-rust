@@ -10,7 +10,7 @@ impl DeleteEnvironmentBlueprintConfigurationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DeleteEnvironmentBlueprintConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfigurationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::delete_environment_blueprint_configuration::DeleteEnvironmentBlueprintConfiguration::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

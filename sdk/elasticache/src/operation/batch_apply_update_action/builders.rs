@@ -10,7 +10,7 @@ impl BatchApplyUpdateActionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::batch_apply_update_action::BatchApplyUpdateActionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_apply_update_action::BatchApplyUpdateActionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl BatchApplyUpdateActionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::batch_apply_update_action::BatchApplyUpdateActionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::batch_apply_update_action::BatchApplyUpdateActionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::batch_apply_update_action::BatchApplyUpdateAction::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

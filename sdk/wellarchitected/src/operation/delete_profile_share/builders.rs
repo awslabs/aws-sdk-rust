@@ -10,7 +10,7 @@ impl DeleteProfileShareInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::delete_profile_share::DeleteProfileShareOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_profile_share::DeleteProfileShareError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DeleteProfileShareFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::delete_profile_share::DeleteProfileShareOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::delete_profile_share::DeleteProfileShareError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::delete_profile_share::DeleteProfileShare::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

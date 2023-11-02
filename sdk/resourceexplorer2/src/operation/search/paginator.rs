@@ -53,7 +53,10 @@ impl SearchPaginator {
     ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
         ::std::result::Result<
             crate::operation::search::SearchOutput,
-            ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::search::SearchError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
         >,
     > {
         // Move individual fields out of self for the borrow checker
@@ -65,7 +68,10 @@ impl SearchPaginator {
             move |tx| {
                 ::std::boxed::Box::pin(async move {
                     // Build the input for the first time. If required fields are missing, this is where we'll produce an early error.
-                    let mut input = match builder.build().map_err(::aws_smithy_http::result::SdkError::construction_failure) {
+                    let mut input = match builder
+                        .build()
+                        .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)
+                    {
                         ::std::result::Result::Ok(input) => input,
                         ::std::result::Result::Err(e) => {
                             let _ = tx.send(::std::result::Result::Err(e)).await;
@@ -119,7 +125,10 @@ impl SearchPaginatorItems {
     ) -> ::aws_smithy_async::future::pagination_stream::PaginationStream<
         ::std::result::Result<
             crate::types::Resource,
-            ::aws_smithy_http::result::SdkError<crate::operation::search::SearchError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+            ::aws_smithy_runtime_api::client::result::SdkError<
+                crate::operation::search::SearchError,
+                ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+            >,
         >,
     > {
         ::aws_smithy_async::future::pagination_stream::TryFlatMap::new(self.0.send())

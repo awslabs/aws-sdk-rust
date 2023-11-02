@@ -10,7 +10,7 @@ impl ConfigureLogsForPlaybackConfigurationInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl ConfigureLogsForPlaybackConfigurationFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfigurationError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::configure_logs_for_playback_configuration::ConfigureLogsForPlaybackConfiguration::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

@@ -10,7 +10,7 @@ impl DescribeVpcEndpointServiceConfigurationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DescribeVpcEndpointServiceConfigurationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurationsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::describe_vpc_endpoint_service_configurations::DescribeVpcEndpointServiceConfigurations::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

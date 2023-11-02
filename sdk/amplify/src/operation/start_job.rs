@@ -14,10 +14,13 @@ impl StartJob {
         input: crate::operation::start_job::StartJobInput,
     ) -> ::std::result::Result<
         crate::operation::start_job::StartJobOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::start_job::StartJobError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::start_job::StartJobError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let map_err =
-            |err: ::aws_smithy_http::result::SdkError<
+            |err: ::aws_smithy_runtime_api::client::result::SdkError<
                 ::aws_smithy_runtime_api::client::interceptors::context::Error,
                 ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
             >| { err.map_service_error(|err| err.downcast::<crate::operation::start_job::StartJobError>().expect("correct error type")) };
@@ -38,7 +41,7 @@ impl StartJob {
         stop_point: ::aws_smithy_runtime::client::orchestrator::StopPoint,
     ) -> ::std::result::Result<
         ::aws_smithy_runtime_api::client::interceptors::context::InterceptorContext,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             ::aws_smithy_runtime_api::client::interceptors::context::Error,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -274,7 +277,7 @@ pub enum StartJobError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for StartJobError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for StartJobError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

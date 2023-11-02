@@ -10,7 +10,7 @@ impl MoveByoipCidrToIpamInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl MoveByoipCidrToIpamFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpam::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

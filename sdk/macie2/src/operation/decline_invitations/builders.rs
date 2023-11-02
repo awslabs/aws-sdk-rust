@@ -10,7 +10,7 @@ impl DeclineInvitationsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::decline_invitations::DeclineInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::decline_invitations::DeclineInvitationsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DeclineInvitationsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::decline_invitations::DeclineInvitationsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::decline_invitations::DeclineInvitationsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::decline_invitations::DeclineInvitations::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

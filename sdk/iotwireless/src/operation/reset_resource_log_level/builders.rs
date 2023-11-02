@@ -10,7 +10,7 @@ impl ResetResourceLogLevelInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ResetResourceLogLevelFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::reset_resource_log_level::ResetResourceLogLevel::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

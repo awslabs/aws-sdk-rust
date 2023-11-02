@@ -10,7 +10,7 @@ impl GetRepositoryTriggersInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::get_repository_triggers::GetRepositoryTriggersOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_repository_triggers::GetRepositoryTriggersError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl GetRepositoryTriggersFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::get_repository_triggers::GetRepositoryTriggersOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::get_repository_triggers::GetRepositoryTriggersError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::get_repository_triggers::GetRepositoryTriggers::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

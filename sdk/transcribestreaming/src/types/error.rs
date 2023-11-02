@@ -33,7 +33,7 @@ pub enum TranscriptResultStreamError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for TranscriptResultStreamError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for TranscriptResultStreamError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -157,7 +157,7 @@ pub enum AudioStreamError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for AudioStreamError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for AudioStreamError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -251,7 +251,7 @@ pub enum MedicalTranscriptResultStreamError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for MedicalTranscriptResultStreamError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for MedicalTranscriptResultStreamError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
@@ -385,7 +385,7 @@ pub enum CallAnalyticsTranscriptResultStreamError {
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
     Unhandled(::aws_smithy_types::error::Unhandled),
 }
-impl ::aws_smithy_http::result::CreateUnhandledError for CallAnalyticsTranscriptResultStreamError {
+impl ::aws_smithy_runtime_api::client::result::CreateUnhandledError for CallAnalyticsTranscriptResultStreamError {
     fn create_unhandled_error(
         source: ::std::boxed::Box<dyn ::std::error::Error + ::std::marker::Send + ::std::marker::Sync + 'static>,
         meta: ::std::option::Option<::aws_smithy_types::error::ErrorMetadata>,

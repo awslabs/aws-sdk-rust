@@ -10,7 +10,7 @@ impl UpdateConfigurationSetSendingEnabledInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -75,12 +75,15 @@ impl UpdateConfigurationSetSendingEnabledFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabled::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

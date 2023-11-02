@@ -10,7 +10,7 @@ impl StartSupportDataExportInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::start_support_data_export::StartSupportDataExportOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_support_data_export::StartSupportDataExportError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -73,12 +73,15 @@ impl StartSupportDataExportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::start_support_data_export::StartSupportDataExportOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::start_support_data_export::StartSupportDataExportError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::start_support_data_export::StartSupportDataExport::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

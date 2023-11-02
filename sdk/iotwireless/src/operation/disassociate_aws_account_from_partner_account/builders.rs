@@ -10,7 +10,7 @@ impl DisassociateAwsAccountFromPartnerAccountInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl DisassociateAwsAccountFromPartnerAccountFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccount::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

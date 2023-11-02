@@ -10,7 +10,7 @@ impl StopIcd10CmInferenceJobInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl StopICD10CMInferenceJobFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJob::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

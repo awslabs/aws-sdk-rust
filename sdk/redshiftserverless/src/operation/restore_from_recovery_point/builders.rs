@@ -10,7 +10,7 @@ impl RestoreFromRecoveryPointInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl RestoreFromRecoveryPointFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::restore_from_recovery_point::RestoreFromRecoveryPointError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::restore_from_recovery_point::RestoreFromRecoveryPoint::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,7 @@ impl DescribeOrderableClusterOptionsInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DescribeOrderableClusterOptionsFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptions::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

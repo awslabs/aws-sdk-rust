@@ -10,7 +10,7 @@ impl ResolveAliasInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::resolve_alias::ResolveAliasOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::resolve_alias::ResolveAliasError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl ResolveAliasFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::resolve_alias::ResolveAliasOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::resolve_alias::ResolveAliasError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::resolve_alias::ResolveAlias::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

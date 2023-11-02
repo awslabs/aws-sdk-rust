@@ -10,7 +10,10 @@ impl AddCacheInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_cache::AddCacheOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::add_cache::AddCacheError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::add_cache::AddCacheError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
         let mut fluent_builder = client.add_cache();
         fluent_builder.inner = self;
@@ -64,9 +67,15 @@ impl AddCacheFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_cache::AddCacheOutput,
-        ::aws_smithy_http::result::SdkError<crate::operation::add_cache::AddCacheError, ::aws_smithy_runtime_api::client::orchestrator::HttpResponse>,
+        ::aws_smithy_runtime_api::client::result::SdkError<
+            crate::operation::add_cache::AddCacheError,
+            ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
+        >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::add_cache::AddCache::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

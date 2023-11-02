@@ -10,7 +10,7 @@ impl ReleasePhoneNumberInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::release_phone_number::ReleasePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::release_phone_number::ReleasePhoneNumberError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -78,12 +78,15 @@ impl ReleasePhoneNumberFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::release_phone_number::ReleasePhoneNumberOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::release_phone_number::ReleasePhoneNumberError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::release_phone_number::ReleasePhoneNumber::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

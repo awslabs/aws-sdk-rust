@@ -10,7 +10,7 @@ impl DisassociateTagOptionFromResourceInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DisassociateTagOptionFromResourceFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResourceError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::disassociate_tag_option_from_resource::DisassociateTagOptionFromResource::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

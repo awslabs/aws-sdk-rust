@@ -4,8 +4,8 @@
  */
 
 use crate::client::retries::classifiers::run_classifiers_on_ctx;
-use aws_smithy_http::connection::ConnectionMetadata;
 use aws_smithy_runtime_api::box_error::BoxError;
+use aws_smithy_runtime_api::client::connection::ConnectionMetadata;
 use aws_smithy_runtime_api::client::interceptors::context::{
     AfterDeserializationInterceptorContextRef, BeforeTransmitInterceptorContextMut,
 };

@@ -23,6 +23,11 @@ pin-project-lite = "0.2.9"
 path = "../aws-smithy-http"
 version = "0.56.1"
 
+[dependencies.aws-smithy-runtime-api]
+path = "../aws-smithy-runtime-api"
+features = ["client"]
+version = "0.56.1"
+
 [dependencies.aws-smithy-types]
 path = "../aws-smithy-types"
 version = "0.56.1"

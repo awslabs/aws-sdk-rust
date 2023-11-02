@@ -10,7 +10,7 @@ impl DisassociateFirewallRuleGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl DisassociateFirewallRuleGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroup::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

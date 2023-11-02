@@ -10,7 +10,7 @@ impl RegisterPatchBaselineForPatchGroupInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl RegisterPatchBaselineForPatchGroupFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroup::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

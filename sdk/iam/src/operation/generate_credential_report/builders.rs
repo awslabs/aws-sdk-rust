@@ -10,7 +10,7 @@ impl GenerateCredentialReportInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::generate_credential_report::GenerateCredentialReportOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::generate_credential_report::GenerateCredentialReportError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl GenerateCredentialReportFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::generate_credential_report::GenerateCredentialReportOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::generate_credential_report::GenerateCredentialReportError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::generate_credential_report::GenerateCredentialReport::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

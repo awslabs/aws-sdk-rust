@@ -10,7 +10,7 @@ impl SubmitMultiRegionAccessPointRoutesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -85,12 +85,15 @@ impl SubmitMultiRegionAccessPointRoutesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutes::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

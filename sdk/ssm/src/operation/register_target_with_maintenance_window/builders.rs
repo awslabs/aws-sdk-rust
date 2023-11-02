@@ -10,7 +10,7 @@ impl RegisterTargetWithMaintenanceWindowInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl RegisterTargetWithMaintenanceWindowFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindow::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

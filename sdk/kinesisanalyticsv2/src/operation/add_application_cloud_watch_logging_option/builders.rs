@@ -10,7 +10,7 @@ impl AddApplicationCloudWatchLoggingOptionInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -74,12 +74,15 @@ impl AddApplicationCloudWatchLoggingOptionFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins =
             crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOption::operation_runtime_plugins(
                 self.handle.runtime_plugins.clone(),

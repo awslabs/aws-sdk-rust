@@ -10,7 +10,7 @@ impl AssociateVpcWithHostedZoneInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -85,12 +85,15 @@ impl AssociateVPCWithHostedZoneFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZone::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

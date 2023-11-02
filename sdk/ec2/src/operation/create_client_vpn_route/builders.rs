@@ -10,7 +10,7 @@ impl CreateClientVpnRouteInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_client_vpn_route::CreateClientVpnRouteError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl CreateClientVpnRouteFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::create_client_vpn_route::CreateClientVpnRouteError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::create_client_vpn_route::CreateClientVpnRoute::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

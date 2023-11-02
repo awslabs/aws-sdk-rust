@@ -78,10 +78,10 @@
 //!
 //! ### Create a ByteStream from a file
 //!
-//! _Note: This is only available with `rt-tokio` and `http-body-0-4-x` enabled._
+//! _Note: This is only available with `rt-tokio` enabled._
 //!
 //! ```no_run
-//! # #[cfg(all(feature = "rt-tokio", feature = "http-body-0-4-x"))]
+//! # #[cfg(feature = "rt-tokio")]
 //! # {
 //! use aws_smithy_types::byte_stream::ByteStream;
 //! use std::path::Path;
@@ -90,7 +90,7 @@
 //! }
 //!
 //! async fn bytestream_from_file() -> GetObjectInput {
-//!     let bytestream = ByteStream::from_path_body_0_4("docs/some-large-file.csv")
+//!     let bytestream = ByteStream::from_path("docs/some-large-file.csv")
 //!         .await
 //!         .expect("valid path");
 //!     GetObjectInput { body: bytestream }
@@ -102,7 +102,7 @@
 //! or the length of the file, use an `FsBuilder`.
 //!
 //! ```no_run
-//! # #[cfg(all(feature = "rt-tokio", feature = "http-body-0-4-x"))]
+//! # #[cfg(feature = "rt-tokio")]
 //! # {
 //! use aws_smithy_types::byte_stream::{ByteStream, Length};
 //! use std::path::Path;
@@ -111,7 +111,7 @@
 //! }
 //!
 //! async fn bytestream_from_file() -> GetObjectInput {
-//!     let bytestream = ByteStream::read_with_body_0_4_from().path("docs/some-large-file.csv")
+//!     let bytestream = ByteStream::read_from().path("docs/some-large-file.csv")
 //!         .buffer_size(32_784)
 //!         .length(Length::Exact(123_456))
 //!         .build()
@@ -235,26 +235,18 @@ pin_project! {
     ///     ```
     ///
     /// 2. **From a file**: ByteStreams created from a path can be retried. A new file descriptor will be opened if a retry occurs.
-    ///
-    ///     _Note: The `http-body-0-4-x` feature must be active to call `ByteStream::from_body_0_4`._
-    ///
     ///     ```no_run
-    ///     #[cfg(all(feature = "tokio-rt", feature = "http-body-0-4-x"))]
+    ///     #[cfg(feature = "tokio-rt")]
     ///     # {
     ///     use aws_smithy_types::byte_stream::ByteStream;
-    ///     let stream = ByteStream::from_path_body_0_4("big_file.csv");
+    ///     let stream = ByteStream::from_path("big_file.csv");
     ///     # }
     ///     ```
     ///
     /// 3. **From an `SdkBody` directly**: For more advanced / custom use cases, a ByteStream can be created directly
     /// from an SdkBody. **When created from an SdkBody, care must be taken to ensure retriability.** An SdkBody is retryable
     /// when constructed from in-memory data or when using [`SdkBody::retryable`](crate::body::SdkBody::retryable).
-    ///
-    ///     _Note: The `http-body-0-4-x` feature must be active to construct an `SdkBody` with `from_body_0_4`._
-    ///
     ///     ```no_run
-    ///     # #[cfg(feature = "http-body-0-4-x")]
-    ///     # {
     ///     # use hyper_0_14 as hyper;
     ///     use aws_smithy_types::byte_stream::ByteStream;
     ///     use aws_smithy_types::body::SdkBody;
@@ -265,7 +257,6 @@ pin_project! {
     ///     tx.send_data(Bytes::from_static(b"hello world!"));
     ///     tx.send_data(Bytes::from_static(b"hello again!"));
     ///     // NOTE! You must ensure that `tx` is dropped to ensure that EOF is sent
-    ///     # }
     ///     ```
     ///
     #[derive(Debug)]
@@ -351,6 +342,87 @@ impl ByteStream {
     /// ```
     pub async fn collect(self) -> Result<AggregatedBytes, Error> {
         self.inner.collect().await.map_err(Error::streaming)
+    }
+
+    /// Returns a [`FsBuilder`](crate::byte_stream::FsBuilder), allowing you to build a `ByteStream` with
+    /// full control over how the file is read (eg. specifying the length of the file or the size of the buffer used to read the file).
+    /// ```no_run
+    /// # #[cfg(feature = "rt-tokio")]
+    /// # {
+    /// use aws_smithy_types::byte_stream::{ByteStream, Length};
+    ///
+    /// async fn bytestream_from_file() -> ByteStream {
+    ///     let bytestream = ByteStream::read_from()
+    ///         .path("docs/some-large-file.csv")
+    ///         // Specify the size of the buffer used to read the file (in bytes, default is 4096)
+    ///         .buffer_size(32_784)
+    ///         // Specify the length of the file used (skips an additional call to retrieve the size)
+    ///         .length(Length::Exact(123_456))
+    ///         .build()
+    ///         .await
+    ///         .expect("valid path");
+    ///     bytestream
+    /// }
+    /// # }
+    /// ```
+    #[cfg(feature = "rt-tokio")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
+    pub fn read_from() -> crate::byte_stream::FsBuilder {
+        crate::byte_stream::FsBuilder::new()
+    }
+
+    /// Create a ByteStream that streams data from the filesystem
+    ///
+    /// This function creates a retryable ByteStream for a given `path`. The returned ByteStream
+    /// will provide a size hint when used as an HTTP body. If the request fails, the read will
+    /// begin again by reloading the file handle.
+    ///
+    /// ## Warning
+    /// The contents of the file MUST not change during retries. The length & checksum of the file
+    /// will be cached. If the contents of the file change, the operation will almost certainly fail.
+    ///
+    /// Furthermore, a partial write MAY seek in the file and resume from the previous location.
+    ///
+    /// Note: If you want more control, such as specifying the size of the buffer used to read the file
+    /// or the length of the file, use a [`FsBuilder`](crate::byte_stream::FsBuilder) as returned
+    /// from `ByteStream::read_from`
+    ///
+    /// # Examples
+    /// ```no_run
+    /// use aws_smithy_types::byte_stream::ByteStream;
+    /// use std::path::Path;
+    ///  async fn make_bytestream() -> ByteStream {
+    ///     ByteStream::from_path("docs/rows.csv").await.expect("file should be readable")
+    /// }
+    /// ```
+    #[cfg(feature = "rt-tokio")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
+    pub async fn from_path(
+        path: impl AsRef<std::path::Path>,
+    ) -> Result<Self, crate::byte_stream::error::Error> {
+        crate::byte_stream::FsBuilder::new()
+            .path(path)
+            .build()
+            .await
+    }
+
+    /// Create a ByteStream from a file
+    ///
+    /// NOTE: This will NOT result in a retryable ByteStream. For a ByteStream that can be retried in the case of
+    /// upstream failures, use [`ByteStream::from_path`](ByteStream::from_path)
+    #[deprecated(
+        since = "0.40.0",
+        note = "Prefer the more extensible ByteStream::read_from() API"
+    )]
+    #[cfg(feature = "rt-tokio")]
+    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
+    pub async fn from_file(
+        file: tokio::fs::File,
+    ) -> Result<Self, crate::byte_stream::error::Error> {
+        crate::byte_stream::FsBuilder::new()
+            .file(file)
+            .build()
+            .await
     }
 
     #[cfg(feature = "rt-tokio")]

@@ -10,7 +10,7 @@ impl CalculateRouteMatrixInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -83,12 +83,15 @@ impl CalculateRouteMatrixFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::calculate_route_matrix::CalculateRouteMatrix::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,7 @@ impl RestoreObjectInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::restore_object::RestoreObjectOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::restore_object::RestoreObjectError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -158,12 +158,15 @@ impl RestoreObjectFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::restore_object::RestoreObjectOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::restore_object::RestoreObjectError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::restore_object::RestoreObject::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

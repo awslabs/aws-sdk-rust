@@ -10,7 +10,7 @@ impl ListCertificateAuthoritiesInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl ListCertificateAuthoritiesFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::list_certificate_authorities::ListCertificateAuthorities::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

@@ -10,7 +10,7 @@ impl SetPrincipalTagAttributeMapInputBuilder {
         client: &crate::Client,
     ) -> ::std::result::Result<
         crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
@@ -72,12 +72,15 @@ impl SetPrincipalTagAttributeMapFluentBuilder {
         self,
     ) -> ::std::result::Result<
         crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput,
-        ::aws_smithy_http::result::SdkError<
+        ::aws_smithy_runtime_api::client::result::SdkError<
             crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError,
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = self.inner.build().map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        let input = self
+            .inner
+            .build()
+            .map_err(::aws_smithy_runtime_api::client::result::SdkError::construction_failure)?;
         let runtime_plugins = crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMap::operation_runtime_plugins(
             self.handle.runtime_plugins.clone(),
             &self.handle.conf,

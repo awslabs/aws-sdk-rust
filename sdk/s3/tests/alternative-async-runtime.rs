@@ -13,9 +13,9 @@ use aws_sdk_s3::types::{
 use aws_sdk_s3::{Client, Config};
 use aws_smithy_async::assert_elapsed;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep, Sleep};
-use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime::client::http::test_util::NeverClient;
 use aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs;
+use aws_smithy_runtime_api::client::result::SdkError;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::timeout::TimeoutConfig;
 use std::fmt::Debug;
