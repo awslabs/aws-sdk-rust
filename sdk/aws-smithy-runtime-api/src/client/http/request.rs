@@ -380,7 +380,7 @@ impl Headers {
         key: impl AsHeaderComponent,
         value: impl AsHeaderComponent,
     ) -> Result<Option<String>, HttpError> {
-        let key = header_name(key.into_maybe_static()?)?;
+        let key = header_name(key)?;
         let value = header_value(value.into_maybe_static()?)?;
         Ok(self
             .headers
@@ -404,8 +404,10 @@ impl Headers {
     /// Removes all headers with a given key
     ///
     /// If there are multiple entries for this key, the first entry is returned
-    pub fn remove(&mut self, key: &str) -> Option<HeaderValue> {
-        self.headers.remove(key)
+    pub fn remove(&mut self, key: impl AsRef<str>) -> Option<String> {
+        self.headers
+            .remove(key.as_ref())
+            .map(|h| h.as_str().to_string())
     }
 
     /// Appends a value to a given key
@@ -427,6 +429,9 @@ mod sealed {
         /// If the component can be represented as a Cow<'static, str>, return it
         fn into_maybe_static(self) -> Result<MaybeStatic, HttpError>;
 
+        /// Return a string reference to this header
+        fn as_str(&self) -> Result<&str, HttpError>;
+
         /// If a component is already internally represented as a `http02x::HeaderName`, return it
         fn repr_as_http02x_header_name(self) -> Result<http0::HeaderName, Self>
         where
@@ -440,17 +445,29 @@ mod sealed {
         fn into_maybe_static(self) -> Result<MaybeStatic, HttpError> {
             Ok(Cow::Borrowed(self))
         }
+
+        fn as_str(&self) -> Result<&str, HttpError> {
+            Ok(self)
+        }
     }
 
     impl AsHeaderComponent for String {
         fn into_maybe_static(self) -> Result<MaybeStatic, HttpError> {
             Ok(Cow::Owned(self))
         }
+
+        fn as_str(&self) -> Result<&str, HttpError> {
+            Ok(self)
+        }
     }
 
     impl AsHeaderComponent for Cow<'static, str> {
         fn into_maybe_static(self) -> Result<MaybeStatic, HttpError> {
             Ok(self)
+        }
+
+        fn as_str(&self) -> Result<&str, HttpError> {
+            Ok(self.as_ref())
         }
     }
 
@@ -462,11 +479,19 @@ mod sealed {
                     .to_string(),
             ))
         }
+
+        fn as_str(&self) -> Result<&str, HttpError> {
+            std::str::from_utf8(self.as_bytes()).map_err(HttpError::header_was_not_a_string)
+        }
     }
 
     impl AsHeaderComponent for http0::HeaderName {
         fn into_maybe_static(self) -> Result<MaybeStatic, HttpError> {
             Ok(self.to_string().into())
+        }
+
+        fn as_str(&self) -> Result<&str, HttpError> {
+            Ok(self.as_ref())
         }
 
         fn repr_as_http02x_header_name(self) -> Result<http0::HeaderName, Self>

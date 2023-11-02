@@ -26,6 +26,11 @@ mod with_sdk_config {
         assert!(config.retry_config().is_none());
         let _s3 = s3::Client::new(&config);
     }
+
+    #[test]
+    fn bytestream_from_path_exists() {
+        let _ = aws_sdk_s3::primitives::ByteStream::from_path("a/b.txt");
+    }
 }
 
 mod with_service_config {

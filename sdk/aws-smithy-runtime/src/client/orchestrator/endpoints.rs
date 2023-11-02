@@ -132,7 +132,7 @@ fn apply_endpoint(
     for (header_name, header_values) in endpoint.headers() {
         request.headers_mut().remove(header_name);
         for value in header_values {
-            request.headers_mut().insert(
+            request.headers_mut().append(
                 HeaderName::from_str(header_name).map_err(|err| {
                     ResolveEndpointError::message("invalid header name")
                         .with_source(Some(err.into()))
