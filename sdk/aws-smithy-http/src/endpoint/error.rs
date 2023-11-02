@@ -54,6 +54,7 @@ impl Error for ResolveEndpointError {
 pub(super) enum InvalidEndpointErrorKind {
     EndpointMustHaveScheme,
     FailedToConstructAuthority {
+        authority: String,
         source: Box<dyn Error + Send + Sync + 'static>,
     },
     FailedToConstructUri {
@@ -69,23 +70,28 @@ pub struct InvalidEndpointError {
 }
 
 impl InvalidEndpointError {
-    pub(super) fn endpoint_must_have_scheme() -> Self {
+    /// Construct a build error for a missing scheme
+    pub fn endpoint_must_have_scheme() -> Self {
         Self {
             kind: InvalidEndpointErrorKind::EndpointMustHaveScheme,
         }
     }
 
-    pub(super) fn failed_to_construct_authority(
+    /// Construct a build error for an invalid authority
+    pub fn failed_to_construct_authority(
+        authority: impl Into<String>,
         source: impl Into<Box<dyn Error + Send + Sync + 'static>>,
     ) -> Self {
         Self {
             kind: InvalidEndpointErrorKind::FailedToConstructAuthority {
+                authority: authority.into(),
                 source: source.into(),
             },
         }
     }
 
-    pub(super) fn failed_to_construct_uri(
+    /// Construct a build error for an invalid URI
+    pub fn failed_to_construct_uri(
         source: impl Into<Box<dyn Error + Send + Sync + 'static>>,
     ) -> Self {
         Self {
@@ -105,11 +111,11 @@ impl From<InvalidEndpointErrorKind> for InvalidEndpointError {
 impl fmt::Display for InvalidEndpointError {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         use InvalidEndpointErrorKind as ErrorKind;
-        match self.kind {
+        match &self.kind {
             ErrorKind::EndpointMustHaveScheme => write!(f, "endpoint must contain a valid scheme"),
-            ErrorKind::FailedToConstructAuthority { .. } => write!(
+            ErrorKind::FailedToConstructAuthority { authority, source: _ } => write!(
                 f,
-                "endpoint must contain a valid authority when combined with endpoint prefix"
+                "endpoint must contain a valid authority when combined with endpoint prefix: {authority}"
             ),
             ErrorKind::FailedToConstructUri { .. } => write!(f, "failed to construct URI"),
         }
@@ -120,8 +126,11 @@ impl Error for InvalidEndpointError {
     fn source(&self) -> Option<&(dyn Error + 'static)> {
         use InvalidEndpointErrorKind as ErrorKind;
         match &self.kind {
-            ErrorKind::FailedToConstructUri { source }
-            | ErrorKind::FailedToConstructAuthority { source } => Some(source.as_ref()),
+            ErrorKind::FailedToConstructUri { source } => Some(source.as_ref()),
+            ErrorKind::FailedToConstructAuthority {
+                authority: _,
+                source,
+            } => Some(source.as_ref()),
             ErrorKind::EndpointMustHaveScheme => None,
         }
     }

@@ -6,7 +6,6 @@
 //! Code for resolving an endpoint (URI) that a request should be sent to
 
 use crate::endpoint::error::InvalidEndpointError;
-use crate::operation::error::BuildError;
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use http::uri::{Authority, Uri};
 use std::borrow::Cow;
@@ -104,15 +103,13 @@ impl<T> ResolveEndpoint<T> for Endpoint {
 pub struct EndpointPrefix(String);
 impl EndpointPrefix {
     /// Create a new endpoint prefix from an `impl Into<String>`. If the prefix argument is invalid,
-    /// a [`BuildError`] will be returned.
-    pub fn new(prefix: impl Into<String>) -> StdResult<Self, BuildError> {
+    /// a [`InvalidEndpointError`] will be returned.
+    pub fn new(prefix: impl Into<String>) -> StdResult<Self, InvalidEndpointError> {
         let prefix = prefix.into();
         match Authority::from_str(&prefix) {
             Ok(_) => Ok(EndpointPrefix(prefix)),
-            Err(err) => Err(BuildError::invalid_uri(
-                prefix,
-                "invalid prefix".into(),
-                err,
+            Err(err) => Err(InvalidEndpointError::failed_to_construct_authority(
+                prefix, err,
             )),
         }
     }
@@ -142,11 +139,13 @@ pub fn apply_endpoint(
         .map(|auth| auth.as_str())
         .unwrap_or("");
     let authority = if !prefix.is_empty() {
-        Authority::from_str(&format!("{}{}", prefix, authority))
+        Cow::Owned(format!("{}{}", prefix, authority))
     } else {
-        Authority::from_str(authority)
-    }
-    .map_err(InvalidEndpointError::failed_to_construct_authority)?;
+        Cow::Borrowed(authority)
+    };
+    let authority = Authority::from_str(&authority).map_err(|err| {
+        InvalidEndpointError::failed_to_construct_authority(authority.into_owned(), err)
+    })?;
     let scheme = *endpoint
         .scheme()
         .as_ref()

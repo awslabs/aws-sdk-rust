@@ -9,6 +9,7 @@ use std::fmt;
 
 pub mod display;
 pub mod metadata;
+pub mod operation;
 mod unhandled;
 
 pub use metadata::ErrorMetadata;

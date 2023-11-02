@@ -5,9 +5,7 @@
 
 //! Errors for operations
 
-use aws_smithy_types::date_time::DateTimeFormatError;
-use http::uri::InvalidUri;
-use std::borrow::Cow;
+use crate::date_time::DateTimeFormatError;
 use std::error::Error;
 use std::fmt::{Display, Formatter};
 
@@ -80,15 +78,6 @@ enum BuildErrorKind {
     /// The serializer could not serialize the input
     SerializationError(SerializationError),
 
-    /// The serializer did not produce a valid URI
-    ///
-    /// This typically indicates that a field contained invalid characters.
-    InvalidUri {
-        uri: String,
-        message: Cow<'static, str>,
-        source: InvalidUri,
-    },
-
     /// An error occurred request construction
     Other(Box<dyn Error + Send + Sync + 'static>),
 }
@@ -104,16 +93,6 @@ pub struct BuildError {
 }
 
 impl BuildError {
-    pub(crate) fn invalid_uri(uri: String, message: Cow<'static, str>, source: InvalidUri) -> Self {
-        Self {
-            kind: BuildErrorKind::InvalidUri {
-                uri,
-                message,
-                source,
-            },
-        }
-    }
-
     /// Construct a build error for a missing field
     pub fn missing_field(field: &'static str, details: &'static str) -> Self {
         Self {
@@ -121,7 +100,7 @@ impl BuildError {
         }
     }
 
-    /// Construct a build error for a missing field
+    /// Construct a build error for an invalid field
     pub fn invalid_field(field: &'static str, details: impl Into<String>) -> Self {
         Self {
             kind: BuildErrorKind::InvalidField {
@@ -165,9 +144,6 @@ impl Display for BuildError {
             BuildErrorKind::SerializationError(_) => {
                 write!(f, "failed to serialize input")
             }
-            BuildErrorKind::InvalidUri { uri, message, .. } => {
-                write!(f, "generated URI `{uri}` was not a valid URI: {message}")
-            }
             BuildErrorKind::Other(_) => {
                 write!(f, "error during request construction")
             }
@@ -180,7 +156,6 @@ impl Error for BuildError {
         match &self.kind {
             BuildErrorKind::SerializationError(source) => Some(source as _),
             BuildErrorKind::Other(source) => Some(source.as_ref()),
-            BuildErrorKind::InvalidUri { source, .. } => Some(source as _),
             BuildErrorKind::InvalidField { .. } | BuildErrorKind::MissingField { .. } => None,
         }
     }

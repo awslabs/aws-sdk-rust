@@ -243,8 +243,7 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for WriteGetObj
         let endpoint_prefix = {
             let request_route = _input.request_route.as_deref().unwrap_or_default();
             if request_route.is_empty() {
-                return Err(::aws_smithy_http::operation::error::BuildError::invalid_field(
-                    "request_route",
+                return Err(::aws_smithy_http::endpoint::error::InvalidEndpointError::failed_to_construct_uri(
                     "request_route was unset or empty but must be set as part of the endpoint prefix",
                 )
                 .into());
