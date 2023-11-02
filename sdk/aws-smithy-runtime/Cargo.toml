@@ -15,17 +15,15 @@ rustdoc-args = ["--cfg", "docsrs"]
 [features]
 client = ["aws-smithy-runtime-api/client"]
 http-auth = ["aws-smithy-runtime-api/http-auth"]
-connector-hyper-0-14-x = ["dep:hyper", "hyper?/client", "hyper?/http2", "hyper?/http1", "hyper?/tcp"]
+connector-hyper-0-14-x = ["dep:hyper-0-14", "hyper-0-14?/client", "hyper-0-14?/http2", "hyper-0-14?/http1", "hyper-0-14?/tcp", "hyper-0-14?/stream"]
 tls-rustls = ["dep:hyper-rustls", "dep:rustls", "connector-hyper-0-14-x"]
 rt-tokio = ["tokio/rt"]
 test-util = ["aws-smithy-runtime-api/test-util", "dep:aws-smithy-protocol-test", "dep:tracing-subscriber", "dep:serde", "dep:serde_json"]
-wire-mock = ["test-util", "connector-hyper-0-14-x", "hyper?/server"]
+wire-mock = ["test-util", "connector-hyper-0-14-x", "hyper-0-14?/server"]
 
 [dependencies]
 bytes = "1"
 fastrand = "2.0.0"
-http = "0.2.8"
-http-body = "0.4.5"
 once_cell = "1.18.0"
 pin-project-lite = "0.2.7"
 pin-utils = "0.1.0"
@@ -53,7 +51,15 @@ path = "../aws-smithy-types"
 features = ["http-body-0-4-x"]
 version = "0.56.1"
 
-[dependencies.hyper]
+[dependencies.http]
+version = "0.2.8"
+
+[dependencies.http-body-0-4]
+package = "http-body"
+version = "0.4.4"
+
+[dependencies.hyper-0-14]
+package = "hyper"
 version = "0.14.26"
 default-features = false
 optional = true
@@ -87,6 +93,8 @@ features = ["fmt", "json"]
 
 [dev-dependencies]
 approx = "0.5.1"
+futures-util = "0.3.28"
+pretty_assertions = "1.4.0"
 tracing-test = "0.2.1"
 
 [dev-dependencies.aws-smithy-async]

@@ -83,7 +83,7 @@ pub fn default_async_sleep() -> Option<SharedAsyncSleep> {
 /// Future returned by [`AsyncSleep`].
 #[non_exhaustive]
 #[must_use]
-pub struct Sleep(Pin<Box<dyn Future<Output = ()> + Send + 'static>>);
+pub struct Sleep(Pin<Box<dyn Future<Output = ()> + Send + Sync + 'static>>);
 
 impl Debug for Sleep {
     fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
@@ -95,7 +95,7 @@ impl Sleep {
     /// Create a new [`Sleep`] future
     ///
     /// The provided future will be Boxed.
-    pub fn new(future: impl Future<Output = ()> + Send + 'static) -> Sleep {
+    pub fn new(future: impl Future<Output = ()> + Send + Sync + 'static) -> Sleep {
         Sleep(Box::pin(future))
     }
 }

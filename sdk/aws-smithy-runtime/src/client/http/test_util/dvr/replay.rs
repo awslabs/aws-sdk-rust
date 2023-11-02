@@ -16,7 +16,7 @@ use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use bytes::{Bytes, BytesMut};
 use http::{Request, Version};
-use http_body::Body;
+use http_body_0_4::Body;
 use std::collections::{HashMap, VecDeque};
 use std::error::Error;
 use std::fmt;
@@ -228,7 +228,7 @@ impl ReplayingClient {
     }
 }
 
-async fn replay_body(events: VecDeque<Event>, mut sender: hyper::body::Sender) {
+async fn replay_body(events: VecDeque<Event>, mut sender: hyper_0_14::body::Sender) {
     for event in events {
         match event.action {
             Action::Request { .. } => panic!(),
@@ -293,7 +293,7 @@ impl HttpConnector for ReplayingClient {
         };
 
         let _initial_request = events.pop_front().unwrap();
-        let (sender, response_body) = hyper::Body::channel();
+        let (sender, response_body) = hyper_0_14::Body::channel();
         let body = SdkBody::from_body_0_4(response_body);
         let recording = self.recorded_requests.clone();
         let recorded_request = tokio::spawn(async move {

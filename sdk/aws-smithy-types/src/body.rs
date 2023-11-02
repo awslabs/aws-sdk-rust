@@ -163,6 +163,26 @@ impl SdkBody {
         }
     }
 
+    #[cfg(feature = "http-body-0-4-x")]
+    pub(crate) fn poll_next_trailers(
+        self: Pin<&mut Self>,
+        #[allow(unused)] cx: &mut Context<'_>,
+    ) -> Poll<Result<Option<http::HeaderMap<http::HeaderValue>>, Error>> {
+        let this = self.project();
+        match this.inner.project() {
+            InnerProj::Once { .. } => Poll::Ready(Ok(None)),
+            InnerProj::Dyn { inner } => match inner.get_mut() {
+                BoxBody::HttpBody04(box_body) => {
+                    use http_body_0_4::Body;
+                    Pin::new(box_body).poll_trailers(cx)
+                }
+            },
+            InnerProj::Taken => Poll::Ready(Err(
+                "A `Taken` body should never be polled for trailers".into(),
+            )),
+        }
+    }
+
     /// If possible, return a reference to this body as `&[u8]`
     ///
     /// If this SdkBody is NOT streaming, this will return the byte slab

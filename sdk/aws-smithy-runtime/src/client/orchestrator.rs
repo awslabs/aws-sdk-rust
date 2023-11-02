@@ -35,10 +35,13 @@ use std::mem;
 use tracing::{debug, debug_span, instrument, trace, Instrument};
 
 mod auth;
+
 /// Defines types that implement a trait for endpoint resolution
 pub mod endpoints;
+
 /// Defines types that work with HTTP types
 mod http;
+
 /// Utility for making one-off unmodeled requests with the orchestrator.
 #[doc(hidden)]
 pub mod operation;

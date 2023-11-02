@@ -184,11 +184,11 @@ mod test {
         // `tokio_test::task::Spawn::poll_next` can only be invoked when the wrapped
         // type implements the `Stream` trait. Here, `FnStream` does not implement it,
         // so we work around it by using the `enter` method.
-        let _ = test_stream.enter(|ctx, pin| {
+        test_stream.enter(|ctx, pin| {
             let polled = pin.poll_next(ctx);
             assert!(polled.is_pending());
         });
-        let _ = test_stream.enter(|ctx, pin| {
+        test_stream.enter(|ctx, pin| {
             let polled = pin.poll_next(ctx);
             assert!(polled.is_pending());
         });

@@ -15,3 +15,6 @@ pub mod test_util;
 /// needing to provide equivalent functionality for hyper 1.x in the future.
 #[cfg(feature = "connector-hyper-0-14-x")]
 pub mod hyper_014;
+
+/// HTTP body and body-wrapper types
+pub mod body;

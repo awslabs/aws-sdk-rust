@@ -20,8 +20,8 @@ use aws_smithy_types::body::SdkBody;
 use aws_smithy_types::error::display::DisplayErrorContext;
 use aws_smithy_types::retry::ErrorKind;
 use http::{Extensions, Uri};
-use hyper::client::connect::{capture_connection, CaptureConnection, Connection, HttpInfo};
-use hyper::service::Service;
+use hyper_0_14::client::connect::{capture_connection, CaptureConnection, Connection, HttpInfo};
+use hyper_0_14::service::Service;
 use std::collections::HashMap;
 use std::error::Error;
 use std::fmt;
@@ -38,7 +38,7 @@ mod default_connector {
     // Creating a `with_native_roots` HTTP client takes 300ms on OS X. Cache this so that we
     // don't need to repeatedly incur that cost.
     static HTTPS_NATIVE_ROOTS: once_cell::sync::Lazy<
-        hyper_rustls::HttpsConnector<hyper::client::HttpConnector>,
+        hyper_rustls::HttpsConnector<hyper_0_14::client::HttpConnector>,
     > = once_cell::sync::Lazy::new(|| {
         use hyper_rustls::ConfigBuilderExt;
         hyper_rustls::HttpsConnectorBuilder::new()
@@ -82,7 +82,7 @@ mod default_connector {
     ///
     /// It requires a minimum TLS version of 1.2.
     /// It allows you to connect to both `http` and `https` URLs.
-    pub(super) fn https() -> hyper_rustls::HttpsConnector<hyper::client::HttpConnector> {
+    pub(super) fn https() -> hyper_rustls::HttpsConnector<hyper_0_14::client::HttpConnector> {
         HTTPS_NATIVE_ROOTS.clone()
     }
 }
@@ -119,7 +119,7 @@ pub fn default_client() -> Option<SharedHttpClient> {
     }
 }
 
-/// [`HttpConnector`] that uses [`hyper`] to make HTTP requests.
+/// [`HttpConnector`] that uses [`hyper_0_14`] to make HTTP requests.
 ///
 /// This connector also implements socket connect and read timeouts.
 ///
@@ -193,7 +193,7 @@ impl HttpConnector for HyperConnector {
 pub struct HyperConnectorBuilder {
     connector_settings: Option<HttpConnectorSettings>,
     sleep_impl: Option<SharedAsyncSleep>,
-    client_builder: Option<hyper::client::Builder>,
+    client_builder: Option<hyper_0_14::client::Builder>,
 }
 
 impl HyperConnectorBuilder {
@@ -278,32 +278,32 @@ impl HyperConnectorBuilder {
         self
     }
 
-    /// Override the Hyper client [`Builder`](hyper::client::Builder) used to construct this client.
+    /// Override the Hyper client [`Builder`](hyper_0_14::client::Builder) used to construct this client.
     ///
     /// This enables changing settings like forcing HTTP2 and modifying other default client behavior.
-    pub fn hyper_builder(mut self, hyper_builder: hyper::client::Builder) -> Self {
+    pub fn hyper_builder(mut self, hyper_builder: hyper_0_14::client::Builder) -> Self {
         self.client_builder = Some(hyper_builder);
         self
     }
 
-    /// Override the Hyper client [`Builder`](hyper::client::Builder) used to construct this client.
+    /// Override the Hyper client [`Builder`](hyper_0_14::client::Builder) used to construct this client.
     ///
     /// This enables changing settings like forcing HTTP2 and modifying other default client behavior.
     pub fn set_hyper_builder(
         &mut self,
-        hyper_builder: Option<hyper::client::Builder>,
+        hyper_builder: Option<hyper_0_14::client::Builder>,
     ) -> &mut Self {
         self.client_builder = hyper_builder;
         self
     }
 }
 
-/// Adapter from a [`hyper::Client`](hyper::Client) to [`HttpConnector`].
+/// Adapter from a [`hyper_0_14::Client`] to [`HttpConnector`].
 ///
 /// This adapter also enables TCP `CONNECT` and HTTP `READ` timeouts via [`HyperConnector::builder`].
 struct Adapter<C> {
     client: timeout_middleware::HttpReadTimeout<
-        hyper::Client<timeout_middleware::ConnectTimeout<C>, SdkBody>,
+        hyper_0_14::Client<timeout_middleware::ConnectTimeout<C>, SdkBody>,
     >,
 }
 
@@ -339,7 +339,7 @@ fn extract_smithy_connection(capture_conn: &CaptureConnection) -> Option<Connect
 impl<C> HttpConnector for Adapter<C>
 where
     C: Clone + Send + Sync + 'static,
-    C: hyper::service::Service<Uri>,
+    C: hyper_0_14::service::Service<Uri>,
     C::Response: Connection + AsyncRead + AsyncWrite + Send + Unpin + 'static,
     C::Future: Unpin + Send + 'static,
     C::Error: Into<BoxError>,
@@ -379,7 +379,7 @@ fn downcast_error(err: BoxError) -> ConnectorError {
     };
     // generally, the top of chain will probably be a hyper error. Go through a set of hyper specific
     // error classifications
-    let err = match err.downcast::<hyper::Error>() {
+    let err = match err.downcast::<hyper_0_14::Error>() {
         Ok(hyper_error) => return to_connector_error(*hyper_error),
         Err(box_error) => box_error,
     };
@@ -388,8 +388,8 @@ fn downcast_error(err: BoxError) -> ConnectorError {
     ConnectorError::other(err, None)
 }
 
-/// Convert a [`hyper::Error`] into a [`ConnectorError`]
-fn to_connector_error(err: hyper::Error) -> ConnectorError {
+/// Convert a [`hyper_0_14::Error`] into a [`ConnectorError`]
+fn to_connector_error(err: hyper_0_14::Error) -> ConnectorError {
     if err.is_timeout() || find_source::<timeout_middleware::HttpTimeoutError>(&err).is_some() {
         ConnectorError::timeout(err.into())
     } else if err.is_user() {
@@ -435,7 +435,7 @@ impl From<&HttpConnectorSettings> for CacheKey {
 
 struct HyperClient<F> {
     connector_cache: RwLock<HashMap<CacheKey, SharedHttpConnector>>,
-    client_builder: hyper::client::Builder,
+    client_builder: hyper_0_14::client::Builder,
     tcp_connector_fn: F,
 }
 
@@ -490,7 +490,7 @@ where
 /// hyper client configuration.
 #[derive(Clone, Default, Debug)]
 pub struct HyperClientBuilder {
-    client_builder: Option<hyper::client::Builder>,
+    client_builder: Option<hyper_0_14::client::Builder>,
 }
 
 impl HyperClientBuilder {
@@ -499,20 +499,20 @@ impl HyperClientBuilder {
         Self::default()
     }
 
-    /// Override the Hyper client [`Builder`](hyper::client::Builder) used to construct this client.
+    /// Override the Hyper client [`Builder`](hyper_0_14::client::Builder) used to construct this client.
     ///
     /// This enables changing settings like forcing HTTP2 and modifying other default client behavior.
-    pub fn hyper_builder(mut self, hyper_builder: hyper::client::Builder) -> Self {
+    pub fn hyper_builder(mut self, hyper_builder: hyper_0_14::client::Builder) -> Self {
         self.client_builder = Some(hyper_builder);
         self
     }
 
-    /// Override the Hyper client [`Builder`](hyper::client::Builder) used to construct this client.
+    /// Override the Hyper client [`Builder`](hyper_0_14::client::Builder) used to construct this client.
     ///
     /// This enables changing settings like forcing HTTP2 and modifying other default client behavior.
     pub fn set_hyper_builder(
         &mut self,
-        hyper_builder: Option<hyper::client::Builder>,
+        hyper_builder: Option<hyper_0_14::client::Builder>,
     ) -> &mut Self {
         self.client_builder = hyper_builder;
         self
@@ -615,7 +615,7 @@ mod timeout_middleware {
     impl<I> ConnectTimeout<I> {
         /// Create a new `ConnectTimeout` around `inner`.
         ///
-        /// Typically, `I` will implement [`hyper::client::connect::Connect`].
+        /// Typically, `I` will implement [`hyper_0_14::client::connect::Connect`].
         pub(crate) fn new(inner: I, sleep: SharedAsyncSleep, timeout: Duration) -> Self {
             Self {
                 inner,
@@ -640,7 +640,7 @@ mod timeout_middleware {
     impl<I> HttpReadTimeout<I> {
         /// Create a new `HttpReadTimeout` around `inner`.
         ///
-        /// Typically, `I` will implement [`hyper::service::Service<http::Request<SdkBody>>`].
+        /// Typically, `I` will implement [`hyper_0_14::service::Service<http::Request<SdkBody>>`].
         pub(crate) fn new(inner: I, sleep: SharedAsyncSleep, timeout: Duration) -> Self {
             Self {
                 inner,
@@ -704,9 +704,9 @@ mod timeout_middleware {
         }
     }
 
-    impl<I> hyper::service::Service<Uri> for ConnectTimeout<I>
+    impl<I> hyper_0_14::service::Service<Uri> for ConnectTimeout<I>
     where
-        I: hyper::service::Service<Uri>,
+        I: hyper_0_14::service::Service<Uri>,
         I::Error: Into<BoxError>,
     {
         type Response = I::Response;
@@ -734,9 +734,9 @@ mod timeout_middleware {
         }
     }
 
-    impl<I, B> hyper::service::Service<http::Request<B>> for HttpReadTimeout<I>
+    impl<I, B> hyper_0_14::service::Service<http::Request<B>> for HttpReadTimeout<I>
     where
-        I: hyper::service::Service<http::Request<B>, Error = hyper::Error>,
+        I: hyper_0_14::service::Service<http::Request<B>, Error = hyper_0_14::Error>,
     {
         type Response = I::Response;
         type Error = BoxError;
@@ -771,7 +771,7 @@ mod timeout_middleware {
         use aws_smithy_async::future::never::Never;
         use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
         use aws_smithy_types::error::display::DisplayErrorContext;
-        use hyper::client::connect::Connected;
+        use hyper_0_14::client::connect::Connected;
         use std::time::Duration;
         use tokio::io::ReadBuf;
         use tokio::net::TcpStream;
@@ -790,7 +790,7 @@ mod timeout_middleware {
         #[non_exhaustive]
         #[derive(Clone, Default, Debug)]
         struct NeverConnects;
-        impl hyper::service::Service<Uri> for NeverConnects {
+        impl hyper_0_14::service::Service<Uri> for NeverConnects {
             type Response = TcpStream;
             type Error = ConnectorError;
             type Future = Pin<Box<dyn Future<Output = Result<Self::Response, Self::Error>> + Send>>;
@@ -810,7 +810,7 @@ mod timeout_middleware {
         /// A service that will connect but never send any data
         #[derive(Clone, Debug, Default)]
         struct NeverReplies;
-        impl hyper::service::Service<Uri> for NeverReplies {
+        impl hyper_0_14::service::Service<Uri> for NeverReplies {
             type Response = EmptyStream;
             type Error = BoxError;
             type Future = std::future::Ready<Result<Self::Response, Self::Error>>;
@@ -937,7 +937,7 @@ mod test {
     use crate::client::http::test_util::NeverTcpConnector;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use http::Uri;
-    use hyper::client::connect::{Connected, Connection};
+    use hyper_0_14::client::connect::{Connected, Connection};
     use std::io::{Error, ErrorKind};
     use std::pin::Pin;
     use std::sync::atomic::{AtomicU32, Ordering};
@@ -1057,7 +1057,7 @@ mod test {
         inner: T,
     }
 
-    impl<T> hyper::service::Service<Uri> for TestConnection<T>
+    impl<T> hyper_0_14::service::Service<Uri> for TestConnection<T>
     where
         T: Clone + Connection,
     {

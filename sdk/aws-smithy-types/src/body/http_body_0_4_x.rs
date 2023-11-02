@@ -49,9 +49,9 @@ impl http_body_0_4::Body for SdkBody {
 
     fn poll_trailers(
         self: Pin<&mut Self>,
-        _cx: &mut Context<'_>,
+        cx: &mut Context<'_>,
     ) -> Poll<Result<Option<http::HeaderMap<http::HeaderValue>>, Self::Error>> {
-        Poll::Ready(Ok(None))
+        self.poll_next_trailers(cx)
     }
 
     fn is_end_stream(&self) -> bool {
@@ -78,7 +78,7 @@ mod tests {
         let initial = SdkBody::from("hello!");
         assert_eq!(initial.bytes(), Some(b"hello!".as_slice()));
 
-        let new_body = initial.map_preserve_contents(|body| SdkBody::from_body_0_4(body));
+        let new_body = initial.map_preserve_contents(SdkBody::from_body_0_4);
         assert_eq!(new_body.bytes(), Some(b"hello!".as_slice()));
     }
 

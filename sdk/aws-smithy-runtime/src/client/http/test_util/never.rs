@@ -70,7 +70,7 @@ impl NeverTcpConnector {
 }
 
 #[cfg(feature = "connector-hyper-0-14-x")]
-impl hyper::service::Service<http::Uri> for NeverTcpConnector {
+impl hyper_0_14::service::Service<http::Uri> for NeverTcpConnector {
     type Response = connection::NeverTcpConnection;
     type Error = aws_smithy_runtime_api::box_error::BoxError;
     type Future = std::pin::Pin<
@@ -94,7 +94,7 @@ impl hyper::service::Service<http::Uri> for NeverTcpConnector {
 
 #[cfg(feature = "connector-hyper-0-14-x")]
 mod connection {
-    use hyper::client::connect::{Connected, Connection};
+    use hyper_0_14::client::connect::{Connected, Connection};
     use std::io::Error;
     use std::pin::Pin;
     use std::task::{Context, Poll};
