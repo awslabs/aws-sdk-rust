@@ -8,7 +8,7 @@ publish = false
 
 [dependencies]
 http = "0.2"
-aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
+aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
 aws-sdk-s3= { version = "0.35.0", path = "../../../sdk/s3" }
 aws-sdk-sqs= { version = "0.35.0", path = "../../../sdk/sqs" }
 

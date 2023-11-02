@@ -366,7 +366,6 @@ impl ByteStream {
     /// # }
     /// ```
     #[cfg(feature = "rt-tokio")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
     pub fn read_from() -> crate::byte_stream::FsBuilder {
         crate::byte_stream::FsBuilder::new()
     }
@@ -396,7 +395,6 @@ impl ByteStream {
     /// }
     /// ```
     #[cfg(feature = "rt-tokio")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
     pub async fn from_path(
         path: impl AsRef<std::path::Path>,
     ) -> Result<Self, crate::byte_stream::error::Error> {
@@ -415,7 +413,6 @@ impl ByteStream {
         note = "Prefer the more extensible ByteStream::read_from() API"
     )]
     #[cfg(feature = "rt-tokio")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "rt-tokio")))]
     pub async fn from_file(
         file: tokio::fs::File,
     ) -> Result<Self, crate::byte_stream::error::Error> {

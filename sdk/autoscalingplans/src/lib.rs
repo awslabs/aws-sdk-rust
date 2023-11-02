@@ -40,7 +40,7 @@
 //!
 //! ```toml
 //! [dependencies]
-//! aws-config = "0.56.1"
+//! aws-config = "0.57.1"
 //! aws-sdk-autoscalingplans = "0.35.0"
 //! tokio = { version = "1", features = ["full"] }
 //! ```

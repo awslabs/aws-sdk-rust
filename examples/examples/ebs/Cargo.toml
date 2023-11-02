@@ -9,7 +9,7 @@ publish = false
 [dependencies]
 base64 = "0.13.0"
 sha2 = "0.9.5"
-aws-config= { version = "0.56.1", path = "../../../sdk/aws-config" }
+aws-config= { version = "0.57.1", path = "../../../sdk/aws-config" }
 aws-sdk-ebs= { version = "0.35.0", path = "../../../sdk/ebs" }
 aws-sdk-ec2= { version = "0.35.0", path = "../../../sdk/ec2" }
 

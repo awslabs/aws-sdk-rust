@@ -13,6 +13,7 @@
     rust_2018_idioms,
     unreachable_pub
 )]
+#![cfg_attr(docsrs, feature(doc_auto_cfg))]
 pub mod base64;
 pub mod body;
 pub mod byte_stream;
