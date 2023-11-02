@@ -9,9 +9,11 @@ use aws_smithy_http::endpoint::{
     SharedEndpointResolver,
 };
 use aws_smithy_runtime_api::box_error::BoxError;
-use aws_smithy_runtime_api::client::endpoint::{EndpointResolver, EndpointResolverParams};
+use aws_smithy_runtime_api::client::endpoint::{
+    EndpointFuture, EndpointResolver, EndpointResolverParams,
+};
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
-use aws_smithy_runtime_api::client::orchestrator::{Future, HttpRequest};
+use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
@@ -44,8 +46,8 @@ impl StaticUriEndpointResolver {
 }
 
 impl EndpointResolver for StaticUriEndpointResolver {
-    fn resolve_endpoint(&self, _params: &EndpointResolverParams) -> Future<Endpoint> {
-        Future::ready(Ok(Endpoint::builder()
+    fn resolve_endpoint(&self, _params: &EndpointResolverParams) -> EndpointFuture {
+        EndpointFuture::ready(Ok(Endpoint::builder()
             .url(self.endpoint.to_string())
             .build()))
     }
@@ -99,7 +101,7 @@ impl<Params> EndpointResolver for DefaultEndpointResolver<Params>
 where
     Params: Debug + Send + Sync + 'static,
 {
-    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Future<Endpoint> {
+    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> EndpointFuture {
         let ep = match params.get::<Params>() {
             Some(params) => self.inner.resolve_endpoint(params).map_err(Box::new),
             None => Err(Box::new(ResolveEndpointError::message(
@@ -107,7 +109,7 @@ where
             ))),
         }
         .map_err(|e| e as _);
-        Future::ready(ep)
+        EndpointFuture::ready(ep)
     }
 }
 

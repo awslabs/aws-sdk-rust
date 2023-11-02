@@ -5,13 +5,18 @@
 
 //! APIs needed to configure endpoint resolution for clients.
 
-use crate::client::orchestrator::Future;
+use crate::box_error::BoxError;
 use crate::impl_shared_conversions;
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
 use aws_smithy_types::type_erasure::TypeErasedBox;
 use std::fmt;
 use std::sync::Arc;
+
+new_type_future! {
+    doc = "Future for [`EndpointResolver::resolve_endpoint`].",
+    pub struct EndpointFuture<Endpoint, BoxError>,
+}
 
 /// Parameters originating from the Smithy endpoint ruleset required for endpoint resolution.
 ///
@@ -40,7 +45,7 @@ impl Storable for EndpointResolverParams {
 /// Configurable endpoint resolver implementation.
 pub trait EndpointResolver: Send + Sync + fmt::Debug {
     /// Asynchronously resolves an endpoint to use from the given endpoint parameters.
-    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Future<Endpoint>;
+    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> EndpointFuture;
 }
 
 /// Shared endpoint resolver.
@@ -57,7 +62,7 @@ impl SharedEndpointResolver {
 }
 
 impl EndpointResolver for SharedEndpointResolver {
-    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> Future<Endpoint> {
+    fn resolve_endpoint(&self, params: &EndpointResolverParams) -> EndpointFuture {
         self.0.resolve_endpoint(params)
     }
 }

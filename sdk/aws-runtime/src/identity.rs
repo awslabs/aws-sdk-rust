@@ -6,9 +6,7 @@
 /// Credentials-based identity support.
 pub mod credentials {
     use aws_credential_types::cache::SharedCredentialsCache;
-    use aws_smithy_runtime_api::box_error::BoxError;
-    use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver};
-    use aws_smithy_runtime_api::client::orchestrator::Future;
+    use aws_smithy_runtime_api::client::identity::{Identity, IdentityFuture, IdentityResolver};
     use aws_smithy_types::config_bag::ConfigBag;
 
     /// Smithy identity resolver for AWS credentials.
@@ -25,13 +23,13 @@ pub mod credentials {
     }
 
     impl IdentityResolver for CredentialsIdentityResolver {
-        fn resolve_identity(&self, _config_bag: &ConfigBag) -> Future<Identity> {
+        fn resolve_identity(&self, _config_bag: &ConfigBag) -> IdentityFuture {
             let cache = self.credentials_cache.clone();
-            Future::new(Box::pin(async move {
+            IdentityFuture::new(async move {
                 let credentials = cache.as_ref().provide_cached_credentials().await?;
                 let expiration = credentials.expiry();
-                Result::<_, BoxError>::Ok(Identity::new(credentials, expiration))
-            }))
+                Ok(Identity::new(credentials, expiration))
+            })
         }
     }
 }

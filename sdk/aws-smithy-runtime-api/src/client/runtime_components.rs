@@ -548,11 +548,9 @@ impl RuntimeComponentsBuilder {
     /// Creates a runtime components builder with all the required components filled in with fake (panicking) implementations.
     #[cfg(feature = "test-util")]
     pub fn for_tests() -> Self {
-        use crate::client::endpoint::EndpointResolverParams;
-        use crate::client::identity::Identity;
-        use crate::client::orchestrator::Future;
+        use crate::client::endpoint::{EndpointFuture, EndpointResolverParams};
+        use crate::client::identity::IdentityFuture;
         use aws_smithy_types::config_bag::ConfigBag;
-        use aws_smithy_types::endpoint::Endpoint;
 
         #[derive(Debug)]
         struct FakeAuthSchemeOptionResolver;
@@ -581,7 +579,7 @@ impl RuntimeComponentsBuilder {
         #[derive(Debug)]
         struct FakeEndpointResolver;
         impl EndpointResolver for FakeEndpointResolver {
-            fn resolve_endpoint(&self, _: &EndpointResolverParams) -> Future<Endpoint> {
+            fn resolve_endpoint(&self, _: &EndpointResolverParams) -> EndpointFuture {
                 unreachable!("fake endpoint resolver must be overridden for this test")
             }
         }
@@ -608,7 +606,7 @@ impl RuntimeComponentsBuilder {
         #[derive(Debug)]
         struct FakeIdentityResolver;
         impl IdentityResolver for FakeIdentityResolver {
-            fn resolve_identity(&self, _: &ConfigBag) -> Future<Identity> {
+            fn resolve_identity(&self, _: &ConfigBag) -> IdentityFuture {
                 unreachable!("fake identity resolver must be overridden for this test")
             }
         }

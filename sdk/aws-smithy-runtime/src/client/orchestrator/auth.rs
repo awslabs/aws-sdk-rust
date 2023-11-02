@@ -145,10 +145,10 @@ mod tests {
         SharedAuthSchemeOptionResolver, Signer,
     };
     use aws_smithy_runtime_api::client::identity::{
-        Identity, IdentityResolver, SharedIdentityResolver,
+        Identity, IdentityFuture, IdentityResolver, SharedIdentityResolver,
     };
     use aws_smithy_runtime_api::client::interceptors::context::{Input, InterceptorContext};
-    use aws_smithy_runtime_api::client::orchestrator::{Future, HttpRequest};
+    use aws_smithy_runtime_api::client::orchestrator::HttpRequest;
     use aws_smithy_runtime_api::client::runtime_components::{
         GetIdentityResolver, RuntimeComponentsBuilder,
     };
@@ -160,8 +160,8 @@ mod tests {
         #[derive(Debug)]
         struct TestIdentityResolver;
         impl IdentityResolver for TestIdentityResolver {
-            fn resolve_identity(&self, _config_bag: &ConfigBag) -> Future<Identity> {
-                Future::ready(Ok(Identity::new("doesntmatter", None)))
+            fn resolve_identity(&self, _config_bag: &ConfigBag) -> IdentityFuture {
+                IdentityFuture::ready(Ok(Identity::new("doesntmatter", None)))
             }
         }
 

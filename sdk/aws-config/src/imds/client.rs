@@ -19,9 +19,11 @@ use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime::client::orchestrator::operation::Operation;
 use aws_smithy_runtime::client::retries::strategy::StandardRetryStrategy;
 use aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams;
-use aws_smithy_runtime_api::client::endpoint::{EndpointResolver, EndpointResolverParams};
+use aws_smithy_runtime_api::client::endpoint::{
+    EndpointFuture, EndpointResolver, EndpointResolverParams,
+};
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
-use aws_smithy_runtime_api::client::orchestrator::{Future, OrchestratorError, SensitiveOutput};
+use aws_smithy_runtime_api::client::orchestrator::{OrchestratorError, SensitiveOutput};
 use aws_smithy_runtime_api::client::retries::classifiers::{
     ClassifyRetry, RetryAction, SharedRetryClassifier,
 };
@@ -522,15 +524,15 @@ struct ImdsEndpointResolver {
 }
 
 impl EndpointResolver for ImdsEndpointResolver {
-    fn resolve_endpoint(&self, _: &EndpointResolverParams) -> Future<Endpoint> {
+    fn resolve_endpoint(&self, _: &EndpointResolverParams) -> EndpointFuture {
         let this = self.clone();
-        Future::new(Box::pin(async move {
+        EndpointFuture::new(async move {
             this.endpoint_source
                 .endpoint(this.mode_override)
                 .await
                 .map(|uri| Endpoint::builder().url(uri.to_string()).build())
                 .map_err(|err| err.into())
-        }))
+        })
     }
 }
 

@@ -20,7 +20,6 @@ use crate::box_error::BoxError;
 use crate::client::interceptors::context::phase::Phase;
 use crate::client::interceptors::context::Error;
 use crate::client::interceptors::InterceptorError;
-use aws_smithy_async::future::now_or_later::NowOrLater;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::{ConnectorError, SdkError};
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
@@ -33,18 +32,6 @@ pub type HttpRequest = http::Request<SdkBody>;
 
 /// Type alias for the HTTP response type that the orchestrator uses.
 pub type HttpResponse = http::Response<SdkBody>;
-
-/// Type alias for boxed futures that are returned from several traits since async trait functions are not stable yet (as of 2023-07-21).
-///
-/// See [the Rust blog](https://blog.rust-lang.org/inside-rust/2023/05/03/stabilizing-async-fn-in-trait.html) for
-/// more information on async functions in traits.
-pub type BoxFuture<T> = aws_smithy_async::future::BoxFuture<T, BoxError>;
-
-/// Type alias for futures that are returned from several traits since async trait functions are not stable yet (as of 2023-07-21).
-///
-/// See [the Rust blog](https://blog.rust-lang.org/inside-rust/2023/05/03/stabilizing-async-fn-in-trait.html) for
-/// more information on async functions in traits.
-pub type Future<T> = NowOrLater<Result<T, BoxError>, BoxFuture<T>>;
 
 /// Informs the orchestrator on whether or not the request body needs to be loaded into memory before transmit.
 ///

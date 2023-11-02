@@ -25,11 +25,9 @@ use aws_smithy_runtime_api::client::auth::{
     AuthScheme, AuthSchemeEndpointConfig, AuthSchemeId, Signer,
 };
 use aws_smithy_runtime_api::client::identity::{
-    Identity, IdentityResolver, SharedIdentityResolver,
+    Identity, IdentityFuture, IdentityResolver, SharedIdentityResolver,
 };
-use aws_smithy_runtime_api::client::orchestrator::{
-    Future, HttpRequest, HttpResponse, OrchestratorError,
-};
+use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, HttpResponse, OrchestratorError};
 use aws_smithy_runtime_api::client::runtime_components::{
     GetIdentityResolver, RuntimeComponents, RuntimeComponentsBuilder,
 };
@@ -194,9 +192,9 @@ fn parse_token_response(response: &HttpResponse, now: SystemTime) -> Result<Toke
 }
 
 impl IdentityResolver for TokenResolver {
-    fn resolve_identity(&self, _config_bag: &ConfigBag) -> Future<Identity> {
+    fn resolve_identity(&self, _config_bag: &ConfigBag) -> IdentityFuture {
         let this = self.clone();
-        Future::new(Box::pin(async move {
+        IdentityFuture::new(async move {
             let preloaded_token = this
                 .inner
                 .cache
@@ -217,7 +215,7 @@ impl IdentityResolver for TokenResolver {
 
             let expiry = token.expiry;
             Ok(Identity::new(token, Some(expiry)))
-        }))
+        })
     }
 }
 

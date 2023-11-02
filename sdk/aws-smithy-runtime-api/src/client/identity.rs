@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::box_error::BoxError;
 use crate::client::auth::AuthSchemeId;
-use crate::client::orchestrator::Future;
 use crate::impl_shared_conversions;
 use aws_smithy_types::config_bag::ConfigBag;
 use std::any::Any;
@@ -16,20 +16,25 @@ use std::time::SystemTime;
 #[cfg(feature = "http-auth")]
 pub mod http;
 
+new_type_future! {
+    doc = "Future for [`IdentityResolver::resolve_identity`].",
+    pub struct IdentityFuture<Identity, BoxError>,
+}
+
 /// Resolver for identities.
 ///
 /// Every [`AuthScheme`](crate::client::auth::AuthScheme) has one or more compatible
 /// identity resolvers, which are selected from runtime components by the auth scheme
 /// implementation itself.
 ///
-/// The identity resolver must return a [`Future`] with the resolved identity, or an error
+/// The identity resolver must return an [`IdentityFuture`] with the resolved identity, or an error
 /// if resolution failed. There is no optionality for identity resolvers. The identity either
 /// resolves successfully, or it fails. The orchestrator will choose exactly one auth scheme
 /// to use, and thus, its chosen identity resolver is the only identity resolver that runs.
-/// There is no fallback to other auth schemes in the absense of an identity.
+/// There is no fallback to other auth schemes in the absence of an identity.
 pub trait IdentityResolver: Send + Sync + Debug {
     /// Asynchronously resolves an identity for a request using the given config.
-    fn resolve_identity(&self, config_bag: &ConfigBag) -> Future<Identity>;
+    fn resolve_identity(&self, config_bag: &ConfigBag) -> IdentityFuture;
 }
 
 /// Container for a shared identity resolver.
@@ -44,7 +49,7 @@ impl SharedIdentityResolver {
 }
 
 impl IdentityResolver for SharedIdentityResolver {
-    fn resolve_identity(&self, config_bag: &ConfigBag) -> Future<Identity> {
+    fn resolve_identity(&self, config_bag: &ConfigBag) -> IdentityFuture {
         self.0.resolve_identity(config_bag)
     }
 }

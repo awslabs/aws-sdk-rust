@@ -3,8 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_smithy_runtime_api::client::identity::{Identity, IdentityResolver};
-use aws_smithy_runtime_api::client::orchestrator::Future;
+use aws_smithy_runtime_api::client::identity::{Identity, IdentityFuture, IdentityResolver};
 use aws_smithy_types::config_bag::ConfigBag;
 
 /// Identity for the [`NoAuthScheme`](crate::client::auth::no_auth::NoAuthScheme) auth scheme.
@@ -30,7 +29,7 @@ impl NoAuthIdentityResolver {
 }
 
 impl IdentityResolver for NoAuthIdentityResolver {
-    fn resolve_identity(&self, _: &ConfigBag) -> Future<Identity> {
-        Future::ready(Ok(Identity::new(NoAuthIdentity::new(), None)))
+    fn resolve_identity(&self, _: &ConfigBag) -> IdentityFuture {
+        IdentityFuture::ready(Ok(Identity::new(NoAuthIdentity::new(), None)))
     }
 }
