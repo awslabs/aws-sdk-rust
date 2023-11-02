@@ -9,11 +9,11 @@ pub struct OpenZfsVolumeConfiguration {
     /// <p>The path to the volume from the root volume. For example, <code>fsx/parentVolume/volume1</code>.</p>
     pub volume_path: ::std::option::Option<::std::string::String>,
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
-    pub storage_capacity_reservation_gi_b: ::std::option::Option<i32>,
+    pub storage_capacity_reservation_gib: ::std::option::Option<i32>,
     /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
-    pub storage_capacity_quota_gi_b: ::std::option::Option<i32>,
+    pub storage_capacity_quota_gib: ::std::option::Option<i32>,
     /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub record_size_ki_b: ::std::option::Option<i32>,
+    pub record_size_kib: ::std::option::Option<i32>,
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
     /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
@@ -48,16 +48,16 @@ impl OpenZfsVolumeConfiguration {
         self.volume_path.as_deref()
     }
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
-    pub fn storage_capacity_reservation_gi_b(&self) -> ::std::option::Option<i32> {
-        self.storage_capacity_reservation_gi_b
+    pub fn storage_capacity_reservation_gib(&self) -> ::std::option::Option<i32> {
+        self.storage_capacity_reservation_gib
     }
     /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
-    pub fn storage_capacity_quota_gi_b(&self) -> ::std::option::Option<i32> {
-        self.storage_capacity_quota_gi_b
+    pub fn storage_capacity_quota_gib(&self) -> ::std::option::Option<i32> {
+        self.storage_capacity_quota_gib
     }
     /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn record_size_ki_b(&self) -> ::std::option::Option<i32> {
-        self.record_size_ki_b
+    pub fn record_size_kib(&self) -> ::std::option::Option<i32> {
+        self.record_size_kib
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -118,9 +118,9 @@ impl OpenZfsVolumeConfiguration {
 pub struct OpenZfsVolumeConfigurationBuilder {
     pub(crate) parent_volume_id: ::std::option::Option<::std::string::String>,
     pub(crate) volume_path: ::std::option::Option<::std::string::String>,
-    pub(crate) storage_capacity_reservation_gi_b: ::std::option::Option<i32>,
-    pub(crate) storage_capacity_quota_gi_b: ::std::option::Option<i32>,
-    pub(crate) record_size_ki_b: ::std::option::Option<i32>,
+    pub(crate) storage_capacity_reservation_gib: ::std::option::Option<i32>,
+    pub(crate) storage_capacity_quota_gib: ::std::option::Option<i32>,
+    pub(crate) record_size_kib: ::std::option::Option<i32>,
     pub(crate) data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     pub(crate) copy_tags_to_snapshots: ::std::option::Option<bool>,
     pub(crate) origin_snapshot: ::std::option::Option<crate::types::OpenZfsOriginSnapshotConfiguration>,
@@ -161,46 +161,46 @@ impl OpenZfsVolumeConfigurationBuilder {
         &self.volume_path
     }
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
-    pub fn storage_capacity_reservation_gi_b(mut self, input: i32) -> Self {
-        self.storage_capacity_reservation_gi_b = ::std::option::Option::Some(input);
+    pub fn storage_capacity_reservation_gib(mut self, input: i32) -> Self {
+        self.storage_capacity_reservation_gib = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
-    pub fn set_storage_capacity_reservation_gi_b(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_capacity_reservation_gi_b = input;
+    pub fn set_storage_capacity_reservation_gib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_capacity_reservation_gib = input;
         self
     }
     /// <p>The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't reserve more storage than the parent volume has reserved.</p>
-    pub fn get_storage_capacity_reservation_gi_b(&self) -> &::std::option::Option<i32> {
-        &self.storage_capacity_reservation_gi_b
+    pub fn get_storage_capacity_reservation_gib(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity_reservation_gib
     }
     /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
-    pub fn storage_capacity_quota_gi_b(mut self, input: i32) -> Self {
-        self.storage_capacity_quota_gi_b = ::std::option::Option::Some(input);
-        self
-    }
-    /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
-    pub fn set_storage_capacity_quota_gi_b(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_capacity_quota_gi_b = input;
+    pub fn storage_capacity_quota_gib(mut self, input: i32) -> Self {
+        self.storage_capacity_quota_gib = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
-    pub fn get_storage_capacity_quota_gi_b(&self) -> &::std::option::Option<i32> {
-        &self.storage_capacity_quota_gi_b
+    pub fn set_storage_capacity_quota_gib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_capacity_quota_gib = input;
+        self
+    }
+    /// <p>The maximum amount of storage in gibibtyes (GiB) that the volume can use from its parent. You can specify a quota larger than the storage on the parent volume.</p>
+    pub fn get_storage_capacity_quota_gib(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity_quota_gib
     }
     /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn record_size_ki_b(mut self, input: i32) -> Self {
-        self.record_size_ki_b = ::std::option::Option::Some(input);
+    pub fn record_size_kib(mut self, input: i32) -> Self {
+        self.record_size_kib = ::std::option::Option::Some(input);
         self
     }
     /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn set_record_size_ki_b(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.record_size_ki_b = input;
+    pub fn set_record_size_kib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.record_size_kib = input;
         self
     }
     /// <p>The record size of an OpenZFS volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. For guidance on when to set a custom record size, see the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn get_record_size_ki_b(&self) -> &::std::option::Option<i32> {
-        &self.record_size_ki_b
+    pub fn get_record_size_kib(&self) -> &::std::option::Option<i32> {
+        &self.record_size_kib
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -360,9 +360,9 @@ impl OpenZfsVolumeConfigurationBuilder {
         crate::types::OpenZfsVolumeConfiguration {
             parent_volume_id: self.parent_volume_id,
             volume_path: self.volume_path,
-            storage_capacity_reservation_gi_b: self.storage_capacity_reservation_gi_b,
-            storage_capacity_quota_gi_b: self.storage_capacity_quota_gi_b,
-            record_size_ki_b: self.record_size_ki_b,
+            storage_capacity_reservation_gib: self.storage_capacity_reservation_gib,
+            storage_capacity_quota_gib: self.storage_capacity_quota_gib,
+            record_size_kib: self.record_size_kib,
             data_compression_type: self.data_compression_type,
             copy_tags_to_snapshots: self.copy_tags_to_snapshots,
             origin_snapshot: self.origin_snapshot,

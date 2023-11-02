@@ -2046,11 +2046,11 @@ impl From<crate::operation::list_tags_for_resource::ListTagsForResourceError> fo
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_web_ac_ls::ListWebACLsError, R>> for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_web_acls::ListWebACLsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_web_ac_ls::ListWebACLsError, R>) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_web_acls::ListWebACLsError, R>) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -2062,12 +2062,12 @@ where
         }
     }
 }
-impl From<crate::operation::list_web_ac_ls::ListWebACLsError> for Error {
-    fn from(err: crate::operation::list_web_ac_ls::ListWebACLsError) -> Self {
+impl From<crate::operation::list_web_acls::ListWebACLsError> for Error {
+    fn from(err: crate::operation::list_web_acls::ListWebACLsError) -> Self {
         match err {
-            crate::operation::list_web_ac_ls::ListWebACLsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
-            crate::operation::list_web_ac_ls::ListWebACLsError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
-            crate::operation::list_web_ac_ls::ListWebACLsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_web_acls::ListWebACLsError::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+            crate::operation::list_web_acls::ListWebACLsError::WafInvalidAccountException(inner) => Error::WafInvalidAccountException(inner),
+            crate::operation::list_web_acls::ListWebACLsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

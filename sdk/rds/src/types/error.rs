@@ -51,7 +51,7 @@ pub use crate::types::error::_insufficient_db_instance_capacity_fault::Insuffici
 
 pub use crate::types::error::_db_subnet_group_not_found_fault::DbSubnetGroupNotFoundFault;
 
-pub use crate::types::error::_db_subnet_group_does_not_cover_enough_a_zs::DbSubnetGroupDoesNotCoverEnoughAZs;
+pub use crate::types::error::_db_subnet_group_does_not_cover_enough_azs::DbSubnetGroupDoesNotCoverEnoughAZs;
 
 pub use crate::types::error::_authorization_not_found_fault::AuthorizationNotFoundFault;
 
@@ -119,7 +119,7 @@ pub use crate::types::error::_db_cluster_role_not_found_fault::DbClusterRoleNotF
 
 pub use crate::types::error::_invalid_db_proxy_state_fault::InvalidDbProxyStateFault;
 
-pub use crate::types::error::_insufficient_available_i_ps_in_subnet_fault::InsufficientAvailableIPsInSubnetFault;
+pub use crate::types::error::_insufficient_available_ips_in_subnet_fault::InsufficientAvailableIPsInSubnetFault;
 
 pub use crate::types::error::_db_proxy_target_already_registered_fault::DbProxyTargetAlreadyRegisteredFault;
 
@@ -375,7 +375,7 @@ mod _db_snapshot_not_found_fault;
 
 mod _db_subnet_group_already_exists_fault;
 
-mod _db_subnet_group_does_not_cover_enough_a_zs;
+mod _db_subnet_group_does_not_cover_enough_azs;
 
 mod _db_subnet_group_not_allowed_fault;
 
@@ -409,7 +409,7 @@ mod _iam_role_not_found_fault;
 
 mod _instance_quota_exceeded_fault;
 
-mod _insufficient_available_i_ps_in_subnet_fault;
+mod _insufficient_available_ips_in_subnet_fault;
 
 mod _insufficient_db_cluster_capacity_fault;
 

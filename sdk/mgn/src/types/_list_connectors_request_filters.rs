@@ -5,14 +5,14 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListConnectorsRequestFilters {
     /// <p>List Connectors Request Filters connector IDs.</p>
-    pub connector_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub connector_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListConnectorsRequestFilters {
     /// <p>List Connectors Request Filters connector IDs.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_i_ds.is_none()`.
-    pub fn connector_i_ds(&self) -> &[::std::string::String] {
-        self.connector_i_ds.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.connector_ids.is_none()`.
+    pub fn connector_ids(&self) -> &[::std::string::String] {
+        self.connector_ids.as_deref().unwrap_or_default()
     }
 }
 impl ListConnectorsRequestFilters {
@@ -26,33 +26,33 @@ impl ListConnectorsRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ListConnectorsRequestFiltersBuilder {
-    pub(crate) connector_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) connector_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl ListConnectorsRequestFiltersBuilder {
-    /// Appends an item to `connector_i_ds`.
+    /// Appends an item to `connector_ids`.
     ///
-    /// To override the contents of this collection use [`set_connector_i_ds`](Self::set_connector_i_ds).
+    /// To override the contents of this collection use [`set_connector_ids`](Self::set_connector_ids).
     ///
     /// <p>List Connectors Request Filters connector IDs.</p>
-    pub fn connector_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.connector_i_ds.unwrap_or_default();
+    pub fn connector_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.connector_ids.unwrap_or_default();
         v.push(input.into());
-        self.connector_i_ds = ::std::option::Option::Some(v);
+        self.connector_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>List Connectors Request Filters connector IDs.</p>
-    pub fn set_connector_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.connector_i_ds = input;
+    pub fn set_connector_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.connector_ids = input;
         self
     }
     /// <p>List Connectors Request Filters connector IDs.</p>
-    pub fn get_connector_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.connector_i_ds
+    pub fn get_connector_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.connector_ids
     }
     /// Consumes the builder and constructs a [`ListConnectorsRequestFilters`](crate::types::ListConnectorsRequestFilters).
     pub fn build(self) -> crate::types::ListConnectorsRequestFilters {
         crate::types::ListConnectorsRequestFilters {
-            connector_i_ds: self.connector_i_ds,
+            connector_ids: self.connector_ids,
         }
     }
 }

@@ -18,7 +18,7 @@ pub fn ser_update_backend_auth_o_auth_config(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.redirect_sign_in_ur_is {
+    if let Some(var_6) = &input.redirect_sign_in_uris {
         let mut array_7 = object.key("redirectSignInURIs").start_array();
         for item_8 in var_6 {
             {
@@ -27,7 +27,7 @@ pub fn ser_update_backend_auth_o_auth_config(
         }
         array_7.finish();
     }
-    if let Some(var_9) = &input.redirect_sign_out_ur_is {
+    if let Some(var_9) = &input.redirect_sign_out_uris {
         let mut array_10 = object.key("redirectSignOutURIs").start_array();
         for item_11 in var_9 {
             {

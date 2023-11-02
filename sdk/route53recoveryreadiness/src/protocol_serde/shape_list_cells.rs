@@ -109,7 +109,7 @@ pub(crate) fn de_list_cells(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "cells" => {
-                    builder = builder.set_cells(crate::protocol_serde::shape___list_of_cell_output::de___list_of_cell_output(tokens)?);
+                    builder = builder.set_cells(crate::protocol_serde::shape_list_of_cell_output::de_list_of_cell_output(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

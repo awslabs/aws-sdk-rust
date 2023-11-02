@@ -17,7 +17,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
                         let key = key.to_unescaped().map(|u| u.into_owned())?;
-                        let value = crate::protocol_serde::shape___list_of_detected_data_details::de___list_of_detected_data_details(tokens)?;
+                        let value = crate::protocol_serde::shape_list_of_detected_data_details::de_list_of_detected_data_details(tokens)?;
                         if let Some(value) = value {
                             map.insert(key, value);
                         }

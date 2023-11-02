@@ -3,25 +3,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::{Credentials, Region};
-use aws_sdk_s3::Client;
+use aws_sdk_s3::{Client, Config};
 use aws_smithy_runtime::client::http::test_util::capture_request;
-use std::time::{Duration, UNIX_EPOCH};
 
 #[tokio::test]
 async fn test_s3_signer_query_string_with_all_valid_chars() {
     let (http_client, rcvr) = capture_request(None);
-    let sdk_config = SdkConfig::builder()
+    let config = Config::builder()
         .credentials_provider(SharedCredentialsProvider::new(
             Credentials::for_tests_with_session_token(),
         ))
         .region(Region::new("us-east-1"))
         .http_client(http_client.clone())
+        .with_test_defaults()
         .build();
-
-    let client = Client::new(&sdk_config);
+    let client = Client::from_conf(config);
 
     // Generate a string containing all printable ASCII chars
     let prefix: String = (32u8..127).map(char::from).collect();
@@ -32,9 +30,6 @@ async fn test_s3_signer_query_string_with_all_valid_chars() {
         .list_objects_v2()
         .bucket("test-bucket")
         .prefix(&prefix)
-        .customize()
-        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
-        .user_agent_for_tests()
         .send()
         .await;
 
@@ -47,7 +42,7 @@ async fn test_s3_signer_query_string_with_all_valid_chars() {
 
     // This is a snapshot test taken from a known working test result
     let snapshot_signature =
-        "Signature=647aa91c7f91f1f1c498ef376fea370b48d0cd8c80a53c8e2cd64e3fc527a5e0";
+        "Signature=9a931d20606f93fa4e5553602866a9b5ccac2cd42b54ae5a4b17e4614fb443ce";
     assert!(
         auth_header
             .to_str()

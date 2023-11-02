@@ -95,8 +95,9 @@ pub(crate) fn de_list_devices(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "devices" => {
-                    builder =
-                        builder.set_devices(crate::protocol_serde::shape___list_of_device_description::de___list_of_device_description(tokens)?);
+                    builder = builder.set_devices(crate::protocol_serde::shape_list_of_device_description::de_list_of_device_description(
+                        tokens,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

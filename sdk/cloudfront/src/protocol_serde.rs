@@ -653,7 +653,7 @@ pub(crate) mod shape_too_many_cookies_in_origin_request_policy;
 
 pub(crate) mod shape_too_many_custom_headers_in_response_headers_policy;
 
-pub(crate) mod shape_too_many_distribution_cnam_es;
+pub(crate) mod shape_too_many_distribution_cnames;
 
 pub(crate) mod shape_too_many_distributions;
 
@@ -731,7 +731,7 @@ pub(crate) mod shape_too_many_remove_headers_in_response_headers_policy;
 
 pub(crate) mod shape_too_many_response_headers_policies;
 
-pub(crate) mod shape_too_many_streaming_distribution_cnam_es;
+pub(crate) mod shape_too_many_streaming_distribution_cnames;
 
 pub(crate) mod shape_too_many_streaming_distributions;
 

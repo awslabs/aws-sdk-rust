@@ -121,21 +121,21 @@ impl AssociateApplicationsFluentBuilder {
     }
     /// Appends an item to `applicationIDs`.
     ///
-    /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
+    /// To override the contents of this collection use [`set_application_ids`](Self::set_application_ids).
     ///
     /// <p>Application IDs list.</p>
-    pub fn application_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.application_i_ds(input.into());
+    pub fn application_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.application_ids(input.into());
         self
     }
     /// <p>Application IDs list.</p>
-    pub fn set_application_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_application_i_ds(input);
+    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_application_ids(input);
         self
     }
     /// <p>Application IDs list.</p>
-    pub fn get_application_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_application_i_ds()
+    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_application_ids()
     }
     /// <p>Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

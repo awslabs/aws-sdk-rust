@@ -152,7 +152,7 @@ pub(crate) fn de_add_bridge_outputs(
                     );
                 }
                 "outputs" => {
-                    builder = builder.set_outputs(crate::protocol_serde::shape___list_of_bridge_output::de___list_of_bridge_output(tokens)?);
+                    builder = builder.set_outputs(crate::protocol_serde::shape_list_of_bridge_output::de_list_of_bridge_output(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

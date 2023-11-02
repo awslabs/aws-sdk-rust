@@ -181,7 +181,7 @@ pub(crate) fn de_get_usage_statistics(
                     );
                 }
                 "records" => {
-                    builder = builder.set_records(crate::protocol_serde::shape___list_of_usage_record::de___list_of_usage_record(tokens)?);
+                    builder = builder.set_records(crate::protocol_serde::shape_list_of_usage_record::de_list_of_usage_record(tokens)?);
                 }
                 "timeRange" => {
                     builder = builder.set_time_range(

@@ -89,21 +89,6 @@ pub(crate) mod shape_unprocessable_entity_exception;
 
 pub(crate) mod shape_update_packaging_group_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_asset_shallow;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_egress_endpoint;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_packaging_configuration;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_packaging_group;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of__string;
-
 pub(crate) mod shape_authorization;
 
 pub(crate) mod shape_cmaf_package;
@@ -114,21 +99,19 @@ pub(crate) mod shape_egress_access_logs;
 
 pub(crate) mod shape_hls_package;
 
+pub(crate) mod shape_list_of_asset_shallow;
+
+pub(crate) mod shape_list_of_egress_endpoint;
+
+pub(crate) mod shape_list_of_packaging_configuration;
+
+pub(crate) mod shape_list_of_packaging_group;
+
+pub(crate) mod shape_map_of_string;
+
 pub(crate) mod shape_mss_package;
 
 pub(crate) mod shape_tags;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__period_triggers_element;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_dash_manifest;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_hls_manifest;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_mss_manifest;
 
 pub(crate) mod shape_asset_shallow;
 
@@ -144,6 +127,14 @@ pub(crate) mod shape_hls_encryption;
 
 pub(crate) mod shape_hls_manifest;
 
+pub(crate) mod shape_list_of_dash_manifest;
+
+pub(crate) mod shape_list_of_hls_manifest;
+
+pub(crate) mod shape_list_of_mss_manifest;
+
+pub(crate) mod shape_list_of_period_triggers_element;
+
 pub(crate) mod shape_mss_encryption;
 
 pub(crate) mod shape_mss_manifest;
@@ -156,7 +147,6 @@ pub(crate) mod shape_speke_key_provider;
 
 pub(crate) mod shape_stream_selection;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
 pub(crate) mod shape_encryption_contract_configuration;
+
+pub(crate) mod shape_list_of_string;

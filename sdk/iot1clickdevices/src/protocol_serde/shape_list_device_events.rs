@@ -110,7 +110,7 @@ pub(crate) fn de_list_device_events(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "events" => {
-                    builder = builder.set_events(crate::protocol_serde::shape___list_of_device_event::de___list_of_device_event(tokens)?);
+                    builder = builder.set_events(crate::protocol_serde::shape_list_of_device_event::de_list_of_device_event(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

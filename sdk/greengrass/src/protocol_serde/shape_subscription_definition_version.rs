@@ -34,8 +34,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Subscriptions" => {
-                            builder =
-                                builder.set_subscriptions(crate::protocol_serde::shape___list_of_subscription::de___list_of_subscription(tokens)?);
+                            builder = builder.set_subscriptions(crate::protocol_serde::shape_list_of_subscription::de_list_of_subscription(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -6,7 +6,7 @@ pub fn ser_ephemeral_storage(
     {
         object.key("sizeInGiB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.size_in_gi_b).into()),
+            ::aws_smithy_types::Number::NegInt((input.size_in_gib).into()),
         );
     }
     Ok(())
@@ -28,7 +28,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sizeInGiB" => {
-                            builder = builder.set_size_in_gi_b(
+                            builder = builder.set_size_in_gib(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

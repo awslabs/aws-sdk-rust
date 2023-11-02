@@ -65,9 +65,9 @@ pub(crate) mod shape_list_assignments_for_hit;
 
 pub(crate) mod shape_list_bonus_payments;
 
-pub(crate) mod shape_list_hi_ts;
+pub(crate) mod shape_list_hits;
 
-pub(crate) mod shape_list_hi_ts_for_qualification_type;
+pub(crate) mod shape_list_hits_for_qualification_type;
 
 pub(crate) mod shape_list_qualification_requests;
 
@@ -75,7 +75,7 @@ pub(crate) mod shape_list_qualification_types;
 
 pub(crate) mod shape_list_review_policy_results_for_hit;
 
-pub(crate) mod shape_list_reviewable_hi_ts;
+pub(crate) mod shape_list_reviewable_hits;
 
 pub(crate) mod shape_list_worker_blocks;
 
@@ -149,9 +149,9 @@ pub(crate) mod shape_list_assignments_for_hit_input;
 
 pub(crate) mod shape_list_bonus_payments_input;
 
-pub(crate) mod shape_list_hi_ts_for_qualification_type_input;
+pub(crate) mod shape_list_hits_for_qualification_type_input;
 
-pub(crate) mod shape_list_hi_ts_input;
+pub(crate) mod shape_list_hits_input;
 
 pub(crate) mod shape_list_qualification_requests_input;
 
@@ -159,7 +159,7 @@ pub(crate) mod shape_list_qualification_types_input;
 
 pub(crate) mod shape_list_review_policy_results_for_hit_input;
 
-pub(crate) mod shape_list_reviewable_hi_ts_input;
+pub(crate) mod shape_list_reviewable_hits_input;
 
 pub(crate) mod shape_list_worker_blocks_input;
 

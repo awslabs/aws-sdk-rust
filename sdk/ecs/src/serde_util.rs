@@ -27,8 +27,8 @@ pub(crate) fn deployment_controller_correct_errors(
 pub(crate) fn ephemeral_storage_correct_errors(
     mut builder: crate::types::builders::EphemeralStorageBuilder,
 ) -> crate::types::builders::EphemeralStorageBuilder {
-    if builder.size_in_gi_b.is_none() {
-        builder.size_in_gi_b = Some(Default::default())
+    if builder.size_in_gib.is_none() {
+        builder.size_in_gib = Some(Default::default())
     }
     builder
 }

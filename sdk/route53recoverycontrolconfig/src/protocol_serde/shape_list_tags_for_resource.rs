@@ -94,9 +94,8 @@ pub(crate) fn de_list_tags_for_resource(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Tags" => {
-                    builder = builder.set_tags(
-                        crate::protocol_serde::shape___map_of__string_min0_max256_pattern_s::de___map_of__string_min0_max256_pattern_s(tokens)?,
-                    );
+                    builder = builder
+                        .set_tags(crate::protocol_serde::shape_map_of_string_min0_max256_pattern_s::de_map_of_string_min0_max256_pattern_s(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

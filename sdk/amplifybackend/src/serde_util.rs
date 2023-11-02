@@ -104,11 +104,11 @@ pub(crate) fn create_backend_auth_o_auth_config_correct_errors(
     if builder.o_auth_scopes.is_none() {
         builder.o_auth_scopes = Some(Default::default())
     }
-    if builder.redirect_sign_in_ur_is.is_none() {
-        builder.redirect_sign_in_ur_is = Some(Default::default())
+    if builder.redirect_sign_in_uris.is_none() {
+        builder.redirect_sign_in_uris = Some(Default::default())
     }
-    if builder.redirect_sign_out_ur_is.is_none() {
-        builder.redirect_sign_out_ur_is = Some(Default::default())
+    if builder.redirect_sign_out_uris.is_none() {
+        builder.redirect_sign_out_uris = Some(Default::default())
     }
     builder
 }

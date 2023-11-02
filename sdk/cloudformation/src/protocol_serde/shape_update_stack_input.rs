@@ -90,7 +90,7 @@ pub fn ser_update_stack_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_36 = writer.prefix("NotificationARNs");
-    if let Some(var_37) = &input.notification_ar_ns {
+    if let Some(var_37) = &input.notification_arns {
         let mut list_39 = scope_36.start_list(false, None);
         for item_38 in var_37 {
             #[allow(unused_mut)]

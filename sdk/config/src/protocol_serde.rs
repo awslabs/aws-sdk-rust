@@ -847,7 +847,7 @@ pub(crate) mod shape_debug_log_delivery_accounts;
 
 pub(crate) mod shape_evaluation_result_qualifier;
 
-pub(crate) mod shape_organization_config_rule_trigger_type_no_s_ns;
+pub(crate) mod shape_organization_config_rule_trigger_type_no_sns;
 
 pub(crate) mod shape_organization_config_rule_trigger_types;
 

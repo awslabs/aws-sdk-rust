@@ -7,8 +7,8 @@ use aws_config::SdkConfig;
 use aws_credential_types::provider::SharedCredentialsProvider;
 use aws_sdk_s3::config::{Credentials, Region};
 use aws_sdk_s3::types::ChecksumMode;
-use aws_sdk_s3::Client;
 use aws_sdk_s3::{operation::get_object::GetObjectOutput, types::ChecksumAlgorithm};
+use aws_sdk_s3::{Client, Config};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime::client::http::test_util::{
     capture_request, ReplayEvent, StaticReplayClient,
@@ -25,30 +25,47 @@ fn new_checksum_validated_response_test_connection(
     checksum_header_name: &'static str,
     checksum_header_value: &'static str,
 ) -> StaticReplayClient {
-    StaticReplayClient::new(vec![
-        ReplayEvent::new(http::Request::builder()
-             .header("x-amz-checksum-mode", "ENABLED")
-             .header("user-agent", "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0")
-             .header("x-amz-date", "20210618T170728Z")
-             .header("x-amz-content-sha256", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")
-             .header("x-amz-user-agent", "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0")
-             .header("authorization", "AWS4-HMAC-SHA256 Credential=ANOTREAL/20210618/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-checksum-mode;x-amz-content-sha256;x-amz-date;x-amz-security-token;x-amz-user-agent, Signature=eb9e58fa4fb04c8e6f160705017fdbb497ccff0efee4227b3a56f900006c3882")
-             .uri(Uri::from_static("https://some-test-bucket.s3.us-east-1.amazonaws.com/test.txt?x-id=GetObject")).body(SdkBody::empty()).unwrap(),
-         http::Response::builder()
-             .header("x-amz-request-id", "4B4NGF0EAWN0GE63")
-             .header("content-length", "11")
-             .header("etag", "\"3e25960a79dbc69b674cd4ec67a72c62\"")
-             .header(checksum_header_name, checksum_header_value)
-             .header("content-type", "application/octet-stream")
-             .header("server", "AmazonS3")
-             .header("content-encoding", "")
-             .header("last-modified", "Tue, 21 Jun 2022 16:29:14 GMT")
-             .header("date", "Tue, 21 Jun 2022 16:29:23 GMT")
-             .header("x-amz-id-2", "kPl+IVVZAwsN8ePUyQJZ40WD9dzaqtr4eNESArqE68GSKtVvuvCTDe+SxhTT+JTUqXB1HL4OxNM=")
-             .header("accept-ranges", "bytes")
-             .status(http::StatusCode::from_u16(200).unwrap())
-             .body(SdkBody::from(r#"Hello world"#)).unwrap()),
-    ])
+    StaticReplayClient::new(vec![ReplayEvent::new(
+        http::Request::builder()
+            .header("x-amz-checksum-mode", "ENABLED")
+            .header(
+                "user-agent",
+                "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0",
+            )
+            .header("x-amz-date", "20090213T233130Z")
+            .header(
+                "x-amz-content-sha256",
+                "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            )
+            .header(
+                "x-amz-user-agent",
+                "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0",
+            )
+            .header("authorization", "not-relevant")
+            .uri(Uri::from_static(
+                "https://some-test-bucket.s3.us-east-1.amazonaws.com/test.txt?x-id=GetObject",
+            ))
+            .body(SdkBody::empty())
+            .unwrap(),
+        http::Response::builder()
+            .header("x-amz-request-id", "4B4NGF0EAWN0GE63")
+            .header("content-length", "11")
+            .header("etag", "\"3e25960a79dbc69b674cd4ec67a72c62\"")
+            .header(checksum_header_name, checksum_header_value)
+            .header("content-type", "application/octet-stream")
+            .header("server", "AmazonS3")
+            .header("content-encoding", "")
+            .header("last-modified", "Tue, 21 Jun 2022 16:29:14 GMT")
+            .header("date", "Tue, 21 Jun 2022 16:29:23 GMT")
+            .header(
+                "x-amz-id-2",
+                "kPl+IVVZAwsN8ePUyQJZ40WD9dzaqtr4eNESArqE68GSKtVvuvCTDe+SxhTT+JTUqXB1HL4OxNM=",
+            )
+            .header("accept-ranges", "bytes")
+            .status(http::StatusCode::from_u16(200).unwrap())
+            .body(SdkBody::from(r#"Hello world"#))
+            .unwrap(),
+    )])
 }
 
 async fn test_checksum_on_streaming_response(
@@ -59,22 +76,20 @@ async fn test_checksum_on_streaming_response(
         checksum_header_name,
         checksum_header_value,
     );
-    let sdk_config = SdkConfig::builder()
+    let config = Config::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .time_source(UNIX_EPOCH + Duration::from_secs(1624036048))
         .region(Region::new("us-east-1"))
         .http_client(http_client.clone())
+        .with_test_defaults()
         .build();
-
-    let client = Client::new(&sdk_config);
+    let client = Client::from_conf(config);
 
     let res = client
         .get_object()
         .bucket("some-test-bucket")
         .key("test.txt")
         .checksum_mode(aws_sdk_s3::types::ChecksumMode::Enabled)
-        .customize()
-        .user_agent_for_tests()
         .send()
         .await
         .unwrap();
@@ -150,13 +165,13 @@ async fn test_checksum_on_streaming_request<'a>(
     expected_aws_chunked_encoded_body: &'a str,
 ) {
     let (http_client, rcvr) = capture_request(None);
-    let sdk_config = SdkConfig::builder()
+    let config = Config::builder()
         .credentials_provider(SharedCredentialsProvider::new(Credentials::for_tests()))
         .region(Region::new("us-east-1"))
         .http_client(http_client.clone())
+        .with_test_defaults()
         .build();
-
-    let client = Client::new(&sdk_config);
+    let client = Client::from_conf(config);
 
     // ByteStreams created from a file are streaming and have a known size
     let mut file = tempfile::NamedTempFile::new().unwrap();
@@ -178,9 +193,6 @@ async fn test_checksum_on_streaming_request<'a>(
         .key("test.txt")
         .body(body)
         .checksum_algorithm(checksum_algorithm)
-        .customize()
-        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
-        .user_agent_for_tests()
         .send()
         .await
         .unwrap();

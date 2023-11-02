@@ -11,7 +11,7 @@ pub struct CreateAuthorizerOutput {
     /// <p>The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.</p>
     pub r#type: ::std::option::Option<crate::types::AuthorizerType>,
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
-    pub provider_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub provider_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
     pub auth_type: ::std::option::Option<::std::string::String>,
     /// <p>Specifies the authorizer's Uniform Resource Identifier (URI). For <code>TOKEN</code> or <code>REQUEST</code> authorizers, this must be a well-formed Lambda function URI, for example, <code>arn:aws:apigateway:us-west-2:lambda:path/2015-03-31/functions/arn:aws:lambda:us-west-2:{account_id}:function:{lambda_function_name}/invocations</code>. In general, the URI has this form <code>arn:aws:apigateway:{region}:lambda:path/{service_api}</code>, where <code>{region}</code> is the same as the region hosting the Lambda function, <code>path</code> indicates that the remaining substring in the URI should be treated as the path to the resource, including the initial <code>/</code>. For Lambda functions, this is usually of the form <code>/2015-03-31/functions/[FunctionARN]/invocations</code>.</p>
@@ -41,9 +41,9 @@ impl CreateAuthorizerOutput {
     }
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provider_ar_ns.is_none()`.
-    pub fn provider_ar_ns(&self) -> &[::std::string::String] {
-        self.provider_ar_ns.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.provider_arns.is_none()`.
+    pub fn provider_arns(&self) -> &[::std::string::String] {
+        self.provider_arns.as_deref().unwrap_or_default()
     }
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
     pub fn auth_type(&self) -> ::std::option::Option<&str> {
@@ -89,7 +89,7 @@ pub struct CreateAuthorizerOutputBuilder {
     pub(crate) id: ::std::option::Option<::std::string::String>,
     pub(crate) name: ::std::option::Option<::std::string::String>,
     pub(crate) r#type: ::std::option::Option<crate::types::AuthorizerType>,
-    pub(crate) provider_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) provider_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) auth_type: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_uri: ::std::option::Option<::std::string::String>,
     pub(crate) authorizer_credentials: ::std::option::Option<::std::string::String>,
@@ -141,25 +141,25 @@ impl CreateAuthorizerOutputBuilder {
     pub fn get_type(&self) -> &::std::option::Option<crate::types::AuthorizerType> {
         &self.r#type
     }
-    /// Appends an item to `provider_ar_ns`.
+    /// Appends an item to `provider_arns`.
     ///
-    /// To override the contents of this collection use [`set_provider_ar_ns`](Self::set_provider_ar_ns).
+    /// To override the contents of this collection use [`set_provider_arns`](Self::set_provider_arns).
     ///
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
-    pub fn provider_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.provider_ar_ns.unwrap_or_default();
+    pub fn provider_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.provider_arns.unwrap_or_default();
         v.push(input.into());
-        self.provider_ar_ns = ::std::option::Option::Some(v);
+        self.provider_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
-    pub fn set_provider_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.provider_ar_ns = input;
+    pub fn set_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.provider_arns = input;
         self
     }
     /// <p>A list of the Amazon Cognito user pool ARNs for the <code>COGNITO_USER_POOLS</code> authorizer. Each element is of this format: <code>arn:aws:cognito-idp:{region}:{account_id}:userpool/{user_pool_id}</code>. For a <code>TOKEN</code> or <code>REQUEST</code> authorizer, this is not defined. </p>
-    pub fn get_provider_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.provider_ar_ns
+    pub fn get_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.provider_arns
     }
     /// <p>Optional customer-defined field, used in OpenAPI imports and exports without functional impact.</p>
     pub fn auth_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -260,7 +260,7 @@ impl CreateAuthorizerOutputBuilder {
             id: self.id,
             name: self.name,
             r#type: self.r#type,
-            provider_ar_ns: self.provider_ar_ns,
+            provider_arns: self.provider_arns,
             auth_type: self.auth_type,
             authorizer_uri: self.authorizer_uri,
             authorizer_credentials: self.authorizer_credentials,

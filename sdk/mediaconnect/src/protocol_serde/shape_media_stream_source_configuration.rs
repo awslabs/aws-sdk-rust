@@ -23,7 +23,7 @@ where
                         }
                         "inputConfigurations" => {
                             builder = builder.set_input_configurations(
-                                crate::protocol_serde::shape___list_of_input_configuration::de___list_of_input_configuration(tokens)?,
+                                crate::protocol_serde::shape_list_of_input_configuration::de_list_of_input_configuration(tokens)?,
                             );
                         }
                         "mediaStreamName" => {

@@ -1,5 +1,5 @@
 {
-  "name": "e2e-assume-role",
+  "name": "retry-on-error",
   "docs": "end to end successful role assumption",
   "result": {
     "Ok": {

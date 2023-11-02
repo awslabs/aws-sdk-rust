@@ -351,7 +351,7 @@ pub fn ser_aws_security_finding_filters(
         }
         array_114.finish();
     }
-    if let Some(var_117) = &input.network_source_ip_v4 {
+    if let Some(var_117) = &input.network_source_ipv4 {
         let mut array_118 = object.key("NetworkSourceIpV4").start_array();
         for item_119 in var_117 {
             {
@@ -363,7 +363,7 @@ pub fn ser_aws_security_finding_filters(
         }
         array_118.finish();
     }
-    if let Some(var_121) = &input.network_source_ip_v6 {
+    if let Some(var_121) = &input.network_source_ipv6 {
         let mut array_122 = object.key("NetworkSourceIpV6").start_array();
         for item_123 in var_121 {
             {
@@ -411,7 +411,7 @@ pub fn ser_aws_security_finding_filters(
         }
         array_134.finish();
     }
-    if let Some(var_137) = &input.network_destination_ip_v4 {
+    if let Some(var_137) = &input.network_destination_ipv4 {
         let mut array_138 = object.key("NetworkDestinationIpV4").start_array();
         for item_139 in var_137 {
             {
@@ -423,7 +423,7 @@ pub fn ser_aws_security_finding_filters(
         }
         array_138.finish();
     }
-    if let Some(var_141) = &input.network_destination_ip_v6 {
+    if let Some(var_141) = &input.network_destination_ipv6 {
         let mut array_142 = object.key("NetworkDestinationIpV6").start_array();
         for item_143 in var_141 {
             {
@@ -687,7 +687,7 @@ pub fn ser_aws_security_finding_filters(
         }
         array_226.finish();
     }
-    if let Some(var_229) = &input.resource_aws_ec2_instance_ip_v4_addresses {
+    if let Some(var_229) = &input.resource_aws_ec2_instance_ipv4_addresses {
         let mut array_230 = object.key("ResourceAwsEc2InstanceIpV4Addresses").start_array();
         for item_231 in var_229 {
             {
@@ -699,7 +699,7 @@ pub fn ser_aws_security_finding_filters(
         }
         array_230.finish();
     }
-    if let Some(var_233) = &input.resource_aws_ec2_instance_ip_v6_addresses {
+    if let Some(var_233) = &input.resource_aws_ec2_instance_ipv6_addresses {
         let mut array_234 = object.key("ResourceAwsEc2InstanceIpV6Addresses").start_array();
         for item_235 in var_233 {
             {
@@ -1275,10 +1275,10 @@ where
                             builder = builder.set_network_protocol(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
                         }
                         "NetworkSourceIpV4" => {
-                            builder = builder.set_network_source_ip_v4(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens)?);
+                            builder = builder.set_network_source_ipv4(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens)?);
                         }
                         "NetworkSourceIpV6" => {
-                            builder = builder.set_network_source_ip_v6(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens)?);
+                            builder = builder.set_network_source_ipv6(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens)?);
                         }
                         "NetworkSourcePort" => {
                             builder =
@@ -1292,10 +1292,10 @@ where
                             builder = builder.set_network_source_mac(crate::protocol_serde::shape_string_filter_list::de_string_filter_list(tokens)?);
                         }
                         "NetworkDestinationIpV4" => {
-                            builder = builder.set_network_destination_ip_v4(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens)?);
+                            builder = builder.set_network_destination_ipv4(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens)?);
                         }
                         "NetworkDestinationIpV6" => {
-                            builder = builder.set_network_destination_ip_v6(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens)?);
+                            builder = builder.set_network_destination_ipv6(crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens)?);
                         }
                         "NetworkDestinationPort" => {
                             builder =
@@ -1374,12 +1374,12 @@ where
                             );
                         }
                         "ResourceAwsEc2InstanceIpV4Addresses" => {
-                            builder = builder.set_resource_aws_ec2_instance_ip_v4_addresses(
+                            builder = builder.set_resource_aws_ec2_instance_ipv4_addresses(
                                 crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens)?,
                             );
                         }
                         "ResourceAwsEc2InstanceIpV6Addresses" => {
-                            builder = builder.set_resource_aws_ec2_instance_ip_v6_addresses(
+                            builder = builder.set_resource_aws_ec2_instance_ipv6_addresses(
                                 crate::protocol_serde::shape_ip_filter_list::de_ip_filter_list(tokens)?,
                             );
                         }

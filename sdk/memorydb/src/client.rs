@@ -88,19 +88,19 @@ impl Client {
     /// If you experience this panic, it can be fixed by setting the `sleep_impl`, or by disabling
     /// retries and timeouts.
     pub fn from_conf(conf: crate::Config) -> Self {
-        let retry_config = conf
+        let has_retry_config = conf
             .retry_config()
-            .cloned()
-            .unwrap_or_else(::aws_smithy_types::retry::RetryConfig::disabled);
-        let timeout_config = conf
+            .map(::aws_smithy_types::retry::RetryConfig::has_retry)
+            .unwrap_or_default();
+        let has_timeout_config = conf
             .timeout_config()
-            .cloned()
-            .unwrap_or_else(::aws_smithy_types::timeout::TimeoutConfig::disabled);
+            .map(::aws_smithy_types::timeout::TimeoutConfig::has_timeouts)
+            .unwrap_or_default();
         let sleep_impl = conf.sleep_impl();
-        if (retry_config.has_retry() || timeout_config.has_timeouts()) && sleep_impl.is_none() {
+        if (has_retry_config || has_timeout_config) && sleep_impl.is_none() {
             panic!(
                 "An async sleep implementation is required for retries or timeouts to work. \
-                                    Set the `sleep_impl` on the Config passed into this function to fix this panic."
+                                 Set the `sleep_impl` on the Config passed into this function to fix this panic."
             );
         }
 
@@ -187,7 +187,7 @@ mod delete_subnet_group;
 
 mod delete_user;
 
-mod describe_ac_ls;
+mod describe_acls;
 
 mod describe_clusters;
 

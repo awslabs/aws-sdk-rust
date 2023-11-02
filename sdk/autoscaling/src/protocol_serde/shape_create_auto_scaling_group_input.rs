@@ -86,7 +86,7 @@ pub fn ser_create_auto_scaling_group_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_29 = writer.prefix("TargetGroupARNs");
-    if let Some(var_30) = &input.target_group_ar_ns {
+    if let Some(var_30) = &input.target_group_arns {
         let mut list_32 = scope_29.start_list(false, None);
         for item_31 in var_30 {
             #[allow(unused_mut)]

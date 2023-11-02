@@ -74,12 +74,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioDescriptions" => {
                             builder = builder.set_audio_descriptions(
-                                crate::protocol_serde::shape___list_of_audio_description::de___list_of_audio_description(tokens)?,
+                                crate::protocol_serde::shape_list_of_audio_description::de_list_of_audio_description(tokens)?,
                             );
                         }
                         "captionDescriptions" => {
                             builder = builder.set_caption_descriptions(
-                                crate::protocol_serde::shape___list_of_caption_description::de___list_of_caption_description(tokens)?,
+                                crate::protocol_serde::shape_list_of_caption_description::de_list_of_caption_description(tokens)?,
                             );
                         }
                         "containerSettings" => {

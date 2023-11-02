@@ -573,11 +573,11 @@ impl From<crate::operation::list_bonus_payments::ListBonusPaymentsError> for Err
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_hi_ts::ListHITsError, R>> for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_hits::ListHITsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_hi_ts::ListHITsError, R>) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_hits::ListHITsError, R>) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -589,21 +589,21 @@ where
         }
     }
 }
-impl From<crate::operation::list_hi_ts::ListHITsError> for Error {
-    fn from(err: crate::operation::list_hi_ts::ListHITsError) -> Self {
+impl From<crate::operation::list_hits::ListHITsError> for Error {
+    fn from(err: crate::operation::list_hits::ListHITsError) -> Self {
         match err {
-            crate::operation::list_hi_ts::ListHITsError::RequestError(inner) => Error::RequestError(inner),
-            crate::operation::list_hi_ts::ListHITsError::ServiceFault(inner) => Error::ServiceFault(inner),
-            crate::operation::list_hi_ts::ListHITsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_hits::ListHITsError::RequestError(inner) => Error::RequestError(inner),
+            crate::operation::list_hits::ListHITsError::ServiceFault(inner) => Error::ServiceFault(inner),
+            crate::operation::list_hits::ListHITsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError, R>> for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_hits_for_qualification_type::ListHITsForQualificationTypeError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: ::aws_smithy_http::result::SdkError<crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError, R>,
+        err: ::aws_smithy_http::result::SdkError<crate::operation::list_hits_for_qualification_type::ListHITsForQualificationTypeError, R>,
     ) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
@@ -616,12 +616,12 @@ where
         }
     }
 }
-impl From<crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError> for Error {
-    fn from(err: crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError) -> Self {
+impl From<crate::operation::list_hits_for_qualification_type::ListHITsForQualificationTypeError> for Error {
+    fn from(err: crate::operation::list_hits_for_qualification_type::ListHITsForQualificationTypeError) -> Self {
         match err {
-            crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError::RequestError(inner) => Error::RequestError(inner),
-            crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError::ServiceFault(inner) => Error::ServiceFault(inner),
-            crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_hits_for_qualification_type::ListHITsForQualificationTypeError::RequestError(inner) => Error::RequestError(inner),
+            crate::operation::list_hits_for_qualification_type::ListHITsForQualificationTypeError::ServiceFault(inner) => Error::ServiceFault(inner),
+            crate::operation::list_hits_for_qualification_type::ListHITsForQualificationTypeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -675,11 +675,11 @@ impl From<crate::operation::list_qualification_types::ListQualificationTypesErro
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hi_ts::ListReviewableHITsError, R>> for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hits::ListReviewableHITsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hi_ts::ListReviewableHITsError, R>) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::list_reviewable_hits::ListReviewableHITsError, R>) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -691,12 +691,12 @@ where
         }
     }
 }
-impl From<crate::operation::list_reviewable_hi_ts::ListReviewableHITsError> for Error {
-    fn from(err: crate::operation::list_reviewable_hi_ts::ListReviewableHITsError) -> Self {
+impl From<crate::operation::list_reviewable_hits::ListReviewableHITsError> for Error {
+    fn from(err: crate::operation::list_reviewable_hits::ListReviewableHITsError) -> Self {
         match err {
-            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError::RequestError(inner) => Error::RequestError(inner),
-            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError::ServiceFault(inner) => Error::ServiceFault(inner),
-            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::list_reviewable_hits::ListReviewableHITsError::RequestError(inner) => Error::RequestError(inner),
+            crate::operation::list_reviewable_hits::ListReviewableHITsError::ServiceFault(inner) => Error::ServiceFault(inner),
+            crate::operation::list_reviewable_hits::ListReviewableHITsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

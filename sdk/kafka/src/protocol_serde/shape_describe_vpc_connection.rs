@@ -163,7 +163,7 @@ pub(crate) fn de_describe_vpc_connection(
                     )?);
                 }
                 "securityGroups" => {
-                    builder = builder.set_security_groups(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_security_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "state" => {
                     builder = builder.set_state(
@@ -173,10 +173,10 @@ pub(crate) fn de_describe_vpc_connection(
                     );
                 }
                 "subnets" => {
-                    builder = builder.set_subnets(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_subnets(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                 }
                 "targetClusterArn" => {
                     builder = builder.set_target_cluster_arn(

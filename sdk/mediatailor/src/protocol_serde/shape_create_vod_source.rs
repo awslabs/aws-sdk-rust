@@ -82,7 +82,7 @@ pub(crate) fn de_create_vod_source(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                 }
                 "VodSourceName" => {
                     builder = builder.set_vod_source_name(

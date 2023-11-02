@@ -9,7 +9,7 @@
 //! This can include:
 //! - Registering interceptors
 //! - Registering auth schemes
-//! - Adding entries to the [`ConfigBag`](aws_smithy_types::config_bag::ConfigBag) for orchestration
+//! - Adding entries to the [`ConfigBag`] for orchestration
 //! - Setting runtime components
 //!
 //! Runtime plugins are divided into service/operation "levels", with service runtime plugins
@@ -77,7 +77,7 @@ pub trait RuntimePlugin: Debug + Send + Sync {
         DEFAULT_ORDER
     }
 
-    /// Optionally returns additional config that should be added to the [`ConfigBag`](aws_smithy_types::config_bag::ConfigBag).
+    /// Optionally returns additional config that should be added to the [`ConfigBag`].
     ///
     /// As a best practice, a frozen layer should be stored on the runtime plugin instance as
     /// a member, and then cloned upon return since that clone is cheap. Constructing a new

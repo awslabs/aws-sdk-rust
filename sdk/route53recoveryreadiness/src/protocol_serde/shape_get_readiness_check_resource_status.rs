@@ -154,7 +154,7 @@ pub(crate) fn de_get_readiness_check_resource_status(
                     );
                 }
                 "rules" => {
-                    builder = builder.set_rules(crate::protocol_serde::shape___list_of_rule_result::de___list_of_rule_result(tokens)?);
+                    builder = builder.set_rules(crate::protocol_serde::shape_list_of_rule_result::de_list_of_rule_result(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

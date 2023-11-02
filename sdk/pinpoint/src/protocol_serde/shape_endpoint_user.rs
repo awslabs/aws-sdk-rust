@@ -42,7 +42,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "UserAttributes" => {
                             builder =
-                                builder.set_user_attributes(crate::protocol_serde::shape_map_of_list_of__string::de_map_of_list_of__string(tokens)?);
+                                builder.set_user_attributes(crate::protocol_serde::shape_map_of_list_of_string::de_map_of_list_of_string(tokens)?);
                         }
                         "UserId" => {
                             builder = builder.set_user_id(

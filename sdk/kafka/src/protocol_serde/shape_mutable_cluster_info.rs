@@ -16,7 +16,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "brokerEBSVolumeInfo" => {
                             builder = builder.set_broker_ebs_volume_info(
-                                crate::protocol_serde::shape___list_of_broker_ebs_volume_info::de___list_of_broker_ebs_volume_info(tokens)?,
+                                crate::protocol_serde::shape_list_of_broker_ebs_volume_info::de_list_of_broker_ebs_volume_info(tokens)?,
                             );
                         }
                         "configurationInfo" => {

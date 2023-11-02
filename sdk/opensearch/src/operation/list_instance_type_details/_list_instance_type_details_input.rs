@@ -12,7 +12,7 @@ pub struct ListInstanceTypeDetailsInput {
     /// <p>If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.</p>
     pub next_token: ::std::option::Option<::std::string::String>,
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub retrieve_a_zs: ::std::option::Option<bool>,
+    pub retrieve_azs: ::std::option::Option<bool>,
     /// <p>An optional parameter that lists information for a given instance type.</p>
     pub instance_type: ::std::option::Option<::std::string::String>,
 }
@@ -34,8 +34,8 @@ impl ListInstanceTypeDetailsInput {
         self.next_token.as_deref()
     }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub fn retrieve_a_zs(&self) -> ::std::option::Option<bool> {
-        self.retrieve_a_zs
+    pub fn retrieve_azs(&self) -> ::std::option::Option<bool> {
+        self.retrieve_azs
     }
     /// <p>An optional parameter that lists information for a given instance type.</p>
     pub fn instance_type(&self) -> ::std::option::Option<&str> {
@@ -57,7 +57,7 @@ pub struct ListInstanceTypeDetailsInputBuilder {
     pub(crate) domain_name: ::std::option::Option<::std::string::String>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
-    pub(crate) retrieve_a_zs: ::std::option::Option<bool>,
+    pub(crate) retrieve_azs: ::std::option::Option<bool>,
     pub(crate) instance_type: ::std::option::Option<::std::string::String>,
 }
 impl ListInstanceTypeDetailsInputBuilder {
@@ -119,18 +119,18 @@ impl ListInstanceTypeDetailsInputBuilder {
         &self.next_token
     }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub fn retrieve_a_zs(mut self, input: bool) -> Self {
-        self.retrieve_a_zs = ::std::option::Option::Some(input);
+    pub fn retrieve_azs(mut self, input: bool) -> Self {
+        self.retrieve_azs = ::std::option::Option::Some(input);
         self
     }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub fn set_retrieve_a_zs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.retrieve_a_zs = input;
+    pub fn set_retrieve_azs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.retrieve_azs = input;
         self
     }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub fn get_retrieve_a_zs(&self) -> &::std::option::Option<bool> {
-        &self.retrieve_a_zs
+    pub fn get_retrieve_azs(&self) -> &::std::option::Option<bool> {
+        &self.retrieve_azs
     }
     /// <p>An optional parameter that lists information for a given instance type.</p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -158,7 +158,7 @@ impl ListInstanceTypeDetailsInputBuilder {
             domain_name: self.domain_name,
             max_results: self.max_results,
             next_token: self.next_token,
-            retrieve_a_zs: self.retrieve_a_zs,
+            retrieve_azs: self.retrieve_azs,
             instance_type: self.instance_type,
         })
     }

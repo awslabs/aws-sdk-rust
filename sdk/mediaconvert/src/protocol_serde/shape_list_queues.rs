@@ -147,7 +147,7 @@ pub(crate) fn de_list_queues(
                     );
                 }
                 "queues" => {
-                    builder = builder.set_queues(crate::protocol_serde::shape___list_of_queue::de___list_of_queue(tokens)?);
+                    builder = builder.set_queues(crate::protocol_serde::shape_list_of_queue::de_list_of_queue(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

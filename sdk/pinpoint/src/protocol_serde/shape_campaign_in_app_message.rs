@@ -61,7 +61,7 @@ where
                                 .set_content(crate::protocol_serde::shape_list_of_in_app_message_content::de_list_of_in_app_message_content(tokens)?);
                         }
                         "CustomConfig" => {
-                            builder = builder.set_custom_config(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                            builder = builder.set_custom_config(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "Layout" => {
                             builder = builder.set_layout(

@@ -57,9 +57,7 @@ where
                             );
                         }
                         "tagValues" => {
-                            builder = builder.set_tag_values(crate::protocol_serde::shape___list_of_tag_value_pair::de___list_of_tag_value_pair(
-                                tokens,
-                            )?);
+                            builder = builder.set_tag_values(crate::protocol_serde::shape_list_of_tag_value_pair::de_list_of_tag_value_pair(tokens)?);
                         }
                         "target" => {
                             builder = builder.set_target(

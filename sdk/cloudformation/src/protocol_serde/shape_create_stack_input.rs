@@ -51,7 +51,7 @@ pub fn ser_create_stack_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_18 = writer.prefix("NotificationARNs");
-    if let Some(var_19) = &input.notification_ar_ns {
+    if let Some(var_19) = &input.notification_arns {
         let mut list_21 = scope_18.start_list(false, None);
         for item_20 in var_19 {
             #[allow(unused_mut)]

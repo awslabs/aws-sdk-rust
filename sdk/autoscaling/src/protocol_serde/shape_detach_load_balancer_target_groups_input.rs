@@ -12,7 +12,7 @@ pub fn ser_detach_load_balancer_target_groups_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("TargetGroupARNs");
-    if let Some(var_4) = &input.target_group_ar_ns {
+    if let Some(var_4) = &input.target_group_arns {
         let mut list_6 = scope_3.start_list(false, None);
         for item_5 in var_4 {
             #[allow(unused_mut)]

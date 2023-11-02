@@ -18,7 +18,7 @@ where
                             builder = builder.set_resharding(crate::protocol_serde::shape_resharding_status::de_resharding_status(tokens)?);
                         }
                         "ACLs" => {
-                            builder = builder.set_ac_ls(crate::protocol_serde::shape_ac_ls_update_status::de_ac_ls_update_status(tokens)?);
+                            builder = builder.set_acls(crate::protocol_serde::shape_acls_update_status::de_acls_update_status(tokens)?);
                         }
                         "ServiceUpdates" => {
                             builder = builder.set_service_updates(

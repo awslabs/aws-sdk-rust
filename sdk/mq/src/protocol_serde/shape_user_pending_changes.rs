@@ -18,7 +18,7 @@ where
                             builder = builder.set_console_access(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "groups" => {
-                            builder = builder.set_groups(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_groups(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "pendingChange" => {
                             builder = builder.set_pending_change(

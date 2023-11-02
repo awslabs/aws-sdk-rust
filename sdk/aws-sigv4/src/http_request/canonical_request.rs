@@ -926,6 +926,7 @@ mod tests {
         );
     }
 
+    #[allow(clippy::ptr_arg)] // The proptest macro requires this arg to be a Vec instead of a slice.
     fn valid_input(input: &Vec<String>) -> bool {
         [
             "content-length".to_owned(),
@@ -933,7 +934,7 @@ mod tests {
             "host".to_owned(),
         ]
         .iter()
-        .all(|element| !input.contains(&element))
+        .all(|element| !input.contains(element))
     }
 
     proptest! {

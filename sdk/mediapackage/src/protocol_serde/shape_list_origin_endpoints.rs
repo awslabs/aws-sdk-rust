@@ -158,9 +158,7 @@ pub(crate) fn de_list_origin_endpoints(
                     );
                 }
                 "originEndpoints" => {
-                    builder = builder.set_origin_endpoints(crate::protocol_serde::shape___list_of_origin_endpoint::de___list_of_origin_endpoint(
-                        tokens,
-                    )?);
+                    builder = builder.set_origin_endpoints(crate::protocol_serde::shape_list_of_origin_endpoint::de_list_of_origin_endpoint(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

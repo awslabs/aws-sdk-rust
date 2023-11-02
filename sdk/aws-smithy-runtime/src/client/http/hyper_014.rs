@@ -3,10 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+use crate::client::http::connection_poisoning::CaptureSmithyConnection;
 use aws_smithy_async::future::timeout::TimedOutError;
 use aws_smithy_async::rt::sleep::{default_async_sleep, AsyncSleep, SharedAsyncSleep};
 use aws_smithy_http::body::SdkBody;
-use aws_smithy_http::connection::{CaptureSmithyConnection, ConnectionMetadata};
+use aws_smithy_http::connection::ConnectionMetadata;
 use aws_smithy_http::result::ConnectorError;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::http::{

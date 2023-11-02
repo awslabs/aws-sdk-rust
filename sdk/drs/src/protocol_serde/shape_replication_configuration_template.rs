@@ -13,112 +13,112 @@ where
             loop {
                 match tokens.next().transpose()? {
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
-                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
-                        match key.to_unescaped()?.as_ref() {
-                            "replicationConfigurationTemplateID" => {
-                                builder = builder.set_replication_configuration_template_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "arn" => {
-                                builder = builder.set_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "stagingAreaSubnetId" => {
-                                builder = builder.set_staging_area_subnet_id(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "associateDefaultSecurityGroup" => {
-                                builder = builder
-                                    .set_associate_default_security_group(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                            }
-                            "replicationServersSecurityGroupsIDs" => {
-                                builder = builder.set_replication_servers_security_groups_i_ds(
-                                    crate::protocol_serde::shape_replication_servers_security_groups_i_ds::de_replication_servers_security_groups_i_ds(tokens)?
-                                );
-                            }
-                            "replicationServerInstanceType" => {
-                                builder = builder.set_replication_server_instance_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "useDedicatedReplicationServer" => {
-                                builder = builder
-                                    .set_use_dedicated_replication_server(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                            }
-                            "defaultLargeStagingDiskType" => {
-                                builder = builder.set_default_large_staging_disk_type(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| {
-                                            s.to_unescaped()
-                                                .map(|u| crate::types::ReplicationConfigurationDefaultLargeStagingDiskType::from(u.as_ref()))
-                                        })
-                                        .transpose()?,
-                                );
-                            }
-                            "ebsEncryption" => {
-                                builder = builder.set_ebs_encryption(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| {
-                                            s.to_unescaped()
-                                                .map(|u| crate::types::ReplicationConfigurationEbsEncryption::from(u.as_ref()))
-                                        })
-                                        .transpose()?,
-                                );
-                            }
-                            "ebsEncryptionKeyArn" => {
-                                builder = builder.set_ebs_encryption_key_arn(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| s.to_unescaped().map(|u| u.into_owned()))
-                                        .transpose()?,
-                                );
-                            }
-                            "bandwidthThrottling" => {
-                                builder = builder.set_bandwidth_throttling(
-                                    ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
-                                        .map(i64::try_from)
-                                        .transpose()?,
-                                );
-                            }
-                            "dataPlaneRouting" => {
-                                builder = builder.set_data_plane_routing(
-                                    ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
-                                        .map(|s| {
-                                            s.to_unescaped()
-                                                .map(|u| crate::types::ReplicationConfigurationDataPlaneRouting::from(u.as_ref()))
-                                        })
-                                        .transpose()?,
-                                );
-                            }
-                            "createPublicIP" => {
-                                builder = builder.set_create_public_ip(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                            }
-                            "stagingAreaTags" => {
-                                builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
-                            }
-                            "tags" => {
-                                builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
-                            }
-                            "pitPolicy" => {
-                                builder = builder.set_pit_policy(crate::protocol_serde::shape_pit_policy::de_pit_policy(tokens)?);
-                            }
-                            "autoReplicateNewDisks" => {
-                                builder =
-                                    builder.set_auto_replicate_new_disks(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
-                            }
-                            _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
+                        "replicationConfigurationTemplateID" => {
+                            builder = builder.set_replication_configuration_template_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
                         }
-                    }
+                        "arn" => {
+                            builder = builder.set_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "stagingAreaSubnetId" => {
+                            builder = builder.set_staging_area_subnet_id(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "associateDefaultSecurityGroup" => {
+                            builder = builder
+                                .set_associate_default_security_group(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "replicationServersSecurityGroupsIDs" => {
+                            builder = builder.set_replication_servers_security_groups_ids(
+                                crate::protocol_serde::shape_replication_servers_security_groups_ids::de_replication_servers_security_groups_ids(
+                                    tokens,
+                                )?,
+                            );
+                        }
+                        "replicationServerInstanceType" => {
+                            builder = builder.set_replication_server_instance_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "useDedicatedReplicationServer" => {
+                            builder = builder
+                                .set_use_dedicated_replication_server(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "defaultLargeStagingDiskType" => {
+                            builder = builder.set_default_large_staging_disk_type(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::ReplicationConfigurationDefaultLargeStagingDiskType::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "ebsEncryption" => {
+                            builder = builder.set_ebs_encryption(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::ReplicationConfigurationEbsEncryption::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "ebsEncryptionKeyArn" => {
+                            builder = builder.set_ebs_encryption_key_arn(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                            );
+                        }
+                        "bandwidthThrottling" => {
+                            builder = builder.set_bandwidth_throttling(
+                                ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
+                                    .map(i64::try_from)
+                                    .transpose()?,
+                            );
+                        }
+                        "dataPlaneRouting" => {
+                            builder = builder.set_data_plane_routing(
+                                ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                    .map(|s| {
+                                        s.to_unescaped()
+                                            .map(|u| crate::types::ReplicationConfigurationDataPlaneRouting::from(u.as_ref()))
+                                    })
+                                    .transpose()?,
+                            );
+                        }
+                        "createPublicIP" => {
+                            builder = builder.set_create_public_ip(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        "stagingAreaTags" => {
+                            builder = builder.set_staging_area_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                        }
+                        "tags" => {
+                            builder = builder.set_tags(crate::protocol_serde::shape_tags_map::de_tags_map(tokens)?);
+                        }
+                        "pitPolicy" => {
+                            builder = builder.set_pit_policy(crate::protocol_serde::shape_pit_policy::de_pit_policy(tokens)?);
+                        }
+                        "autoReplicateNewDisks" => {
+                            builder =
+                                builder.set_auto_replicate_new_disks(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
+                        }
+                        _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
+                    },
                     other => {
                         return Err(::aws_smithy_json::deserialize::error::DeserializeError::custom(format!(
                             "expected object key or end object, found: {:?}",

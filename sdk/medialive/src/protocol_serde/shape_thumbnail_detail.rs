@@ -22,7 +22,7 @@ where
                             );
                         }
                         "thumbnails" => {
-                            builder = builder.set_thumbnails(crate::protocol_serde::shape___list_of_thumbnail::de___list_of_thumbnail(tokens)?);
+                            builder = builder.set_thumbnails(crate::protocol_serde::shape_list_of_thumbnail::de_list_of_thumbnail(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

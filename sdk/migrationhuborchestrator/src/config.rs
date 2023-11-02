@@ -84,6 +84,10 @@ impl Config {
     pub fn time_source(&self) -> ::std::option::Option<::aws_smithy_async::time::SharedTimeSource> {
         self.runtime_components.time_source()
     }
+    /// Returns retry classifiers currently registered by the user.
+    pub fn retry_classifiers(&self) -> impl Iterator<Item = ::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier> + '_ {
+        self.runtime_components.retry_classifiers()
+    }
     /// Returns the name of the app that is using the client, if it was provided.
     ///
     /// This _optional_ name is used to identify the application in the user agent that
@@ -547,6 +551,200 @@ impl Builder {
         self.runtime_components.set_time_source(time_source);
         self
     }
+    /// Add type implementing [`ClassifyRetry`](::aws_smithy_runtime_api::client::retries::classifiers::ClassifyRetry) that will be used by the
+    /// [`RetryStrategy`](::aws_smithy_runtime_api::client::retries::RetryStrategy) to determine what responses should be retried.
+    ///
+    /// A retry classifier configured by this method will run according to its [priority](::aws_smithy_runtime_api::client::retries::classifiers::RetryClassifierPriority).
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # #[cfg(test)]
+    /// # mod tests {
+    /// # #[test]
+    /// # fn example() {
+    /// use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+    /// use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
+    /// use aws_smithy_runtime_api::client::retries::classifiers::{
+    ///     ClassifyRetry, RetryAction, RetryClassifierPriority,
+    /// };
+    /// use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+    /// use aws_smithy_types::retry::ErrorKind;
+    /// use std::error::Error as StdError;
+    /// use std::marker::PhantomData;
+    /// use aws_sdk_migrationhuborchestrator::config::Config;
+    /// # struct SomeOperationError {}
+    ///
+    /// const RETRYABLE_ERROR_CODES: &[&str] = [
+    ///     // List error codes to be retried here...
+    /// ];
+    ///
+    /// // When classifying at an operation's error type, classifiers require a generic parameter.
+    /// // When classifying the HTTP response alone, no generic is needed.
+    /// #[derive(Debug, Default)]
+    /// pub struct ErrorCodeClassifier<E> {
+    ///     _inner: PhantomData<E>,
+    /// }
+    ///
+    /// impl<E> ExampleErrorCodeClassifier<E> {
+    ///     pub fn new() -> Self {
+    ///         Self {
+    ///             _inner: PhantomData,
+    ///         }
+    ///     }
+    /// }
+    ///
+    /// impl<E> ClassifyRetry for ExampleErrorCodeClassifier<E>
+    /// where
+    ///     // Adding a trait bound for ProvideErrorMetadata allows us to inspect the error code.
+    ///     E: StdError + ProvideErrorMetadata + Send + Sync + 'static,
+    /// {
+    ///     fn classify_retry(&self, ctx: &InterceptorContext) -> RetryAction {
+    ///         // Check for a result
+    ///         let output_or_error = ctx.output_or_error();
+    ///         // Check for an error
+    ///         let error = match output_or_error {
+    ///             Some(Ok(_)) | None => return RetryAction::NoActionIndicated,
+    ///               Some(Err(err)) => err,
+    ///         };
+    ///
+    ///         // Downcast the generic error and extract the code
+    ///         let error_code = OrchestratorError::as_operation_error(error)
+    ///             .and_then(|err| err.downcast_ref::<E>())
+    ///             .and_then(|err| err.code());
+    ///
+    ///         // If this error's code is in our list, return an action that tells the RetryStrategy to retry this request.
+    ///         if let Some(error_code) = error_code {
+    ///             if RETRYABLE_ERROR_CODES.contains(&error_code) {
+    ///                 return RetryAction::transient_error();
+    ///             }
+    ///         }
+    ///
+    ///         // Otherwise, return that no action is indicated i.e. that this classifier doesn't require a retry.
+    ///         // Another classifier may still classify this response as retryable.
+    ///         RetryAction::NoActionIndicated
+    ///     }
+    ///
+    ///     fn name(&self) -> &'static str { "Example Error Code Classifier" }
+    /// }
+    ///
+    /// let config = Config::builder()
+    ///     .retry_classifier(ExampleErrorCodeClassifier::<SomeOperationError>::new())
+    ///     .build();
+    /// # }
+    /// # }
+    /// ```
+    pub fn retry_classifier(
+        mut self,
+        retry_classifier: impl ::aws_smithy_runtime_api::client::retries::classifiers::ClassifyRetry + 'static,
+    ) -> Self {
+        self.push_retry_classifier(::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier::new(
+            retry_classifier,
+        ));
+        self
+    }
+
+    /// Add a [`SharedRetryClassifier`](::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier) that will be used by the
+    /// [`RetryStrategy`](::aws_smithy_runtime_api::client::retries::RetryStrategy) to determine what responses should be retried.
+    ///
+    /// A retry classifier configured by this method will run according to its priority.
+    ///
+    /// # Examples
+    /// ```no_run
+    /// # #[cfg(test)]
+    /// # mod tests {
+    /// # #[test]
+    /// # fn example() {
+    /// use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+    /// use aws_smithy_runtime_api::client::orchestrator::OrchestratorError;
+    /// use aws_smithy_runtime_api::client::retries::classifiers::{
+    ///     ClassifyRetry, RetryAction, RetryClassifierPriority,
+    /// };
+    /// use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+    /// use aws_smithy_types::retry::ErrorKind;
+    /// use std::error::Error as StdError;
+    /// use std::marker::PhantomData;
+    /// use aws_sdk_migrationhuborchestrator::config::{Builder, Config};
+    /// # struct SomeOperationError {}
+    ///
+    /// const RETRYABLE_ERROR_CODES: &[&str] = [
+    ///     // List error codes to be retried here...
+    /// ];
+    /// fn set_example_error_code_classifier(builder: &mut Builder) {
+    ///     // When classifying at an operation's error type, classifiers require a generic parameter.
+    ///     // When classifying the HTTP response alone, no generic is needed.
+    ///     #[derive(Debug, Default)]
+    ///     pub struct ExampleErrorCodeClassifier<E> {
+    ///         _inner: PhantomData<E>,
+    ///     }
+    ///
+    ///     impl<E> ExampleErrorCodeClassifier<E> {
+    ///         pub fn new() -> Self {
+    ///             Self {
+    ///                 _inner: PhantomData,
+    ///             }
+    ///         }
+    ///     }
+    ///
+    ///     impl<E> ClassifyRetry for ExampleErrorCodeClassifier<E>
+    ///     where
+    ///         // Adding a trait bound for ProvideErrorMetadata allows us to inspect the error code.
+    ///         E: StdError + ProvideErrorMetadata + Send + Sync + 'static,
+    ///     {
+    ///         fn classify_retry(&self, ctx: &InterceptorContext) -> RetryAction {
+    ///             // Check for a result
+    ///             let output_or_error = ctx.output_or_error();
+    ///             // Check for an error
+    ///             let error = match output_or_error {
+    ///                 Some(Ok(_)) | None => return RetryAction::NoActionIndicated,
+    ///                   Some(Err(err)) => err,
+    ///             };
+    ///
+    ///             // Downcast the generic error and extract the code
+    ///             let error_code = OrchestratorError::as_operation_error(error)
+    ///                 .and_then(|err| err.downcast_ref::<E>())
+    ///                 .and_then(|err| err.code());
+    ///
+    ///             // If this error's code is in our list, return an action that tells the RetryStrategy to retry this request.
+    ///             if let Some(error_code) = error_code {
+    ///                 if RETRYABLE_ERROR_CODES.contains(&error_code) {
+    ///                     return RetryAction::transient_error();
+    ///                 }
+    ///             }
+    ///
+    ///             // Otherwise, return that no action is indicated i.e. that this classifier doesn't require a retry.
+    ///             // Another classifier may still classify this response as retryable.
+    ///             RetryAction::NoActionIndicated
+    ///         }
+    ///
+    ///         fn name(&self) -> &'static str { "Example Error Code Classifier" }
+    ///     }
+    ///
+    ///     builder.push_retry_classifier(ExampleErrorCodeClassifier::<SomeOperationError>::new())
+    /// }
+    ///
+    /// let mut builder = Config::builder();
+    /// set_example_error_code_classifier(&mut builder);
+    /// let config = builder.build();
+    /// # }
+    /// # }
+    /// ```
+    pub fn push_retry_classifier(
+        &mut self,
+        retry_classifier: ::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier,
+    ) -> &mut Self {
+        self.runtime_components.push_retry_classifier(retry_classifier);
+        self
+    }
+
+    /// Set [`SharedRetryClassifier`](::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier)s for the builder, replacing any that
+    /// were previously set.
+    pub fn set_retry_classifiers(
+        &mut self,
+        retry_classifiers: impl IntoIterator<Item = ::aws_smithy_runtime_api::client::retries::classifiers::SharedRetryClassifier>,
+    ) -> &mut Self {
+        self.runtime_components.set_retry_classifiers(retry_classifiers.into_iter());
+        self
+    }
     /// Sets the name of the app that is using the client.
     ///
     /// This _optional_ name is used to identify the application in the user agent that
@@ -680,10 +878,11 @@ impl Builder {
     #[cfg(any(feature = "test-util", test))]
     #[allow(unused_mut)]
     /// Apply test defaults to the builder
-    pub fn set_test_defaults(&mut self) -> &mut Self {
+    pub fn apply_test_defaults(&mut self) -> &mut Self {
         self.set_time_source(::std::option::Option::Some(::aws_smithy_async::time::SharedTimeSource::new(
             ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
         )));
+        self.config.store_put(::aws_http::user_agent::AwsUserAgent::for_tests());
         self.set_credentials_provider(Some(::aws_credential_types::provider::SharedCredentialsProvider::new(
             ::aws_credential_types::Credentials::for_tests(),
         )));
@@ -693,7 +892,7 @@ impl Builder {
     #[allow(unused_mut)]
     /// Apply test defaults to the builder
     pub fn with_test_defaults(mut self) -> Self {
-        self.set_test_defaults();
+        self.apply_test_defaults();
         self
     }
     /// Builds a [`Config`].
@@ -797,6 +996,7 @@ impl ServiceRuntimePlugin {
         let config = { None };
         let mut runtime_components = ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ServiceRuntimePlugin");
         runtime_components.push_interceptor(::aws_smithy_runtime::client::http::connection_poisoning::ConnectionPoisoningInterceptor::new());
+        runtime_components.push_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::HttpStatusCodeClassifier::default());
         runtime_components.push_interceptor(::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::request_info::RequestInfoInterceptor::new());
         runtime_components.push_interceptor(::aws_runtime::user_agent::UserAgentInterceptor::new());

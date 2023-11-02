@@ -391,7 +391,7 @@ pub(crate) mod shape_exports;
 
 pub(crate) mod shape_imports;
 
-pub(crate) mod shape_notification_ar_ns;
+pub(crate) mod shape_notification_arns;
 
 pub(crate) mod shape_parameter_declarations;
 

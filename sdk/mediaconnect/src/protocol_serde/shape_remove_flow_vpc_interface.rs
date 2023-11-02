@@ -143,8 +143,7 @@ pub(crate) fn de_remove_flow_vpc_interface(
                     );
                 }
                 "nonDeletedNetworkInterfaceIds" => {
-                    builder =
-                        builder.set_non_deleted_network_interface_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_non_deleted_network_interface_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "vpcInterfaceName" => {
                     builder = builder.set_vpc_interface_name(

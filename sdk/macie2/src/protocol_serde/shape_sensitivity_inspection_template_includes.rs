@@ -15,15 +15,14 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "allowListIds" => {
-                            builder = builder.set_allow_list_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_allow_list_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "customDataIdentifierIds" => {
-                            builder =
-                                builder.set_custom_data_identifier_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_custom_data_identifier_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "managedDataIdentifierIds" => {
-                            builder = builder
-                                .set_managed_data_identifier_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder =
+                                builder.set_managed_data_identifier_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

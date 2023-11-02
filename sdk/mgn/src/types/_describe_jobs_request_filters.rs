@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeJobsRequestFilters {
     /// <p>Request to describe Job log filters by job ID.</p>
-    pub job_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub job_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Request to describe Job log filters by date.</p>
     pub from_date: ::std::option::Option<::std::string::String>,
     /// <p>Request to describe job log items by last date.</p>
@@ -14,9 +14,9 @@ pub struct DescribeJobsRequestFilters {
 impl DescribeJobsRequestFilters {
     /// <p>Request to describe Job log filters by job ID.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_i_ds.is_none()`.
-    pub fn job_i_ds(&self) -> &[::std::string::String] {
-        self.job_i_ds.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.job_ids.is_none()`.
+    pub fn job_ids(&self) -> &[::std::string::String] {
+        self.job_ids.as_deref().unwrap_or_default()
     }
     /// <p>Request to describe Job log filters by date.</p>
     pub fn from_date(&self) -> ::std::option::Option<&str> {
@@ -38,30 +38,30 @@ impl DescribeJobsRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeJobsRequestFiltersBuilder {
-    pub(crate) job_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) job_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) from_date: ::std::option::Option<::std::string::String>,
     pub(crate) to_date: ::std::option::Option<::std::string::String>,
 }
 impl DescribeJobsRequestFiltersBuilder {
-    /// Appends an item to `job_i_ds`.
+    /// Appends an item to `job_ids`.
     ///
-    /// To override the contents of this collection use [`set_job_i_ds`](Self::set_job_i_ds).
+    /// To override the contents of this collection use [`set_job_ids`](Self::set_job_ids).
     ///
     /// <p>Request to describe Job log filters by job ID.</p>
-    pub fn job_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.job_i_ds.unwrap_or_default();
+    pub fn job_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.job_ids.unwrap_or_default();
         v.push(input.into());
-        self.job_i_ds = ::std::option::Option::Some(v);
+        self.job_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Request to describe Job log filters by job ID.</p>
-    pub fn set_job_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.job_i_ds = input;
+    pub fn set_job_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.job_ids = input;
         self
     }
     /// <p>Request to describe Job log filters by job ID.</p>
-    pub fn get_job_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.job_i_ds
+    pub fn get_job_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.job_ids
     }
     /// <p>Request to describe Job log filters by date.</p>
     pub fn from_date(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,7 +94,7 @@ impl DescribeJobsRequestFiltersBuilder {
     /// Consumes the builder and constructs a [`DescribeJobsRequestFilters`](crate::types::DescribeJobsRequestFilters).
     pub fn build(self) -> crate::types::DescribeJobsRequestFilters {
         crate::types::DescribeJobsRequestFilters {
-            job_i_ds: self.job_i_ds,
+            job_ids: self.job_ids,
             from_date: self.from_date,
             to_date: self.to_date,
         }

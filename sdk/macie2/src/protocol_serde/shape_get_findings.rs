@@ -167,7 +167,7 @@ pub(crate) fn de_get_findings(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "findings" => {
-                    builder = builder.set_findings(crate::protocol_serde::shape___list_of_finding::de___list_of_finding(tokens)?);
+                    builder = builder.set_findings(crate::protocol_serde::shape_list_of_finding::de_list_of_finding(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

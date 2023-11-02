@@ -24,7 +24,8 @@ use aws_smithy_runtime_api::client::interceptors::context::{Error, Input, Output
 use aws_smithy_runtime_api::client::interceptors::Interceptor;
 use aws_smithy_runtime_api::client::orchestrator::HttpResponse;
 use aws_smithy_runtime_api::client::orchestrator::{HttpRequest, OrchestratorError};
-use aws_smithy_runtime_api::client::retries::{RetryClassifiers, SharedRetryStrategy};
+use aws_smithy_runtime_api::client::retries::classifiers::ClassifyRetry;
+use aws_smithy_runtime_api::client::retries::SharedRetryStrategy;
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
 use aws_smithy_runtime_api::client::runtime_plugin::{
     RuntimePlugin, RuntimePlugins, SharedRuntimePlugin, StaticRuntimePlugin,
@@ -206,15 +207,15 @@ impl<I, O, E> OperationBuilder<I, O, E> {
         self
     }
 
-    pub fn no_retry(mut self) -> Self {
+    pub fn retry_classifier(mut self, retry_classifier: impl ClassifyRetry + 'static) -> Self {
         self.runtime_components
-            .set_retry_strategy(Some(SharedRetryStrategy::new(NeverRetryStrategy::new())));
+            .push_retry_classifier(retry_classifier);
         self
     }
 
-    pub fn retry_classifiers(mut self, retry_classifiers: RetryClassifiers) -> Self {
+    pub fn no_retry(mut self) -> Self {
         self.runtime_components
-            .set_retry_classifiers(Some(retry_classifiers));
+            .set_retry_strategy(Some(SharedRetryStrategy::new(NeverRetryStrategy::new())));
         self
     }
 
@@ -383,7 +384,7 @@ impl<I, O, E> OperationBuilder<I, O, E> {
 mod tests {
     use super::*;
     use crate::client::http::test_util::{capture_request, ReplayEvent, StaticReplayClient};
-    use crate::client::retries::classifier::HttpStatusCodeClassifier;
+    use crate::client::retries::classifiers::HttpStatusCodeClassifier;
     use aws_smithy_async::rt::sleep::{SharedAsyncSleep, TokioSleep};
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::result::ConnectorError;
@@ -459,10 +460,8 @@ mod tests {
             .http_client(connector.clone())
             .endpoint_url("http://localhost:1234")
             .no_auth()
-            .retry_classifiers(
-                RetryClassifiers::new().with_classifier(HttpStatusCodeClassifier::default()),
-            )
             .standard_retry(&RetryConfig::standard())
+            .retry_classifier(HttpStatusCodeClassifier::default())
             .timeout_config(TimeoutConfig::disabled())
             .sleep_impl(SharedAsyncSleep::new(TokioSleep::new()))
             .serializer(|input: String| {

@@ -84,7 +84,7 @@
       "action": {
         "Data": {
           "data": {
-            "Utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n    \"<Error>\n    <Type>Server</Type>\n    <Code>InternalError</Code>\n    <Message>We encountered an internal error. Please try again.</Message>\n    <RequestId>foo-id</RequestId>\n</Error>\""
+            "Utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n    <Error>\n    <Type>Server</Type>\n    <Code>InternalError</Code>\n    <Message>We encountered an internal error. Please try again.</Message>\n    <RequestId>foo-id</RequestId>\n</Error>"
           },
           "direction": "Response"
         }
@@ -183,7 +183,7 @@
       "action": {
         "Data": {
           "data": {
-            "Utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n    \"<Error>\n    <Type>Server</Type>\n    <Code>InternalError</Code>\n    <Message>We encountered an internal error. Please try again.</Message>\n    <RequestId>foo-id</RequestId>\n</Error>\""
+            "Utf8": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n    <Error>\n    <Type>Server</Type>\n    <Code>InternalError</Code>\n    <Message>We encountered an internal error. Please try again.</Message>\n    <RequestId>foo-id</RequestId>\n</Error>"
           },
           "direction": "Response"
         }

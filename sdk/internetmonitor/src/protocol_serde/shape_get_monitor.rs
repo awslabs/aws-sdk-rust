@@ -166,7 +166,7 @@ pub(crate) fn de_get_monitor(
                     );
                 }
                 "Resources" => {
-                    builder = builder.set_resources(crate::protocol_serde::shape_set_of_ar_ns::de_set_of_ar_ns(tokens)?);
+                    builder = builder.set_resources(crate::protocol_serde::shape_set_of_arns::de_set_of_arns(tokens)?);
                 }
                 "Status" => {
                     builder = builder.set_status(

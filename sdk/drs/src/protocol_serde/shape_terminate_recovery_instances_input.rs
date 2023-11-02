@@ -5,7 +5,7 @@ pub fn ser_terminate_recovery_instances_input(
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
     {
         let mut array_1 = object.key("recoveryInstanceIDs").start_array();
-        for item_2 in &input.recovery_instance_i_ds {
+        for item_2 in &input.recovery_instance_ids {
             {
                 array_1.value().string(item_2.as_str());
             }

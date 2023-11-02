@@ -134,18 +134,18 @@ impl StartImportFileTaskFluentBuilder {
         self.inner.get_s3_bucket()
     }
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub fn s3key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.s3key(input.into());
+    pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.s3_key(input.into());
         self
     }
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub fn set_s3key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.inner = self.inner.set_s3key(input);
+    pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.inner = self.inner.set_s3_key(input);
         self
     }
     /// <p> The Amazon S3 key name of the import file. </p>
-    pub fn get_s3key(&self) -> &::std::option::Option<::std::string::String> {
-        self.inner.get_s3key()
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        self.inner.get_s3_key()
     }
     /// <p>Specifies the source that the servers are coming from. By default, Strategy Recommendations assumes that the servers specified in the import file are available in AWS Application Discovery Service. </p>
     pub fn data_source_type(mut self, input: crate::types::DataSourceType) -> Self {

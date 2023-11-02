@@ -41,8 +41,9 @@ where
                             );
                         }
                         "pageTypes" => {
-                            builder = builder
-                                .set_page_types(crate::protocol_serde::shape___list_of_teletext_page_type::de___list_of_teletext_page_type(tokens)?);
+                            builder = builder.set_page_types(crate::protocol_serde::shape_list_of_teletext_page_type::de_list_of_teletext_page_type(
+                                tokens,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

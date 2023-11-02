@@ -555,9 +555,9 @@ pub(crate) mod shape_architecture_list;
 
 pub(crate) mod shape_image_tag_list;
 
-pub(crate) mod shape_ip_v4_address_list;
+pub(crate) mod shape_ipv4_address_list;
 
-pub(crate) mod shape_ip_v6_address_list;
+pub(crate) mod shape_ipv6_address_list;
 
 pub(crate) mod shape_lambda_vpc_config;
 

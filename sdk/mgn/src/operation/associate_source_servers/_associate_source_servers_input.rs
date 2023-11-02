@@ -6,7 +6,7 @@ pub struct AssociateSourceServersInput {
     /// <p>Application ID.</p>
     pub application_id: ::std::string::String,
     /// <p>Source server IDs list.</p>
-    pub source_server_i_ds: ::std::vec::Vec<::std::string::String>,
+    pub source_server_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
@@ -17,9 +17,9 @@ impl AssociateSourceServersInput {
         self.application_id.deref()
     }
     /// <p>Source server IDs list.</p>
-    pub fn source_server_i_ds(&self) -> &[::std::string::String] {
+    pub fn source_server_ids(&self) -> &[::std::string::String] {
         use std::ops::Deref;
-        self.source_server_i_ds.deref()
+        self.source_server_ids.deref()
     }
     /// <p>Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -38,7 +38,7 @@ impl AssociateSourceServersInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateSourceServersInputBuilder {
     pub(crate) application_id: ::std::option::Option<::std::string::String>,
-    pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateSourceServersInputBuilder {
@@ -57,25 +57,25 @@ impl AssociateSourceServersInputBuilder {
     pub fn get_application_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.application_id
     }
-    /// Appends an item to `source_server_i_ds`.
+    /// Appends an item to `source_server_ids`.
     ///
-    /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+    /// To override the contents of this collection use [`set_source_server_ids`](Self::set_source_server_ids).
     ///
     /// <p>Source server IDs list.</p>
-    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.source_server_i_ds.unwrap_or_default();
+    pub fn source_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.source_server_ids.unwrap_or_default();
         v.push(input.into());
-        self.source_server_i_ds = ::std::option::Option::Some(v);
+        self.source_server_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Source server IDs list.</p>
-    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_server_i_ds = input;
+    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.source_server_ids = input;
         self
     }
     /// <p>Source server IDs list.</p>
-    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.source_server_i_ds
+    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_server_ids
     }
     /// <p>Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,7 +94,7 @@ impl AssociateSourceServersInputBuilder {
     /// Consumes the builder and constructs a [`AssociateSourceServersInput`](crate::operation::associate_source_servers::AssociateSourceServersInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`application_id`](crate::operation::associate_source_servers::builders::AssociateSourceServersInputBuilder::application_id)
-    /// - [`source_server_i_ds`](crate::operation::associate_source_servers::builders::AssociateSourceServersInputBuilder::source_server_i_ds)
+    /// - [`source_server_ids`](crate::operation::associate_source_servers::builders::AssociateSourceServersInputBuilder::source_server_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::associate_source_servers::AssociateSourceServersInput, ::aws_smithy_http::operation::error::BuildError>
@@ -106,10 +106,10 @@ impl AssociateSourceServersInputBuilder {
                     "application_id was not specified but it is required when building AssociateSourceServersInput",
                 )
             })?,
-            source_server_i_ds: self.source_server_i_ds.ok_or_else(|| {
+            source_server_ids: self.source_server_ids.ok_or_else(|| {
                 ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_i_ds",
-                    "source_server_i_ds was not specified but it is required when building AssociateSourceServersInput",
+                    "source_server_ids",
+                    "source_server_ids was not specified but it is required when building AssociateSourceServersInput",
                 )
             })?,
             account_id: self.account_id,

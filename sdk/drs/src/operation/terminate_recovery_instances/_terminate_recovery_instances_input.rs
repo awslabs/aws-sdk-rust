@@ -4,13 +4,13 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesInput {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub recovery_instance_i_ds: ::std::vec::Vec<::std::string::String>,
+    pub recovery_instance_ids: ::std::vec::Vec<::std::string::String>,
 }
 impl TerminateRecoveryInstancesInput {
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn recovery_instance_i_ds(&self) -> &[::std::string::String] {
+    pub fn recovery_instance_ids(&self) -> &[::std::string::String] {
         use std::ops::Deref;
-        self.recovery_instance_i_ds.deref()
+        self.recovery_instance_ids.deref()
     }
 }
 impl TerminateRecoveryInstancesInput {
@@ -24,32 +24,32 @@ impl TerminateRecoveryInstancesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct TerminateRecoveryInstancesInputBuilder {
-    pub(crate) recovery_instance_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) recovery_instance_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl TerminateRecoveryInstancesInputBuilder {
-    /// Appends an item to `recovery_instance_i_ds`.
+    /// Appends an item to `recovery_instance_ids`.
     ///
-    /// To override the contents of this collection use [`set_recovery_instance_i_ds`](Self::set_recovery_instance_i_ds).
+    /// To override the contents of this collection use [`set_recovery_instance_ids`](Self::set_recovery_instance_ids).
     ///
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn recovery_instance_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.recovery_instance_i_ds.unwrap_or_default();
+    pub fn recovery_instance_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.recovery_instance_ids.unwrap_or_default();
         v.push(input.into());
-        self.recovery_instance_i_ds = ::std::option::Option::Some(v);
+        self.recovery_instance_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn set_recovery_instance_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.recovery_instance_i_ds = input;
+    pub fn set_recovery_instance_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.recovery_instance_ids = input;
         self
     }
     /// <p>The IDs of the Recovery Instances that should be terminated.</p>
-    pub fn get_recovery_instance_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.recovery_instance_i_ds
+    pub fn get_recovery_instance_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.recovery_instance_ids
     }
     /// Consumes the builder and constructs a [`TerminateRecoveryInstancesInput`](crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`recovery_instance_i_ds`](crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder::recovery_instance_i_ds)
+    /// - [`recovery_instance_ids`](crate::operation::terminate_recovery_instances::builders::TerminateRecoveryInstancesInputBuilder::recovery_instance_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<
@@ -57,10 +57,10 @@ impl TerminateRecoveryInstancesInputBuilder {
         ::aws_smithy_http::operation::error::BuildError,
     > {
         ::std::result::Result::Ok(crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesInput {
-            recovery_instance_i_ds: self.recovery_instance_i_ds.ok_or_else(|| {
+            recovery_instance_ids: self.recovery_instance_ids.ok_or_else(|| {
                 ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "recovery_instance_i_ds",
-                    "recovery_instance_i_ds was not specified but it is required when building TerminateRecoveryInstancesInput",
+                    "recovery_instance_ids",
+                    "recovery_instance_ids was not specified but it is required when building TerminateRecoveryInstancesInput",
                 )
             })?,
         })

@@ -6,7 +6,7 @@ pub struct DetachLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
     pub auto_scaling_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub target_group_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub target_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DetachLoadBalancerTargetGroupsInput {
     /// <p>The name of the Auto Scaling group.</p>
@@ -15,9 +15,9 @@ impl DetachLoadBalancerTargetGroupsInput {
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_ar_ns.is_none()`.
-    pub fn target_group_ar_ns(&self) -> &[::std::string::String] {
-        self.target_group_ar_ns.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.target_group_arns.is_none()`.
+    pub fn target_group_arns(&self) -> &[::std::string::String] {
+        self.target_group_arns.as_deref().unwrap_or_default()
     }
 }
 impl DetachLoadBalancerTargetGroupsInput {
@@ -32,7 +32,7 @@ impl DetachLoadBalancerTargetGroupsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DetachLoadBalancerTargetGroupsInputBuilder {
     pub(crate) auto_scaling_group_name: ::std::option::Option<::std::string::String>,
-    pub(crate) target_group_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) target_group_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DetachLoadBalancerTargetGroupsInputBuilder {
     /// <p>The name of the Auto Scaling group.</p>
@@ -50,25 +50,25 @@ impl DetachLoadBalancerTargetGroupsInputBuilder {
     pub fn get_auto_scaling_group_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.auto_scaling_group_name
     }
-    /// Appends an item to `target_group_ar_ns`.
+    /// Appends an item to `target_group_arns`.
     ///
-    /// To override the contents of this collection use [`set_target_group_ar_ns`](Self::set_target_group_ar_ns).
+    /// To override the contents of this collection use [`set_target_group_arns`](Self::set_target_group_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub fn target_group_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.target_group_ar_ns.unwrap_or_default();
+    pub fn target_group_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.target_group_arns.unwrap_or_default();
         v.push(input.into());
-        self.target_group_ar_ns = ::std::option::Option::Some(v);
+        self.target_group_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub fn set_target_group_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.target_group_ar_ns = input;
+    pub fn set_target_group_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.target_group_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.</p>
-    pub fn get_target_group_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.target_group_ar_ns
+    pub fn get_target_group_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.target_group_arns
     }
     /// Consumes the builder and constructs a [`DetachLoadBalancerTargetGroupsInput`](crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsInput).
     pub fn build(
@@ -80,7 +80,7 @@ impl DetachLoadBalancerTargetGroupsInputBuilder {
         ::std::result::Result::Ok(
             crate::operation::detach_load_balancer_target_groups::DetachLoadBalancerTargetGroupsInput {
                 auto_scaling_group_name: self.auto_scaling_group_name,
-                target_group_ar_ns: self.target_group_ar_ns,
+                target_group_arns: self.target_group_arns,
             },
         )
     }

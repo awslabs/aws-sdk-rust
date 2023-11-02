@@ -149,7 +149,7 @@ pub(crate) fn de_add_flow_media_streams(
                     );
                 }
                 "mediaStreams" => {
-                    builder = builder.set_media_streams(crate::protocol_serde::shape___list_of_media_stream::de___list_of_media_stream(tokens)?);
+                    builder = builder.set_media_streams(crate::protocol_serde::shape_list_of_media_stream::de_list_of_media_stream(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

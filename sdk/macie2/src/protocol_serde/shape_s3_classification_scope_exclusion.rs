@@ -15,9 +15,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "bucketNames" => {
-                            builder = builder.set_bucket_names(crate::protocol_serde::shape___list_of_s3_bucket_name::de___list_of_s3_bucket_name(
-                                tokens,
-                            )?);
+                            builder =
+                                builder.set_bucket_names(crate::protocol_serde::shape_list_of_s3_bucket_name::de_list_of_s3_bucket_name(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -89,7 +89,7 @@ pub(crate) mod shape_internet_measurements_log_delivery;
 
 pub(crate) mod shape_monitor_list;
 
-pub(crate) mod shape_set_of_ar_ns;
+pub(crate) mod shape_set_of_arns;
 
 pub(crate) mod shape_tag_map;
 

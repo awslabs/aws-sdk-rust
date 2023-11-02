@@ -41,7 +41,7 @@ where
                             );
                         }
                         "systemIds" => {
-                            builder = builder.set_system_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_system_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "url" => {
                             builder = builder.set_url(

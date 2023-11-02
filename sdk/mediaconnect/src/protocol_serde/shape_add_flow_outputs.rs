@@ -153,7 +153,7 @@ pub(crate) fn de_add_flow_outputs(
                     );
                 }
                 "outputs" => {
-                    builder = builder.set_outputs(crate::protocol_serde::shape___list_of_output::de___list_of_output(tokens)?);
+                    builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

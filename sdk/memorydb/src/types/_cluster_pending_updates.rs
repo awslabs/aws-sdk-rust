@@ -7,7 +7,7 @@ pub struct ClusterPendingUpdates {
     /// <p>The status of an online resharding operation.</p>
     pub resharding: ::std::option::Option<crate::types::ReshardingStatus>,
     /// <p>A list of ACLs associated with the cluster that are being updated</p>
-    pub ac_ls: ::std::option::Option<crate::types::AcLsUpdateStatus>,
+    pub acls: ::std::option::Option<crate::types::AcLsUpdateStatus>,
     /// <p>A list of service updates being applied to the cluster</p>
     pub service_updates: ::std::option::Option<::std::vec::Vec<crate::types::PendingModifiedServiceUpdate>>,
 }
@@ -17,8 +17,8 @@ impl ClusterPendingUpdates {
         self.resharding.as_ref()
     }
     /// <p>A list of ACLs associated with the cluster that are being updated</p>
-    pub fn ac_ls(&self) -> ::std::option::Option<&crate::types::AcLsUpdateStatus> {
-        self.ac_ls.as_ref()
+    pub fn acls(&self) -> ::std::option::Option<&crate::types::AcLsUpdateStatus> {
+        self.acls.as_ref()
     }
     /// <p>A list of service updates being applied to the cluster</p>
     ///
@@ -39,7 +39,7 @@ impl ClusterPendingUpdates {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ClusterPendingUpdatesBuilder {
     pub(crate) resharding: ::std::option::Option<crate::types::ReshardingStatus>,
-    pub(crate) ac_ls: ::std::option::Option<crate::types::AcLsUpdateStatus>,
+    pub(crate) acls: ::std::option::Option<crate::types::AcLsUpdateStatus>,
     pub(crate) service_updates: ::std::option::Option<::std::vec::Vec<crate::types::PendingModifiedServiceUpdate>>,
 }
 impl ClusterPendingUpdatesBuilder {
@@ -58,18 +58,18 @@ impl ClusterPendingUpdatesBuilder {
         &self.resharding
     }
     /// <p>A list of ACLs associated with the cluster that are being updated</p>
-    pub fn ac_ls(mut self, input: crate::types::AcLsUpdateStatus) -> Self {
-        self.ac_ls = ::std::option::Option::Some(input);
+    pub fn acls(mut self, input: crate::types::AcLsUpdateStatus) -> Self {
+        self.acls = ::std::option::Option::Some(input);
         self
     }
     /// <p>A list of ACLs associated with the cluster that are being updated</p>
-    pub fn set_ac_ls(mut self, input: ::std::option::Option<crate::types::AcLsUpdateStatus>) -> Self {
-        self.ac_ls = input;
+    pub fn set_acls(mut self, input: ::std::option::Option<crate::types::AcLsUpdateStatus>) -> Self {
+        self.acls = input;
         self
     }
     /// <p>A list of ACLs associated with the cluster that are being updated</p>
-    pub fn get_ac_ls(&self) -> &::std::option::Option<crate::types::AcLsUpdateStatus> {
-        &self.ac_ls
+    pub fn get_acls(&self) -> &::std::option::Option<crate::types::AcLsUpdateStatus> {
+        &self.acls
     }
     /// Appends an item to `service_updates`.
     ///
@@ -95,7 +95,7 @@ impl ClusterPendingUpdatesBuilder {
     pub fn build(self) -> crate::types::ClusterPendingUpdates {
         crate::types::ClusterPendingUpdates {
             resharding: self.resharding,
-            ac_ls: self.ac_ls,
+            acls: self.acls,
             service_updates: self.service_updates,
         }
     }

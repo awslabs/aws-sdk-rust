@@ -61,7 +61,7 @@ pub struct UpdateStackInput {
     /// <p>You might update the stack policy, for example, in order to protect a new resource that you created during a stack update. If you don't specify a stack policy, the current policy that is associated with the stack is unchanged.</p>
     pub stack_policy_url: ::std::option::Option<::std::string::String>,
     /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all notification topics.</p>
-    pub notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to supported resources in the stack. You can specify a maximum number of 50 tags.</p>
     /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's tags. If you specify an empty value, CloudFormation removes all associated tags.</p>
     pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
@@ -167,9 +167,9 @@ impl UpdateStackInput {
     }
     /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all notification topics.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_ar_ns.is_none()`.
-    pub fn notification_ar_ns(&self) -> &[::std::string::String] {
-        self.notification_ar_ns.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
+    pub fn notification_arns(&self) -> &[::std::string::String] {
+        self.notification_arns.as_deref().unwrap_or_default()
     }
     /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates these tags to supported resources in the stack. You can specify a maximum number of 50 tags.</p>
     /// <p>If you don't specify this parameter, CloudFormation doesn't modify the stack's tags. If you specify an empty value, CloudFormation removes all associated tags.</p>
@@ -219,7 +219,7 @@ pub struct UpdateStackInputBuilder {
     pub(crate) rollback_configuration: ::std::option::Option<crate::types::RollbackConfiguration>,
     pub(crate) stack_policy_body: ::std::option::Option<::std::string::String>,
     pub(crate) stack_policy_url: ::std::option::Option<::std::string::String>,
-    pub(crate) notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     pub(crate) disable_rollback: ::std::option::Option<bool>,
     pub(crate) client_request_token: ::std::option::Option<::std::string::String>,
@@ -517,25 +517,25 @@ impl UpdateStackInputBuilder {
     pub fn get_stack_policy_url(&self) -> &::std::option::Option<::std::string::String> {
         &self.stack_policy_url
     }
-    /// Appends an item to `notification_ar_ns`.
+    /// Appends an item to `notification_arns`.
     ///
-    /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
+    /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
     /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all notification topics.</p>
-    pub fn notification_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.notification_ar_ns.unwrap_or_default();
+    pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.notification_arns.unwrap_or_default();
         v.push(input.into());
-        self.notification_ar_ns = ::std::option::Option::Some(v);
+        self.notification_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all notification topics.</p>
-    pub fn set_notification_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_ar_ns = input;
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.notification_arns = input;
         self
     }
     /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all notification topics.</p>
-    pub fn get_notification_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.notification_ar_ns
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.notification_arns
     }
     /// Appends an item to `tags`.
     ///
@@ -630,7 +630,7 @@ impl UpdateStackInputBuilder {
             rollback_configuration: self.rollback_configuration,
             stack_policy_body: self.stack_policy_body,
             stack_policy_url: self.stack_policy_url,
-            notification_ar_ns: self.notification_ar_ns,
+            notification_arns: self.notification_arns,
             tags: self.tags,
             disable_rollback: self.disable_rollback,
             client_request_token: self.client_request_token,

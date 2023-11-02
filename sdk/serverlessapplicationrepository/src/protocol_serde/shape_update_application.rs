@@ -190,7 +190,7 @@ pub(crate) fn de_update_application(
                     builder = builder.set_is_verified_author(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                 }
                 "labels" => {
-                    builder = builder.set_labels(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_labels(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "licenseUrl" => {
                     builder = builder.set_license_url(

@@ -11,7 +11,7 @@ pub struct JobMetrics {
     /// <p>The total number of records that did not get processed.</p>
     pub records_not_processed: ::std::option::Option<i32>,
     /// <p>The total number of <code>matchID</code>s generated.</p>
-    pub match_i_ds: ::std::option::Option<i32>,
+    pub match_ids: ::std::option::Option<i32>,
 }
 impl JobMetrics {
     /// <p>The total number of input records.</p>
@@ -27,8 +27,8 @@ impl JobMetrics {
         self.records_not_processed
     }
     /// <p>The total number of <code>matchID</code>s generated.</p>
-    pub fn match_i_ds(&self) -> ::std::option::Option<i32> {
-        self.match_i_ds
+    pub fn match_ids(&self) -> ::std::option::Option<i32> {
+        self.match_ids
     }
 }
 impl JobMetrics {
@@ -45,7 +45,7 @@ pub struct JobMetricsBuilder {
     pub(crate) input_records: ::std::option::Option<i32>,
     pub(crate) total_records_processed: ::std::option::Option<i32>,
     pub(crate) records_not_processed: ::std::option::Option<i32>,
-    pub(crate) match_i_ds: ::std::option::Option<i32>,
+    pub(crate) match_ids: ::std::option::Option<i32>,
 }
 impl JobMetricsBuilder {
     /// <p>The total number of input records.</p>
@@ -91,18 +91,18 @@ impl JobMetricsBuilder {
         &self.records_not_processed
     }
     /// <p>The total number of <code>matchID</code>s generated.</p>
-    pub fn match_i_ds(mut self, input: i32) -> Self {
-        self.match_i_ds = ::std::option::Option::Some(input);
+    pub fn match_ids(mut self, input: i32) -> Self {
+        self.match_ids = ::std::option::Option::Some(input);
         self
     }
     /// <p>The total number of <code>matchID</code>s generated.</p>
-    pub fn set_match_i_ds(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.match_i_ds = input;
+    pub fn set_match_ids(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.match_ids = input;
         self
     }
     /// <p>The total number of <code>matchID</code>s generated.</p>
-    pub fn get_match_i_ds(&self) -> &::std::option::Option<i32> {
-        &self.match_i_ds
+    pub fn get_match_ids(&self) -> &::std::option::Option<i32> {
+        &self.match_ids
     }
     /// Consumes the builder and constructs a [`JobMetrics`](crate::types::JobMetrics).
     pub fn build(self) -> crate::types::JobMetrics {
@@ -110,7 +110,7 @@ impl JobMetricsBuilder {
             input_records: self.input_records,
             total_records_processed: self.total_records_processed,
             records_not_processed: self.records_not_processed,
-            match_i_ds: self.match_i_ds,
+            match_ids: self.match_ids,
         }
     }
 }

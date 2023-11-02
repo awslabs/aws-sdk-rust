@@ -79,7 +79,7 @@ pub use crate::types::error::_incorrect_key_material_exception::IncorrectKeyMate
 
 pub use crate::types::error::_expired_import_token_exception::ExpiredImportTokenExceptionBuilder;
 
-pub use crate::types::error::_custom_key_store_has_cm_ks_exception::CustomKeyStoreHasCmKsExceptionBuilder;
+pub use crate::types::error::_custom_key_store_has_cmks_exception::CustomKeyStoreHasCmKsExceptionBuilder;
 
 pub use crate::types::error::_xks_key_not_found_exception::XksKeyNotFoundExceptionBuilder;
 

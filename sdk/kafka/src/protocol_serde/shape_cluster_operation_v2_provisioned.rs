@@ -16,7 +16,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "operationSteps" => {
                             builder = builder.set_operation_steps(
-                                crate::protocol_serde::shape___list_of_cluster_operation_step::de___list_of_cluster_operation_step(tokens)?,
+                                crate::protocol_serde::shape_list_of_cluster_operation_step::de_list_of_cluster_operation_step(tokens)?,
                             );
                         }
                         "sourceClusterInfo" => {

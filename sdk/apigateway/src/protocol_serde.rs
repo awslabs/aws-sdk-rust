@@ -407,7 +407,7 @@ pub(crate) mod shape_list_of_api_key;
 
 pub(crate) mod shape_list_of_api_stage;
 
-pub(crate) mod shape_list_of_ar_ns;
+pub(crate) mod shape_list_of_arns;
 
 pub(crate) mod shape_list_of_authorizer;
 

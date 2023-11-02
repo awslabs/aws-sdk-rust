@@ -27,7 +27,7 @@ pub use crate::types::error::_kms_access_denied_fault::KmsAccessDeniedFault;
 
 pub use crate::types::error::_subnet_already_in_use::SubnetAlreadyInUse;
 
-pub use crate::types::error::_replication_subnet_group_does_not_cover_enough_a_zs::ReplicationSubnetGroupDoesNotCoverEnoughAZs;
+pub use crate::types::error::_replication_subnet_group_does_not_cover_enough_azs::ReplicationSubnetGroupDoesNotCoverEnoughAZs;
 
 pub use crate::types::error::_invalid_subnet::InvalidSubnet;
 
@@ -77,7 +77,7 @@ mod _kms_not_found_fault;
 
 mod _kms_throttling_fault;
 
-mod _replication_subnet_group_does_not_cover_enough_a_zs;
+mod _replication_subnet_group_does_not_cover_enough_azs;
 
 mod _resource_already_exists_fault;
 

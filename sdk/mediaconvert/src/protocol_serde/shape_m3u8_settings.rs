@@ -148,7 +148,7 @@ where
                         }
                         "audioPids" => {
                             builder = builder.set_audio_pids(
-                                crate::protocol_serde::shape___list_of__integer_min32_max8182::de___list_of__integer_min32_max8182(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min32_max8182::de_list_of_integer_min32_max8182(tokens)?,
                             );
                         }
                         "dataPTSControl" => {

@@ -85,7 +85,7 @@ pub use crate::types::_apns_push_notification_template::ApnsPushNotificationTemp
 
 pub use crate::types::_journey_response::JourneyResponse;
 
-pub use crate::types::___timezone_estimation_methods_element::TimezoneEstimationMethodsElement;
+pub use crate::types::_timezone_estimation_methods_element::TimezoneEstimationMethodsElement;
 
 pub use crate::types::_closed_days::ClosedDays;
 
@@ -167,7 +167,7 @@ pub use crate::types::_custom_message_activity::CustomMessageActivity;
 
 pub use crate::types::_journey_custom_message::JourneyCustomMessage;
 
-pub use crate::types::___endpoint_types_element::EndpointTypesElement;
+pub use crate::types::_endpoint_types_element::EndpointTypesElement;
 
 pub use crate::types::_journey_state_request::JourneyStateRequest;
 
@@ -471,10 +471,6 @@ pub use crate::types::_export_job_request::ExportJobRequest;
 
 pub use crate::types::_create_application_request::CreateApplicationRequest;
 
-mod ___endpoint_types_element;
-
-mod ___timezone_estimation_methods_element;
-
 mod _action;
 
 mod _activities_response;
@@ -638,6 +634,8 @@ mod _endpoint_request;
 mod _endpoint_response;
 
 mod _endpoint_send_configuration;
+
+mod _endpoint_types_element;
 
 mod _endpoint_user;
 
@@ -904,6 +902,8 @@ mod _template_version_response;
 mod _template_versions_response;
 
 mod _templates_response;
+
+mod _timezone_estimation_methods_element;
 
 mod _treatment_resource;
 

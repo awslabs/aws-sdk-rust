@@ -41,6 +41,17 @@ pub enum ErrorKind {
     ClientError,
 }
 
+impl fmt::Display for ErrorKind {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        match self {
+            Self::TransientError => write!(f, "transient error"),
+            Self::ThrottlingError => write!(f, "throttling error"),
+            Self::ServerError => write!(f, "server error"),
+            Self::ClientError => write!(f, "client error"),
+        }
+    }
+}
+
 /// Trait that provides an `ErrorKind` and an error code.
 pub trait ProvideErrorKind {
     /// Returns the `ErrorKind` when the error is modeled as retryable

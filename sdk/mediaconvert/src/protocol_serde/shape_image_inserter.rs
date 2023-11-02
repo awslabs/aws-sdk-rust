@@ -41,7 +41,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "insertableImages" => {
                             builder = builder.set_insertable_images(
-                                crate::protocol_serde::shape___list_of_insertable_image::de___list_of_insertable_image(tokens)?,
+                                crate::protocol_serde::shape_list_of_insertable_image::de_list_of_insertable_image(tokens)?,
                             );
                         }
                         "sdrReferenceWhiteLevel" => {

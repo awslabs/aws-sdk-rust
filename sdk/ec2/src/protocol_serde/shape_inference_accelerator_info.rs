@@ -29,7 +29,7 @@ pub fn de_inference_accelerator_info(
                         ?
                     )
                 ;
-                builder = builder.set_total_inference_memory_in_mi_b(var_2);
+                builder = builder.set_total_inference_memory_in_mib(var_2);
             }
             ,
             _ => {}

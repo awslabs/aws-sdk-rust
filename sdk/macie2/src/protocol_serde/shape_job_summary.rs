@@ -21,9 +21,7 @@ where
                         }
                         "bucketDefinitions" => {
                             builder = builder.set_bucket_definitions(
-                                crate::protocol_serde::shape___list_of_s3_bucket_definition_for_job::de___list_of_s3_bucket_definition_for_job(
-                                    tokens,
-                                )?,
+                                crate::protocol_serde::shape_list_of_s3_bucket_definition_for_job::de_list_of_s3_bucket_definition_for_job(tokens)?,
                             );
                         }
                         "createdAt" => {

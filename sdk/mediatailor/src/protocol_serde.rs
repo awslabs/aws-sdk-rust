@@ -155,39 +155,6 @@ pub(crate) mod shape_update_source_location_input;
 
 pub(crate) mod shape_update_vod_source_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_ad_break;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_alert;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_channel;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_live_source;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_playback_configuration;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_prefetch_schedule;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_schedule_entry;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_segment_delivery_configuration;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_source_location;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_vod_source;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of__string;
-
 pub(crate) mod shape_access_configuration;
 
 pub(crate) mod shape_ad_break;
@@ -218,6 +185,26 @@ pub(crate) mod shape_http_package_configuration;
 
 pub(crate) mod shape_http_package_configurations;
 
+pub(crate) mod shape_list_of_ad_break;
+
+pub(crate) mod shape_list_of_alert;
+
+pub(crate) mod shape_list_of_channel;
+
+pub(crate) mod shape_list_of_live_source;
+
+pub(crate) mod shape_list_of_playback_configuration;
+
+pub(crate) mod shape_list_of_prefetch_schedule;
+
+pub(crate) mod shape_list_of_schedule_entry;
+
+pub(crate) mod shape_list_of_segment_delivery_configuration;
+
+pub(crate) mod shape_list_of_source_location;
+
+pub(crate) mod shape_list_of_vod_source;
+
 pub(crate) mod shape_live_pre_roll_configuration;
 
 pub(crate) mod shape_log_configuration;
@@ -227,6 +214,8 @@ pub(crate) mod shape_log_configuration_for_channel;
 pub(crate) mod shape_log_types;
 
 pub(crate) mod shape_manifest_processing_rules;
+
+pub(crate) mod shape_map_of_string;
 
 pub(crate) mod shape_prefetch_consumption;
 
@@ -244,9 +233,6 @@ pub(crate) mod shape_slate_source;
 
 pub(crate) mod shape_update_program_schedule_configuration;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_avail_matching_criteria;
-
 pub(crate) mod shape_ad_break_opportunity;
 
 pub(crate) mod shape_ad_marker_passthrough;
@@ -262,6 +248,8 @@ pub(crate) mod shape_dash_playlist_settings;
 pub(crate) mod shape_hls_playlist_settings;
 
 pub(crate) mod shape_key_value_pair;
+
+pub(crate) mod shape_list_of_avail_matching_criteria;
 
 pub(crate) mod shape_live_source;
 
@@ -287,13 +275,11 @@ pub(crate) mod shape_update_program_transition;
 
 pub(crate) mod shape_vod_source;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_schedule_ad_break;
-
 pub(crate) mod shape_ad_break_metadata_list;
+
+pub(crate) mod shape_list_of_schedule_ad_break;
+
+pub(crate) mod shape_list_of_string;
 
 pub(crate) mod shape_segmentation_descriptor;
 

@@ -27,10 +27,10 @@ pub fn ser_aws_ec2_launch_template_data_instance_requirements_details(
         }
         array_7.finish();
     }
-    if let Some(var_9) = &input.accelerator_total_memory_mi_b {
+    if let Some(var_9) = &input.accelerator_total_memory_mib {
         #[allow(unused_mut)]
         let mut object_10 = object.key("AcceleratorTotalMemoryMiB").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details::ser_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details(&mut object_10, var_9)?;
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mib_details::ser_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mib_details(&mut object_10, var_9)?;
         object_10.finish();
     }
     if let Some(var_11) = &input.accelerator_types {
@@ -93,16 +93,16 @@ pub fn ser_aws_ec2_launch_template_data_instance_requirements_details(
         }
         array_29.finish();
     }
-    if let Some(var_31) = &input.memory_gi_b_per_v_cpu {
+    if let Some(var_31) = &input.memory_gib_per_v_cpu {
         #[allow(unused_mut)]
         let mut object_32 = object.key("MemoryGiBPerVCpu").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details::ser_aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details(&mut object_32, var_31)?;
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_cpu_details::ser_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_cpu_details(&mut object_32, var_31)?;
         object_32.finish();
     }
-    if let Some(var_33) = &input.memory_mi_b {
+    if let Some(var_33) = &input.memory_mib {
         #[allow(unused_mut)]
         let mut object_34 = object.key("MemoryMiB").start_object();
-        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details::ser_aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details(&mut object_34, var_33)?;
+        crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_mib_details::ser_aws_ec2_launch_template_data_instance_requirements_memory_mib_details(&mut object_34, var_33)?;
         object_34.finish();
     }
     if let Some(var_35) = &input.network_interface_count {
@@ -170,8 +170,8 @@ where
                                 builder.set_accelerator_names(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
                         }
                         "AcceleratorTotalMemoryMiB" => {
-                            builder = builder.set_accelerator_total_memory_mi_b(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details::de_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mi_b_details(tokens)?
+                            builder = builder.set_accelerator_total_memory_mib(
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mib_details::de_aws_ec2_launch_template_data_instance_requirements_accelerator_total_memory_mib_details(tokens)?
                                 );
                         }
                         "AcceleratorTypes" => {
@@ -221,13 +221,13 @@ where
                                 .set_local_storage_types(crate::protocol_serde::shape_non_empty_string_list::de_non_empty_string_list(tokens)?);
                         }
                         "MemoryGiBPerVCpu" => {
-                            builder = builder.set_memory_gi_b_per_v_cpu(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details::de_aws_ec2_launch_template_data_instance_requirements_memory_gi_b_per_v_cpu_details(tokens)?
+                            builder = builder.set_memory_gib_per_v_cpu(
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_cpu_details::de_aws_ec2_launch_template_data_instance_requirements_memory_gib_per_v_cpu_details(tokens)?
                                 );
                         }
                         "MemoryMiB" => {
-                            builder = builder.set_memory_mi_b(
-                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details::de_aws_ec2_launch_template_data_instance_requirements_memory_mi_b_details(tokens)?
+                            builder = builder.set_memory_mib(
+                                    crate::protocol_serde::shape_aws_ec2_launch_template_data_instance_requirements_memory_mib_details::de_aws_ec2_launch_template_data_instance_requirements_memory_mib_details(tokens)?
                                 );
                         }
                         "NetworkInterfaceCount" => {

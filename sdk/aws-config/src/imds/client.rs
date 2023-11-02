@@ -21,15 +21,15 @@ use aws_smithy_runtime::client::retries::strategy::StandardRetryStrategy;
 use aws_smithy_runtime_api::client::auth::AuthSchemeOptionResolverParams;
 use aws_smithy_runtime_api::client::endpoint::{EndpointResolver, EndpointResolverParams};
 use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
-use aws_smithy_runtime_api::client::orchestrator::{
-    Future, HttpResponse, OrchestratorError, SensitiveOutput,
+use aws_smithy_runtime_api::client::orchestrator::{Future, OrchestratorError, SensitiveOutput};
+use aws_smithy_runtime_api::client::retries::classifiers::{
+    ClassifyRetry, RetryAction, SharedRetryClassifier,
 };
-use aws_smithy_runtime_api::client::retries::{ClassifyRetry, RetryClassifiers, RetryReason};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
 use aws_smithy_runtime_api::client::runtime_plugin::{RuntimePlugin, SharedRuntimePlugin};
 use aws_smithy_types::config_bag::{FrozenLayer, Layer};
 use aws_smithy_types::endpoint::Endpoint;
-use aws_smithy_types::retry::{ErrorKind, RetryConfig};
+use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
 use aws_types::os_shim_internal::Env;
 use http::Uri;
@@ -250,9 +250,7 @@ impl ImdsCommonRuntimePlugin {
                 .with_http_client(config.http_client())
                 .with_endpoint_resolver(Some(endpoint_resolver))
                 .with_interceptor(UserAgentInterceptor::new())
-                .with_retry_classifiers(Some(
-                    RetryClassifiers::new().with_classifier(ImdsResponseRetryClassifier),
-                ))
+                .with_retry_classifier(SharedRetryClassifier::new(ImdsResponseRetryClassifier))
                 .with_retry_strategy(Some(StandardRetryStrategy::new(retry_config)))
                 .with_time_source(Some(config.time_source()))
                 .with_sleep_impl(config.sleep_impl()),
@@ -548,32 +546,26 @@ impl EndpointResolver for ImdsEndpointResolver {
 #[derive(Clone, Debug)]
 struct ImdsResponseRetryClassifier;
 
-impl ImdsResponseRetryClassifier {
-    fn classify(response: &HttpResponse) -> Option<RetryReason> {
-        let status = response.status();
-        match status {
-            _ if status.is_server_error() => Some(RetryReason::Error(ErrorKind::ServerError)),
-            // 401 indicates that the token has expired, this is retryable
-            _ if status.as_u16() == 401 => Some(RetryReason::Error(ErrorKind::ServerError)),
-            // This catch-all includes successful responses that fail to parse. These should not be retried.
-            _ => None,
-        }
-    }
-}
-
 impl ClassifyRetry for ImdsResponseRetryClassifier {
     fn name(&self) -> &'static str {
         "ImdsResponseRetryClassifier"
     }
 
-    fn classify_retry(&self, ctx: &InterceptorContext) -> Option<RetryReason> {
+    fn classify_retry(&self, ctx: &InterceptorContext) -> RetryAction {
         if let Some(response) = ctx.response() {
-            Self::classify(response)
+            let status = response.status();
+            match status {
+                _ if status.is_server_error() => RetryAction::server_error(),
+                // 401 indicates that the token has expired, this is retryable
+                _ if status.as_u16() == 401 => RetryAction::server_error(),
+                // This catch-all includes successful responses that fail to parse. These should not be retried.
+                _ => RetryAction::NoActionIndicated,
+            }
         } else {
             // Don't retry timeouts for IMDS, or else it will take ~30 seconds for the default
             // credentials provider chain to fail to provide credentials.
             // Also don't retry non-responses.
-            None
+            RetryAction::NoActionIndicated
         }
     }
 }
@@ -596,7 +588,7 @@ pub(crate) mod test {
     use aws_smithy_runtime_api::client::orchestrator::{
         HttpRequest, HttpResponse, OrchestratorError,
     };
-    use aws_smithy_runtime_api::client::retries::ClassifyRetry;
+    use aws_smithy_runtime_api::client::retries::classifiers::{ClassifyRetry, RetryAction};
     use aws_smithy_types::error::display::DisplayErrorContext;
     use aws_types::os_shim_internal::{Env, Fs};
     use http::header::USER_AGENT;
@@ -915,21 +907,27 @@ pub(crate) mod test {
         http_client.assert_requests_match(&[]);
     }
 
-    /// Successful responses should classify as `RetryKind::Unnecessary`
+    /// The classifier should return `None` when classifying a successful response.
     #[test]
     fn successful_response_properly_classified() {
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.set_output_or_error(Ok(Output::doesnt_matter()));
         ctx.set_response(imds_response("").map(|_| SdkBody::empty()));
         let classifier = ImdsResponseRetryClassifier;
-        assert_eq!(None, classifier.classify_retry(&ctx));
+        assert_eq!(
+            RetryAction::NoActionIndicated,
+            classifier.classify_retry(&ctx)
+        );
 
         // Emulate a failure to parse the response body (using an io error since it's easy to construct in a test)
         let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.set_output_or_error(Err(OrchestratorError::connector(ConnectorError::io(
             io::Error::new(io::ErrorKind::BrokenPipe, "fail to parse").into(),
         ))));
-        assert_eq!(None, classifier.classify_retry(&ctx));
+        assert_eq!(
+            RetryAction::NoActionIndicated,
+            classifier.classify_retry(&ctx)
+        );
     }
 
     // since tokens are sent as headers, the tokens need to be valid header values

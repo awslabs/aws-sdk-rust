@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "vpcConfigs" => {
-                            builder = builder.set_vpc_configs(crate::protocol_serde::shape___list_of_vpc_config::de___list_of_vpc_config(tokens)?);
+                            builder = builder.set_vpc_configs(crate::protocol_serde::shape_list_of_vpc_config::de_list_of_vpc_config(tokens)?);
                         }
                         "clientAuthentication" => {
                             builder = builder.set_client_authentication(

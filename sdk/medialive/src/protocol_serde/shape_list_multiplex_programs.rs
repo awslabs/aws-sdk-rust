@@ -165,7 +165,7 @@ pub(crate) fn de_list_multiplex_programs(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "multiplexPrograms" => {
                     builder = builder.set_multiplex_programs(
-                        crate::protocol_serde::shape___list_of_multiplex_program_summary::de___list_of_multiplex_program_summary(tokens)?,
+                        crate::protocol_serde::shape_list_of_multiplex_program_summary::de_list_of_multiplex_program_summary(tokens)?,
                     );
                 }
                 "nextToken" => {

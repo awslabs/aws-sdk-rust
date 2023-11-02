@@ -313,21 +313,6 @@ pub(crate) fn cloudwatch_metric_action_correct_errors(
     builder
 }
 
-pub(crate) fn dynamo_d_bv2_action_correct_errors(
-    mut builder: crate::types::builders::DynamoDBv2ActionBuilder,
-) -> crate::types::builders::DynamoDBv2ActionBuilder {
-    if builder.role_arn.is_none() {
-        builder.role_arn = Some(Default::default())
-    }
-    if builder.put_item.is_none() {
-        builder.put_item = {
-            let builder = crate::types::builders::PutItemInputBuilder::default();
-            crate::serde_util::put_item_input_correct_errors(builder).build().ok()
-        }
-    }
-    builder
-}
-
 pub(crate) fn dynamo_db_action_correct_errors(
     mut builder: crate::types::builders::DynamoDbActionBuilder,
 ) -> crate::types::builders::DynamoDbActionBuilder {
@@ -342,6 +327,21 @@ pub(crate) fn dynamo_db_action_correct_errors(
     }
     if builder.hash_key_value.is_none() {
         builder.hash_key_value = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dynamo_dbv2_action_correct_errors(
+    mut builder: crate::types::builders::DynamoDBv2ActionBuilder,
+) -> crate::types::builders::DynamoDBv2ActionBuilder {
+    if builder.role_arn.is_none() {
+        builder.role_arn = Some(Default::default())
+    }
+    if builder.put_item.is_none() {
+        builder.put_item = {
+            let builder = crate::types::builders::PutItemInputBuilder::default();
+            crate::serde_util::put_item_input_correct_errors(builder).build().ok()
+        }
     }
     builder
 }
@@ -669,7 +669,7 @@ pub(crate) fn put_asset_property_value_entry_correct_errors(
     builder
 }
 
-pub(crate) fn sig_v4_authorization_correct_errors(
+pub(crate) fn sigv4_authorization_correct_errors(
     mut builder: crate::types::builders::SigV4AuthorizationBuilder,
 ) -> crate::types::builders::SigV4AuthorizationBuilder {
     if builder.signing_region.is_none() {

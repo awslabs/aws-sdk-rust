@@ -123,21 +123,6 @@ pub(crate) mod shape_update_preset_input;
 
 pub(crate) mod shape_update_queue_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_endpoint;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_job;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_job_template;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_preset;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_queue;
-
 pub(crate) mod shape_acceleration_settings;
 
 pub(crate) mod shape_hop_destination;
@@ -150,6 +135,16 @@ pub(crate) mod shape_job_template;
 
 pub(crate) mod shape_job_template_settings;
 
+pub(crate) mod shape_list_of_endpoint;
+
+pub(crate) mod shape_list_of_job;
+
+pub(crate) mod shape_list_of_job_template;
+
+pub(crate) mod shape_list_of_preset;
+
+pub(crate) mod shape_list_of_queue;
+
 pub(crate) mod shape_policy;
 
 pub(crate) mod shape_preset;
@@ -161,21 +156,6 @@ pub(crate) mod shape_queue;
 pub(crate) mod shape_reservation_plan_settings;
 
 pub(crate) mod shape_resource_tags;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_hop_destination;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_output_group_detail;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_queue_transition;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_warning_group;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of__string;
 
 pub(crate) mod shape_audio_description;
 
@@ -199,6 +179,16 @@ pub(crate) mod shape_job_messages;
 
 pub(crate) mod shape_kantar_watermark_settings;
 
+pub(crate) mod shape_list_of_hop_destination;
+
+pub(crate) mod shape_list_of_output_group_detail;
+
+pub(crate) mod shape_list_of_queue_transition;
+
+pub(crate) mod shape_list_of_warning_group;
+
+pub(crate) mod shape_map_of_string;
+
 pub(crate) mod shape_motion_image_inserter;
 
 pub(crate) mod shape_nielsen_configuration;
@@ -216,24 +206,6 @@ pub(crate) mod shape_timed_metadata_insertion;
 pub(crate) mod shape_timing;
 
 pub(crate) mod shape_video_description;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_audio_description;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_caption_description_preset;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_template;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_output_group;
 
 pub(crate) mod shape_advanced_input_filter_settings;
 
@@ -270,6 +242,18 @@ pub(crate) mod shape_input_clipping;
 pub(crate) mod shape_input_decryption_settings;
 
 pub(crate) mod shape_input_video_generator;
+
+pub(crate) mod shape_list_of_audio_description;
+
+pub(crate) mod shape_list_of_caption_description_preset;
+
+pub(crate) mod shape_list_of_input;
+
+pub(crate) mod shape_list_of_input_template;
+
+pub(crate) mod shape_list_of_output_group;
+
+pub(crate) mod shape_list_of_string;
 
 pub(crate) mod shape_m2ts_settings;
 
@@ -308,12 +292,6 @@ pub(crate) mod shape_video_preprocessor;
 pub(crate) mod shape_video_selector;
 
 pub(crate) mod shape_warning_group;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_id3_insertion;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_output_detail;
 
 pub(crate) mod shape_aac_settings;
 
@@ -381,6 +359,10 @@ pub(crate) mod shape_imsc_destination_settings;
 
 pub(crate) mod shape_insertable_image;
 
+pub(crate) mod shape_list_of_id3_insertion;
+
+pub(crate) mod shape_list_of_output_detail;
+
 pub(crate) mod shape_m2ts_scte35_esam;
 
 pub(crate) mod shape_mp2_settings;
@@ -428,30 +410,6 @@ pub(crate) mod shape_wav_settings;
 pub(crate) mod shape_webvtt_destination_settings;
 
 pub(crate) mod shape_xavc_settings;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__integer_min32_max8182;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string_pattern_s3_assetmap_xml;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_clipping;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_output;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_video_overlay;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of_audio_selector;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of_audio_selector_group;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of_caption_selector;
 
 pub(crate) mod shape_ancillary_source_settings;
 
@@ -501,6 +459,22 @@ pub(crate) mod shape_hls_image_based_trick_play_settings;
 
 pub(crate) mod shape_hls_settings;
 
+pub(crate) mod shape_list_of_input_clipping;
+
+pub(crate) mod shape_list_of_integer_min32_max8182;
+
+pub(crate) mod shape_list_of_output;
+
+pub(crate) mod shape_list_of_string_pattern_s3_assetmap_xml;
+
+pub(crate) mod shape_list_of_video_overlay;
+
+pub(crate) mod shape_map_of_audio_selector;
+
+pub(crate) mod shape_map_of_audio_selector_group;
+
+pub(crate) mod shape_map_of_caption_selector;
+
 pub(crate) mod shape_ms_smooth_additional_manifest;
 
 pub(crate) mod shape_ms_smooth_encryption_settings;
@@ -535,14 +509,13 @@ pub(crate) mod shape_xavc_hd_intra_cbg_profile_settings;
 
 pub(crate) mod shape_xavc_hd_profile_settings;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_insertable_image;
-
 pub(crate) mod shape_allowed_rendition_size;
 
 pub(crate) mod shape_caption_source_framerate;
 
 pub(crate) mod shape_force_include_rendition_size;
+
+pub(crate) mod shape_list_of_insertable_image;
 
 pub(crate) mod shape_min_bottom_rendition_size;
 
@@ -558,63 +531,44 @@ pub(crate) mod shape_static_key_provider;
 
 pub(crate) mod shape_video_detail;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__integer_min1_max2147483647;
+pub(crate) mod shape_list_of_automated_abr_rule;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string_min1;
+pub(crate) mod shape_list_of_caption_description;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_automated_abr_rule;
+pub(crate) mod shape_list_of_cmaf_additional_manifest;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_caption_description;
+pub(crate) mod shape_list_of_dash_additional_manifest;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_cmaf_additional_manifest;
+pub(crate) mod shape_list_of_hls_ad_markers;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_dash_additional_manifest;
+pub(crate) mod shape_list_of_hls_additional_manifest;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_hls_ad_markers;
+pub(crate) mod shape_list_of_hls_caption_language_mapping;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_hls_additional_manifest;
+pub(crate) mod shape_list_of_integer_min1_max2147483647;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_hls_caption_language_mapping;
+pub(crate) mod shape_list_of_ms_smooth_additional_manifest;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_ms_smooth_additional_manifest;
+pub(crate) mod shape_list_of_output_channel_mapping;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_output_channel_mapping;
+pub(crate) mod shape_list_of_string_min1;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_teletext_page_type;
+pub(crate) mod shape_list_of_teletext_page_type;
 
 pub(crate) mod shape_s3_destination_access_control;
 
 pub(crate) mod shape_s3_encryption_settings;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_video_overlay_input_clipping;
+pub(crate) mod shape_list_of_video_overlay_input_clipping;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__double_min_negative60_max6;
+pub(crate) mod shape_list_of_allowed_rendition_size;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__integer_min_negative60_max6;
+pub(crate) mod shape_list_of_double_min_negative60_max6;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string_min36_max36_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12;
+pub(crate) mod shape_list_of_force_include_rendition_size;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12;
+pub(crate) mod shape_list_of_integer_min_negative60_max6;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_allowed_rendition_size;
+pub(crate) mod shape_list_of_string_min36_max36_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_force_include_rendition_size;
+pub(crate) mod shape_list_of_string_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12;

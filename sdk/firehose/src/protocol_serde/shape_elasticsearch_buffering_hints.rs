@@ -9,7 +9,7 @@ pub fn ser_elasticsearch_buffering_hints(
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.size_in_m_bs {
+    if let Some(var_2) = &input.size_in_mbs {
         object.key("SizeInMBs").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
@@ -41,7 +41,7 @@ where
                             );
                         }
                         "SizeInMBs" => {
-                            builder = builder.set_size_in_m_bs(
+                            builder = builder.set_size_in_mbs(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

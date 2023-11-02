@@ -178,9 +178,7 @@ pub(crate) fn de_list_input_device_transfers(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "inputDeviceTransfers" => {
                     builder = builder.set_input_device_transfers(
-                        crate::protocol_serde::shape___list_of_transferring_input_device_summary::de___list_of_transferring_input_device_summary(
-                            tokens,
-                        )?,
+                        crate::protocol_serde::shape_list_of_transferring_input_device_summary::de_list_of_transferring_input_device_summary(tokens)?,
                     );
                 }
                 "nextToken" => {

@@ -177,11 +177,11 @@ pub(crate) fn de_start_multiplex(
                     );
                 }
                 "availabilityZones" => {
-                    builder = builder.set_availability_zones(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_availability_zones(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "destinations" => {
                     builder = builder.set_destinations(
-                        crate::protocol_serde::shape___list_of_multiplex_output_destination::de___list_of_multiplex_output_destination(tokens)?,
+                        crate::protocol_serde::shape_list_of_multiplex_output_destination::de_list_of_multiplex_output_destination(tokens)?,
                     );
                 }
                 "id" => {

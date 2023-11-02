@@ -178,8 +178,8 @@ pub(crate) fn open_zfs_user_or_group_quota_correct_errors(
     if builder.id.is_none() {
         builder.id = Some(Default::default())
     }
-    if builder.storage_capacity_quota_gi_b.is_none() {
-        builder.storage_capacity_quota_gi_b = Some(Default::default())
+    if builder.storage_capacity_quota_gib.is_none() {
+        builder.storage_capacity_quota_gib = Some(Default::default())
     }
     builder
 }

@@ -27,7 +27,7 @@ pub use crate::types::_encryption_method::EncryptionMethod;
 
 pub use crate::types::_ads_on_delivery_restrictions::AdsOnDeliveryRestrictions;
 
-pub use crate::types::___ad_triggers_element::AdTriggersElement;
+pub use crate::types::_ad_triggers_element::AdTriggersElement;
 
 pub use crate::types::_ad_markers::AdMarkers;
 
@@ -39,7 +39,7 @@ pub use crate::types::_segment_template_format::SegmentTemplateFormat;
 
 pub use crate::types::_profile::Profile;
 
-pub use crate::types::___period_triggers_element::PeriodTriggersElement;
+pub use crate::types::_period_triggers_element::PeriodTriggersElement;
 
 pub use crate::types::_manifest_layout::ManifestLayout;
 
@@ -77,11 +77,9 @@ pub use crate::types::_s3_destination::S3Destination;
 
 pub use crate::types::_channel::Channel;
 
-mod ___ad_triggers_element;
-
-mod ___period_triggers_element;
-
 mod _ad_markers;
+
+mod _ad_triggers_element;
 
 mod _ads_on_delivery_restrictions;
 
@@ -132,6 +130,8 @@ mod _mss_package;
 mod _origin_endpoint;
 
 mod _origination;
+
+mod _period_triggers_element;
 
 mod _playlist_type;
 

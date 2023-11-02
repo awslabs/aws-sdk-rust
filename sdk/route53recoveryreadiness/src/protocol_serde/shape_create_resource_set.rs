@@ -158,7 +158,7 @@ pub(crate) fn de_create_resource_set(
                     );
                 }
                 "resources" => {
-                    builder = builder.set_resources(crate::protocol_serde::shape___list_of_resource::de___list_of_resource(tokens)?);
+                    builder = builder.set_resources(crate::protocol_serde::shape_list_of_resource::de_list_of_resource(tokens)?);
                 }
                 "tags" => {
                     builder = builder.set_tags(crate::protocol_serde::shape_tags::de_tags(tokens)?);

@@ -16,7 +16,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "dashManifests" => {
                             builder =
-                                builder.set_dash_manifests(crate::protocol_serde::shape___list_of_dash_manifest::de___list_of_dash_manifest(tokens)?);
+                                builder.set_dash_manifests(crate::protocol_serde::shape_list_of_dash_manifest::de_list_of_dash_manifest(tokens)?);
                         }
                         "encryption" => {
                             builder = builder.set_encryption(crate::protocol_serde::shape_dash_encryption::de_dash_encryption(tokens)?);
@@ -32,7 +32,7 @@ where
                         }
                         "periodTriggers" => {
                             builder = builder.set_period_triggers(
-                                crate::protocol_serde::shape___list_of__period_triggers_element::de___list_of__period_triggers_element(tokens)?,
+                                crate::protocol_serde::shape_list_of_period_triggers_element::de_list_of_period_triggers_element(tokens)?,
                             );
                         }
                         "segmentDurationSeconds" => {

@@ -176,7 +176,7 @@ pub(crate) fn de_get_finding_statistics(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "countsByGroup" => {
-                    builder = builder.set_counts_by_group(crate::protocol_serde::shape___list_of_group_count::de___list_of_group_count(tokens)?);
+                    builder = builder.set_counts_by_group(crate::protocol_serde::shape_list_of_group_count::de_list_of_group_count(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

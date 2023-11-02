@@ -40,7 +40,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "tracks" => {
-                            builder = builder.set_tracks(crate::protocol_serde::shape___list_of_audio_track::de___list_of_audio_track(tokens)?);
+                            builder = builder.set_tracks(crate::protocol_serde::shape_list_of_audio_track::de_list_of_audio_track(tokens)?);
                         }
                         "dolbyEDecode" => {
                             builder = builder.set_dolby_e_decode(crate::protocol_serde::shape_audio_dolby_e_decode::de_audio_dolby_e_decode(tokens)?);

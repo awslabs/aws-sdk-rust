@@ -118,7 +118,7 @@ pub(crate) fn de_get_application_component_details(
                 }
                 "associatedServerIds" => {
                     builder =
-                        builder.set_associated_server_ids(crate::protocol_serde::shape_associated_server_i_ds::de_associated_server_i_ds(tokens)?);
+                        builder.set_associated_server_ids(crate::protocol_serde::shape_associated_server_ids::de_associated_server_ids(tokens)?);
                 }
                 "moreApplicationResource" => {
                     builder = builder.set_more_application_resource(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

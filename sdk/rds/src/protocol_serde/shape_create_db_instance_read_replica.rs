@@ -116,7 +116,12 @@ pub fn de_create_db_instance_read_replica_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::DbSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
-                    output = crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_a_zs::de_db_subnet_group_does_not_cover_enough_a_zs_xml_err(_response_body, output).map_err(crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::unhandled)?;
+                    output =
+                        crate::protocol_serde::shape_db_subnet_group_does_not_cover_enough_azs::de_db_subnet_group_does_not_cover_enough_azs_xml_err(
+                            _response_body,
+                            output,
+                        )
+                        .map_err(crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

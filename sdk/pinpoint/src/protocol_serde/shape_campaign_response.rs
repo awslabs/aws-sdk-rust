@@ -132,7 +132,7 @@ where
                             builder = builder.set_state(crate::protocol_serde::shape_campaign_state::de_campaign_state(tokens)?);
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "TemplateConfiguration" => {
                             builder = builder

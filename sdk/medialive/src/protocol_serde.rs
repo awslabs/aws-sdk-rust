@@ -227,84 +227,6 @@ pub(crate) mod shape_update_multiplex_program_input;
 
 pub(crate) mod shape_update_reservation_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_batch_failed_result_model;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_batch_successful_result_model;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_channel_egress_endpoint;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_channel_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_attachment;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_destination;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_device_settings;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_device_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_security_group;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_source;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_whitelist_rule;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_media_connect_flow;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_multiplex_output_destination;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_multiplex_program_pipeline_detail;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_multiplex_program_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_multiplex_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_offering;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_output_destination;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_pipeline_detail;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_reservation;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_schedule_action;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_thumbnail_detail;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_transferring_input_device_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_validation_error;
-
 pub(crate) mod shape_account_configuration;
 
 pub(crate) mod shape_batch_schedule_action_create_request;
@@ -349,6 +271,58 @@ pub(crate) mod shape_input_vpc_request;
 
 pub(crate) mod shape_input_whitelist_rule_cidr;
 
+pub(crate) mod shape_list_of_batch_failed_result_model;
+
+pub(crate) mod shape_list_of_batch_successful_result_model;
+
+pub(crate) mod shape_list_of_channel_egress_endpoint;
+
+pub(crate) mod shape_list_of_channel_summary;
+
+pub(crate) mod shape_list_of_input;
+
+pub(crate) mod shape_list_of_input_attachment;
+
+pub(crate) mod shape_list_of_input_destination;
+
+pub(crate) mod shape_list_of_input_device_settings;
+
+pub(crate) mod shape_list_of_input_device_summary;
+
+pub(crate) mod shape_list_of_input_security_group;
+
+pub(crate) mod shape_list_of_input_source;
+
+pub(crate) mod shape_list_of_input_whitelist_rule;
+
+pub(crate) mod shape_list_of_media_connect_flow;
+
+pub(crate) mod shape_list_of_multiplex_output_destination;
+
+pub(crate) mod shape_list_of_multiplex_program_pipeline_detail;
+
+pub(crate) mod shape_list_of_multiplex_program_summary;
+
+pub(crate) mod shape_list_of_multiplex_summary;
+
+pub(crate) mod shape_list_of_offering;
+
+pub(crate) mod shape_list_of_output_destination;
+
+pub(crate) mod shape_list_of_pipeline_detail;
+
+pub(crate) mod shape_list_of_reservation;
+
+pub(crate) mod shape_list_of_schedule_action;
+
+pub(crate) mod shape_list_of_string;
+
+pub(crate) mod shape_list_of_thumbnail_detail;
+
+pub(crate) mod shape_list_of_transferring_input_device_summary;
+
+pub(crate) mod shape_list_of_validation_error;
+
 pub(crate) mod shape_maintenance_create_settings;
 
 pub(crate) mod shape_maintenance_status;
@@ -380,21 +354,6 @@ pub(crate) mod shape_tags;
 pub(crate) mod shape_vpc_output_settings;
 
 pub(crate) mod shape_vpc_output_settings_description;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__integer;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_audio_description;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_caption_description;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_output_group;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_video_description;
 
 pub(crate) mod shape_audio_description;
 
@@ -433,6 +392,16 @@ pub(crate) mod shape_input_settings;
 pub(crate) mod shape_input_source;
 
 pub(crate) mod shape_input_whitelist_rule;
+
+pub(crate) mod shape_list_of_audio_description;
+
+pub(crate) mod shape_list_of_caption_description;
+
+pub(crate) mod shape_list_of_integer;
+
+pub(crate) mod shape_list_of_output_group;
+
+pub(crate) mod shape_list_of_video_description;
 
 pub(crate) mod shape_media_connect_flow;
 
@@ -478,15 +447,6 @@ pub(crate) mod shape_validation_error;
 
 pub(crate) mod shape_video_description;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_media_package_output_destination_settings;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_output_destination_settings;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_thumbnail;
-
 pub(crate) mod shape_audio_codec_settings;
 
 pub(crate) mod shape_audio_normalization_settings;
@@ -508,6 +468,12 @@ pub(crate) mod shape_input_destination_vpc;
 pub(crate) mod shape_input_location;
 
 pub(crate) mod shape_input_loss_behavior;
+
+pub(crate) mod shape_list_of_media_package_output_destination_settings;
+
+pub(crate) mod shape_list_of_output_destination_settings;
+
+pub(crate) mod shape_list_of_thumbnail;
 
 pub(crate) mod shape_motion_graphics_settings;
 
@@ -534,18 +500,6 @@ pub(crate) mod shape_schedule_action_start_settings;
 pub(crate) mod shape_video_codec_settings;
 
 pub(crate) mod shape_video_selector;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_audio_selector;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_caption_selector;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_failover_condition;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_output;
 
 pub(crate) mod shape_aac_settings;
 
@@ -608,6 +562,14 @@ pub(crate) mod shape_immediate_mode_schedule_action_start_settings;
 pub(crate) mod shape_input_prepare_schedule_action_settings;
 
 pub(crate) mod shape_input_switch_schedule_action_settings;
+
+pub(crate) mod shape_list_of_audio_selector;
+
+pub(crate) mod shape_list_of_caption_selector;
+
+pub(crate) mod shape_list_of_failover_condition;
+
+pub(crate) mod shape_list_of_output;
 
 pub(crate) mod shape_media_package_group_settings;
 
@@ -675,15 +637,6 @@ pub(crate) mod shape_wav_settings;
 
 pub(crate) mod shape_webvtt_destination_settings;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_audio_channel_mapping;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_pipeline_pause_state_settings;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_scte35_descriptor;
-
 pub(crate) mod shape_ancillary_source_settings;
 
 pub(crate) mod shape_archive_cdn_settings;
@@ -734,6 +687,12 @@ pub(crate) mod shape_input_loss_failover_settings;
 
 pub(crate) mod shape_key_provider_settings;
 
+pub(crate) mod shape_list_of_audio_channel_mapping;
+
+pub(crate) mod shape_list_of_pipeline_pause_state_settings;
+
+pub(crate) mod shape_list_of_scte35_descriptor;
+
 pub(crate) mod shape_media_package_output_settings;
 
 pub(crate) mod shape_mpeg2_filter_settings;
@@ -770,15 +729,6 @@ pub(crate) mod shape_video_selector_pid;
 
 pub(crate) mod shape_video_selector_program_id;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_caption_language_mapping;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_hls_ad_markers;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_rtmp_ad_markers;
-
 pub(crate) mod shape_archive_container_settings;
 
 pub(crate) mod shape_archive_s3_settings;
@@ -809,6 +759,12 @@ pub(crate) mod shape_hls_settings;
 
 pub(crate) mod shape_hls_webdav_settings;
 
+pub(crate) mod shape_list_of_caption_language_mapping;
+
+pub(crate) mod shape_list_of_hls_ad_markers;
+
+pub(crate) mod shape_list_of_rtmp_ad_markers;
+
 pub(crate) mod shape_rec601_settings;
 
 pub(crate) mod shape_rec709_settings;
@@ -825,14 +781,13 @@ pub(crate) mod shape_temporal_filter_settings;
 
 pub(crate) mod shape_udp_container_settings;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_input_channel_level;
-
 pub(crate) mod shape_audio_only_hls_settings;
 
 pub(crate) mod shape_fmp4_hls_settings;
 
 pub(crate) mod shape_frame_capture_hls_settings;
+
+pub(crate) mod shape_list_of_input_channel_level;
 
 pub(crate) mod shape_m2ts_settings;
 
@@ -842,14 +797,13 @@ pub(crate) mod shape_scte35_segmentation_descriptor;
 
 pub(crate) mod shape_standard_hls_settings;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_audio_track;
-
 pub(crate) mod shape_dvb_nit_settings;
 
 pub(crate) mod shape_dvb_sdt_settings;
 
 pub(crate) mod shape_dvb_tdt_settings;
+
+pub(crate) mod shape_list_of_audio_track;
 
 pub(crate) mod shape_m3u8_settings;
 

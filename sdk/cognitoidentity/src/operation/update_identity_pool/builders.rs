@@ -203,21 +203,21 @@ impl UpdateIdentityPoolFluentBuilder {
     }
     /// Appends an item to `OpenIdConnectProviderARNs`.
     ///
-    /// To override the contents of this collection use [`set_open_id_connect_provider_ar_ns`](Self::set_open_id_connect_provider_ar_ns).
+    /// To override the contents of this collection use [`set_open_id_connect_provider_arns`](Self::set_open_id_connect_provider_arns).
     ///
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn open_id_connect_provider_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.open_id_connect_provider_ar_ns(input.into());
+    pub fn open_id_connect_provider_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.open_id_connect_provider_arns(input.into());
         self
     }
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn set_open_id_connect_provider_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_open_id_connect_provider_ar_ns(input);
+    pub fn set_open_id_connect_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_open_id_connect_provider_arns(input);
         self
     }
     /// <p>The ARNs of the OpenID Connect providers.</p>
-    pub fn get_open_id_connect_provider_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_open_id_connect_provider_ar_ns()
+    pub fn get_open_id_connect_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_open_id_connect_provider_arns()
     }
     /// Appends an item to `CognitoIdentityProviders`.
     ///
@@ -239,21 +239,21 @@ impl UpdateIdentityPoolFluentBuilder {
     }
     /// Appends an item to `SamlProviderARNs`.
     ///
-    /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
+    /// To override the contents of this collection use [`set_saml_provider_arns`](Self::set_saml_provider_arns).
     ///
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn saml_provider_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.saml_provider_ar_ns(input.into());
+    pub fn saml_provider_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.saml_provider_arns(input.into());
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn set_saml_provider_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_saml_provider_ar_ns(input);
+    pub fn set_saml_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_saml_provider_arns(input);
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn get_saml_provider_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_saml_provider_ar_ns()
+    pub fn get_saml_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_saml_provider_arns()
     }
     /// Adds a key-value pair to `IdentityPoolTags`.
     ///

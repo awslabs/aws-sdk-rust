@@ -136,7 +136,7 @@ where
                         }
                         "pids" => {
                             builder = builder.set_pids(
-                                crate::protocol_serde::shape___list_of__integer_min1_max2147483647::de___list_of__integer_min1_max2147483647(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(tokens)?,
                             );
                         }
                         "programSelection" => {
@@ -158,7 +158,7 @@ where
                         }
                         "tracks" => {
                             builder = builder.set_tracks(
-                                crate::protocol_serde::shape___list_of__integer_min1_max2147483647::de___list_of__integer_min1_max2147483647(tokens)?,
+                                crate::protocol_serde::shape_list_of_integer_min1_max2147483647::de_list_of_integer_min1_max2147483647(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

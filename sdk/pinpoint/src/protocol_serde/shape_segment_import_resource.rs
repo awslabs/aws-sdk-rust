@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "ChannelCounts" => {
-                            builder = builder.set_channel_counts(crate::protocol_serde::shape_map_of__integer::de_map_of__integer(tokens)?);
+                            builder = builder.set_channel_counts(crate::protocol_serde::shape_map_of_integer::de_map_of_integer(tokens)?);
                         }
                         "ExternalId" => {
                             builder = builder.set_external_id(

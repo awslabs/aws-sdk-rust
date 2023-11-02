@@ -12,7 +12,7 @@ pub fn ser_application_policy_statement(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.principal_org_i_ds {
+    if let Some(var_4) = &input.principal_org_ids {
         let mut array_5 = object.key("principalOrgIDs").start_array();
         for item_6 in var_4 {
             {
@@ -52,13 +52,13 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "actions" => {
-                            builder = builder.set_actions(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_actions(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "principalOrgIDs" => {
-                            builder = builder.set_principal_org_i_ds(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_principal_org_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "principals" => {
-                            builder = builder.set_principals(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_principals(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "statementId" => {
                             builder = builder.set_statement_id(

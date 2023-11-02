@@ -125,21 +125,21 @@ impl DescribeReplicationConfigurationTemplatesFluentBuilder {
     }
     /// Appends an item to `replicationConfigurationTemplateIDs`.
     ///
-    /// To override the contents of this collection use [`set_replication_configuration_template_i_ds`](Self::set_replication_configuration_template_i_ds).
+    /// To override the contents of this collection use [`set_replication_configuration_template_ids`](Self::set_replication_configuration_template_ids).
     ///
     /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
-    pub fn replication_configuration_template_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.replication_configuration_template_i_ds(input.into());
+    pub fn replication_configuration_template_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.replication_configuration_template_ids(input.into());
         self
     }
     /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
-    pub fn set_replication_configuration_template_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_replication_configuration_template_i_ds(input);
+    pub fn set_replication_configuration_template_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_replication_configuration_template_ids(input);
         self
     }
     /// <p>The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.</p>
-    pub fn get_replication_configuration_template_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_replication_configuration_template_i_ds()
+    pub fn get_replication_configuration_template_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_replication_configuration_template_ids()
     }
     /// <p>Maximum number of Replication Configuration Templates to retrieve.</p>
     pub fn max_results(mut self, input: i32) -> Self {

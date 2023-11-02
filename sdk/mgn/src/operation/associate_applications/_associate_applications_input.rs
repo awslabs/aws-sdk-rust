@@ -6,7 +6,7 @@ pub struct AssociateApplicationsInput {
     /// <p>Wave ID.</p>
     pub wave_id: ::std::string::String,
     /// <p>Application IDs list.</p>
-    pub application_i_ds: ::std::vec::Vec<::std::string::String>,
+    pub application_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>Account ID.</p>
     pub account_id: ::std::option::Option<::std::string::String>,
 }
@@ -17,9 +17,9 @@ impl AssociateApplicationsInput {
         self.wave_id.deref()
     }
     /// <p>Application IDs list.</p>
-    pub fn application_i_ds(&self) -> &[::std::string::String] {
+    pub fn application_ids(&self) -> &[::std::string::String] {
         use std::ops::Deref;
-        self.application_i_ds.deref()
+        self.application_ids.deref()
     }
     /// <p>Account ID.</p>
     pub fn account_id(&self) -> ::std::option::Option<&str> {
@@ -38,7 +38,7 @@ impl AssociateApplicationsInput {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct AssociateApplicationsInputBuilder {
     pub(crate) wave_id: ::std::option::Option<::std::string::String>,
-    pub(crate) application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl AssociateApplicationsInputBuilder {
@@ -57,25 +57,25 @@ impl AssociateApplicationsInputBuilder {
     pub fn get_wave_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.wave_id
     }
-    /// Appends an item to `application_i_ds`.
+    /// Appends an item to `application_ids`.
     ///
-    /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
+    /// To override the contents of this collection use [`set_application_ids`](Self::set_application_ids).
     ///
     /// <p>Application IDs list.</p>
-    pub fn application_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.application_i_ds.unwrap_or_default();
+    pub fn application_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.application_ids.unwrap_or_default();
         v.push(input.into());
-        self.application_i_ds = ::std::option::Option::Some(v);
+        self.application_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Application IDs list.</p>
-    pub fn set_application_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.application_i_ds = input;
+    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.application_ids = input;
         self
     }
     /// <p>Application IDs list.</p>
-    pub fn get_application_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.application_i_ds
+    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.application_ids
     }
     /// <p>Account ID.</p>
     pub fn account_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -94,7 +94,7 @@ impl AssociateApplicationsInputBuilder {
     /// Consumes the builder and constructs a [`AssociateApplicationsInput`](crate::operation::associate_applications::AssociateApplicationsInput).
     /// This method will fail if any of the following fields are not set:
     /// - [`wave_id`](crate::operation::associate_applications::builders::AssociateApplicationsInputBuilder::wave_id)
-    /// - [`application_i_ds`](crate::operation::associate_applications::builders::AssociateApplicationsInputBuilder::application_i_ds)
+    /// - [`application_ids`](crate::operation::associate_applications::builders::AssociateApplicationsInputBuilder::application_ids)
     pub fn build(
         self,
     ) -> ::std::result::Result<crate::operation::associate_applications::AssociateApplicationsInput, ::aws_smithy_http::operation::error::BuildError>
@@ -106,10 +106,10 @@ impl AssociateApplicationsInputBuilder {
                     "wave_id was not specified but it is required when building AssociateApplicationsInput",
                 )
             })?,
-            application_i_ds: self.application_i_ds.ok_or_else(|| {
+            application_ids: self.application_ids.ok_or_else(|| {
                 ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "application_i_ds",
-                    "application_i_ds was not specified but it is required when building AssociateApplicationsInput",
+                    "application_ids",
+                    "application_ids was not specified but it is required when building AssociateApplicationsInput",
                 )
             })?,
             account_id: self.account_id,

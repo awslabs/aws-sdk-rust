@@ -385,7 +385,7 @@ pub(crate) mod shape_replication_configuration_replicated_disks;
 
 pub(crate) mod shape_replication_configuration_templates;
 
-pub(crate) mod shape_replication_servers_security_groups_i_ds;
+pub(crate) mod shape_replication_servers_security_groups_ids;
 
 pub(crate) mod shape_s3_bucket_source;
 
@@ -521,7 +521,7 @@ pub(crate) mod shape_participating_server;
 
 pub(crate) mod shape_data_replication_initiation_step;
 
-pub(crate) mod shape_i_ps_list;
+pub(crate) mod shape_ips_list;
 
 pub(crate) mod shape_post_launch_actions_status;
 

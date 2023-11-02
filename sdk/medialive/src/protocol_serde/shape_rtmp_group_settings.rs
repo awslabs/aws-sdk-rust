@@ -58,9 +58,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adMarkers" => {
-                            builder = builder.set_ad_markers(crate::protocol_serde::shape___list_of_rtmp_ad_markers::de___list_of_rtmp_ad_markers(
-                                tokens,
-                            )?);
+                            builder =
+                                builder.set_ad_markers(crate::protocol_serde::shape_list_of_rtmp_ad_markers::de_list_of_rtmp_ad_markers(tokens)?);
                         }
                         "authenticationScheme" => {
                             builder = builder.set_authentication_scheme(

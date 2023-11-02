@@ -51,7 +51,7 @@ pub fn ser_update_replication_configuration_input(
     if let Some(var_13) = &input.replication_server_instance_type {
         object.key("replicationServerInstanceType").string(var_13.as_str());
     }
-    if let Some(var_14) = &input.replication_servers_security_groups_i_ds {
+    if let Some(var_14) = &input.replication_servers_security_groups_ids {
         let mut array_15 = object.key("replicationServersSecurityGroupsIDs").start_array();
         for item_16 in var_14 {
             {

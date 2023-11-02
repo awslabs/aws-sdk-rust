@@ -27,7 +27,7 @@ pub fn ser_create_authorizer_input(
     if let Some(var_7) = &input.name {
         object.key("name").string(var_7.as_str());
     }
-    if let Some(var_8) = &input.provider_ar_ns {
+    if let Some(var_8) = &input.provider_arns {
         let mut array_9 = object.key("providerARNs").start_array();
         for item_10 in var_8 {
             {

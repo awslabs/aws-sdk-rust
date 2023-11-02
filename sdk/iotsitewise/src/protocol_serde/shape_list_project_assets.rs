@@ -96,7 +96,7 @@ pub(crate) fn de_list_project_assets(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "assetIds" => {
-                    builder = builder.set_asset_ids(crate::protocol_serde::shape_asset_i_ds::de_asset_i_ds(tokens)?);
+                    builder = builder.set_asset_ids(crate::protocol_serde::shape_asset_ids::de_asset_ids(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

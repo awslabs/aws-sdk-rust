@@ -42,7 +42,7 @@ where
                         }
                         "EndpointTypes" => {
                             builder = builder.set_endpoint_types(
-                                crate::protocol_serde::shape_list_of__endpoint_types_element::de_list_of__endpoint_types_element(tokens)?,
+                                crate::protocol_serde::shape_list_of_endpoint_types_element::de_list_of_endpoint_types_element(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -217,7 +217,7 @@ pub use crate::types::_http_action::HttpAction;
 
 pub use crate::types::_http_authorization::HttpAuthorization;
 
-pub use crate::types::_sig_v4_authorization::SigV4Authorization;
+pub use crate::types::_sigv4_authorization::SigV4Authorization;
 
 pub use crate::types::_http_action_header::HttpActionHeader;
 
@@ -275,7 +275,7 @@ pub use crate::types::_message_format::MessageFormat;
 
 pub use crate::types::_lambda_action::LambdaAction;
 
-pub use crate::types::_dynamo_d_bv2_action::DynamoDBv2Action;
+pub use crate::types::_dynamo_dbv2_action::DynamoDBv2Action;
 
 pub use crate::types::_put_item_input::PutItemInput;
 
@@ -751,9 +751,9 @@ mod _domain_type;
 
 mod _dynamic_group_status;
 
-mod _dynamo_d_bv2_action;
-
 mod _dynamo_db_action;
+
+mod _dynamo_dbv2_action;
 
 mod _dynamo_key_type;
 
@@ -995,9 +995,9 @@ mod _server_certificate_summary;
 
 mod _service_type;
 
-mod _sig_v4_authorization;
-
 mod _signing_profile_parameter;
+
+mod _sigv4_authorization;
 
 mod _sns_action;
 

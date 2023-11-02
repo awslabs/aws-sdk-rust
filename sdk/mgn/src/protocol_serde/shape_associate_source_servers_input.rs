@@ -11,7 +11,7 @@ pub fn ser_associate_source_servers_input(
     }
     {
         let mut array_2 = object.key("sourceServerIDs").start_array();
-        for item_3 in &input.source_server_i_ds {
+        for item_3 in &input.source_server_ids {
             {
                 array_2.value().string(item_3.as_str());
             }

@@ -195,57 +195,6 @@ pub(crate) mod shape_update_security_input;
 
 pub(crate) mod shape_update_storage_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_client_vpc_connection;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_cluster;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_cluster_info;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_cluster_operation_info;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_cluster_operation_v2_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_compatible_kafka_version;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_configuration;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_configuration_revision;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_kafka_cluster_description;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_kafka_version;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_node_info;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_replication_info_description;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_replicator_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_unprocessed_scram_secret;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_vpc_connection;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of__string;
-
 pub(crate) mod shape_broker_ebs_volume_info;
 
 pub(crate) mod shape_broker_node_group_info;
@@ -272,7 +221,41 @@ pub(crate) mod shape_encryption_info;
 
 pub(crate) mod shape_kafka_cluster;
 
+pub(crate) mod shape_list_of_client_vpc_connection;
+
+pub(crate) mod shape_list_of_cluster;
+
+pub(crate) mod shape_list_of_cluster_info;
+
+pub(crate) mod shape_list_of_cluster_operation_info;
+
+pub(crate) mod shape_list_of_cluster_operation_v2_summary;
+
+pub(crate) mod shape_list_of_compatible_kafka_version;
+
+pub(crate) mod shape_list_of_configuration;
+
+pub(crate) mod shape_list_of_configuration_revision;
+
+pub(crate) mod shape_list_of_kafka_cluster_description;
+
+pub(crate) mod shape_list_of_kafka_version;
+
+pub(crate) mod shape_list_of_node_info;
+
+pub(crate) mod shape_list_of_replication_info_description;
+
+pub(crate) mod shape_list_of_replicator_summary;
+
+pub(crate) mod shape_list_of_string;
+
+pub(crate) mod shape_list_of_unprocessed_scram_secret;
+
+pub(crate) mod shape_list_of_vpc_connection;
+
 pub(crate) mod shape_logging_info;
+
+pub(crate) mod shape_map_of_string;
 
 pub(crate) mod shape_open_monitoring_info;
 
@@ -287,9 +270,6 @@ pub(crate) mod shape_replication_state_info;
 pub(crate) mod shape_serverless_request;
 
 pub(crate) mod shape_topic_replication_update;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_cluster_operation_step;
 
 pub(crate) mod shape_amazon_msk_cluster;
 
@@ -322,6 +302,8 @@ pub(crate) mod shape_kafka_cluster_client_vpc_config;
 pub(crate) mod shape_kafka_cluster_description;
 
 pub(crate) mod shape_kafka_version;
+
+pub(crate) mod shape_list_of_cluster_operation_step;
 
 pub(crate) mod shape_mutable_cluster_info;
 
@@ -365,18 +347,6 @@ pub(crate) mod shape_vpc_connection_info;
 
 pub(crate) mod shape_vpc_connectivity;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_broker_ebs_volume_info;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_kafka_cluster_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_replication_info_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_vpc_config;
-
 pub(crate) mod shape_broker_node_info;
 
 pub(crate) mod shape_cloud_watch_logs;
@@ -390,6 +360,14 @@ pub(crate) mod shape_firehose;
 pub(crate) mod shape_iam;
 
 pub(crate) mod shape_jmx_exporter_info;
+
+pub(crate) mod shape_list_of_broker_ebs_volume_info;
+
+pub(crate) mod shape_list_of_kafka_cluster_summary;
+
+pub(crate) mod shape_list_of_replication_info_summary;
+
+pub(crate) mod shape_list_of_vpc_config;
 
 pub(crate) mod shape_node_exporter_info;
 
@@ -409,17 +387,15 @@ pub(crate) mod shape_vpc_connectivity_client_authentication;
 
 pub(crate) mod shape_zookeeper_node_info;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string_max249;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string_max256;
-
 pub(crate) mod shape_cluster_operation_step_info;
 
 pub(crate) mod shape_jmx_exporter;
 
 pub(crate) mod shape_kafka_cluster_summary;
+
+pub(crate) mod shape_list_of_string_max249;
+
+pub(crate) mod shape_list_of_string_max256;
 
 pub(crate) mod shape_node_exporter;
 

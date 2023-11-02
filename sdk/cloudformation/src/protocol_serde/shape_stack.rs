@@ -164,11 +164,11 @@ pub fn de_stack(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Result
             s if s.matches("NotificationARNs") /* NotificationARNs com.amazonaws.cloudformation#Stack$NotificationARNs */ =>  {
                 let var_13 =
                     Some(
-                        crate::protocol_serde::shape_notification_ar_ns::de_notification_ar_ns(&mut tag)
+                        crate::protocol_serde::shape_notification_arns::de_notification_arns(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_notification_ar_ns(var_13);
+                builder = builder.set_notification_arns(var_13);
             }
             ,
             s if s.matches("TimeoutInMinutes") /* TimeoutInMinutes com.amazonaws.cloudformation#Stack$TimeoutInMinutes */ =>  {

@@ -43,7 +43,7 @@ pub fn de_load_balancer_address(
                         ?
                     )
                 ;
-                builder = builder.set_private_i_pv4_address(var_3);
+                builder = builder.set_private_ipv4_address(var_3);
             }
             ,
             s if s.matches("IPv6Address") /* IPv6Address com.amazonaws.elasticloadbalancingv2#LoadBalancerAddress$IPv6Address */ =>  {
@@ -56,7 +56,7 @@ pub fn de_load_balancer_address(
                         ?
                     )
                 ;
-                builder = builder.set_i_pv6_address(var_4);
+                builder = builder.set_ipv6_address(var_4);
             }
             ,
             _ => {}

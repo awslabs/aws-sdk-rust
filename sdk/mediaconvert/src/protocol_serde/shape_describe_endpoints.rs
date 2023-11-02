@@ -152,7 +152,7 @@ pub(crate) fn de_describe_endpoints(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "endpoints" => {
-                    builder = builder.set_endpoints(crate::protocol_serde::shape___list_of_endpoint::de___list_of_endpoint(tokens)?);
+                    builder = builder.set_endpoints(crate::protocol_serde::shape_list_of_endpoint::de_list_of_endpoint(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

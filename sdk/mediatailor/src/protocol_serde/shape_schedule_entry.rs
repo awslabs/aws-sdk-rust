@@ -57,7 +57,7 @@ where
                         }
                         "ScheduleAdBreaks" => {
                             builder = builder.set_schedule_ad_breaks(
-                                crate::protocol_serde::shape___list_of_schedule_ad_break::de___list_of_schedule_ad_break(tokens)?,
+                                crate::protocol_serde::shape_list_of_schedule_ad_break::de_list_of_schedule_ad_break(tokens)?,
                             );
                         }
                         "ScheduleEntryType" => {

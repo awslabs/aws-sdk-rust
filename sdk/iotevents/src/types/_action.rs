@@ -27,7 +27,7 @@ pub struct Action {
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
     pub dynamo_db: ::std::option::Option<crate::types::DynamoDbAction>,
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
-    pub dynamo_d_bv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
+    pub dynamo_dbv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an asset property in AWS IoT SiteWise .</p>
     pub iot_site_wise: ::std::option::Option<crate::types::IotSiteWiseAction>,
 }
@@ -77,8 +77,8 @@ impl Action {
         self.dynamo_db.as_ref()
     }
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
-    pub fn dynamo_d_bv2(&self) -> ::std::option::Option<&crate::types::DynamoDBv2Action> {
-        self.dynamo_d_bv2.as_ref()
+    pub fn dynamo_dbv2(&self) -> ::std::option::Option<&crate::types::DynamoDBv2Action> {
+        self.dynamo_dbv2.as_ref()
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an asset property in AWS IoT SiteWise .</p>
     pub fn iot_site_wise(&self) -> ::std::option::Option<&crate::types::IotSiteWiseAction> {
@@ -107,7 +107,7 @@ pub struct ActionBuilder {
     pub(crate) sqs: ::std::option::Option<crate::types::SqsAction>,
     pub(crate) firehose: ::std::option::Option<crate::types::FirehoseAction>,
     pub(crate) dynamo_db: ::std::option::Option<crate::types::DynamoDbAction>,
-    pub(crate) dynamo_d_bv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
+    pub(crate) dynamo_dbv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
     pub(crate) iot_site_wise: ::std::option::Option<crate::types::IotSiteWiseAction>,
 }
 impl ActionBuilder {
@@ -266,18 +266,18 @@ impl ActionBuilder {
         &self.dynamo_db
     }
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
-    pub fn dynamo_d_bv2(mut self, input: crate::types::DynamoDBv2Action) -> Self {
-        self.dynamo_d_bv2 = ::std::option::Option::Some(input);
+    pub fn dynamo_dbv2(mut self, input: crate::types::DynamoDBv2Action) -> Self {
+        self.dynamo_dbv2 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
-    pub fn set_dynamo_d_bv2(mut self, input: ::std::option::Option<crate::types::DynamoDBv2Action>) -> Self {
-        self.dynamo_d_bv2 = input;
+    pub fn set_dynamo_dbv2(mut self, input: ::std::option::Option<crate::types::DynamoDBv2Action>) -> Self {
+        self.dynamo_dbv2 = input;
         self
     }
     /// <p>Writes to the DynamoDB table that you created. The default action payload contains all attribute-value pairs that have the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-event-actions.html">Actions</a> in <i>AWS IoT Events Developer Guide</i>.</p>
-    pub fn get_dynamo_d_bv2(&self) -> &::std::option::Option<crate::types::DynamoDBv2Action> {
-        &self.dynamo_d_bv2
+    pub fn get_dynamo_dbv2(&self) -> &::std::option::Option<crate::types::DynamoDBv2Action> {
+        &self.dynamo_dbv2
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an asset property in AWS IoT SiteWise .</p>
     pub fn iot_site_wise(mut self, input: crate::types::IotSiteWiseAction) -> Self {
@@ -307,7 +307,7 @@ impl ActionBuilder {
             sqs: self.sqs,
             firehose: self.firehose,
             dynamo_db: self.dynamo_db,
-            dynamo_d_bv2: self.dynamo_d_bv2,
+            dynamo_dbv2: self.dynamo_dbv2,
             iot_site_wise: self.iot_site_wise,
         }
     }

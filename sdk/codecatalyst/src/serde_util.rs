@@ -389,8 +389,8 @@ pub(crate) fn update_dev_environment_output_correct_errors(
 pub(crate) fn persistent_storage_correct_errors(
     mut builder: crate::types::builders::PersistentStorageBuilder,
 ) -> crate::types::builders::PersistentStorageBuilder {
-    if builder.size_in_gi_b.is_none() {
-        builder.size_in_gi_b = Some(Default::default())
+    if builder.size_in_gib.is_none() {
+        builder.size_in_gib = Some(Default::default())
     }
     builder
 }

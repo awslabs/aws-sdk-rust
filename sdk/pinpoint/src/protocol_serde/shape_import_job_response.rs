@@ -68,7 +68,7 @@ where
                             );
                         }
                         "Failures" => {
-                            builder = builder.set_failures(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                            builder = builder.set_failures(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "Id" => {
                             builder = builder.set_id(

@@ -34,7 +34,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Cores" => {
-                            builder = builder.set_cores(crate::protocol_serde::shape___list_of_core::de___list_of_core(tokens)?);
+                            builder = builder.set_cores(crate::protocol_serde::shape_list_of_core::de_list_of_core(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

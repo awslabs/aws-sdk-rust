@@ -16,7 +16,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "outputDetails" => {
                             builder =
-                                builder.set_output_details(crate::protocol_serde::shape___list_of_output_detail::de___list_of_output_detail(tokens)?);
+                                builder.set_output_details(crate::protocol_serde::shape_list_of_output_detail::de_list_of_output_detail(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

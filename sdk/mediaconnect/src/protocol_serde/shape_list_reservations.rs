@@ -106,7 +106,7 @@ pub(crate) fn de_list_reservations(
                     );
                 }
                 "reservations" => {
-                    builder = builder.set_reservations(crate::protocol_serde::shape___list_of_reservation::de___list_of_reservation(tokens)?);
+                    builder = builder.set_reservations(crate::protocol_serde::shape_list_of_reservation::de_list_of_reservation(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

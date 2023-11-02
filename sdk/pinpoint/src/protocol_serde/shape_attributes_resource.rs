@@ -44,7 +44,7 @@ where
                             );
                         }
                         "Attributes" => {
-                            builder = builder.set_attributes(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                            builder = builder.set_attributes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

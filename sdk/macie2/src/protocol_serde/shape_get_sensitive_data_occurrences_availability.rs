@@ -149,9 +149,8 @@ pub(crate) fn de_get_sensitive_data_occurrences_availability(
                     );
                 }
                 "reasons" => {
-                    builder = builder.set_reasons(
-                        crate::protocol_serde::shape___list_of_unavailability_reason_code::de___list_of_unavailability_reason_code(tokens)?,
-                    );
+                    builder = builder
+                        .set_reasons(crate::protocol_serde::shape_list_of_unavailability_reason_code::de_list_of_unavailability_reason_code(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

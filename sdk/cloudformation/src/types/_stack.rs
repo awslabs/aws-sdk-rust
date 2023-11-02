@@ -33,7 +33,7 @@ pub struct Stack {
     /// </ul>
     pub disable_rollback: ::std::option::Option<bool>,
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    pub notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The amount of time within which stack creation should complete.</p>
     pub timeout_in_minutes: ::std::option::Option<i32>,
     /// <p>The capabilities allowed in the stack.</p>
@@ -116,9 +116,9 @@ impl Stack {
     }
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_ar_ns.is_none()`.
-    pub fn notification_ar_ns(&self) -> &[::std::string::String] {
-        self.notification_ar_ns.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.notification_arns.is_none()`.
+    pub fn notification_arns(&self) -> &[::std::string::String] {
+        self.notification_arns.as_deref().unwrap_or_default()
     }
     /// <p>The amount of time within which stack creation should complete.</p>
     pub fn timeout_in_minutes(&self) -> ::std::option::Option<i32> {
@@ -194,7 +194,7 @@ pub struct StackBuilder {
     pub(crate) stack_status: ::std::option::Option<crate::types::StackStatus>,
     pub(crate) stack_status_reason: ::std::option::Option<::std::string::String>,
     pub(crate) disable_rollback: ::std::option::Option<bool>,
-    pub(crate) notification_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) notification_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) timeout_in_minutes: ::std::option::Option<i32>,
     pub(crate) capabilities: ::std::option::Option<::std::vec::Vec<crate::types::Capability>>,
     pub(crate) outputs: ::std::option::Option<::std::vec::Vec<crate::types::Output>>,
@@ -396,25 +396,25 @@ impl StackBuilder {
     pub fn get_disable_rollback(&self) -> &::std::option::Option<bool> {
         &self.disable_rollback
     }
-    /// Appends an item to `notification_ar_ns`.
+    /// Appends an item to `notification_arns`.
     ///
-    /// To override the contents of this collection use [`set_notification_ar_ns`](Self::set_notification_ar_ns).
+    /// To override the contents of this collection use [`set_notification_arns`](Self::set_notification_arns).
     ///
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    pub fn notification_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.notification_ar_ns.unwrap_or_default();
+    pub fn notification_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.notification_arns.unwrap_or_default();
         v.push(input.into());
-        self.notification_ar_ns = ::std::option::Option::Some(v);
+        self.notification_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    pub fn set_notification_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.notification_ar_ns = input;
+    pub fn set_notification_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.notification_arns = input;
         self
     }
     /// <p>Amazon SNS topic Amazon Resource Names (ARNs) to which stack related events are published.</p>
-    pub fn get_notification_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.notification_ar_ns
+    pub fn get_notification_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.notification_arns
     }
     /// <p>The amount of time within which stack creation should complete.</p>
     pub fn timeout_in_minutes(mut self, input: i32) -> Self {
@@ -601,7 +601,7 @@ impl StackBuilder {
             stack_status: self.stack_status,
             stack_status_reason: self.stack_status_reason,
             disable_rollback: self.disable_rollback,
-            notification_ar_ns: self.notification_ar_ns,
+            notification_arns: self.notification_arns,
             timeout_in_minutes: self.timeout_in_minutes,
             capabilities: self.capabilities,
             outputs: self.outputs,

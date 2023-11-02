@@ -116,8 +116,9 @@ pub(crate) fn de_list_resource_sets(
                     );
                 }
                 "resourceSets" => {
-                    builder = builder
-                        .set_resource_sets(crate::protocol_serde::shape___list_of_resource_set_output::de___list_of_resource_set_output(tokens)?);
+                    builder = builder.set_resource_sets(crate::protocol_serde::shape_list_of_resource_set_output::de_list_of_resource_set_output(
+                        tokens,
+                    )?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

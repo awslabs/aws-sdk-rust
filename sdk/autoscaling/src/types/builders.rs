@@ -11,7 +11,7 @@ pub use crate::types::_instance_requirements::InstanceRequirementsBuilder;
 
 pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequestBuilder;
 
-pub use crate::types::_accelerator_total_memory_mi_b_request::AcceleratorTotalMemoryMiBRequestBuilder;
+pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequestBuilder;
 
 pub use crate::types::_accelerator_count_request::AcceleratorCountRequestBuilder;
 
@@ -21,9 +21,9 @@ pub use crate::types::_total_local_storage_gb_request::TotalLocalStorageGbReques
 
 pub use crate::types::_network_interface_count_request::NetworkInterfaceCountRequestBuilder;
 
-pub use crate::types::_memory_gi_b_per_v_cpu_request::MemoryGiBPerVCpuRequestBuilder;
+pub use crate::types::_memory_gib_per_v_cpu_request::MemoryGiBPerVCpuRequestBuilder;
 
-pub use crate::types::_memory_mi_b_request::MemoryMiBRequestBuilder;
+pub use crate::types::_memory_mib_request::MemoryMiBRequestBuilder;
 
 pub use crate::types::_v_cpu_count_request::VCpuCountRequestBuilder;
 

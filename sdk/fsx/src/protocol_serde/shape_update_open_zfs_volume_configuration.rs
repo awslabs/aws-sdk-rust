@@ -3,19 +3,19 @@ pub fn ser_update_open_zfs_volume_configuration(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::UpdateOpenZfsVolumeConfiguration,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.storage_capacity_reservation_gi_b {
+    if let Some(var_1) = &input.storage_capacity_reservation_gib {
         object.key("StorageCapacityReservationGiB").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_1).into()),
         );
     }
-    if let Some(var_2) = &input.storage_capacity_quota_gi_b {
+    if let Some(var_2) = &input.storage_capacity_quota_gib {
         object.key("StorageCapacityQuotaGiB").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.record_size_ki_b {
+    if let Some(var_3) = &input.record_size_kib {
         object.key("RecordSizeKiB").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),

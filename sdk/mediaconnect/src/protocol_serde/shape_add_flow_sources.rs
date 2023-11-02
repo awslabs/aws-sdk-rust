@@ -140,7 +140,7 @@ pub(crate) fn de_add_flow_sources(
                     );
                 }
                 "sources" => {
-                    builder = builder.set_sources(crate::protocol_serde::shape___list_of_source::de___list_of_source(tokens)?);
+                    builder = builder.set_sources(crate::protocol_serde::shape_list_of_source::de_list_of_source(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

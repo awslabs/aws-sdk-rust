@@ -45,7 +45,7 @@ pub fn ser_create_replication_group_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_15 = writer.prefix("PreferredCacheClusterAZs");
-    if let Some(var_16) = &input.preferred_cache_cluster_a_zs {
+    if let Some(var_16) = &input.preferred_cache_cluster_azs {
         let mut list_18 = scope_15.start_list(false, Some("AvailabilityZone"));
         for item_17 in var_16 {
             #[allow(unused_mut)]

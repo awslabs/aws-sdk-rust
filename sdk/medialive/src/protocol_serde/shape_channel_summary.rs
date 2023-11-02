@@ -35,12 +35,12 @@ where
                         }
                         "destinations" => {
                             builder = builder.set_destinations(
-                                crate::protocol_serde::shape___list_of_output_destination::de___list_of_output_destination(tokens)?,
+                                crate::protocol_serde::shape_list_of_output_destination::de_list_of_output_destination(tokens)?,
                             );
                         }
                         "egressEndpoints" => {
                             builder = builder.set_egress_endpoints(
-                                crate::protocol_serde::shape___list_of_channel_egress_endpoint::de___list_of_channel_egress_endpoint(tokens)?,
+                                crate::protocol_serde::shape_list_of_channel_egress_endpoint::de_list_of_channel_egress_endpoint(tokens)?,
                             );
                         }
                         "id" => {
@@ -52,7 +52,7 @@ where
                         }
                         "inputAttachments" => {
                             builder = builder.set_input_attachments(
-                                crate::protocol_serde::shape___list_of_input_attachment::de___list_of_input_attachment(tokens)?,
+                                crate::protocol_serde::shape_list_of_input_attachment::de_list_of_input_attachment(tokens)?,
                             );
                         }
                         "inputSpecification" => {

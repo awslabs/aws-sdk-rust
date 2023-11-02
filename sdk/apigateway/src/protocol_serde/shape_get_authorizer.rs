@@ -170,7 +170,7 @@ pub(crate) fn de_get_authorizer(
                     );
                 }
                 "providerARNs" => {
-                    builder = builder.set_provider_ar_ns(crate::protocol_serde::shape_list_of_ar_ns::de_list_of_ar_ns(tokens)?);
+                    builder = builder.set_provider_arns(crate::protocol_serde::shape_list_of_arns::de_list_of_arns(tokens)?);
                 }
                 "type" => {
                     builder = builder.set_type(

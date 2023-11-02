@@ -91,7 +91,7 @@ pub(crate) fn de_describe_channel(
                     );
                 }
                 "tags" => {
-                    builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                    builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                 }
                 "Tier" => {
                     builder = builder.set_tier(

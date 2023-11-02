@@ -156,7 +156,7 @@ pub(crate) fn de_list_connectors(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "connectors" => {
-                    builder = builder.set_connectors(crate::protocol_serde::shape___list_of_connector_summary::de___list_of_connector_summary(
+                    builder = builder.set_connectors(crate::protocol_serde::shape_list_of_connector_summary::de_list_of_connector_summary(
                         tokens,
                     )?);
                 }

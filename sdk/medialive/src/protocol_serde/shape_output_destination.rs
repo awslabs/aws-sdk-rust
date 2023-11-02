@@ -69,7 +69,7 @@ where
                         }
                         "mediaPackageSettings" => {
                             builder = builder.set_media_package_settings(
-                                    crate::protocol_serde::shape___list_of_media_package_output_destination_settings::de___list_of_media_package_output_destination_settings(tokens)?
+                                    crate::protocol_serde::shape_list_of_media_package_output_destination_settings::de_list_of_media_package_output_destination_settings(tokens)?
                                 );
                         }
                         "multiplexSettings" => {
@@ -79,7 +79,7 @@ where
                         }
                         "settings" => {
                             builder = builder.set_settings(
-                                crate::protocol_serde::shape___list_of_output_destination_settings::de___list_of_output_destination_settings(tokens)?,
+                                crate::protocol_serde::shape_list_of_output_destination_settings::de_list_of_output_destination_settings(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

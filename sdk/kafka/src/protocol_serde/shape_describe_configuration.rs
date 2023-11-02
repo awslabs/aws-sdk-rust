@@ -170,7 +170,7 @@ pub(crate) fn de_describe_configuration(
                     );
                 }
                 "kafkaVersions" => {
-                    builder = builder.set_kafka_versions(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_kafka_versions(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "latestRevision" => {
                     builder = builder.set_latest_revision(crate::protocol_serde::shape_configuration_revision::de_configuration_revision(tokens)?);

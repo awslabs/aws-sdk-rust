@@ -140,9 +140,7 @@ pub(crate) fn de_list_vpc_connections(
                     );
                 }
                 "vpcConnections" => {
-                    builder = builder.set_vpc_connections(crate::protocol_serde::shape___list_of_vpc_connection::de___list_of_vpc_connection(
-                        tokens,
-                    )?);
+                    builder = builder.set_vpc_connections(crate::protocol_serde::shape_list_of_vpc_connection::de_list_of_vpc_connection(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

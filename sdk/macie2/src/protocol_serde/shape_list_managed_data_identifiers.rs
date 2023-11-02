@@ -63,7 +63,7 @@ pub(crate) fn de_list_managed_data_identifiers(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "items" => {
                     builder = builder.set_items(
-                        crate::protocol_serde::shape___list_of_managed_data_identifier_summary::de___list_of_managed_data_identifier_summary(tokens)?,
+                        crate::protocol_serde::shape_list_of_managed_data_identifier_summary::de_list_of_managed_data_identifier_summary(tokens)?,
                     );
                 }
                 "nextToken" => {

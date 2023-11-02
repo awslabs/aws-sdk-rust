@@ -164,7 +164,7 @@ pub(crate) fn de_list_configuration_revisions(
                 }
                 "revisions" => {
                     builder = builder
-                        .set_revisions(crate::protocol_serde::shape___list_of_configuration_revision::de___list_of_configuration_revision(tokens)?);
+                        .set_revisions(crate::protocol_serde::shape_list_of_configuration_revision::de_list_of_configuration_revision(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

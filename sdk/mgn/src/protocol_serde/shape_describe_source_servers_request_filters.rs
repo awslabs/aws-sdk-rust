@@ -3,7 +3,7 @@ pub fn ser_describe_source_servers_request_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DescribeSourceServersRequestFilters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.source_server_i_ds {
+    if let Some(var_1) = &input.source_server_ids {
         let mut array_2 = object.key("sourceServerIDs").start_array();
         for item_3 in var_1 {
             {
@@ -33,7 +33,7 @@ pub fn ser_describe_source_servers_request_filters(
         }
         array_9.finish();
     }
-    if let Some(var_11) = &input.application_i_ds {
+    if let Some(var_11) = &input.application_ids {
         let mut array_12 = object.key("applicationIDs").start_array();
         for item_13 in var_11 {
             {

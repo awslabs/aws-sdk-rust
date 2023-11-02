@@ -190,7 +190,7 @@ pub(crate) fn de_create_identity_pool(
                 }
                 "OpenIdConnectProviderARNs" => {
                     builder =
-                        builder.set_open_id_connect_provider_ar_ns(crate::protocol_serde::shape_oidc_provider_list::de_oidc_provider_list(tokens)?);
+                        builder.set_open_id_connect_provider_arns(crate::protocol_serde::shape_oidc_provider_list::de_oidc_provider_list(tokens)?);
                 }
                 "CognitoIdentityProviders" => {
                     builder = builder.set_cognito_identity_providers(
@@ -198,7 +198,7 @@ pub(crate) fn de_create_identity_pool(
                     );
                 }
                 "SamlProviderARNs" => {
-                    builder = builder.set_saml_provider_ar_ns(crate::protocol_serde::shape_saml_provider_list::de_saml_provider_list(tokens)?);
+                    builder = builder.set_saml_provider_arns(crate::protocol_serde::shape_saml_provider_list::de_saml_provider_list(tokens)?);
                 }
                 "IdentityPoolTags" => {
                     builder =

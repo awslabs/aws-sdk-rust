@@ -99,7 +99,7 @@ pub(crate) fn de_list_flows(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "flows" => {
-                    builder = builder.set_flows(crate::protocol_serde::shape___list_of_listed_flow::de___list_of_listed_flow(tokens)?);
+                    builder = builder.set_flows(crate::protocol_serde::shape_list_of_listed_flow::de_list_of_listed_flow(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

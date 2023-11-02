@@ -79,21 +79,6 @@ pub(crate) mod shape_unauthorized_exception;
 
 pub(crate) mod shape_update_connector_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_connector_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_custom_plugin_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_plugin_description;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_worker_configuration_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___sensitive__map_of__string;
-
 pub(crate) mod shape_capacity;
 
 pub(crate) mod shape_capacity_description;
@@ -116,11 +101,21 @@ pub(crate) mod shape_kafka_cluster_encryption_in_transit;
 
 pub(crate) mod shape_kafka_cluster_encryption_in_transit_description;
 
+pub(crate) mod shape_list_of_connector_summary;
+
+pub(crate) mod shape_list_of_custom_plugin_summary;
+
+pub(crate) mod shape_list_of_plugin_description;
+
+pub(crate) mod shape_list_of_worker_configuration_summary;
+
 pub(crate) mod shape_log_delivery;
 
 pub(crate) mod shape_log_delivery_description;
 
 pub(crate) mod shape_plugin;
+
+pub(crate) mod shape_sensitive_map_of_string;
 
 pub(crate) mod shape_state_description;
 
@@ -200,5 +195,4 @@ pub(crate) mod shape_vpc;
 
 pub(crate) mod shape_vpc_description;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
+pub(crate) mod shape_list_of_string;

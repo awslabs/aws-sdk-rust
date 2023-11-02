@@ -34,7 +34,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Resources" => {
-                            builder = builder.set_resources(crate::protocol_serde::shape___list_of_resource::de___list_of_resource(tokens)?);
+                            builder = builder.set_resources(crate::protocol_serde::shape_list_of_resource::de_list_of_resource(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

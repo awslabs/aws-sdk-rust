@@ -162,9 +162,7 @@ pub(crate) fn de_describe_schedule(
                     );
                 }
                 "scheduleActions" => {
-                    builder = builder.set_schedule_actions(crate::protocol_serde::shape___list_of_schedule_action::de___list_of_schedule_action(
-                        tokens,
-                    )?);
+                    builder = builder.set_schedule_actions(crate::protocol_serde::shape_list_of_schedule_action::de_list_of_schedule_action(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

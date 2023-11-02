@@ -34,7 +34,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Loggers" => {
-                            builder = builder.set_loggers(crate::protocol_serde::shape___list_of_logger::de___list_of_logger(tokens)?);
+                            builder = builder.set_loggers(crate::protocol_serde::shape_list_of_logger::de_list_of_logger(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

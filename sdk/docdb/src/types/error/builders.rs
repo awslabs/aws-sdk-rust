@@ -61,7 +61,7 @@ pub use crate::types::error::_subnet_already_in_use::SubnetAlreadyInUseBuilder;
 
 pub use crate::types::error::_db_subnet_quota_exceeded_fault::DbSubnetQuotaExceededFaultBuilder;
 
-pub use crate::types::error::_db_subnet_group_does_not_cover_enough_a_zs::DbSubnetGroupDoesNotCoverEnoughAZsBuilder;
+pub use crate::types::error::_db_subnet_group_does_not_cover_enough_azs::DbSubnetGroupDoesNotCoverEnoughAZsBuilder;
 
 pub use crate::types::error::_storage_type_not_supported_fault::StorageTypeNotSupportedFaultBuilder;
 

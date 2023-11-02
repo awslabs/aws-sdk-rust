@@ -19,7 +19,7 @@ pub fn de_memory_info(
                         ?
                     )
                 ;
-                builder = builder.set_size_in_mi_b(var_1);
+                builder = builder.set_size_in_mib(var_1);
             }
             ,
             _ => {}

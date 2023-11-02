@@ -35,7 +35,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "id3Insertions" => {
                             builder =
-                                builder.set_id3_insertions(crate::protocol_serde::shape___list_of_id3_insertion::de___list_of_id3_insertion(tokens)?);
+                                builder.set_id3_insertions(crate::protocol_serde::shape_list_of_id3_insertion::de_list_of_id3_insertion(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

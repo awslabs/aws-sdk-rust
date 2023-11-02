@@ -12,7 +12,7 @@ pub struct UpdateReplicationConfigurationTemplateInput {
     /// <p>Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.</p>
     pub associate_default_security_group: ::std::option::Option<bool>,
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub replication_servers_security_groups_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_servers_security_groups_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The instance type to be used for the replication server.</p>
     pub replication_server_instance_type: ::std::option::Option<::std::string::String>,
     /// <p>Whether to use a dedicated Replication Server in the replication staging area.</p>
@@ -56,9 +56,9 @@ impl UpdateReplicationConfigurationTemplateInput {
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_i_ds.is_none()`.
-    pub fn replication_servers_security_groups_i_ds(&self) -> &[::std::string::String] {
-        self.replication_servers_security_groups_i_ds.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_servers_security_groups_ids.is_none()`.
+    pub fn replication_servers_security_groups_ids(&self) -> &[::std::string::String] {
+        self.replication_servers_security_groups_ids.as_deref().unwrap_or_default()
     }
     /// <p>The instance type to be used for the replication server.</p>
     pub fn replication_server_instance_type(&self) -> ::std::option::Option<&str> {
@@ -114,7 +114,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInput {
         formatter.field("arn", &self.arn);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
         formatter.field("associate_default_security_group", &self.associate_default_security_group);
-        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_servers_security_groups_ids", &self.replication_servers_security_groups_ids);
         formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
         formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
         formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);
@@ -144,7 +144,7 @@ pub struct UpdateReplicationConfigurationTemplateInputBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) staging_area_subnet_id: ::std::option::Option<::std::string::String>,
     pub(crate) associate_default_security_group: ::std::option::Option<bool>,
-    pub(crate) replication_servers_security_groups_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_servers_security_groups_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) replication_server_instance_type: ::std::option::Option<::std::string::String>,
     pub(crate) use_dedicated_replication_server: ::std::option::Option<bool>,
     pub(crate) default_large_staging_disk_type: ::std::option::Option<crate::types::ReplicationConfigurationDefaultLargeStagingDiskType>,
@@ -215,25 +215,25 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
     pub fn get_associate_default_security_group(&self) -> &::std::option::Option<bool> {
         &self.associate_default_security_group
     }
-    /// Appends an item to `replication_servers_security_groups_i_ds`.
+    /// Appends an item to `replication_servers_security_groups_ids`.
     ///
-    /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
+    /// To override the contents of this collection use [`set_replication_servers_security_groups_ids`](Self::set_replication_servers_security_groups_ids).
     ///
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn replication_servers_security_groups_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.replication_servers_security_groups_i_ds.unwrap_or_default();
+    pub fn replication_servers_security_groups_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replication_servers_security_groups_ids.unwrap_or_default();
         v.push(input.into());
-        self.replication_servers_security_groups_i_ds = ::std::option::Option::Some(v);
+        self.replication_servers_security_groups_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn set_replication_servers_security_groups_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.replication_servers_security_groups_i_ds = input;
+    pub fn set_replication_servers_security_groups_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.replication_servers_security_groups_ids = input;
         self
     }
     /// <p>The security group IDs that will be used by the replication server.</p>
-    pub fn get_replication_servers_security_groups_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.replication_servers_security_groups_i_ds
+    pub fn get_replication_servers_security_groups_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_servers_security_groups_ids
     }
     /// <p>The instance type to be used for the replication server.</p>
     pub fn replication_server_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -433,7 +433,7 @@ impl UpdateReplicationConfigurationTemplateInputBuilder {
                 ,
                 associate_default_security_group: self.associate_default_security_group
                 ,
-                replication_servers_security_groups_i_ds: self.replication_servers_security_groups_i_ds
+                replication_servers_security_groups_ids: self.replication_servers_security_groups_ids
                 ,
                 replication_server_instance_type: self.replication_server_instance_type
                 ,
@@ -469,7 +469,7 @@ impl ::std::fmt::Debug for UpdateReplicationConfigurationTemplateInputBuilder {
         formatter.field("arn", &self.arn);
         formatter.field("staging_area_subnet_id", &self.staging_area_subnet_id);
         formatter.field("associate_default_security_group", &self.associate_default_security_group);
-        formatter.field("replication_servers_security_groups_i_ds", &self.replication_servers_security_groups_i_ds);
+        formatter.field("replication_servers_security_groups_ids", &self.replication_servers_security_groups_ids);
         formatter.field("replication_server_instance_type", &self.replication_server_instance_type);
         formatter.field("use_dedicated_replication_server", &self.use_dedicated_replication_server);
         formatter.field("default_large_staging_disk_type", &self.default_large_staging_disk_type);

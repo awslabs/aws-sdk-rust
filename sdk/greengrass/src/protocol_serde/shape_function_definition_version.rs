@@ -44,7 +44,7 @@ where
                                 builder.set_default_config(crate::protocol_serde::shape_function_default_config::de_function_default_config(tokens)?);
                         }
                         "Functions" => {
-                            builder = builder.set_functions(crate::protocol_serde::shape___list_of_function::de___list_of_function(tokens)?);
+                            builder = builder.set_functions(crate::protocol_serde::shape_list_of_function::de_list_of_function(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

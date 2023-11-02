@@ -167,17 +167,16 @@ where
                         }
                         "audioSelectorGroups" => {
                             builder = builder.set_audio_selector_groups(
-                                crate::protocol_serde::shape___map_of_audio_selector_group::de___map_of_audio_selector_group(tokens)?,
+                                crate::protocol_serde::shape_map_of_audio_selector_group::de_map_of_audio_selector_group(tokens)?,
                             );
                         }
                         "audioSelectors" => {
-                            builder = builder
-                                .set_audio_selectors(crate::protocol_serde::shape___map_of_audio_selector::de___map_of_audio_selector(tokens)?);
+                            builder =
+                                builder.set_audio_selectors(crate::protocol_serde::shape_map_of_audio_selector::de_map_of_audio_selector(tokens)?);
                         }
                         "captionSelectors" => {
-                            builder = builder.set_caption_selectors(
-                                crate::protocol_serde::shape___map_of_caption_selector::de___map_of_caption_selector(tokens)?,
-                            );
+                            builder = builder
+                                .set_caption_selectors(crate::protocol_serde::shape_map_of_caption_selector::de_map_of_caption_selector(tokens)?);
                         }
                         "crop" => {
                             builder = builder.set_crop(crate::protocol_serde::shape_rectangle::de_rectangle(tokens)?);
@@ -221,9 +220,8 @@ where
                             builder = builder.set_image_inserter(crate::protocol_serde::shape_image_inserter::de_image_inserter(tokens)?);
                         }
                         "inputClippings" => {
-                            builder = builder.set_input_clippings(
-                                crate::protocol_serde::shape___list_of_input_clipping::de___list_of_input_clipping(tokens)?,
-                            );
+                            builder =
+                                builder.set_input_clippings(crate::protocol_serde::shape_list_of_input_clipping::de_list_of_input_clipping(tokens)?);
                         }
                         "inputScanType" => {
                             builder = builder.set_input_scan_type(
@@ -265,7 +263,7 @@ where
                         }
                         "videoOverlays" => {
                             builder =
-                                builder.set_video_overlays(crate::protocol_serde::shape___list_of_video_overlay::de___list_of_video_overlay(tokens)?);
+                                builder.set_video_overlays(crate::protocol_serde::shape_list_of_video_overlay::de_list_of_video_overlay(tokens)?);
                         }
                         "videoSelector" => {
                             builder = builder.set_video_selector(crate::protocol_serde::shape_video_selector::de_video_selector(tokens)?);

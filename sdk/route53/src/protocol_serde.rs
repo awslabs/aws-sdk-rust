@@ -441,9 +441,9 @@ pub(crate) mod shape_traffic_policy_instances;
 
 pub(crate) mod shape_traffic_policy_summaries;
 
-pub(crate) mod shape_vp_cs;
-
 pub(crate) mod shape_vpc;
+
+pub(crate) mod shape_vpcs;
 
 pub(crate) mod shape_change;
 

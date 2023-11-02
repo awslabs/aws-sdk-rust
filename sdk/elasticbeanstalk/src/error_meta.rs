@@ -1145,11 +1145,11 @@ impl From<crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoEr
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError, R>> for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::swap_environment_cnames::SwapEnvironmentCNAMEsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError, R>) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::swap_environment_cnames::SwapEnvironmentCNAMEsError, R>) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -1161,10 +1161,10 @@ where
         }
     }
 }
-impl From<crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError> for Error {
-    fn from(err: crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError) -> Self {
+impl From<crate::operation::swap_environment_cnames::SwapEnvironmentCNAMEsError> for Error {
+    fn from(err: crate::operation::swap_environment_cnames::SwapEnvironmentCNAMEsError) -> Self {
         match err {
-            crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::swap_environment_cnames::SwapEnvironmentCNAMEsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

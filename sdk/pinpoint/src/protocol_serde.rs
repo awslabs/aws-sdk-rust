@@ -927,12 +927,6 @@ pub(crate) mod shape_in_app_message_header_config;
 
 pub(crate) mod shape_journey_timeframe_cap;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape_list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape_list_of__timezone_estimation_methods_element;
-
 pub(crate) mod shape_list_of_activity_response;
 
 pub(crate) mod shape_list_of_application_response;
@@ -957,32 +951,33 @@ pub(crate) mod shape_list_of_recommender_configuration_response;
 
 pub(crate) mod shape_list_of_segment_response;
 
+pub(crate) mod shape_list_of_string;
+
 pub(crate) mod shape_list_of_template_response;
 
 pub(crate) mod shape_list_of_template_version_response;
 
+pub(crate) mod shape_list_of_timezone_estimation_methods_element;
+
 pub(crate) mod shape_list_of_treatment_resource;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape_map_of__double;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape_map_of__string;
 
 pub(crate) mod shape_map_of_activity;
 
 pub(crate) mod shape_map_of_channel_response;
 
+pub(crate) mod shape_map_of_double;
+
 pub(crate) mod shape_map_of_endpoint_message_result;
 
 pub(crate) mod shape_map_of_item_response;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape_map_of_list_of__string;
+pub(crate) mod shape_map_of_list_of_string;
 
 pub(crate) mod shape_map_of_map_of_endpoint_message_result;
 
 pub(crate) mod shape_map_of_message_result;
+
+pub(crate) mod shape_map_of_string;
 
 pub(crate) mod shape_message;
 
@@ -1050,19 +1045,17 @@ pub(crate) mod shape_journey_run_response;
 
 pub(crate) mod shape_journey_sms_message;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape_list_of__endpoint_types_element;
-
 pub(crate) mod shape_list_of_closed_days_rules;
+
+pub(crate) mod shape_list_of_endpoint_types_element;
 
 pub(crate) mod shape_list_of_result_row;
 
 pub(crate) mod shape_list_of_segment_group;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape_map_of__integer;
-
 pub(crate) mod shape_map_of_attribute_dimension;
+
+pub(crate) mod shape_map_of_integer;
 
 pub(crate) mod shape_map_of_list_of_open_hours_rules;
 

@@ -158,9 +158,7 @@ pub(crate) fn de_list_packaging_groups(
                     );
                 }
                 "packagingGroups" => {
-                    builder = builder.set_packaging_groups(crate::protocol_serde::shape___list_of_packaging_group::de___list_of_packaging_group(
-                        tokens,
-                    )?);
+                    builder = builder.set_packaging_groups(crate::protocol_serde::shape_list_of_packaging_group::de_list_of_packaging_group(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

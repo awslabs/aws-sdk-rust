@@ -22,10 +22,10 @@ where
                             );
                         }
                         "KeyPrefixes" => {
-                            builder = builder.set_key_prefixes(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                            builder = builder.set_key_prefixes(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "Keys" => {
-                            builder = builder.set_keys(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                            builder = builder.set_keys(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "S3AccessPointAlias" => {
                             builder = builder.set_s3_access_point_alias(

@@ -27,7 +27,7 @@ pub fn de_gpu_info(decoder: &mut ::aws_smithy_xml::decode::ScopedDecoder) -> Res
                         ?
                     )
                 ;
-                builder = builder.set_total_gpu_memory_in_mi_b(var_2);
+                builder = builder.set_total_gpu_memory_in_mib(var_2);
             }
             ,
             _ => {}

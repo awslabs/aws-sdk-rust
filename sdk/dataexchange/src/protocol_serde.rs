@@ -149,8 +149,7 @@ pub(crate) mod shape_list_of_job_error;
 
 pub(crate) mod shape_list_of_revision_entry;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape_map_of__string;
+pub(crate) mod shape_map_of_string;
 
 pub(crate) mod shape_notification_details;
 
@@ -250,9 +249,6 @@ pub(crate) mod shape_export_server_side_encryption;
 
 pub(crate) mod shape_lake_formation_data_permission_details;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape_list_of__string;
-
 pub(crate) mod shape_list_of_asset_destination_entry;
 
 pub(crate) mod shape_list_of_asset_source_entry;
@@ -264,6 +260,8 @@ pub(crate) mod shape_list_of_lf_permissions;
 pub(crate) mod shape_list_of_redshift_data_share_asset_source_entry;
 
 pub(crate) mod shape_list_of_revision_destination_entry;
+
+pub(crate) mod shape_list_of_string;
 
 pub(crate) mod shape_redshift_data_share_asset_source_entry;
 

@@ -707,8 +707,8 @@ pub(crate) fn list_vpc_association_authorizations_output_correct_errors(
     if builder.hosted_zone_id.is_none() {
         builder.hosted_zone_id = Some(Default::default())
     }
-    if builder.vp_cs.is_none() {
-        builder.vp_cs = Some(Default::default())
+    if builder.vpcs.is_none() {
+        builder.vpcs = Some(Default::default())
     }
     builder
 }

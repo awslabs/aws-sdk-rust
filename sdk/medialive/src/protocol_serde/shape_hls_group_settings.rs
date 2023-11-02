@@ -199,9 +199,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "adMarkers" => {
-                            builder = builder.set_ad_markers(crate::protocol_serde::shape___list_of_hls_ad_markers::de___list_of_hls_ad_markers(
-                                tokens,
-                            )?);
+                            builder = builder.set_ad_markers(crate::protocol_serde::shape_list_of_hls_ad_markers::de_list_of_hls_ad_markers(tokens)?);
                         }
                         "baseUrlContent" => {
                             builder = builder.set_base_url_content(
@@ -233,7 +231,7 @@ where
                         }
                         "captionLanguageMappings" => {
                             builder = builder.set_caption_language_mappings(
-                                crate::protocol_serde::shape___list_of_caption_language_mapping::de___list_of_caption_language_mapping(tokens)?,
+                                crate::protocol_serde::shape_list_of_caption_language_mapping::de_list_of_caption_language_mapping(tokens)?,
                             );
                         }
                         "captionLanguageSetting" => {

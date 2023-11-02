@@ -99,8 +99,9 @@ pub(crate) fn de_list_entitlements(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "entitlements" => {
-                    builder =
-                        builder.set_entitlements(crate::protocol_serde::shape___list_of_listed_entitlement::de___list_of_listed_entitlement(tokens)?);
+                    builder = builder.set_entitlements(crate::protocol_serde::shape_list_of_listed_entitlement::de_list_of_listed_entitlement(
+                        tokens,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

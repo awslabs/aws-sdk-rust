@@ -99,11 +99,11 @@ pub fn de_get_hosted_zone(
             s if s.matches("VPCs") /* VPCs com.amazonaws.route53.synthetic#GetHostedZoneOutput$VPCs */ =>  {
                 let var_2 =
                     Some(
-                        crate::protocol_serde::shape_vp_cs::de_vp_cs(&mut tag)
+                        crate::protocol_serde::shape_vpcs::de_vpcs(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vp_cs(var_2);
+                builder = builder.set_vpcs(var_2);
             }
             ,
             s if s.matches("DelegationSet") /* DelegationSet com.amazonaws.route53.synthetic#GetHostedZoneOutput$DelegationSet */ =>  {

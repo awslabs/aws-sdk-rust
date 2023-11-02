@@ -183,7 +183,7 @@ pub(crate) fn de_get_service_network(
                     );
                 }
                 "numberOfAssociatedVPCs" => {
-                    builder = builder.set_number_of_associated_vp_cs(
+                    builder = builder.set_number_of_associated_vpcs(
                         ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                             .map(i64::try_from)
                             .transpose()?,

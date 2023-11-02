@@ -125,15 +125,6 @@ pub(crate) fn attribute_correct_errors(mut builder: crate::types::builders::Attr
     builder
 }
 
-pub(crate) fn dynamo_d_bv2_action_correct_errors(
-    mut builder: crate::types::builders::DynamoDBv2ActionBuilder,
-) -> crate::types::builders::DynamoDBv2ActionBuilder {
-    if builder.table_name.is_none() {
-        builder.table_name = Some(Default::default())
-    }
-    builder
-}
-
 pub(crate) fn dynamo_db_action_correct_errors(
     mut builder: crate::types::builders::DynamoDbActionBuilder,
 ) -> crate::types::builders::DynamoDbActionBuilder {
@@ -143,6 +134,15 @@ pub(crate) fn dynamo_db_action_correct_errors(
     if builder.hash_key_value.is_none() {
         builder.hash_key_value = Some(Default::default())
     }
+    if builder.table_name.is_none() {
+        builder.table_name = Some(Default::default())
+    }
+    builder
+}
+
+pub(crate) fn dynamo_dbv2_action_correct_errors(
+    mut builder: crate::types::builders::DynamoDBv2ActionBuilder,
+) -> crate::types::builders::DynamoDBv2ActionBuilder {
     if builder.table_name.is_none() {
         builder.table_name = Some(Default::default())
     }

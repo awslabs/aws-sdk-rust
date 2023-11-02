@@ -85,13 +85,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioSelectors" => {
-                            builder = builder.set_audio_selectors(
-                                crate::protocol_serde::shape___list_of_audio_selector::de___list_of_audio_selector(tokens)?,
-                            );
+                            builder =
+                                builder.set_audio_selectors(crate::protocol_serde::shape_list_of_audio_selector::de_list_of_audio_selector(tokens)?);
                         }
                         "captionSelectors" => {
                             builder = builder.set_caption_selectors(
-                                crate::protocol_serde::shape___list_of_caption_selector::de___list_of_caption_selector(tokens)?,
+                                crate::protocol_serde::shape_list_of_caption_selector::de_list_of_caption_selector(tokens)?,
                             );
                         }
                         "deblockFilter" => {

@@ -167,21 +167,21 @@ impl UpdateReplicationConfigurationTemplateFluentBuilder {
     }
     /// Appends an item to `replicationServersSecurityGroupsIDs`.
     ///
-    /// To override the contents of this collection use [`set_replication_servers_security_groups_i_ds`](Self::set_replication_servers_security_groups_i_ds).
+    /// To override the contents of this collection use [`set_replication_servers_security_groups_ids`](Self::set_replication_servers_security_groups_ids).
     ///
     /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
-    pub fn replication_servers_security_groups_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.replication_servers_security_groups_i_ds(input.into());
+    pub fn replication_servers_security_groups_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.replication_servers_security_groups_ids(input.into());
         self
     }
     /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
-    pub fn set_replication_servers_security_groups_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_replication_servers_security_groups_i_ds(input);
+    pub fn set_replication_servers_security_groups_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_replication_servers_security_groups_ids(input);
         self
     }
     /// <p>Update replication configuration template Replication Server Security groups IDs request.</p>
-    pub fn get_replication_servers_security_groups_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_replication_servers_security_groups_i_ds()
+    pub fn get_replication_servers_security_groups_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_replication_servers_security_groups_ids()
     }
     /// <p>Update replication configuration template Replication Server instance type request.</p>
     pub fn replication_server_instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

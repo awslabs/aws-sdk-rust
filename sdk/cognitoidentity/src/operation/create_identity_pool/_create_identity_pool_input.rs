@@ -16,11 +16,11 @@ pub struct CreateIdentityPoolInput {
     /// <p>Once you have set a developer provider name, you cannot change it. Please take care in setting this parameter.</p>
     pub developer_provider_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
-    pub open_id_connect_provider_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub open_id_connect_provider_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
     pub cognito_identity_providers: ::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>>,
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub saml_provider_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub saml_provider_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub identity_pool_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
@@ -48,9 +48,9 @@ impl CreateIdentityPoolInput {
     }
     /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.open_id_connect_provider_ar_ns.is_none()`.
-    pub fn open_id_connect_provider_ar_ns(&self) -> &[::std::string::String] {
-        self.open_id_connect_provider_ar_ns.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.open_id_connect_provider_arns.is_none()`.
+    pub fn open_id_connect_provider_arns(&self) -> &[::std::string::String] {
+        self.open_id_connect_provider_arns.as_deref().unwrap_or_default()
     }
     /// <p>An array of Amazon Cognito user pools and their client IDs.</p>
     ///
@@ -60,9 +60,9 @@ impl CreateIdentityPoolInput {
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.saml_provider_ar_ns.is_none()`.
-    pub fn saml_provider_ar_ns(&self) -> &[::std::string::String] {
-        self.saml_provider_ar_ns.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.saml_provider_arns.is_none()`.
+    pub fn saml_provider_arns(&self) -> &[::std::string::String] {
+        self.saml_provider_arns.as_deref().unwrap_or_default()
     }
     /// <p>Tags to assign to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.</p>
     pub fn identity_pool_tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -85,9 +85,9 @@ pub struct CreateIdentityPoolInputBuilder {
     pub(crate) allow_classic_flow: ::std::option::Option<bool>,
     pub(crate) supported_login_providers: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) developer_provider_name: ::std::option::Option<::std::string::String>,
-    pub(crate) open_id_connect_provider_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) open_id_connect_provider_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) cognito_identity_providers: ::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>>,
-    pub(crate) saml_provider_ar_ns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) saml_provider_arns: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) identity_pool_tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
 }
 impl CreateIdentityPoolInputBuilder {
@@ -179,25 +179,25 @@ impl CreateIdentityPoolInputBuilder {
     pub fn get_developer_provider_name(&self) -> &::std::option::Option<::std::string::String> {
         &self.developer_provider_name
     }
-    /// Appends an item to `open_id_connect_provider_ar_ns`.
+    /// Appends an item to `open_id_connect_provider_arns`.
     ///
-    /// To override the contents of this collection use [`set_open_id_connect_provider_ar_ns`](Self::set_open_id_connect_provider_ar_ns).
+    /// To override the contents of this collection use [`set_open_id_connect_provider_arns`](Self::set_open_id_connect_provider_arns).
     ///
     /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
-    pub fn open_id_connect_provider_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.open_id_connect_provider_ar_ns.unwrap_or_default();
+    pub fn open_id_connect_provider_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.open_id_connect_provider_arns.unwrap_or_default();
         v.push(input.into());
-        self.open_id_connect_provider_ar_ns = ::std::option::Option::Some(v);
+        self.open_id_connect_provider_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
-    pub fn set_open_id_connect_provider_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.open_id_connect_provider_ar_ns = input;
+    pub fn set_open_id_connect_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.open_id_connect_provider_arns = input;
         self
     }
     /// <p>The Amazon Resource Names (ARN) of the OpenID Connect providers.</p>
-    pub fn get_open_id_connect_provider_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.open_id_connect_provider_ar_ns
+    pub fn get_open_id_connect_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.open_id_connect_provider_arns
     }
     /// Appends an item to `cognito_identity_providers`.
     ///
@@ -219,25 +219,25 @@ impl CreateIdentityPoolInputBuilder {
     pub fn get_cognito_identity_providers(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::CognitoIdentityProvider>> {
         &self.cognito_identity_providers
     }
-    /// Appends an item to `saml_provider_ar_ns`.
+    /// Appends an item to `saml_provider_arns`.
     ///
-    /// To override the contents of this collection use [`set_saml_provider_ar_ns`](Self::set_saml_provider_ar_ns).
+    /// To override the contents of this collection use [`set_saml_provider_arns`](Self::set_saml_provider_arns).
     ///
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn saml_provider_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.saml_provider_ar_ns.unwrap_or_default();
+    pub fn saml_provider_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.saml_provider_arns.unwrap_or_default();
         v.push(input.into());
-        self.saml_provider_ar_ns = ::std::option::Option::Some(v);
+        self.saml_provider_arns = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn set_saml_provider_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.saml_provider_ar_ns = input;
+    pub fn set_saml_provider_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.saml_provider_arns = input;
         self
     }
     /// <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.</p>
-    pub fn get_saml_provider_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.saml_provider_ar_ns
+    pub fn get_saml_provider_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.saml_provider_arns
     }
     /// Adds a key-value pair to `identity_pool_tags`.
     ///
@@ -276,9 +276,9 @@ impl CreateIdentityPoolInputBuilder {
             allow_classic_flow: self.allow_classic_flow,
             supported_login_providers: self.supported_login_providers,
             developer_provider_name: self.developer_provider_name,
-            open_id_connect_provider_ar_ns: self.open_id_connect_provider_ar_ns,
+            open_id_connect_provider_arns: self.open_id_connect_provider_arns,
             cognito_identity_providers: self.cognito_identity_providers,
-            saml_provider_ar_ns: self.saml_provider_ar_ns,
+            saml_provider_arns: self.saml_provider_arns,
             identity_pool_tags: self.identity_pool_tags,
         })
     }

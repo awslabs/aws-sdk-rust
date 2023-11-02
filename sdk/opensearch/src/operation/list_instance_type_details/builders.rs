@@ -168,18 +168,18 @@ impl ListInstanceTypeDetailsFluentBuilder {
         self.inner.get_next_token()
     }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub fn retrieve_a_zs(mut self, input: bool) -> Self {
-        self.inner = self.inner.retrieve_a_zs(input);
+    pub fn retrieve_azs(mut self, input: bool) -> Self {
+        self.inner = self.inner.retrieve_azs(input);
         self
     }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub fn set_retrieve_a_zs(mut self, input: ::std::option::Option<bool>) -> Self {
-        self.inner = self.inner.set_retrieve_a_zs(input);
+    pub fn set_retrieve_azs(mut self, input: ::std::option::Option<bool>) -> Self {
+        self.inner = self.inner.set_retrieve_azs(input);
         self
     }
     /// <p>An optional parameter that specifies the Availability Zones for the domain.</p>
-    pub fn get_retrieve_a_zs(&self) -> &::std::option::Option<bool> {
-        self.inner.get_retrieve_a_zs()
+    pub fn get_retrieve_azs(&self) -> &::std::option::Option<bool> {
+        self.inner.get_retrieve_azs()
     }
     /// <p>An optional parameter that lists information for a given instance type.</p>
     pub fn instance_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {

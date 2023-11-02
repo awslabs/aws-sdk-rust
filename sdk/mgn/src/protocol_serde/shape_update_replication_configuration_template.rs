@@ -228,8 +228,8 @@ pub(crate) fn de_update_replication_configuration_template(
                     );
                 }
                 "replicationServersSecurityGroupsIDs" => {
-                    builder = builder.set_replication_servers_security_groups_i_ds(
-                        crate::protocol_serde::shape_replication_servers_security_groups_i_ds::de_replication_servers_security_groups_i_ds(tokens)?,
+                    builder = builder.set_replication_servers_security_groups_ids(
+                        crate::protocol_serde::shape_replication_servers_security_groups_ids::de_replication_servers_security_groups_ids(tokens)?,
                     );
                 }
                 "stagingAreaSubnetId" => {

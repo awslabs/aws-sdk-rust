@@ -111,8 +111,9 @@ pub(crate) fn de_list_discoverers(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Discoverers" => {
-                    builder =
-                        builder.set_discoverers(crate::protocol_serde::shape___list_of_discoverer_summary::de___list_of_discoverer_summary(tokens)?);
+                    builder = builder.set_discoverers(crate::protocol_serde::shape_list_of_discoverer_summary::de_list_of_discoverer_summary(
+                        tokens,
+                    )?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

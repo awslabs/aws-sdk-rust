@@ -295,7 +295,7 @@ pub(crate) mod shape_trace_availability_zones;
 
 pub(crate) mod shape_trace_instance_ids;
 
-pub(crate) mod shape_trace_resource_ar_ns;
+pub(crate) mod shape_trace_resource_arns;
 
 pub(crate) mod shape_trace_users;
 

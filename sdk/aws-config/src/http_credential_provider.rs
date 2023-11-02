@@ -15,18 +15,19 @@ use aws_credential_types::Credentials;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_runtime::client::orchestrator::operation::Operation;
-use aws_smithy_runtime::client::retries::classifier::{
-    HttpStatusCodeClassifier, SmithyErrorClassifier,
+use aws_smithy_runtime::client::retries::classifiers::{
+    HttpStatusCodeClassifier, TransientErrorClassifier,
 };
 use aws_smithy_runtime_api::client::http::HttpConnectorSettings;
 use aws_smithy_runtime_api::client::interceptors::context::{Error, InterceptorContext};
 use aws_smithy_runtime_api::client::orchestrator::{
     HttpResponse, OrchestratorError, SensitiveOutput,
 };
-use aws_smithy_runtime_api::client::retries::{ClassifyRetry, RetryClassifiers, RetryReason};
+use aws_smithy_runtime_api::client::retries::classifiers::ClassifyRetry;
+use aws_smithy_runtime_api::client::retries::classifiers::RetryAction;
 use aws_smithy_runtime_api::client::runtime_plugin::StaticRuntimePlugin;
 use aws_smithy_types::config_bag::Layer;
-use aws_smithy_types::retry::{ErrorKind, RetryConfig};
+use aws_smithy_types::retry::RetryConfig;
 use aws_smithy_types::timeout::TimeoutConfig;
 use http::header::{ACCEPT, AUTHORIZATION};
 use http::{HeaderValue, Response};
@@ -88,18 +89,6 @@ impl Builder {
     ) -> HttpCredentialProvider {
         let provider_config = self.provider_config.unwrap_or_default();
 
-        // The following errors are retryable:
-        //   - Socket errors
-        //   - Networking timeouts
-        //   - 5xx errors
-        //   - Non-parseable 200 responses.
-        let retry_classifiers = RetryClassifiers::new()
-            .with_classifier(HttpCredentialRetryClassifier)
-            // Socket errors and network timeouts
-            .with_classifier(SmithyErrorClassifier::<Error>::new())
-            // 5xx errors
-            .with_classifier(HttpStatusCodeClassifier::default());
-
         let mut builder = Operation::builder()
             .service_name("HttpCredentialProvider")
             .operation_name("LoadCredentials")
@@ -123,7 +112,16 @@ impl Builder {
         if let Some(sleep_impl) = provider_config.sleep_impl() {
             builder = builder
                 .standard_retry(&RetryConfig::standard())
-                .retry_classifiers(retry_classifiers)
+                // The following errors are retryable:
+                //   - Socket errors
+                //   - Networking timeouts
+                //   - 5xx errors
+                //   - Non-parseable 200 responses.
+                .retry_classifier(HttpCredentialRetryClassifier)
+                // Socket errors and network timeouts
+                .retry_classifier(TransientErrorClassifier::<Error>::new())
+                // 5xx errors
+                .retry_classifier(HttpStatusCodeClassifier::default())
                 .sleep_impl(sleep_impl);
         } else {
             builder = builder.no_retry();
@@ -192,11 +190,11 @@ impl ClassifyRetry for HttpCredentialRetryClassifier {
         "HttpCredentialRetryClassifier"
     }
 
-    fn classify_retry(&self, ctx: &InterceptorContext) -> Option<RetryReason> {
-        let output_or_error = ctx.output_or_error()?;
+    fn classify_retry(&self, ctx: &InterceptorContext) -> RetryAction {
+        let output_or_error = ctx.output_or_error();
         let error = match output_or_error {
-            Ok(_) => return None,
-            Err(err) => err,
+            Some(Ok(_)) | None => return RetryAction::NoActionIndicated,
+            Some(Err(err)) => err,
         };
 
         // Retry non-parseable 200 responses
@@ -206,11 +204,11 @@ impl ClassifyRetry for HttpCredentialRetryClassifier {
             .zip(ctx.response().map(HttpResponse::status))
         {
             if matches!(err, CredentialsError::Unhandled { .. }) && status.is_success() {
-                return Some(RetryReason::Error(ErrorKind::ServerError));
+                return RetryAction::server_error();
             }
         }
 
-        None
+        RetryAction::NoActionIndicated
     }
 }
 
@@ -308,7 +306,7 @@ mod test {
     }
 
     #[tokio::test]
-    async fn explicit_error_not_retriable() {
+    async fn explicit_error_not_retryable() {
         let http_client = StaticReplayClient::new(vec![ReplayEvent::new(
             Request::builder()
                 .uri(Uri::from_static("http://localhost:1234/some-creds"))

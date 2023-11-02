@@ -62,14 +62,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "allowedRenditions" => {
                             builder = builder.set_allowed_renditions(
-                                crate::protocol_serde::shape___list_of_allowed_rendition_size::de___list_of_allowed_rendition_size(tokens)?,
+                                crate::protocol_serde::shape_list_of_allowed_rendition_size::de_list_of_allowed_rendition_size(tokens)?,
                             );
                         }
                         "forceIncludeRenditions" => {
                             builder = builder.set_force_include_renditions(
-                                crate::protocol_serde::shape___list_of_force_include_rendition_size::de___list_of_force_include_rendition_size(
-                                    tokens,
-                                )?,
+                                crate::protocol_serde::shape_list_of_force_include_rendition_size::de_list_of_force_include_rendition_size(tokens)?,
                             );
                         }
                         "minBottomRenditionSize" => {

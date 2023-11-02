@@ -11,7 +11,7 @@ pub use crate::types::_instance_requirements::InstanceRequirements;
 
 pub use crate::types::_network_bandwidth_gbps_request::NetworkBandwidthGbpsRequest;
 
-pub use crate::types::_accelerator_total_memory_mi_b_request::AcceleratorTotalMemoryMiBRequest;
+pub use crate::types::_accelerator_total_memory_mib_request::AcceleratorTotalMemoryMiBRequest;
 
 pub use crate::types::_accelerator_name::AcceleratorName;
 
@@ -37,11 +37,11 @@ pub use crate::types::_bare_metal::BareMetal;
 
 pub use crate::types::_instance_generation::InstanceGeneration;
 
-pub use crate::types::_memory_gi_b_per_v_cpu_request::MemoryGiBPerVCpuRequest;
+pub use crate::types::_memory_gib_per_v_cpu_request::MemoryGiBPerVCpuRequest;
 
 pub use crate::types::_cpu_manufacturer::CpuManufacturer;
 
-pub use crate::types::_memory_mi_b_request::MemoryMiBRequest;
+pub use crate::types::_memory_mib_request::MemoryMiBRequest;
 
 pub use crate::types::_v_cpu_count_request::VCpuCountRequest;
 
@@ -207,7 +207,7 @@ mod _accelerator_manufacturer;
 
 mod _accelerator_name;
 
-mod _accelerator_total_memory_mi_b_request;
+mod _accelerator_total_memory_mib_request;
 
 mod _accelerator_type;
 
@@ -299,9 +299,9 @@ mod _local_storage;
 
 mod _local_storage_type;
 
-mod _memory_gi_b_per_v_cpu_request;
+mod _memory_gib_per_v_cpu_request;
 
-mod _memory_mi_b_request;
+mod _memory_mib_request;
 
 mod _metric;
 

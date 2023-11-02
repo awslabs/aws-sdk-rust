@@ -60,7 +60,7 @@ pub(crate) fn de_list_prefetch_schedules(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "Items" => {
-                    builder = builder.set_items(crate::protocol_serde::shape___list_of_prefetch_schedule::de___list_of_prefetch_schedule(
+                    builder = builder.set_items(crate::protocol_serde::shape_list_of_prefetch_schedule::de_list_of_prefetch_schedule(
                         tokens,
                     )?);
                 }

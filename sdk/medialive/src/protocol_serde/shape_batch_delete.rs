@@ -180,13 +180,12 @@ pub(crate) fn de_batch_delete(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "failed" => {
-                    builder = builder.set_failed(
-                        crate::protocol_serde::shape___list_of_batch_failed_result_model::de___list_of_batch_failed_result_model(tokens)?,
-                    );
+                    builder = builder
+                        .set_failed(crate::protocol_serde::shape_list_of_batch_failed_result_model::de_list_of_batch_failed_result_model(tokens)?);
                 }
                 "successful" => {
                     builder = builder.set_successful(
-                        crate::protocol_serde::shape___list_of_batch_successful_result_model::de___list_of_batch_successful_result_model(tokens)?,
+                        crate::protocol_serde::shape_list_of_batch_successful_result_model::de_list_of_batch_successful_result_model(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

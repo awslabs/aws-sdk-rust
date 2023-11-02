@@ -34,7 +34,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "and" => {
-                            builder = builder.set_and(crate::protocol_serde::shape___list_of_criteria_for_job::de___list_of_criteria_for_job(
+                            builder = builder.set_and(crate::protocol_serde::shape_list_of_criteria_for_job::de_list_of_criteria_for_job(
                                 tokens,
                             )?);
                         }

@@ -54,7 +54,7 @@ where
                                 .set_output_group_settings(crate::protocol_serde::shape_output_group_settings::de_output_group_settings(tokens)?);
                         }
                         "outputs" => {
-                            builder = builder.set_outputs(crate::protocol_serde::shape___list_of_output::de___list_of_output(tokens)?);
+                            builder = builder.set_outputs(crate::protocol_serde::shape_list_of_output::de_list_of_output(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -73,8 +73,9 @@ where
                             );
                         }
                         "rules" => {
-                            builder = builder
-                                .set_rules(crate::protocol_serde::shape___list_of_automated_abr_rule::de___list_of_automated_abr_rule(tokens)?);
+                            builder = builder.set_rules(crate::protocol_serde::shape_list_of_automated_abr_rule::de_list_of_automated_abr_rule(
+                                tokens,
+                            )?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

@@ -108,23 +108,8 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for WriteGe
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        // Retry classifiers are operation-specific because they need to downcast operation-specific error types.
-        let retry_classifiers = ::aws_smithy_runtime_api::client::retries::RetryClassifiers::new()
-            .with_classifier(::aws_smithy_runtime::client::retries::classifier::SmithyErrorClassifier::<
-                crate::operation::write_get_object_response::WriteGetObjectResponseError,
-            >::new())
-            .with_classifier(::aws_runtime::retries::classifier::AmzRetryAfterHeaderClassifier)
-            .with_classifier(::aws_smithy_runtime::client::retries::classifier::ModeledAsRetryableClassifier::<
-                crate::operation::write_get_object_response::WriteGetObjectResponseError,
-            >::new())
-            .with_classifier(::aws_runtime::retries::classifier::AwsErrorCodeClassifier::<
-                crate::operation::write_get_object_response::WriteGetObjectResponseError,
-            >::new())
-            .with_classifier(::aws_smithy_runtime::client::retries::classifier::HttpStatusCodeClassifier::default());
-
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("WriteGetObjectResponse")
-                .with_retry_classifiers(::std::option::Option::Some(retry_classifiers))
                 .with_auth_scheme_option_resolver(::std::option::Option::Some(
                     ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
                         ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
@@ -137,7 +122,16 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for WriteGe
                         ]),
                     ),
                 ))
-                .with_interceptor(WriteGetObjectResponseEndpointParamsInterceptor),
+                .with_interceptor(WriteGetObjectResponseEndpointParamsInterceptor)
+                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                    crate::operation::write_get_object_response::WriteGetObjectResponseError,
+                >::new())
+                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                    crate::operation::write_get_object_response::WriteGetObjectResponseError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                    crate::operation::write_get_object_response::WriteGetObjectResponseError,
+                >::new()),
         )
     }
 }
@@ -249,7 +243,6 @@ impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for WriteGetObj
         let endpoint_prefix = {
             let request_route = _input.request_route.as_deref().unwrap_or_default();
             if request_route.is_empty() {
-                #[allow(clippy::useless_conversion)]
                 return Err(::aws_smithy_http::operation::error::BuildError::invalid_field(
                     "request_route",
                     "request_route was unset or empty but must be set as part of the endpoint prefix",

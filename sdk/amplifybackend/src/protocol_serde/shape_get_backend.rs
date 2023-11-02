@@ -147,7 +147,7 @@ pub(crate) fn de_get_backend(
                     );
                 }
                 "backendEnvironmentList" => {
-                    builder = builder.set_backend_environment_list(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                    builder = builder.set_backend_environment_list(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "backendEnvironmentName" => {
                     builder = builder.set_backend_environment_name(

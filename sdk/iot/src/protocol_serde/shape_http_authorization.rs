@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "sigv4" => {
-                            builder = builder.set_sigv4(crate::protocol_serde::shape_sig_v4_authorization::de_sig_v4_authorization(tokens)?);
+                            builder = builder.set_sigv4(crate::protocol_serde::shape_sigv4_authorization::de_sigv4_authorization(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },
@@ -42,7 +42,7 @@ pub fn ser_http_authorization(
     if let Some(var_1) = &input.sigv4 {
         #[allow(unused_mut)]
         let mut object_2 = object.key("sigv4").start_object();
-        crate::protocol_serde::shape_sig_v4_authorization::ser_sig_v4_authorization(&mut object_2, var_1)?;
+        crate::protocol_serde::shape_sigv4_authorization::ser_sigv4_authorization(&mut object_2, var_1)?;
         object_2.finish();
     }
     Ok(())

@@ -15,10 +15,10 @@ pub fn ser_network(
         crate::protocol_serde::shape_port_range::ser_port_range(&mut object_4, var_3)?;
         object_4.finish();
     }
-    if let Some(var_5) = &input.source_ip_v4 {
+    if let Some(var_5) = &input.source_ipv4 {
         object.key("SourceIpV4").string(var_5.as_str());
     }
-    if let Some(var_6) = &input.source_ip_v6 {
+    if let Some(var_6) = &input.source_ipv6 {
         object.key("SourceIpV6").string(var_6.as_str());
     }
     if let Some(var_7) = &input.source_port {
@@ -33,10 +33,10 @@ pub fn ser_network(
     if let Some(var_9) = &input.source_mac {
         object.key("SourceMac").string(var_9.as_str());
     }
-    if let Some(var_10) = &input.destination_ip_v4 {
+    if let Some(var_10) = &input.destination_ipv4 {
         object.key("DestinationIpV4").string(var_10.as_str());
     }
-    if let Some(var_11) = &input.destination_ip_v6 {
+    if let Some(var_11) = &input.destination_ipv6 {
         object.key("DestinationIpV6").string(var_11.as_str());
     }
     if let Some(var_12) = &input.destination_port {
@@ -84,14 +84,14 @@ where
                             builder = builder.set_open_port_range(crate::protocol_serde::shape_port_range::de_port_range(tokens)?);
                         }
                         "SourceIpV4" => {
-                            builder = builder.set_source_ip_v4(
+                            builder = builder.set_source_ipv4(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
                         "SourceIpV6" => {
-                            builder = builder.set_source_ip_v6(
+                            builder = builder.set_source_ipv6(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
@@ -119,14 +119,14 @@ where
                             );
                         }
                         "DestinationIpV4" => {
-                            builder = builder.set_destination_ip_v4(
+                            builder = builder.set_destination_ipv4(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
                             );
                         }
                         "DestinationIpV6" => {
-                            builder = builder.set_destination_ip_v6(
+                            builder = builder.set_destination_ipv6(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

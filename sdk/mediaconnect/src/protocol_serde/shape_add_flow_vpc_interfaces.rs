@@ -149,7 +149,7 @@ pub(crate) fn de_add_flow_vpc_interfaces(
                     );
                 }
                 "vpcInterfaces" => {
-                    builder = builder.set_vpc_interfaces(crate::protocol_serde::shape___list_of_vpc_interface::de___list_of_vpc_interface(tokens)?);
+                    builder = builder.set_vpc_interfaces(crate::protocol_serde::shape_list_of_vpc_interface::de_list_of_vpc_interface(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

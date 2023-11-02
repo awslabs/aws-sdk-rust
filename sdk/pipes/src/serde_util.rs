@@ -188,8 +188,8 @@ pub(crate) fn capacity_provider_strategy_item_correct_errors(
 pub(crate) fn ecs_ephemeral_storage_correct_errors(
     mut builder: crate::types::builders::EcsEphemeralStorageBuilder,
 ) -> crate::types::builders::EcsEphemeralStorageBuilder {
-    if builder.size_in_gi_b.is_none() {
-        builder.size_in_gi_b = Some(Default::default())
+    if builder.size_in_gib.is_none() {
+        builder.size_in_gib = Some(Default::default())
     }
     builder
 }

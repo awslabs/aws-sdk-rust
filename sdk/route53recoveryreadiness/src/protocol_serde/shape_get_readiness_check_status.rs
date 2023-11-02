@@ -137,7 +137,7 @@ pub(crate) fn de_get_readiness_check_status(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "messages" => {
-                    builder = builder.set_messages(crate::protocol_serde::shape___list_of_message::de___list_of_message(tokens)?);
+                    builder = builder.set_messages(crate::protocol_serde::shape_list_of_message::de_list_of_message(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(
@@ -154,9 +154,7 @@ pub(crate) fn de_get_readiness_check_status(
                     );
                 }
                 "resources" => {
-                    builder = builder.set_resources(crate::protocol_serde::shape___list_of_resource_result::de___list_of_resource_result(
-                        tokens,
-                    )?);
+                    builder = builder.set_resources(crate::protocol_serde::shape_list_of_resource_result::de_list_of_resource_result(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

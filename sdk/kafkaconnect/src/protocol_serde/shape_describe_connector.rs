@@ -168,9 +168,8 @@ pub(crate) fn de_describe_connector(
                     );
                 }
                 "connectorConfiguration" => {
-                    builder = builder.set_connector_configuration(
-                        crate::protocol_serde::shape___sensitive__map_of__string::de___sensitive__map_of__string(tokens)?,
-                    );
+                    builder = builder
+                        .set_connector_configuration(crate::protocol_serde::shape_sensitive_map_of_string::de_sensitive_map_of_string(tokens)?);
                 }
                 "connectorDescription" => {
                     builder = builder.set_connector_description(
@@ -234,8 +233,9 @@ pub(crate) fn de_describe_connector(
                     )?);
                 }
                 "plugins" => {
-                    builder =
-                        builder.set_plugins(crate::protocol_serde::shape___list_of_plugin_description::de___list_of_plugin_description(tokens)?);
+                    builder = builder.set_plugins(crate::protocol_serde::shape_list_of_plugin_description::de_list_of_plugin_description(
+                        tokens,
+                    )?);
                 }
                 "serviceExecutionRoleArn" => {
                     builder = builder.set_service_execution_role_arn(

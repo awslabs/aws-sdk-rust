@@ -131,7 +131,7 @@ pub(crate) fn de_list_users(
                     );
                 }
                 "users" => {
-                    builder = builder.set_users(crate::protocol_serde::shape___list_of_user_summary::de___list_of_user_summary(tokens)?);
+                    builder = builder.set_users(crate::protocol_serde::shape_list_of_user_summary::de_list_of_user_summary(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

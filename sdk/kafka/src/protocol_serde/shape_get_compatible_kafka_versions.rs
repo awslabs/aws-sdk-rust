@@ -172,7 +172,7 @@ pub(crate) fn de_get_compatible_kafka_versions(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "compatibleKafkaVersions" => {
                     builder = builder.set_compatible_kafka_versions(
-                        crate::protocol_serde::shape___list_of_compatible_kafka_version::de___list_of_compatible_kafka_version(tokens)?,
+                        crate::protocol_serde::shape_list_of_compatible_kafka_version::de_list_of_compatible_kafka_version(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

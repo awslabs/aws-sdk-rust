@@ -61,14 +61,12 @@ where
                                 builder.set_detect_and_copy_new_topics(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
                         }
                         "topicsToExclude" => {
-                            builder = builder.set_topics_to_exclude(
-                                crate::protocol_serde::shape___list_of__string_max249::de___list_of__string_max249(tokens)?,
-                            );
+                            builder =
+                                builder.set_topics_to_exclude(crate::protocol_serde::shape_list_of_string_max249::de_list_of_string_max249(tokens)?);
                         }
                         "topicsToReplicate" => {
-                            builder = builder.set_topics_to_replicate(
-                                crate::protocol_serde::shape___list_of__string_max249::de___list_of__string_max249(tokens)?,
-                            );
+                            builder = builder
+                                .set_topics_to_replicate(crate::protocol_serde::shape_list_of_string_max249::de_list_of_string_max249(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

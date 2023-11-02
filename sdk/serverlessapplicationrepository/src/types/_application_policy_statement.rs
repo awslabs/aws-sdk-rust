@@ -7,7 +7,7 @@ pub struct ApplicationPolicyStatement {
     /// <p>For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a>.</p>
     pub actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-    pub principal_org_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub principal_org_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of AWS account IDs, or * to make the application public.</p>
     pub principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>A unique ID for the statement.</p>
@@ -22,9 +22,9 @@ impl ApplicationPolicyStatement {
     }
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principal_org_i_ds.is_none()`.
-    pub fn principal_org_i_ds(&self) -> &[::std::string::String] {
-        self.principal_org_i_ds.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.principal_org_ids.is_none()`.
+    pub fn principal_org_ids(&self) -> &[::std::string::String] {
+        self.principal_org_ids.as_deref().unwrap_or_default()
     }
     /// <p>An array of AWS account IDs, or * to make the application public.</p>
     ///
@@ -49,7 +49,7 @@ impl ApplicationPolicyStatement {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct ApplicationPolicyStatementBuilder {
     pub(crate) actions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) principal_org_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) principal_org_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) principals: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) statement_id: ::std::option::Option<::std::string::String>,
 }
@@ -74,25 +74,25 @@ impl ApplicationPolicyStatementBuilder {
     pub fn get_actions(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
         &self.actions
     }
-    /// Appends an item to `principal_org_i_ds`.
+    /// Appends an item to `principal_org_ids`.
     ///
-    /// To override the contents of this collection use [`set_principal_org_i_ds`](Self::set_principal_org_i_ds).
+    /// To override the contents of this collection use [`set_principal_org_ids`](Self::set_principal_org_ids).
     ///
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-    pub fn principal_org_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.principal_org_i_ds.unwrap_or_default();
+    pub fn principal_org_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.principal_org_ids.unwrap_or_default();
         v.push(input.into());
-        self.principal_org_i_ds = ::std::option::Option::Some(v);
+        self.principal_org_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-    pub fn set_principal_org_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.principal_org_i_ds = input;
+    pub fn set_principal_org_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.principal_org_ids = input;
         self
     }
     /// <p>An array of PrinciplalOrgIDs, which corresponds to AWS IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#principal-org-id">aws:PrincipalOrgID</a> global condition key.</p>
-    pub fn get_principal_org_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.principal_org_i_ds
+    pub fn get_principal_org_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.principal_org_ids
     }
     /// Appends an item to `principals`.
     ///
@@ -132,7 +132,7 @@ impl ApplicationPolicyStatementBuilder {
     pub fn build(self) -> crate::types::ApplicationPolicyStatement {
         crate::types::ApplicationPolicyStatement {
             actions: self.actions,
-            principal_org_i_ds: self.principal_org_i_ds,
+            principal_org_ids: self.principal_org_ids,
             principals: self.principals,
             statement_id: self.statement_id,
         }

@@ -21,7 +21,8 @@ use crate::client::identity::{
     ConfiguredIdentityResolver, IdentityResolver, SharedIdentityResolver,
 };
 use crate::client::interceptors::{Interceptor, SharedInterceptor};
-use crate::client::retries::{RetryClassifiers, RetryStrategy, SharedRetryStrategy};
+use crate::client::retries::classifiers::{ClassifyRetry, SharedRetryClassifier};
+use crate::client::retries::{RetryStrategy, SharedRetryStrategy};
 use crate::shared::IntoShared;
 use aws_smithy_async::rt::sleep::{AsyncSleep, SharedAsyncSleep};
 use aws_smithy_async::time::{SharedTimeSource, TimeSource};
@@ -200,7 +201,7 @@ declare_runtime_components! {
 
         interceptors: Vec<SharedInterceptor>,
 
-        retry_classifiers: Option<RetryClassifiers>,
+        retry_classifiers: Vec<SharedRetryClassifier>,
 
         #[required]
         retry_strategy: Option<SharedRetryStrategy>,
@@ -245,9 +246,9 @@ impl RuntimeComponents {
         self.interceptors.iter().map(|s| s.value.clone())
     }
 
-    /// Returns the retry classifiers.
-    pub fn retry_classifiers(&self) -> Option<&RetryClassifiers> {
-        self.retry_classifiers.as_ref().map(|s| &s.value)
+    /// Returns an iterator over the retry classifiers.
+    pub fn retry_classifiers(&self) -> impl Iterator<Item = SharedRetryClassifier> + '_ {
+        self.retry_classifiers.iter().map(|s| s.value.clone())
     }
 
     /// Returns the retry strategy.
@@ -424,22 +425,46 @@ impl RuntimeComponentsBuilder {
     }
 
     /// Returns the retry classifiers.
-    pub fn retry_classifiers(&self) -> Option<&RetryClassifiers> {
-        self.retry_classifiers.as_ref().map(|s| &s.value)
+    pub fn retry_classifiers(&self) -> impl Iterator<Item = SharedRetryClassifier> + '_ {
+        self.retry_classifiers.iter().map(|s| s.value.clone())
     }
 
-    /// Sets the retry classifiers.
-    pub fn set_retry_classifiers(
+    /// Adds all the given retry_classifiers.
+    pub fn extend_retry_classifiers(
         &mut self,
-        retry_classifiers: Option<RetryClassifiers>,
+        retry_classifiers: impl Iterator<Item = SharedRetryClassifier>,
     ) -> &mut Self {
-        self.retry_classifiers = retry_classifiers.map(|s| Tracked::new(self.builder_name, s));
+        self.retry_classifiers
+            .extend(retry_classifiers.map(|s| Tracked::new(self.builder_name, s)));
         self
     }
 
-    /// Sets the retry classifiers.
-    pub fn with_retry_classifiers(mut self, retry_classifiers: Option<RetryClassifiers>) -> Self {
-        self.retry_classifiers = retry_classifiers.map(|s| Tracked::new(self.builder_name, s));
+    /// Adds an retry_classifier.
+    pub fn push_retry_classifier(
+        &mut self,
+        retry_classifier: impl ClassifyRetry + 'static,
+    ) -> &mut Self {
+        self.retry_classifiers.push(Tracked::new(
+            self.builder_name,
+            retry_classifier.into_shared(),
+        ));
+        self
+    }
+
+    /// Adds an retry_classifier.
+    pub fn with_retry_classifier(mut self, retry_classifier: impl ClassifyRetry + 'static) -> Self {
+        self.push_retry_classifier(retry_classifier);
+        self
+    }
+
+    /// Directly sets the retry_classifiers and clears out any that were previously pushed.
+    pub fn set_retry_classifiers(
+        &mut self,
+        retry_classifiers: impl Iterator<Item = SharedRetryClassifier>,
+    ) -> &mut Self {
+        self.retry_classifiers.clear();
+        self.retry_classifiers
+            .extend(retry_classifiers.map(|s| Tracked::new(self.builder_name, s)));
         self
     }
 
@@ -633,7 +658,6 @@ impl RuntimeComponentsBuilder {
             .with_endpoint_resolver(Some(FakeEndpointResolver))
             .with_http_client(Some(FakeClient))
             .with_identity_resolver(AuthSchemeId::new("fake"), FakeIdentityResolver)
-            .with_retry_classifiers(Some(RetryClassifiers::new()))
             .with_retry_strategy(Some(FakeRetryStrategy))
             .with_sleep_impl(Some(SharedAsyncSleep::new(FakeSleep)))
             .with_time_source(Some(SharedTimeSource::new(FakeTimeSource)))
@@ -654,7 +678,7 @@ impl fmt::Display for BuildError {
 
 /// A trait for retrieving a shared identity resolver.
 ///
-/// This trait exists so that [`AuthScheme::identity_resolver`](crate::client::auth::AuthScheme::identity_resolver)
+/// This trait exists so that [`AuthScheme::identity_resolver`]
 /// can have access to configured identity resolvers without having access to all the runtime components.
 pub trait GetIdentityResolver: Send + Sync {
     /// Returns the requested identity resolver if it is set.
@@ -672,7 +696,7 @@ impl GetIdentityResolver for RuntimeComponents {
 
 #[cfg(all(test, feature = "test-util"))]
 mod tests {
-    use super::*;
+    use super::{BuildError, RuntimeComponentsBuilder, Tracked};
 
     #[test]
     #[allow(unreachable_pub)]

@@ -36,7 +36,7 @@ pub struct CreateReplicationGroupInput {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub preferred_cache_cluster_a_zs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub preferred_cache_cluster_azs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
     /// <p>Default: 1</p>
     pub num_node_groups: ::std::option::Option<i32>,
@@ -225,9 +225,9 @@ impl CreateReplicationGroupInput {
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_cache_cluster_a_zs.is_none()`.
-    pub fn preferred_cache_cluster_a_zs(&self) -> &[::std::string::String] {
-        self.preferred_cache_cluster_a_zs.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.preferred_cache_cluster_azs.is_none()`.
+    pub fn preferred_cache_cluster_azs(&self) -> &[::std::string::String] {
+        self.preferred_cache_cluster_azs.as_deref().unwrap_or_default()
     }
     /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
     /// <p>Default: 1</p>
@@ -461,7 +461,7 @@ pub struct CreateReplicationGroupInputBuilder {
     pub(crate) automatic_failover_enabled: ::std::option::Option<bool>,
     pub(crate) multi_az_enabled: ::std::option::Option<bool>,
     pub(crate) num_cache_clusters: ::std::option::Option<i32>,
-    pub(crate) preferred_cache_cluster_a_zs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) preferred_cache_cluster_azs: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) num_node_groups: ::std::option::Option<i32>,
     pub(crate) replicas_per_node_group: ::std::option::Option<i32>,
     pub(crate) node_group_configuration: ::std::option::Option<::std::vec::Vec<crate::types::NodeGroupConfiguration>>,
@@ -630,9 +630,9 @@ impl CreateReplicationGroupInputBuilder {
     pub fn get_num_cache_clusters(&self) -> &::std::option::Option<i32> {
         &self.num_cache_clusters
     }
-    /// Appends an item to `preferred_cache_cluster_a_zs`.
+    /// Appends an item to `preferred_cache_cluster_azs`.
     ///
-    /// To override the contents of this collection use [`set_preferred_cache_cluster_a_zs`](Self::set_preferred_cache_cluster_a_zs).
+    /// To override the contents of this collection use [`set_preferred_cache_cluster_azs`](Self::set_preferred_cache_cluster_azs).
     ///
     /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>
     /// <p>This parameter is not used if there is more than one node group (shard). You should use <code>NodeGroupConfiguration</code> instead.</p> <note>
@@ -640,10 +640,10 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn preferred_cache_cluster_a_zs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.preferred_cache_cluster_a_zs.unwrap_or_default();
+    pub fn preferred_cache_cluster_azs(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.preferred_cache_cluster_azs.unwrap_or_default();
         v.push(input.into());
-        self.preferred_cache_cluster_a_zs = ::std::option::Option::Some(v);
+        self.preferred_cache_cluster_azs = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>
@@ -652,8 +652,8 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn set_preferred_cache_cluster_a_zs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.preferred_cache_cluster_a_zs = input;
+    pub fn set_preferred_cache_cluster_azs(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.preferred_cache_cluster_azs = input;
         self
     }
     /// <p>A list of EC2 Availability Zones in which the replication group's clusters are created. The order of the Availability Zones in the list is the order in which clusters are allocated. The primary cluster is created in the first AZ in the list.</p>
@@ -662,8 +662,8 @@ impl CreateReplicationGroupInputBuilder {
     /// <p>The number of Availability Zones listed must equal the value of <code>NumCacheClusters</code>.</p>
     /// </note>
     /// <p>Default: system chosen Availability Zones.</p>
-    pub fn get_preferred_cache_cluster_a_zs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.preferred_cache_cluster_a_zs
+    pub fn get_preferred_cache_cluster_azs(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.preferred_cache_cluster_azs
     }
     /// <p>An optional parameter that specifies the number of node groups (shards) for this Redis (cluster mode enabled) replication group. For Redis (cluster mode disabled) either omit this parameter or set it to 1.</p>
     /// <p>Default: 1</p>
@@ -1380,7 +1380,7 @@ impl CreateReplicationGroupInputBuilder {
             automatic_failover_enabled: self.automatic_failover_enabled,
             multi_az_enabled: self.multi_az_enabled,
             num_cache_clusters: self.num_cache_clusters,
-            preferred_cache_cluster_a_zs: self.preferred_cache_cluster_a_zs,
+            preferred_cache_cluster_azs: self.preferred_cache_cluster_azs,
             num_node_groups: self.num_node_groups,
             replicas_per_node_group: self.replicas_per_node_group,
             node_group_configuration: self.node_group_configuration,

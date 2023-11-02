@@ -49,7 +49,7 @@ where
                         }
                         "SegmentDeliveryConfigurations" => {
                             builder = builder.set_segment_delivery_configurations(
-                                crate::protocol_serde::shape___list_of_segment_delivery_configuration::de___list_of_segment_delivery_configuration(
+                                crate::protocol_serde::shape_list_of_segment_delivery_configuration::de_list_of_segment_delivery_configuration(
                                     tokens,
                                 )?,
                             );
@@ -62,7 +62,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

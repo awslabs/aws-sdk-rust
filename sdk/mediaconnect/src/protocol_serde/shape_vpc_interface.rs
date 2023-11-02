@@ -22,8 +22,7 @@ where
                             );
                         }
                         "networkInterfaceIds" => {
-                            builder =
-                                builder.set_network_interface_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_network_interface_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "networkInterfaceType" => {
                             builder = builder.set_network_interface_type(
@@ -40,7 +39,7 @@ where
                             );
                         }
                         "securityGroupIds" => {
-                            builder = builder.set_security_group_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_security_group_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "subnetId" => {
                             builder = builder.set_subnet_id(

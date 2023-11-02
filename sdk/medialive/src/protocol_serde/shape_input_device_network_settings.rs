@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "dnsAddresses" => {
-                            builder = builder.set_dns_addresses(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_dns_addresses(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "gateway" => {
                             builder = builder.set_gateway(

@@ -11,8 +11,8 @@ pub fn ser_instance_requirements(
     }
     #[allow(unused_mut)]
     let mut scope_3 = writer.prefix("MemoryMiB");
-    if let Some(var_4) = &input.memory_mi_b {
-        crate::protocol_serde::shape_memory_mi_b_request::ser_memory_mi_b_request(scope_3, var_4)?;
+    if let Some(var_4) = &input.memory_mib {
+        crate::protocol_serde::shape_memory_mib_request::ser_memory_mib_request(scope_3, var_4)?;
     }
     #[allow(unused_mut)]
     let mut scope_5 = writer.prefix("CpuManufacturers");
@@ -27,8 +27,8 @@ pub fn ser_instance_requirements(
     }
     #[allow(unused_mut)]
     let mut scope_10 = writer.prefix("MemoryGiBPerVCpu");
-    if let Some(var_11) = &input.memory_gi_b_per_v_cpu {
-        crate::protocol_serde::shape_memory_gi_b_per_v_cpu_request::ser_memory_gi_b_per_v_cpu_request(scope_10, var_11)?;
+    if let Some(var_11) = &input.memory_gib_per_v_cpu {
+        crate::protocol_serde::shape_memory_gib_per_v_cpu_request::ser_memory_gib_per_v_cpu_request(scope_10, var_11)?;
     }
     #[allow(unused_mut)]
     let mut scope_12 = writer.prefix("ExcludedInstanceTypes");
@@ -154,8 +154,8 @@ pub fn ser_instance_requirements(
     }
     #[allow(unused_mut)]
     let mut scope_62 = writer.prefix("AcceleratorTotalMemoryMiB");
-    if let Some(var_63) = &input.accelerator_total_memory_mi_b {
-        crate::protocol_serde::shape_accelerator_total_memory_mi_b_request::ser_accelerator_total_memory_mi_b_request(scope_62, var_63)?;
+    if let Some(var_63) = &input.accelerator_total_memory_mib {
+        crate::protocol_serde::shape_accelerator_total_memory_mib_request::ser_accelerator_total_memory_mib_request(scope_62, var_63)?;
     }
     #[allow(unused_mut)]
     let mut scope_64 = writer.prefix("NetworkBandwidthGbps");
@@ -197,11 +197,11 @@ pub fn de_instance_requirements(
             s if s.matches("MemoryMiB") /* MemoryMiB com.amazonaws.autoscaling#InstanceRequirements$MemoryMiB */ =>  {
                 let var_72 =
                     Some(
-                        crate::protocol_serde::shape_memory_mi_b_request::de_memory_mi_b_request(&mut tag)
+                        crate::protocol_serde::shape_memory_mib_request::de_memory_mib_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_mi_b(var_72);
+                builder = builder.set_memory_mib(var_72);
             }
             ,
             s if s.matches("CpuManufacturers") /* CpuManufacturers com.amazonaws.autoscaling#InstanceRequirements$CpuManufacturers */ =>  {
@@ -217,11 +217,11 @@ pub fn de_instance_requirements(
             s if s.matches("MemoryGiBPerVCpu") /* MemoryGiBPerVCpu com.amazonaws.autoscaling#InstanceRequirements$MemoryGiBPerVCpu */ =>  {
                 let var_74 =
                     Some(
-                        crate::protocol_serde::shape_memory_gi_b_per_v_cpu_request::de_memory_gi_b_per_v_cpu_request(&mut tag)
+                        crate::protocol_serde::shape_memory_gib_per_v_cpu_request::de_memory_gib_per_v_cpu_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_memory_gi_b_per_v_cpu(var_74);
+                builder = builder.set_memory_gib_per_v_cpu(var_74);
             }
             ,
             s if s.matches("ExcludedInstanceTypes") /* ExcludedInstanceTypes com.amazonaws.autoscaling#InstanceRequirements$ExcludedInstanceTypes */ =>  {
@@ -414,11 +414,11 @@ pub fn de_instance_requirements(
             s if s.matches("AcceleratorTotalMemoryMiB") /* AcceleratorTotalMemoryMiB com.amazonaws.autoscaling#InstanceRequirements$AcceleratorTotalMemoryMiB */ =>  {
                 let var_91 =
                     Some(
-                        crate::protocol_serde::shape_accelerator_total_memory_mi_b_request::de_accelerator_total_memory_mi_b_request(&mut tag)
+                        crate::protocol_serde::shape_accelerator_total_memory_mib_request::de_accelerator_total_memory_mib_request(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_accelerator_total_memory_mi_b(var_91);
+                builder = builder.set_accelerator_total_memory_mib(var_91);
             }
             ,
             s if s.matches("NetworkBandwidthGbps") /* NetworkBandwidthGbps com.amazonaws.autoscaling#InstanceRequirements$NetworkBandwidthGbps */ =>  {

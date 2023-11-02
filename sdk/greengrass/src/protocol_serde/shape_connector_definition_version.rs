@@ -34,7 +34,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "Connectors" => {
-                            builder = builder.set_connectors(crate::protocol_serde::shape___list_of_connector::de___list_of_connector(tokens)?);
+                            builder = builder.set_connectors(crate::protocol_serde::shape_list_of_connector::de_list_of_connector(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

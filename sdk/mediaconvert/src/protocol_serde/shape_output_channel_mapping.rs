@@ -47,14 +47,12 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "inputChannels" => {
                             builder = builder.set_input_channels(
-                                crate::protocol_serde::shape___list_of__integer_min_negative60_max6::de___list_of__integer_min_negative60_max6(
-                                    tokens,
-                                )?,
+                                crate::protocol_serde::shape_list_of_integer_min_negative60_max6::de_list_of_integer_min_negative60_max6(tokens)?,
                             );
                         }
                         "inputChannelsFineTune" => {
                             builder = builder.set_input_channels_fine_tune(
-                                crate::protocol_serde::shape___list_of__double_min_negative60_max6::de___list_of__double_min_negative60_max6(tokens)?,
+                                crate::protocol_serde::shape_list_of_double_min_negative60_max6::de_list_of_double_min_negative60_max6(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

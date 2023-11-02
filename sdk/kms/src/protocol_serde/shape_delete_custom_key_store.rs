@@ -25,7 +25,7 @@ pub fn de_delete_custom_key_store_http_error(
             let mut tmp = {
                 #[allow(unused_mut)]
                 let mut output = crate::types::error::builders::CustomKeyStoreHasCmKsExceptionBuilder::default();
-                output = crate::protocol_serde::shape_custom_key_store_has_cm_ks_exception::de_custom_key_store_has_cm_ks_exception_json_err(
+                output = crate::protocol_serde::shape_custom_key_store_has_cmks_exception::de_custom_key_store_has_cmks_exception_json_err(
                     _response_body,
                     output,
                 )

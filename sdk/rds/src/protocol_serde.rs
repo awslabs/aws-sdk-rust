@@ -723,7 +723,7 @@ pub(crate) mod shape_db_snapshot_not_found_fault;
 
 pub(crate) mod shape_db_subnet_group_already_exists_fault;
 
-pub(crate) mod shape_db_subnet_group_does_not_cover_enough_a_zs;
+pub(crate) mod shape_db_subnet_group_does_not_cover_enough_azs;
 
 pub(crate) mod shape_db_subnet_group_not_allowed_fault;
 
@@ -759,7 +759,7 @@ pub(crate) mod shape_iam_role_not_found_fault;
 
 pub(crate) mod shape_instance_quota_exceeded_fault;
 
-pub(crate) mod shape_insufficient_available_i_ps_in_subnet_fault;
+pub(crate) mod shape_insufficient_available_ips_in_subnet_fault;
 
 pub(crate) mod shape_insufficient_db_cluster_capacity_fault;
 

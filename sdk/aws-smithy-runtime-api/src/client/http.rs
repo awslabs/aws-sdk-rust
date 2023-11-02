@@ -50,6 +50,9 @@
 //! [`tower`]: https://crates.io/crates/tower
 //! [`aws-smithy-runtime`]: https://crates.io/crates/aws-smithy-runtime
 
+pub mod request;
+pub mod response;
+
 use crate::client::orchestrator::{HttpRequest, HttpResponse};
 use crate::client::runtime_components::RuntimeComponents;
 use crate::impl_shared_conversions;

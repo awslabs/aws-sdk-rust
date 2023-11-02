@@ -41,8 +41,7 @@ where
                             );
                         }
                         "selectedOutputs" => {
-                            builder =
-                                builder.set_selected_outputs(crate::protocol_serde::shape___list_of__string_min1::de___list_of__string_min1(tokens)?);
+                            builder = builder.set_selected_outputs(crate::protocol_serde::shape_list_of_string_min1::de_list_of_string_min1(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

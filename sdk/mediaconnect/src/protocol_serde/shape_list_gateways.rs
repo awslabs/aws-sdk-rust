@@ -111,9 +111,7 @@ pub(crate) fn de_list_gateways(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "gateways" => {
-                    builder = builder.set_gateways(crate::protocol_serde::shape___list_of_listed_gateway::de___list_of_listed_gateway(
-                        tokens,
-                    )?);
+                    builder = builder.set_gateways(crate::protocol_serde::shape_list_of_listed_gateway::de_list_of_listed_gateway(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

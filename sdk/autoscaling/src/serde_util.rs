@@ -363,10 +363,10 @@ pub(crate) fn instance_requirements_correct_errors(
             Some(crate::serde_util::v_cpu_count_request_correct_errors(builder).build())
         }
     }
-    if builder.memory_mi_b.is_none() {
-        builder.memory_mi_b = {
+    if builder.memory_mib.is_none() {
+        builder.memory_mib = {
             let builder = crate::types::builders::MemoryMiBRequestBuilder::default();
-            Some(crate::serde_util::memory_mi_b_request_correct_errors(builder).build())
+            Some(crate::serde_util::memory_mib_request_correct_errors(builder).build())
         }
     }
     builder
@@ -400,7 +400,7 @@ pub(crate) fn target_tracking_metric_stat_correct_errors(
     builder
 }
 
-pub(crate) fn memory_mi_b_request_correct_errors(
+pub(crate) fn memory_mib_request_correct_errors(
     mut builder: crate::types::builders::MemoryMiBRequestBuilder,
 ) -> crate::types::builders::MemoryMiBRequestBuilder {
     if builder.min.is_none() {

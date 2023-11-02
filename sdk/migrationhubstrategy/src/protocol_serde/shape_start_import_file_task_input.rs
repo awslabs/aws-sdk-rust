@@ -28,7 +28,7 @@ pub fn ser_start_import_file_task_input(
         object.key("s3bucketForReportData").string(var_6.as_str());
     }
     {
-        object.key("s3key").string(input.s3key.as_str());
+        object.key("s3key").string(input.s3_key.as_str());
     }
     Ok(())
 }

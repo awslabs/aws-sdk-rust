@@ -11,7 +11,7 @@ pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     /// <p> The accelerators that must be on the instance type. </p>
     pub accelerator_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The minimum and maximum amount of total accelerator memory, in MiB. </p>
-    pub accelerator_total_memory_mi_b:
+    pub accelerator_total_memory_mib:
         ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails>,
     /// <p>The accelerator types that must be on the instance type. </p>
     pub accelerator_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
@@ -32,9 +32,9 @@ pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
     /// <p> The type of local storage that is required. </p>
     pub local_storage_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> The minimum and maximum amount of memory per vCPU, in GiB. </p>
-    pub memory_gi_b_per_v_cpu: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>,
+    pub memory_gib_per_v_cpu: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>,
     /// <p> The minimum and maximum amount of memory, in MiB. </p>
-    pub memory_mi_b: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails>,
+    pub memory_mib: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails>,
     /// <p> The minimum and maximum number of network interfaces. </p>
     pub network_interface_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails>,
     /// <p> The price protection threshold for On-Demand Instances. This is the maximum you'll pay for an On-Demand Instance, expressed as a percentage above the least expensive current generation M, C, or R instance type with your specified attributes. When Amazon EC2 selects instance types with your attributes, it excludes instance types priced above your threshold.</p>
@@ -70,10 +70,10 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
         self.accelerator_names.as_deref().unwrap_or_default()
     }
     /// <p> The minimum and maximum amount of total accelerator memory, in MiB. </p>
-    pub fn accelerator_total_memory_mi_b(
+    pub fn accelerator_total_memory_mib(
         &self,
     ) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails> {
-        self.accelerator_total_memory_mi_b.as_ref()
+        self.accelerator_total_memory_mib.as_ref()
     }
     /// <p>The accelerator types that must be on the instance type. </p>
     ///
@@ -124,12 +124,12 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetails {
         self.local_storage_types.as_deref().unwrap_or_default()
     }
     /// <p> The minimum and maximum amount of memory per vCPU, in GiB. </p>
-    pub fn memory_gi_b_per_v_cpu(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails> {
-        self.memory_gi_b_per_v_cpu.as_ref()
+    pub fn memory_gib_per_v_cpu(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails> {
+        self.memory_gib_per_v_cpu.as_ref()
     }
     /// <p> The minimum and maximum amount of memory, in MiB. </p>
-    pub fn memory_mi_b(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails> {
-        self.memory_mi_b.as_ref()
+    pub fn memory_mib(&self) -> ::std::option::Option<&crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails> {
+        self.memory_mib.as_ref()
     }
     /// <p> The minimum and maximum number of network interfaces. </p>
     pub fn network_interface_count(
@@ -178,7 +178,7 @@ pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     pub(crate) accelerator_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorCountDetails>,
     pub(crate) accelerator_manufacturers: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) accelerator_names: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) accelerator_total_memory_mi_b:
+    pub(crate) accelerator_total_memory_mib:
         ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails>,
     pub(crate) accelerator_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) bare_metal: ::std::option::Option<::std::string::String>,
@@ -190,8 +190,8 @@ pub struct AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
     pub(crate) instance_generations: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) local_storage: ::std::option::Option<::std::string::String>,
     pub(crate) local_storage_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) memory_gi_b_per_v_cpu: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>,
-    pub(crate) memory_mi_b: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails>,
+    pub(crate) memory_gib_per_v_cpu: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>,
+    pub(crate) memory_mib: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails>,
     pub(crate) network_interface_count: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails>,
     pub(crate) on_demand_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
     pub(crate) require_hibernate_support: ::std::option::Option<bool>,
@@ -258,26 +258,26 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
         &self.accelerator_names
     }
     /// <p> The minimum and maximum amount of total accelerator memory, in MiB. </p>
-    pub fn accelerator_total_memory_mi_b(
+    pub fn accelerator_total_memory_mib(
         mut self,
         input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails,
     ) -> Self {
-        self.accelerator_total_memory_mi_b = ::std::option::Option::Some(input);
+        self.accelerator_total_memory_mib = ::std::option::Option::Some(input);
         self
     }
     /// <p> The minimum and maximum amount of total accelerator memory, in MiB. </p>
-    pub fn set_accelerator_total_memory_mi_b(
+    pub fn set_accelerator_total_memory_mib(
         mut self,
         input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails>,
     ) -> Self {
-        self.accelerator_total_memory_mi_b = input;
+        self.accelerator_total_memory_mib = input;
         self
     }
     /// <p> The minimum and maximum amount of total accelerator memory, in MiB. </p>
-    pub fn get_accelerator_total_memory_mi_b(
+    pub fn get_accelerator_total_memory_mib(
         &self,
     ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsAcceleratorTotalMemoryMiBDetails> {
-        &self.accelerator_total_memory_mi_b
+        &self.accelerator_total_memory_mib
     }
     /// Appends an item to `accelerator_types`.
     ///
@@ -444,40 +444,40 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
         &self.local_storage_types
     }
     /// <p> The minimum and maximum amount of memory per vCPU, in GiB. </p>
-    pub fn memory_gi_b_per_v_cpu(mut self, input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails) -> Self {
-        self.memory_gi_b_per_v_cpu = ::std::option::Option::Some(input);
+    pub fn memory_gib_per_v_cpu(mut self, input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails) -> Self {
+        self.memory_gib_per_v_cpu = ::std::option::Option::Some(input);
         self
     }
     /// <p> The minimum and maximum amount of memory per vCPU, in GiB. </p>
-    pub fn set_memory_gi_b_per_v_cpu(
+    pub fn set_memory_gib_per_v_cpu(
         mut self,
         input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails>,
     ) -> Self {
-        self.memory_gi_b_per_v_cpu = input;
+        self.memory_gib_per_v_cpu = input;
         self
     }
     /// <p> The minimum and maximum amount of memory per vCPU, in GiB. </p>
-    pub fn get_memory_gi_b_per_v_cpu(
+    pub fn get_memory_gib_per_v_cpu(
         &self,
     ) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails> {
-        &self.memory_gi_b_per_v_cpu
+        &self.memory_gib_per_v_cpu
     }
     /// <p> The minimum and maximum amount of memory, in MiB. </p>
-    pub fn memory_mi_b(mut self, input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails) -> Self {
-        self.memory_mi_b = ::std::option::Option::Some(input);
+    pub fn memory_mib(mut self, input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails) -> Self {
+        self.memory_mib = ::std::option::Option::Some(input);
         self
     }
     /// <p> The minimum and maximum amount of memory, in MiB. </p>
-    pub fn set_memory_mi_b(
+    pub fn set_memory_mib(
         mut self,
         input: ::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails>,
     ) -> Self {
-        self.memory_mi_b = input;
+        self.memory_mib = input;
         self
     }
     /// <p> The minimum and maximum amount of memory, in MiB. </p>
-    pub fn get_memory_mi_b(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails> {
-        &self.memory_mi_b
+    pub fn get_memory_mib(&self) -> &::std::option::Option<crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails> {
+        &self.memory_mib
     }
     /// <p> The minimum and maximum number of network interfaces. </p>
     pub fn network_interface_count(mut self, input: crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsNetworkInterfaceCountDetails) -> Self {
@@ -594,7 +594,7 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
             accelerator_count: self.accelerator_count,
             accelerator_manufacturers: self.accelerator_manufacturers,
             accelerator_names: self.accelerator_names,
-            accelerator_total_memory_mi_b: self.accelerator_total_memory_mi_b,
+            accelerator_total_memory_mib: self.accelerator_total_memory_mib,
             accelerator_types: self.accelerator_types,
             bare_metal: self.bare_metal,
             baseline_ebs_bandwidth_mbps: self.baseline_ebs_bandwidth_mbps,
@@ -604,8 +604,8 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsDetailsBuilder {
             instance_generations: self.instance_generations,
             local_storage: self.local_storage,
             local_storage_types: self.local_storage_types,
-            memory_gi_b_per_v_cpu: self.memory_gi_b_per_v_cpu,
-            memory_mi_b: self.memory_mi_b,
+            memory_gib_per_v_cpu: self.memory_gib_per_v_cpu,
+            memory_mib: self.memory_mib,
             network_interface_count: self.network_interface_count,
             on_demand_max_price_percentage_over_lowest_price: self.on_demand_max_price_percentage_over_lowest_price,
             require_hibernate_support: self.require_hibernate_support,

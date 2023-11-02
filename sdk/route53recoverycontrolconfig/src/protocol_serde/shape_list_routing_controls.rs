@@ -125,9 +125,7 @@ pub(crate) fn de_list_routing_controls(
                     );
                 }
                 "RoutingControls" => {
-                    builder = builder.set_routing_controls(crate::protocol_serde::shape___list_of_routing_control::de___list_of_routing_control(
-                        tokens,
-                    )?);
+                    builder = builder.set_routing_controls(crate::protocol_serde::shape_list_of_routing_control::de_list_of_routing_control(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

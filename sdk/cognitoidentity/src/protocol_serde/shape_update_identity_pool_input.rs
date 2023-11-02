@@ -30,7 +30,7 @@ pub fn ser_update_identity_pool_input(
     if let Some(var_6) = &input.developer_provider_name {
         object.key("DeveloperProviderName").string(var_6.as_str());
     }
-    if let Some(var_7) = &input.open_id_connect_provider_ar_ns {
+    if let Some(var_7) = &input.open_id_connect_provider_arns {
         let mut array_8 = object.key("OpenIdConnectProviderARNs").start_array();
         for item_9 in var_7 {
             {
@@ -51,7 +51,7 @@ pub fn ser_update_identity_pool_input(
         }
         array_11.finish();
     }
-    if let Some(var_14) = &input.saml_provider_ar_ns {
+    if let Some(var_14) = &input.saml_provider_arns {
         let mut array_15 = object.key("SamlProviderARNs").start_array();
         for item_16 in var_14 {
             {

@@ -41,7 +41,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "inputChannelLevels" => {
                             builder = builder.set_input_channel_levels(
-                                crate::protocol_serde::shape___list_of_input_channel_level::de___list_of_input_channel_level(tokens)?,
+                                crate::protocol_serde::shape_list_of_input_channel_level::de_list_of_input_channel_level(tokens)?,
                             );
                         }
                         "outputChannel" => {

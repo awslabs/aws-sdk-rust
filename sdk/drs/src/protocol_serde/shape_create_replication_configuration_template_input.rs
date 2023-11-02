@@ -53,7 +53,7 @@ pub fn ser_create_replication_configuration_template_input(
     }
     {
         let mut array_6 = object.key("replicationServersSecurityGroupsIDs").start_array();
-        for item_7 in &input.replication_servers_security_groups_i_ds {
+        for item_7 in &input.replication_servers_security_groups_ids {
             {
                 array_6.value().string(item_7.as_str());
             }

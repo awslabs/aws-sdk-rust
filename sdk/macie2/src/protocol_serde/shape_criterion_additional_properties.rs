@@ -73,10 +73,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "eq" => {
-                            builder = builder.set_eq(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_eq(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "eqExactMatch" => {
-                            builder = builder.set_eq_exact_match(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_eq_exact_match(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "gt" => {
                             builder = builder.set_gt(
@@ -107,7 +107,7 @@ where
                             );
                         }
                         "neq" => {
-                            builder = builder.set_neq(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_neq(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

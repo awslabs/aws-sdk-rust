@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeSourceServersRequestFilters {
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
-    pub source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Request to filter Source Servers list by archived.</p>
     pub is_archived: ::std::option::Option<bool>,
     /// <p>Request to filter Source Servers list by replication type.</p>
@@ -13,14 +13,14 @@ pub struct DescribeSourceServersRequestFilters {
     /// <p>Request to filter Source Servers list by life cycle states.</p>
     pub life_cycle_states: ::std::option::Option<::std::vec::Vec<crate::types::LifeCycleState>>,
     /// <p>Request to filter Source Servers list by application IDs.</p>
-    pub application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeSourceServersRequestFilters {
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_i_ds.is_none()`.
-    pub fn source_server_i_ds(&self) -> &[::std::string::String] {
-        self.source_server_i_ds.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.source_server_ids.is_none()`.
+    pub fn source_server_ids(&self) -> &[::std::string::String] {
+        self.source_server_ids.as_deref().unwrap_or_default()
     }
     /// <p>Request to filter Source Servers list by archived.</p>
     pub fn is_archived(&self) -> ::std::option::Option<bool> {
@@ -40,9 +40,9 @@ impl DescribeSourceServersRequestFilters {
     }
     /// <p>Request to filter Source Servers list by application IDs.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_i_ds.is_none()`.
-    pub fn application_i_ds(&self) -> &[::std::string::String] {
-        self.application_i_ds.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.application_ids.is_none()`.
+    pub fn application_ids(&self) -> &[::std::string::String] {
+        self.application_ids.as_deref().unwrap_or_default()
     }
 }
 impl DescribeSourceServersRequestFilters {
@@ -56,32 +56,32 @@ impl DescribeSourceServersRequestFilters {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeSourceServersRequestFiltersBuilder {
-    pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) is_archived: ::std::option::Option<bool>,
     pub(crate) replication_types: ::std::option::Option<::std::vec::Vec<crate::types::ReplicationType>>,
     pub(crate) life_cycle_states: ::std::option::Option<::std::vec::Vec<crate::types::LifeCycleState>>,
-    pub(crate) application_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) application_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
 impl DescribeSourceServersRequestFiltersBuilder {
-    /// Appends an item to `source_server_i_ds`.
+    /// Appends an item to `source_server_ids`.
     ///
-    /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+    /// To override the contents of this collection use [`set_source_server_ids`](Self::set_source_server_ids).
     ///
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
-    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.source_server_i_ds.unwrap_or_default();
+    pub fn source_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.source_server_ids.unwrap_or_default();
         v.push(input.into());
-        self.source_server_i_ds = ::std::option::Option::Some(v);
+        self.source_server_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
-    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_server_i_ds = input;
+    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.source_server_ids = input;
         self
     }
     /// <p>Request to filter Source Servers list by Source Server ID.</p>
-    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.source_server_i_ds
+    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_server_ids
     }
     /// <p>Request to filter Source Servers list by archived.</p>
     pub fn is_archived(mut self, input: bool) -> Self {
@@ -137,34 +137,34 @@ impl DescribeSourceServersRequestFiltersBuilder {
     pub fn get_life_cycle_states(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::LifeCycleState>> {
         &self.life_cycle_states
     }
-    /// Appends an item to `application_i_ds`.
+    /// Appends an item to `application_ids`.
     ///
-    /// To override the contents of this collection use [`set_application_i_ds`](Self::set_application_i_ds).
+    /// To override the contents of this collection use [`set_application_ids`](Self::set_application_ids).
     ///
     /// <p>Request to filter Source Servers list by application IDs.</p>
-    pub fn application_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.application_i_ds.unwrap_or_default();
+    pub fn application_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.application_ids.unwrap_or_default();
         v.push(input.into());
-        self.application_i_ds = ::std::option::Option::Some(v);
+        self.application_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Request to filter Source Servers list by application IDs.</p>
-    pub fn set_application_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.application_i_ds = input;
+    pub fn set_application_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.application_ids = input;
         self
     }
     /// <p>Request to filter Source Servers list by application IDs.</p>
-    pub fn get_application_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.application_i_ds
+    pub fn get_application_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.application_ids
     }
     /// Consumes the builder and constructs a [`DescribeSourceServersRequestFilters`](crate::types::DescribeSourceServersRequestFilters).
     pub fn build(self) -> crate::types::DescribeSourceServersRequestFilters {
         crate::types::DescribeSourceServersRequestFilters {
-            source_server_i_ds: self.source_server_i_ds,
+            source_server_ids: self.source_server_ids,
             is_archived: self.is_archived,
             replication_types: self.replication_types,
             life_cycle_states: self.life_cycle_states,
-            application_i_ds: self.application_i_ds,
+            application_ids: self.application_ids,
         }
     }
 }

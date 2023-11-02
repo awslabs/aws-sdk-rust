@@ -18,7 +18,7 @@ pub fn ser_create_backend_auth_o_auth_config(
         }
         array_4.finish();
     }
-    if let Some(var_6) = &input.redirect_sign_in_ur_is {
+    if let Some(var_6) = &input.redirect_sign_in_uris {
         let mut array_7 = object.key("redirectSignInURIs").start_array();
         for item_8 in var_6 {
             {
@@ -27,7 +27,7 @@ pub fn ser_create_backend_auth_o_auth_config(
         }
         array_7.finish();
     }
-    if let Some(var_9) = &input.redirect_sign_out_ur_is {
+    if let Some(var_9) = &input.redirect_sign_out_uris {
         let mut array_10 = object.key("redirectSignOutURIs").start_array();
         for item_11 in var_9 {
             {
@@ -80,10 +80,10 @@ where
                             );
                         }
                         "redirectSignInURIs" => {
-                            builder = builder.set_redirect_sign_in_ur_is(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                            builder = builder.set_redirect_sign_in_uris(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "redirectSignOutURIs" => {
-                            builder = builder.set_redirect_sign_out_ur_is(crate::protocol_serde::shape_list_of__string::de_list_of__string(tokens)?);
+                            builder = builder.set_redirect_sign_out_uris(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "socialProviderSettings" => {
                             builder = builder.set_social_provider_settings(

@@ -112,8 +112,9 @@ pub(crate) fn de_describe_broker_engine_types(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "brokerEngineTypes" => {
-                    builder = builder
-                        .set_broker_engine_types(crate::protocol_serde::shape___list_of_broker_engine_type::de___list_of_broker_engine_type(tokens)?);
+                    builder = builder.set_broker_engine_types(
+                        crate::protocol_serde::shape_list_of_broker_engine_type::de_list_of_broker_engine_type(tokens)?,
+                    );
                 }
                 "maxResults" => {
                     builder = builder.set_max_results(

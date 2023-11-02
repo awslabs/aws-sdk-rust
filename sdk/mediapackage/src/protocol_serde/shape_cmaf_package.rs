@@ -18,8 +18,7 @@ where
                             builder = builder.set_encryption(crate::protocol_serde::shape_cmaf_encryption::de_cmaf_encryption(tokens)?);
                         }
                         "hlsManifests" => {
-                            builder =
-                                builder.set_hls_manifests(crate::protocol_serde::shape___list_of_hls_manifest::de___list_of_hls_manifest(tokens)?);
+                            builder = builder.set_hls_manifests(crate::protocol_serde::shape_list_of_hls_manifest::de_list_of_hls_manifest(tokens)?);
                         }
                         "segmentDurationSeconds" => {
                             builder = builder.set_segment_duration_seconds(

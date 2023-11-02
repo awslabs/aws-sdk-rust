@@ -36,7 +36,7 @@ where
                             );
                         }
                         "matchIDs" => {
-                            builder = builder.set_match_i_ds(
+                            builder = builder.set_match_ids(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

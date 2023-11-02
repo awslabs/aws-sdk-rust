@@ -3,7 +3,7 @@ pub fn ser_describe_recovery_instances_request_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::DescribeRecoveryInstancesRequestFilters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.recovery_instance_i_ds {
+    if let Some(var_1) = &input.recovery_instance_ids {
         let mut array_2 = object.key("recoveryInstanceIDs").start_array();
         for item_3 in var_1 {
             {
@@ -12,7 +12,7 @@ pub fn ser_describe_recovery_instances_request_filters(
         }
         array_2.finish();
     }
-    if let Some(var_4) = &input.source_server_i_ds {
+    if let Some(var_4) = &input.source_server_ids {
         let mut array_5 = object.key("sourceServerIDs").start_array();
         for item_6 in var_4 {
             {

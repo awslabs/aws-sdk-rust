@@ -79,7 +79,7 @@ pub use crate::types::error::_incorrect_key_material_exception::IncorrectKeyMate
 
 pub use crate::types::error::_expired_import_token_exception::ExpiredImportTokenException;
 
-pub use crate::types::error::_custom_key_store_has_cm_ks_exception::CustomKeyStoreHasCmKsException;
+pub use crate::types::error::_custom_key_store_has_cmks_exception::CustomKeyStoreHasCmKsException;
 
 pub use crate::types::error::_xks_key_not_found_exception::XksKeyNotFoundException;
 
@@ -105,7 +105,7 @@ mod _cloud_hsm_cluster_not_found_exception;
 
 mod _cloud_hsm_cluster_not_related_exception;
 
-mod _custom_key_store_has_cm_ks_exception;
+mod _custom_key_store_has_cmks_exception;
 
 mod _custom_key_store_invalid_state_exception;
 

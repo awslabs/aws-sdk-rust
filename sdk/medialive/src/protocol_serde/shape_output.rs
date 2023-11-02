@@ -52,12 +52,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioDescriptionNames" => {
-                            builder =
-                                builder.set_audio_description_names(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_audio_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "captionDescriptionNames" => {
-                            builder =
-                                builder.set_caption_description_names(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_caption_description_names(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "outputName" => {
                             builder = builder.set_output_name(

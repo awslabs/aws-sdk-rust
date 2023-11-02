@@ -125,7 +125,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioDescriptions" => {
                             builder = builder.set_audio_descriptions(
-                                crate::protocol_serde::shape___list_of_audio_description::de___list_of_audio_description(tokens)?,
+                                crate::protocol_serde::shape_list_of_audio_description::de_list_of_audio_description(tokens)?,
                             );
                         }
                         "availBlanking" => {
@@ -140,7 +140,7 @@ where
                         }
                         "captionDescriptions" => {
                             builder = builder.set_caption_descriptions(
-                                crate::protocol_serde::shape___list_of_caption_description::de___list_of_caption_description(tokens)?,
+                                crate::protocol_serde::shape_list_of_caption_description::de_list_of_caption_description(tokens)?,
                             );
                         }
                         "featureActivations" => {
@@ -161,15 +161,14 @@ where
                                 .set_nielsen_configuration(crate::protocol_serde::shape_nielsen_configuration::de_nielsen_configuration(tokens)?);
                         }
                         "outputGroups" => {
-                            builder =
-                                builder.set_output_groups(crate::protocol_serde::shape___list_of_output_group::de___list_of_output_group(tokens)?);
+                            builder = builder.set_output_groups(crate::protocol_serde::shape_list_of_output_group::de_list_of_output_group(tokens)?);
                         }
                         "timecodeConfig" => {
                             builder = builder.set_timecode_config(crate::protocol_serde::shape_timecode_config::de_timecode_config(tokens)?);
                         }
                         "videoDescriptions" => {
                             builder = builder.set_video_descriptions(
-                                crate::protocol_serde::shape___list_of_video_description::de___list_of_video_description(tokens)?,
+                                crate::protocol_serde::shape_list_of_video_description::de_list_of_video_description(tokens)?,
                             );
                         }
                         "thumbnailConfiguration" => {

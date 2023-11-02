@@ -172,7 +172,7 @@ pub(crate) fn de_describe_classification_job(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "allowListIds" => {
-                    builder = builder.set_allow_list_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_allow_list_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "clientToken" => {
                     builder = builder.set_client_token(
@@ -188,7 +188,7 @@ pub(crate) fn de_describe_classification_job(
                     )?);
                 }
                 "customDataIdentifierIds" => {
-                    builder = builder.set_custom_data_identifier_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_custom_data_identifier_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "description" => {
                     builder = builder.set_description(
@@ -239,7 +239,7 @@ pub(crate) fn de_describe_classification_job(
                     )?);
                 }
                 "managedDataIdentifierIds" => {
-                    builder = builder.set_managed_data_identifier_ids(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                    builder = builder.set_managed_data_identifier_ids(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                 }
                 "managedDataIdentifierSelector" => {
                     builder = builder.set_managed_data_identifier_selector(

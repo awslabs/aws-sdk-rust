@@ -105,39 +105,6 @@ pub(crate) mod shape_update_configuration_input;
 
 pub(crate) mod shape_update_user_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_action_required;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_broker_engine_type;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_broker_instance;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_broker_instance_option;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_broker_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_configuration;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_configuration_revision;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_sanitization_warning;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_user_summary;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of__string;
-
 pub(crate) mod shape_configuration_id;
 
 pub(crate) mod shape_configuration_revision;
@@ -152,18 +119,37 @@ pub(crate) mod shape_ldap_server_metadata_input;
 
 pub(crate) mod shape_ldap_server_metadata_output;
 
+pub(crate) mod shape_list_of_action_required;
+
+pub(crate) mod shape_list_of_broker_engine_type;
+
+pub(crate) mod shape_list_of_broker_instance;
+
+pub(crate) mod shape_list_of_broker_instance_option;
+
+pub(crate) mod shape_list_of_broker_summary;
+
+pub(crate) mod shape_list_of_configuration;
+
+pub(crate) mod shape_list_of_configuration_revision;
+
+pub(crate) mod shape_list_of_sanitization_warning;
+
+pub(crate) mod shape_list_of_string;
+
+pub(crate) mod shape_list_of_user_summary;
+
 pub(crate) mod shape_logs;
 
 pub(crate) mod shape_logs_summary;
+
+pub(crate) mod shape_map_of_string;
 
 pub(crate) mod shape_user;
 
 pub(crate) mod shape_user_pending_changes;
 
 pub(crate) mod shape_weekly_start_time;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_configuration_id;
 
 pub(crate) mod shape_action_required;
 
@@ -179,20 +165,19 @@ pub(crate) mod shape_configuration;
 
 pub(crate) mod shape_data_replication_counterpart;
 
+pub(crate) mod shape_list_of_configuration_id;
+
 pub(crate) mod shape_pending_logs;
 
 pub(crate) mod shape_sanitization_warning;
 
 pub(crate) mod shape_user_summary;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_availability_zone;
+pub(crate) mod shape_list_of_availability_zone;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_deployment_mode;
+pub(crate) mod shape_list_of_deployment_mode;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_engine_version;
+pub(crate) mod shape_list_of_engine_version;
 
 pub(crate) mod shape_availability_zone;
 

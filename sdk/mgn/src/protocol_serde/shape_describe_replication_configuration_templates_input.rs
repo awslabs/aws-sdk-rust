@@ -12,7 +12,7 @@ pub fn ser_describe_replication_configuration_templates_input(
     if let Some(var_1) = &input.next_token {
         object.key("nextToken").string(var_1.as_str());
     }
-    if let Some(var_2) = &input.replication_configuration_template_i_ds {
+    if let Some(var_2) = &input.replication_configuration_template_ids {
         let mut array_3 = object.key("replicationConfigurationTemplateIDs").start_array();
         for item_4 in var_2 {
             {

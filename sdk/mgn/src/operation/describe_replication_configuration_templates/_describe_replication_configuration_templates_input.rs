@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationTemplatesInput {
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
-    pub replication_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub replication_configuration_template_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>Request to describe Replication Configuration template by max results.</p>
     pub max_results: i32,
     /// <p>Request to describe Replication Configuration template by next token.</p>
@@ -13,9 +13,9 @@ pub struct DescribeReplicationConfigurationTemplatesInput {
 impl DescribeReplicationConfigurationTemplatesInput {
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_configuration_template_i_ds.is_none()`.
-    pub fn replication_configuration_template_i_ds(&self) -> &[::std::string::String] {
-        self.replication_configuration_template_i_ds.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.replication_configuration_template_ids.is_none()`.
+    pub fn replication_configuration_template_ids(&self) -> &[::std::string::String] {
+        self.replication_configuration_template_ids.as_deref().unwrap_or_default()
     }
     /// <p>Request to describe Replication Configuration template by max results.</p>
     pub fn max_results(&self) -> i32 {
@@ -38,30 +38,30 @@ impl DescribeReplicationConfigurationTemplatesInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct DescribeReplicationConfigurationTemplatesInputBuilder {
-    pub(crate) replication_configuration_template_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) replication_configuration_template_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) max_results: ::std::option::Option<i32>,
     pub(crate) next_token: ::std::option::Option<::std::string::String>,
 }
 impl DescribeReplicationConfigurationTemplatesInputBuilder {
-    /// Appends an item to `replication_configuration_template_i_ds`.
+    /// Appends an item to `replication_configuration_template_ids`.
     ///
-    /// To override the contents of this collection use [`set_replication_configuration_template_i_ds`](Self::set_replication_configuration_template_i_ds).
+    /// To override the contents of this collection use [`set_replication_configuration_template_ids`](Self::set_replication_configuration_template_ids).
     ///
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
-    pub fn replication_configuration_template_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.replication_configuration_template_i_ds.unwrap_or_default();
+    pub fn replication_configuration_template_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.replication_configuration_template_ids.unwrap_or_default();
         v.push(input.into());
-        self.replication_configuration_template_i_ds = ::std::option::Option::Some(v);
+        self.replication_configuration_template_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
-    pub fn set_replication_configuration_template_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.replication_configuration_template_i_ds = input;
+    pub fn set_replication_configuration_template_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.replication_configuration_template_ids = input;
         self
     }
     /// <p>Request to describe Replication Configuration template by template IDs.</p>
-    pub fn get_replication_configuration_template_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.replication_configuration_template_i_ds
+    pub fn get_replication_configuration_template_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.replication_configuration_template_ids
     }
     /// <p>Request to describe Replication Configuration template by max results.</p>
     pub fn max_results(mut self, input: i32) -> Self {
@@ -100,7 +100,7 @@ impl DescribeReplicationConfigurationTemplatesInputBuilder {
     > {
         ::std::result::Result::Ok(
             crate::operation::describe_replication_configuration_templates::DescribeReplicationConfigurationTemplatesInput {
-                replication_configuration_template_i_ds: self.replication_configuration_template_i_ds,
+                replication_configuration_template_ids: self.replication_configuration_template_ids,
                 max_results: self.max_results.unwrap_or_default(),
                 next_token: self.next_token,
             },

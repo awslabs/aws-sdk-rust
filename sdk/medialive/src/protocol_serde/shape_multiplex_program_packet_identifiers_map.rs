@@ -15,10 +15,10 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioPids" => {
-                            builder = builder.set_audio_pids(crate::protocol_serde::shape___list_of__integer::de___list_of__integer(tokens)?);
+                            builder = builder.set_audio_pids(crate::protocol_serde::shape_list_of_integer::de_list_of_integer(tokens)?);
                         }
                         "dvbSubPids" => {
-                            builder = builder.set_dvb_sub_pids(crate::protocol_serde::shape___list_of__integer::de___list_of__integer(tokens)?);
+                            builder = builder.set_dvb_sub_pids(crate::protocol_serde::shape_list_of_integer::de_list_of_integer(tokens)?);
                         }
                         "dvbTeletextPid" => {
                             builder = builder.set_dvb_teletext_pid(
@@ -42,7 +42,7 @@ where
                             );
                         }
                         "klvDataPids" => {
-                            builder = builder.set_klv_data_pids(crate::protocol_serde::shape___list_of__integer::de___list_of__integer(tokens)?);
+                            builder = builder.set_klv_data_pids(crate::protocol_serde::shape_list_of_integer::de_list_of_integer(tokens)?);
                         }
                         "pcrPid" => {
                             builder = builder.set_pcr_pid(
@@ -66,7 +66,7 @@ where
                             );
                         }
                         "scte27Pids" => {
-                            builder = builder.set_scte27_pids(crate::protocol_serde::shape___list_of__integer::de___list_of__integer(tokens)?);
+                            builder = builder.set_scte27_pids(crate::protocol_serde::shape_list_of_integer::de_list_of_integer(tokens)?);
                         }
                         "scte35Pid" => {
                             builder = builder.set_scte35_pid(

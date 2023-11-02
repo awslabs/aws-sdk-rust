@@ -31,8 +31,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "audioSelectorNames" => {
-                            builder = builder
-                                .set_audio_selector_names(crate::protocol_serde::shape___list_of__string_min1::de___list_of__string_min1(tokens)?);
+                            builder =
+                                builder.set_audio_selector_names(crate::protocol_serde::shape_list_of_string_min1::de_list_of_string_min1(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

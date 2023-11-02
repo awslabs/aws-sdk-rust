@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "DynamicVariables" => {
-                            builder = builder.set_dynamic_variables(crate::protocol_serde::shape___map_of__string::de___map_of__string(tokens)?);
+                            builder = builder.set_dynamic_variables(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "EndTime" => {
                             builder = builder.set_end_time(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

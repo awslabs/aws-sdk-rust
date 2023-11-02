@@ -14,8 +14,8 @@ impl super::Client {
     ///   - [`authorize_time(Option<DateTime>)`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput::authorize_time): <p>The time (UTC) when the authorization was created.</p>
     ///   - [`cluster_status(Option<String>)`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput::cluster_status): <p>The status of the cluster.</p>
     ///   - [`status(Option<AuthorizationStatus>)`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput::status): <p>The status of the authorization action.</p>
-    ///   - [`allowed_all_vp_cs(Option<bool>)`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput::allowed_all_vp_cs): <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
-    ///   - [`allowed_vp_cs(Option<Vec<String>>)`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput::allowed_vp_cs): <p>The VPCs allowed access to the cluster.</p>
+    ///   - [`allowed_all_vpcs(Option<bool>)`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput::allowed_all_vpcs): <p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>
+    ///   - [`allowed_vpcs(Option<Vec<String>>)`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput::allowed_vpcs): <p>The VPCs allowed access to the cluster.</p>
     ///   - [`endpoint_count(Option<i32>)`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessOutput::endpoint_count): <p>The number of Redshift-managed VPC endpoints created for the authorization.</p>
     /// - On failure, responds with [`SdkError<RevokeEndpointAccessError>`](crate::operation::revoke_endpoint_access::RevokeEndpointAccessError)
     pub fn revoke_endpoint_access(&self) -> crate::operation::revoke_endpoint_access::builders::RevokeEndpointAccessFluentBuilder {

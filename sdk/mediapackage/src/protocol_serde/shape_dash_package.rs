@@ -61,7 +61,7 @@ where
                         }
                         "periodTriggers" => {
                             builder = builder.set_period_triggers(
-                                crate::protocol_serde::shape___list_of__period_triggers_element::de___list_of__period_triggers_element(tokens)?,
+                                crate::protocol_serde::shape_list_of_period_triggers_element::de_list_of_period_triggers_element(tokens)?,
                             );
                         }
                         "profile" => {

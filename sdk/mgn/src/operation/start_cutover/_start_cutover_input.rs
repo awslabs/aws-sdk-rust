@@ -4,7 +4,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct StartCutoverInput {
     /// <p>Start Cutover by Source Server IDs.</p>
-    pub source_server_i_ds: ::std::vec::Vec<::std::string::String>,
+    pub source_server_ids: ::std::vec::Vec<::std::string::String>,
     /// <p>Start Cutover by Tags.</p>
     pub tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     /// <p>Start Cutover by Account IDs</p>
@@ -12,9 +12,9 @@ pub struct StartCutoverInput {
 }
 impl StartCutoverInput {
     /// <p>Start Cutover by Source Server IDs.</p>
-    pub fn source_server_i_ds(&self) -> &[::std::string::String] {
+    pub fn source_server_ids(&self) -> &[::std::string::String] {
         use std::ops::Deref;
-        self.source_server_i_ds.deref()
+        self.source_server_ids.deref()
     }
     /// <p>Start Cutover by Tags.</p>
     pub fn tags(&self) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, ::std::string::String>> {
@@ -28,7 +28,7 @@ impl StartCutoverInput {
 impl ::std::fmt::Debug for StartCutoverInput {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartCutoverInput");
-        formatter.field("source_server_i_ds", &self.source_server_i_ds);
+        formatter.field("source_server_ids", &self.source_server_ids);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("account_id", &self.account_id);
         formatter.finish()
@@ -45,30 +45,30 @@ impl StartCutoverInput {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct StartCutoverInputBuilder {
-    pub(crate) source_server_i_ds: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) source_server_ids: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) tags: ::std::option::Option<::std::collections::HashMap<::std::string::String, ::std::string::String>>,
     pub(crate) account_id: ::std::option::Option<::std::string::String>,
 }
 impl StartCutoverInputBuilder {
-    /// Appends an item to `source_server_i_ds`.
+    /// Appends an item to `source_server_ids`.
     ///
-    /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+    /// To override the contents of this collection use [`set_source_server_ids`](Self::set_source_server_ids).
     ///
     /// <p>Start Cutover by Source Server IDs.</p>
-    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.source_server_i_ds.unwrap_or_default();
+    pub fn source_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.source_server_ids.unwrap_or_default();
         v.push(input.into());
-        self.source_server_i_ds = ::std::option::Option::Some(v);
+        self.source_server_ids = ::std::option::Option::Some(v);
         self
     }
     /// <p>Start Cutover by Source Server IDs.</p>
-    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.source_server_i_ds = input;
+    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.source_server_ids = input;
         self
     }
     /// <p>Start Cutover by Source Server IDs.</p>
-    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.source_server_i_ds
+    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.source_server_ids
     }
     /// Adds a key-value pair to `tags`.
     ///
@@ -106,13 +106,13 @@ impl StartCutoverInputBuilder {
     }
     /// Consumes the builder and constructs a [`StartCutoverInput`](crate::operation::start_cutover::StartCutoverInput).
     /// This method will fail if any of the following fields are not set:
-    /// - [`source_server_i_ds`](crate::operation::start_cutover::builders::StartCutoverInputBuilder::source_server_i_ds)
+    /// - [`source_server_ids`](crate::operation::start_cutover::builders::StartCutoverInputBuilder::source_server_ids)
     pub fn build(self) -> ::std::result::Result<crate::operation::start_cutover::StartCutoverInput, ::aws_smithy_http::operation::error::BuildError> {
         ::std::result::Result::Ok(crate::operation::start_cutover::StartCutoverInput {
-            source_server_i_ds: self.source_server_i_ds.ok_or_else(|| {
+            source_server_ids: self.source_server_ids.ok_or_else(|| {
                 ::aws_smithy_http::operation::error::BuildError::missing_field(
-                    "source_server_i_ds",
-                    "source_server_i_ds was not specified but it is required when building StartCutoverInput",
+                    "source_server_ids",
+                    "source_server_ids was not specified but it is required when building StartCutoverInput",
                 )
             })?,
             tags: self.tags,
@@ -123,7 +123,7 @@ impl StartCutoverInputBuilder {
 impl ::std::fmt::Debug for StartCutoverInputBuilder {
     fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("StartCutoverInputBuilder");
-        formatter.field("source_server_i_ds", &self.source_server_i_ds);
+        formatter.field("source_server_ids", &self.source_server_ids);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("account_id", &self.account_id);
         formatter.finish()

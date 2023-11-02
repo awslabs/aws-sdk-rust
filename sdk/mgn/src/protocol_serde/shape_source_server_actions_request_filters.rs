@@ -3,7 +3,7 @@ pub fn ser_source_server_actions_request_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::SourceServerActionsRequestFilters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.action_i_ds {
+    if let Some(var_1) = &input.action_ids {
         let mut array_2 = object.key("actionIDs").start_array();
         for item_3 in var_1 {
             {

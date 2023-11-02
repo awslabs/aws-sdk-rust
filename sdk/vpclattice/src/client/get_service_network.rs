@@ -11,7 +11,7 @@ impl super::Client {
     ///   - [`last_updated_at(Option<DateTime>)`](crate::operation::get_service_network::GetServiceNetworkOutput::last_updated_at): <p>The date and time of the last update, specified in ISO-8601 format.</p>
     ///   - [`arn(Option<String>)`](crate::operation::get_service_network::GetServiceNetworkOutput::arn): <p>The Amazon Resource Name (ARN) of the service network.</p>
     ///   - [`auth_type(Option<AuthType>)`](crate::operation::get_service_network::GetServiceNetworkOutput::auth_type): <p>The type of IAM policy.</p>
-    ///   - [`number_of_associated_vp_cs(Option<i64>)`](crate::operation::get_service_network::GetServiceNetworkOutput::number_of_associated_vp_cs): <p>The number of VPCs associated with the service network.</p>
+    ///   - [`number_of_associated_vpcs(Option<i64>)`](crate::operation::get_service_network::GetServiceNetworkOutput::number_of_associated_vpcs): <p>The number of VPCs associated with the service network.</p>
     ///   - [`number_of_associated_services(Option<i64>)`](crate::operation::get_service_network::GetServiceNetworkOutput::number_of_associated_services): <p>The number of services associated with the service network.</p>
     /// - On failure, responds with [`SdkError<GetServiceNetworkError>`](crate::operation::get_service_network::GetServiceNetworkError)
     pub fn get_service_network(&self) -> crate::operation::get_service_network::builders::GetServiceNetworkFluentBuilder {

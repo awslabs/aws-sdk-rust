@@ -4,7 +4,7 @@
  */
 
 /// Smithy retry classifiers.
-pub mod classifier;
+pub mod classifiers;
 
 /// Smithy retry strategies.
 pub mod strategy;

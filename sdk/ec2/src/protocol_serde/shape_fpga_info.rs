@@ -29,7 +29,7 @@ pub fn de_fpga_info(
                         ?
                     )
                 ;
-                builder = builder.set_total_fpga_memory_in_mi_b(var_2);
+                builder = builder.set_total_fpga_memory_in_mib(var_2);
             }
             ,
             _ => {}

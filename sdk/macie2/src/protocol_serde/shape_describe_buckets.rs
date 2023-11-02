@@ -167,9 +167,7 @@ pub(crate) fn de_describe_buckets(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "buckets" => {
-                    builder = builder.set_buckets(crate::protocol_serde::shape___list_of_bucket_metadata::de___list_of_bucket_metadata(
-                        tokens,
-                    )?);
+                    builder = builder.set_buckets(crate::protocol_serde::shape_list_of_bucket_metadata::de_list_of_bucket_metadata(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

@@ -56,7 +56,7 @@ pub fn de_modify_replication_subnet_group_http_error(
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::ReplicationSubnetGroupDoesNotCoverEnoughAZsBuilder::default();
-                    output = crate::protocol_serde::shape_replication_subnet_group_does_not_cover_enough_a_zs::de_replication_subnet_group_does_not_cover_enough_a_zs_json_err(_response_body, output).map_err(crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError::unhandled)?;
+                    output = crate::protocol_serde::shape_replication_subnet_group_does_not_cover_enough_azs::de_replication_subnet_group_does_not_cover_enough_azs_json_err(_response_body, output).map_err(crate::operation::modify_replication_subnet_group::ModifyReplicationSubnetGroupError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 };

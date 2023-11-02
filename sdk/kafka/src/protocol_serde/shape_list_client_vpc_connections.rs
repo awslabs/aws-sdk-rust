@@ -144,7 +144,7 @@ pub(crate) fn de_list_client_vpc_connections(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "clientVpcConnections" => {
                     builder = builder.set_client_vpc_connections(
-                        crate::protocol_serde::shape___list_of_client_vpc_connection::de___list_of_client_vpc_connection(tokens)?,
+                        crate::protocol_serde::shape_list_of_client_vpc_connection::de_list_of_client_vpc_connection(tokens)?,
                     );
                 }
                 "nextToken" => {

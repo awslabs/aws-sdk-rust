@@ -109,23 +109,8 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListLis
         &self,
         _: &::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder,
     ) -> ::std::borrow::Cow<'_, ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder> {
-        // Retry classifiers are operation-specific because they need to downcast operation-specific error types.
-        let retry_classifiers = ::aws_smithy_runtime_api::client::retries::RetryClassifiers::new()
-            .with_classifier(::aws_smithy_runtime::client::retries::classifier::SmithyErrorClassifier::<
-                crate::operation::list_listeners::ListListenersError,
-            >::new())
-            .with_classifier(::aws_runtime::retries::classifier::AmzRetryAfterHeaderClassifier)
-            .with_classifier(::aws_smithy_runtime::client::retries::classifier::ModeledAsRetryableClassifier::<
-                crate::operation::list_listeners::ListListenersError,
-            >::new())
-            .with_classifier(::aws_runtime::retries::classifier::AwsErrorCodeClassifier::<
-                crate::operation::list_listeners::ListListenersError,
-            >::new())
-            .with_classifier(::aws_smithy_runtime::client::retries::classifier::HttpStatusCodeClassifier::default());
-
         ::std::borrow::Cow::Owned(
             ::aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder::new("ListListeners")
-                .with_retry_classifiers(::std::option::Option::Some(retry_classifiers))
                 .with_auth_scheme_option_resolver(::std::option::Option::Some(
                     ::aws_smithy_runtime_api::client::auth::SharedAuthSchemeOptionResolver::new(
                         ::aws_smithy_runtime_api::client::auth::static_resolver::StaticAuthSchemeOptionResolver::new(vec![
@@ -133,7 +118,16 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ListLis
                         ]),
                     ),
                 ))
-                .with_interceptor(ListListenersEndpointParamsInterceptor),
+                .with_interceptor(ListListenersEndpointParamsInterceptor)
+                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::TransientErrorClassifier::<
+                    crate::operation::list_listeners::ListListenersError,
+                >::new())
+                .with_retry_classifier(::aws_smithy_runtime::client::retries::classifiers::ModeledAsRetryableClassifier::<
+                    crate::operation::list_listeners::ListListenersError,
+                >::new())
+                .with_retry_classifier(::aws_runtime::retries::classifiers::AwsErrorCodeClassifier::<
+                    crate::operation::list_listeners::ListListenersError,
+                >::new()),
         )
     }
 }

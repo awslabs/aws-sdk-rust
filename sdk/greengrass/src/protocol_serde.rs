@@ -287,21 +287,6 @@ pub(crate) mod shape_update_subscription_definition_input;
 
 pub(crate) mod shape_update_thing_runtime_configuration_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_connectivity_info;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_definition_information;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_group_certificate_authority_properties;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_group_information;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_version_information;
-
 pub(crate) mod shape_bulk_deployment_metrics;
 
 pub(crate) mod shape_bulk_deployment_results;
@@ -334,6 +319,16 @@ pub(crate) mod shape_function_definition_version;
 
 pub(crate) mod shape_group_version;
 
+pub(crate) mod shape_list_of_connectivity_info;
+
+pub(crate) mod shape_list_of_definition_information;
+
+pub(crate) mod shape_list_of_group_certificate_authority_properties;
+
+pub(crate) mod shape_list_of_group_information;
+
+pub(crate) mod shape_list_of_version_information;
+
 pub(crate) mod shape_logger;
 
 pub(crate) mod shape_logger_definition_version;
@@ -352,27 +347,6 @@ pub(crate) mod shape_tags;
 
 pub(crate) mod shape_telemetry_configuration_update;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_connector;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_core;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_device;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_function;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_logger;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_resource;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_subscription;
-
 pub(crate) mod shape_bulk_deployment;
 
 pub(crate) mod shape_bulk_deployment_result;
@@ -390,6 +364,20 @@ pub(crate) mod shape_function_default_execution_config;
 pub(crate) mod shape_group_certificate_authority_properties;
 
 pub(crate) mod shape_group_information;
+
+pub(crate) mod shape_list_of_connector;
+
+pub(crate) mod shape_list_of_core;
+
+pub(crate) mod shape_list_of_device;
+
+pub(crate) mod shape_list_of_function;
+
+pub(crate) mod shape_list_of_logger;
+
+pub(crate) mod shape_list_of_resource;
+
+pub(crate) mod shape_list_of_subscription;
 
 pub(crate) mod shape_resource_data_container;
 
@@ -411,19 +399,16 @@ pub(crate) mod shape_sage_maker_machine_learning_model_resource_data;
 
 pub(crate) mod shape_secrets_manager_secret_resource_data;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___map_of__string;
-
 pub(crate) mod shape_function_execution_config;
 
 pub(crate) mod shape_group_owner_setting;
+
+pub(crate) mod shape_map_of_string;
 
 pub(crate) mod shape_resource_access_policy;
 
 pub(crate) mod shape_resource_download_owner_setting;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
+pub(crate) mod shape_list_of_resource_access_policy;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_resource_access_policy;
+pub(crate) mod shape_list_of_string;

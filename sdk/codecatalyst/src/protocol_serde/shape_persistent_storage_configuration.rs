@@ -6,7 +6,7 @@ pub fn ser_persistent_storage_configuration(
     {
         object.key("sizeInGiB").number(
             #[allow(clippy::useless_conversion)]
-            ::aws_smithy_types::Number::NegInt((input.size_in_gi_b).into()),
+            ::aws_smithy_types::Number::NegInt((input.size_in_gib).into()),
         );
     }
     Ok(())

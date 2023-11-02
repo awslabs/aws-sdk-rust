@@ -18,7 +18,7 @@ where
                             builder = builder.set_current(crate::protocol_serde::shape_configuration_id::de_configuration_id(tokens)?);
                         }
                         "history" => {
-                            builder = builder.set_history(crate::protocol_serde::shape___list_of_configuration_id::de___list_of_configuration_id(
+                            builder = builder.set_history(crate::protocol_serde::shape_list_of_configuration_id::de_list_of_configuration_id(
                                 tokens,
                             )?);
                         }

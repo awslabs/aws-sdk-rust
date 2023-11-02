@@ -107,8 +107,7 @@ pub(crate) fn de_get_integration_responses(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "items" => {
-                    builder =
-                        builder.set_items(crate::protocol_serde::shape___list_of_integration_response::de___list_of_integration_response(tokens)?);
+                    builder = builder.set_items(crate::protocol_serde::shape_list_of_integration_response::de_list_of_integration_response(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

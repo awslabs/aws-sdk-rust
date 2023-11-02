@@ -107,21 +107,21 @@ impl TerminateTargetInstancesFluentBuilder {
     }
     /// Appends an item to `sourceServerIDs`.
     ///
-    /// To override the contents of this collection use [`set_source_server_i_ds`](Self::set_source_server_i_ds).
+    /// To override the contents of this collection use [`set_source_server_ids`](Self::set_source_server_ids).
     ///
     /// <p>Terminate Target instance by Source Server IDs.</p>
-    pub fn source_server_i_ds(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.source_server_i_ds(input.into());
+    pub fn source_server_ids(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.source_server_ids(input.into());
         self
     }
     /// <p>Terminate Target instance by Source Server IDs.</p>
-    pub fn set_source_server_i_ds(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_source_server_i_ds(input);
+    pub fn set_source_server_ids(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_source_server_ids(input);
         self
     }
     /// <p>Terminate Target instance by Source Server IDs.</p>
-    pub fn get_source_server_i_ds(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_source_server_i_ds()
+    pub fn get_source_server_ids(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_source_server_ids()
     }
     /// Adds a key-value pair to `tags`.
     ///

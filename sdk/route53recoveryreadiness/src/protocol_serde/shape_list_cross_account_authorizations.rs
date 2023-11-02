@@ -121,7 +121,7 @@ pub(crate) fn de_list_cross_account_authorizations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "crossAccountAuthorizations" => {
                     builder = builder.set_cross_account_authorizations(
-                        crate::protocol_serde::shape___list_of_cross_account_authorization::de___list_of_cross_account_authorization(tokens)?,
+                        crate::protocol_serde::shape_list_of_cross_account_authorization::de_list_of_cross_account_authorization(tokens)?,
                     );
                 }
                 "nextToken" => {

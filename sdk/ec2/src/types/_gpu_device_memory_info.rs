@@ -5,12 +5,12 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GpuDeviceMemoryInfo {
     /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
-    pub size_in_mi_b: ::std::option::Option<i32>,
+    pub size_in_mib: ::std::option::Option<i32>,
 }
 impl GpuDeviceMemoryInfo {
     /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
-    pub fn size_in_mi_b(&self) -> ::std::option::Option<i32> {
-        self.size_in_mi_b
+    pub fn size_in_mib(&self) -> ::std::option::Option<i32> {
+        self.size_in_mib
     }
 }
 impl GpuDeviceMemoryInfo {
@@ -24,27 +24,27 @@ impl GpuDeviceMemoryInfo {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct GpuDeviceMemoryInfoBuilder {
-    pub(crate) size_in_mi_b: ::std::option::Option<i32>,
+    pub(crate) size_in_mib: ::std::option::Option<i32>,
 }
 impl GpuDeviceMemoryInfoBuilder {
     /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
-    pub fn size_in_mi_b(mut self, input: i32) -> Self {
-        self.size_in_mi_b = ::std::option::Option::Some(input);
+    pub fn size_in_mib(mut self, input: i32) -> Self {
+        self.size_in_mib = ::std::option::Option::Some(input);
         self
     }
     /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
-    pub fn set_size_in_mi_b(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.size_in_mi_b = input;
+    pub fn set_size_in_mib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.size_in_mib = input;
         self
     }
     /// <p>The size of the memory available to the GPU accelerator, in MiB.</p>
-    pub fn get_size_in_mi_b(&self) -> &::std::option::Option<i32> {
-        &self.size_in_mi_b
+    pub fn get_size_in_mib(&self) -> &::std::option::Option<i32> {
+        &self.size_in_mib
     }
     /// Consumes the builder and constructs a [`GpuDeviceMemoryInfo`](crate::types::GpuDeviceMemoryInfo).
     pub fn build(self) -> crate::types::GpuDeviceMemoryInfo {
         crate::types::GpuDeviceMemoryInfo {
-            size_in_mi_b: self.size_in_mi_b,
+            size_in_mib: self.size_in_mib,
         }
     }
 }

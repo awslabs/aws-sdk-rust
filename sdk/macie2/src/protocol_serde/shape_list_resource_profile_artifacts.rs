@@ -136,9 +136,8 @@ pub(crate) fn de_list_resource_profile_artifacts(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "artifacts" => {
-                    builder = builder.set_artifacts(
-                        crate::protocol_serde::shape___list_of_resource_profile_artifact::de___list_of_resource_profile_artifact(tokens)?,
-                    );
+                    builder = builder
+                        .set_artifacts(crate::protocol_serde::shape_list_of_resource_profile_artifact::de_list_of_resource_profile_artifact(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

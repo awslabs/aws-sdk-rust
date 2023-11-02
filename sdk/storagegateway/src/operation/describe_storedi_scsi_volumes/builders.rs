@@ -107,20 +107,20 @@ impl DescribeStorediSCSIVolumesFluentBuilder {
     }
     /// Appends an item to `VolumeARNs`.
     ///
-    /// To override the contents of this collection use [`set_volume_ar_ns`](Self::set_volume_ar_ns).
+    /// To override the contents of this collection use [`set_volume_arns`](Self::set_volume_arns).
     ///
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a stored volume. All of the specified stored volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
-    pub fn volume_ar_ns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.inner = self.inner.volume_ar_ns(input.into());
+    pub fn volume_arns(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.inner = self.inner.volume_arns(input.into());
         self
     }
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a stored volume. All of the specified stored volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
-    pub fn set_volume_ar_ns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.inner = self.inner.set_volume_ar_ns(input);
+    pub fn set_volume_arns(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.inner = self.inner.set_volume_arns(input);
         self
     }
     /// <p>An array of strings where each string represents the Amazon Resource Name (ARN) of a stored volume. All of the specified stored volumes must be from the same gateway. Use <code>ListVolumes</code> to get volume ARNs for a gateway.</p>
-    pub fn get_volume_ar_ns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        self.inner.get_volume_ar_ns()
+    pub fn get_volume_arns(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        self.inner.get_volume_arns()
     }
 }

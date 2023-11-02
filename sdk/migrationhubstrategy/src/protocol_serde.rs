@@ -131,7 +131,7 @@ pub(crate) mod shape_assessment_targets;
 
 pub(crate) mod shape_associated_applications;
 
-pub(crate) mod shape_associated_server_i_ds;
+pub(crate) mod shape_associated_server_ids;
 
 pub(crate) mod shape_collectors;
 

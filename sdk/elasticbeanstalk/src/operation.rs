@@ -116,7 +116,7 @@ pub mod restart_app_server;
 pub mod retrieve_environment_info;
 
 /// Types for the `SwapEnvironmentCNAMEs` operation.
-pub mod swap_environment_cnam_es;
+pub mod swap_environment_cnames;
 
 /// Types for the `TerminateEnvironment` operation.
 pub mod terminate_environment;

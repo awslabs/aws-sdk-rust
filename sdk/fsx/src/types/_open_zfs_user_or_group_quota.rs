@@ -9,7 +9,7 @@ pub struct OpenZfsUserOrGroupQuota {
     /// <p>The ID of the user or group.</p>
     pub id: ::std::option::Option<i32>,
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
-    pub storage_capacity_quota_gi_b: ::std::option::Option<i32>,
+    pub storage_capacity_quota_gib: ::std::option::Option<i32>,
 }
 impl OpenZfsUserOrGroupQuota {
     /// <p>A value that specifies whether the quota applies to a user or group.</p>
@@ -21,8 +21,8 @@ impl OpenZfsUserOrGroupQuota {
         self.id
     }
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
-    pub fn storage_capacity_quota_gi_b(&self) -> ::std::option::Option<i32> {
-        self.storage_capacity_quota_gi_b
+    pub fn storage_capacity_quota_gib(&self) -> ::std::option::Option<i32> {
+        self.storage_capacity_quota_gib
     }
 }
 impl OpenZfsUserOrGroupQuota {
@@ -38,7 +38,7 @@ impl OpenZfsUserOrGroupQuota {
 pub struct OpenZfsUserOrGroupQuotaBuilder {
     pub(crate) r#type: ::std::option::Option<crate::types::OpenZfsQuotaType>,
     pub(crate) id: ::std::option::Option<i32>,
-    pub(crate) storage_capacity_quota_gi_b: ::std::option::Option<i32>,
+    pub(crate) storage_capacity_quota_gib: ::std::option::Option<i32>,
 }
 impl OpenZfsUserOrGroupQuotaBuilder {
     /// <p>A value that specifies whether the quota applies to a user or group.</p>
@@ -73,25 +73,25 @@ impl OpenZfsUserOrGroupQuotaBuilder {
     }
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
     /// This field is required.
-    pub fn storage_capacity_quota_gi_b(mut self, input: i32) -> Self {
-        self.storage_capacity_quota_gi_b = ::std::option::Option::Some(input);
+    pub fn storage_capacity_quota_gib(mut self, input: i32) -> Self {
+        self.storage_capacity_quota_gib = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
-    pub fn set_storage_capacity_quota_gi_b(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.storage_capacity_quota_gi_b = input;
+    pub fn set_storage_capacity_quota_gib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.storage_capacity_quota_gib = input;
         self
     }
     /// <p>The amount of storage that the user or group can use in gibibytes (GiB).</p>
-    pub fn get_storage_capacity_quota_gi_b(&self) -> &::std::option::Option<i32> {
-        &self.storage_capacity_quota_gi_b
+    pub fn get_storage_capacity_quota_gib(&self) -> &::std::option::Option<i32> {
+        &self.storage_capacity_quota_gib
     }
     /// Consumes the builder and constructs a [`OpenZfsUserOrGroupQuota`](crate::types::OpenZfsUserOrGroupQuota).
     pub fn build(self) -> crate::types::OpenZfsUserOrGroupQuota {
         crate::types::OpenZfsUserOrGroupQuota {
             r#type: self.r#type,
             id: self.id,
-            storage_capacity_quota_gi_b: self.storage_capacity_quota_gi_b,
+            storage_capacity_quota_gib: self.storage_capacity_quota_gib,
         }
     }
 }

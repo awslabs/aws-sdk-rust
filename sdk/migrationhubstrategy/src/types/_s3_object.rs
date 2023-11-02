@@ -7,7 +7,7 @@ pub struct S3Object {
     /// <p> The S3 bucket name. </p>
     pub s3_bucket: ::std::option::Option<::std::string::String>,
     /// <p> The Amazon S3 key name. </p>
-    pub s3key: ::std::option::Option<::std::string::String>,
+    pub s3_key: ::std::option::Option<::std::string::String>,
 }
 impl S3Object {
     /// <p> The S3 bucket name. </p>
@@ -15,8 +15,8 @@ impl S3Object {
         self.s3_bucket.as_deref()
     }
     /// <p> The Amazon S3 key name. </p>
-    pub fn s3key(&self) -> ::std::option::Option<&str> {
-        self.s3key.as_deref()
+    pub fn s3_key(&self) -> ::std::option::Option<&str> {
+        self.s3_key.as_deref()
     }
 }
 impl S3Object {
@@ -31,7 +31,7 @@ impl S3Object {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct S3ObjectBuilder {
     pub(crate) s3_bucket: ::std::option::Option<::std::string::String>,
-    pub(crate) s3key: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_key: ::std::option::Option<::std::string::String>,
 }
 impl S3ObjectBuilder {
     /// <p> The S3 bucket name. </p>
@@ -49,24 +49,24 @@ impl S3ObjectBuilder {
         &self.s3_bucket
     }
     /// <p> The Amazon S3 key name. </p>
-    pub fn s3key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        self.s3key = ::std::option::Option::Some(input.into());
+    pub fn s3_key(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_key = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The Amazon S3 key name. </p>
-    pub fn set_s3key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
-        self.s3key = input;
+    pub fn set_s3_key(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
+        self.s3_key = input;
         self
     }
     /// <p> The Amazon S3 key name. </p>
-    pub fn get_s3key(&self) -> &::std::option::Option<::std::string::String> {
-        &self.s3key
+    pub fn get_s3_key(&self) -> &::std::option::Option<::std::string::String> {
+        &self.s3_key
     }
     /// Consumes the builder and constructs a [`S3Object`](crate::types::S3Object).
     pub fn build(self) -> crate::types::S3Object {
         crate::types::S3Object {
             s3_bucket: self.s3_bucket,
-            s3key: self.s3key,
+            s3_key: self.s3_key,
         }
     }
 }

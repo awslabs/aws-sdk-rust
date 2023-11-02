@@ -167,9 +167,9 @@ pub(crate) fn de_search_resources(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "matchingResources" => {
-                    builder = builder.set_matching_resources(
-                        crate::protocol_serde::shape___list_of_matching_resource::de___list_of_matching_resource(tokens)?,
-                    );
+                    builder = builder.set_matching_resources(crate::protocol_serde::shape_list_of_matching_resource::de_list_of_matching_resource(
+                        tokens,
+                    )?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

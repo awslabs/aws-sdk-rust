@@ -140,7 +140,7 @@ pub(crate) fn de_list_jobs(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "jobs" => {
-                    builder = builder.set_jobs(crate::protocol_serde::shape___list_of_job::de___list_of_job(tokens)?);
+                    builder = builder.set_jobs(crate::protocol_serde::shape_list_of_job::de_list_of_job(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

@@ -51,9 +51,7 @@ where
                         }
                         "inputClippings" => {
                             builder = builder.set_input_clippings(
-                                crate::protocol_serde::shape___list_of_video_overlay_input_clipping::de___list_of_video_overlay_input_clipping(
-                                    tokens,
-                                )?,
+                                crate::protocol_serde::shape_list_of_video_overlay_input_clipping::de_list_of_video_overlay_input_clipping(tokens)?,
                             );
                         }
                         "timecodeSource" => {

@@ -18,8 +18,7 @@ where
                             builder = builder.set_encryption(crate::protocol_serde::shape_hls_encryption::de_hls_encryption(tokens)?);
                         }
                         "hlsManifests" => {
-                            builder =
-                                builder.set_hls_manifests(crate::protocol_serde::shape___list_of_hls_manifest::de___list_of_hls_manifest(tokens)?);
+                            builder = builder.set_hls_manifests(crate::protocol_serde::shape_list_of_hls_manifest::de_list_of_hls_manifest(tokens)?);
                         }
                         "includeDvbSubtitles" => {
                             builder = builder.set_include_dvb_subtitles(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

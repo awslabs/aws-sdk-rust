@@ -656,11 +656,11 @@ impl From<crate::operation::delete_user::DeleteUserError> for Error {
         }
     }
 }
-impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_ac_ls::DescribeACLsError, R>> for Error
+impl<R> From<::aws_smithy_http::result::SdkError<crate::operation::describe_acls::DescribeACLsError, R>> for Error
 where
     R: Send + Sync + std::fmt::Debug + 'static,
 {
-    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_ac_ls::DescribeACLsError, R>) -> Self {
+    fn from(err: ::aws_smithy_http::result::SdkError<crate::operation::describe_acls::DescribeACLsError, R>) -> Self {
         match err {
             ::aws_smithy_http::result::SdkError::ServiceError(context) => Self::from(context.into_err()),
             _ => Error::Unhandled(
@@ -672,14 +672,14 @@ where
         }
     }
 }
-impl From<crate::operation::describe_ac_ls::DescribeACLsError> for Error {
-    fn from(err: crate::operation::describe_ac_ls::DescribeACLsError) -> Self {
+impl From<crate::operation::describe_acls::DescribeACLsError> for Error {
+    fn from(err: crate::operation::describe_acls::DescribeACLsError) -> Self {
         match err {
-            crate::operation::describe_ac_ls::DescribeACLsError::AclNotFoundFault(inner) => Error::AclNotFoundFault(inner),
-            crate::operation::describe_ac_ls::DescribeACLsError::InvalidParameterCombinationException(inner) => {
+            crate::operation::describe_acls::DescribeACLsError::AclNotFoundFault(inner) => Error::AclNotFoundFault(inner),
+            crate::operation::describe_acls::DescribeACLsError::InvalidParameterCombinationException(inner) => {
                 Error::InvalidParameterCombinationException(inner)
             }
-            crate::operation::describe_ac_ls::DescribeACLsError::Unhandled(inner) => Error::Unhandled(inner),
+            crate::operation::describe_acls::DescribeACLsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }

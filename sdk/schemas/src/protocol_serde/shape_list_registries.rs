@@ -118,7 +118,7 @@ pub(crate) fn de_list_registries(
                     );
                 }
                 "Registries" => {
-                    builder = builder.set_registries(crate::protocol_serde::shape___list_of_registry_summary::de___list_of_registry_summary(
+                    builder = builder.set_registries(crate::protocol_serde::shape_list_of_registry_summary::de_list_of_registry_summary(
                         tokens,
                     )?);
                 }

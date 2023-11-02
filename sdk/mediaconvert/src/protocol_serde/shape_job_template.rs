@@ -46,9 +46,8 @@ where
                             );
                         }
                         "hopDestinations" => {
-                            builder = builder.set_hop_destinations(
-                                crate::protocol_serde::shape___list_of_hop_destination::de___list_of_hop_destination(tokens)?,
-                            );
+                            builder = builder
+                                .set_hop_destinations(crate::protocol_serde::shape_list_of_hop_destination::de_list_of_hop_destination(tokens)?);
                         }
                         "lastUpdated" => {
                             builder = builder.set_last_updated(::aws_smithy_json::deserialize::token::expect_timestamp_or_null(

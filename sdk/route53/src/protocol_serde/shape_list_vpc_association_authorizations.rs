@@ -117,11 +117,11 @@ pub fn de_list_vpc_association_authorizations(
             s if s.matches("VPCs") /* VPCs com.amazonaws.route53.synthetic#ListVPCAssociationAuthorizationsOutput$VPCs */ =>  {
                 let var_1 =
                     Some(
-                        crate::protocol_serde::shape_vp_cs::de_vp_cs(&mut tag)
+                        crate::protocol_serde::shape_vpcs::de_vpcs(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_vp_cs(var_1);
+                builder = builder.set_vpcs(var_1);
             }
             ,
             s if s.matches("NextToken") /* NextToken com.amazonaws.route53.synthetic#ListVPCAssociationAuthorizationsOutput$NextToken */ =>  {

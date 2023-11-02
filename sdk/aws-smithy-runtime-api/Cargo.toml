@@ -20,7 +20,7 @@ test-util = ["aws-smithy-types/test-util"]
 
 [dependencies]
 bytes = "1"
-http = "0.2.3"
+http = "0.2.9"
 pin-project-lite = "0.2"
 tracing = "0.1"
 

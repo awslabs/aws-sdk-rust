@@ -70,7 +70,7 @@ pub fn ser_create_change_set_input_input(
     }
     #[allow(unused_mut)]
     let mut scope_28 = writer.prefix("NotificationARNs");
-    if let Some(var_29) = &input.notification_ar_ns {
+    if let Some(var_29) = &input.notification_arns {
         let mut list_31 = scope_28.start_list(false, None);
         for item_30 in var_29 {
             #[allow(unused_mut)]

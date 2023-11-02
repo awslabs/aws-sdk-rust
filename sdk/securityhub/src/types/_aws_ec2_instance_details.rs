@@ -9,9 +9,9 @@ pub struct AwsEc2InstanceDetails {
     /// <p>The Amazon Machine Image (AMI) ID of the instance.</p>
     pub image_id: ::std::option::Option<::std::string::String>,
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub ip_v4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub ip_v6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>The key name associated with the instance.</p>
     pub key_name: ::std::option::Option<::std::string::String>,
     /// <p>The IAM profile ARN of the instance.</p>
@@ -43,15 +43,15 @@ impl AwsEc2InstanceDetails {
     }
     /// <p>The IPv4 addresses associated with the instance.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_v4_addresses.is_none()`.
-    pub fn ip_v4_addresses(&self) -> &[::std::string::String] {
-        self.ip_v4_addresses.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv4_addresses.is_none()`.
+    pub fn ipv4_addresses(&self) -> &[::std::string::String] {
+        self.ipv4_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 addresses associated with the instance.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ip_v6_addresses.is_none()`.
-    pub fn ip_v6_addresses(&self) -> &[::std::string::String] {
-        self.ip_v6_addresses.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.ipv6_addresses.is_none()`.
+    pub fn ipv6_addresses(&self) -> &[::std::string::String] {
+        self.ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The key name associated with the instance.</p>
     pub fn key_name(&self) -> ::std::option::Option<&str> {
@@ -106,8 +106,8 @@ impl AwsEc2InstanceDetails {
 pub struct AwsEc2InstanceDetailsBuilder {
     pub(crate) r#type: ::std::option::Option<::std::string::String>,
     pub(crate) image_id: ::std::option::Option<::std::string::String>,
-    pub(crate) ip_v4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
-    pub(crate) ip_v6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv4_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) ipv6_addresses: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) key_name: ::std::option::Option<::std::string::String>,
     pub(crate) iam_instance_profile_arn: ::std::option::Option<::std::string::String>,
     pub(crate) vpc_id: ::std::option::Option<::std::string::String>,
@@ -147,45 +147,45 @@ impl AwsEc2InstanceDetailsBuilder {
     pub fn get_image_id(&self) -> &::std::option::Option<::std::string::String> {
         &self.image_id
     }
-    /// Appends an item to `ip_v4_addresses`.
+    /// Appends an item to `ipv4_addresses`.
     ///
-    /// To override the contents of this collection use [`set_ip_v4_addresses`](Self::set_ip_v4_addresses).
+    /// To override the contents of this collection use [`set_ipv4_addresses`](Self::set_ipv4_addresses).
     ///
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn ip_v4_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.ip_v4_addresses.unwrap_or_default();
+    pub fn ipv4_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ipv4_addresses.unwrap_or_default();
         v.push(input.into());
-        self.ip_v4_addresses = ::std::option::Option::Some(v);
+        self.ipv4_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn set_ip_v4_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ip_v4_addresses = input;
+    pub fn set_ipv4_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ipv4_addresses = input;
         self
     }
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn get_ip_v4_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.ip_v4_addresses
+    pub fn get_ipv4_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv4_addresses
     }
-    /// Appends an item to `ip_v6_addresses`.
+    /// Appends an item to `ipv6_addresses`.
     ///
-    /// To override the contents of this collection use [`set_ip_v6_addresses`](Self::set_ip_v6_addresses).
+    /// To override the contents of this collection use [`set_ipv6_addresses`](Self::set_ipv6_addresses).
     ///
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn ip_v6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
-        let mut v = self.ip_v6_addresses.unwrap_or_default();
+    pub fn ipv6_addresses(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        let mut v = self.ipv6_addresses.unwrap_or_default();
         v.push(input.into());
-        self.ip_v6_addresses = ::std::option::Option::Some(v);
+        self.ipv6_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn set_ip_v6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
-        self.ip_v6_addresses = input;
+    pub fn set_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<::std::string::String>>) -> Self {
+        self.ipv6_addresses = input;
         self
     }
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn get_ip_v6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
-        &self.ip_v6_addresses
+    pub fn get_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<::std::string::String>> {
+        &self.ipv6_addresses
     }
     /// <p>The key name associated with the instance.</p>
     pub fn key_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
@@ -330,8 +330,8 @@ impl AwsEc2InstanceDetailsBuilder {
         crate::types::AwsEc2InstanceDetails {
             r#type: self.r#type,
             image_id: self.image_id,
-            ip_v4_addresses: self.ip_v4_addresses,
-            ip_v6_addresses: self.ip_v6_addresses,
+            ipv4_addresses: self.ipv4_addresses,
+            ipv6_addresses: self.ipv6_addresses,
             key_name: self.key_name,
             iam_instance_profile_arn: self.iam_instance_profile_arn,
             vpc_id: self.vpc_id,

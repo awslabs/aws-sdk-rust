@@ -45,7 +45,7 @@ where
                         }
                         "tagValues" => {
                             builder = builder.set_tag_values(
-                                crate::protocol_serde::shape___list_of_tag_criterion_pair_for_job::de___list_of_tag_criterion_pair_for_job(tokens)?,
+                                crate::protocol_serde::shape_list_of_tag_criterion_pair_for_job::de_list_of_tag_criterion_pair_for_job(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "CIDRs" => {
-                            builder = builder.set_cid_rs(crate::protocol_serde::shape_cidr_summary::de_cidr_summary(tokens)?);
+                            builder = builder.set_cidrs(crate::protocol_serde::shape_cidr_summary::de_cidr_summary(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

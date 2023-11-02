@@ -15,7 +15,7 @@ pub struct ServiceNetworkSummary {
     /// <p>The date and time that the service network was last updated, specified in ISO-8601 format.</p>
     pub last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The number of VPCs associated with the service network.</p>
-    pub number_of_associated_vp_cs: ::std::option::Option<i64>,
+    pub number_of_associated_vpcs: ::std::option::Option<i64>,
     /// <p>The number of services associated with the service network.</p>
     pub number_of_associated_services: ::std::option::Option<i64>,
 }
@@ -41,8 +41,8 @@ impl ServiceNetworkSummary {
         self.last_updated_at.as_ref()
     }
     /// <p>The number of VPCs associated with the service network.</p>
-    pub fn number_of_associated_vp_cs(&self) -> ::std::option::Option<i64> {
-        self.number_of_associated_vp_cs
+    pub fn number_of_associated_vpcs(&self) -> ::std::option::Option<i64> {
+        self.number_of_associated_vpcs
     }
     /// <p>The number of services associated with the service network.</p>
     pub fn number_of_associated_services(&self) -> ::std::option::Option<i64> {
@@ -65,7 +65,7 @@ pub struct ServiceNetworkSummaryBuilder {
     pub(crate) arn: ::std::option::Option<::std::string::String>,
     pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_updated_at: ::std::option::Option<::aws_smithy_types::DateTime>,
-    pub(crate) number_of_associated_vp_cs: ::std::option::Option<i64>,
+    pub(crate) number_of_associated_vpcs: ::std::option::Option<i64>,
     pub(crate) number_of_associated_services: ::std::option::Option<i64>,
 }
 impl ServiceNetworkSummaryBuilder {
@@ -140,18 +140,18 @@ impl ServiceNetworkSummaryBuilder {
         &self.last_updated_at
     }
     /// <p>The number of VPCs associated with the service network.</p>
-    pub fn number_of_associated_vp_cs(mut self, input: i64) -> Self {
-        self.number_of_associated_vp_cs = ::std::option::Option::Some(input);
+    pub fn number_of_associated_vpcs(mut self, input: i64) -> Self {
+        self.number_of_associated_vpcs = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of VPCs associated with the service network.</p>
-    pub fn set_number_of_associated_vp_cs(mut self, input: ::std::option::Option<i64>) -> Self {
-        self.number_of_associated_vp_cs = input;
+    pub fn set_number_of_associated_vpcs(mut self, input: ::std::option::Option<i64>) -> Self {
+        self.number_of_associated_vpcs = input;
         self
     }
     /// <p>The number of VPCs associated with the service network.</p>
-    pub fn get_number_of_associated_vp_cs(&self) -> &::std::option::Option<i64> {
-        &self.number_of_associated_vp_cs
+    pub fn get_number_of_associated_vpcs(&self) -> &::std::option::Option<i64> {
+        &self.number_of_associated_vpcs
     }
     /// <p>The number of services associated with the service network.</p>
     pub fn number_of_associated_services(mut self, input: i64) -> Self {
@@ -175,7 +175,7 @@ impl ServiceNetworkSummaryBuilder {
             arn: self.arn,
             created_at: self.created_at,
             last_updated_at: self.last_updated_at,
-            number_of_associated_vp_cs: self.number_of_associated_vp_cs,
+            number_of_associated_vpcs: self.number_of_associated_vpcs,
             number_of_associated_services: self.number_of_associated_services,
         }
     }

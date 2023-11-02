@@ -29,7 +29,7 @@ where
                             );
                         }
                         "IpV4CidrBlock" => {
-                            builder = builder.set_ip_v4_cidr_block(
+                            builder = builder.set_ipv4_cidr_block(
                                 ::aws_smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,

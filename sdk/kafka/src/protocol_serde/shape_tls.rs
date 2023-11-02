@@ -34,8 +34,8 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "certificateAuthorityArnList" => {
-                            builder = builder
-                                .set_certificate_authority_arn_list(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder =
+                                builder.set_certificate_authority_arn_list(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "enabled" => {
                             builder = builder.set_enabled(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);

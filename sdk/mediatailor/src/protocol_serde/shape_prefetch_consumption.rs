@@ -16,7 +16,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "AvailMatchingCriteria" => {
                             builder = builder.set_avail_matching_criteria(
-                                crate::protocol_serde::shape___list_of_avail_matching_criteria::de___list_of_avail_matching_criteria(tokens)?,
+                                crate::protocol_serde::shape_list_of_avail_matching_criteria::de_list_of_avail_matching_criteria(tokens)?,
                             );
                         }
                         "EndTime" => {

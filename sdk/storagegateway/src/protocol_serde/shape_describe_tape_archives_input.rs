@@ -3,7 +3,7 @@ pub fn ser_describe_tape_archives_input(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::operation::describe_tape_archives::DescribeTapeArchivesInput,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.tape_ar_ns {
+    if let Some(var_1) = &input.tape_arns {
         let mut array_2 = object.key("TapeARNs").start_array();
         for item_3 in var_1 {
             {

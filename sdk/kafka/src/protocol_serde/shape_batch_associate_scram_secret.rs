@@ -193,7 +193,7 @@ pub(crate) fn de_batch_associate_scram_secret(
                 }
                 "unprocessedScramSecrets" => {
                     builder = builder.set_unprocessed_scram_secrets(
-                        crate::protocol_serde::shape___list_of_unprocessed_scram_secret::de___list_of_unprocessed_scram_secret(tokens)?,
+                        crate::protocol_serde::shape_list_of_unprocessed_scram_secret::de_list_of_unprocessed_scram_secret(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

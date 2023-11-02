@@ -173,7 +173,7 @@ pub(crate) fn de_update_configuration(
                 }
                 "warnings" => {
                     builder =
-                        builder.set_warnings(crate::protocol_serde::shape___list_of_sanitization_warning::de___list_of_sanitization_warning(tokens)?);
+                        builder.set_warnings(crate::protocol_serde::shape_list_of_sanitization_warning::de_list_of_sanitization_warning(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

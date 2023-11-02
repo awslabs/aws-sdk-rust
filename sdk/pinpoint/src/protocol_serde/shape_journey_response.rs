@@ -104,7 +104,7 @@ where
                             );
                         }
                         "tags" => {
-                            builder = builder.set_tags(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                            builder = builder.set_tags(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "WaitForQuietTime" => {
                             builder = builder.set_wait_for_quiet_time(::aws_smithy_json::deserialize::token::expect_bool_or_null(tokens.next())?);
@@ -129,7 +129,7 @@ where
                         }
                         "TimezoneEstimationMethods" => {
                             builder = builder.set_timezone_estimation_methods(
-                                    crate::protocol_serde::shape_list_of__timezone_estimation_methods_element::de_list_of__timezone_estimation_methods_element(tokens)?
+                                    crate::protocol_serde::shape_list_of_timezone_estimation_methods_element::de_list_of_timezone_estimation_methods_element(tokens)?
                                 );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

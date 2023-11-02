@@ -4,12 +4,11 @@
  */
 
 use aws_credential_types::provider::SharedCredentialsProvider;
+use aws_sdk_s3::Config;
 use aws_sdk_s3::{config::Credentials, config::Region, types::ObjectAttributes, Client};
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_runtime::client::http::test_util::{ReplayEvent, StaticReplayClient};
-use aws_types::SdkConfig;
 use http::header::AUTHORIZATION;
-use std::time::{Duration, UNIX_EPOCH};
 
 const RESPONSE_BODY_XML: &[u8] = b"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<GetObjectAttributesResponse xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\"><Checksum><ChecksumSHA1>e1AsOh9IyGCa4hLN+2Od7jlnP14=</ChecksumSHA1></Checksum></GetObjectAttributesResponse>";
 
@@ -19,10 +18,9 @@ async fn ignore_invalid_xml_body_root() {
         ReplayEvent::new(http::Request::builder()
              .header("x-amz-object-attributes", "Checksum")
              .header("x-amz-user-agent", "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0")
-             .header("x-amz-date", "20210618T170728Z")
+             .header("x-amz-date", "20090213T233130Z")
              .header("authorization", "AWS4-HMAC-SHA256 Credential=ANOTREAL/20210618/us-east-1/s3/aws4_request, SignedHeaders=host;x-amz-content-sha256;x-amz-date;x-amz-object-attributes;x-amz-security-token;x-amz-user-agent, Signature=0e6ec749db5a0af07890a83f553319eda95be0e498d058c64880471a474c5378")
              .header("x-amz-content-sha256", "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855")
-             .header("x-amz-security-token", "notarealsessiontoken")
              .uri(http::Uri::from_static("https://some-test-bucket.s3.us-east-1.amazonaws.com/test.txt?attributes"))
              .body(SdkBody::empty())
              .unwrap(),
@@ -41,23 +39,21 @@ async fn ignore_invalid_xml_body_root() {
              .unwrap())
     ]);
 
-    let sdk_config = SdkConfig::builder()
+    let config = Config::builder()
         .credentials_provider(SharedCredentialsProvider::new(
             Credentials::for_tests_with_session_token(),
         ))
         .region(Region::new("us-east-1"))
         .http_client(http_client.clone())
+        .with_test_defaults()
         .build();
-    let client = Client::new(&sdk_config);
+    let client = Client::from_conf(config);
 
     let _ = client
         .get_object_attributes()
         .bucket("some-test-bucket")
         .key("test.txt")
         .object_attributes(ObjectAttributes::Checksum)
-        .customize()
-        .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
-        .user_agent_for_tests()
         .send()
         .await
         .unwrap();

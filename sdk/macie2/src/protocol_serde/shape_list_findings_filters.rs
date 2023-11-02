@@ -167,7 +167,7 @@ pub(crate) fn de_list_findings_filters(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "findingsFilterListItems" => {
                     builder = builder.set_findings_filter_list_items(
-                        crate::protocol_serde::shape___list_of_findings_filter_list_item::de___list_of_findings_filter_list_item(tokens)?,
+                        crate::protocol_serde::shape_list_of_findings_filter_list_item::de_list_of_findings_filter_list_item(tokens)?,
                     );
                 }
                 "nextToken" => {

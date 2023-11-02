@@ -126,7 +126,7 @@ pub(crate) fn de_list_readiness_checks(
                 }
                 "readinessChecks" => {
                     builder = builder.set_readiness_checks(
-                        crate::protocol_serde::shape___list_of_readiness_check_output::de___list_of_readiness_check_output(tokens)?,
+                        crate::protocol_serde::shape_list_of_readiness_check_output::de_list_of_readiness_check_output(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

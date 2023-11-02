@@ -102,7 +102,7 @@ pub(crate) fn de_list_associated_route53_health_checks(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "HealthCheckIds" => {
                     builder = builder.set_health_check_ids(
-                        crate::protocol_serde::shape___list_of__string_max36_pattern_s::de___list_of__string_max36_pattern_s(tokens)?,
+                        crate::protocol_serde::shape_list_of_string_max36_pattern_s::de_list_of_string_max36_pattern_s(tokens)?,
                     );
                 }
                 "NextToken" => {

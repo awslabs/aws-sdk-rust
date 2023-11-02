@@ -66,7 +66,7 @@ where
                             );
                         }
                         "Metrics" => {
-                            builder = builder.set_metrics(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                            builder = builder.set_metrics(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         "RunId" => {
                             builder = builder.set_run_id(

@@ -18,7 +18,7 @@ pub struct InstanceRequirements {
     /// <p>The minimum and maximum number of vCPUs.</p>
     pub v_cpu_count: ::std::option::Option<crate::types::VCpuCountRange>,
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
-    pub memory_mi_b: ::std::option::Option<crate::types::MemoryMiB>,
+    pub memory_mib: ::std::option::Option<crate::types::MemoryMiB>,
     /// <p>The CPU manufacturers to include.</p>
     /// <ul>
     /// <li> <p>For instance types with Intel CPUs, specify <code>intel</code>.</p> </li>
@@ -31,7 +31,7 @@ pub struct InstanceRequirements {
     pub cpu_manufacturers: ::std::option::Option<::std::vec::Vec<crate::types::CpuManufacturer>>,
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    pub memory_gi_b_per_v_cpu: ::std::option::Option<crate::types::MemoryGiBPerVCpu>,
+    pub memory_gib_per_v_cpu: ::std::option::Option<crate::types::MemoryGiBPerVCpu>,
     /// <p>The instance types to exclude.</p>
     /// <p>You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
     /// <p>For example, if you specify <code>c5*</code>,Amazon EC2 will exclude the entire C5 instance family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>, Amazon EC2 will exclude all the M5a instance types, but not the M5n instance types.</p> <note>
@@ -141,7 +141,7 @@ pub struct InstanceRequirements {
     pub accelerator_names: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>>,
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    pub accelerator_total_memory_mi_b: ::std::option::Option<crate::types::AcceleratorTotalMemoryMiB>,
+    pub accelerator_total_memory_mib: ::std::option::Option<crate::types::AcceleratorTotalMemoryMiB>,
     /// <p>The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
     /// <p>Default: No minimum or maximum limits</p>
     pub network_bandwidth_gbps: ::std::option::Option<crate::types::NetworkBandwidthGbps>,
@@ -159,8 +159,8 @@ impl InstanceRequirements {
         self.v_cpu_count.as_ref()
     }
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
-    pub fn memory_mi_b(&self) -> ::std::option::Option<&crate::types::MemoryMiB> {
-        self.memory_mi_b.as_ref()
+    pub fn memory_mib(&self) -> ::std::option::Option<&crate::types::MemoryMiB> {
+        self.memory_mib.as_ref()
     }
     /// <p>The CPU manufacturers to include.</p>
     /// <ul>
@@ -178,8 +178,8 @@ impl InstanceRequirements {
     }
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    pub fn memory_gi_b_per_v_cpu(&self) -> ::std::option::Option<&crate::types::MemoryGiBPerVCpu> {
-        self.memory_gi_b_per_v_cpu.as_ref()
+    pub fn memory_gib_per_v_cpu(&self) -> ::std::option::Option<&crate::types::MemoryGiBPerVCpu> {
+        self.memory_gib_per_v_cpu.as_ref()
     }
     /// <p>The instance types to exclude.</p>
     /// <p>You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>), to exclude an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.</p>
@@ -334,8 +334,8 @@ impl InstanceRequirements {
     }
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    pub fn accelerator_total_memory_mi_b(&self) -> ::std::option::Option<&crate::types::AcceleratorTotalMemoryMiB> {
-        self.accelerator_total_memory_mi_b.as_ref()
+    pub fn accelerator_total_memory_mib(&self) -> ::std::option::Option<&crate::types::AcceleratorTotalMemoryMiB> {
+        self.accelerator_total_memory_mib.as_ref()
     }
     /// <p>The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
     /// <p>Default: No minimum or maximum limits</p>
@@ -366,9 +366,9 @@ impl InstanceRequirements {
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct InstanceRequirementsBuilder {
     pub(crate) v_cpu_count: ::std::option::Option<crate::types::VCpuCountRange>,
-    pub(crate) memory_mi_b: ::std::option::Option<crate::types::MemoryMiB>,
+    pub(crate) memory_mib: ::std::option::Option<crate::types::MemoryMiB>,
     pub(crate) cpu_manufacturers: ::std::option::Option<::std::vec::Vec<crate::types::CpuManufacturer>>,
-    pub(crate) memory_gi_b_per_v_cpu: ::std::option::Option<crate::types::MemoryGiBPerVCpu>,
+    pub(crate) memory_gib_per_v_cpu: ::std::option::Option<crate::types::MemoryGiBPerVCpu>,
     pub(crate) excluded_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) instance_generations: ::std::option::Option<::std::vec::Vec<crate::types::InstanceGeneration>>,
     pub(crate) spot_max_price_percentage_over_lowest_price: ::std::option::Option<i32>,
@@ -385,7 +385,7 @@ pub struct InstanceRequirementsBuilder {
     pub(crate) accelerator_count: ::std::option::Option<crate::types::AcceleratorCount>,
     pub(crate) accelerator_manufacturers: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorManufacturer>>,
     pub(crate) accelerator_names: ::std::option::Option<::std::vec::Vec<crate::types::AcceleratorName>>,
-    pub(crate) accelerator_total_memory_mi_b: ::std::option::Option<crate::types::AcceleratorTotalMemoryMiB>,
+    pub(crate) accelerator_total_memory_mib: ::std::option::Option<crate::types::AcceleratorTotalMemoryMiB>,
     pub(crate) network_bandwidth_gbps: ::std::option::Option<crate::types::NetworkBandwidthGbps>,
     pub(crate) allowed_instance_types: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
 }
@@ -405,18 +405,18 @@ impl InstanceRequirementsBuilder {
         &self.v_cpu_count
     }
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
-    pub fn memory_mi_b(mut self, input: crate::types::MemoryMiB) -> Self {
-        self.memory_mi_b = ::std::option::Option::Some(input);
+    pub fn memory_mib(mut self, input: crate::types::MemoryMiB) -> Self {
+        self.memory_mib = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
-    pub fn set_memory_mi_b(mut self, input: ::std::option::Option<crate::types::MemoryMiB>) -> Self {
-        self.memory_mi_b = input;
+    pub fn set_memory_mib(mut self, input: ::std::option::Option<crate::types::MemoryMiB>) -> Self {
+        self.memory_mib = input;
         self
     }
     /// <p>The minimum and maximum amount of memory, in MiB.</p>
-    pub fn get_memory_mi_b(&self) -> &::std::option::Option<crate::types::MemoryMiB> {
-        &self.memory_mi_b
+    pub fn get_memory_mib(&self) -> &::std::option::Option<crate::types::MemoryMiB> {
+        &self.memory_mib
     }
     /// Appends an item to `cpu_manufacturers`.
     ///
@@ -464,20 +464,20 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    pub fn memory_gi_b_per_v_cpu(mut self, input: crate::types::MemoryGiBPerVCpu) -> Self {
-        self.memory_gi_b_per_v_cpu = ::std::option::Option::Some(input);
+    pub fn memory_gib_per_v_cpu(mut self, input: crate::types::MemoryGiBPerVCpu) -> Self {
+        self.memory_gib_per_v_cpu = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    pub fn set_memory_gi_b_per_v_cpu(mut self, input: ::std::option::Option<crate::types::MemoryGiBPerVCpu>) -> Self {
-        self.memory_gi_b_per_v_cpu = input;
+    pub fn set_memory_gib_per_v_cpu(mut self, input: ::std::option::Option<crate::types::MemoryGiBPerVCpu>) -> Self {
+        self.memory_gib_per_v_cpu = input;
         self
     }
     /// <p>The minimum and maximum amount of memory per vCPU, in GiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    pub fn get_memory_gi_b_per_v_cpu(&self) -> &::std::option::Option<crate::types::MemoryGiBPerVCpu> {
-        &self.memory_gi_b_per_v_cpu
+    pub fn get_memory_gib_per_v_cpu(&self) -> &::std::option::Option<crate::types::MemoryGiBPerVCpu> {
+        &self.memory_gib_per_v_cpu
     }
     /// Appends an item to `excluded_instance_types`.
     ///
@@ -966,20 +966,20 @@ impl InstanceRequirementsBuilder {
     }
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    pub fn accelerator_total_memory_mi_b(mut self, input: crate::types::AcceleratorTotalMemoryMiB) -> Self {
-        self.accelerator_total_memory_mi_b = ::std::option::Option::Some(input);
+    pub fn accelerator_total_memory_mib(mut self, input: crate::types::AcceleratorTotalMemoryMiB) -> Self {
+        self.accelerator_total_memory_mib = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    pub fn set_accelerator_total_memory_mi_b(mut self, input: ::std::option::Option<crate::types::AcceleratorTotalMemoryMiB>) -> Self {
-        self.accelerator_total_memory_mi_b = input;
+    pub fn set_accelerator_total_memory_mib(mut self, input: ::std::option::Option<crate::types::AcceleratorTotalMemoryMiB>) -> Self {
+        self.accelerator_total_memory_mib = input;
         self
     }
     /// <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
     /// <p>Default: No minimum or maximum limits</p>
-    pub fn get_accelerator_total_memory_mi_b(&self) -> &::std::option::Option<crate::types::AcceleratorTotalMemoryMiB> {
-        &self.accelerator_total_memory_mi_b
+    pub fn get_accelerator_total_memory_mib(&self) -> &::std::option::Option<crate::types::AcceleratorTotalMemoryMiB> {
+        &self.accelerator_total_memory_mib
     }
     /// <p>The minimum and maximum amount of network bandwidth, in gigabits per second (Gbps).</p>
     /// <p>Default: No minimum or maximum limits</p>
@@ -1037,9 +1037,9 @@ impl InstanceRequirementsBuilder {
     pub fn build(self) -> crate::types::InstanceRequirements {
         crate::types::InstanceRequirements {
             v_cpu_count: self.v_cpu_count,
-            memory_mi_b: self.memory_mi_b,
+            memory_mib: self.memory_mib,
             cpu_manufacturers: self.cpu_manufacturers,
-            memory_gi_b_per_v_cpu: self.memory_gi_b_per_v_cpu,
+            memory_gib_per_v_cpu: self.memory_gib_per_v_cpu,
             excluded_instance_types: self.excluded_instance_types,
             instance_generations: self.instance_generations,
             spot_max_price_percentage_over_lowest_price: self.spot_max_price_percentage_over_lowest_price,
@@ -1056,7 +1056,7 @@ impl InstanceRequirementsBuilder {
             accelerator_count: self.accelerator_count,
             accelerator_manufacturers: self.accelerator_manufacturers,
             accelerator_names: self.accelerator_names,
-            accelerator_total_memory_mi_b: self.accelerator_total_memory_mi_b,
+            accelerator_total_memory_mib: self.accelerator_total_memory_mib,
             network_bandwidth_gbps: self.network_bandwidth_gbps,
             allowed_instance_types: self.allowed_instance_types,
         }

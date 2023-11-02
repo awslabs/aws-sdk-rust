@@ -55,7 +55,7 @@ where
                         }
                         "systemIds" => {
                             builder = builder.set_system_ids(
-                                    crate::protocol_serde::shape___list_of__string_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12::de___list_of__string_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12(tokens)?
+                                    crate::protocol_serde::shape_list_of_string_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12::de_list_of_string_pattern09a_faf809a_faf409a_faf409a_faf409a_faf12(tokens)?
                                 );
                         }
                         "url" => {

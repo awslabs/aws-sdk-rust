@@ -170,7 +170,7 @@ pub(crate) fn de_create_invitations(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "unprocessedAccounts" => {
                     builder = builder.set_unprocessed_accounts(
-                        crate::protocol_serde::shape___list_of_unprocessed_account::de___list_of_unprocessed_account(tokens)?,
+                        crate::protocol_serde::shape_list_of_unprocessed_account::de_list_of_unprocessed_account(tokens)?,
                     );
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

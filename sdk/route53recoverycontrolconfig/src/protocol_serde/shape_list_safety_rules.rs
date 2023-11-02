@@ -116,7 +116,7 @@ pub(crate) fn de_list_safety_rules(
                     );
                 }
                 "SafetyRules" => {
-                    builder = builder.set_safety_rules(crate::protocol_serde::shape___list_of_rule::de___list_of_rule(tokens)?);
+                    builder = builder.set_safety_rules(crate::protocol_serde::shape_list_of_rule::de_list_of_rule(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

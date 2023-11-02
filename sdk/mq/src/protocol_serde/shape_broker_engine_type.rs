@@ -22,9 +22,8 @@ where
                             );
                         }
                         "engineVersions" => {
-                            builder = builder.set_engine_versions(
-                                crate::protocol_serde::shape___list_of_engine_version::de___list_of_engine_version(tokens)?,
-                            );
+                            builder =
+                                builder.set_engine_versions(crate::protocol_serde::shape_list_of_engine_version::de_list_of_engine_version(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

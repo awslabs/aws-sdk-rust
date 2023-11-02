@@ -3,7 +3,7 @@ pub use crate::types::error::_trusted_signer_does_not_exist::TrustedSignerDoesNo
 
 pub use crate::types::error::_too_many_trusted_signers::TooManyTrustedSignersBuilder;
 
-pub use crate::types::error::_too_many_streaming_distribution_cnam_es::TooManyStreamingDistributionCnamEsBuilder;
+pub use crate::types::error::_too_many_streaming_distribution_cnames::TooManyStreamingDistributionCnamEsBuilder;
 
 pub use crate::types::error::_precondition_failed::PreconditionFailedBuilder;
 
@@ -123,7 +123,7 @@ pub use crate::types::error::_too_many_distributions_associated_to_field_level_e
 
 pub use crate::types::error::_too_many_distributions_associated_to_cache_policy::TooManyDistributionsAssociatedToCachePolicyBuilder;
 
-pub use crate::types::error::_too_many_distribution_cnam_es::TooManyDistributionCnamEsBuilder;
+pub use crate::types::error::_too_many_distribution_cnames::TooManyDistributionCnamEsBuilder;
 
 pub use crate::types::error::_too_many_cookie_names_in_white_list::TooManyCookieNamesInWhiteListBuilder;
 

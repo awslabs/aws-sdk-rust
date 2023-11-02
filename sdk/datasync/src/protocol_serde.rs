@@ -365,7 +365,7 @@ pub(crate) mod shape_net_app_ontap_clusters;
 
 pub(crate) mod shape_net_app_ontap_volumes;
 
-pub(crate) mod shape_net_app_ontapsv_ms;
+pub(crate) mod shape_net_app_ontapsvms;
 
 pub(crate) mod shape_pl_security_group_arn_list;
 

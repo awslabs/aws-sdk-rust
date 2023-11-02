@@ -9,7 +9,7 @@ impl super::Client {
     /// - On success, responds with [`ListVpcAssociationAuthorizationsOutput`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput) with field(s):
     ///   - [`hosted_zone_id(String)`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput::hosted_zone_id): <p>The ID of the hosted zone that you can associate the listed VPCs with.</p>
     ///   - [`next_token(Option<String>)`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput::next_token): <p>When the response includes a <code>NextToken</code> element, there are more VPCs that can be associated with the specified hosted zone. To get the next page of VPCs, submit another <code>ListVPCAssociationAuthorizations</code> request, and include the value of the <code>NextToken</code> element from the response in the <code>nexttoken</code> request parameter.</p>
-    ///   - [`vp_cs(Vec<Vpc>)`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput::vp_cs): <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
+    ///   - [`vpcs(Vec<Vpc>)`](crate::operation::list_vpc_association_authorizations::ListVpcAssociationAuthorizationsOutput::vpcs): <p>The list of VPCs that are authorized to be associated with the specified hosted zone.</p>
     /// - On failure, responds with [`SdkError<ListVPCAssociationAuthorizationsError>`](crate::operation::list_vpc_association_authorizations::ListVPCAssociationAuthorizationsError)
     pub fn list_vpc_association_authorizations(
         &self,

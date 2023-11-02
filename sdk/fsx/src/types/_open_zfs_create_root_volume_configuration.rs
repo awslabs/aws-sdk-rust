@@ -5,7 +5,7 @@
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct OpenZfsCreateRootVolumeConfiguration {
     /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub record_size_ki_b: ::std::option::Option<i32>,
+    pub record_size_kib: ::std::option::Option<i32>,
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
     /// <li> <p> <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is the default.</p> </li>
@@ -24,8 +24,8 @@ pub struct OpenZfsCreateRootVolumeConfiguration {
 }
 impl OpenZfsCreateRootVolumeConfiguration {
     /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn record_size_ki_b(&self) -> ::std::option::Option<i32> {
-        self.record_size_ki_b
+    pub fn record_size_kib(&self) -> ::std::option::Option<i32> {
+        self.record_size_kib
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -68,7 +68,7 @@ impl OpenZfsCreateRootVolumeConfiguration {
 #[non_exhaustive]
 #[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug)]
 pub struct OpenZfsCreateRootVolumeConfigurationBuilder {
-    pub(crate) record_size_ki_b: ::std::option::Option<i32>,
+    pub(crate) record_size_kib: ::std::option::Option<i32>,
     pub(crate) data_compression_type: ::std::option::Option<crate::types::OpenZfsDataCompressionType>,
     pub(crate) nfs_exports: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsNfsExport>>,
     pub(crate) user_and_group_quotas: ::std::option::Option<::std::vec::Vec<crate::types::OpenZfsUserOrGroupQuota>>,
@@ -77,18 +77,18 @@ pub struct OpenZfsCreateRootVolumeConfigurationBuilder {
 }
 impl OpenZfsCreateRootVolumeConfigurationBuilder {
     /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn record_size_ki_b(mut self, input: i32) -> Self {
-        self.record_size_ki_b = ::std::option::Option::Some(input);
+    pub fn record_size_kib(mut self, input: i32) -> Self {
+        self.record_size_kib = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn set_record_size_ki_b(mut self, input: ::std::option::Option<i32>) -> Self {
-        self.record_size_ki_b = input;
+    pub fn set_record_size_kib(mut self, input: ::std::option::Option<i32>) -> Self {
+        self.record_size_kib = input;
         self
     }
     /// <p>Specifies the record size of an OpenZFS root volume, in kibibytes (KiB). Valid values are 4, 8, 16, 32, 64, 128, 256, 512, or 1024 KiB. The default is 128 KiB. Most workloads should use the default record size. Database workflows can benefit from a smaller record size, while streaming workflows can benefit from a larger record size. For additional guidance on setting a custom record size, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/performance.html#performance-tips-zfs"> Tips for maximizing performance</a> in the <i>Amazon FSx for OpenZFS User Guide</i>.</p>
-    pub fn get_record_size_ki_b(&self) -> &::std::option::Option<i32> {
-        &self.record_size_ki_b
+    pub fn get_record_size_kib(&self) -> &::std::option::Option<i32> {
+        &self.record_size_kib
     }
     /// <p>Specifies the method used to compress the data on the volume. The compression type is <code>NONE</code> by default.</p>
     /// <ul>
@@ -190,7 +190,7 @@ impl OpenZfsCreateRootVolumeConfigurationBuilder {
     /// Consumes the builder and constructs a [`OpenZfsCreateRootVolumeConfiguration`](crate::types::OpenZfsCreateRootVolumeConfiguration).
     pub fn build(self) -> crate::types::OpenZfsCreateRootVolumeConfiguration {
         crate::types::OpenZfsCreateRootVolumeConfiguration {
-            record_size_ki_b: self.record_size_ki_b,
+            record_size_kib: self.record_size_kib,
             data_compression_type: self.data_compression_type,
             nfs_exports: self.nfs_exports,
             user_and_group_quotas: self.user_and_group_quotas,

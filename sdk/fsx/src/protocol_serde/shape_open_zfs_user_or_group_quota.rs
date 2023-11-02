@@ -12,7 +12,7 @@ pub fn ser_open_zfs_user_or_group_quota(
             ::aws_smithy_types::Number::NegInt((*var_2).into()),
         );
     }
-    if let Some(var_3) = &input.storage_capacity_quota_gi_b {
+    if let Some(var_3) = &input.storage_capacity_quota_gib {
         object.key("StorageCapacityQuotaGiB").number(
             #[allow(clippy::useless_conversion)]
             ::aws_smithy_types::Number::NegInt((*var_3).into()),
@@ -51,7 +51,7 @@ where
                             );
                         }
                         "StorageCapacityQuotaGiB" => {
-                            builder = builder.set_storage_capacity_quota_gi_b(
+                            builder = builder.set_storage_capacity_quota_gib(
                                 ::aws_smithy_json::deserialize::token::expect_number_or_null(tokens.next())?
                                     .map(i32::try_from)
                                     .transpose()?,

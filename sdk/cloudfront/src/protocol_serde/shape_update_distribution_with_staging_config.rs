@@ -666,7 +666,7 @@ pub fn de_update_distribution_with_staging_config_http_error(
                  {
                     #[allow(unused_mut)]
                     let mut output = crate::types::error::builders::TooManyDistributionCnamEsBuilder::default();
-                    output = crate::protocol_serde::shape_too_many_distribution_cnam_es::de_too_many_distribution_cnam_es_xml_err(_response_body, output).map_err(crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::unhandled)?;
+                    output = crate::protocol_serde::shape_too_many_distribution_cnames::de_too_many_distribution_cnames_xml_err(_response_body, output).map_err(crate::operation::update_distribution_with_staging_config::UpdateDistributionWithStagingConfigError::unhandled)?;
                     let output = output.meta(generic);
                     output.build()
                 }

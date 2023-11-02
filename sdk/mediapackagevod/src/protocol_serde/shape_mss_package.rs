@@ -18,8 +18,7 @@ where
                             builder = builder.set_encryption(crate::protocol_serde::shape_mss_encryption::de_mss_encryption(tokens)?);
                         }
                         "mssManifests" => {
-                            builder =
-                                builder.set_mss_manifests(crate::protocol_serde::shape___list_of_mss_manifest::de___list_of_mss_manifest(tokens)?);
+                            builder = builder.set_mss_manifests(crate::protocol_serde::shape_list_of_mss_manifest::de_list_of_mss_manifest(tokens)?);
                         }
                         "segmentDurationSeconds" => {
                             builder = builder.set_segment_duration_seconds(

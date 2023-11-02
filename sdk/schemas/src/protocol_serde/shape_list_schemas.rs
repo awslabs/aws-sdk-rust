@@ -118,9 +118,7 @@ pub(crate) fn de_list_schemas(
                     );
                 }
                 "Schemas" => {
-                    builder = builder.set_schemas(crate::protocol_serde::shape___list_of_schema_summary::de___list_of_schema_summary(
-                        tokens,
-                    )?);
+                    builder = builder.set_schemas(crate::protocol_serde::shape_list_of_schema_summary::de_list_of_schema_summary(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

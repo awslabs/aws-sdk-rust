@@ -3,7 +3,7 @@ pub fn ser_list_connectors_request_filters(
     object: &mut ::aws_smithy_json::serialize::JsonObjectWriter,
     input: &crate::types::ListConnectorsRequestFilters,
 ) -> Result<(), ::aws_smithy_http::operation::error::SerializationError> {
-    if let Some(var_1) = &input.connector_i_ds {
+    if let Some(var_1) = &input.connector_ids {
         let mut array_2 = object.key("connectorIDs").start_array();
         for item_3 in var_1 {
             {

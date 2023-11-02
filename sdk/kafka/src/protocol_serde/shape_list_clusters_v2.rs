@@ -110,7 +110,7 @@ pub(crate) fn de_list_clusters_v2(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "clusterInfoList" => {
-                    builder = builder.set_cluster_info_list(crate::protocol_serde::shape___list_of_cluster::de___list_of_cluster(tokens)?);
+                    builder = builder.set_cluster_info_list(crate::protocol_serde::shape_list_of_cluster::de_list_of_cluster(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

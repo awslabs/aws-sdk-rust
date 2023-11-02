@@ -36,7 +36,7 @@ where
                             )?);
                         }
                         "usage" => {
-                            builder = builder.set_usage(crate::protocol_serde::shape___list_of_usage_by_account::de___list_of_usage_by_account(
+                            builder = builder.set_usage(crate::protocol_serde::shape_list_of_usage_by_account::de_list_of_usage_by_account(
                                 tokens,
                             )?);
                         }

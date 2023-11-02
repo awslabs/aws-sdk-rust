@@ -54,7 +54,7 @@ where
                         }
                         "failoverConditions" => {
                             builder = builder.set_failover_conditions(
-                                crate::protocol_serde::shape___list_of_failover_condition::de___list_of_failover_condition(tokens)?,
+                                crate::protocol_serde::shape_list_of_failover_condition::de_list_of_failover_condition(tokens)?,
                             );
                         }
                         "inputPreference" => {

@@ -241,45 +241,6 @@ pub(crate) mod shape_update_stage_input;
 
 pub(crate) mod shape_update_vpc_link_input;
 
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of__string;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_api;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_api_mapping;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_authorizer;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_deployment;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_domain_name;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_integration;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_integration_response;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_model;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_route;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_route_response;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_stage;
-
-#[allow(non_snake_case)]
-pub(crate) mod shape___list_of_vpc_link;
-
 pub(crate) mod shape_access_log_settings;
 
 pub(crate) mod shape_authorization_scopes;
@@ -295,6 +256,32 @@ pub(crate) mod shape_identity_source_list;
 pub(crate) mod shape_integration_parameters;
 
 pub(crate) mod shape_jwt_configuration;
+
+pub(crate) mod shape_list_of_api;
+
+pub(crate) mod shape_list_of_api_mapping;
+
+pub(crate) mod shape_list_of_authorizer;
+
+pub(crate) mod shape_list_of_deployment;
+
+pub(crate) mod shape_list_of_domain_name;
+
+pub(crate) mod shape_list_of_integration;
+
+pub(crate) mod shape_list_of_integration_response;
+
+pub(crate) mod shape_list_of_model;
+
+pub(crate) mod shape_list_of_route;
+
+pub(crate) mod shape_list_of_route_response;
+
+pub(crate) mod shape_list_of_stage;
+
+pub(crate) mod shape_list_of_string;
+
+pub(crate) mod shape_list_of_vpc_link;
 
 pub(crate) mod shape_mutual_tls_authentication;
 

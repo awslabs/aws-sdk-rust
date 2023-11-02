@@ -157,7 +157,7 @@ pub(crate) fn de_list_members(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "members" => {
-                    builder = builder.set_members(crate::protocol_serde::shape___list_of_member::de___list_of_member(tokens)?);
+                    builder = builder.set_members(crate::protocol_serde::shape_list_of_member::de_list_of_member(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

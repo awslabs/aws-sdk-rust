@@ -215,11 +215,11 @@ pub fn de_describe_change_set(
             s if s.matches("NotificationARNs") /* NotificationARNs com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$NotificationARNs */ =>  {
                 let var_11 =
                     Some(
-                        crate::protocol_serde::shape_notification_ar_ns::de_notification_ar_ns(&mut tag)
+                        crate::protocol_serde::shape_notification_arns::de_notification_arns(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_notification_ar_ns(var_11);
+                builder = builder.set_notification_arns(var_11);
             }
             ,
             s if s.matches("RollbackConfiguration") /* RollbackConfiguration com.amazonaws.cloudformation.synthetic#DescribeChangeSetOutput$RollbackConfiguration */ =>  {

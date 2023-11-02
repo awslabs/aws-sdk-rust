@@ -3,7 +3,7 @@ pub use crate::types::error::_trusted_signer_does_not_exist::TrustedSignerDoesNo
 
 pub use crate::types::error::_too_many_trusted_signers::TooManyTrustedSigners;
 
-pub use crate::types::error::_too_many_streaming_distribution_cnam_es::TooManyStreamingDistributionCnamEs;
+pub use crate::types::error::_too_many_streaming_distribution_cnames::TooManyStreamingDistributionCnamEs;
 
 pub use crate::types::error::_precondition_failed::PreconditionFailed;
 
@@ -123,7 +123,7 @@ pub use crate::types::error::_too_many_distributions_associated_to_field_level_e
 
 pub use crate::types::error::_too_many_distributions_associated_to_cache_policy::TooManyDistributionsAssociatedToCachePolicy;
 
-pub use crate::types::error::_too_many_distribution_cnam_es::TooManyDistributionCnamEs;
+pub use crate::types::error::_too_many_distribution_cnames::TooManyDistributionCnamEs;
 
 pub use crate::types::error::_too_many_cookie_names_in_white_list::TooManyCookieNamesInWhiteList;
 
@@ -485,7 +485,7 @@ mod _too_many_cookies_in_origin_request_policy;
 
 mod _too_many_custom_headers_in_response_headers_policy;
 
-mod _too_many_distribution_cnam_es;
+mod _too_many_distribution_cnames;
 
 mod _too_many_distributions;
 
@@ -563,7 +563,7 @@ mod _too_many_remove_headers_in_response_headers_policy;
 
 mod _too_many_response_headers_policies;
 
-mod _too_many_streaming_distribution_cnam_es;
+mod _too_many_streaming_distribution_cnames;
 
 mod _too_many_streaming_distributions;
 

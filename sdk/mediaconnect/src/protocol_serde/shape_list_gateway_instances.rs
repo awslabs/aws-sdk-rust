@@ -121,7 +121,7 @@ pub(crate) fn de_list_gateway_instances(
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "instances" => {
                     builder = builder
-                        .set_instances(crate::protocol_serde::shape___list_of_listed_gateway_instance::de___list_of_listed_gateway_instance(tokens)?);
+                        .set_instances(crate::protocol_serde::shape_list_of_listed_gateway_instance::de_list_of_listed_gateway_instance(tokens)?);
                 }
                 "nextToken" => {
                     builder = builder.set_next_token(

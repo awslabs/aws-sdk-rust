@@ -35,7 +35,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "outputChannels" => {
                             builder = builder.set_output_channels(
-                                crate::protocol_serde::shape___list_of_output_channel_mapping::de___list_of_output_channel_mapping(tokens)?,
+                                crate::protocol_serde::shape_list_of_output_channel_mapping::de_list_of_output_channel_mapping(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

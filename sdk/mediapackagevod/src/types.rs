@@ -39,7 +39,7 @@ pub use crate::types::_dash_package::DashPackage;
 
 pub use crate::types::_segment_template_format::SegmentTemplateFormat;
 
-pub use crate::types::___period_triggers_element::PeriodTriggersElement;
+pub use crate::types::_period_triggers_element::PeriodTriggersElement;
 
 pub use crate::types::_dash_encryption::DashEncryption;
 
@@ -58,8 +58,6 @@ pub use crate::types::_cmaf_encryption::CmafEncryption;
 pub use crate::types::_asset_shallow::AssetShallow;
 
 pub use crate::types::_egress_endpoint::EgressEndpoint;
-
-mod ___period_triggers_element;
 
 mod _ad_markers;
 
@@ -102,6 +100,8 @@ mod _mss_package;
 mod _packaging_configuration;
 
 mod _packaging_group;
+
+mod _period_triggers_element;
 
 mod _preset_speke20_audio;
 

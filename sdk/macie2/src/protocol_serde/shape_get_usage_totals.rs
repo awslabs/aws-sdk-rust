@@ -164,7 +164,7 @@ pub(crate) fn de_get_usage_totals(
                     );
                 }
                 "usageTotals" => {
-                    builder = builder.set_usage_totals(crate::protocol_serde::shape___list_of_usage_total::de___list_of_usage_total(tokens)?);
+                    builder = builder.set_usage_totals(crate::protocol_serde::shape_list_of_usage_total::de_list_of_usage_total(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

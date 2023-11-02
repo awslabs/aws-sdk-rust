@@ -51,7 +51,7 @@ pub use crate::types::error::_insufficient_db_instance_capacity_fault::Insuffici
 
 pub use crate::types::error::_db_subnet_group_not_found_fault::DbSubnetGroupNotFoundFaultBuilder;
 
-pub use crate::types::error::_db_subnet_group_does_not_cover_enough_a_zs::DbSubnetGroupDoesNotCoverEnoughAZsBuilder;
+pub use crate::types::error::_db_subnet_group_does_not_cover_enough_azs::DbSubnetGroupDoesNotCoverEnoughAZsBuilder;
 
 pub use crate::types::error::_authorization_not_found_fault::AuthorizationNotFoundFaultBuilder;
 
@@ -119,7 +119,7 @@ pub use crate::types::error::_db_cluster_role_not_found_fault::DbClusterRoleNotF
 
 pub use crate::types::error::_invalid_db_proxy_state_fault::InvalidDbProxyStateFaultBuilder;
 
-pub use crate::types::error::_insufficient_available_i_ps_in_subnet_fault::InsufficientAvailableIPsInSubnetFaultBuilder;
+pub use crate::types::error::_insufficient_available_ips_in_subnet_fault::InsufficientAvailableIPsInSubnetFaultBuilder;
 
 pub use crate::types::error::_db_proxy_target_already_registered_fault::DbProxyTargetAlreadyRegisteredFaultBuilder;
 

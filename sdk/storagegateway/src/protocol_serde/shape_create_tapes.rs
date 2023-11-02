@@ -92,7 +92,7 @@ pub(crate) fn de_create_tapes(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "TapeARNs" => {
-                    builder = builder.set_tape_ar_ns(crate::protocol_serde::shape_tape_ar_ns::de_tape_ar_ns(tokens)?);
+                    builder = builder.set_tape_arns(crate::protocol_serde::shape_tape_arns::de_tape_arns(tokens)?);
                 }
                 _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
             },

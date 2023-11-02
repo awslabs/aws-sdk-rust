@@ -51,7 +51,7 @@ pub(crate) fn de_create_program(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "AdBreaks" => {
-                    builder = builder.set_ad_breaks(crate::protocol_serde::shape___list_of_ad_break::de___list_of_ad_break(tokens)?);
+                    builder = builder.set_ad_breaks(crate::protocol_serde::shape_list_of_ad_break::de_list_of_ad_break(tokens)?);
                 }
                 "Arn" => {
                     builder = builder.set_arn(

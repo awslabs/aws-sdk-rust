@@ -2669,7 +2669,7 @@ pub(crate) mod shape_vpn_connection_options_specification;
 
 pub(crate) mod shape_accelerator_count_request;
 
-pub(crate) mod shape_accelerator_total_memory_mi_b_request;
+pub(crate) mod shape_accelerator_total_memory_mib_request;
 
 pub(crate) mod shape_access_scope_analysis_finding_list;
 
@@ -3077,9 +3077,9 @@ pub(crate) mod shape_managed_prefix_list;
 
 pub(crate) mod shape_managed_prefix_list_set;
 
-pub(crate) mod shape_memory_gi_b_per_v_cpu_request;
+pub(crate) mod shape_memory_gib_per_v_cpu_request;
 
-pub(crate) mod shape_memory_mi_b_request;
+pub(crate) mod shape_memory_mib_request;
 
 pub(crate) mod shape_moving_address_status_set;
 
@@ -3979,7 +3979,7 @@ pub(crate) mod shape_accelerator_manufacturer_set;
 
 pub(crate) mod shape_accelerator_name_set;
 
-pub(crate) mod shape_accelerator_total_memory_mi_b;
+pub(crate) mod shape_accelerator_total_memory_mib;
 
 pub(crate) mod shape_accelerator_type_set;
 
@@ -4159,11 +4159,11 @@ pub(crate) mod shape_local_gateway_virtual_interface_id_set;
 
 pub(crate) mod shape_local_storage_type_set;
 
-pub(crate) mod shape_memory_gi_b_per_v_cpu;
+pub(crate) mod shape_memory_gib_per_v_cpu;
 
 pub(crate) mod shape_memory_info;
 
-pub(crate) mod shape_memory_mi_b;
+pub(crate) mod shape_memory_mib;
 
 pub(crate) mod shape_metric_points;
 

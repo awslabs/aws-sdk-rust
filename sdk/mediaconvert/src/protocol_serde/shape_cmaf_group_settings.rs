@@ -134,7 +134,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "additionalManifests" => {
                             builder = builder.set_additional_manifests(
-                                crate::protocol_serde::shape___list_of_cmaf_additional_manifest::de___list_of_cmaf_additional_manifest(tokens)?,
+                                crate::protocol_serde::shape_list_of_cmaf_additional_manifest::de_list_of_cmaf_additional_manifest(tokens)?,
                             );
                         }
                         "baseUrl" => {

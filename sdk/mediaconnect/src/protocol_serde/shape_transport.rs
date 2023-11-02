@@ -15,7 +15,7 @@ where
                     Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
                     Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                         "cidrAllowList" => {
-                            builder = builder.set_cidr_allow_list(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_cidr_allow_list(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "maxBitrate" => {
                             builder = builder.set_max_bitrate(

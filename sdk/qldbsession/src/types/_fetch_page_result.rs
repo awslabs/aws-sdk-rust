@@ -9,7 +9,7 @@ pub struct FetchPageResult {
     /// <p>Contains server-side performance information for the command.</p>
     pub timing_information: ::std::option::Option<crate::types::TimingInformation>,
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub consumed_i_os: ::std::option::Option<crate::types::IoUsage>,
+    pub consumed_ios: ::std::option::Option<crate::types::IoUsage>,
 }
 impl FetchPageResult {
     /// <p>Contains details of the fetched page.</p>
@@ -21,8 +21,8 @@ impl FetchPageResult {
         self.timing_information.as_ref()
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn consumed_i_os(&self) -> ::std::option::Option<&crate::types::IoUsage> {
-        self.consumed_i_os.as_ref()
+    pub fn consumed_ios(&self) -> ::std::option::Option<&crate::types::IoUsage> {
+        self.consumed_ios.as_ref()
     }
 }
 impl FetchPageResult {
@@ -38,7 +38,7 @@ impl FetchPageResult {
 pub struct FetchPageResultBuilder {
     pub(crate) page: ::std::option::Option<crate::types::Page>,
     pub(crate) timing_information: ::std::option::Option<crate::types::TimingInformation>,
-    pub(crate) consumed_i_os: ::std::option::Option<crate::types::IoUsage>,
+    pub(crate) consumed_ios: ::std::option::Option<crate::types::IoUsage>,
 }
 impl FetchPageResultBuilder {
     /// <p>Contains details of the fetched page.</p>
@@ -70,25 +70,25 @@ impl FetchPageResultBuilder {
         &self.timing_information
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn consumed_i_os(mut self, input: crate::types::IoUsage) -> Self {
-        self.consumed_i_os = ::std::option::Option::Some(input);
+    pub fn consumed_ios(mut self, input: crate::types::IoUsage) -> Self {
+        self.consumed_ios = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn set_consumed_i_os(mut self, input: ::std::option::Option<crate::types::IoUsage>) -> Self {
-        self.consumed_i_os = input;
+    pub fn set_consumed_ios(mut self, input: ::std::option::Option<crate::types::IoUsage>) -> Self {
+        self.consumed_ios = input;
         self
     }
     /// <p>Contains metrics about the number of I/O requests that were consumed.</p>
-    pub fn get_consumed_i_os(&self) -> &::std::option::Option<crate::types::IoUsage> {
-        &self.consumed_i_os
+    pub fn get_consumed_ios(&self) -> &::std::option::Option<crate::types::IoUsage> {
+        &self.consumed_ios
     }
     /// Consumes the builder and constructs a [`FetchPageResult`](crate::types::FetchPageResult).
     pub fn build(self) -> crate::types::FetchPageResult {
         crate::types::FetchPageResult {
             page: self.page,
             timing_information: self.timing_information,
-            consumed_i_os: self.consumed_i_os,
+            consumed_ios: self.consumed_ios,
         }
     }
 }

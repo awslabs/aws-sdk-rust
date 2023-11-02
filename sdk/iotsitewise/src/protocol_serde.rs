@@ -271,7 +271,7 @@ pub(crate) mod shape_asset_composite_models;
 
 pub(crate) mod shape_asset_hierarchies;
 
-pub(crate) mod shape_asset_i_ds;
+pub(crate) mod shape_asset_ids;
 
 pub(crate) mod shape_asset_model_composite_model;
 

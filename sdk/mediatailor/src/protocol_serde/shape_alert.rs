@@ -35,8 +35,7 @@ where
                             )?);
                         }
                         "RelatedResourceArns" => {
-                            builder =
-                                builder.set_related_resource_arns(crate::protocol_serde::shape___list_of__string::de___list_of__string(tokens)?);
+                            builder = builder.set_related_resource_arns(crate::protocol_serde::shape_list_of_string::de_list_of_string(tokens)?);
                         }
                         "ResourceArn" => {
                             builder = builder.set_resource_arn(

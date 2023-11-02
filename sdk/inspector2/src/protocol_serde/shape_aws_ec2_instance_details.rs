@@ -29,10 +29,10 @@ where
                             );
                         }
                         "ipV4Addresses" => {
-                            builder = builder.set_ip_v4_addresses(crate::protocol_serde::shape_ip_v4_address_list::de_ip_v4_address_list(tokens)?);
+                            builder = builder.set_ipv4_addresses(crate::protocol_serde::shape_ipv4_address_list::de_ipv4_address_list(tokens)?);
                         }
                         "ipV6Addresses" => {
-                            builder = builder.set_ip_v6_addresses(crate::protocol_serde::shape_ip_v6_address_list::de_ip_v6_address_list(tokens)?);
+                            builder = builder.set_ipv6_addresses(crate::protocol_serde::shape_ipv6_address_list::de_ipv6_address_list(tokens)?);
                         }
                         "keyName" => {
                             builder = builder.set_key_name(

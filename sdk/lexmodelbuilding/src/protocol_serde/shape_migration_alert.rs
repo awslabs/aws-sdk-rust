@@ -32,8 +32,8 @@ where
                             builder = builder.set_details(crate::protocol_serde::shape_migration_alert_details::de_migration_alert_details(tokens)?);
                         }
                         "referenceURLs" => {
-                            builder = builder.set_reference_ur_ls(
-                                crate::protocol_serde::shape_migration_alert_reference_ur_ls::de_migration_alert_reference_ur_ls(tokens)?,
+                            builder = builder.set_reference_urls(
+                                crate::protocol_serde::shape_migration_alert_reference_urls::de_migration_alert_reference_urls(tokens)?,
                             );
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,

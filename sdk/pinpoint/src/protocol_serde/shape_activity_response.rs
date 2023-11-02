@@ -106,7 +106,7 @@ where
                             );
                         }
                         "ExecutionMetrics" => {
-                            builder = builder.set_execution_metrics(crate::protocol_serde::shape_map_of__string::de_map_of__string(tokens)?);
+                            builder = builder.set_execution_metrics(crate::protocol_serde::shape_map_of_string::de_map_of_string(tokens)?);
                         }
                         _ => ::aws_smithy_json::deserialize::token::skip_value(tokens)?,
                     },

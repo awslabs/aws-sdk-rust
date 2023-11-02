@@ -267,7 +267,7 @@ pub(crate) mod shape_log_settings_response;
 
 pub(crate) mod shape_migration_alert_details;
 
-pub(crate) mod shape_migration_alert_reference_ur_ls;
+pub(crate) mod shape_migration_alert_reference_urls;
 
 pub(crate) mod shape_slot_default_value;
 

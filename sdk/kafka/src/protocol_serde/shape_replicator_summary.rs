@@ -32,12 +32,12 @@ where
                         }
                         "kafkaClustersSummary" => {
                             builder = builder.set_kafka_clusters_summary(
-                                crate::protocol_serde::shape___list_of_kafka_cluster_summary::de___list_of_kafka_cluster_summary(tokens)?,
+                                crate::protocol_serde::shape_list_of_kafka_cluster_summary::de_list_of_kafka_cluster_summary(tokens)?,
                             );
                         }
                         "replicationInfoSummaryList" => {
                             builder = builder.set_replication_info_summary_list(
-                                crate::protocol_serde::shape___list_of_replication_info_summary::de___list_of_replication_info_summary(tokens)?,
+                                crate::protocol_serde::shape_list_of_replication_info_summary::de_list_of_replication_info_summary(tokens)?,
                             );
                         }
                         "replicatorArn" => {

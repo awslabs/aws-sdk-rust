@@ -112,7 +112,7 @@ pub(crate) fn de_list_control_panels(
             Some(::aws_smithy_json::deserialize::Token::EndObject { .. }) => break,
             Some(::aws_smithy_json::deserialize::Token::ObjectKey { key, .. }) => match key.to_unescaped()?.as_ref() {
                 "ControlPanels" => {
-                    builder = builder.set_control_panels(crate::protocol_serde::shape___list_of_control_panel::de___list_of_control_panel(tokens)?);
+                    builder = builder.set_control_panels(crate::protocol_serde::shape_list_of_control_panel::de_list_of_control_panel(tokens)?);
                 }
                 "NextToken" => {
                     builder = builder.set_next_token(

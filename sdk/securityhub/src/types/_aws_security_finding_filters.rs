@@ -72,9 +72,9 @@ pub struct AwsSecurityFindingFilters {
     /// <p>The protocol of network-related information about a finding.</p>
     pub network_protocol: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The source IPv4 address of network-related information about a finding.</p>
-    pub network_source_ip_v4: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub network_source_ipv4: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     /// <p>The source IPv6 address of network-related information about a finding.</p>
-    pub network_source_ip_v6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub network_source_ipv6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     /// <p>The source port of network-related information about a finding.</p>
     pub network_source_port: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>The source domain of network-related information about a finding.</p>
@@ -82,9 +82,9 @@ pub struct AwsSecurityFindingFilters {
     /// <p>The source media access control (MAC) address of network-related information about a finding.</p>
     pub network_source_mac: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    pub network_destination_ip_v4: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub network_destination_ipv4: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    pub network_destination_ip_v6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub network_destination_ipv6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     /// <p>The destination port of network-related information about a finding.</p>
     pub network_destination_port: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     /// <p>The destination domain of network-related information about a finding.</p>
@@ -130,9 +130,9 @@ pub struct AwsSecurityFindingFilters {
     /// <p>The Amazon Machine Image (AMI) ID of the instance.</p>
     pub resource_aws_ec2_instance_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub resource_aws_ec2_instance_ip_v4_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub resource_aws_ec2_instance_ipv4_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub resource_aws_ec2_instance_ip_v6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub resource_aws_ec2_instance_ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     /// <p>The key name associated with the instance.</p>
     pub resource_aws_ec2_instance_key_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     /// <p>The IAM profile ARN of the instance.</p>
@@ -420,15 +420,15 @@ impl AwsSecurityFindingFilters {
     }
     /// <p>The source IPv4 address of network-related information about a finding.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_source_ip_v4.is_none()`.
-    pub fn network_source_ip_v4(&self) -> &[crate::types::IpFilter] {
-        self.network_source_ip_v4.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_source_ipv4.is_none()`.
+    pub fn network_source_ipv4(&self) -> &[crate::types::IpFilter] {
+        self.network_source_ipv4.as_deref().unwrap_or_default()
     }
     /// <p>The source IPv6 address of network-related information about a finding.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_source_ip_v6.is_none()`.
-    pub fn network_source_ip_v6(&self) -> &[crate::types::IpFilter] {
-        self.network_source_ip_v6.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_source_ipv6.is_none()`.
+    pub fn network_source_ipv6(&self) -> &[crate::types::IpFilter] {
+        self.network_source_ipv6.as_deref().unwrap_or_default()
     }
     /// <p>The source port of network-related information about a finding.</p>
     ///
@@ -450,15 +450,15 @@ impl AwsSecurityFindingFilters {
     }
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_destination_ip_v4.is_none()`.
-    pub fn network_destination_ip_v4(&self) -> &[crate::types::IpFilter] {
-        self.network_destination_ip_v4.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_destination_ipv4.is_none()`.
+    pub fn network_destination_ipv4(&self) -> &[crate::types::IpFilter] {
+        self.network_destination_ipv4.as_deref().unwrap_or_default()
     }
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_destination_ip_v6.is_none()`.
-    pub fn network_destination_ip_v6(&self) -> &[crate::types::IpFilter] {
-        self.network_destination_ip_v6.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.network_destination_ipv6.is_none()`.
+    pub fn network_destination_ipv6(&self) -> &[crate::types::IpFilter] {
+        self.network_destination_ipv6.as_deref().unwrap_or_default()
     }
     /// <p>The destination port of network-related information about a finding.</p>
     ///
@@ -590,15 +590,15 @@ impl AwsSecurityFindingFilters {
     }
     /// <p>The IPv4 addresses associated with the instance.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_aws_ec2_instance_ip_v4_addresses.is_none()`.
-    pub fn resource_aws_ec2_instance_ip_v4_addresses(&self) -> &[crate::types::IpFilter] {
-        self.resource_aws_ec2_instance_ip_v4_addresses.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_aws_ec2_instance_ipv4_addresses.is_none()`.
+    pub fn resource_aws_ec2_instance_ipv4_addresses(&self) -> &[crate::types::IpFilter] {
+        self.resource_aws_ec2_instance_ipv4_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The IPv6 addresses associated with the instance.</p>
     ///
-    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_aws_ec2_instance_ip_v6_addresses.is_none()`.
-    pub fn resource_aws_ec2_instance_ip_v6_addresses(&self) -> &[crate::types::IpFilter] {
-        self.resource_aws_ec2_instance_ip_v6_addresses.as_deref().unwrap_or_default()
+    /// If no value was sent for this field, a default will be set. If you want to determine if no value was sent, use `.resource_aws_ec2_instance_ipv6_addresses.is_none()`.
+    pub fn resource_aws_ec2_instance_ipv6_addresses(&self) -> &[crate::types::IpFilter] {
+        self.resource_aws_ec2_instance_ipv6_addresses.as_deref().unwrap_or_default()
     }
     /// <p>The key name associated with the instance.</p>
     ///
@@ -894,13 +894,13 @@ pub struct AwsSecurityFindingFiltersBuilder {
     pub(crate) malware_state: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) network_direction: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) network_protocol: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) network_source_ip_v4: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    pub(crate) network_source_ip_v6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub(crate) network_source_ipv4: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub(crate) network_source_ipv6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     pub(crate) network_source_port: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     pub(crate) network_source_domain: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) network_source_mac: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) network_destination_ip_v4: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    pub(crate) network_destination_ip_v6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub(crate) network_destination_ipv4: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub(crate) network_destination_ipv6: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     pub(crate) network_destination_port: ::std::option::Option<::std::vec::Vec<crate::types::NumberFilter>>,
     pub(crate) network_destination_domain: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) process_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -922,8 +922,8 @@ pub struct AwsSecurityFindingFiltersBuilder {
     pub(crate) resource_tags: ::std::option::Option<::std::vec::Vec<crate::types::MapFilter>>,
     pub(crate) resource_aws_ec2_instance_type: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_aws_ec2_instance_image_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
-    pub(crate) resource_aws_ec2_instance_ip_v4_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
-    pub(crate) resource_aws_ec2_instance_ip_v6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub(crate) resource_aws_ec2_instance_ipv4_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
+    pub(crate) resource_aws_ec2_instance_ipv6_addresses: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>,
     pub(crate) resource_aws_ec2_instance_key_name: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_aws_ec2_instance_iam_instance_profile_arn: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
     pub(crate) resource_aws_ec2_instance_vpc_id: ::std::option::Option<::std::vec::Vec<crate::types::StringFilter>>,
@@ -1568,45 +1568,45 @@ impl AwsSecurityFindingFiltersBuilder {
     pub fn get_network_protocol(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.network_protocol
     }
-    /// Appends an item to `network_source_ip_v4`.
+    /// Appends an item to `network_source_ipv4`.
     ///
-    /// To override the contents of this collection use [`set_network_source_ip_v4`](Self::set_network_source_ip_v4).
+    /// To override the contents of this collection use [`set_network_source_ipv4`](Self::set_network_source_ipv4).
     ///
     /// <p>The source IPv4 address of network-related information about a finding.</p>
-    pub fn network_source_ip_v4(mut self, input: crate::types::IpFilter) -> Self {
-        let mut v = self.network_source_ip_v4.unwrap_or_default();
+    pub fn network_source_ipv4(mut self, input: crate::types::IpFilter) -> Self {
+        let mut v = self.network_source_ipv4.unwrap_or_default();
         v.push(input);
-        self.network_source_ip_v4 = ::std::option::Option::Some(v);
+        self.network_source_ipv4 = ::std::option::Option::Some(v);
         self
     }
     /// <p>The source IPv4 address of network-related information about a finding.</p>
-    pub fn set_network_source_ip_v4(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
-        self.network_source_ip_v4 = input;
+    pub fn set_network_source_ipv4(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
+        self.network_source_ipv4 = input;
         self
     }
     /// <p>The source IPv4 address of network-related information about a finding.</p>
-    pub fn get_network_source_ip_v4(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
-        &self.network_source_ip_v4
+    pub fn get_network_source_ipv4(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+        &self.network_source_ipv4
     }
-    /// Appends an item to `network_source_ip_v6`.
+    /// Appends an item to `network_source_ipv6`.
     ///
-    /// To override the contents of this collection use [`set_network_source_ip_v6`](Self::set_network_source_ip_v6).
+    /// To override the contents of this collection use [`set_network_source_ipv6`](Self::set_network_source_ipv6).
     ///
     /// <p>The source IPv6 address of network-related information about a finding.</p>
-    pub fn network_source_ip_v6(mut self, input: crate::types::IpFilter) -> Self {
-        let mut v = self.network_source_ip_v6.unwrap_or_default();
+    pub fn network_source_ipv6(mut self, input: crate::types::IpFilter) -> Self {
+        let mut v = self.network_source_ipv6.unwrap_or_default();
         v.push(input);
-        self.network_source_ip_v6 = ::std::option::Option::Some(v);
+        self.network_source_ipv6 = ::std::option::Option::Some(v);
         self
     }
     /// <p>The source IPv6 address of network-related information about a finding.</p>
-    pub fn set_network_source_ip_v6(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
-        self.network_source_ip_v6 = input;
+    pub fn set_network_source_ipv6(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
+        self.network_source_ipv6 = input;
         self
     }
     /// <p>The source IPv6 address of network-related information about a finding.</p>
-    pub fn get_network_source_ip_v6(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
-        &self.network_source_ip_v6
+    pub fn get_network_source_ipv6(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+        &self.network_source_ipv6
     }
     /// Appends an item to `network_source_port`.
     ///
@@ -1668,45 +1668,45 @@ impl AwsSecurityFindingFiltersBuilder {
     pub fn get_network_source_mac(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.network_source_mac
     }
-    /// Appends an item to `network_destination_ip_v4`.
+    /// Appends an item to `network_destination_ipv4`.
     ///
-    /// To override the contents of this collection use [`set_network_destination_ip_v4`](Self::set_network_destination_ip_v4).
+    /// To override the contents of this collection use [`set_network_destination_ipv4`](Self::set_network_destination_ipv4).
     ///
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    pub fn network_destination_ip_v4(mut self, input: crate::types::IpFilter) -> Self {
-        let mut v = self.network_destination_ip_v4.unwrap_or_default();
+    pub fn network_destination_ipv4(mut self, input: crate::types::IpFilter) -> Self {
+        let mut v = self.network_destination_ipv4.unwrap_or_default();
         v.push(input);
-        self.network_destination_ip_v4 = ::std::option::Option::Some(v);
+        self.network_destination_ipv4 = ::std::option::Option::Some(v);
         self
     }
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    pub fn set_network_destination_ip_v4(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
-        self.network_destination_ip_v4 = input;
+    pub fn set_network_destination_ipv4(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
+        self.network_destination_ipv4 = input;
         self
     }
     /// <p>The destination IPv4 address of network-related information about a finding.</p>
-    pub fn get_network_destination_ip_v4(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
-        &self.network_destination_ip_v4
+    pub fn get_network_destination_ipv4(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+        &self.network_destination_ipv4
     }
-    /// Appends an item to `network_destination_ip_v6`.
+    /// Appends an item to `network_destination_ipv6`.
     ///
-    /// To override the contents of this collection use [`set_network_destination_ip_v6`](Self::set_network_destination_ip_v6).
+    /// To override the contents of this collection use [`set_network_destination_ipv6`](Self::set_network_destination_ipv6).
     ///
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    pub fn network_destination_ip_v6(mut self, input: crate::types::IpFilter) -> Self {
-        let mut v = self.network_destination_ip_v6.unwrap_or_default();
+    pub fn network_destination_ipv6(mut self, input: crate::types::IpFilter) -> Self {
+        let mut v = self.network_destination_ipv6.unwrap_or_default();
         v.push(input);
-        self.network_destination_ip_v6 = ::std::option::Option::Some(v);
+        self.network_destination_ipv6 = ::std::option::Option::Some(v);
         self
     }
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    pub fn set_network_destination_ip_v6(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
-        self.network_destination_ip_v6 = input;
+    pub fn set_network_destination_ipv6(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
+        self.network_destination_ipv6 = input;
         self
     }
     /// <p>The destination IPv6 address of network-related information about a finding.</p>
-    pub fn get_network_destination_ip_v6(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
-        &self.network_destination_ip_v6
+    pub fn get_network_destination_ipv6(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+        &self.network_destination_ipv6
     }
     /// Appends an item to `network_destination_port`.
     ///
@@ -2134,45 +2134,45 @@ impl AwsSecurityFindingFiltersBuilder {
     pub fn get_resource_aws_ec2_instance_image_id(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::StringFilter>> {
         &self.resource_aws_ec2_instance_image_id
     }
-    /// Appends an item to `resource_aws_ec2_instance_ip_v4_addresses`.
+    /// Appends an item to `resource_aws_ec2_instance_ipv4_addresses`.
     ///
-    /// To override the contents of this collection use [`set_resource_aws_ec2_instance_ip_v4_addresses`](Self::set_resource_aws_ec2_instance_ip_v4_addresses).
+    /// To override the contents of this collection use [`set_resource_aws_ec2_instance_ipv4_addresses`](Self::set_resource_aws_ec2_instance_ipv4_addresses).
     ///
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn resource_aws_ec2_instance_ip_v4_addresses(mut self, input: crate::types::IpFilter) -> Self {
-        let mut v = self.resource_aws_ec2_instance_ip_v4_addresses.unwrap_or_default();
+    pub fn resource_aws_ec2_instance_ipv4_addresses(mut self, input: crate::types::IpFilter) -> Self {
+        let mut v = self.resource_aws_ec2_instance_ipv4_addresses.unwrap_or_default();
         v.push(input);
-        self.resource_aws_ec2_instance_ip_v4_addresses = ::std::option::Option::Some(v);
+        self.resource_aws_ec2_instance_ipv4_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn set_resource_aws_ec2_instance_ip_v4_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
-        self.resource_aws_ec2_instance_ip_v4_addresses = input;
+    pub fn set_resource_aws_ec2_instance_ipv4_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
+        self.resource_aws_ec2_instance_ipv4_addresses = input;
         self
     }
     /// <p>The IPv4 addresses associated with the instance.</p>
-    pub fn get_resource_aws_ec2_instance_ip_v4_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
-        &self.resource_aws_ec2_instance_ip_v4_addresses
+    pub fn get_resource_aws_ec2_instance_ipv4_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+        &self.resource_aws_ec2_instance_ipv4_addresses
     }
-    /// Appends an item to `resource_aws_ec2_instance_ip_v6_addresses`.
+    /// Appends an item to `resource_aws_ec2_instance_ipv6_addresses`.
     ///
-    /// To override the contents of this collection use [`set_resource_aws_ec2_instance_ip_v6_addresses`](Self::set_resource_aws_ec2_instance_ip_v6_addresses).
+    /// To override the contents of this collection use [`set_resource_aws_ec2_instance_ipv6_addresses`](Self::set_resource_aws_ec2_instance_ipv6_addresses).
     ///
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn resource_aws_ec2_instance_ip_v6_addresses(mut self, input: crate::types::IpFilter) -> Self {
-        let mut v = self.resource_aws_ec2_instance_ip_v6_addresses.unwrap_or_default();
+    pub fn resource_aws_ec2_instance_ipv6_addresses(mut self, input: crate::types::IpFilter) -> Self {
+        let mut v = self.resource_aws_ec2_instance_ipv6_addresses.unwrap_or_default();
         v.push(input);
-        self.resource_aws_ec2_instance_ip_v6_addresses = ::std::option::Option::Some(v);
+        self.resource_aws_ec2_instance_ipv6_addresses = ::std::option::Option::Some(v);
         self
     }
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn set_resource_aws_ec2_instance_ip_v6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
-        self.resource_aws_ec2_instance_ip_v6_addresses = input;
+    pub fn set_resource_aws_ec2_instance_ipv6_addresses(mut self, input: ::std::option::Option<::std::vec::Vec<crate::types::IpFilter>>) -> Self {
+        self.resource_aws_ec2_instance_ipv6_addresses = input;
         self
     }
     /// <p>The IPv6 addresses associated with the instance.</p>
-    pub fn get_resource_aws_ec2_instance_ip_v6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
-        &self.resource_aws_ec2_instance_ip_v6_addresses
+    pub fn get_resource_aws_ec2_instance_ipv6_addresses(&self) -> &::std::option::Option<::std::vec::Vec<crate::types::IpFilter>> {
+        &self.resource_aws_ec2_instance_ipv6_addresses
     }
     /// Appends an item to `resource_aws_ec2_instance_key_name`.
     ///
@@ -3056,13 +3056,13 @@ impl AwsSecurityFindingFiltersBuilder {
             malware_state: self.malware_state,
             network_direction: self.network_direction,
             network_protocol: self.network_protocol,
-            network_source_ip_v4: self.network_source_ip_v4,
-            network_source_ip_v6: self.network_source_ip_v6,
+            network_source_ipv4: self.network_source_ipv4,
+            network_source_ipv6: self.network_source_ipv6,
             network_source_port: self.network_source_port,
             network_source_domain: self.network_source_domain,
             network_source_mac: self.network_source_mac,
-            network_destination_ip_v4: self.network_destination_ip_v4,
-            network_destination_ip_v6: self.network_destination_ip_v6,
+            network_destination_ipv4: self.network_destination_ipv4,
+            network_destination_ipv6: self.network_destination_ipv6,
             network_destination_port: self.network_destination_port,
             network_destination_domain: self.network_destination_domain,
             process_name: self.process_name,
@@ -3084,8 +3084,8 @@ impl AwsSecurityFindingFiltersBuilder {
             resource_tags: self.resource_tags,
             resource_aws_ec2_instance_type: self.resource_aws_ec2_instance_type,
             resource_aws_ec2_instance_image_id: self.resource_aws_ec2_instance_image_id,
-            resource_aws_ec2_instance_ip_v4_addresses: self.resource_aws_ec2_instance_ip_v4_addresses,
-            resource_aws_ec2_instance_ip_v6_addresses: self.resource_aws_ec2_instance_ip_v6_addresses,
+            resource_aws_ec2_instance_ipv4_addresses: self.resource_aws_ec2_instance_ipv4_addresses,
+            resource_aws_ec2_instance_ipv6_addresses: self.resource_aws_ec2_instance_ipv6_addresses,
             resource_aws_ec2_instance_key_name: self.resource_aws_ec2_instance_key_name,
             resource_aws_ec2_instance_iam_instance_profile_arn: self.resource_aws_ec2_instance_iam_instance_profile_arn,
             resource_aws_ec2_instance_vpc_id: self.resource_aws_ec2_instance_vpc_id,
