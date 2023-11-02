@@ -165,7 +165,6 @@ mod create_control;
 ///
 /// let result = client.associate_assessment_report_evidence_folder()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

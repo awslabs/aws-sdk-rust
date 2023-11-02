@@ -171,7 +171,6 @@ mod create_deployment_group;
 ///
 /// let result = client.add_tags_to_on_premises_instances()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

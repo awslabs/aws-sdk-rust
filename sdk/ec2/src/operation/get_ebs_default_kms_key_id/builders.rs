@@ -87,20 +87,15 @@ impl GetEbsDefaultKmsKeyIdFluentBuilder {
         crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyId::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyIdOutput,
-            crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyIdError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyIdError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyIdOutput,
+        crate::operation::get_ebs_default_kms_key_id::GetEbsDefaultKmsKeyIdError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

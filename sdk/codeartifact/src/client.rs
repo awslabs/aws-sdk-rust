@@ -153,7 +153,6 @@ mod create_repository;
 ///
 /// let result = client.associate_external_connection()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -157,7 +157,6 @@ mod create_resource_share;
 ///
 /// let result = client.accept_resource_share_invitation()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -27,8 +27,6 @@ async fn operation_overrides_force_path_style() {
         .list_objects_v2()
         .bucket("test-bucket")
         .customize()
-        .await
-        .unwrap()
         .config_override(aws_sdk_s3::config::Config::builder().force_path_style(true))
         .send()
         .await;
@@ -45,8 +43,6 @@ async fn operation_overrides_fips() {
         .list_objects_v2()
         .bucket("test-bucket")
         .customize()
-        .await
-        .unwrap()
         .config_override(aws_sdk_s3::config::Config::builder().use_fips(true))
         .send()
         .await;
@@ -63,8 +59,6 @@ async fn operation_overrides_dual_stack() {
         .list_objects_v2()
         .bucket("test-bucket")
         .customize()
-        .await
-        .unwrap()
         .config_override(aws_sdk_s3::config::Config::builder().use_dual_stack(true))
         .send()
         .await;
@@ -85,8 +79,6 @@ async fn operation_overrides_credentials_provider() {
         .list_objects_v2()
         .bucket("test-bucket")
         .customize()
-        .await
-        .unwrap()
         .config_override(aws_sdk_s3::config::Config::builder().credentials_provider(Credentials::new(
             "test",
             "test",

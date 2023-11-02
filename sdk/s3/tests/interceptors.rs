@@ -74,8 +74,6 @@ async fn interceptor_priority() {
             .bucket("test-bucket")
             .prefix("prefix~")
             .customize()
-            .await
-            .unwrap()
             .interceptor(TestInterceptor("value2"))
             .send()
             .await
@@ -103,8 +101,6 @@ async fn set_test_user_agent_through_request_mutation() {
             .bucket("test-bucket")
             .prefix("prefix~")
             .customize()
-            .await
-            .unwrap()
             .mutate_request(|request| {
                 let headers = request.headers_mut();
                 headers.insert(USER_AGENT, HeaderValue::try_from("test").unwrap());

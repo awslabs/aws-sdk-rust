@@ -173,7 +173,6 @@ mod create_tags;
 ///
 /// let result = client.accept_input_device_transfer()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

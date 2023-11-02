@@ -169,7 +169,6 @@ mod create_global_cluster;
 ///
 /// let result = client.add_source_identifier_to_subscription()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

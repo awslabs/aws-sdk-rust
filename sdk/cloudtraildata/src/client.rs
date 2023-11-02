@@ -145,7 +145,6 @@ impl Client {
 ///
 /// let result = client.put_audit_events()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

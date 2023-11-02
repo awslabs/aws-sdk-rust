@@ -70,8 +70,6 @@ async fn multi_region_access_points() {
         .bucket("arn:aws:s3::123456789012:accesspoint/mfzwi23gnjvgw.mrap")
         .key("blah")
         .customize()
-        .await
-        .unwrap()
         .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
         .user_agent_for_tests()
         .send()
@@ -103,8 +101,6 @@ async fn s3_object_lambda() {
         .bucket("arn:aws:s3-object-lambda:us-east-100:123412341234:accesspoint/myolap")
         .key("s3.txt")
         .customize()
-        .await
-        .unwrap()
         .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1234567890))
         .send()
         .await

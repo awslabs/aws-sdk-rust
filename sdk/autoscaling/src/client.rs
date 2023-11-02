@@ -167,7 +167,6 @@ mod create_or_update_tags;
 ///
 /// let result = client.attach_instances()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

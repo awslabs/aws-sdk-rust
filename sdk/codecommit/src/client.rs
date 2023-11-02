@@ -171,7 +171,6 @@ mod create_unreferenced_merge_commit;
 ///
 /// let result = client.associate_approval_rule_template_with_repository()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -147,7 +147,6 @@ mod complete_snapshot;
 ///
 /// let result = client.complete_snapshot()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -159,7 +159,6 @@ mod create_subscription;
 ///
 /// let result = client.associate_drt_log_bucket()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

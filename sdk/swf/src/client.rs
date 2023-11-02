@@ -153,7 +153,6 @@ mod count_pending_decision_tasks;
 ///
 /// let result = client.count_closed_workflow_executions()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

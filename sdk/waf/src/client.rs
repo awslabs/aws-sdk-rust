@@ -171,7 +171,6 @@ mod create_xss_match_set;
 ///
 /// let result = client.create_byte_match_set()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

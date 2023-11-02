@@ -161,7 +161,6 @@ mod create_infrastructure_configuration;
 ///
 /// let result = client.cancel_image_creation()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

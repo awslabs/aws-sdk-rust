@@ -5,7 +5,6 @@
  */
 
 use aws_smithy_http::http::HttpHeaders;
-use aws_smithy_http::operation;
 use aws_smithy_http::result::SdkError;
 use aws_smithy_types::error::metadata::{Builder as ErrorMetadataBuilder, ErrorMetadata, ProvideErrorMetadata};
 use aws_smithy_types::error::Unhandled;
@@ -43,12 +42,6 @@ impl RequestIdExt for ErrorMetadata {
 impl RequestIdExt for Unhandled {
     fn extended_request_id(&self) -> Option<&str> {
         self.meta().extended_request_id()
-    }
-}
-
-impl RequestIdExt for operation::Response {
-    fn extended_request_id(&self) -> Option<&str> {
-        extract_extended_request_id(self.http().headers())
     }
 }
 
@@ -109,14 +102,12 @@ mod test {
 
     #[test]
     fn test_extended_request_id_sdk_error() {
-        let without_extended_request_id = || operation::Response::new(Response::builder().body(SdkBody::empty()).unwrap());
+        let without_extended_request_id = || Response::builder().body(SdkBody::empty()).unwrap();
         let with_extended_request_id = || {
-            operation::Response::new(
-                Response::builder()
-                    .header("x-amz-id-2", HeaderValue::from_static("some-request-id"))
-                    .body(SdkBody::empty())
-                    .unwrap(),
-            )
+            Response::builder()
+                .header("x-amz-id-2", HeaderValue::from_static("some-request-id"))
+                .body(SdkBody::empty())
+                .unwrap()
         };
         assert_eq!(
             None,

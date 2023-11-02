@@ -147,7 +147,6 @@ mod create_delivery_stream;
 ///
 /// let result = client.create_delivery_stream()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

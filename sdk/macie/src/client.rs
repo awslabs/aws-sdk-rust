@@ -149,7 +149,6 @@ mod associate_s3_resources;
 ///
 /// let result = client.associate_member_account()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

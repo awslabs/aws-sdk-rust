@@ -153,7 +153,6 @@ mod create_task_set;
 ///
 /// let result = client.create_capacity_provider()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -151,7 +151,6 @@ mod create_subnet_group;
 ///
 /// let result = client.create_cluster()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

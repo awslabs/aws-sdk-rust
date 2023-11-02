@@ -155,7 +155,6 @@ mod create_adapter_version;
 ///
 /// let result = client.analyze_document()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

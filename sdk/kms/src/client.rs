@@ -157,7 +157,6 @@ mod create_key;
 ///
 /// let result = client.cancel_key_deletion()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

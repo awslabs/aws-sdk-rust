@@ -155,7 +155,6 @@ mod create_tags;
 ///
 /// let result = client.associate_configuration_items_to_application()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

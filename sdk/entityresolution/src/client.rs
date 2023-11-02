@@ -151,7 +151,6 @@ mod create_schema_mapping;
 ///
 /// let result = client.create_id_mapping_workflow()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

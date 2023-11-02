@@ -151,7 +151,6 @@ mod create_user;
 ///
 /// let result = client.get_group_id()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

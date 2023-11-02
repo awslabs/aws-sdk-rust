@@ -5,13 +5,12 @@ authors = [
   "AWS Rust SDK Team <aws-sdk-rust@amazon.com>",
   "Eduardo Rodrigues <16357187+eduardomourar@users.noreply.github.com>",
 ]
-description = "Smithy HTTP logic for smithy-rs."
+description = "This crate is no longer used by smithy-rs and is deprecated."
 edition = "2021"
 license = "Apache-2.0"
 repository = "https://github.com/awslabs/smithy-rs"
 
 [dependencies]
-zeroize = "1"
 
 [package.metadata.docs.rs]
 all-features = true

@@ -175,7 +175,6 @@ mod create_task;
 ///
 /// let result = client.add_storage_system()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

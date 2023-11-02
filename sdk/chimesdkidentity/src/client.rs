@@ -153,7 +153,6 @@ mod create_app_instance_user;
 ///
 /// let result = client.create_app_instance()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

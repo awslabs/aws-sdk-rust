@@ -181,7 +181,6 @@ mod create_wireless_gateway_task_definition;
 ///
 /// let result = client.associate_aws_account_with_partner_account()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

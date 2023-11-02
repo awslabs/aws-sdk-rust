@@ -157,7 +157,6 @@ mod create_deployment;
 ///
 /// let result = client.associate_service_role_to_account()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

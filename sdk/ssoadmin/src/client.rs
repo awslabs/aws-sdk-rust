@@ -155,7 +155,6 @@ mod create_permission_set;
 ///
 /// let result = client.attach_customer_managed_policy_reference_to_permission_set()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

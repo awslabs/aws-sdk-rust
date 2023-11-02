@@ -179,7 +179,6 @@ mod create_vpc_attachment;
 ///
 /// let result = client.accept_attachment()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

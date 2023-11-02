@@ -151,7 +151,6 @@ mod create_project;
 ///
 /// let result = client.associate_device_with_placement()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -147,7 +147,6 @@ mod add_notification_channel;
 ///
 /// let result = client.add_notification_channel()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

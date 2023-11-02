@@ -237,7 +237,6 @@ mod create_topic_rule_destination;
 ///
 /// let result = client.accept_certificate_transfer()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

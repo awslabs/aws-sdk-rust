@@ -87,20 +87,15 @@ impl PutResourceSetFluentBuilder {
         crate::operation::put_resource_set::PutResourceSet::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::put_resource_set::PutResourceSetOutput,
-            crate::operation::put_resource_set::PutResourceSetError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::put_resource_set::PutResourceSetError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::put_resource_set::PutResourceSetOutput,
+        crate::operation::put_resource_set::PutResourceSetError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

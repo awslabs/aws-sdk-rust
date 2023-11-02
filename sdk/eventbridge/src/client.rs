@@ -161,7 +161,6 @@ mod create_partner_event_source;
 ///
 /// let result = client.activate_event_source()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

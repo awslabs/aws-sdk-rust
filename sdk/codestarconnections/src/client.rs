@@ -149,7 +149,6 @@ mod create_host;
 ///
 /// let result = client.create_connection()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

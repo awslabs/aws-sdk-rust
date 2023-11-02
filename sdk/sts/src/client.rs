@@ -105,7 +105,6 @@ mod assume_role_with_web_identity;
 ///
 /// let result = client.assume_role()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

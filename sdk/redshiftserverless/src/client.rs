@@ -159,7 +159,6 @@ mod create_workgroup;
 ///
 /// let result = client.create_custom_domain_association()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

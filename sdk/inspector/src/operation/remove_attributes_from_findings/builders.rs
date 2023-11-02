@@ -86,20 +86,15 @@ impl RemoveAttributesFromFindingsFluentBuilder {
         crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindings::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput,
-            crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput,
+        crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

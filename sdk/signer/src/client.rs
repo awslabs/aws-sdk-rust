@@ -149,7 +149,6 @@ mod cancel_signing_profile;
 ///
 /// let result = client.add_profile_permission()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

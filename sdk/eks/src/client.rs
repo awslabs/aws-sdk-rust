@@ -157,7 +157,6 @@ mod create_nodegroup;
 ///
 /// let result = client.associate_encryption_config()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -19,8 +19,9 @@ async fn do_endpoint_discovery() {
 
     let _logs = aws_smithy_runtime::test_util::capture_test_logs::capture_test_logs();
 
+    // For recording, switch to:
+    // let http_client = aws_smithy_runtime::client::http::test_util::dvr::RecordingClient::new(client);
     let http_client = ReplayingClient::from_file("tests/traffic.json").unwrap();
-    //let conn = aws_smithy_client::dvr::RecordingConnection::new(conn);
     let start = UNIX_EPOCH + Duration::from_secs(1234567890);
     let (ts, sleep, mut gate) = controlled_time_and_sleep(start);
     let config = SdkConfig::builder()

@@ -163,7 +163,6 @@ mod create_application_snapshot;
 ///
 /// let result = client.add_application_cloud_watch_logging_option()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

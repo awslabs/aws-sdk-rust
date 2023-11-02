@@ -155,7 +155,6 @@ mod create_session;
 ///
 /// let result = client.list_tags_for_resource()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

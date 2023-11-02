@@ -207,7 +207,6 @@ mod create_option_group;
 ///
 /// let result = client.add_role_to_db_cluster()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

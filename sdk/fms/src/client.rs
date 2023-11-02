@@ -153,7 +153,6 @@ mod batch_disassociate_resource;
 ///
 /// let result = client.associate_admin_account()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -149,7 +149,6 @@ mod create_domain;
 ///
 /// let result = client.build_suggesters()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

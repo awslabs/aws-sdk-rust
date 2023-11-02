@@ -175,7 +175,6 @@ mod create_user_group;
 ///
 /// let result = client.add_tags_to_resource()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

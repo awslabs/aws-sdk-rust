@@ -74,8 +74,6 @@ async fn test_checksum_on_streaming_response(
         .key("test.txt")
         .checksum_mode(aws_sdk_s3::types::ChecksumMode::Enabled)
         .customize()
-        .await
-        .unwrap()
         .user_agent_for_tests()
         .send()
         .await
@@ -181,8 +179,6 @@ async fn test_checksum_on_streaming_request<'a>(
         .body(body)
         .checksum_algorithm(checksum_algorithm)
         .customize()
-        .await
-        .unwrap()
         .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
         .user_agent_for_tests()
         .send()

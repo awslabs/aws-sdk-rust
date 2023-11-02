@@ -145,7 +145,6 @@ impl Client {
 ///
 /// let result = client.describe_affected_accounts_for_organization()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

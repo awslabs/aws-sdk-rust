@@ -163,7 +163,6 @@ mod create_webhook;
 ///
 /// let result = client.batch_delete_builds()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -88,20 +88,15 @@ impl DeleteKnownHostKeysFluentBuilder {
         crate::operation::delete_known_host_keys::DeleteKnownHostKeys::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_known_host_keys::DeleteKnownHostKeysOutput,
-            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::delete_known_host_keys::DeleteKnownHostKeysError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::delete_known_host_keys::DeleteKnownHostKeysOutput,
+        crate::operation::delete_known_host_keys::DeleteKnownHostKeysError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

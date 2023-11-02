@@ -153,7 +153,6 @@ mod create_profiling_group;
 ///
 /// let result = client.get_findings_report_account_summary()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

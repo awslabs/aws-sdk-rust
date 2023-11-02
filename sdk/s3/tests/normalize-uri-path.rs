@@ -31,8 +31,6 @@ async fn test_operation_should_not_normalize_uri_path() {
         .key("a/.././b.txt") // object key with dot segments
         .body(ByteStream::from_static("Hello, world".as_bytes()))
         .customize()
-        .await
-        .unwrap()
         .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1669257290))
         .user_agent_for_tests()
         .send()

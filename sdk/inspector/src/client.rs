@@ -155,7 +155,6 @@ mod create_resource_group;
 ///
 /// let result = client.add_attributes_to_findings()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

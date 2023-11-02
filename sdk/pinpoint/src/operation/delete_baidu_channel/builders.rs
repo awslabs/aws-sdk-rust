@@ -86,20 +86,15 @@ impl DeleteBaiduChannelFluentBuilder {
         crate::operation::delete_baidu_channel::DeleteBaiduChannel::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_baidu_channel::DeleteBaiduChannelOutput,
-            crate::operation::delete_baidu_channel::DeleteBaiduChannelError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::delete_baidu_channel::DeleteBaiduChannelError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::delete_baidu_channel::DeleteBaiduChannelOutput,
+        crate::operation::delete_baidu_channel::DeleteBaiduChannelError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

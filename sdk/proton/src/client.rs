@@ -179,7 +179,6 @@ mod create_template_sync_config;
 ///
 /// let result = client.cancel_component_deployment()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

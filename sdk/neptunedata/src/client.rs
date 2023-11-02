@@ -159,7 +159,6 @@ mod create_ml_endpoint;
 ///
 /// let result = client.cancel_gremlin_query()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

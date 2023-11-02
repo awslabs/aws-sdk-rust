@@ -153,7 +153,6 @@ mod create_log_pattern;
 ///
 /// let result = client.add_workload()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

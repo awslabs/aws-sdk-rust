@@ -173,7 +173,6 @@ mod create_trust;
 ///
 /// let result = client.accept_shared_directory()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

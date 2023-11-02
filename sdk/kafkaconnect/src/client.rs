@@ -151,7 +151,6 @@ mod create_worker_configuration;
 ///
 /// let result = client.create_connector()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

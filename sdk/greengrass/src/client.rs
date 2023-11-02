@@ -187,7 +187,6 @@ mod create_subscription_definition_version;
 ///
 /// let result = client.associate_role_to_group()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -147,7 +147,6 @@ mod create_fhir_datastore;
 ///
 /// let result = client.create_fhir_datastore()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

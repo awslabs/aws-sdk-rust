@@ -153,7 +153,6 @@ mod create_worker_fleet;
 ///
 /// let result = client.create_worker()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

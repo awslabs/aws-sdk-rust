@@ -161,7 +161,6 @@ mod create_studio_session_mapping;
 ///
 /// let result = client.add_instance_fleet()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

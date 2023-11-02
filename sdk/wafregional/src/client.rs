@@ -173,7 +173,6 @@ mod create_xss_match_set;
 ///
 /// let result = client.associate_web_acl()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

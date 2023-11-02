@@ -159,7 +159,6 @@ mod create_token;
 ///
 /// let result = client.clone_backend()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

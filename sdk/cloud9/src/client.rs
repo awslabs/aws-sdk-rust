@@ -149,7 +149,6 @@ mod create_environment_membership;
 ///
 /// let result = client.create_environment_ec2()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

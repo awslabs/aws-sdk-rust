@@ -163,7 +163,6 @@ mod create_gateway;
 ///
 /// let result = client.add_bridge_outputs()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -187,7 +187,6 @@ mod create_user;
 ///
 /// let result = client.associate_app_block_builder_app_block()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

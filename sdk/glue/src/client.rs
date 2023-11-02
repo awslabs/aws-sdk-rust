@@ -229,7 +229,6 @@ mod create_workflow;
 ///
 /// let result = client.batch_create_partition()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

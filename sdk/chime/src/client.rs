@@ -217,7 +217,6 @@ mod create_voice_connector_group;
 ///
 /// let result = client.associate_phone_numbers_with_voice_connector()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

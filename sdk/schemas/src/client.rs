@@ -151,7 +151,6 @@ mod create_schema;
 ///
 /// let result = client.create_discoverer()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

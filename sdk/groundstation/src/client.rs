@@ -155,7 +155,6 @@ mod create_mission_profile;
 ///
 /// let result = client.get_minute_usage()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

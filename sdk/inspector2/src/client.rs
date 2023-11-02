@@ -169,7 +169,6 @@ mod create_sbom_export;
 ///
 /// let result = client.associate_member()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

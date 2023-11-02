@@ -16,7 +16,7 @@ use aws_smithy_types::retry::{ErrorKind, ReconnectMode, RetryConfig};
 use std::fmt;
 use tracing::{debug, error};
 
-/// A interceptor for poisoning connections in response to certain events.
+/// An interceptor for poisoning connections in response to certain events.
 ///
 /// This interceptor, when paired with a compatible connection, allows the connection to be
 /// poisoned in reaction to certain events *(like receiving a transient error.)* This allows users
@@ -25,10 +25,11 @@ use tracing::{debug, error};
 ///
 /// **In order for this interceptor to work,** the configured connection must interact with the
 /// "connection retriever" stored in an HTTP request's `extensions` map. For an example of this,
-/// see [aws_smithy_client::hyper_ext::Adapter](https://github.com/awslabs/smithy-rs/blob/47b3d23ff3cabd67e797af616101f5a4ea6be5e8/rust-runtime/aws-smithy-client/src/hyper_ext.rs#L155).
-/// When a connection is made available to the retriever, this interceptor will call a `.poison`
-/// method on it, signalling that the connection should be dropped. It is up to the connection
-/// implementer to handle this.
+/// see [`HyperConnector`]. When a connection is made available to the retriever, this interceptor
+/// will call a `.poison` method on it, signalling that the connection should be dropped. It is
+/// up to the connection implementer to handle this.
+///
+/// [`HyperConnector`]: https://github.com/awslabs/smithy-rs/blob/26a914ece072bba2dd9b5b49003204b70e7666ac/rust-runtime/aws-smithy-runtime/src/client/http/hyper_014.rs#L347
 #[non_exhaustive]
 #[derive(Debug, Default)]
 pub struct ConnectionPoisoningInterceptor {}

@@ -147,7 +147,6 @@ mod claim_devices_by_claim_code;
 ///
 /// let result = client.claim_devices_by_claim_code()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -147,7 +147,6 @@ mod create_campaign;
 ///
 /// let result = client.create_campaign()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

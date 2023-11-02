@@ -56,8 +56,6 @@ async fn ignore_invalid_xml_body_root() {
         .key("test.txt")
         .object_attributes(ObjectAttributes::Checksum)
         .customize()
-        .await
-        .unwrap()
         .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
         .user_agent_for_tests()
         .send()

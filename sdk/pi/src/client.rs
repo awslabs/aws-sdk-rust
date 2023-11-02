@@ -147,7 +147,6 @@ mod create_performance_analysis_report;
 ///
 /// let result = client.create_performance_analysis_report()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

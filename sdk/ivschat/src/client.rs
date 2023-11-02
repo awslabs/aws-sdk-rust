@@ -151,7 +151,6 @@ mod create_room;
 ///
 /// let result = client.create_chat_token()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

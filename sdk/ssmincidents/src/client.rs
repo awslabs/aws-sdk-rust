@@ -151,7 +151,6 @@ mod create_timeline_event;
 ///
 /// let result = client.create_replication_set()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

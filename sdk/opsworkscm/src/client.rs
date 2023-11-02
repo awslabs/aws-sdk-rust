@@ -151,7 +151,6 @@ mod create_server;
 ///
 /// let result = client.associate_node()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

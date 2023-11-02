@@ -157,7 +157,6 @@ mod create_tls_inspection_configuration;
 ///
 /// let result = client.associate_firewall_policy()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

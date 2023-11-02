@@ -147,7 +147,6 @@ mod create_scaling_plan;
 ///
 /// let result = client.create_scaling_plan()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

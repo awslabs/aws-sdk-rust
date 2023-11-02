@@ -155,7 +155,6 @@ mod check_domain_transferability;
 ///
 /// let result = client.accept_domain_transfer_from_another_aws_account()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

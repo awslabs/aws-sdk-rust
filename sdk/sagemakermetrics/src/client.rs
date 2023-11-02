@@ -147,7 +147,6 @@ mod batch_put_metrics;
 ///
 /// let result = client.batch_put_metrics()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

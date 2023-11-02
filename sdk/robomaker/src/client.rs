@@ -181,7 +181,6 @@ mod create_world_template;
 ///
 /// let result = client.batch_delete_worlds()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

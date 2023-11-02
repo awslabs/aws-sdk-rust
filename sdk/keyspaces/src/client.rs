@@ -149,7 +149,6 @@ mod create_table;
 ///
 /// let result = client.create_keyspace()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

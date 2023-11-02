@@ -161,7 +161,6 @@ mod create_vod_source;
 ///
 /// let result = client.configure_logs_for_playback_configuration()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

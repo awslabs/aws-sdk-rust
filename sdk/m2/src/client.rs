@@ -155,7 +155,6 @@ mod create_environment;
 ///
 /// let result = client.get_signed_bluinsights_url()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

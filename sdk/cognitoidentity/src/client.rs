@@ -147,7 +147,6 @@ mod create_identity_pool;
 ///
 /// let result = client.create_identity_pool()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

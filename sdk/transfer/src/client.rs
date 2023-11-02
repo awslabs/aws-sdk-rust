@@ -159,7 +159,6 @@ mod create_workflow;
 ///
 /// let result = client.create_access()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

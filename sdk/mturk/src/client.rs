@@ -163,7 +163,6 @@ mod create_worker_block;
 ///
 /// let result = client.accept_qualification_request()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

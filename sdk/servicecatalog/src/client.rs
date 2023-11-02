@@ -179,7 +179,6 @@ mod create_tag_option;
 ///
 /// let result = client.accept_portfolio_share()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -157,7 +157,6 @@ mod create_network_site;
 ///
 /// let result = client.acknowledge_order_receipt()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

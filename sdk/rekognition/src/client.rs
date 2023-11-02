@@ -165,7 +165,6 @@ mod create_user;
 ///
 /// let result = client.associate_faces()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

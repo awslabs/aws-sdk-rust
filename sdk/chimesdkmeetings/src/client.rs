@@ -155,7 +155,6 @@ mod create_meeting_with_attendees;
 ///
 /// let result = client.batch_create_attendee()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

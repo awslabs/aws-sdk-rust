@@ -149,7 +149,6 @@ mod create_ledger;
 ///
 /// let result = client.cancel_journal_kinesis_stream()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -165,7 +165,6 @@ mod create_vpc_endpoint;
 ///
 /// let result = client.batch_get_collection()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

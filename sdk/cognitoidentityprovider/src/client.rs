@@ -223,7 +223,6 @@ mod create_user_pool_domain;
 ///
 /// let result = client.add_custom_attributes()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

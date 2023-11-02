@@ -147,7 +147,6 @@ mod create_suite_definition;
 ///
 /// let result = client.create_suite_definition()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

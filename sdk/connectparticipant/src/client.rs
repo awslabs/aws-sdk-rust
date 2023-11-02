@@ -149,7 +149,6 @@ mod create_participant_connection;
 ///
 /// let result = client.complete_attachment_upload()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

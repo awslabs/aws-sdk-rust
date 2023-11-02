@@ -151,7 +151,6 @@ mod create_cost_category_definition;
 ///
 /// let result = client.create_anomaly_monitor()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -33,8 +33,6 @@ async fn test_s3_signer_query_string_with_all_valid_chars() {
         .bucket("test-bucket")
         .prefix(&prefix)
         .customize()
-        .await
-        .unwrap()
         .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
         .user_agent_for_tests()
         .send()

@@ -161,7 +161,6 @@ mod create_realtime_endpoint;
 ///
 /// let result = client.add_tags()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

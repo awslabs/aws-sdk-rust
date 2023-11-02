@@ -159,7 +159,6 @@ mod create_resiliency_policy;
 ///
 /// let result = client.add_draft_app_version_resource_mappings()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

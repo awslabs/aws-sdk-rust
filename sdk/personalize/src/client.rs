@@ -173,7 +173,6 @@ mod create_solution_version;
 ///
 /// let result = client.create_batch_inference_job()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -37,8 +37,6 @@ async fn test_signer() {
         .list_access_points()
         .account_id("test-bucket")
         .customize()
-        .await
-        .unwrap()
         .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1636751225))
         .user_agent_for_tests()
         .remove_invocation_id_for_tests()

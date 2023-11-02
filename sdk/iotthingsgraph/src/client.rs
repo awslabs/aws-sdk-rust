@@ -153,7 +153,6 @@ mod create_system_template;
 ///
 /// let result = client.associate_entity_to_thing()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

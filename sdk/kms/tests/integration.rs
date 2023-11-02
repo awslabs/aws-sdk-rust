@@ -73,8 +73,6 @@ async fn generate_random() {
         .generate_random()
         .number_of_bytes(64)
         .customize()
-        .await
-        .expect("customizable")
         .mutate_request(|req| {
             // Remove the invocation ID since the signed request above doesn't have it
             req.headers_mut().remove("amz-sdk-invocation-id");
@@ -157,8 +155,6 @@ async fn generate_random_keystore_not_found() {
         .number_of_bytes(64)
         .custom_key_store_id("does not exist")
         .customize()
-        .await
-        .expect("customizable")
         .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1614955644))
         .user_agent_for_tests()
         .send()

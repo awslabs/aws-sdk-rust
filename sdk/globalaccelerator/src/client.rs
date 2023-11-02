@@ -165,7 +165,6 @@ mod create_listener;
 ///
 /// let result = client.add_custom_routing_endpoints()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -151,7 +151,6 @@ mod create_watchlist;
 ///
 /// let result = client.associate_fraudster()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

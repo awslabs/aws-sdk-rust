@@ -155,7 +155,6 @@ mod create_source_network;
 ///
 /// let result = client.create_extended_source_server()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

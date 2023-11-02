@@ -151,7 +151,6 @@ mod create_theme;
 ///
 /// let result = client.exchange_code_for_token()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -167,7 +167,6 @@ mod create_workload_share;
 ///
 /// let result = client.associate_lenses()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -167,7 +167,6 @@ mod create_type;
 ///
 /// let result = client.associate_api()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

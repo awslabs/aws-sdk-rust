@@ -147,7 +147,6 @@ mod create_application;
 ///
 /// let result = client.create_application()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

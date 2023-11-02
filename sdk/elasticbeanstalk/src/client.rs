@@ -167,7 +167,6 @@ mod create_storage_location;
 ///
 /// let result = client.abort_environment_update()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

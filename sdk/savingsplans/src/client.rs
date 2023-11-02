@@ -147,7 +147,6 @@ mod create_savings_plan;
 ///
 /// let result = client.create_savings_plan()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

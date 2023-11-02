@@ -155,7 +155,6 @@ mod create_package_import_job;
 ///
 /// let result = client.create_application_instance()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

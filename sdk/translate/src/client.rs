@@ -147,7 +147,6 @@ mod create_parallel_data;
 ///
 /// let result = client.create_parallel_data()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

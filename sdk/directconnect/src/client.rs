@@ -195,7 +195,6 @@ mod create_transit_virtual_interface;
 ///
 /// let result = client.accept_direct_connect_gateway_association_proposal()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

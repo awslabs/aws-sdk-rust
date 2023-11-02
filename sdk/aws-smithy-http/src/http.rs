@@ -27,13 +27,3 @@ impl<B> HttpHeaders for http::Response<B> {
         self.headers_mut()
     }
 }
-
-impl HttpHeaders for crate::operation::Response {
-    fn http_headers(&self) -> &HeaderMap<HeaderValue> {
-        self.http().http_headers()
-    }
-
-    fn http_headers_mut(&mut self) -> &mut HeaderMap<HeaderValue> {
-        self.http_mut().http_headers_mut()
-    }
-}

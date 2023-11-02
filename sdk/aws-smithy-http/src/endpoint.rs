@@ -16,7 +16,6 @@ use std::str::FromStr;
 use std::sync::Arc;
 
 pub mod error;
-pub mod middleware;
 
 pub use error::ResolveEndpointError;
 

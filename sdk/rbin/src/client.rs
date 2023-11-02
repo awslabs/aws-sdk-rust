@@ -147,7 +147,6 @@ mod create_rule;
 ///
 /// let result = client.create_rule()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

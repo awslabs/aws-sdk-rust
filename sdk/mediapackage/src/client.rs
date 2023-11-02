@@ -153,7 +153,6 @@ mod create_origin_endpoint;
 ///
 /// let result = client.configure_logs()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

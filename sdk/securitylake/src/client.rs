@@ -159,7 +159,6 @@ mod create_subscriber_notification;
 ///
 /// let result = client.create_data_lake_exception_subscription()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

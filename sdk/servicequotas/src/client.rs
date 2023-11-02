@@ -147,7 +147,6 @@ mod associate_service_quota_template;
 ///
 /// let result = client.associate_service_quota_template()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -417,7 +417,6 @@ mod create_vpn_gateway;
 ///
 /// let result = client.accept_address_transfer()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

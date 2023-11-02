@@ -175,7 +175,6 @@ mod create_vpc_association_authorization;
 ///
 /// let result = client.activate_key_signing_key()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

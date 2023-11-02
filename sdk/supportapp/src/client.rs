@@ -147,7 +147,6 @@ mod create_slack_channel_configuration;
 ///
 /// let result = client.create_slack_channel_configuration()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -151,7 +151,6 @@ mod create_state_machine_alias;
 ///
 /// let result = client.create_activity()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

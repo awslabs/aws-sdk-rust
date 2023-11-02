@@ -147,7 +147,6 @@ mod cancel_change_set;
 ///
 /// let result = client.cancel_change_set()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

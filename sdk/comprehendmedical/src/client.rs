@@ -145,7 +145,6 @@ impl Client {
 ///
 /// let result = client.describe_entities_detection_v2_job()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

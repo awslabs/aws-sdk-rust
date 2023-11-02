@@ -171,7 +171,6 @@ mod create_volume_from_backup;
 ///
 /// let result = client.associate_file_system_aliases()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

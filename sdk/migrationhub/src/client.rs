@@ -151,7 +151,6 @@ mod create_progress_update_stream;
 ///
 /// let result = client.associate_created_artifact()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

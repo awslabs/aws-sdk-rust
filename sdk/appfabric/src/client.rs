@@ -157,7 +157,6 @@ mod create_ingestion_destination;
 ///
 /// let result = client.batch_get_user_access_tasks()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

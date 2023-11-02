@@ -155,7 +155,6 @@ mod create_vocabulary_filter;
 ///
 /// let result = client.create_call_analytics_category()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

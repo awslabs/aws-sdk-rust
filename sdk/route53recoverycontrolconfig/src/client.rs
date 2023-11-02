@@ -153,7 +153,6 @@ mod create_safety_rule;
 ///
 /// let result = client.create_cluster()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

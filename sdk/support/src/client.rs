@@ -151,7 +151,6 @@ mod create_case;
 ///
 /// let result = client.add_attachments_to_set()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

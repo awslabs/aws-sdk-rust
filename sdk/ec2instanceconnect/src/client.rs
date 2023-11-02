@@ -145,7 +145,6 @@ impl Client {
 ///
 /// let result = client.send_serial_console_ssh_public_key()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

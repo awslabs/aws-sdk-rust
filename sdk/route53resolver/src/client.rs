@@ -167,7 +167,6 @@ mod create_resolver_rule;
 ///
 /// let result = client.associate_firewall_rule_group()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

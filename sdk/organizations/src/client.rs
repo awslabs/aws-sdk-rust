@@ -163,7 +163,6 @@ mod create_policy;
 ///
 /// let result = client.accept_handshake()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

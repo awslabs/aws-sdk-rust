@@ -179,7 +179,6 @@ mod create_vpc_peering_connection;
 ///
 /// let result = client.accept_match()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

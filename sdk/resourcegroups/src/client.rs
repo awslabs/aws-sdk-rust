@@ -147,7 +147,6 @@ mod create_group;
 ///
 /// let result = client.create_group()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -159,7 +159,6 @@ mod create_vpc_ingress_connection;
 ///
 /// let result = client.associate_custom_domain()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

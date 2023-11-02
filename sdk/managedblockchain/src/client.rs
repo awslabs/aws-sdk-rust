@@ -155,7 +155,6 @@ mod create_proposal;
 ///
 /// let result = client.create_accessor()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

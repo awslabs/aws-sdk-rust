@@ -208,7 +208,6 @@ mod create_scheduled_query;
 ///
 /// let result = client.cancel_query()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

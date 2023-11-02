@@ -161,7 +161,6 @@ mod create_report_plan;
 ///
 /// let result = client.cancel_legal_hold()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

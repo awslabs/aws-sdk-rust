@@ -151,7 +151,6 @@ mod create_input;
 ///
 /// let result = client.create_alarm_model()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

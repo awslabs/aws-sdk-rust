@@ -159,7 +159,6 @@ mod create_topic;
 ///
 /// let result = client.add_permission()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

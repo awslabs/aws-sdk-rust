@@ -171,7 +171,6 @@ mod create_flywheel;
 ///
 /// let result = client.batch_detect_dominant_language()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

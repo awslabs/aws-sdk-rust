@@ -147,7 +147,6 @@ mod create_pipeline;
 ///
 /// let result = client.create_pipeline()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -165,7 +165,6 @@ mod create_threat_intel_set;
 ///
 /// let result = client.accept_administrator_invitation()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

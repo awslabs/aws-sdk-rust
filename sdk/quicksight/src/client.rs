@@ -189,7 +189,6 @@ mod create_vpc_connection;
 ///
 /// let result = client.cancel_ingestion()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

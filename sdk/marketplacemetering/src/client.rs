@@ -147,7 +147,6 @@ mod batch_meter_usage;
 ///
 /// let result = client.batch_meter_usage()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

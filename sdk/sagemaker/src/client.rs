@@ -261,7 +261,6 @@ mod create_workteam;
 ///
 /// let result = client.add_association()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

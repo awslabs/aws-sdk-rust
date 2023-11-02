@@ -165,7 +165,6 @@ mod create_wave;
 ///
 /// let result = client.initialize_service()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

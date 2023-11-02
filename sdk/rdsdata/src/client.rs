@@ -151,7 +151,6 @@ mod commit_transaction;
 ///
 /// let result = client.batch_execute_statement()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

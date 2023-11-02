@@ -187,7 +187,6 @@ mod create_virtual_mfa_device;
 ///
 /// let result = client.add_client_id_to_open_id_connect_provider()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

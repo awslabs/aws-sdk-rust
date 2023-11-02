@@ -36,15 +36,11 @@ pub mod futures_stream_adapter;
 pub mod header;
 pub mod http;
 pub mod label;
-pub mod middleware;
 pub mod operation;
-pub mod property_bag;
 pub mod query;
 #[doc(hidden)]
 pub mod query_writer;
-pub mod response;
 pub mod result;
-pub mod retry;
 
 #[cfg(feature = "event-stream")]
 pub mod event_stream;

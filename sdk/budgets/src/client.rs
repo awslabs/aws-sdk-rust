@@ -153,7 +153,6 @@ mod create_subscriber;
 ///
 /// let result = client.create_budget()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -175,7 +175,6 @@ mod create_vpc_link;
 ///
 /// let result = client.create_api_key()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

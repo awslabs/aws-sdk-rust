@@ -173,7 +173,6 @@ mod create_what_if_forecast_export;
 ///
 /// let result = client.create_auto_predictor()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

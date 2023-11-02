@@ -177,7 +177,6 @@ mod create_upload_url;
 ///
 /// let result = client.batch_create_custom_vocabulary_item()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

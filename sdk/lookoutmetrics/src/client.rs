@@ -155,7 +155,6 @@ mod create_metric_set;
 ///
 /// let result = client.activate_anomaly_detector()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

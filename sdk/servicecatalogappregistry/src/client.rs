@@ -153,7 +153,6 @@ mod create_attribute_group;
 ///
 /// let result = client.associate_attribute_group()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -155,7 +155,6 @@ mod create_multi_region_access_point;
 ///
 /// let result = client.create_access_point()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -25,8 +25,6 @@ async fn list_objects() {
         .bucket("gdc-organoid-pancreatic-phs001611-2-open")
         .max_keys(3)
         .customize()
-        .await
-        .unwrap()
         .remove_invocation_id_for_tests()
         .user_agent_for_tests()
         .send()
@@ -58,8 +56,6 @@ async fn list_objects_v2() {
         .bucket("gdc-organoid-pancreatic-phs001611-2-open")
         .max_keys(3)
         .customize()
-        .await
-        .unwrap()
         .remove_invocation_id_for_tests()
         .user_agent_for_tests()
         .send()
@@ -90,8 +86,6 @@ async fn head_object() {
         .bucket("gdc-organoid-pancreatic-phs001611-2-open")
         .key("0431cddc-a418-4a79-a34d-6c041394e8e4/a6ddcc84-8e4d-4c68-885c-2d51168eec97.FPKM-UQ.txt.gz")
         .customize()
-        .await
-        .unwrap()
         .remove_invocation_id_for_tests()
         .user_agent_for_tests()
         .send()
@@ -122,8 +116,6 @@ async fn get_object() {
         .bucket("gdc-organoid-pancreatic-phs001611-2-open")
         .key("0431cddc-a418-4a79-a34d-6c041394e8e4/a6ddcc84-8e4d-4c68-885c-2d51168eec97.FPKM-UQ.txt.gz")
         .customize()
-        .await
-        .unwrap()
         .remove_invocation_id_for_tests()
         .user_agent_for_tests()
         .send()

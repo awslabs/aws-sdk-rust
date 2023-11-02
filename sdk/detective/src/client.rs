@@ -155,7 +155,6 @@ mod create_members;
 ///
 /// let result = client.accept_invitation()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

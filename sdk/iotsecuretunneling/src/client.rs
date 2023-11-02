@@ -147,7 +147,6 @@ mod close_tunnel;
 ///
 /// let result = client.close_tunnel()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

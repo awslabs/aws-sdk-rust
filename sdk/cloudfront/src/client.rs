@@ -185,7 +185,6 @@ mod create_streaming_distribution_with_tags;
 ///
 /// let result = client.associate_alias()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

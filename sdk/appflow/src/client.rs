@@ -151,7 +151,6 @@ mod create_flow;
 ///
 /// let result = client.cancel_flow_executions()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -163,7 +163,6 @@ mod create_vpc_endpoint;
 ///
 /// let result = client.accept_inbound_connection()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

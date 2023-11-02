@@ -173,7 +173,6 @@ mod create_typed_link_facet;
 ///
 /// let result = client.add_facet_to_object()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

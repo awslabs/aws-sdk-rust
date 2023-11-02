@@ -161,7 +161,6 @@ mod create_user;
 ///
 /// let result = client.batch_update_cluster()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

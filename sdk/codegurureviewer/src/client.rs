@@ -149,7 +149,6 @@ mod create_code_review;
 ///
 /// let result = client.associate_repository()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

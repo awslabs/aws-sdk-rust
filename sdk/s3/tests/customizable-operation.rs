@@ -26,8 +26,6 @@ async fn test_s3_ops_are_customizable() {
     let op = client
         .list_buckets()
         .customize()
-        .await
-        .expect("list_buckets is customizable")
         .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1624036048))
         .user_agent_for_tests();
 

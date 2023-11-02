@@ -199,7 +199,6 @@ mod create_usage_limit;
 ///
 /// let result = client.accept_reserved_node_exchange()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

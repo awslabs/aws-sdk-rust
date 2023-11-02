@@ -149,7 +149,6 @@ mod create_stage;
 ///
 /// let result = client.create_participant_token()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

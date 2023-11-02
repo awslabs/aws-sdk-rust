@@ -153,7 +153,6 @@ mod batch_upsert_table_rows;
 ///
 /// let result = client.batch_create_table_rows()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

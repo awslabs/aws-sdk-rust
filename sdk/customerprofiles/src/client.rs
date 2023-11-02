@@ -157,7 +157,6 @@ mod create_profile;
 ///
 /// let result = client.add_profile_key()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

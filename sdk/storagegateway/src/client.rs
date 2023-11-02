@@ -183,7 +183,6 @@ mod create_tapes;
 ///
 /// let result = client.activate_gateway()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

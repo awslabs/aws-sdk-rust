@@ -187,7 +187,6 @@ mod create_user_profile;
 ///
 /// let result = client.accept_predictions()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

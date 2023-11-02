@@ -209,7 +209,6 @@ mod create_relational_database_snapshot;
 ///
 /// let result = client.allocate_static_ip()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

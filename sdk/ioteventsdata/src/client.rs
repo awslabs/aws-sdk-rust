@@ -161,7 +161,6 @@ mod batch_update_detector;
 ///
 /// let result = client.batch_acknowledge_alarm()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -159,7 +159,6 @@ mod create_repository;
 ///
 /// let result = client.batch_check_layer_availability()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

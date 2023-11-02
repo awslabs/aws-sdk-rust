@@ -149,7 +149,6 @@ mod create_stream;
 ///
 /// let result = client.add_tags_to_stream()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

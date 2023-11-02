@@ -157,7 +157,6 @@ mod create_stream_key;
 ///
 /// let result = client.batch_get_channel()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

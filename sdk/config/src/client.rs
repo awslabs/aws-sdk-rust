@@ -149,7 +149,6 @@ mod batch_get_resource_config;
 ///
 /// let result = client.batch_get_aggregate_resource_config()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

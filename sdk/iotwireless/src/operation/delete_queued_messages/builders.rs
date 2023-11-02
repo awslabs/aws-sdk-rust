@@ -86,20 +86,15 @@ impl DeleteQueuedMessagesFluentBuilder {
         crate::operation::delete_queued_messages::DeleteQueuedMessages::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::delete_queued_messages::DeleteQueuedMessagesOutput,
-            crate::operation::delete_queued_messages::DeleteQueuedMessagesError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::delete_queued_messages::DeleteQueuedMessagesError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::delete_queued_messages::DeleteQueuedMessagesOutput,
+        crate::operation::delete_queued_messages::DeleteQueuedMessagesError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

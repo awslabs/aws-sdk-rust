@@ -45,8 +45,6 @@ async fn signv4_use_correct_service_name() {
                 .unwrap(),
         )
         .customize()
-        .await
-        .expect("should be customizable")
         // Fix the request time and user agent so the headers are stable
         .request_time_for_tests(UNIX_EPOCH + Duration::from_secs(1614952162))
         .user_agent_for_tests()

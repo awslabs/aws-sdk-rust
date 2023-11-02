@@ -169,7 +169,6 @@ mod create_variable;
 ///
 /// let result = client.batch_create_variable()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

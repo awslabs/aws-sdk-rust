@@ -86,20 +86,15 @@ impl GetAllowListFluentBuilder {
         crate::operation::get_allow_list::GetAllowList::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_allow_list::GetAllowListOutput,
-            crate::operation::get_allow_list::GetAllowListError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_allow_list::GetAllowListError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::get_allow_list::GetAllowListOutput,
+        crate::operation::get_allow_list::GetAllowListError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

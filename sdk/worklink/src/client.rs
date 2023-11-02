@@ -153,7 +153,6 @@ mod create_fleet;
 ///
 /// let result = client.associate_domain()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

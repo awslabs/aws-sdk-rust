@@ -145,7 +145,6 @@ impl Client {
 ///
 /// let result = client.list_realtime_contact_analysis_segments()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

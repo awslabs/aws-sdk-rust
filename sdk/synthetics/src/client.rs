@@ -151,7 +151,6 @@ mod create_group;
 ///
 /// let result = client.associate_resource()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

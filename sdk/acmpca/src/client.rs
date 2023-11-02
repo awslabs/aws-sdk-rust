@@ -151,7 +151,6 @@ mod create_permission;
 ///
 /// let result = client.create_certificate_authority()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

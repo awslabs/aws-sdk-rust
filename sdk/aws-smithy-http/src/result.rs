@@ -3,30 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-//! `Result` wrapper types for [success](SdkSuccess) and [failure](SdkError) responses.
+//! Types for [error](SdkError) responses.
 
+use crate::body::SdkBody;
+use crate::connection::ConnectionMetadata;
+use aws_smithy_types::error::metadata::{ProvideErrorMetadata, EMPTY_ERROR_METADATA};
+use aws_smithy_types::error::ErrorMetadata;
+use aws_smithy_types::retry::ErrorKind;
 use std::error::Error;
 use std::fmt;
 use std::fmt::{Debug, Display, Formatter};
 
-use aws_smithy_types::error::metadata::{ProvideErrorMetadata, EMPTY_ERROR_METADATA};
-use aws_smithy_types::error::ErrorMetadata;
-use aws_smithy_types::retry::ErrorKind;
-
-use crate::connection::ConnectionMetadata;
-use crate::operation;
-
 type BoxError = Box<dyn Error + Send + Sync>;
-
-/// Successful SDK Result
-#[derive(Debug)]
-pub struct SdkSuccess<O> {
-    /// Raw Response from the service. (e.g. Http Response)
-    pub raw: operation::Response,
-
-    /// Parsed response from the service
-    pub parsed: O,
-}
 
 /// Builders for `SdkError` variant context.
 pub mod builders {
@@ -329,7 +317,7 @@ pub trait CreateUnhandledError {
 /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
 #[non_exhaustive]
 #[derive(Debug)]
-pub enum SdkError<E, R = operation::Response> {
+pub enum SdkError<E, R = http::Response<SdkBody>> {
     /// The request failed during construction. It was not dispatched over the network.
     ConstructionFailure(ConstructionFailure),
 

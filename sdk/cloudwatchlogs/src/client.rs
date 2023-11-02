@@ -155,7 +155,6 @@ mod create_log_stream;
 ///
 /// let result = client.associate_kms_key()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

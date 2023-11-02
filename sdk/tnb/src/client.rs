@@ -153,7 +153,6 @@ mod create_sol_network_package;
 ///
 /// let result = client.cancel_sol_network_operation()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

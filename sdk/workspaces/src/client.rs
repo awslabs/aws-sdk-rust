@@ -173,7 +173,6 @@ mod create_workspaces;
 ///
 /// let result = client.associate_connection_alias()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

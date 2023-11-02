@@ -149,7 +149,6 @@ mod create_configuration_set_event_destination;
 ///
 /// let result = client.create_configuration_set()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

@@ -159,7 +159,6 @@ mod create_return_shipping_label;
 ///
 /// let result = client.cancel_cluster()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

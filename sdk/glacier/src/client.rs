@@ -157,7 +157,6 @@ mod create_vault;
 ///
 /// let result = client.abort_multipart_upload()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

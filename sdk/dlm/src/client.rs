@@ -147,7 +147,6 @@ mod create_lifecycle_policy;
 ///
 /// let result = client.create_lifecycle_policy()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

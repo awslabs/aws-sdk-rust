@@ -157,7 +157,6 @@ mod create_rotation_override;
 ///
 /// let result = client.accept_page()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()

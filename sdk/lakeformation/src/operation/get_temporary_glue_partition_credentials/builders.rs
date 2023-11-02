@@ -89,20 +89,15 @@ impl GetTemporaryGluePartitionCredentialsFluentBuilder {
         crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentials::orchestrate(&runtime_plugins, input).await
     }
 
-    /// Consumes this builder, creating a customizable operation that can be modified before being
-    /// sent.
-    // TODO(enableNewSmithyRuntimeCleanup): Remove `async` and `Result` once we switch to orchestrator
-    pub async fn customize(
+    /// Consumes this builder, creating a customizable operation that can be modified before being sent.
+    pub fn customize(
         self,
-    ) -> ::std::result::Result<
-        crate::client::customize::CustomizableOperation<
-            crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput,
-            crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError,
-            Self,
-        >,
-        ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError>,
+    ) -> crate::client::customize::CustomizableOperation<
+        crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput,
+        crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError,
+        Self,
     > {
-        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation::new(self))
+        crate::client::customize::CustomizableOperation::new(self)
     }
     pub(crate) fn config_override(mut self, config_override: impl Into<crate::config::Builder>) -> Self {
         self.set_config_override(Some(config_override.into()));

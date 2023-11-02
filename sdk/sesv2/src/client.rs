@@ -173,7 +173,6 @@ mod create_import_job;
 ///
 /// let result = client.batch_get_metric_data()
 ///     .customize()
-///     .await?
 ///     .mutate_request(|req| {
 ///         // Add `x-example-header` with value
 ///         req.headers_mut()
